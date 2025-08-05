@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pymupdf4llm
+google-generativeai
+chromadb
+python-dotenv
+langchain
+langchain-community
+langchain-google-genai
+numpy
