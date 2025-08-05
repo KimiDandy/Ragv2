@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrichment Document RAG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.2em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .upload-container {
+            text-align: center;
+            padding: 40px;
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .upload-container:hover {
+            border-color: #764ba2;
+            background: #f8f9ff;
+        }
+
+        .upload-container input[type="file"] {
+            display: none;
+        }
+
+        .upload-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .file-name {
+            margin-top: 15px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .loading-container {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .query-container {
+            display: none;
+            margin-bottom: 30px;
+        }
+
+        .query-container textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1em;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        .query-container textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .query-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .query-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .results-container {
+            display: none;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .result-card {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+        }
+
+        .result-card.enriched {
+            border-left-color: #764ba2;
+        }
+
+        .result-card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .result-content {
+            color: #555;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .loading-text {
+            color: #667eea;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Enrichment RAG</h1>
+            <p>Enrichment Dokumen RAG</p>
+        </div>
+
+        <div class="content">
+            <div class="upload-container" id="upload-container">
+                <input type="file" id="file-input" accept=".pdf">
+                <button class="upload-btn" onclick="document.getElementById('file-input').click()">
+                    📄 Pilih File PDF
+                </button>
+                <div class="file-name" id="file-name"></div>
+            </div>
+
+            <div class="loading-container" id="loading-container">
+                <div class="spinner"></div>
+                <h3>Proses dokumen Anda</h3>
+            </div>
+            <div class="query-container" id="query-container">
+                <h3>Dokumen berhasil diproses! 🎉</h3>
+                <p>Masukkan pertanyaan Anda untuk melihat perbandingan jawaban:</p>
+                <textarea 
+                    id="query-input" 
+                    placeholder="Contoh: Apa saja keuntungan investasi yang dibahas dalam dokumen ini?"
+                ></textarea>
+                <button class="query-btn" onclick="askQuestion()">
+                    🔍 Kirim Pertanyaan
+                </button>
+            </div>
+
+            <div class="results-container" id="results-container">
+                <div class="results-header">
+                    <h2>Hasil Perbandingan</h2>
+                    <p id="query-display"></p>
+                </div>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h2>📄 Dokumen Asli (v1)</h2>
+                        <div class="result-content" id="unenriched-result">
+                            <span class="loading-text">Menunggu pertanyaan...</span>
+                        </div>
+                    </div>
+                    <div class="result-card enriched">
+                        <h2>✨ Dokumen Diperkaya (v2)</h2>
+                        <div class="result-content" id="enriched-result">
+                            <span class="loading-text">Menunggu pertanyaan...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentDocumentId = null;
+
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                document.getElementById('file-name').textContent = `File dipilih: ${file.name}`;
+                uploadFile(file);
+            }
+        });
+
+        async function uploadFile(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            document.getElementById('upload-container').style.display = 'none';
+            document.getElementById('loading-container').style.display = 'block';
+
+            try {
+                const response = await fetch('http://localhost:8000/upload-document/', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    currentDocumentId = data.document_id;
+                    
+                    document.getElementById('loading-container').style.display = 'none';
+                    document.getElementById('query-container').style.display = 'block';
+                } else {
+                    throw new Error('Upload gagal');
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+                document.getElementById('loading-container').style.display = 'none';
+                document.getElementById('upload-container').style.display = 'block';
+            }
+        }
+
+        async function askQuestion() {
+            const prompt = document.getElementById('query-input').value.trim();
+            if (!prompt) {
+                alert('Silakan masukkan pertanyaan');
+                return;
+            }
+
+            if (!currentDocumentId) {
+                alert('Silakan unggah dokumen terlebih dahulu');
+                return;
+            }
+
+            document.getElementById('unenriched-result').innerHTML = '<span class="loading-text">Memproses...</span>';
+            document.getElementById('enriched-result').innerHTML = '<span class="loading-text">Memproses...</span>';
+            document.getElementById('results-container').style.display = 'block';
+            document.getElementById('query-display').textContent = `Pertanyaan: "${prompt}"`;
+
+            try {
+                const response = await fetch('http://localhost:8000/ask/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        document_id: currentDocumentId,
+                        prompt: prompt
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    document.getElementById('unenriched-result').textContent = data.unenriched_answer;
+                    document.getElementById('enriched-result').textContent = data.enriched_answer;
+                } else {
+                    throw new Error('Query gagal');
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+                document.getElementById('unenriched-result').textContent = 'Error: ' + error.message;
+                document.getElementById('enriched-result').textContent = 'Error: ' + error.message;
+            }
+        }
+
+        document.getElementById('query-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                askQuestion();
+            }
+        });
+    </script>
+</body>
+</html>

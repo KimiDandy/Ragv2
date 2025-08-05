@@ -4,10 +4,7 @@ from pathlib import Path
 import google.generativeai as genai
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
 load_dotenv()
-
-# Configure the Gemini API
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
@@ -32,7 +29,6 @@ def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
         print(f"Error: Markdown file not found at {markdown_path}")
         return ""
 
-    # The prompt structure as defined in the project brief
     prompt = f"""Role: You are a multi-disciplinary research analyst.
 Task: Read the following Markdown document thoroughly. Identify ALL items that require further explanation or enrichment for a complete understanding. DO NOT provide the explanations now.
 Format Output: You MUST respond ONLY with a valid JSON object, with no additional text before or after it.
@@ -58,13 +54,10 @@ Document to Analyze:
 """
 
     print("Sending request to Gemini for enrichment plan...")
-    # Use the specific model name for Gemini 1.5 Pro
     model = genai.GenerativeModel('gemini-2.5-flash')
     response = model.generate_content(prompt)
 
-    # Clean up the response to get the pure JSON
     try:
-        # The response might be wrapped in markdown backticks
         json_text = response.text.strip().replace('```json', '').replace('```', '').strip()
         plan_data = json.loads(json_text)
     except (json.JSONDecodeError, AttributeError) as e:
@@ -72,7 +65,6 @@ Document to Analyze:
         print(f"Raw response text:\n{response.text}")
         return ""
 
-    # Save the JSON plan
     plan_output_path = Path(doc_output_dir) / "enrichment_plan.json"
     with open(plan_output_path, 'w', encoding='utf-8') as f:
         json.dump(plan_data, f, indent=2)
@@ -81,9 +73,6 @@ Document to Analyze:
     return str(plan_output_path)
 
 if __name__ == '__main__':
-    # This allows testing this module independently.
-    # It finds the most recently created document directory in pipeline_artefacts
-    # and runs the planning phase on it.
     base_artefacts_dir = Path("pipeline_artefacts")
     if not base_artefacts_dir.exists():
         print("Error: 'pipeline_artefacts' directory not found. Run phase_0 first.")

@@ -7,7 +7,7 @@ import chromadb
 
 
 
-def vectorize_and_store(doc_output_dir: str, client: chromadb.Client) -> bool:
+def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_file: str, version: str) -> bool:
     """
     Vectorizes the final markdown document and stores it in ChromaDB.
 
@@ -24,7 +24,7 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client) -> bool:
     """
     doc_path = Path(doc_output_dir)
     doc_id = doc_path.name
-    markdown_path = doc_path / "markdown_v2.md"
+    markdown_path = Path(doc_output_dir) / markdown_file
 
     # Load the final markdown document
     try:
@@ -66,15 +66,15 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client) -> bool:
         embedding_function=embeddings,
     )
 
-    # 5. Add the chunked texts to the vector store
-    print(f"Adding {len(chunks)} chunks to the Chroma vector store...")
+    # 5. Add the chunked texts to the vector store with version metadata
+    print(f"Adding {len(chunks)} chunks to the Chroma vector store (version: {version})...")
     vector_store.add_texts(
         texts=chunks,
-        metadatas=[{"source_document": doc_id} for _ in chunks],
-        ids=[f"{doc_id}_{i}" for i in range(len(chunks))]
+        metadatas=[{"source_document": doc_id, "version": version} for _ in chunks],
+        ids=[f"{doc_id}_{version}_{i}" for i in range(len(chunks))]
     )
 
-    print(f"Phase 4 completed. Document {doc_id} has been vectorized and stored.")
+    print(f"Phase 4 completed. Document {doc_id} (version: {version}) has been vectorized and stored.")
     return True
 
 if __name__ == '__main__':
