@@ -4,7 +4,7 @@ import chromadb
 from contextlib import asynccontextmanager
 from pathlib import Path
 from fastapi import FastAPI, UploadFile, File, HTTPException, Request
-from chromadb.config import Settings
+
 
 # Import a function from each phase of the pipeline
 from .phase_0_extraction import process_pdf_local
@@ -17,15 +17,10 @@ from .phase_4_vectorization import vectorize_and_store
 async def lifespan(app: FastAPI):
     # --- Startup --- 
     print("INFO:     Lifespan startup: Initializing ChromaDB client...")
-    # The key is to initialize the client here, once, when the app starts.
-    app.state.chroma_client = chromadb.Client(
-        Settings(
-            chroma_db_impl="duckdb+parquet",
-            persist_directory="chroma_db",
-            anonymized_telemetry=False
-        )
-    )
-    print("INFO:     ChromaDB client initialized and stored in app.state.")
+    # Menggunakan arsitektur client/server yang benar untuk FastAPI.
+    # Ini akan terhubung ke server ChromaDB yang berjalan di `chroma run`.
+    app.state.chroma_client = chromadb.HttpClient(host="localhost", port=8001)
+    print("INFO:     ChromaDB HttpClient connected.")
     
     yield
     

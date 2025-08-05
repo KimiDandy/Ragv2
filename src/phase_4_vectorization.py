@@ -78,6 +78,8 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client) -> bool:
     return True
 
 if __name__ == '__main__':
+    import chromadb
+    
     # This block is for standalone testing of this script.
     # It is not used when running the FastAPI application.
     base_artefacts_dir = Path("pipeline_artefacts")
@@ -88,17 +90,9 @@ if __name__ == '__main__':
         if not all_doc_dirs:
             print("No document artefact directories found in 'pipeline_artefacts'.")
         else:
-            # For standalone testing, we need to create a client instance here.
-            # This mimics the behavior of the lifespan manager in main.py.
-            print("Running in standalone mode. Initializing a temporary ChromaDB client...")
-            from chromadb.config import Settings
-            standalone_client = chromadb.Client(
-                Settings(
-                    chroma_db_impl="duckdb+parquet",
-                    persist_directory="chroma_db",
-                    anonymized_telemetry=False
-                )
-            )
+            print("Running in standalone mode. Connecting to ChromaDB server...")
+            # Gunakan HttpClient untuk konsistensi dengan main.py
+            standalone_client = chromadb.HttpClient(host="localhost", port=8001)
             
             latest_doc_dir = max(all_doc_dirs, key=lambda p: p.stat().st_mtime)
             print(f"Processing the most recent document: {latest_doc_dir.name}")
