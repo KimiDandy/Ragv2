@@ -8,25 +8,10 @@ import chromadb
 
 
 def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_file: str, version: str) -> bool:
-    """
-    Vectorizes the final markdown document and stores it in ChromaDB.
-
-    This function corresponds to Phase 4 of the Genesis-RAG project.
-    It chunks the markdown_v2.md file, generates embeddings for each chunk,
-    and stores them in a persistent ChromaDB collection.
-
-    Args:
-        doc_output_dir (str): The document's artefact directory.
-        chroma_db_path (str): The path to the ChromaDB persistence directory.
-
-    Returns:
-        bool: True if the process was successful, False otherwise.
-    """
     doc_path = Path(doc_output_dir)
     doc_id = doc_path.name
     markdown_path = Path(doc_output_dir) / markdown_file
 
-    # Load the final markdown document
     try:
         with open(markdown_path, 'r', encoding='utf-8') as f:
             final_content = f.read()
@@ -34,7 +19,6 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
         print(f"Error: Final markdown file not found at {markdown_path}")
         return False
 
-    # 1. Chunk the document
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=150,
@@ -44,11 +28,9 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
 
     if not chunks:
         print("Warning: No text chunks were generated from the document. Nothing to vectorize.")
-        return True  # Technically successful as there's nothing to do
+        return True  
 
-    # 2. Initialize Google Generative AI embedding function via Langchain wrapper
     print("Initializing Google Generative AI embedding function...")
-    # Ensure the GOOGLE_API_KEY is loaded from .env
     api_key = os.getenv("GOOGLE_API_KEY")
     if not api_key:
         print("Error: GOOGLE_API_KEY not found in environment variables.")
@@ -59,14 +41,12 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
         model="models/embedding-001", google_api_key=api_key
     )
 
-    # 4. Create a Chroma vector store instance using the provided client
     vector_store = Chroma(
         client=client,
         collection_name="genesis_rag_collection",
         embedding_function=embeddings,
     )
 
-    # 5. Add the chunked texts to the vector store with version metadata
     print(f"Adding {len(chunks)} chunks to the Chroma vector store (version: {version})...")
     vector_store.add_texts(
         texts=chunks,
@@ -80,8 +60,6 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
 if __name__ == '__main__':
     import chromadb
     
-    # This block is for standalone testing of this script.
-    # It is not used when running the FastAPI application.
     base_artefacts_dir = Path("pipeline_artefacts")
     if not base_artefacts_dir.exists():
         print("Error: 'pipeline_artefacts' directory not found.")
@@ -91,7 +69,6 @@ if __name__ == '__main__':
             print("No document artefact directories found in 'pipeline_artefacts'.")
         else:
             print("Running in standalone mode. Connecting to ChromaDB server...")
-            # Gunakan HttpClient untuk konsistensi dengan main.py
             standalone_client = chromadb.HttpClient(host="localhost", port=8001)
             
             latest_doc_dir = max(all_doc_dirs, key=lambda p: p.stat().st_mtime)

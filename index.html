@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enrichment Document RAG</title>
     <style>
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -12,31 +13,39 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Montserrat', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
             min-height: 100vh;
             padding: 20px;
+            transition: background-color 0.3s ease;
         }
 
+        /* Container Styles */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            background-color: #2a2a2a;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             overflow: hidden;
+            padding: 40px;
         }
 
+        /* Header Styles */
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background-color: #1a1a1a;
+            color: #fff;
             padding: 30px;
             text-align: center;
+            border-bottom: 1px solid #333;
         }
 
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            font-weight: bold;
+            color: #ffd700;
         }
 
         .header p {
@@ -44,22 +53,24 @@
             font-size: 1.2em;
         }
 
+        /* Content Styles */
         .content {
             padding: 40px;
         }
 
+        /* Upload Container Styles */
         .upload-container {
             text-align: center;
             padding: 40px;
-            border: 3px dashed #667eea;
+            border: 3px dashed #ffd700;
             border-radius: 15px;
             margin-bottom: 30px;
             transition: all 0.3s ease;
         }
 
         .upload-container:hover {
-            border-color: #764ba2;
-            background: #f8f9ff;
+            border-color: #fff;
+            background-color: #333;
         }
 
         .upload-container input[type="file"] {
@@ -67,8 +78,8 @@
         }
 
         .upload-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background-color: #ffd700;
+            color: #1a1a1a;
             padding: 15px 30px;
             border: none;
             border-radius: 50px;
@@ -87,6 +98,7 @@
             font-style: italic;
         }
 
+        /* Loading Container Styles */
         .loading-container {
             display: none;
             text-align: center;
@@ -97,7 +109,7 @@
             width: 50px;
             height: 50px;
             border: 5px solid #f3f3f3;
-            border-top: 5px solid #667eea;
+            border-top: 5px solid #ffd700;
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 20px;
@@ -108,6 +120,7 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Query Container Styles */
         .query-container {
             display: none;
             margin-bottom: 30px;
@@ -126,12 +139,12 @@
 
         .query-container textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #ffd700;
         }
 
         .query-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background-color: #ffd700;
+            color: #1a1a1a;
             padding: 12px 25px;
             border: none;
             border-radius: 25px;
@@ -145,6 +158,7 @@
             transform: translateY(-2px);
         }
 
+        /* Results Container Styles */
         .results-container {
             display: none;
         }
@@ -162,33 +176,34 @@
         }
 
         .result-card {
-            background: #f8f9ff;
+            background-color: #333;
             border-radius: 15px;
             padding: 25px;
-            border-left: 5px solid #667eea;
+            border-left: 5px solid #ffd700;
         }
 
         .result-card.enriched {
-            border-left-color: #764ba2;
+            border-left-color: #fff;
         }
 
         .result-card h2 {
-            color: #333;
+            color: #fff;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
 
         .result-content {
-            color: #555;
+            color: #fff;
             line-height: 1.6;
             white-space: pre-wrap;
         }
 
         .loading-text {
-            color: #667eea;
+            color: #ffd700;
             font-style: italic;
         }
 
+        /* Media Queries */
         @media (max-width: 768px) {
             .results-grid {
                 grid-template-columns: 1fr;
@@ -211,24 +226,24 @@
             <div class="upload-container" id="upload-container">
                 <input type="file" id="file-input" accept=".pdf">
                 <button class="upload-btn" onclick="document.getElementById('file-input').click()">
-                    📄 Pilih File PDF
+                    Pilih File PDF
                 </button>
                 <div class="file-name" id="file-name"></div>
             </div>
 
             <div class="loading-container" id="loading-container">
                 <div class="spinner"></div>
-                <h3>Proses dokumen Anda</h3>
+                <h3>Proses dokumen</h3>
             </div>
             <div class="query-container" id="query-container">
-                <h3>Dokumen berhasil diproses! 🎉</h3>
-                <p>Masukkan pertanyaan Anda untuk melihat perbandingan jawaban:</p>
+                <h3>Dokumen berhasil diproses! </h3>
+                <p>Masukkan pertanyaan untuk melihat perbandingan jawaban:</p>
                 <textarea 
                     id="query-input" 
                     placeholder="Contoh: Apa saja keuntungan investasi yang dibahas dalam dokumen ini?"
                 ></textarea>
                 <button class="query-btn" onclick="askQuestion()">
-                    🔍 Kirim Pertanyaan
+                    Kirim Pertanyaan
                 </button>
             </div>
 
@@ -239,13 +254,13 @@
                 </div>
                 <div class="results-grid">
                     <div class="result-card">
-                        <h2>📄 Dokumen Asli (v1)</h2>
+                        <h2>Dokumen Asli (v1)</h2>
                         <div class="result-content" id="unenriched-result">
                             <span class="loading-text">Menunggu pertanyaan...</span>
                         </div>
                     </div>
                     <div class="result-card enriched">
-                        <h2>✨ Dokumen Diperkaya (v2)</h2>
+                        <h2>Dokumen Diperkaya (v2)</h2>
                         <div class="result-content" id="enriched-result">
                             <span class="loading-text">Menunggu pertanyaan...</span>
                         </div>

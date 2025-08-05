@@ -6,31 +6,15 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 from PIL import Image
 
-# Load environment variables and configure API
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def generate_bulk_content(doc_output_dir: str) -> str:
-    """
-    Generates all enrichment content based on the plan from Phase 1.
-
-    This function corresponds to Phase 2 of the Genesis-RAG project.
-    It performs a single, complex multimodal API call to Gemini, providing
-    the original markdown, the enrichment plan, and relevant image data.
-
-    Args:
-        doc_output_dir (str): The document's artefact directory, containing the
-                              markdown file, plan, and assets.
-
-    Returns:
-        str: The path to the generated_content.json file.
-    """
     doc_path = Path(doc_output_dir)
     markdown_path = doc_path / "markdown_v1.md"
     plan_path = doc_path / "enrichment_plan.json"
     assets_path = doc_path / "assets"
 
-    # Load required files
     try:
         with open(markdown_path, 'r', encoding='utf-8') as f:
             markdown_content = f.read()
@@ -40,7 +24,6 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         print(f"Error: Required file not found - {e}")
         return ""
 
-    # Prepare image data for the multimodal prompt
     image_parts = []
     images_to_describe = enrichment_plan.get("images_to_describe", [])
     for image_filename in images_to_describe:
@@ -48,16 +31,13 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         if image_path.exists():
             try:
                 img = Image.open(image_path)
-                # The API can take PIL.Image objects directly
                 image_parts.append(img)
-                # Also add a text part to identify the image
                 image_parts.append(f"\n--- Image Filename: {image_filename} ---\n")
             except Exception as e:
                 print(f"Warning: Could not process image {image_filename}: {e}")
         else:
             print(f"Warning: Image file not found: {image_path}")
 
-    # Construct the multimodal prompt
     prompt_parts = [
         "Role: You are a living encyclopedia and an expert technical writer.",
         "Context: I am providing you with an original document, an enrichment plan, and relevant image assets.",
@@ -73,8 +53,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
     print("Sending multimodal request to Gemini for content generation...")
     model = genai.GenerativeModel('gemini-2.5-flash')
     response = model.generate_content(prompt_parts)
-
-    # Process and save the response
+  
     try:
         json_text = response.text.strip().replace('```json', '').replace('```', '').strip()
         content_data = json.loads(json_text)
