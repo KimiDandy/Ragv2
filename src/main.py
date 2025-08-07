@@ -1,65 +1,80 @@
 import uvicorn
-import chromadb
 import time
 import asyncio
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+import sys
+import os
+from contextlib import asynccontextmanager
+
+import chromadb
+import uvicorn
+from dotenv import load_dotenv
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from loguru import logger
+from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 
-from src.core.config import GOOGLE_API_KEY, EMBEDDING_MODEL, CHAT_MODEL
-from src.core.logging_config import setup_logging
 from src.api.endpoints import router as api_router
-from src.core.config import CHROMA_DB_PATH
+from src.core.config import CHROMA_DB_PATH, GOOGLE_API_KEY, EMBEDDING_MODEL, CHAT_MODEL
 
-# Setup logging as soon as the application starts
-setup_logging()
+# --- Simplified Loguru Configuration ---
+logger.remove()
+logger.add(
+    sys.stderr,
+    level="INFO",
+    format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan> - <level>{message}</level>"
+)
+# --- End of Logging Configuration ---
+
+# Load environment variables from .env file
+load_dotenv()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """
-    Manages startup and shutdown events for the FastAPI application.
-    Initializes the ChromaDB client and AI models.
-    """
-    from loguru import logger # Re-import logger to fix scope issue with uvicorn reloader
-    logger.info("Lifespan startup: Connecting to ChromaDB server...")
+    logger.info("Startup Aplikasi: Menginisialisasi semua sumber daya...")
     try:
-        app.state.chroma_client = chromadb.HttpClient(host="127.0.0.1", port=8001)
-        app.state.chroma_client.heartbeat()
-        logger.info("Successfully connected to ChromaDB server.")
-    except Exception as e:
-        logger.error(f"Failed to connect to ChromaDB server. Ensure the server is running with 'chroma run --path chroma_db --port 8001'. Error: {e}")
-        app.state.chroma_client = None
+        # 1. Use PersistentClient for a reliable embedded mode
+        app.state.chroma_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
+        logger.info(f"ChromaDB client diinisialisasi dari path: {CHROMA_DB_PATH}")
 
-    logger.info("Lifespan startup: Initializing AI models...")
-    try:
+        # 2. Initialize AI models once
         app.state.embedding_function = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL, google_api_key=GOOGLE_API_KEY)
         app.state.chat_model = ChatGoogleGenerativeAI(model=CHAT_MODEL, google_api_key=GOOGLE_API_KEY, temperature=0.7)
-        logger.info("AI models initialized successfully.")
+        logger.info("Model AI berhasil diinisialisasi.")
+
     except Exception as e:
-        logger.error(f"Failed to initialize AI models: {e}")
+        logger.critical(f"GAGAL TOTAL SAAT STARTUP! Tidak dapat menginisialisasi sumber daya. Error: {e}")
+        app.state.chroma_client = None
         app.state.embedding_function = None
         app.state.chat_model = None
 
     yield
 
-    logger.info("Lifespan shutdown: Cleaning up resources...")
-    # No explicit cleanup required for HttpClient or LangChain models
-    logger.info("Resources cleaned up.")
+    logger.info("Shutdown Aplikasi: Membersihkan sumber daya...")
+    app.state.chroma_client = None
+    app.state.embedding_function = None
+    app.state.chat_model = None
+    logger.info("Sumber daya berhasil dibersihkan.")
 
+
+# Create FastAPI app
 app = FastAPI(
-    title="Genesis-RAG v3.0 API",
-    description="A refactored, high-fidelity document enrichment and comparison engine.",
-    version="3.0.0",
+    title="Genesis RAG API",
+    description="API for document enrichment and comparison using RAG",
+    version="3.1",
     lifespan=lifespan
 )
 
-# Include the API router
-app.include_router(api_router)
+# Mount static files (for frontend)
+if not os.path.exists("static"):
+    os.makedirs("static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Set up CORS middleware
+# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Allows all origins
@@ -68,10 +83,15 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-# Mount static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# Include API router
+app.include_router(api_router)
+
+# Root endpoint to serve the main page
+@app.get("/")
+async def read_root(request: Request):
+    from fastapi.responses import FileResponse
+    return FileResponse('index.html')
+
 
 if __name__ == "__main__":
-    logger.info("--- Starting Genesis-RAG FastAPI Server ---")
-    logger.info(f"Access the interactive docs at http://127.0.0.1:8000/docs")
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
