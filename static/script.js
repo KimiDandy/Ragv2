@@ -1,4 +1,19 @@
 let currentDocumentId = null;
+const API_BASE_URL = window.location.origin;
+
+function displayMessage(message, type) {
+    const messageDiv = document.getElementById('message');
+    if (!messageDiv) {
+        console.error('Message div not found');
+        return;
+    }
+    messageDiv.innerText = message;
+    messageDiv.className = `message ${type}`;
+    messageDiv.style.display = 'block';
+    setTimeout(() => {
+        messageDiv.style.display = 'none';
+    }, 5000);
+}
 
 document.getElementById('file-input').addEventListener('change', function(e) {
     const file = e.target.files[0];
@@ -9,14 +24,19 @@ document.getElementById('file-input').addEventListener('change', function(e) {
 });
 
 async function uploadFile(file) {
-    const formData = new FormData();
-    formData.append('file', file);
+    if (!file) {
+        displayMessage('Please select a file first.', 'error');
+        return;
+    }
 
     document.getElementById('upload-container').style.display = 'none';
     document.getElementById('loading-container').style.display = 'block';
 
+    const formData = new FormData();
+    formData.append('file', file);
+
     try {
-        const response = await fetch('http://localhost:8000/upload-document/', {
+        const response = await fetch(`${API_BASE_URL}/upload-document/`, {
             method: 'POST',
             body: formData
         });
@@ -24,14 +44,14 @@ async function uploadFile(file) {
         if (response.ok) {
             const data = await response.json();
             currentDocumentId = data.document_id;
-            
             document.getElementById('loading-container').style.display = 'none';
             document.getElementById('query-container').style.display = 'block';
         } else {
-            throw new Error('Upload gagal');
+            const errorData = await response.json();
+            throw new Error(errorData.detail || 'Upload failed');
         }
     } catch (error) {
-        alert('Error: ' + error.message);
+        displayMessage('Error: ' + error.message, 'error');
         document.getElementById('loading-container').style.display = 'none';
         document.getElementById('upload-container').style.display = 'block';
     }
@@ -40,12 +60,12 @@ async function uploadFile(file) {
 async function askQuestion() {
     const prompt = document.getElementById('query-input').value.trim();
     if (!prompt) {
-        alert('Silakan masukkan pertanyaan');
+        displayMessage('Silakan masukkan pertanyaan', 'error');
         return;
     }
 
     if (!currentDocumentId) {
-        alert('Silakan unggah dokumen terlebih dahulu');
+        displayMessage('Silakan unggah dokumen terlebih dahulu', 'error');
         return;
     }
 
@@ -55,7 +75,7 @@ async function askQuestion() {
     document.getElementById('query-display').textContent = `Pertanyaan: "${prompt}"`;
 
     try {
-        const response = await fetch('http://localhost:8000/ask/', {
+        const response = await fetch(`${API_BASE_URL}/ask/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -68,14 +88,14 @@ async function askQuestion() {
 
         if (response.ok) {
             const data = await response.json();
-            
             document.getElementById('unenriched-result').textContent = data.unenriched_answer;
             document.getElementById('enriched-result').textContent = data.enriched_answer;
         } else {
-            throw new Error('Query gagal');
+            const errorData = await response.json();
+            throw new Error(errorData.detail || 'Query failed');
         }
     } catch (error) {
-        alert('Error: ' + error.message);
+        displayMessage('Error: ' + error.message, 'error');
         document.getElementById('unenriched-result').textContent = 'Error: ' + error.message;
         document.getElementById('enriched-result').textContent = 'Error: ' + error.message;
     }

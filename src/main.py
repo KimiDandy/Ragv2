@@ -6,11 +6,13 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from loguru import logger
 
+from src.core.config import GOOGLE_API_KEY, EMBEDDING_MODEL, CHAT_MODEL
+from src.core.logging_config import setup_logging
 from src.api.endpoints import router as api_router
 from src.core.config import CHROMA_DB_PATH
-from src.core.logging_config import setup_logging
 
 # Setup logging as soon as the application starts
 setup_logging()
@@ -18,22 +20,33 @@ setup_logging()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """
-    Handles application startup and shutdown events.
-    Initializes the ChromaDB client on startup and cleans it up on shutdown.
+    Manages startup and shutdown events for the FastAPI application.
+    Initializes the ChromaDB client and AI models.
     """
-    logger.info("Lifespan startup: Initializing ChromaDB client...")
+    from loguru import logger # Re-import logger to fix scope issue with uvicorn reloader
+    logger.info("Lifespan startup: Connecting to ChromaDB server...")
     try:
-        # Using PersistentClient for local, file-based storage
-        app.state.chroma_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
-        logger.info(f"ChromaDB client initialized from path: {CHROMA_DB_PATH}")
+        app.state.chroma_client = chromadb.HttpClient(host="127.0.0.1", port=8001)
+        app.state.chroma_client.heartbeat()
+        logger.info("Successfully connected to ChromaDB server.")
     except Exception as e:
-        logger.error(f"Failed to initialize ChromaDB client from path {CHROMA_DB_PATH}. Error: {e}")
+        logger.error(f"Failed to connect to ChromaDB server. Ensure the server is running with 'chroma run --path chroma_db --port 8001'. Error: {e}")
         app.state.chroma_client = None
-    
+
+    logger.info("Lifespan startup: Initializing AI models...")
+    try:
+        app.state.embedding_function = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL, google_api_key=GOOGLE_API_KEY)
+        app.state.chat_model = ChatGoogleGenerativeAI(model=CHAT_MODEL, google_api_key=GOOGLE_API_KEY, temperature=0.7)
+        logger.info("AI models initialized successfully.")
+    except Exception as e:
+        logger.error(f"Failed to initialize AI models: {e}")
+        app.state.embedding_function = None
+        app.state.chat_model = None
+
     yield
-    
+
     logger.info("Lifespan shutdown: Cleaning up resources...")
-    app.state.chroma_client = None
+    # No explicit cleanup required for HttpClient or LangChain models
     logger.info("Resources cleaned up.")
 
 app = FastAPI(

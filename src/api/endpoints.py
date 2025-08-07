@@ -15,9 +15,6 @@ from ..pipeline.phase_2_generation import generate_bulk_content
 from ..pipeline.phase_3_synthesis import synthesize_final_markdown
 from ..pipeline.phase_4_vectorization import vectorize_and_store
 from ..core.config import (
-    GOOGLE_API_KEY,
-    EMBEDDING_MODEL,
-    GENERATION_MODEL,
     RAG_PROMPT_TEMPLATE,
     CHROMA_COLLECTION
 )
@@ -28,21 +25,11 @@ class QueryRequest(BaseModel):
     document_id: str
     prompt: str
 
-async def perform_rag_query(prompt: str, doc_id: str, version: str, client: chromadb.Client) -> str:
+async def perform_rag_query(prompt: str, doc_id: str, version: str, client: chromadb.Client, embeddings, llm, prompt_template) -> str:
     try:
-        from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
         from langchain_chroma import Chroma
-        from langchain.prompts import PromptTemplate
-        from langchain.chains import LLMChain
+        from langchain.chains import RetrievalQA
 
-        if not GOOGLE_API_KEY:
-            raise ValueError("Google API key not configured.")
-
-        embeddings = GoogleGenerativeAIEmbeddings(
-            model=EMBEDDING_MODEL,
-            google_api_key=GOOGLE_API_KEY
-        )
-        
         vector_store = Chroma(
             client=client,
             collection_name=CHROMA_COLLECTION,
@@ -66,19 +53,20 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, client: chro
         logger.debug(context)
         logger.debug("--- END OF CONTEXT ---")
         
-        llm = ChatGoogleGenerativeAI(
-            model=GENERATION_MODEL,
-            google_api_key=GOOGLE_API_KEY,
-            temperature=0.7
-        )
-        
-        prompt_template = PromptTemplate(
+        prompt_template_obj = PromptTemplate(
             input_variables=["context", "question"],
-            template=RAG_PROMPT_TEMPLATE
+            template=prompt_template
         )
         
-        chain = LLMChain(llm=llm, prompt=prompt_template)
-        answer = await chain.arun(context=context, question=prompt)
+        chain = RetrievalQA.from_chain_type(
+            llm=llm,
+            chain_type="stuff",
+            retriever=retriever,
+            return_source_documents=True,
+            chain_type_kwargs={"prompt": prompt_template_obj}
+        )
+        result = await chain.ainvoke({"query": prompt})
+        answer = result.get("result", "No answer found.")
         
         return answer.strip()
         
@@ -147,18 +135,29 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
 async def ask_question(request: Request, query: QueryRequest):
     try:
         chroma_client = request.app.state.chroma_client
+        embeddings = request.app.state.embedding_function
+        chat_model = request.app.state.chat_model
+        
+        if not embeddings or not chat_model:
+            raise HTTPException(status_code=503, detail="AI models not initialized")
         
         v1_task = perform_rag_query(
             query.prompt, 
             query.document_id, 
             "v1", 
-            chroma_client
+            chroma_client, 
+            embeddings, 
+            chat_model, 
+            RAG_PROMPT_TEMPLATE
         )
         v2_task = perform_rag_query(
             query.prompt, 
             query.document_id, 
             "v2", 
-            chroma_client
+            chroma_client, 
+            embeddings, 
+            chat_model, 
+            RAG_PROMPT_TEMPLATE
         )
         
         v1_answer, v2_answer = await asyncio.gather(v1_task, v2_task)
