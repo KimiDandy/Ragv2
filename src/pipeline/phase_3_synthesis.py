@@ -5,6 +5,20 @@ from loguru import logger
 from ..core.config import PIPELINE_ARTEFACTS_DIR
 
 def synthesize_final_markdown(doc_output_dir: str) -> str:
+    """
+    Mensintesis file markdown akhir (v2) dengan menggabungkan konten asli dan konten yang diperkaya.
+
+    Fungsi ini adalah Fase 3 dari proyek Genesis-RAG.
+    Fungsi ini membaca markdown_v1.md dan generated_content.json, lalu dengan cerdas
+    menyisipkan definisi, penyederhanaan, dan deskripsi gambar sebagai catatan kaki (footnotes)
+    ke dalam dokumen asli untuk membuat markdown_v2.md.
+
+    Args:
+        doc_output_dir (str): Direktori output yang berisi file-file yang diperlukan.
+
+    Returns:
+        str: Path menuju file markdown_v2.md yang telah disintesis.
+    """
     doc_path = Path(doc_output_dir)
     markdown_path = doc_path / "markdown_v1.md"
     generated_content_path = doc_path / "generated_content.json"
@@ -16,7 +30,6 @@ def synthesize_final_markdown(doc_output_dir: str) -> str:
             raw_content = f.read()
         
         try:
-            # A common issue is the response being a markdown block
             if '```json' in raw_content:
                 clean_json_string = raw_content.split('```json\n')[1].split('```')[0]
             else:
@@ -24,25 +37,23 @@ def synthesize_final_markdown(doc_output_dir: str) -> str:
             
             generated_content = json.loads(clean_json_string)
 
-            # If the result of loading is a string, it might be double-encoded
             if isinstance(generated_content, str):
                 generated_content = json.loads(generated_content)
 
         except (json.JSONDecodeError, IndexError) as e:
-            logger.error(f"Error decoding JSON from {generated_content_path}: {e}")
+            logger.error(f"Error saat mendekode JSON dari {generated_content_path}: {e}")
             return ""
 
     except FileNotFoundError as e:
-        logger.error(f"Required file not found - {e}")
+        logger.error(f"File yang dibutuhkan tidak ditemukan - {e}")
         return ""
 
     footnote_counter = 1
     footnotes_list = []
     modified_markdown = markdown_content
 
-    # Ensure generated_content is a dictionary before proceeding
     if not isinstance(generated_content, dict):
-        logger.error(f"Parsed content from {generated_content_path} is not a dictionary.")
+        logger.error(f"Konten yang diparsing dari {generated_content_path} bukan sebuah dictionary.")
         return ""
 
     for item in generated_content.get("terms_to_define", []):
@@ -80,7 +91,7 @@ def synthesize_final_markdown(doc_output_dir: str) -> str:
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(final_content)
 
-    logger.info(f"Phase 3 completed. Final markdown saved to: {output_path}")
+    logger.info(f"Fase 3 selesai. Markdown final disimpan di: {output_path}")
     return str(output_path)
 
 if __name__ == '__main__':

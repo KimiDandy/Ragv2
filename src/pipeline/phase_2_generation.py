@@ -6,9 +6,22 @@ from loguru import logger
 
 from ..core.config import GENERATION_MODEL, PIPELINE_ARTEFACTS_DIR, GOOGLE_API_KEY
 
-# The genai model is configured in phase_1_planning or should be handled at app startup.
-
 def generate_bulk_content(doc_output_dir: str) -> str:
+    """
+    Mengeksekusi rencana enrichment untuk menghasilkan konten baru secara massal.
+
+    Fungsi ini adalah Fase 2 dari proyek Genesis-RAG.
+    Fungsi ini membaca rencana dari enrichment_plan.json, menggabungkannya dengan
+    dokumen asli dan gambar-gambar yang relevan, lalu mengirimkan permintaan multimodal
+    ke Gemini API untuk menghasilkan semua konten yang dibutuhkan dalam satu panggilan.
+
+    Args:
+        doc_output_dir (str): Direktori output dari fase sebelumnya yang berisi
+                              file-file yang diperlukan (markdown, plan, assets).
+
+    Returns:
+        str: Path menuju file generated_content.json yang berisi konten hasil generasi.
+    """
     doc_path = Path(doc_output_dir)
     markdown_path = doc_path / "markdown_v1.md"
     plan_path = doc_path / "enrichment_plan.json"
@@ -20,7 +33,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         with open(plan_path, 'r', encoding='utf-8') as f:
             enrichment_plan = json.load(f)
     except FileNotFoundError as e:
-        logger.error(f"Required file not found - {e}")
+        logger.error(f"File yang dibutuhkan tidak ditemukan - {e}")
         return ""
 
     image_parts = []
@@ -33,9 +46,9 @@ def generate_bulk_content(doc_output_dir: str) -> str:
                 image_parts.append(img)
                 image_parts.append(f"\n--- Image Filename: {image_filename} ---\n")
             except Exception as e:
-                logger.warning(f"Could not process image {image_filename}: {e}")
+                logger.warning(f"Tidak dapat memproses gambar {image_filename}: {e}")
         else:
-            logger.warning(f"Image file not found: {image_path}")
+            logger.warning(f"File gambar tidak ditemukan: {image_path}")
 
     prompt_parts = [
         "Role: You are a living encyclopedia and an expert technical writer.",
@@ -49,7 +62,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         "\n--- Image Assets ---"
     ] + image_parts
 
-    logger.info("Sending multimodal request to Gemini for content generation...")
+    logger.info("Mengirim permintaan multimodal ke Gemini untuk generasi konten...")
     model = genai.GenerativeModel(GENERATION_MODEL)
     response = model.generate_content(prompt_parts)
   
@@ -57,20 +70,18 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         json_text = response.text.strip().replace('```json', '').replace('```', '').strip()
         content_data = json.loads(json_text)
     except (json.JSONDecodeError, AttributeError) as e:
-        logger.error(f"Error decoding JSON from Gemini response: {e}")
-        logger.error(f"Raw response text:\n{response.text}")
+        logger.error(f"Error saat mendekode JSON dari respons Gemini: {e}")
+        logger.error(f"Teks respons mentah:\n{response.text}")
         return ""
 
     output_path = doc_path / "generated_content.json"
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(content_data, f, indent=2)
 
-    logger.info(f"Phase 2 completed. Generated content saved to: {output_path}")
+    logger.info(f"Fase 2 selesai. Konten yang digenerasi disimpan di: {output_path}")
     return str(output_path)
 
 if __name__ == '__main__':
-    # Standalone execution requires GOOGLE_API_KEY to be set in the environment
-    # and the genai library to be configured.
     if GOOGLE_API_KEY:
         genai.configure(api_key=GOOGLE_API_KEY)
     else:

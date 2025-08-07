@@ -16,6 +16,23 @@ from ..core.config import (
 
 
 def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_file: str, version: str) -> bool:
+    """
+    Melakukan vektorisasi pada file markdown dan menyimpannya ke dalam ChromaDB.
+
+    Fungsi ini adalah Fase 4 dari proyek Genesis-RAG.
+    Fungsi ini membaca file markdown (v1 atau v2), membaginya menjadi beberapa bagian (chunks),
+    membuat embedding untuk setiap chunk menggunakan model Google AI, dan menyimpannya
+    ke dalam koleksi ChromaDB dengan metadata yang sesuai.
+
+    Args:
+        doc_output_dir (str): Direktori output yang berisi file markdown.
+        client (chromadb.Client): Klien ChromaDB yang sudah diinisialisasi.
+        markdown_file (str): Nama file markdown yang akan diproses (misalnya, 'markdown_v2.md').
+        version (str): Versi dokumen ('v1' atau 'v2') untuk metadata.
+
+    Returns:
+        bool: True jika berhasil, False jika terjadi kesalahan.
+    """
     doc_path = Path(doc_output_dir)
     doc_id = doc_path.name
     markdown_path = Path(doc_output_dir) / markdown_file
@@ -24,7 +41,7 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
         with open(markdown_path, 'r', encoding='utf-8') as f:
             final_content = f.read()
     except FileNotFoundError:
-        logger.error(f"Final markdown file not found at {markdown_path}")
+        logger.error(f"File markdown final tidak ditemukan di {markdown_path}")
         return False
 
     text_splitter = RecursiveCharacterTextSplitter(
@@ -35,12 +52,12 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
     chunks = text_splitter.split_text(final_content)
 
     if not chunks:
-        logger.warning("No text chunks were generated from the document. Nothing to vectorize.")
+        logger.warning("Tidak ada potongan teks yang dihasilkan dari dokumen. Tidak ada yang perlu divektorisasi.")
         return True  
 
-    logger.info("Initializing Google Generative AI embedding function...")
+    logger.info("Menginisialisasi fungsi embedding Google Generative AI...")
     if not GOOGLE_API_KEY:
-        logger.error("GOOGLE_API_KEY not found in environment variables or config.")
+        logger.error("GOOGLE_API_KEY tidak ditemukan di variabel lingkungan atau konfigurasi.")
         return False
 
     embeddings = GoogleGenerativeAIEmbeddings(
@@ -53,19 +70,17 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
         embedding_function=embeddings,
     )
 
-    logger.info(f"Adding {len(chunks)} chunks to the Chroma vector store (version: {version})...")
+    logger.info(f"Menambahkan {len(chunks)} potongan teks ke vector store Chroma (versi: {version})...")
     vector_store.add_texts(
         texts=chunks,
         metadatas=[{"source_document": doc_id, "version": version} for _ in chunks],
         ids=[f"{doc_id}_{version}_{i}" for i in range(len(chunks))]
     )
 
-    logger.info(f"Phase 4 completed. Document {doc_id} (version: {version}) has been vectorized and stored.")
+    logger.info(f"Fase 4 selesai. Dokumen {doc_id} (versi: {version}) telah divektorisasi dan disimpan.")
     return True
 
 if __name__ == '__main__':
-    # This block is for standalone testing of the vectorization phase.
-    # It requires the pipeline to have been run at least once to generate artefacts.
     base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
     if not base_artefacts_dir.exists():
         logger.error(f"'{PIPELINE_ARTEFACTS_DIR}' directory not found.")
@@ -81,7 +96,7 @@ if __name__ == '__main__':
             doc_id = latest_doc_dir.name
             logger.info(f"Processing the most recent document: {doc_id}")
             
-            # Note: Assuming the standard final markdown file name and using doc_id as version.
+
             success = vectorize_and_store(
                 doc_output_dir=str(latest_doc_dir), 
                 client=standalone_client, 

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrichment Document RAG</title>
+    <title>Genesis-RAG: Document Enhancement</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Enrichment RAG</h1>
-            <p>Enrichment Dokumen RAG</p>
+            <h1>Genesis-RAG</h1>
+            <p>Tingkatkan dan Bandingkan Dokumen Anda Secara Cerdas</p>
         </div>
 
         <div class="content">
@@ -24,11 +24,11 @@
 
             <div class="loading-container" id="loading-container">
                 <div class="spinner"></div>
-                <h3>Proses dokumen</h3>
+                <h3>Memproses Dokumen Anda...</h3>
             </div>
             <div class="query-container" id="query-container">
-                <h3>Dokumen berhasil diproses! </h3>
-                <p>Masukkan pertanyaan untuk melihat perbandingan jawaban:</p>
+                <h3>Dokumen Siap Dianalisis</h3>
+                <p>Ajukan pertanyaan untuk membandingkan jawaban dari dokumen asli dan versi yang telah ditingkatkan:</p>
                 <textarea 
                     id="query-input" 
                     placeholder="Contoh: Apa saja keuntungan investasi yang dibahas dalam dokumen ini?"
@@ -40,18 +40,18 @@
 
             <div class="results-container" id="results-container">
                 <div class="results-header">
-                    <h2>Hasil Perbandingan</h2>
+                    <h2>Hasil Perbandingan Jawaban</h2>
                     <p id="query-display"></p>
                 </div>
                 <div class="results-grid">
                     <div class="result-card">
-                        <h2>Dokumen Asli (v1)</h2>
+                        <h2>Jawaban dari Dokumen Asli (v1)</h2>
                         <div class="result-content" id="unenriched-result">
                             <span class="loading-text">Menunggu pertanyaan...</span>
                         </div>
                     </div>
                     <div class="result-card enriched">
-                        <h2>Dokumen Diperkaya (v2)</h2>
+                        <h2>Jawaban dari Dokumen yang Di-Enhancement (v2)</h2>
                         <div class="result-content" id="enriched-result">
                             <span class="loading-text">Menunggu pertanyaan...</span>
                         </div>

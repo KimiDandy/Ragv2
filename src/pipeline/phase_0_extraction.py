@@ -8,21 +8,20 @@ from ..core.config import PIPELINE_ARTEFACTS_DIR
 
 def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_DIR) -> dict:
     """
-    Processes a PDF file locally to extract markdown text and images, and inserts placeholders.
+    Memproses file PDF secara lokal untuk mengekstrak teks markdown dan gambar, lalu menyisipkan placeholder.
 
-    This function corresponds to Phase 0 of the Genesis-RAG project.
-    It implements a robust two-step process:
-    1. Extracts all unique images from the PDF using PyMuPDF.
-    2. Reconstructs the document flow by ordering text and image blocks by their
-       position on the page, then generates a markdown file with custom image placeholders.
+    Fungsi ini adalah Fase 0 dari proyek Genesis-RAG. Proses ini mengimplementasikan beberapa langkah utama:
+    1. Mengekstrak semua gambar unik dari PDF menggunakan PyMuPDF dan menyimpannya.
+    2. Mengambil semua blok teks dan blok gambar dari setiap halaman.
+    3. Mengurutkan blok-blok tersebut berdasarkan posisi vertikalnya untuk merekonstruksi alur dokumen.
+    4. Menghasilkan file markdown (markdown_v1.md) yang berisi teks dan placeholder untuk gambar.
 
     Args:
-        pdf_path (str): The path to the input PDF file.
-        output_base_dir (str): The base directory to store the processed artefacts.
+        pdf_path (str): Path menuju file PDF yang akan diproses.
+        output_base_dir (str): Direktori dasar untuk menyimpan artefak yang diproses.
 
     Returns:
-        dict: A dictionary containing the document_id, paths to the markdown file,
-              and the assets directory.
+        dict: Dictionary yang berisi document_id dan path ke artefak yang dihasilkan.
     """
     doc_id = str(uuid.uuid4())
     doc_output_dir = Path(output_base_dir) / doc_id
@@ -34,12 +33,11 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
     final_markdown_content = ""
 
     for page_num, page in enumerate(doc):
-        # Step 1: Extract and save all unique images on the page
         image_list = page.get_images(full=True)
         for img_index, img in enumerate(image_list):
             xref = img[0]
             if xref in image_xrefs:
-                continue  # Skip duplicate images
+                continue
             image_xrefs.add(xref)
             
             base_image = doc.extract_image(xref)
@@ -63,17 +61,14 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
         for b in blocks:
             text_blocks.append((b[1], "text", b[4].strip(), b[:4]))
 
-        # Combine and sort all blocks by their vertical position (y0)
         all_blocks = sorted(image_blocks + text_blocks, key=lambda x: x[0])
 
-        # Step 3: Construct markdown with placeholders
         for _, block_type, content, _ in all_blocks:
             if block_type == "text" and content:
                 final_markdown_content += content + "\n\n"
             elif block_type == "image":
                 final_markdown_content += f"[IMAGE_PLACEHOLDER: {content}]\n\n"
 
-    # Save the final markdown file
     md_output_path = doc_output_dir / "markdown_v1.md"
     with open(md_output_path, "w", encoding="utf-8") as f:
         f.write(final_markdown_content)
@@ -87,20 +82,17 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
         "output_dir": str(doc_output_dir)
     }
 
-    logger.info(f"Phase 0 completed for document: {pdf_path}")
-    logger.info(f"Artefacts saved in: {doc_output_dir}")
+    logger.info(f"Fase 0 selesai untuk dokumen: {pdf_path}")
+    logger.info(f"Artefak disimpan di: {doc_output_dir}")
     
     return result
 
 if __name__ == '__main__':
-    # Example usage: Create a dummy PDF with an image for testing.
     if not os.path.exists("dummy.pdf"):
         doc = fitz.open() 
         page = doc.new_page()
         page.insert_text((50, 72), "This is the first paragraph.")
-        # This is a simple test; a real image would be needed for full validation
         try:
-            # Try to add a simple line drawing as a placeholder for an image
             rect = fitz.Rect(72, 100, 200, 200)
             page.draw_rect(rect, color=(0,0,1), fill=(0,1,0))
             page.insert_text((50, 250), "This is the second paragraph, after the image.")

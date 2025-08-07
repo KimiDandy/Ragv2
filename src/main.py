@@ -21,20 +21,22 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGener
 from src.api.endpoints import router as api_router
 from src.core.config import CHROMA_DB_PATH, GOOGLE_API_KEY, EMBEDDING_MODEL, CHAT_MODEL
 
-# --- Simplified Loguru Configuration ---
 logger.remove()
 logger.add(
     sys.stderr,
     level="INFO",
     format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan> - <level>{message}</level>"
 )
-# --- End of Logging Configuration ---
 
-# Load environment variables from .env file
 load_dotenv()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """
+    Mengelola event startup dan shutdown untuk aplikasi FastAPI.
+    Fungsi ini menginisialisasi client ChromaDB dan model-model AI
+    saat aplikasi pertama kali dijalankan untuk memastikan semua sumber daya siap pakai.
+    """
     logger.info("Startup Aplikasi: Menginisialisasi semua sumber daya...")
     try:
         # 1. Use PersistentClient for a reliable embedded mode
@@ -61,32 +63,26 @@ async def lifespan(app: FastAPI):
     logger.info("Sumber daya berhasil dibersihkan.")
 
 
-# Create FastAPI app
 app = FastAPI(
     title="Genesis RAG API",
-    description="API for document enrichment and comparison using RAG",
-    version="3.1",
+    description="API untuk enrichment dan perbandingan dokumen menggunakan arsitektur RAG",
+    version="3.2",
     lifespan=lifespan
 )
 
-# Mount static files (for frontend)
 if not os.path.exists("static"):
     os.makedirs("static")
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
-# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Include API router
 app.include_router(api_router)
 
-# Root endpoint to serve the main page
 @app.get("/")
 async def read_root(request: Request):
     from fastapi.responses import FileResponse

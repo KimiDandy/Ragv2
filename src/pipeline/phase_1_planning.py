@@ -5,29 +5,29 @@ from loguru import logger
 
 from ..core.config import GOOGLE_API_KEY, PLANNING_MODEL, PIPELINE_ARTEFACTS_DIR
 
-# Configure the generative AI model
+
 genai.configure(api_key=GOOGLE_API_KEY)
 
 def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
     """
-    Analyzes a markdown document to create a comprehensive enrichment plan.
+    Menganalisis dokumen markdown untuk membuat rencana enrichment yang komprehensif.
 
-    This function corresponds to Phase 1 of the Genesis-RAG project.
-    It reads the content of markdown_v1.md, sends it to the Gemini API with a 
-    specific prompt, and saves the resulting JSON plan.
+    Fungsi ini adalah Fase 1 dari proyek Genesis-RAG.
+    Fungsi ini membaca konten dari markdown_v1.md, mengirimkannya ke Gemini API dengan
+    prompt spesifik, dan menyimpan hasilnya sebagai file JSON (enrichment_plan.json).
 
     Args:
-        markdown_path (str): The path to the input markdown_v1.md file.
-        doc_output_dir (str): The directory where the enrichment_plan.json will be saved.
+        markdown_path (str): Path menuju file markdown_v1.md.
+        doc_output_dir (str): Direktori tempat menyimpan file enrichment_plan.json.
 
     Returns:
-        str: The path to the generated enrichment_plan.json file.
+        str: Path menuju file enrichment_plan.json yang telah dibuat.
     """
     try:
         with open(markdown_path, 'r', encoding='utf-8') as f:
             markdown_content = f.read()
     except FileNotFoundError:
-        logger.error(f"Markdown file not found at {markdown_path}")
+        logger.error(f"File markdown tidak ditemukan di {markdown_path}")
         return ""
 
     prompt = f"""Role: You are a multi-disciplinary research analyst.
@@ -54,7 +54,7 @@ Document to Analyze:
 ---
 """
 
-    logger.info("Sending request to Gemini for enrichment plan...")
+    logger.info("Mengirim permintaan ke Gemini untuk membuat rencana enrichment...")
     model = genai.GenerativeModel(PLANNING_MODEL)
     response = model.generate_content(prompt)
 
@@ -62,15 +62,15 @@ Document to Analyze:
         json_text = response.text.strip().replace('```json', '').replace('```', '').strip()
         plan_data = json.loads(json_text)
     except (json.JSONDecodeError, AttributeError) as e:
-        logger.error(f"Error decoding JSON from Gemini response: {e}")
-        logger.error(f"Raw response text:\n{response.text}")
+        logger.error(f"Error saat mendekode JSON dari respons Gemini: {e}")
+        logger.error(f"Teks respons mentah:\n{response.text}")
         return ""
 
     plan_output_path = Path(doc_output_dir) / "enrichment_plan.json"
     with open(plan_output_path, 'w', encoding='utf-8') as f:
         json.dump(plan_data, f, indent=2)
 
-    logger.info(f"Phase 1 completed. Enrichment plan saved to: {plan_output_path}")
+    logger.info(f"Fase 1 selesai. Rencana enrichment disimpan di: {plan_output_path}")
     return str(plan_output_path)
 
 if __name__ == '__main__':

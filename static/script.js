@@ -31,7 +31,7 @@ function showMessage(message, type = 'error') {
 fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if (file) {
-        fileNameDiv.textContent = `File selected: ${file.name}`;
+        fileNameDiv.textContent = `File terpilih: ${file.name}`;
         uploadFile(file);
     }
 });
@@ -50,14 +50,14 @@ async function uploadFile(file) {
         });
         const data = await response.json();
         if (!response.ok) {
-            throw new Error(data.detail || 'Upload failed');
+            throw new Error(data.detail || 'Gagal mengunggah file');
         }
         currentDocumentId = data.document_id;
         loadingContainer.style.display = 'none';
         queryContainer.style.display = 'block';
-        showMessage('Document processed successfully!', 'success');
+        showMessage('Dokumen berhasil diproses!', 'success');
     } catch (error) {
-        showMessage(`Error: ${error.message}`);
+        showMessage(`Terjadi kesalahan: ${error.message}`);
         loadingContainer.style.display = 'none';
         uploadContainer.style.display = 'block';
     }
@@ -66,16 +66,16 @@ async function uploadFile(file) {
 async function askQuestion() {
     const prompt = queryInput.value.trim();
     if (!prompt || !currentDocumentId) {
-        showMessage('Please enter a question and upload a document first.');
+        showMessage('Silakan masukkan pertanyaan dan unggah dokumen terlebih dahulu.');
         return;
     }
 
     queryBtn.disabled = true;
-    queryBtn.textContent = "Processing...";
-    unenrichedResultDiv.innerHTML = '<span class="loading-text">Processing...</span>';
-    enrichedResultDiv.innerHTML = '<span class="loading-text">Processing...</span>';
+    queryBtn.textContent = "Sedang memproses...";
+    unenrichedResultDiv.innerHTML = '<span class="loading-text">Sedang memproses...</span>';
+    enrichedResultDiv.innerHTML = '<span class="loading-text">Sedang memproses...</span>';
     resultsContainer.style.display = 'block';
-    document.getElementById('query-display').textContent = `Question: "${prompt}"`;
+    document.getElementById('query-display').textContent = `Pertanyaan: "${prompt}"`;
 
     try {
         const response = await fetch(`${API_BASE_URL}/ask/`, {
@@ -85,18 +85,18 @@ async function askQuestion() {
         });
         const data = await response.json();
         if (!response.ok) {
-            throw new Error(data.detail || 'Query failed');
+            throw new Error(data.detail || 'Gagal mengirim pertanyaan');
         }
-        // Use "marked" library to render answers if the response is markdown
-        unenrichedResultDiv.innerHTML = data.unenriched_answer; // Replace with marked.parse(data.unenriched_answer) if you add marked.js
+
+        unenrichedResultDiv.innerHTML = data.unenriched_answer;
         enrichedResultDiv.innerHTML = data.enriched_answer;
     } catch (error) {
-        showMessage(`Error: ${error.message}`);
-        unenrichedResultDiv.textContent = `Error: ${error.message}`;
-        enrichedResultDiv.textContent = `Error: ${error.message}`;
+        showMessage(`Terjadi kesalahan: ${error.message}`);
+        unenrichedResultDiv.textContent = `Terjadi kesalahan: ${error.message}`;
+        enrichedResultDiv.textContent = `Terjadi kesalahan: ${error.message}`;
     } finally {
         queryBtn.disabled = false;
-        queryBtn.textContent = "Ask Question";
+        queryBtn.textContent = "Kirim Pertanyaan";
     }
 }
 
