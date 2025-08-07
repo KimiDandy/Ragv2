@@ -51,7 +51,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
     ] + image_parts
 
     print("Sending multimodal request to Gemini for content generation...")
-    model = genai.GenerativeModel('gemini-2.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-pro')
     response = model.generate_content(prompt_parts)
   
     try:

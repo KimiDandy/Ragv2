@@ -10,7 +10,25 @@ def synthesize_final_markdown(doc_output_dir: str) -> str:
         with open(markdown_path, 'r', encoding='utf-8') as f:
             markdown_content = f.read()
         with open(generated_content_path, 'r', encoding='utf-8') as f:
-            generated_content = json.load(f)
+            raw_content = f.read()
+        
+        try:
+            # A common issue is the response being a markdown block
+            if '```json' in raw_content:
+                clean_json_string = raw_content.split('```json\n')[1].split('```')[0]
+            else:
+                clean_json_string = raw_content
+            
+            generated_content = json.loads(clean_json_string)
+
+            # If the result of loading is a string, it might be double-encoded
+            if isinstance(generated_content, str):
+                generated_content = json.loads(generated_content)
+
+        except (json.JSONDecodeError, IndexError) as e:
+            print(f"Error decoding JSON from {generated_content_path}: {e}")
+            return ""
+
     except FileNotFoundError as e:
         print(f"Error: Required file not found - {e}")
         return ""
@@ -18,6 +36,11 @@ def synthesize_final_markdown(doc_output_dir: str) -> str:
     footnote_counter = 1
     footnotes_list = []
     modified_markdown = markdown_content
+
+    # Ensure generated_content is a dictionary before proceeding
+    if not isinstance(generated_content, dict):
+        print(f"Error: Parsed content from {generated_content_path} is not a dictionary.")
+        return ""
 
     for item in generated_content.get("terms_to_define", []):
         term = item.get("term")
