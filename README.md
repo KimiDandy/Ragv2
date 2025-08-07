@@ -1,102 +1,113 @@
-# Genesis-RAG: Mesin Peningkat dan Pembanding Dokumen
+# Genesis-RAG: Advanced RAG with Automated Document Enrichment
+Sebuah sistem end-to-end yang mendemonstrasikan pipeline RAG canggih dengan fase enrichment dokumen otomatis untuk memberikan jawaban yang lebih kaya konteks. Proyek ini dibangun dengan arsitektur modular dan praktik terbaik rekayasa perangkat lunak.
 
-Genesis-RAG adalah sebuah aplikasi web canggih yang dirancang untuk meningkatkan (enrich) dokumen PDF dan membandingkan pemahaman antara versi asli dengan versi yang telah ditingkatkan secara cerdas. Dibangun dengan FastAPI, Google Gemini, dan ChromaDB, aplikasi ini menyediakan solusi lengkap untuk analisis dokumen mendalam melalui arsitektur Retrieval-Augmented Generation (RAG).
+## Masalah & Solusi
+Sistem RAG standar seringkali gagal menjawab pertanyaan yang membutuhkan pemahaman implisit atau pengetahuan domain yang tidak tertulis secara eksplisit dalam teks. Genesis-RAG mengatasi ini dengan pipeline ingesti multi-tahap yang secara proaktif memperkaya (enrich) dokumen. Hasilnya adalah knowledge base yang superior, memungkinkan jawaban yang lebih akurat dan komprehensif dibandingkan dengan RAG naif.
 
-## Fitur Utama
+## Tumpukan Teknologi
+| Kategori | Teknologi |
+| :--- | :--- |
+| Backend | Python, FastAPI |
+| Orkestrasi AI | LangChain |
+| Model AI | Google Gemini (Embeddings & Generative) |
+| Database Vektor | ChromaDB (Embedded Mode) |
+| Pemrosesan Dokumen | PyMuPDF |
+| Frontend | Vanilla JavaScript, HTML5, CSS3 |
+| Logging | Loguru |
 
-- **Unggah Dokumen PDF**: Unggah dokumen PDF apa pun untuk diproses oleh pipeline.
-- **Peningkatan Dokumen Otomatis**: Dokumen secara otomatis dianalisis untuk mendefinisikan istilah kunci, menyederhanakan konsep kompleks, dan mendeskripsikan gambar.
-- **Kueri Bahasa Alami**: Ajukan pertanyaan dalam bahasa alami terhadap dokumen.
-- **Perbandingan Berdampingan**: Dapatkan jawaban dari dokumen asli dan versi yang telah ditingkatkan secara bersamaan untuk melihat perbedaan pemahaman secara langsung.
-- **Antarmuka Web Intuitif**: UI yang bersih dan responsif untuk interaksi yang mudah.
+## Arsitektur Alur Kerja
+Aplikasi ini terdiri dari dua alur kerja utama: Ingesti Dokumen dan Kueri RAG.
 
-## Arsitektur
+```mermaid
+graph TD
+    subgraph "Alur Kerja Ingesti"
+        A[PDF] --> B(Fase 0: Ekstraksi);
+        B --> C(Fase 1: Perencanaan);
+        C --> D(Fase 2: Generasi Konten);
+        D --> E(Fase 3: Sintesis v2);
+        E --> F1(Fase 4: Vektorisasi v1);
+        E --> F2(Fase 4: Vektorisasi v2);
+        F1 & F2 --> G((ChromaDB));
+    end
 
-Genesis-RAG menggunakan arsitektur modular yang terdiri dari beberapa komponen utama:
-
-1.  **Frontend**: Antarmuka web statis (`index.html`, `CSS`, `JavaScript`) yang memungkinkan pengguna berinteraksi dengan sistem.
-2.  **Backend (FastAPI)**: Server yang menangani permintaan API, logika bisnis, dan menjalankan pipeline pemrosesan dokumen.
-3.  **Pipeline Peningkatan Dokumen**: Serangkaian skrip Python yang melakukan:
-    -   **Fase 0 (Ekstraksi)**: Mengekstrak teks dan gambar dari PDF menjadi format Markdown.
-    -   **Fase 1 (Perencanaan)**: Menganalisis Markdown untuk membuat rencana peningkatan (misalnya, istilah apa yang perlu didefinisikan).
-    -   **Fase 2 (Generasi)**: Menggunakan Google Gemini untuk menghasilkan konten yang dibutuhkan sesuai rencana.
-    -   **Fase 3 (Sintesis)**: Menggabungkan konten asli dengan konten yang baru dibuat menjadi versi dokumen final yang telah ditingkatkan (`markdown_v2.md`).
-    -   **Fase 4 (Vektorisasi)**: Mengubah kedua versi dokumen (asli dan ditingkatkan) menjadi vektor dan menyimpannya di ChromaDB.
-4.  **Vector Store (ChromaDB)**: Database vektor yang berjalan dalam mode *embedded* untuk menyimpan dan mengambil data dokumen secara efisien.
-5.  **Model AI (Google Gemini)**: Digunakan untuk pembuatan embedding (vektorisasi) dan menjawab pertanyaan pengguna (chat).
-
-## Instalasi
-
-Ikuti langkah-langkah berikut untuk menjalankan proyek ini secara lokal:
-
-1.  **Clone Repositori**
-
-    ```bash
-    git clone <URL_REPOSITORI_ANDA>
-    cd RAGv2
-    ```
-
-2.  **Buat dan Aktifkan Virtual Environment**
-
-    ```bash
-    # Windows
-    python -m venv venv
-    .\venv\Scripts\activate
-    ```
-
-3.  **Instal Dependensi**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Konfigurasi Environment Variable**
-
-    -   Salin file `.env_example` menjadi `.env`.
-    -   Buka file `.env` dan masukkan `GOOGLE_API_KEY` Anda.
-
-    ```
-    GOOGLE_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    ```
-
-## Cara Penggunaan
-
-1.  **Jalankan Server FastAPI**
-
-    Dari direktori root proyek, jalankan perintah berikut:
-
-    ```bash
-    uvicorn src.main:app --reload
-    ```
-
-2.  **Buka Aplikasi di Browser**
-
-    Buka browser Anda dan akses alamat `http://127.0.0.1:8000`.
-
-3.  **Gunakan Aplikasi**
-    -   Klik tombol "Pilih File PDF" untuk mengunggah dokumen.
-    -   Tunggu hingga proses peningkatan selesai (Anda akan melihat notifikasi sukses).
-    -   Masukkan pertanyaan Anda di kotak teks dan klik "Kirim Pertanyaan".
-    -   Lihat perbandingan jawaban dari dokumen asli dan dokumen yang telah ditingkatkan.
-
-## Struktur Proyek
-
+    subgraph "Alur Kerja Kueri"
+        H[User Prompt] --> I{API /ask};
+        I -- async --> J1(RAG Chain v1);
+        I -- async --> J2(RAG Chain v2);
+        J1 & J2 --> G;
+        J1 --> K1[Jawaban v1];
+        J2 --> K2[Jawaban v2];
+        K1 & K2 --> L[UI Perbandingan];
+    end
 ```
-/RAGv2
-|-- .env                  # File environment variable (JANGAN di-commit)
-|-- .env_example          # Contoh file environment
-|-- chroma_db/            # Direktori database ChromaDB (embedded)
-|-- index.html            # File utama frontend
-|-- pipeline_artefacts/   # Output dari setiap fase pipeline (dokumen yang diproses)
-|-- requirements.txt      # Daftar dependensi Python
-|-- README.md             # Dokumentasi proyek
-|-- src/
-|   |-- api/              # Modul API endpoints
-|   |-- core/             # Konfigurasi dan logika inti
-|   |-- pipeline/         # Skrip untuk setiap fase pemrosesan
-|   |-- main.py           # Titik masuk aplikasi FastAPI
-|-- static/
-|   |-- script.js         # Logika JavaScript frontend
-|   |-- style.css         # Styling untuk frontend
-|-- venv/                 # Direktori virtual environment
+
+## Pengembangan Lokal (Local Development)
+
+### 1. Prasyarat
+- Python 3.9+
+- Git
+
+### 2. Instalasi
+```bash
+# 1. Kloning repositori
+git clone <URL_REPOSITORI_ANDA>
+cd RAGv2
+
+# 2. Buat dan aktifkan virtual environment
+python -m venv venv
+# Windows:
+# .\venv\Scripts\activate
+# macOS/Linux:
+# source venv/bin/activate
+
+# 3. Instal semua dependensi
+pip install -r requirements.txt
+
+# 4. Siapkan environment variables
+cp .env_example .env
+# Edit file .env dan masukkan Google API Key Anda
 ```
+
+### 3. Menjalankan Aplikasi
+Proyek ini menggunakan ChromaDB dalam mode embedded. Anda tidak perlu menjalankan server ChromaDB terpisah.
+
+```bash
+# Cukup jalankan server FastAPI dari direktori root
+uvicorn src.main:app --reload
+```
+
+Aplikasi akan tersedia di `http://127.0.0.1:8000`.
+
+## Konfigurasi
+Pengaturan utama proyek, seperti nama model, path, dan template prompt, dikelola secara terpusat di `src/core/config.py` untuk kemudahan modifikasi.
+
+## API Endpoints
+
+### `POST /upload-document/`
+Mengunggah file PDF dan menjalankan seluruh pipeline ingesti.
+- **Request Body**: `multipart/form-data` dengan field `file`.
+- **Success Response (201 Created)**:
+  ```json
+  {
+    "message": "Dokumen berhasil diproses.",
+    "document_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+  }
+  ```
+
+### `POST /ask/`
+Mengajukan pertanyaan ke dokumen yang sudah diproses.
+- **Request Body**: `application/json`
+  ```json
+  {
+    "document_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "prompt": "Apa poin-poin utama dari dokumen ini?"
+  }
+  ```
+- **Success Response (200 OK)**:
+  ```json
+  {
+    "unenriched_answer": "Jawaban dari dokumen asli...",
+    "enriched_answer": "Jawaban dari dokumen yang diperkaya...",
+    "prompt": "Apa poin-poin utama dari dokumen ini?"
+  }
+  ```
