@@ -1,11 +1,12 @@
-import os
 import json
 from pathlib import Path
 import google.generativeai as genai
-from dotenv import load_dotenv
+from loguru import logger
 
-load_dotenv()
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+from ..core.config import GOOGLE_API_KEY, PLANNING_MODEL, PIPELINE_ARTEFACTS_DIR
+
+# Configure the generative AI model
+genai.configure(api_key=GOOGLE_API_KEY)
 
 def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
     """
@@ -26,7 +27,7 @@ def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
         with open(markdown_path, 'r', encoding='utf-8') as f:
             markdown_content = f.read()
     except FileNotFoundError:
-        print(f"Error: Markdown file not found at {markdown_path}")
+        logger.error(f"Markdown file not found at {markdown_path}")
         return ""
 
     prompt = f"""Role: You are a multi-disciplinary research analyst.
@@ -53,35 +54,35 @@ Document to Analyze:
 ---
 """
 
-    print("Sending request to Gemini for enrichment plan...")
-    model = genai.GenerativeModel('gemini-2.5-flash')
+    logger.info("Sending request to Gemini for enrichment plan...")
+    model = genai.GenerativeModel(PLANNING_MODEL)
     response = model.generate_content(prompt)
 
     try:
         json_text = response.text.strip().replace('```json', '').replace('```', '').strip()
         plan_data = json.loads(json_text)
     except (json.JSONDecodeError, AttributeError) as e:
-        print(f"Error decoding JSON from Gemini response: {e}")
-        print(f"Raw response text:\n{response.text}")
+        logger.error(f"Error decoding JSON from Gemini response: {e}")
+        logger.error(f"Raw response text:\n{response.text}")
         return ""
 
     plan_output_path = Path(doc_output_dir) / "enrichment_plan.json"
     with open(plan_output_path, 'w', encoding='utf-8') as f:
         json.dump(plan_data, f, indent=2)
 
-    print(f"Phase 1 completed. Enrichment plan saved to: {plan_output_path}")
+    logger.info(f"Phase 1 completed. Enrichment plan saved to: {plan_output_path}")
     return str(plan_output_path)
 
 if __name__ == '__main__':
-    base_artefacts_dir = Path("pipeline_artefacts")
+    base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
     if not base_artefacts_dir.exists():
-        print("Error: 'pipeline_artefacts' directory not found. Run phase_0 first.")
+        logger.error(f"'{PIPELINE_ARTEFACTS_DIR}' directory not found. Run phase_0 first.")
     else:
         all_doc_dirs = [d for d in base_artefacts_dir.iterdir() if d.is_dir()]
         if not all_doc_dirs:
-            print("Error: No document directories found in 'pipeline_artefacts'.")
+            logger.error(f"No document directories found in '{PIPELINE_ARTEFACTS_DIR}'.")
         else:
             latest_doc_dir = max(all_doc_dirs, key=lambda d: d.stat().st_mtime)
             markdown_file = latest_doc_dir / "markdown_v1.md"
-            print(f"Running Phase 1 on: {markdown_file}")
+            logger.info(f"Running Phase 1 on: {markdown_file}")
             create_enrichment_plan(str(markdown_file), str(latest_doc_dir))

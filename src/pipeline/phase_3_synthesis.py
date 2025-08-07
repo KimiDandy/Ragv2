@@ -1,5 +1,8 @@
 import json
 from pathlib import Path
+from loguru import logger
+
+from ..core.config import PIPELINE_ARTEFACTS_DIR
 
 def synthesize_final_markdown(doc_output_dir: str) -> str:
     doc_path = Path(doc_output_dir)
@@ -26,11 +29,11 @@ def synthesize_final_markdown(doc_output_dir: str) -> str:
                 generated_content = json.loads(generated_content)
 
         except (json.JSONDecodeError, IndexError) as e:
-            print(f"Error decoding JSON from {generated_content_path}: {e}")
+            logger.error(f"Error decoding JSON from {generated_content_path}: {e}")
             return ""
 
     except FileNotFoundError as e:
-        print(f"Error: Required file not found - {e}")
+        logger.error(f"Required file not found - {e}")
         return ""
 
     footnote_counter = 1
@@ -39,7 +42,7 @@ def synthesize_final_markdown(doc_output_dir: str) -> str:
 
     # Ensure generated_content is a dictionary before proceeding
     if not isinstance(generated_content, dict):
-        print(f"Error: Parsed content from {generated_content_path} is not a dictionary.")
+        logger.error(f"Parsed content from {generated_content_path} is not a dictionary.")
         return ""
 
     for item in generated_content.get("terms_to_define", []):
@@ -77,18 +80,18 @@ def synthesize_final_markdown(doc_output_dir: str) -> str:
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(final_content)
 
-    print(f"Phase 3 completed. Final markdown saved to: {output_path}")
+    logger.info(f"Phase 3 completed. Final markdown saved to: {output_path}")
     return str(output_path)
 
 if __name__ == '__main__':
-    base_artefacts_dir = Path("pipeline_artefacts")
+    base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
     if not base_artefacts_dir.exists():
-        print("Error: 'pipeline_artefacts' directory not found.")
+        logger.error(f"'{PIPELINE_ARTEFACTS_DIR}' directory not found.")
     else:
         all_doc_dirs = [d for d in base_artefacts_dir.iterdir() if d.is_dir()]
         if not all_doc_dirs:
-            print("Error: No document directories found.")
+            logger.error("No document directories found.")
         else:
             latest_doc_dir = max(all_doc_dirs, key=lambda d: d.stat().st_mtime)
-            print(f"Running Phase 3 on directory: {latest_doc_dir}")
+            logger.info(f"Running Phase 3 on directory: {latest_doc_dir}")
             synthesize_final_markdown(str(latest_doc_dir))

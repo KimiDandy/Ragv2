@@ -1,13 +1,12 @@
-import os
 import json
-import base64
 from pathlib import Path
 import google.generativeai as genai
-from dotenv import load_dotenv
 from PIL import Image
+from loguru import logger
 
-load_dotenv()
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+from ..core.config import GENERATION_MODEL, PIPELINE_ARTEFACTS_DIR, GOOGLE_API_KEY
+
+# The genai model is configured in phase_1_planning or should be handled at app startup.
 
 def generate_bulk_content(doc_output_dir: str) -> str:
     doc_path = Path(doc_output_dir)
@@ -21,7 +20,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         with open(plan_path, 'r', encoding='utf-8') as f:
             enrichment_plan = json.load(f)
     except FileNotFoundError as e:
-        print(f"Error: Required file not found - {e}")
+        logger.error(f"Required file not found - {e}")
         return ""
 
     image_parts = []
@@ -34,9 +33,9 @@ def generate_bulk_content(doc_output_dir: str) -> str:
                 image_parts.append(img)
                 image_parts.append(f"\n--- Image Filename: {image_filename} ---\n")
             except Exception as e:
-                print(f"Warning: Could not process image {image_filename}: {e}")
+                logger.warning(f"Could not process image {image_filename}: {e}")
         else:
-            print(f"Warning: Image file not found: {image_path}")
+            logger.warning(f"Image file not found: {image_path}")
 
     prompt_parts = [
         "Role: You are a living encyclopedia and an expert technical writer.",
@@ -50,34 +49,41 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         "\n--- Image Assets ---"
     ] + image_parts
 
-    print("Sending multimodal request to Gemini for content generation...")
-    model = genai.GenerativeModel('gemini-2.5-pro')
+    logger.info("Sending multimodal request to Gemini for content generation...")
+    model = genai.GenerativeModel(GENERATION_MODEL)
     response = model.generate_content(prompt_parts)
   
     try:
         json_text = response.text.strip().replace('```json', '').replace('```', '').strip()
         content_data = json.loads(json_text)
     except (json.JSONDecodeError, AttributeError) as e:
-        print(f"Error decoding JSON from Gemini response: {e}")
-        print(f"Raw response text:\n{response.text}")
+        logger.error(f"Error decoding JSON from Gemini response: {e}")
+        logger.error(f"Raw response text:\n{response.text}")
         return ""
 
     output_path = doc_path / "generated_content.json"
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(content_data, f, indent=2)
 
-    print(f"Phase 2 completed. Generated content saved to: {output_path}")
+    logger.info(f"Phase 2 completed. Generated content saved to: {output_path}")
     return str(output_path)
 
 if __name__ == '__main__':
-    base_artefacts_dir = Path("pipeline_artefacts")
+    # Standalone execution requires GOOGLE_API_KEY to be set in the environment
+    # and the genai library to be configured.
+    if GOOGLE_API_KEY:
+        genai.configure(api_key=GOOGLE_API_KEY)
+    else:
+        logger.error("GOOGLE_API_KEY not found. Please set it in your .env file.")
+
+    base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
     if not base_artefacts_dir.exists():
-        print("Error: 'pipeline_artefacts' directory not found. Run phase_0 first.")
+        logger.error(f"'{PIPELINE_ARTEFACTS_DIR}' directory not found. Run phase_0 first.")
     else:
         all_doc_dirs = [d for d in base_artefacts_dir.iterdir() if d.is_dir()]
         if not all_doc_dirs:
-            print("Error: No document directories found in 'pipeline_artefacts'.")
+            logger.error(f"No document directories found in '{PIPELINE_ARTEFACTS_DIR}'.")
         else:
             latest_doc_dir = max(all_doc_dirs, key=lambda d: d.stat().st_mtime)
-            print(f"Running Phase 2 on directory: {latest_doc_dir}")
+            logger.info(f"Running Phase 2 on directory: {latest_doc_dir}")
             generate_bulk_content(str(latest_doc_dir))

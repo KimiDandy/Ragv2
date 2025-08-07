@@ -2,8 +2,11 @@ import fitz  # PyMuPDF
 import uuid
 import os
 from pathlib import Path
+from loguru import logger
 
-def process_pdf_local(pdf_path: str, output_base_dir: str = "pipeline_artefacts") -> dict:
+from ..core.config import PIPELINE_ARTEFACTS_DIR
+
+def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_DIR) -> dict:
     """
     Processes a PDF file locally to extract markdown text and images, and inserts placeholders.
 
@@ -84,8 +87,8 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = "pipeline_artefacts"
         "output_dir": str(doc_output_dir)
     }
 
-    print(f"Phase 0 completed for document: {pdf_path}")
-    print(f"Artefacts saved in: {doc_output_dir}")
+    logger.info(f"Phase 0 completed for document: {pdf_path}")
+    logger.info(f"Artefacts saved in: {doc_output_dir}")
     
     return result
 
@@ -102,11 +105,11 @@ if __name__ == '__main__':
             page.draw_rect(rect, color=(0,0,1), fill=(0,1,0))
             page.insert_text((50, 250), "This is the second paragraph, after the image.")
         except Exception as e:
-            print(f"Could not add image to dummy PDF: {e}")
+            logger.error(f"Could not add image to dummy PDF: {e}")
         doc.save("dummy.pdf")
-        print("Created dummy.pdf for testing.")
+        logger.info("Created dummy.pdf for testing.")
 
-    if not os.path.exists("pipeline_artefacts"):
-        os.makedirs("pipeline_artefacts")
+    if not os.path.exists(PIPELINE_ARTEFACTS_DIR):
+        os.makedirs(PIPELINE_ARTEFACTS_DIR)
 
     process_pdf_local("dummy.pdf")

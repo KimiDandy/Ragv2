@@ -8,3 +8,4 @@ langchain-google-genai
 chromadb
 langchain-chroma
 numpy
+loguru

@@ -1,0 +1,36 @@
+# src/core/config.py
+import os
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Muat variabel dari file .env
+load_dotenv()
+
+# Konfigurasi Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+PIPELINE_ARTEFACTS_DIR = "pipeline_artefacts"
+
+# Konfigurasi Kunci API
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+# Konfigurasi Model
+PLANNING_MODEL = "gemini-2.5-flash"
+GENERATION_MODEL = "gemini-2.5-pro"
+CHAT_MODEL = "gemini-2.5-flash"
+EMBEDDING_MODEL = "models/embedding-001"
+
+# Konfigurasi ChromaDB
+CHROMA_DB_PATH = "chroma_db"
+CHROMA_COLLECTION = "genesis_rag_collection"
+
+# Konfigurasi Prompt Template
+RAG_PROMPT_TEMPLATE = """
+Anda adalah asisten yang membantu menjawab pertanyaan berdasarkan konteks yang diberikan.
+
+Konteks:
+{context}
+
+Pertanyaan: {question}
+
+Jawaban:
+"""
