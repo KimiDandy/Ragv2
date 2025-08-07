@@ -9,3 +9,6 @@ chromadb
 langchain-chroma
 numpy
 loguru
+google-generativeai
+Pillow
+python-multipart
