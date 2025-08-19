@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import google.generativeai as genai
 from loguru import logger
+import re
 
 from ..core.config import GOOGLE_API_KEY, PLANNING_MODEL, PIPELINE_ARTEFACTS_DIR
 
@@ -55,15 +56,79 @@ Document to Analyze:
 """
 
     logger.info("Mengirim permintaan ke Gemini untuk membuat rencana enrichment...")
-    model = genai.GenerativeModel(PLANNING_MODEL)
-    response = model.generate_content(prompt)
+    model = genai.GenerativeModel(
+        PLANNING_MODEL,
+        generation_config={
+            "temperature": 0.2,
+            "response_mime_type": "application/json"
+        },
+    )
 
+    def _extract_text(resp):
+        raw = ""
+        if getattr(resp, "candidates", None):
+            for c in resp.candidates:
+                parts = getattr(c, "content", None) and c.content.parts or []
+                for p in parts:
+                    if hasattr(p, "text") and p.text:
+                        raw += p.text
+        if not raw:
+            try:
+                raw = resp.text
+            except Exception:
+                raw = ""
+        return (raw or "").strip()
+
+    # Attempt 1
+    response = model.generate_content(prompt)
+    raw_text = _extract_text(response)
+    raw_out = Path(doc_output_dir) / "enrichment_plan_raw.txt"
     try:
-        json_text = response.text.strip().replace('```json', '').replace('```', '').strip()
-        plan_data = json.loads(json_text)
-    except (json.JSONDecodeError, AttributeError) as e:
-        logger.error(f"Error saat mendekode JSON dari respons Gemini: {e}")
-        logger.error(f"Teks respons mentah:\n{response.text}")
+        with open(raw_out, 'w', encoding='utf-8') as f:
+            f.write(raw_text)
+    except Exception:
+        pass
+
+    plan_data = None
+    if raw_text:
+        json_str = raw_text.replace('```json', '').replace('```', '').strip()
+        try:
+            plan_data = json.loads(json_str)
+        except json.JSONDecodeError:
+            m = re.search(r"\{.*\}", json_str, re.DOTALL)
+            if m:
+                plan_data = json.loads(m.group(0))
+
+    # Retry once with stricter instruction if needed
+    if plan_data is None:
+        strict_prompt = (
+            prompt +
+            "\n\nSTRICT REQUIREMENT: Respond ONLY with a single valid JSON object matching the exact schema. "
+            "Do NOT include prose, explanations, or code fences."
+        )
+        response2 = model.generate_content(strict_prompt)
+        raw_text2 = _extract_text(response2)
+        try:
+            with open(Path(doc_output_dir) / "enrichment_plan_raw_retry.txt", 'w', encoding='utf-8') as f:
+                f.write(raw_text2)
+        except Exception:
+            pass
+        if raw_text2:
+            json_str2 = raw_text2.replace('```json', '').replace('```', '').strip()
+            try:
+                plan_data = json.loads(json_str2)
+            except json.JSONDecodeError:
+                m2 = re.search(r"\{.*\}", json_str2, re.DOTALL)
+                if m2:
+                    plan_data = json.loads(m2.group(0))
+
+    if plan_data is None:
+        fr = None
+        try:
+            fr = response.candidates[0].finish_reason if response.candidates else None
+        except Exception:
+            pass
+        logger.error(f"Gagal mendapatkan JSON rencana enrichment. finish_reason={fr}")
         return ""
 
     plan_output_path = Path(doc_output_dir) / "enrichment_plan.json"

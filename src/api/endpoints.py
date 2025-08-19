@@ -124,16 +124,26 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
             logger.info("--- Memulai Fase 1: Perencanaan ---")
             create_enrichment_plan(phase_0_results["markdown_path"], doc_output_dir)
             logger.info("--- Fase 1 Selesai. Rencana enrichment dibuat. ---")
+            # Fail-fast: ensure enrichment_plan.json exists
+            plan_path = Path(doc_output_dir) / "enrichment_plan.json"
+            if not plan_path.exists():
+                logger.error("Fase 1: File enrichment_plan.json tidak ditemukan. Menghentikan pipeline.")
+                raise HTTPException(status_code=500, detail="Fase 1 gagal: rencana enrichment tidak tersedia.")
 
             logger.info("--- Memulai Fase 2: Generasi Konten ---")
             generate_bulk_content(doc_output_dir)
             logger.info("--- Fase 2 Selesai. Konten berhasil digenerasi. ---")
+            # Fail-fast: ensure generated_content.json exists
+            gen_path = Path(doc_output_dir) / "generated_content.json"
+            if not gen_path.exists():
+                logger.error("Fase 2: File generated_content.json tidak ditemukan. Menghentikan pipeline.")
+                raise HTTPException(status_code=500, detail="Fase 2 gagal: konten hasil generasi tidak tersedia.")
 
             logger.info("--- Memulai Fase 3: Sintesis ---")
             final_markdown_path = synthesize_final_markdown(doc_output_dir)
             if not final_markdown_path:
                 logger.error("Fase 3: Sintesis gagal menghasilkan file markdown final.")
-                raise HTTPException(status_code=500, detail="Fase 3: Sintesis gagal")
+                raise HTTPException(status_code=500, detail="Fase 3 gagal")
             logger.info("--- Fase 3 Selesai. Markdown final berhasil disintesis. ---")
             
             logger.info("--- Memulai Fase 4: Vektorisasi ---")
