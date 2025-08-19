@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genesis-RAG: Document Enhancement</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
+    <link rel="stylesheet" href="/static/style.css?v=2.4">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      if (window.marked) { marked.setOptions({ breaks: true }); }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
 <body>
     <div class="container">
         <div class="header">
@@ -14,6 +22,7 @@
         </div>
 
         <div class="content">
+
             <div class="upload-container" id="upload-container">
                 <input type="file" id="file-input" accept=".pdf">
                 <button class="upload-btn" onclick="document.getElementById('file-input').click()">
@@ -26,41 +35,88 @@
                 <div class="spinner"></div>
                 <h3>Memproses Dokumen Anda...</h3>
             </div>
-            <div class="query-container" id="query-container">
-                <h3>Dokumen Siap Dianalisis</h3>
-                <p>Ajukan pertanyaan untuk membandingkan jawaban dari dokumen asli dan versi yang telah ditingkatkan:</p>
-                <textarea 
-                    id="query-input" 
-                    placeholder="Contoh: Apa saja keuntungan investasi yang dibahas dalam dokumen ini?"
-                ></textarea>
-                <button class="query-btn" onclick="askQuestion()">
-                    Kirim Pertanyaan
-                </button>
+
+            <!-- App Shell: Stepper + Vertical Layout (Preview | Suggestions | Chat) -->
+            <div class="stepper" id="stepper">
+                <div class="step" id="step-upload"><span class="dot">1</span><span class="label">Unggah</span></div>
+                <div class="step" id="step-enhance"><span class="dot">2</span><span class="label">Tingkatkan</span></div>
+                <div class="step" id="step-curate"><span class="dot">3</span><span class="label">Kurasi</span></div>
+                <div class="step" id="step-finalize"><span class="dot">4</span><span class="label">Finalisasi</span></div>
+                <div class="step" id="step-qa"><span class="dot">5</span><span class="label">Tanya Jawab</span></div>
             </div>
 
-            <div class="results-container" id="results-container">
-                <div class="results-header">
-                    <h2>Hasil Perbandingan Jawaban</h2>
-                    <p id="query-display"></p>
-                </div>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <h2>Jawaban dari Dokumen Asli (v1)</h2>
-                        <div class="result-content" id="unenriched-result">
-                            <span class="loading-text">Menunggu pertanyaan...</span>
+            <div class="vertical-layout" id="main-layout" style="display:none;">
+                <!-- Panel 1: Document Preview -->
+                <section class="card" id="doc-preview">
+                    <div class="card-header">
+                        <h2>Dokumen Asli (v1)</h2>
+                        <div class="card-actions">
+                            <label class="toggle"><input type="checkbox" id="toggle-raw"> Tampilkan markdown mentah</label>
                         </div>
                     </div>
-                    <div class="result-card enriched">
-                        <h2>Jawaban dari Dokumen yang Di-Enhancement (v2)</h2>
-                        <div class="result-content" id="enriched-result">
-                            <span class="loading-text">Menunggu pertanyaan...</span>
+                    <div class="card-body">
+                        <div id="v1-rendered" class="markdown-body"></div>
+                        <pre id="v1-raw" class="markdown-raw" style="display:none;"></pre>
+                    </div>
+                </section>
+
+                <!-- Panel 2: Suggestions -->
+                <section class="card" id="suggestions-panel">
+                    <div class="card-header">
+                        <h2>Enhancement</h2>
+                        <div class="card-actions">
+                            <span id="status-badge" class="badge">Siaga</span>
                         </div>
                     </div>
-                </div>
+                    <div class="card-body">
+                        <div class="action-bar">
+                            <button id="start-enhancement-btn" class="btn btn-primary">Mulai Enhancement</button>
+                            <button id="approve-all-btn" class="btn btn-secondary" disabled>Setujui Semua</button>
+                            <button id="reject-all-btn" class="btn btn-secondary" disabled>Tolak Semua</button>
+                            <button id="finalize-btn" class="btn btn-primary" disabled>Finalisasi Dokumen</button>
+                        </div>
+                        <div id="suggestions-empty" class="muted">Belum ada saran. Klik "Mulai Enhancement" untuk memulai.</div>
+                        <div id="suggestions-list" class="suggestions-grid"></div>
+                    </div>
+                </section>
+
+                <!-- Panel 3: Chat -->
+                <section class="card" id="chat-panel">
+                    <div class="card-header">
+                        <h2>Chat RAG</h2>
+                        <div class="card-actions">
+                            <label>Versi:</label>
+                            <select id="version-select" class="select">
+                                <option value="both" selected>Bandingkan v1 vs v2</option>
+                                <option value="v1">Hanya v1</option>
+                                <option value="v2">Hanya v2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chat-input-area premium">
+                            <textarea id="query-input" placeholder="Tanyakan apa pun mengenai dokumen... Contoh: 'Ringkas isi perjanjian halaman 1'"></textarea>
+                            <button class="btn btn-primary" id="query-btn">Kirim Pertanyaan</button>
+                            <p id="query-display" class="muted"></p>
+                        </div>
+                        <div id="results-container" class="results-container" style="display:none;">
+                            <div class="results-grid">
+                                <div class="result-card" id="v1-card">
+                                    <h3>Jawaban (v1)</h3>
+                                    <div class="result-content" id="unenriched-result"><span class="loading-text">Menunggu pertanyaan...</span></div>
+                                </div>
+                                <div class="result-card enriched" id="v2-card">
+                                    <h3>Jawaban (v2)</h3>
+                                    <div class="result-content" id="enriched-result"><span class="loading-text">Menunggu pertanyaan...</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
 
-    <script src="/static/script.js?v=1.1"></script>
+    <script src="/static/script.js?v=2.5"></script>
 </body>
 </html>

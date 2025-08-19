@@ -61,7 +61,7 @@ async def lifespan(app: FastAPI):
                 app.state.chroma_client = chromadb.HttpClient(host=CHROMA_SERVER_HOST, port=CHROMA_SERVER_PORT)
                 logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
 
-        # 2. Initialize AI models once
+        # 2. Initialize AI models
         app.state.embedding_function = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL, google_api_key=GOOGLE_API_KEY)
         app.state.chat_model = ChatGoogleGenerativeAI(model=CHAT_MODEL, google_api_key=GOOGLE_API_KEY, temperature=0.7)
         logger.info("Model AI berhasil diinisialisasi.")

@@ -1,6 +1,7 @@
 import shutil
 import tempfile
 import asyncio
+import json
 from pathlib import Path
 
 from fastapi import APIRouter, UploadFile, File, HTTPException, Request
@@ -17,14 +18,17 @@ from ..pipeline.phase_3_synthesis import synthesize_final_markdown
 from ..pipeline.phase_4_vectorization import vectorize_and_store
 from ..core.config import (
     RAG_PROMPT_TEMPLATE,
-    CHROMA_COLLECTION
+    CHROMA_COLLECTION,
+    PIPELINE_ARTEFACTS_DIR
 )
+from .models import SuggestionItem, CuratedSuggestions, UploadResponse, EnhancementResponse
 
 router = APIRouter()
 
 class QueryRequest(BaseModel):
     document_id: str
     prompt: str
+    version: str | None = "both"  # 'v1' | 'v2' | 'both'
 
 async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Request) -> str:
     """
@@ -92,20 +96,13 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
         logger.error(f"Error dalam RAG query untuk versi {version}: {e}")
         return f"Terjadi kesalahan teknis saat mengambil jawaban: {str(e)}"
 
-@router.post("/upload-document/", status_code=201)
+@router.post("/upload-document/", status_code=201, response_model=UploadResponse)
 async def upload_document(request: Request, file: UploadFile = File(...)):
     """
-    Endpoint untuk mengunggah dan memproses file PDF.
-    Menerima file, menyimpannya sementara, dan menjalankan pipeline pemrosesan end-to-end
-    (ekstraksi, perencanaan, generasi, sintesis, dan vektorisasi).
+    Unggah PDF dan jalankan Fase 0 saja (ekstraksi). Mengembalikan konten markdown_v1 dan document_id.
     """
     if file.content_type != 'application/pdf':
         raise HTTPException(status_code=400, detail="Tipe file tidak valid. Hanya file PDF yang diterima.")
-
-    chroma_client = request.app.state.chroma_client
-    if not chroma_client:
-        logger.error("Klien ChromaDB tidak tersedia. Proses unggah dibatalkan.")
-        raise HTTPException(status_code=503, detail="Koneksi database tidak tersedia.")
 
     with tempfile.TemporaryDirectory() as temp_dir:
         temp_pdf_path = Path(temp_dir) / file.filename
@@ -121,65 +118,106 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
             doc_id = Path(doc_output_dir).name
             logger.info(f"--- Fase 0 Selesai. Artefak di: {doc_output_dir} ---")
 
-            logger.info("--- Memulai Fase 1: Perencanaan ---")
-            create_enrichment_plan(phase_0_results["markdown_path"], doc_output_dir)
-            logger.info("--- Fase 1 Selesai. Rencana enrichment dibuat. ---")
-            # Fail-fast: ensure enrichment_plan.json exists
-            plan_path = Path(doc_output_dir) / "enrichment_plan.json"
-            if not plan_path.exists():
-                logger.error("Fase 1: File enrichment_plan.json tidak ditemukan. Menghentikan pipeline.")
-                raise HTTPException(status_code=500, detail="Fase 1 gagal: rencana enrichment tidak tersedia.")
+            md_path = Path(doc_output_dir) / "markdown_v1.md"
+            try:
+                markdown_text = md_path.read_text(encoding='utf-8')
+            except Exception as e:
+                logger.error(f"Gagal membaca markdown_v1.md: {e}")
+                raise HTTPException(status_code=500, detail="Gagal membaca markdown hasil ekstraksi.")
 
-            logger.info("--- Memulai Fase 2: Generasi Konten ---")
-            generate_bulk_content(doc_output_dir)
-            logger.info("--- Fase 2 Selesai. Konten berhasil digenerasi. ---")
-            # Fail-fast: ensure generated_content.json exists
-            gen_path = Path(doc_output_dir) / "generated_content.json"
-            if not gen_path.exists():
-                logger.error("Fase 2: File generated_content.json tidak ditemukan. Menghentikan pipeline.")
-                raise HTTPException(status_code=500, detail="Fase 2 gagal: konten hasil generasi tidak tersedia.")
-
-            logger.info("--- Memulai Fase 3: Sintesis ---")
-            final_markdown_path = synthesize_final_markdown(doc_output_dir)
-            if not final_markdown_path:
-                logger.error("Fase 3: Sintesis gagal menghasilkan file markdown final.")
-                raise HTTPException(status_code=500, detail="Fase 3 gagal")
-            logger.info("--- Fase 3 Selesai. Markdown final berhasil disintesis. ---")
-            
-            logger.info("--- Memulai Fase 4: Vektorisasi ---")
-            success_v1 = vectorize_and_store(doc_output_dir, chroma_client, "markdown_v1.md", "v1")
-            success_v2 = vectorize_and_store(doc_output_dir, chroma_client, "markdown_v2.md", "v2")
-            if not success_v1 or not success_v2:
-                logger.error("Fase 4: Vektorisasi gagal untuk satu atau kedua versi.")
-                raise Exception("Fase 4 Vektorisasi gagal.")
-
-            logger.info("--- Fase 4 Selesai. Kedua versi berhasil divektorisasi. ---")
-            return {"message": "Dokumen berhasil diproses.", "document_id": doc_id}
+            return UploadResponse(document_id=doc_id, markdown_content=markdown_text)
 
         except Exception as e:
             logger.error(f"Terjadi error saat menjalankan pipeline: {e}")
             raise HTTPException(status_code=500, detail=f"Pipeline gagal: {e}")
 
+@router.post("/start-enhancement/{document_id}")
+async def start_enhancement(document_id: str):
+    """Menjalankan tugas latar belakang untuk Fase 1 (perencanaan) dan Fase 2 (generasi)."""
+    doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
+    md_path = doc_dir / "markdown_v1.md"
+    if not md_path.exists():
+        raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan atau belum diunggah.")
+
+    async def _run():
+        try:
+            logger.info(f"[Enhancement] Mulai untuk dokumen: {document_id}")
+            create_enrichment_plan(str(md_path), str(doc_dir))
+            generate_bulk_content(str(doc_dir))
+            logger.info(f"[Enhancement] Selesai untuk dokumen: {document_id}")
+        except Exception as e:
+            logger.error(f"[Enhancement] Gagal untuk dokumen {document_id}: {e}")
+
+    asyncio.create_task(_run())
+    return {"message": "Proses peningkatan dimulai", "document_id": document_id}
+
+@router.get("/get-suggestions/{document_id}", response_model=EnhancementResponse)
+async def get_suggestions(document_id: str):
+    """Mengembalikan daftar saran ketika siap (polling)."""
+    doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
+    sugg_path = doc_dir / "suggestions.json"
+    if not sugg_path.exists():
+
+        return EnhancementResponse(document_id=document_id, suggestions=[])
+
+    try:
+        data = json.loads(sugg_path.read_text(encoding='utf-8'))
+        suggestions = [SuggestionItem(**item) for item in (data or [])]
+    except Exception as e:
+        logger.error(f"Gagal membaca suggestions.json: {e}")
+        suggestions = []
+    return EnhancementResponse(document_id=document_id, suggestions=suggestions)
+
+@router.post("/finalize-document/")
+async def finalize_document(request: Request, payload: CuratedSuggestions):
+    """
+    Menerima saran terkurasi dan menyintesis markdown_v2.md, lalu melakukan vektorisasi untuk v1 dan v2.
+    """
+    doc_id = payload.document_id
+    doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / doc_id
+    if not (doc_dir / "markdown_v1.md").exists():
+        raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan.")
+
+    curated = [s.dict() for s in payload.suggestions if (s.status or "").lower() in ("approved", "edited")]
+    if not curated:
+        logger.warning("Tidak ada saran yang disetujui/diedit untuk disintesis.")
+
+    # Synthesize v2
+    final_path = synthesize_final_markdown(str(doc_dir), curated)
+    if not final_path:
+        raise HTTPException(status_code=500, detail="Sintesis dokumen gagal.")
+
+    # Vectorize v1 and v2
+    chroma_client = request.app.state.chroma_client
+    if not chroma_client:
+        raise HTTPException(status_code=503, detail="Chroma client tidak tersedia.")
+
+    ok_v1 = vectorize_and_store(str(doc_dir), chroma_client, "markdown_v1.md", "v1")
+    ok_v2 = vectorize_and_store(str(doc_dir), chroma_client, "markdown_v2.md", "v2")
+    if not (ok_v1 and ok_v2):
+        raise HTTPException(status_code=500, detail="Vektorisasi gagal untuk salah satu versi.")
+
+    return {"message": "Dokumen difinalisasi dan divektorisasi.", "document_id": doc_id}
+
 @router.post("/ask/")
 async def ask_question(request: Request, query: QueryRequest):
     """
-    Endpoint utama untuk mengajukan pertanyaan dan mendapatkan perbandingan jawaban.
-    Menerima pertanyaan dan ID dokumen, lalu secara paralel menjalankan kueri RAG
-    pada versi asli (v1) dan versi yang diperkaya (v2) dari dokumen tersebut.
+    Ajukan pertanyaan terhadap versi v1, v2, atau keduanya dari dokumen.
     """
     try:
-        # Jalankan kedua proses RAG secara bersamaan untuk efisiensi
-        v1_task = perform_rag_query(query.prompt, query.document_id, "v1", request)
-        v2_task = perform_rag_query(query.prompt, query.document_id, "v2", request)
-
-        v1_answer, v2_answer = await asyncio.gather(v1_task, v2_task)
-
-        return {
-            "unenriched_answer": v1_answer,
-            "enriched_answer": v2_answer,
-            "prompt": query.prompt
-        }
-
+        version = (query.version or "both").lower()
+        if version in ("v1", "v2"):
+            ans = await perform_rag_query(query.prompt, query.document_id, version, request)
+            return {"answer": ans, "version": version, "prompt": query.prompt}
+        else:
+            v1_task = perform_rag_query(query.prompt, query.document_id, "v1", request)
+            v2_task = perform_rag_query(query.prompt, query.document_id, "v2", request)
+            v1_answer, v2_answer = await asyncio.gather(v1_task, v2_task)
+            return {
+                "unenriched_answer": v1_answer,
+                "enriched_answer": v2_answer,
+                "prompt": query.prompt
+            }
     except Exception as e:
         logger.error(f"Error di endpoint /ask/: {e}")
         raise HTTPException(status_code=500, detail=str(e))

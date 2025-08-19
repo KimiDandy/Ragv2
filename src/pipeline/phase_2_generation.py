@@ -46,7 +46,19 @@ def generate_bulk_content(doc_output_dir: str) -> str:
 
     image_parts = []
     images_to_describe = enrichment_plan.get("images_to_describe", [])
-    for image_filename in images_to_describe:
+    for item in images_to_describe:
+        # items may be strings (filenames) OR dicts with keys like 'image_file'/'filename'
+        if isinstance(item, str):
+            image_filename = item
+        elif isinstance(item, dict):
+            image_filename = item.get("image_file") or item.get("filename") or ""
+        else:
+            image_filename = ""
+
+        if not image_filename:
+            logger.warning("Item images_to_describe tanpa nama file, lewati.")
+            continue
+
         image_path = assets_path / image_filename
         if image_path.exists():
             try:
@@ -59,15 +71,15 @@ def generate_bulk_content(doc_output_dir: str) -> str:
             logger.warning(f"File gambar tidak ditemukan: {image_path}")
 
     prompt_parts = [
-        "Role: You are a living encyclopedia and an expert technical writer.",
-        "Context: I am providing you with an original document, an enrichment plan, and relevant image assets.",
-        "Task: Execute the enrichment plan. Generate all requested content clearly and accurately based on the document's context.",
-        "Format Output: You MUST respond ONLY with a single JSON object that maps each item from the plan to your generated content.",
-        "\n--- Original Document (for context) ---",
+        "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.",
+        "Konteks: Saya memberikan dokumen asli, rencana enrichment, dan aset gambar yang relevan.",
+        "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat berdasarkan konteks dokumen.",
+        "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.",
+        "\n--- Dokumen Asli (untuk konteks) ---",
         markdown_content,
-        "\n--- Enrichment Plan to Execute ---",
+        "\n--- Rencana Enrichment untuk Dieksekusi ---",
         json.dumps(enrichment_plan, indent=2),
-        "\n--- Image Assets ---"
+        "\n--- Aset Gambar ---"
     ] + image_parts
 
     logger.info("Mengirim permintaan multimodal ke Gemini untuk generasi konten...")
@@ -101,7 +113,8 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         try:
             return json.loads(js)
         except json.JSONDecodeError:
-            m = re.search(r"\{.*\}", js, re.DOTALL)
+            # try to capture either an object {...} or an array [...]
+            m = re.search(r"(\{[\s\S]*\}|\[[\s\S]*\])", js)
             if m:
                 try:
                     return json.loads(m.group(0))
@@ -109,7 +122,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
                     return None
             return None
 
-    # Attempt 1 (with images)
+    # Upaya 1 (dengan gambar)
     response = model.generate_content(prompt_parts)
     raw_text = _extract_text(response)
     try:
@@ -120,21 +133,21 @@ def generate_bulk_content(doc_output_dir: str) -> str:
 
     content_data = _parse_json(raw_text)
 
-    # Retry once: enforce strict JSON-only and remove images if first attempt failed
+    # Coba ulang sekali: paksa hanya JSON dan hilangkan gambar jika percobaan pertama gagal
     if content_data is None:
         strict_intro = (
-            "STRICT REQUIREMENT: Respond ONLY with a single valid JSON object. "
-            "Do NOT include any explanations, code fences, or additional text."
+            "PERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid. "
+            "JANGAN sertakan penjelasan, code fence, atau teks tambahan apa pun."
         )
         prompt_no_images = [
-            "Role: You are a living encyclopedia and an expert technical writer.",
-            "Context: I am providing you with an original document and an enrichment plan.",
-            "Task: Execute the enrichment plan. Generate all requested content clearly and accurately.",
-            "Format Output: You MUST respond ONLY with a single JSON object that maps each item from the plan to your generated content.",
+            "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.",
+            "Konteks: Saya memberikan dokumen asli dan rencana enrichment.",
+            "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat.",
+            "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.",
             strict_intro,
-            "\n--- Original Document (for context) ---",
+            "\n--- Dokumen Asli (untuk konteks) ---",
             markdown_content,
-            "\n--- Enrichment Plan to Execute ---",
+            "\n--- Rencana Enrichment untuk Dieksekusi ---",
             json.dumps(enrichment_plan, indent=2),
         ]
         response2 = model.generate_content(prompt_no_images)
@@ -160,29 +173,114 @@ def generate_bulk_content(doc_output_dir: str) -> str:
             pf1 = getattr(response, "prompt_feedback", None)
             pf2 = getattr(response2, "prompt_feedback", None)
             logger.error(f"Gagal mendapatkan JSON valid dari Gemini. finish_reason_attempt1={fr1}, finish_reason_attempt2={fr2}, prompt_feedback_attempt1={pf1}, prompt_feedback_attempt2={pf2}")
-            return ""
+            # Fallback: tetap lanjutkan dengan membuat suggestions.json berbasis plan
+            content_data = {"terms_to_define": [], "concepts_to_simplify": [], "image_descriptions": []}
 
+    # Simpan konten mentah untuk pelacakan
     output_path = doc_path / "generated_content.json"
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(content_data, f, indent=2)
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(content_data, f, indent=2)
+    except Exception:
+        # Jika gagal menulis, tetap lanjutkan membuat daftar saran
+        pass
 
-    logger.info(f"Fase 2 selesai. Konten yang digenerasi disimpan di: {output_path}")
-    return str(output_path)
+    # Bangun suggestions.json dengan menggabungkan plan + hasil generasi menjadi daftar datar
+    suggestions: list[dict] = []
+    plan = enrichment_plan
+
+    # Peta bantu untuk lookup cepat dari hasil generasi
+    gen_terms = {i.get("term"): i for i in content_data.get("terms_to_define", [])} if isinstance(content_data, dict) else {}
+    gen_concepts = {i.get("identifier"): i for i in content_data.get("concepts_to_simplify", [])} if isinstance(content_data, dict) else {}
+    gen_images = {i.get("image_file"): i for i in content_data.get("image_descriptions", [])} if isinstance(content_data, dict) else {}
+
+    # Istilah untuk didefinisikan
+    for idx, item in enumerate(plan.get("terms_to_define", []) or []):
+        if isinstance(item, str):
+            term = item
+            original_context = item
+            conf = 0.5
+        else:
+            term = item.get("term") or item.get("name")
+            original_context = item.get("original_context") or item.get("context") or term or ""
+            conf = float(item.get("confidence_score", 0.5))
+        gen = gen_terms.get(term, {})
+        definition = gen.get("definition") or gen.get("content") or ""
+        suggestions.append({
+            "id": f"term_{idx}",
+            "type": "term_to_define",
+            "original_context": original_context,
+            "generated_content": definition,
+            "confidence_score": conf,
+            "status": "pending",
+        })
+
+    # Konsep untuk disederhanakan
+    for idx, item in enumerate(plan.get("concepts_to_simplify", []) or []):
+        if isinstance(item, str):
+            identifier = item
+            original_context = item
+            conf = 0.5
+        else:
+            identifier = item.get("identifier")
+            original_context = item.get("original_context") or item.get("paragraph_text") or identifier or ""
+            conf = float(item.get("confidence_score", 0.5))
+        gen = gen_concepts.get(identifier, {})
+        simplified = gen.get("simplified_text") or gen.get("content") or ""
+        suggestions.append({
+            "id": f"concept_{idx}",
+            "type": "concept_to_simplify",
+            "original_context": original_context,
+            "generated_content": simplified,
+            "confidence_score": conf,
+            "status": "pending",
+        })
+
+    # Gambar untuk dideskripsikan (plan bisa list[str] atau list[dict])
+    images_plan = plan.get("images_to_describe", []) or []
+    for idx, item in enumerate(images_plan):
+        if isinstance(item, str):
+            image_file = item
+            original_context = f"[IMAGE_PLACEHOLDER: {image_file}]"
+            conf = 0.5
+        else:
+            image_file = item.get("image_file") or item.get("filename")
+            original_context = item.get("original_context") or f"[IMAGE_PLACEHOLDER: {image_file}]"
+            conf = float(item.get("confidence_score", 0.5))
+        gen = gen_images.get(image_file, {})
+        desc = gen.get("description") or gen.get("content") or ""
+        suggestions.append({
+            "id": f"image_{idx}",
+            "type": "image_description",
+            "original_context": original_context,
+            "generated_content": desc,
+            "confidence_score": conf,
+            "status": "pending",
+        })
+
+    # Tulis suggestions.json
+    suggestions_path = doc_path / "suggestions.json"
+    with open(suggestions_path, 'w', encoding='utf-8') as sf:
+        json.dump(suggestions, sf, indent=2, ensure_ascii=False)
+
+    logger.info(f"Fase 2 selesai. Konten hasil generasi disimpan di: {output_path}")
+    logger.info(f"Daftar saran (human-in-the-loop) disimpan di: {suggestions_path}")
+    return str(suggestions_path)
 
 if __name__ == '__main__':
     if GOOGLE_API_KEY:
         genai.configure(api_key=GOOGLE_API_KEY)
     else:
-        logger.error("GOOGLE_API_KEY not found. Please set it in your .env file.")
+        logger.error("GOOGLE_API_KEY tidak ditemukan. Harap set di file .env Anda.")
 
     base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
     if not base_artefacts_dir.exists():
-        logger.error(f"'{PIPELINE_ARTEFACTS_DIR}' directory not found. Run phase_0 first.")
+        logger.error(f"Direktori '{PIPELINE_ARTEFACTS_DIR}' tidak ditemukan. Jalankan phase_0 terlebih dahulu.")
     else:
         all_doc_dirs = [d for d in base_artefacts_dir.iterdir() if d.is_dir()]
         if not all_doc_dirs:
-            logger.error(f"No document directories found in '{PIPELINE_ARTEFACTS_DIR}'.")
+            logger.error(f"Tidak ada direktori dokumen di '{PIPELINE_ARTEFACTS_DIR}'.")
         else:
             latest_doc_dir = max(all_doc_dirs, key=lambda d: d.stat().st_mtime)
-            logger.info(f"Running Phase 2 on directory: {latest_doc_dir}")
+            logger.info(f"Menjalankan Fase 2 pada direktori: {latest_doc_dir}")
             generate_bulk_content(str(latest_doc_dir))

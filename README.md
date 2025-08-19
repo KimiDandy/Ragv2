@@ -68,6 +68,20 @@ cp .env_example .env
 # Edit file .env dan masukkan Google API Key Anda
 ```
 
+Contoh `.env` minimal:
+
+```ini
+GOOGLE_API_KEY=your_google_api_key_here
+
+# Mode ChromaDB (default: server)
+CHROMA_MODE=server
+CHROMA_SERVER_HOST=localhost
+CHROMA_SERVER_PORT=8001
+# Jika menggunakan embedded mode (opsional):
+# CHROMA_MODE=embedded
+# CHROMA_DB_PATH=chroma_db
+```
+
 ### 3. Menjalankan Aplikasi
 Proyek ini menggunakan arsitektur Klien-Server. Anda perlu menjalankan dua proses di dua terminal terpisah: Server Database (ChromaDB) dan Server Aplikasi (FastAPI).
 
@@ -86,12 +100,27 @@ Terminal ini untuk menjalankan logika utama dan API aplikasi.
 ```bash
 # Pastikan virtual environment Anda sudah aktif
 # Dari direktori root proyek, jalankan perintah berikut:
-uvicorn src.main:app --reload
+python -m uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 Server aplikasi sekarang akan berjalan dan terhubung ke server ChromaDB.
 
 ### 4. Buka Aplikasi di Browser
-Buka browser Anda dan akses alamat `http://127.0.0.1:8000`.
+Buka browser dan akses alamat `http://127.0.0.1:8000`.
+
+## Alur Penggunaan UI
+
+1) **Unggah** PDF pada panel kiri untuk menghasilkan `markdown_v1.md` (Fase 0).
+
+2) **Tingkatkan**: Klik tombol "Mulai Enhancement" untuk menjalankan Fase 1 (Perencanaan) dan Fase 2 (Generasi). Status akan menampilkan "Berjalan..." hingga saran siap.
+
+3) **Kurasi**: Pada panel Saran, tinjau setiap kartu. Anda dapat:
+   - Setujui/Tolak saran.
+   - Edit teks saran sebelum finalisasi.
+   - Gunakan tombol "Setujui Semua" / "Tolak Semua" sebagai aksi massal.
+
+4) **Finalisasi**: Klik "Finalisasi Dokumen" untuk menyintesis `markdown_v2.md` (Fase 3) dan melakukan vektorisasi v1 & v2 ke ChromaDB (Fase 4). Stepper akan berpindah ke fase Tanya Jawab.
+
+5) **Tanya Jawab**: Ajukan pertanyaan dan bandingkan jawaban dari v1 (asli) dan v2 (diperkaya).
 
 ## Konfigurasi
 Pengaturan utama proyek, seperti nama model, path, dan template prompt, dikelola secara terpusat di `src/core/config.py` untuk kemudahan modifikasi.
@@ -99,30 +128,67 @@ Pengaturan utama proyek, seperti nama model, path, dan template prompt, dikelola
 ## API Endpoints
 
 ### `POST /upload-document/`
-Mengunggah file PDF dan menjalankan seluruh pipeline ingesti.
-- **Request Body**: `multipart/form-data` dengan field `file`.
-- **Success Response (201 Created)**:
+Unggah PDF dan jalankan Fase 0 (ekstraksi) saja.
+- Request: `multipart/form-data` dengan field `file`
+- Response 201 (UploadResponse):
   ```json
   {
-    "message": "Dokumen berhasil diproses.",
-    "document_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    "document_id": "uuid",
+    "markdown_content": "...markdown_v1.md..."
   }
   ```
 
+### `POST /start-enhancement/{document_id}`
+Menjalankan tugas latar belakang untuk Fase 1 (perencanaan) dan Fase 2 (generasi). Kembalikan segera dan lanjutkan via polling.
+- Response 200:
+  ```json
+  { "message": "Proses peningkatan dimulai", "document_id": "uuid" }
+  ```
+
+### `GET /get-suggestions/{document_id}`
+Polling daftar saran hasil Fase 2.
+- Response 200 (EnhancementResponse):
+  ```json
+  { "document_id": "uuid", "suggestions": [ /* SuggestionItem[] */ ] }
+  ```
+  Catatan: Jika `suggestions.json` belum tersedia, endpoint mengembalikan `suggestions: []`.
+
+### `POST /finalize-document/`
+Terima saran terkurasi, sintesis `markdown_v2.md` dan vektorisasi v1 & v2 ke ChromaDB.
+- Request (CuratedSuggestions):
+  ```json
+  {
+    "document_id": "uuid",
+    "suggestions": [ {"id":"term_0","type":"term_to_define","original_context":"...","generated_content":"...","confidence_score":0.9,"status":"approved"} ]
+  }
+  ```
+- Response 200:
+  ```json
+  { "message": "Dokumen difinalisasi dan divektorisasi.", "document_id": "uuid" }
+  ```
+
 ### `POST /ask/`
-Mengajukan pertanyaan ke dokumen yang sudah diproses.
-- **Request Body**: `application/json`
+Ajukan pertanyaan terhadap versi v1, v2, atau keduanya dari dokumen.
+- Request:
+  ```json
+  { "document_id": "uuid", "prompt": "Pertanyaan Anda", "version": "both" }
+  ```
+- Response 200 (jika `version` = `both`):
   ```json
   {
-    "document_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "prompt": "Apa poin-poin utama dari dokumen ini?"
+    "unenriched_answer": "jawaban dari v1",
+    "enriched_answer": "jawaban dari v2",
+    "prompt": "Pertanyaan Anda"
   }
   ```
-- **Success Response (200 OK)**:
+  Response 200 (jika `version` = `v1` atau `v2`):
   ```json
-  {
-    "unenriched_answer": "Jawaban dari dokumen asli...",
-    "enriched_answer": "Jawaban dari dokumen yang diperkaya...",
-    "prompt": "Apa poin-poin utama dari dokumen ini?"
-  }
+  { "answer": "jawaban", "version": "v1", "prompt": "Pertanyaan Anda" }
   ```
+
+## Troubleshooting
+
+- **GOOGLE_API_KEY tidak diset**: Pastikan `.env` berisi `GOOGLE_API_KEY` yang valid.
+- **Tidak bisa konek ke ChromaDB (server)**: Jalankan `chroma run --path chroma_db --port 8001` terlebih dahulu atau ubah `CHROMA_MODE=embedded`.
+- **Polling saran terlalu lama**: Dokumen besar atau kuota API. Tunggu atau coba ulang. Log akan menampilkan status Fase 1/2.
+- **Saran kosong**: Sistem memiliki fallback dan akan tetap membuat file rencana minimal; pastikan log Fase 1/2 tidak berisi error.

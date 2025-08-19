@@ -48,7 +48,6 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
             with open(assets_dir / image_filename, "wb") as img_file:
                 img_file.write(image_bytes)
 
-        # Step 2: Get text and image blocks and sort them by position
         blocks = page.get_text("blocks")
         image_blocks = []
         for img in image_list:

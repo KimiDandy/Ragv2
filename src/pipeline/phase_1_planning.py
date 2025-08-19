@@ -31,29 +31,60 @@ def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
         logger.error(f"File markdown tidak ditemukan di {markdown_path}")
         return ""
 
-    prompt = f"""Role: You are a multi-disciplinary research analyst.
-Task: Read the following Markdown document thoroughly. Identify ALL items that require further explanation or enrichment for a complete understanding. DO NOT provide the explanations now.
-Format Output: You MUST respond ONLY with a valid JSON object, with no additional text before or after it.
+    prompt_intro = """Peran: Anda adalah analis riset multidisiplin.
+Tugas: Baca dokumen Markdown berikut secara menyeluruh. Identifikasi SEMUA item yang membutuhkan penjelasan lebih lanjut atau penyempurnaan agar mudah dipahami. JANGAN berikan penjelasannya sekarang.
+Format Keluaran: Anda HARUS membalas HANYA dengan sebuah objek JSON valid, tanpa teks tambahan apa pun sebelum atau sesudahnya.
 
-Required JSON Structure:
-{{
+PENTING: Untuk setiap item yang diidentifikasi, sertakan dua field tambahan:
+- original_context: kalimat/paragraf persis (atau baris placeholder gambar persis) yang memicu item ini.
+- confidence_score: angka pecahan antara 0.0 hingga 1.0 yang menunjukkan keyakinan Anda bahwa item tersebut perlu disempurnakan.
+
+Struktur JSON yang Diharuskan:
+"""
+
+    schema_block = """
+{
   "terms_to_define": [
-    {{"term": "string", "context": "string (the full sentence where the term appears)"}}
+    {
+      "term": "string",
+      "original_context": "string (kalimat lengkap tempat istilah muncul)",
+      "confidence_score": 0.0
+    }
   ],
   "concepts_to_simplify": [
-    {{"identifier": "string (first 10 words of the paragraph)", "paragraph_text": "string (the full text of the complex paragraph)"}}
+    {
+      "identifier": "string (10 kata pertama paragraf)",
+      "original_context": "string (teks paragraf kompleks lengkap)",
+      "confidence_score": 0.0
+    }
   ],
-  "images_to_describe": ["string (the filename from the placeholder, e.g., 'image_01.png')"],
+  "images_to_describe": [
+    {
+      "image_file": "string (nama file dari placeholder, misal 'image_p3_42.png')",
+      "original_context": "string (baris placeholder persis, misal '[IMAGE_PLACEHOLDER: image_p3_42.png]')",
+      "confidence_score": 0.0
+    }
+  ],
   "inferred_connections": [
-    {{"from_concept": "string (source paragraph identifier)", "to_concept": "string (destination paragraph identifier)", "relationship_type": "string (e.g., 'provides an example for', 'is a counter-argument to')"}}
+    {
+      "from_concept": "string (identifier paragraf sumber)",
+      "to_concept": "string (identifier paragraf tujuan)",
+      "relationship_type": "string (contoh: 'memberikan contoh untuk', 'adalah sanggahan terhadap')",
+      "confidence_score": 0.0,
+      "original_context": "string (kalimat/paragraf yang menunjukkan keterkaitan ini)"
+    }
   ]
-}}
-
-Document to Analyze:
----
-{markdown_content}
----
+}
 """
+
+    prompt = (
+        prompt_intro
+        + "\n"
+        + schema_block
+        + "\n\nDokumen untuk Dianalisis:\n---\n"
+        + markdown_content
+        + "\n---\n"
+    )
 
     logger.info("Mengirim permintaan ke Gemini untuk membuat rencana enrichment...")
     model = genai.GenerativeModel(
@@ -79,7 +110,7 @@ Document to Analyze:
                 raw = ""
         return (raw or "").strip()
 
-    # Attempt 1
+    # Upaya 1
     response = model.generate_content(prompt)
     raw_text = _extract_text(response)
     raw_out = Path(doc_output_dir) / "enrichment_plan_raw.txt"
@@ -99,12 +130,12 @@ Document to Analyze:
             if m:
                 plan_data = json.loads(m.group(0))
 
-    # Retry once with stricter instruction if needed
+    # Coba ulang sekali dengan instruksi lebih ketat jika diperlukan
     if plan_data is None:
         strict_prompt = (
             prompt +
-            "\n\nSTRICT REQUIREMENT: Respond ONLY with a single valid JSON object matching the exact schema. "
-            "Do NOT include prose, explanations, or code fences."
+            "\n\nPERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid yang sesuai skema di atas. "
+            "JANGAN sertakan narasi, penjelasan, atau code fence."
         )
         response2 = model.generate_content(strict_prompt)
         raw_text2 = _extract_text(response2)
@@ -129,7 +160,26 @@ Document to Analyze:
         except Exception:
             pass
         logger.error(f"Gagal mendapatkan JSON rencana enrichment. finish_reason={fr}")
-        return ""
+        image_placeholders = []
+        try:
+            for m in re.finditer(r"\[IMAGE_PLACEHOLDER:\s*([^\]]+)\]", markdown_content or ""):
+                fname = (m.group(1) or "").strip()
+                if fname:
+                    image_placeholders.append({
+                        "image_file": fname,
+                        "original_context": m.group(0),
+                        "confidence_score": 0.4,
+                    })
+        except Exception:
+            image_placeholders = []
+
+        plan_data = {
+            "terms_to_define": [],
+            "concepts_to_simplify": [],
+            "images_to_describe": image_placeholders,
+            "inferred_connections": [],
+        }
+        logger.warning("Membuat enrichment_plan.json minimal sebagai fallback (list kosong + deteksi gambar)")
 
     plan_output_path = Path(doc_output_dir) / "enrichment_plan.json"
     with open(plan_output_path, 'w', encoding='utf-8') as f:
@@ -141,13 +191,13 @@ Document to Analyze:
 if __name__ == '__main__':
     base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
     if not base_artefacts_dir.exists():
-        logger.error(f"'{PIPELINE_ARTEFACTS_DIR}' directory not found. Run phase_0 first.")
+        logger.error(f"Direktori '{PIPELINE_ARTEFACTS_DIR}' tidak ditemukan. Jalankan phase_0 terlebih dahulu.")
     else:
         all_doc_dirs = [d for d in base_artefacts_dir.iterdir() if d.is_dir()]
         if not all_doc_dirs:
-            logger.error(f"No document directories found in '{PIPELINE_ARTEFACTS_DIR}'.")
+            logger.error(f"Tidak ada direktori dokumen di '{PIPELINE_ARTEFACTS_DIR}'.")
         else:
             latest_doc_dir = max(all_doc_dirs, key=lambda d: d.stat().st_mtime)
             markdown_file = latest_doc_dir / "markdown_v1.md"
-            logger.info(f"Running Phase 1 on: {markdown_file}")
+            logger.info(f"Menjalankan Fase 1 pada: {markdown_file}")
             create_enrichment_plan(str(markdown_file), str(latest_doc_dir))
