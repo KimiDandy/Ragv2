@@ -19,7 +19,15 @@ from loguru import logger
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 
 from src.api.endpoints import router as api_router
-from src.core.config import CHROMA_DB_PATH, GOOGLE_API_KEY, EMBEDDING_MODEL, CHAT_MODEL
+from src.core.config import (
+    CHROMA_DB_PATH,
+    GOOGLE_API_KEY,
+    EMBEDDING_MODEL,
+    CHAT_MODEL,
+    CHROMA_MODE,
+    CHROMA_SERVER_HOST,
+    CHROMA_SERVER_PORT,
+)
 
 logger.remove()
 logger.add(
@@ -39,9 +47,19 @@ async def lifespan(app: FastAPI):
     """
     logger.info("Startup Aplikasi: Menginisialisasi semua sumber daya...")
     try:
-        # 1. Use PersistentClient for a reliable embedded mode
-        app.state.chroma_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
-        logger.info(f"ChromaDB client diinisialisasi dari path: {CHROMA_DB_PATH}")
+        # 1. Inisialisasi ChromaDB sesuai mode
+        if CHROMA_MODE == "server":
+            app.state.chroma_client = chromadb.HttpClient(host=CHROMA_SERVER_HOST, port=CHROMA_SERVER_PORT)
+            logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
+        else:
+            # Embedded mode (requires local dependencies). Jika gagal, log dan fallback ke server bila tersedia.
+            try:
+                app.state.chroma_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
+                logger.info(f"ChromaDB embedded diinisialisasi dari path: {CHROMA_DB_PATH}")
+            except Exception as emb_err:
+                logger.warning(f"Embedded mode gagal: {emb_err}. Mencoba HttpClient ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}...")
+                app.state.chroma_client = chromadb.HttpClient(host=CHROMA_SERVER_HOST, port=CHROMA_SERVER_PORT)
+                logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
 
         # 2. Initialize AI models once
         app.state.embedding_function = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL, google_api_key=GOOGLE_API_KEY)

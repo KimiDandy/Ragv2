@@ -20,8 +20,13 @@ CHAT_MODEL = "gemini-2.5-flash"
 EMBEDDING_MODEL = "models/embedding-001"
 
 # Konfigurasi ChromaDB
-CHROMA_DB_PATH = "chroma_db"
+CHROMA_DB_PATH = "chroma_db"  # digunakan saat embedded mode
 CHROMA_COLLECTION = "genesis_rag_collection"
+
+# Mode koneksi Chroma: 'server' (HTTP client) atau 'embedded'
+CHROMA_MODE = os.getenv("CHROMA_MODE", "server").lower()
+CHROMA_SERVER_HOST = os.getenv("CHROMA_SERVER_HOST", "localhost")
+CHROMA_SERVER_PORT = int(os.getenv("CHROMA_SERVER_PORT", "8001"))
 
 # Konfigurasi Prompt Template
 RAG_PROMPT_TEMPLATE = """

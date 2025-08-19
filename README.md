@@ -10,7 +10,7 @@ Sistem RAG standar seringkali gagal menjawab pertanyaan yang membutuhkan pemaham
 | Backend | Python, FastAPI |
 | Orkestrasi AI | LangChain |
 | Model AI | Google Gemini (Embeddings & Generative) |
-| Database Vektor | ChromaDB (Embedded Mode) |
+| Database Vektor | ChromaDB (Client-Server Mode) |
 | Pemrosesan Dokumen | PyMuPDF |
 | Frontend | Vanilla JavaScript, HTML5, CSS3 |
 | Logging | Loguru |
@@ -51,7 +51,7 @@ graph TD
 ```bash
 # 1. Kloning repositori
 git clone <URL_REPOSITORI_ANDA>
-cd RAGv2
+cd Genesis-RAG
 
 # 2. Buat dan aktifkan virtual environment
 python -m venv venv
@@ -69,14 +69,29 @@ cp .env_example .env
 ```
 
 ### 3. Menjalankan Aplikasi
-Proyek ini menggunakan ChromaDB dalam mode embedded. Anda tidak perlu menjalankan server ChromaDB terpisah.
+Proyek ini menggunakan arsitektur Klien-Server. Anda perlu menjalankan dua proses di dua terminal terpisah: Server Database (ChromaDB) dan Server Aplikasi (FastAPI).
+
+**Terminal 1: Jalankan Server ChromaDB**
+Terminal ini didedikasikan untuk mengelola database vektor (Cukup jalankan satu kali saja).
 
 ```bash
-# Cukup jalankan server FastAPI dari direktori root
+# Dari direktori root proyek, jalankan perintah berikut:
+chroma run --path chroma_db --port 8001
+```
+Biarkan terminal ini tetap berjalan di latar belakang.
+
+**Terminal 2: Jalankan Server Aplikasi FastAPI**
+Terminal ini untuk menjalankan logika utama dan API aplikasi.
+
+```bash
+# Pastikan virtual environment Anda sudah aktif
+# Dari direktori root proyek, jalankan perintah berikut:
 uvicorn src.main:app --reload
 ```
+Server aplikasi sekarang akan berjalan dan terhubung ke server ChromaDB.
 
-Aplikasi akan tersedia di `http://127.0.0.1:8000`.
+### 4. Buka Aplikasi di Browser
+Buka browser Anda dan akses alamat `http://127.0.0.1:8000`.
 
 ## Konfigurasi
 Pengaturan utama proyek, seperti nama model, path, dan template prompt, dikelola secara terpusat di `src/core/config.py` untuk kemudahan modifikasi.
