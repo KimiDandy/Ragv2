@@ -100,7 +100,7 @@ Terminal ini untuk menjalankan logika utama dan API aplikasi.
 ```bash
 # Pastikan virtual environment Anda sudah aktif
 # Dari direktori root proyek, jalankan perintah berikut:
-python -m uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+python -m uvicorn src.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 Server aplikasi sekarang akan berjalan dan terhubung ke server ChromaDB.
 

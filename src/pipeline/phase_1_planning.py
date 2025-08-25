@@ -3,6 +3,7 @@ from pathlib import Path
 import google.generativeai as genai
 from loguru import logger
 import re
+import time
 
 from ..core.config import GOOGLE_API_KEY, PLANNING_MODEL, PIPELINE_ARTEFACTS_DIR
 
@@ -110,55 +111,59 @@ Struktur JSON yang Diharuskan:
                 raw = ""
         return (raw or "").strip()
 
-    # Upaya 1
-    response = model.generate_content(prompt)
-    raw_text = _extract_text(response)
-    raw_out = Path(doc_output_dir) / "enrichment_plan_raw.txt"
-    try:
-        with open(raw_out, 'w', encoding='utf-8') as f:
-            f.write(raw_text)
-    except Exception:
-        pass
-
+    # Retry hingga 3x dengan backoff jika JSON tidak valid
+    max_attempts = 3
     plan_data = None
-    if raw_text:
-        json_str = raw_text.replace('```json', '').replace('```', '').strip()
+    last_finish_reason = None
+    for attempt in range(1, max_attempts + 1):
         try:
-            plan_data = json.loads(json_str)
-        except json.JSONDecodeError:
-            m = re.search(r"\{.*\}", json_str, re.DOTALL)
-            if m:
-                plan_data = json.loads(m.group(0))
+            if attempt == 1:
+                prompt_to_send = prompt
+            else:
+                prompt_to_send = (
+                    prompt
+                    + "\n\nPERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid yang sesuai skema di atas. "
+                      "JANGAN sertakan narasi, penjelasan, atau code fence."
+                )
 
-    # Coba ulang sekali dengan instruksi lebih ketat jika diperlukan
-    if plan_data is None:
-        strict_prompt = (
-            prompt +
-            "\n\nPERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid yang sesuai skema di atas. "
-            "JANGAN sertakan narasi, penjelasan, atau code fence."
-        )
-        response2 = model.generate_content(strict_prompt)
-        raw_text2 = _extract_text(response2)
-        try:
-            with open(Path(doc_output_dir) / "enrichment_plan_raw_retry.txt", 'w', encoding='utf-8') as f:
-                f.write(raw_text2)
-        except Exception:
-            pass
-        if raw_text2:
-            json_str2 = raw_text2.replace('```json', '').replace('```', '').strip()
+            response = model.generate_content(prompt_to_send)
+            raw_text = _extract_text(response)
             try:
-                plan_data = json.loads(json_str2)
-            except json.JSONDecodeError:
-                m2 = re.search(r"\{.*\}", json_str2, re.DOTALL)
-                if m2:
-                    plan_data = json.loads(m2.group(0))
+                with open(Path(doc_output_dir) / f"enrichment_plan_raw_attempt{attempt}.txt", 'w', encoding='utf-8') as f:
+                    f.write(raw_text)
+            except Exception:
+                pass
+
+            if raw_text:
+                json_str = raw_text.replace('```json', '').replace('```', '').strip()
+                try:
+                    plan_data = json.loads(json_str)
+                except json.JSONDecodeError:
+                    m = re.search(r"\{.*\}", json_str, re.DOTALL)
+                    if m:
+                        try:
+                            plan_data = json.loads(m.group(0))
+                        except json.JSONDecodeError:
+                            plan_data = None
+
+            if plan_data is not None:
+                break
+
+            # log alasan kegagalan percobaan
+            try:
+                last_finish_reason = response.candidates[0].finish_reason if response.candidates else None
+            except Exception:
+                last_finish_reason = None
+            logger.warning(f"Percobaan Fase 1 (planning) ke-{attempt} gagal parsing JSON. finish_reason={last_finish_reason}")
+
+        except Exception as e:
+            logger.warning(f"Percobaan Fase 1 (planning) ke-{attempt} error: {e}")
+
+        if attempt < max_attempts:
+            time.sleep(1.5 ** attempt)
 
     if plan_data is None:
-        fr = None
-        try:
-            fr = response.candidates[0].finish_reason if response.candidates else None
-        except Exception:
-            pass
+        fr = last_finish_reason
         logger.error(f"Gagal mendapatkan JSON rencana enrichment. finish_reason={fr}")
         image_placeholders = []
         try:

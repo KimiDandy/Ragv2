@@ -15,7 +15,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # Konfigurasi Model
 PLANNING_MODEL = "gemini-2.5-flash"
-GENERATION_MODEL = "gemini-2.5-pro"
+GENERATION_MODEL = "gemini-2.5-flash"
 CHAT_MODEL = "gemini-2.5-flash"
 EMBEDDING_MODEL = "models/embedding-001"
 

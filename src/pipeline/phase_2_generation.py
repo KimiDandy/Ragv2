@@ -4,6 +4,7 @@ from pathlib import Path
 import google.generativeai as genai
 from PIL import Image
 from loguru import logger
+import time
 
 from ..core.config import GENERATION_MODEL, PIPELINE_ARTEFACTS_DIR, GOOGLE_API_KEY
 
@@ -122,59 +123,77 @@ def generate_bulk_content(doc_output_dir: str) -> str:
                     return None
             return None
 
-    # Upaya 1 (dengan gambar)
-    response = model.generate_content(prompt_parts)
-    raw_text = _extract_text(response)
-    try:
-        with open(doc_path / "generated_content_raw.txt", 'w', encoding='utf-8') as rf:
-            rf.write(raw_text)
-    except Exception:
-        pass
+    # Retry hingga 3x dengan variasi prompt dan backoff
+    max_attempts = 3
+    content_data = None
+    attempts_meta = []
 
-    content_data = _parse_json(raw_text)
+    for attempt in range(1, max_attempts + 1):
+        # Siapkan prompt per percobaan
+        if attempt == 1:
+            prompt_to_send = prompt_parts  # multimodal, termasuk gambar
+        elif attempt == 2:
+            strict_intro = (
+                "PERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid. "
+                "JANGAN sertakan penjelasan, code fence, atau teks tambahan apa pun."
+            )
+            prompt_to_send = [
+                "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.",
+                "Konteks: Saya memberikan dokumen asli dan rencana enrichment.",
+                "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat.",
+                "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.",
+                strict_intro,
+                "\n--- Dokumen Asli (untuk konteks) ---",
+                markdown_content,
+                "\n--- Rencana Enrichment untuk Dieksekusi ---",
+                json.dumps(enrichment_plan, indent=2),
+            ]
+        else:
+            strict_intro2 = (
+                "BALAS HANYA JSON VALID. Jika ragu, kembalikan objek kosong dengan keys: "
+                "terms_to_define, concepts_to_simplify, image_descriptions."
+            )
+            prompt_to_send = [
+                strict_intro2,
+                "\n--- Dokumen Asli (untuk konteks) ---",
+                markdown_content,
+                "\n--- Rencana Enrichment untuk Dieksekusi ---",
+                json.dumps(enrichment_plan, indent=2),
+            ]
 
-    # Coba ulang sekali: paksa hanya JSON dan hilangkan gambar jika percobaan pertama gagal
-    if content_data is None:
-        strict_intro = (
-            "PERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid. "
-            "JANGAN sertakan penjelasan, code fence, atau teks tambahan apa pun."
-        )
-        prompt_no_images = [
-            "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.",
-            "Konteks: Saya memberikan dokumen asli dan rencana enrichment.",
-            "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat.",
-            "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.",
-            strict_intro,
-            "\n--- Dokumen Asli (untuk konteks) ---",
-            markdown_content,
-            "\n--- Rencana Enrichment untuk Dieksekusi ---",
-            json.dumps(enrichment_plan, indent=2),
-        ]
-        response2 = model.generate_content(prompt_no_images)
-        raw_text2 = _extract_text(response2)
         try:
-            with open(doc_path / "generated_content_raw_retry.txt", 'w', encoding='utf-8') as rf:
-                rf.write(raw_text2)
-        except Exception:
-            pass
-        content_data = _parse_json(raw_text2)
+            response = model.generate_content(prompt_to_send)
+            raw_text = _extract_text(response)
+            try:
+                with open(doc_path / f"generated_content_raw_attempt{attempt}.txt", 'w', encoding='utf-8') as rf:
+                    rf.write(raw_text)
+            except Exception:
+                pass
 
-        if content_data is None:
-            fr1 = fr2 = None
-            pf1 = pf2 = None
+            parsed = _parse_json(raw_text)
+            if parsed is not None:
+                content_data = parsed
+                break
+
+            # Kumpulkan meta untuk logging
             try:
-                fr1 = response.candidates[0].finish_reason if response.candidates else None
+                fr = response.candidates[0].finish_reason if response.candidates else None
             except Exception:
-                pass
-            try:
-                fr2 = response2.candidates[0].finish_reason if response2.candidates else None
-            except Exception:
-                pass
-            pf1 = getattr(response, "prompt_feedback", None)
-            pf2 = getattr(response2, "prompt_feedback", None)
-            logger.error(f"Gagal mendapatkan JSON valid dari Gemini. finish_reason_attempt1={fr1}, finish_reason_attempt2={fr2}, prompt_feedback_attempt1={pf1}, prompt_feedback_attempt2={pf2}")
-            # Fallback: tetap lanjutkan dengan membuat suggestions.json berbasis plan
-            content_data = {"terms_to_define": [], "concepts_to_simplify": [], "image_descriptions": []}
+                fr = None
+            pf = getattr(response, "prompt_feedback", None)
+            attempts_meta.append({"attempt": attempt, "finish_reason": fr, "prompt_feedback": pf})
+            logger.warning(f"Percobaan Fase 2 (generation) ke-{attempt} gagal parsing JSON. finish_reason={fr}, prompt_feedback={pf}")
+        except Exception as e:
+            attempts_meta.append({"attempt": attempt, "error": str(e)})
+            logger.warning(f"Percobaan Fase 2 (generation) ke-{attempt} error: {e}")
+
+        if attempt < max_attempts:
+            time.sleep(1.5 ** attempt)
+
+    if content_data is None:
+        logger.error(f"Gagal mendapatkan JSON valid dari Gemini setelah {max_attempts} percobaan. detail={attempts_meta}")
+        # Fallback: tetap lanjutkan dengan membuat suggestions.json berbasis plan
+        content_data = {"terms_to_define": [], "concepts_to_simplify": [], "image_descriptions": []}
 
     # Simpan konten mentah untuk pelacakan
     output_path = doc_path / "generated_content.json"
