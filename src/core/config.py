@@ -21,6 +21,16 @@ class Settings(BaseSettings):
     # Pipeline directories
     PIPELINE_ARTEFACTS_DIR: str = os.getenv("PIPELINE_ARTEFACTS_DIR", "artefacts")
 
+    # Budgets (tokens)
+    PHASE1_TOKEN_BUDGET: int = int(os.getenv("PHASE1_TOKEN_BUDGET", "35000"))
+    PHASE2_TOKEN_BUDGET: int = int(os.getenv("PHASE2_TOKEN_BUDGET", "50000"))
+
+    # Concurrency & rate limit
+    PHASE1_CONCURRENCY: int = int(os.getenv("PHASE1_CONCURRENCY", "7"))
+    PHASE1_RPS: float = float(os.getenv("PHASE1_RPS", "3"))
+    PHASE2_CONCURRENCY: int = int(os.getenv("PHASE2_CONCURRENCY", "4"))
+    PHASE2_RPS: float = float(os.getenv("PHASE2_RPS", "2"))
+
     # RAG prompt template (LangChain PromptTemplate expects {context} and {question})
     RAG_PROMPT_TEMPLATE: str = (
         "You are a precise assistant. Use only the CONTEXT to answer.\n\n"
@@ -42,3 +52,11 @@ CHROMA_SERVER_PORT = settings.CHROMA_SERVER_PORT
 CHROMA_COLLECTION = settings.CHROMA_COLLECTION
 PIPELINE_ARTEFACTS_DIR = settings.PIPELINE_ARTEFACTS_DIR
 RAG_PROMPT_TEMPLATE = settings.RAG_PROMPT_TEMPLATE
+
+# Performance budgets and limits
+PHASE1_TOKEN_BUDGET = settings.PHASE1_TOKEN_BUDGET
+PHASE2_TOKEN_BUDGET = settings.PHASE2_TOKEN_BUDGET
+PHASE1_CONCURRENCY = settings.PHASE1_CONCURRENCY
+PHASE1_RPS = settings.PHASE1_RPS
+PHASE2_CONCURRENCY = settings.PHASE2_CONCURRENCY
+PHASE2_RPS = settings.PHASE2_RPS

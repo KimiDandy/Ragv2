@@ -5,6 +5,8 @@ let pollTimer = null;
 let pollAttempts = 0;
 let pollIntervalMs = 3000; 
 const maxPollAttempts = 60; 
+let progressTimer = null;
+let progressIntervalMs = 2000;
 
 const API_BASE_URL = window.location.origin;
 
@@ -197,9 +199,12 @@ startEnhancementBtn?.addEventListener('click', async () => {
             throw new Error(d.detail || 'Gagal memulai peningkatan');
         }
         if (pollTimer) clearTimeout(pollTimer);
+        if (progressTimer) clearTimeout(progressTimer);
         pollAttempts = 0;
         pollIntervalMs = 3000;
+        progressIntervalMs = 2000;
         scheduleNextPoll();
+        scheduleProgressPoll();
     } catch (err) {
         showMessage(err.message || 'Gagal memulai peningkatan');
         startEnhancementBtn.disabled = false;
@@ -210,6 +215,11 @@ startEnhancementBtn?.addEventListener('click', async () => {
 function scheduleNextPoll() {
     if (pollTimer) clearTimeout(pollTimer);
     pollTimer = setTimeout(fetchSuggestions, pollIntervalMs);
+}
+
+function scheduleProgressPoll() {
+    if (progressTimer) clearTimeout(progressTimer);
+    progressTimer = setTimeout(fetchProgress, progressIntervalMs);
 }
 
 async function fetchSuggestions() {
@@ -225,12 +235,14 @@ async function fetchSuggestions() {
             setStepperPhase('curate');
             updateBulkButtonsState();
             if (pollTimer) clearTimeout(pollTimer);
+            if (progressTimer) clearTimeout(progressTimer);
         } else {
             setStatus('Berjalan...', 'running');
             pollAttempts += 1;
             pollIntervalMs = Math.min(Math.round(pollIntervalMs * 1.5), 15000);
             if (pollAttempts >= maxPollAttempts) {
                 if (pollTimer) clearTimeout(pollTimer);
+                if (progressTimer) clearTimeout(progressTimer);
                 setStatus('Waktu habis', 'error');
                 showMessage('Proses peningkatan memakan waktu lebih lama dari biasanya. Coba lagi nanti.');
                 startEnhancementBtn.disabled = false;
@@ -242,6 +254,35 @@ async function fetchSuggestions() {
         setStatus('Galat', 'error');
         startEnhancementBtn.disabled = false;
         if (pollTimer) clearTimeout(pollTimer);
+        if (progressTimer) clearTimeout(progressTimer);
+    }
+}
+
+async function fetchProgress() {
+    try {
+        if (!currentDocumentId) return;
+        const resp = await fetch(`${API_BASE_URL}/progress/${currentDocumentId}`);
+        const data = await resp.json();
+        if (resp.ok) {
+            const pct = Math.min(100, Math.max(0, Math.round(((data && data.percent) ? data.percent : 0) * 100)));
+            if (!suggestionsState.length) {
+                setStatus(`Berjalan... ${pct}%`, 'running');
+            }
+            const status = (data && data.status) || 'running';
+            if (status === 'complete' || pct >= 100) {
+                if (progressTimer) clearTimeout(progressTimer);
+            } else {
+                progressIntervalMs = Math.min(Math.round(progressIntervalMs * 1.2), 8000);
+                scheduleProgressPoll();
+            }
+        } else {
+            // backoff but keep trying
+            progressIntervalMs = Math.min(Math.round(progressIntervalMs * 1.5), 10000);
+            scheduleProgressPoll();
+        }
+    } catch (_) {
+        // stop progress polling on error to avoid noise
+        if (progressTimer) clearTimeout(progressTimer);
     }
 }
 

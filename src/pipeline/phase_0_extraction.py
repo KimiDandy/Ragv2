@@ -21,6 +21,7 @@ class Segment(BaseModel):
     text: str
     contains_entities: bool
     is_difficult: bool
+    numeric_ratio: float = Field(ge=0.0, le=1.0, default=0.0)
 
 
 class Phase0Metrics(BaseModel):
@@ -169,6 +170,12 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
 
             contains_entities = _contains_entities(para_text)
             is_difficult = _readability_is_difficult(para_text)
+            # fraction of numeric characters in the paragraph
+            try:
+                digits = sum(1 for ch in para_text if ch.isdigit())
+                numeric_ratio = digits / max(len(para_text), 1)
+            except Exception:
+                numeric_ratio = 0.0
 
             seg = Segment(
                 segment_id=f"{doc_id}_{len(segments)+1}",
@@ -179,6 +186,7 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
                 text=para_text,
                 contains_entities=contains_entities,
                 is_difficult=is_difficult,
+                numeric_ratio=float(numeric_ratio),
             )
             segments.append(seg)
 

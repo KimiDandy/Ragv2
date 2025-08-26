@@ -248,7 +248,16 @@ async def get_suggestions(document_id: str):
     doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
     sugg_path = doc_dir / "suggestions.json"
     if not sugg_path.exists():
-
+        # Fallback to partial suggestions if Phase-2 still running
+        partial = doc_dir / "suggestions_partial.json"
+        if partial.exists():
+            try:
+                data = json.loads(partial.read_text(encoding='utf-8'))
+                suggestions = [SuggestionItem(**item) for item in (data or [])]
+                return EnhancementResponse(document_id=document_id, suggestions=suggestions)
+            except Exception as e:
+                logger.error(f"Gagal membaca suggestions_partial.json: {e}")
+                return EnhancementResponse(document_id=document_id, suggestions=[])
         return EnhancementResponse(document_id=document_id, suggestions=[])
 
     try:
@@ -323,4 +332,74 @@ async def ask_question(request: Request, query: QueryRequest):
             }
     except Exception as e:
         logger.error(f"Error di endpoint /ask/: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/progress/{document_id}")
+async def get_progress(document_id: str):
+    """
+    Mengembalikan status progres pipeline untuk sebuah dokumen.
+    Mencoba membaca artefak progres untuk Fase-1 dan Fase-2.
+    Output ringan agar mudah dipakai front-end.
+    """
+    try:
+        doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
+        if not doc_dir.exists():
+            raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan.")
+
+        # Heuristik progres per fase
+        # Phase-0 dianggap selesai bila markdown_v1.md ada
+        p0_done = (doc_dir / "markdown_v1.md").exists()
+
+        # Phase-1
+        p1_progress = {}
+        p1_progress_path = doc_dir / "phase_1_progress.json"
+        if p1_progress_path.exists():
+            try:
+                p1_progress = json.loads(p1_progress_path.read_text(encoding="utf-8"))
+            except Exception:
+                p1_progress = {}
+        p1_done = (doc_dir / "plan.json").exists() or (p1_progress.get("processed", 0) >= p1_progress.get("preselected", 0) and p1_progress.get("preselected", 0) > 0)
+
+        # Phase-2
+        p2_progress = {}
+        p2_progress_path = doc_dir / "phase_2_progress.json"
+        if p2_progress_path.exists():
+            try:
+                p2_progress = json.loads(p2_progress_path.read_text(encoding="utf-8"))
+            except Exception:
+                p2_progress = {}
+        p2_done = (doc_dir / "suggestions.json").exists()
+
+        # Hitung persen gabungan sederhana: P0(0.2) + P1(0.4) + P2(0.4)
+        w0, w1, w2 = 0.2, 0.4, 0.4
+        p0 = 1.0 if p0_done else 0.0
+        # Phase-1 percent: dari progress file jika ada; else 1 jika plan.json ada
+        if p1_progress:
+            pre = max(1, int(p1_progress.get("preselected", 1)))
+            proc = int(p1_progress.get("processed", 0))
+            p1 = min(1.0, max(0.0, proc / pre))
+        else:
+            p1 = 1.0 if p1_done else 0.0
+        # Phase-2 percent
+        if p2_progress:
+            p2 = float(p2_progress.get("percent", 0.0))
+        else:
+            p2 = 1.0 if p2_done else 0.0
+
+        overall = min(1.0, w0 * p0 + w1 * p1 + w2 * p2)
+        status = "complete" if p2_done else ("running" if overall > 0.0 else "idle")
+
+        return {
+            "document_id": document_id,
+            "percent": overall,
+            "phase0": {"done": p0_done},
+            "phase1": {"done": p1_done, "progress": p1_progress},
+            "phase2": {"done": p2_done, "progress": p2_progress},
+            "status": status,
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error di endpoint /progress/: {e}")
         raise HTTPException(status_code=500, detail=str(e))

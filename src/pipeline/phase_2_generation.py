@@ -5,8 +5,17 @@ from langchain_openai import ChatOpenAI
 from loguru import logger
 import time
 import asyncio
+import statistics
 
-from ..core.config import CHAT_MODEL, PIPELINE_ARTEFACTS_DIR
+from ..core.config import (
+    CHAT_MODEL,
+    PIPELINE_ARTEFACTS_DIR,
+    PHASE2_CONCURRENCY,
+    PHASE2_RPS,
+    PHASE2_TOKEN_BUDGET,
+)
+from ..core.rate_limiter import AsyncLeakyBucket
+from ..core.token_meter import TokenBudget
 
 # ChatOpenAI will read OPENAI_API_KEY from environment
 
@@ -57,13 +66,24 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
         t = (t or "").strip()
         return t if len(t) <= n else (t[:n].rsplit(" ", 1)[0] or t[:n])
 
-    sem = asyncio.Semaphore(8)
+    # Controls
+    sem = asyncio.Semaphore(int(PHASE2_CONCURRENCY))
+    limiter = AsyncLeakyBucket(rps=float(PHASE2_RPS), capacity=max(int(PHASE2_CONCURRENCY), 1))
+    budget = TokenBudget(total=int(PHASE2_TOKEN_BUDGET))
 
-    async def _call_llm(prompt: str, timeout: float = 45.0, attempts: int = 2) -> str:
+    async def _call_llm(prompt: str, timeout: float = 45.0, attempts: int = 2, max_out: int = 250) -> str:
         last_err = None
         for i in range(1, attempts + 1):
             try:
+                # Token budget gating (approximate)
+                if not budget.can_afford(prompt, max_out=max_out):
+                    logger.warning("Phase-2 token budget exhausted; skipping remaining items")
+                    return ""
+                # Rate limit + concurrency
                 async with sem:
+                    await limiter.acquire()
+                    # charge before call to account for concurrency
+                    budget.charge(prompt, max_out=max_out)
                     resp = await asyncio.wait_for(chat.ainvoke(prompt), timeout=timeout)
                 txt = getattr(resp, "content", None) or str(resp)
                 return txt.strip()
@@ -89,7 +109,7 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
             f"Konteks: {_clip(ctx, 1000)}\n\n"
             "Balas HANYA teks definisi tanpa format lain."
         )
-        text = await _call_llm(prompt)
+        text = await _call_llm(prompt, max_out=220)
         return {"term": term, "definition": text}
 
     async def _gen_concept(item: dict) -> dict:
@@ -107,121 +127,174 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
             f"Konteks: {_clip(ctx, 1100)}\n\n"
             "Balas HANYA teks penjelasan tanpa format lain."
         )
-        text = await _call_llm(prompt)
+        text = await _call_llm(prompt, max_out=260)
         return {"identifier": ident, "simplified_text": text}
+    # Progressive generation with checkpoints and metrics
+    total_terms = len(terms_plan)
+    total_concepts = len(concepts_plan)
+    total_items = total_terms + total_concepts
 
-    term_tasks = [_gen_term(it) for it in terms_plan]
-    concept_tasks = [_gen_concept(it) for it in concepts_plan]
-    term_results, concept_results = await asyncio.gather(
-        asyncio.gather(*term_tasks), asyncio.gather(*concept_tasks)
-    )
+    stats = {"llm_calls": 0, "latencies": [], "processed": 0}
+    t0 = time.time()
 
-    # Build content_data similar to previous shape for compatibility/logging
+    term_results: list[dict] = []
+    concept_results: list[dict] = []
+    suggestions_accum: list[dict] = []
+
+    # Build workers that return both generation result and suggestion entry
+    def _mk_term_worker(idx: int, item: dict):
+        async def _worker():
+            t_start = time.time()
+            gen = await _gen_term(item)
+            latency = time.time() - t_start
+            stats["latencies"].append(latency)
+            stats["llm_calls"] += 1
+
+            # extract fields for suggestion
+            if isinstance(item, str):
+                term = item
+                original_context = item
+                conf = 0.5
+            else:
+                term = item.get("term") or item.get("name")
+                original_context = item.get("original_context") or item.get("context") or term or ""
+                conf = float(item.get("confidence_score", 0.5))
+            definition = (
+                gen.get("definition")
+                or gen.get("definition_text")
+                or gen.get("explanation")
+                or gen.get("expanded_definition")
+                or gen.get("text")
+                or gen.get("content")
+                or ""
+            )
+            suggestion = {
+                "id": f"term_{idx}",
+                "type": "term_to_define",
+                "original_context": original_context,
+                "generated_content": definition,
+                "confidence_score": conf,
+                "status": "pending",
+            }
+            return gen, suggestion
+        return _worker
+
+    def _mk_concept_worker(idx: int, item: dict):
+        async def _worker():
+            t_start = time.time()
+            gen = await _gen_concept(item)
+            latency = time.time() - t_start
+            stats["latencies"].append(latency)
+            stats["llm_calls"] += 1
+
+            if isinstance(item, str):
+                identifier = item
+                original_context = item
+                conf = 0.5
+            else:
+                identifier = item.get("identifier") or item.get("id") or item.get("name")
+                original_context = item.get("original_context") or item.get("paragraph_text") or identifier or ""
+                conf = float(item.get("confidence_score", 0.5))
+            simplified = (
+                gen.get("simplified_text")
+                or gen.get("simplified")
+                or gen.get("explanation")
+                or gen.get("summary")
+                or gen.get("text")
+                or gen.get("content")
+                or ""
+            )
+            suggestion = {
+                "id": f"concept_{idx}",
+                "type": "concept_to_simplify",
+                "original_context": original_context,
+                "generated_content": simplified,
+                "confidence_score": conf,
+                "status": "pending",
+            }
+            return gen, suggestion
+        return _worker
+
+    # Create tasks
+    tasks: list[asyncio.Task] = []
+    for idx, it in enumerate(terms_plan):
+        tasks.append(asyncio.create_task(_mk_term_worker(idx, it)()))
+    for idx, it in enumerate(concepts_plan):
+        tasks.append(asyncio.create_task(_mk_concept_worker(idx, it)()))
+
+    # Helpers to write checkpoints and progress
+    def _write_progress():
+        lat = stats.get("latencies", [])
+        p50 = statistics.median(lat) if lat else 0.0
+        p95 = (statistics.quantiles(lat, n=100)[94] if len(lat) >= 20 else max(lat) if lat else 0.0)
+        metrics = {
+            "total_items": total_items,
+            "processed": stats["processed"],
+            "llm_calls": stats["llm_calls"],
+            "duration_sec": time.time() - t0,
+            "p50_latency_sec": p50,
+            "p95_latency_sec": p95,
+            "token_budget_used": budget.used,
+            "token_budget_total": budget.total,
+            "percent": (stats["processed"] / total_items) if total_items else 1.0,
+        }
+        try:
+            (doc_path / "phase_2_metrics.json").write_text(json.dumps(metrics, indent=2, ensure_ascii=False), encoding="utf-8")
+            (doc_path / "phase_2_progress.json").write_text(json.dumps(metrics, indent=2, ensure_ascii=False), encoding="utf-8")
+        except Exception:
+            pass
+
+    def _write_partial_suggestions():
+        try:
+            (doc_path / "suggestions_partial.json").write_text(
+                json.dumps(suggestions_accum, indent=2, ensure_ascii=False), encoding="utf-8"
+            )
+        except Exception:
+            pass
+
+    checkpoint_every = 10
+    # Consume results progressively
+    for coro in asyncio.as_completed(tasks):
+        try:
+            gen, suggestion = await coro
+        except Exception as e:
+            logger.debug(f"Worker error (phase-2): {e}")
+            continue
+        if suggestion.get("type") == "term_to_define":
+            term_results.append(gen)
+        else:
+            concept_results.append(gen)
+        suggestions_accum.append(suggestion)
+        stats["processed"] += 1
+        if stats["processed"] % checkpoint_every == 0:
+            _write_partial_suggestions()
+            _write_progress()
+
+    # Final writes
     content_data = {
         "terms_to_define": term_results,
         "concepts_to_simplify": concept_results,
     }
-
-    # Simpan konten mentah untuk pelacakan
     output_path = doc_path / "generated_content.json"
     try:
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(content_data, f, indent=2)
     except Exception:
-        # Jika gagal menulis, tetap lanjutkan membuat daftar saran
         pass
 
-    # Bangun suggestions.json dengan menggabungkan plan + hasil generasi menjadi daftar datar
-    suggestions: list[dict] = []
-    plan = enrichment_plan
-
-    # Peta bantu untuk lookup cepat dari hasil generasi
-    gen_terms: dict[str, dict] = {}
-    gen_concepts: dict[str, dict] = {}
-    if isinstance(content_data, dict):
-        # terms_to_define may be list[dict]|list[str]
-        for i in content_data.get("terms_to_define", []) or []:
-            if isinstance(i, dict):
-                key = i.get("term") or i.get("name")
-                if key:
-                    gen_terms[key] = i
-            elif isinstance(i, str):
-                gen_terms[i] = {"content": i}
-
-        # concepts_to_simplify may be list[dict]|list[str]
-        for i in content_data.get("concepts_to_simplify", []) or []:
-            if isinstance(i, dict):
-                key = i.get("identifier") or i.get("id") or i.get("name")
-                if key:
-                    gen_concepts[key] = i
-            elif isinstance(i, str):
-                gen_concepts[i] = {"content": i}
-
-    # Istilah untuk didefinisikan
-    for idx, item in enumerate(plan.get("terms_to_define", []) or []):
-        if isinstance(item, str):
-            term = item
-            original_context = item
-            conf = 0.5
-        else:
-            term = item.get("term") or item.get("name")
-            original_context = item.get("original_context") or item.get("context") or term or ""
-            conf = float(item.get("confidence_score", 0.5))
-        gen = gen_terms.get(term, {})
-        # Beberapa kemungkinan nama field dari LLM
-        definition = (
-            gen.get("definition")
-            or gen.get("definition_text")
-            or gen.get("explanation")
-            or gen.get("expanded_definition")
-            or gen.get("text")
-            or gen.get("content")
-            or ""
-        )
-        suggestions.append({
-            "id": f"term_{idx}",
-            "type": "term_to_define",
-            "original_context": original_context,
-            "generated_content": definition,
-            "confidence_score": conf,
-            "status": "pending",
-        })
-
-    # Konsep untuk disederhanakan
-    for idx, item in enumerate(plan.get("concepts_to_simplify", []) or []):
-        if isinstance(item, str):
-            identifier = item
-            original_context = item
-            conf = 0.5
-        else:
-            identifier = item.get("identifier")
-            original_context = item.get("original_context") or item.get("paragraph_text") or identifier or ""
-            conf = float(item.get("confidence_score", 0.5))
-        gen = gen_concepts.get(identifier, {})
-        simplified = (
-            gen.get("simplified_text")
-            or gen.get("simplified")
-            or gen.get("explanation")
-            or gen.get("summary")
-            or gen.get("text")
-            or gen.get("content")
-            or ""
-        )
-        suggestions.append({
-            "id": f"concept_{idx}",
-            "type": "concept_to_simplify",
-            "original_context": original_context,
-            "generated_content": simplified,
-            "confidence_score": conf,
-            "status": "pending",
-        })
-
-    # teks-only: tidak ada gambar untuk dideskripsikan
-
-    # Tulis suggestions.json
+    # Write final suggestions and remove partial if exists
     suggestions_path = doc_path / "suggestions.json"
     with open(suggestions_path, 'w', encoding='utf-8') as sf:
-        json.dump(suggestions, sf, indent=2, ensure_ascii=False)
+        json.dump(suggestions_accum, sf, indent=2, ensure_ascii=False)
+
+    # final progress write
+    _write_progress()
+    try:
+        part = doc_path / "suggestions_partial.json"
+        if part.exists():
+            part.unlink(missing_ok=True)
+    except Exception:
+        pass
 
     logger.info(f"Fase 2 selesai. Konten hasil generasi disimpan di: {output_path}")
     logger.info(f"Daftar saran (human-in-the-loop) disimpan di: {suggestions_path}")
