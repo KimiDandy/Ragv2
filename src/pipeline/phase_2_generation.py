@@ -5,8 +5,11 @@ import google.generativeai as genai
 from PIL import Image
 from loguru import logger
 import time
+import asyncio
+from typing import List, Dict, Any
 
 from ..core.config import GENERATION_MODEL, PIPELINE_ARTEFACTS_DIR, GOOGLE_API_KEY
+from ..core.prompts import load_prompt
 
 # Pastikan SDK dikonfigurasi ketika modul diimpor oleh FastAPI
 if GOOGLE_API_KEY:
@@ -14,6 +17,157 @@ if GOOGLE_API_KEY:
        genai.configure(api_key=GOOGLE_API_KEY)
    except Exception as _e:
        logger.warning(f"Gagal mengkonfigurasi Google Generative AI SDK: {_e}")
+
+async def process_chunks_for_enrichment(chunks: List[str], max_concurrency: int = 5, glossary: Dict[str, Any] | None = None) -> List[Dict[str, Any]]:
+    """
+    Menganalisis setiap chunk secara paralel untuk menghasilkan saran pengayaan, lalu agregasi & deduplikasi.
+
+    Output item memiliki skema seragam:
+      {
+        "type": "term_to_define" | "concept_to_simplify" | "image_description",
+        "original_context": str,
+        "generated_content": str,
+        "confidence_score": float
+      }
+
+    Args:
+        chunks: daftar teks chunk markdown.
+        max_concurrency: batas goroutine paralel.
+        glossary: kamus global opsional untuk konteks lintas-chunk.
+
+    Returns:
+        List[dict]: daftar saran agregat terdeduplikasi.
+    """
+    if not chunks:
+        return []
+
+    model = genai.GenerativeModel(
+        GENERATION_MODEL,
+        generation_config={
+            "temperature": 0.2,
+            "response_mime_type": "application/json"
+        },
+    )
+
+    # Load externalized prompt and optionally append Global Glossary context
+    default_prompt = (
+        "Peran: Anda adalah analis teks.\n"
+        "Tugas: Dari cuplikan dokumen berikut, identifikasi: (a) istilah yang perlu didefinisikan, (b) paragraf/konsep yang perlu disederhanakan.\n"
+        "Keluaran: BALAS HANYA JSON array valid (tanpa code fence), berisi objek dengan fields persis: type, original_context, generated_content, confidence_score.\n"
+        "Aturan: type harus salah satu dari: 'term_to_define', 'concept_to_simplify'.\n"
+        "- Untuk term_to_define: generated_content berisi definisi ringkas.\n"
+        "- Untuk concept_to_simplify: generated_content berisi penyederhanaan ringkas.\n"
+        "- confidence_score angka 0.0..1.0.\n"
+        "Jika tidak ada, balas [].\n"
+        "Jika tersedia, gunakan Global Glossary sebagai pengetahuan lintas-chunk. Jika cuplikan mengandung singkatan/alias yang cocok, WAJIB keluarkan term_to_define untuk menyelaraskan istilah.\n"
+    )
+    prompt_header = load_prompt("phase2_generation.prompt.md", default_prompt)
+    glossary_block = ""
+    if glossary and isinstance(glossary, dict):
+        try:
+            # glossary may be {"glossary": {...}}
+            gmap = glossary.get("glossary", glossary)
+            # keep it compact to avoid token bloat
+            glossary_block = "\n--- Global Glossary ---\n" + json.dumps(gmap, ensure_ascii=False)[:4000]
+        except Exception:
+            glossary_block = ""
+
+    sem = asyncio.Semaphore(max_concurrency)
+
+    def _parse_array(raw_text: str):
+        if not raw_text:
+            return []
+        js = (raw_text or "").replace('```json', '').replace('```', '').strip()
+        try:
+            parsed = json.loads(js)
+            return parsed if isinstance(parsed, list) else []
+        except json.JSONDecodeError:
+            m = re.search(r"\[[\s\S]*\]", js)
+            if m:
+                try:
+                    parsed = json.loads(m.group(0))
+                    return parsed if isinstance(parsed, list) else []
+                except json.JSONDecodeError:
+                    return []
+            return []
+
+    async def _analyze_chunk(idx: int, text: str) -> List[Dict[str, Any]]:
+        async with sem:
+            # Jalankan pemanggilan blokir di thread pool agar tidak memblokir event loop
+            def _call_model():
+                attempts = 3
+                last_raw = ""
+                for a in range(1, attempts + 1):
+                    try:
+                        resp = model.generate_content([
+                            prompt_header,
+                            glossary_block,
+                            "\n--- Cuplikan ---\n",
+                            text or "",
+                        ])
+                        raw = ""
+                        try:
+                            if getattr(resp, "candidates", None):
+                                for c in resp.candidates:
+                                    parts = getattr(c, "content", None) and c.content.parts or []
+                                    for p in parts:
+                                        if hasattr(p, "text") and p.text:
+                                            raw += p.text
+                            if not raw:
+                                raw = getattr(resp, "text", "") or ""
+                        except Exception:
+                            raw = getattr(resp, "text", "") or ""
+                        last_raw = raw
+                        arr = _parse_array(raw)
+                        if isinstance(arr, list):
+                            return arr
+                    except Exception as e:
+                        logger.warning(f"Gagal analisis chunk {idx} attempt {a}: {e}")
+                    time.sleep(1.2 ** a)
+                # fallback jika gagal total
+                if last_raw:
+                    return _parse_array(last_raw)
+                return []
+
+            return await asyncio.to_thread(_call_model)
+
+    tasks = [asyncio.create_task(_analyze_chunk(i, ch)) for i, ch in enumerate(chunks)]
+    results_lists = await asyncio.gather(*tasks, return_exceptions=False)
+
+    # Flatten dan normalisasi + dedupe
+    agg: List[Dict[str, Any]] = []
+    seen = set()
+    for lst in results_lists:
+        if not isinstance(lst, list):
+            continue
+        for item in lst:
+            if not isinstance(item, dict):
+                continue
+            t = (item.get("type") or "").strip()
+            if t not in ("term_to_define", "concept_to_simplify", "image_description"):
+                # batasi pada dua tipe utama yang kita gunakan di UI
+                if t not in ("term_to_define", "concept_to_simplify"):
+                    continue
+            ctx = (item.get("original_context") or "").strip()
+            gen = (item.get("generated_content") or "").strip()
+            try:
+                conf = float(item.get("confidence_score", 0.5))
+            except Exception:
+                conf = 0.5
+            # Key dedupe - kombinasi tipe + potongan konteks yang dinormalisasi
+            key = (t, re.sub(r"\s+", " ", ctx.lower())[:200])
+            if key in seen:
+                continue
+            seen.add(key)
+            agg.append({
+                "type": t,
+                "original_context": ctx,
+                "generated_content": gen,
+                "confidence_score": conf,
+            })
+
+    logger.info(f"Enrichment paralel selesai. Dihasilkan {len(agg)} saran terdeduplikasi dari {len(chunks)} chunk.")
+    return agg
 
 def generate_bulk_content(doc_output_dir: str) -> str:
     """

@@ -113,6 +113,32 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
     if appendix_list:
         final_content += "\n\n## Catatan Pengayaan (unanchored)\n\n" + "\n".join(appendix_list)
 
+    # Tambahkan Glossary global (jika ada), diletakkan di bagian akhir
+    try:
+        gpath = doc_path / "global_glossary.json"
+        if gpath.exists():
+            data = json.loads(gpath.read_text(encoding='utf-8')) or {}
+            glossary = data.get("glossary", data) or {}
+            if isinstance(glossary, dict) and glossary:
+                lines = ["\n\n## Glossary\n"]
+                # Urutkan berdasarkan key untuk determinisme
+                for k in sorted(glossary.keys(), key=lambda s: str(s).lower()):
+                    v = glossary.get(k)
+                    if v is None:
+                        continue
+                    sk = str(k).strip()
+                    sv = str(v).strip()
+                    if not sk:
+                        continue
+                    # Jika canonical sama dengan key, tampilkan sekali
+                    if sk.lower() == sv.lower():
+                        lines.append(f"- {sk}")
+                    else:
+                        lines.append(f"- {sk} — {sv}")
+                final_content += "\n" + "\n".join(lines) + "\n"
+    except Exception as e:
+        logger.warning(f"Gagal menambahkan Glossary: {e}")
+
     output_path = doc_path / "markdown_v2.md"
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(final_content)

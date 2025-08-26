@@ -19,6 +19,11 @@ GENERATION_MODEL = "gemini-2.5-flash"
 CHAT_MODEL = "gemini-2.5-flash"
 EMBEDDING_MODEL = "models/embedding-001"
 
+# Backend Embedding: 'google' atau 'local'
+EMBEDDING_BACKEND = os.getenv("EMBEDDING_BACKEND", "google").lower()
+# Model lokal HuggingFace (butuh paket sentence-transformers terpasang)
+EMBEDDING_LOCAL_MODEL = os.getenv("EMBEDDING_LOCAL_MODEL", "all-MiniLM-L6-v2")
+
 # Konfigurasi ChromaDB
 CHROMA_DB_PATH = "chroma_db"  # digunakan saat embedded mode
 CHROMA_COLLECTION = "genesis_rag_collection"

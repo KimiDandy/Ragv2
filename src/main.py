@@ -17,6 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from loguru import logger
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
 from src.api.endpoints import router as api_router
 from src.core.config import (
@@ -27,6 +28,9 @@ from src.core.config import (
     CHROMA_MODE,
     CHROMA_SERVER_HOST,
     CHROMA_SERVER_PORT,
+    EMBEDDING_BACKEND,
+    EMBEDDING_LOCAL_MODEL,
+    CHROMA_COLLECTION,
 )
 
 logger.remove()
@@ -61,10 +65,36 @@ async def lifespan(app: FastAPI):
                 app.state.chroma_client = chromadb.HttpClient(host=CHROMA_SERVER_HOST, port=CHROMA_SERVER_PORT)
                 logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
 
-        # 2. Initialize AI models
-        app.state.embedding_function = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL, google_api_key=GOOGLE_API_KEY)
+        # 2. Initialize AI models (embeddings backend + chat model)
+        # Chat model remains Google by default
         app.state.chat_model = ChatGoogleGenerativeAI(model=CHAT_MODEL, google_api_key=GOOGLE_API_KEY, temperature=0.7)
-        logger.info("Model AI berhasil diinisialisasi.")
+
+        backend = (EMBEDDING_BACKEND or "google").lower()
+        if backend == "local" or not GOOGLE_API_KEY:
+            # Use local HF embeddings
+            logger.info(f"Inisialisasi embedding lokal HuggingFace: {EMBEDDING_LOCAL_MODEL}")
+            app.state.embedding_function = HuggingFaceEmbeddings(model_name=EMBEDDING_LOCAL_MODEL)
+        else:
+            try:
+                app.state.embedding_function = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL, google_api_key=GOOGLE_API_KEY)
+                logger.info("Embedding Google berhasil diinisialisasi.")
+            except Exception as e:
+                logger.warning(f"Gagal inisialisasi embedding Google: {e}. Fallback ke embedding lokal HuggingFace: {EMBEDDING_LOCAL_MODEL}")
+                app.state.embedding_function = HuggingFaceEmbeddings(model_name=EMBEDDING_LOCAL_MODEL)
+
+        # Tentukan nama koleksi Chroma dinamis berdasarkan backend + dimensi embedding
+        try:
+            probe_vec = app.state.embedding_function.embed_query("dimension probe")
+            dim = len(probe_vec) if hasattr(probe_vec, "__len__") else None
+        except Exception as e:
+            logger.warning(f"Gagal mengukur dimensi embedding: {e}")
+            dim = None
+
+        backend_tag = (EMBEDDING_BACKEND or "google").lower()
+        suffix = f"{backend_tag}_{dim}d" if dim else backend_tag
+        app.state.collection_name = f"{CHROMA_COLLECTION}_{suffix}"
+
+        logger.info(f"Model AI berhasil diinisialisasi. Koleksi Chroma aktif: {app.state.collection_name}")
 
     except Exception as e:
         logger.critical(f"GAGAL TOTAL SAAT STARTUP! Tidak dapat menginisialisasi sumber daya. Error: {e}")

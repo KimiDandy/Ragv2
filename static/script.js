@@ -37,6 +37,8 @@ const unenrichedResultDiv = document.getElementById('unenriched-result');
 const enrichedResultDiv = document.getElementById('enriched-result');
 const v1Card = document.getElementById('v1-card');
 const v2Card = document.getElementById('v2-card');
+const unenrichedSourcesList = document.getElementById('unenriched-sources');
+const enrichedSourcesList = document.getElementById('enriched-sources');
 const fileInput = document.getElementById('file-input');
 const fileNameDiv = document.getElementById('file-name');
 
@@ -54,6 +56,34 @@ function showMessage(message, type = 'error') {
         messageDiv.style.opacity = '0';
         setTimeout(() => messageDiv.remove(), 500);
     }, 5000);
+}
+
+function renderSources(list, ulEl) {
+    if (!ulEl) return;
+    ulEl.innerHTML = '';
+    const items = Array.isArray(list) ? list : [];
+    if (items.length === 0) {
+        const li = document.createElement('li');
+        li.className = 'source-empty muted';
+        li.textContent = 'Tidak ada sumber yang direferensikan.';
+        ulEl.appendChild(li);
+        return;
+    }
+    items.forEach((s, i) => {
+        const content = (s && s.content) ? String(s.content) : '';
+        const meta = s && s.metadata ? s.metadata : {};
+        const snippet = content.length > 220 ? content.slice(0, 220) + '…' : content;
+        const li = document.createElement('li');
+        li.className = 'source-item';
+        li.innerHTML = `
+            <div class="source-snippet">${escapeHtml(snippet)}</div>
+            <div class="source-meta muted">
+                ${meta.source_document ? `Doc: ${escapeHtml(String(meta.source_document))}` : ''}
+                ${meta.version ? ` | Versi: ${escapeHtml(String(meta.version))}` : ''}
+            </div>
+        `;
+        ulEl.appendChild(li);
+    });
 }
 
 fileInput.addEventListener('change', (e) => {
@@ -323,14 +353,20 @@ async function askQuestion() {
             const safe = sanitizeHTML(html);
             if (version === 'v1') {
                 unenrichedResultDiv.innerHTML = safe;
+                renderSources(data.sources || [], unenrichedSourcesList);
+                if (enrichedSourcesList) enrichedSourcesList.innerHTML = '';
             } else {
                 enrichedResultDiv.innerHTML = safe;
+                renderSources(data.sources || [], enrichedSourcesList);
+                if (unenrichedSourcesList) unenrichedSourcesList.innerHTML = '';
             }
         } else {
             const v1Ans = data.unenriched_answer || '';
             const v2Ans = data.enriched_answer || '';
             unenrichedResultDiv.innerHTML = sanitizeHTML(window.marked ? marked.parse(v1Ans) : escapeHtml(v1Ans));
             enrichedResultDiv.innerHTML = sanitizeHTML(window.marked ? marked.parse(v2Ans) : escapeHtml(v2Ans));
+            renderSources(data.unenriched_sources || [], unenrichedSourcesList);
+            renderSources(data.enriched_sources || [], enrichedSourcesList);
         }
     } catch (error) {
         showMessage(`Terjadi kesalahan: ${error.message}`);

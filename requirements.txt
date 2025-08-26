@@ -12,3 +12,5 @@ loguru
 google-generativeai
 Pillow
 python-multipart
+sentence-transformers
+langchain-text-splitters

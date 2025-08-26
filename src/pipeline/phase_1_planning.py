@@ -4,11 +4,68 @@ import google.generativeai as genai
 from loguru import logger
 import re
 import time
+from ..core.prompts import load_prompt
 
 from ..core.config import GOOGLE_API_KEY, PLANNING_MODEL, PIPELINE_ARTEFACTS_DIR
 
-
 genai.configure(api_key=GOOGLE_API_KEY)
+
+def chunk_document(markdown_text: str, chunk_size: int = 1200, chunk_overlap: int = 250) -> list[str]:
+    """
+    Memecah dokumen markdown menjadi potongan (chunk) yang saling overlap untuk pemrosesan paralel.
+
+    Args:
+        markdown_text (str): Konten markdown sumber.
+        chunk_size (int): Ukuran maksimum setiap chunk.
+        chunk_overlap (int): Jumlah karakter overlap antar chunk.
+
+    Returns:
+        list[str]: Daftar chunk teks.
+    """
+    try:
+        # Header-aware: bagi per header markdown dulu, lalu pecah per bagian
+        from langchain_text_splitters import MarkdownHeaderTextSplitter
+        from langchain.text_splitter import RecursiveCharacterTextSplitter
+        headers_to_split_on = [["#", "H1"], ["##", "H2"], ["###", "H3"], ["####", "H4"]]
+        md_splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_split_on)
+        docs = md_splitter.split_text(markdown_text or "")
+        r_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap,
+            length_function=len,
+            separators=["\n\n", "\n", " ", ""]
+        )
+        chunks: list[str] = []
+        if docs:
+            for d in docs:
+                text = d.page_content if hasattr(d, "page_content") else str(d)
+                parts = r_splitter.split_text(text or "")
+                chunks.extend(parts if parts else [text])
+        else:
+            chunks = r_splitter.split_text(markdown_text or "")
+            if not chunks:
+                chunks = [markdown_text or ""]
+        logger.info(f"Chunking (header-aware) menghasilkan {len(chunks)} potongan (size={chunk_size}, overlap={chunk_overlap})")
+        return chunks
+    except Exception as e:
+        logger.warning(f"Gagal melakukan chunking dengan LangChain, fallback split paragraf: {e}")
+        # Fallback sederhana: pecah berdasarkan paragraf
+        text = markdown_text or ""
+        paras = [p.strip() for p in (text.split("\n\n") if text else []) if p.strip()]
+        if not paras:
+            return [text]
+        # gabungkan paragraf sampai mendekati chunk_size
+        chunks, buf = [], ""
+        for p in paras:
+            if len(buf) + len(p) + 2 <= chunk_size:
+                buf = (buf + "\n\n" + p).strip()
+            else:
+                if buf:
+                    chunks.append(buf)
+                buf = p
+        if buf:
+            chunks.append(buf)
+        return chunks
 
 def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
     """
@@ -32,7 +89,8 @@ def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
         logger.error(f"File markdown tidak ditemukan di {markdown_path}")
         return ""
 
-    prompt_intro = """Peran: Anda adalah analis riset multidisiplin.
+    # Externalized prompt with fallback to default (keeps existing schema)
+    default_prompt = """Peran: Anda adalah analis riset multidisiplin.
 Tugas: Baca dokumen Markdown berikut secara menyeluruh. Identifikasi SEMUA item yang membutuhkan penjelasan lebih lanjut atau penyempurnaan agar mudah dipahami. JANGAN berikan penjelasannya sekarang.
 Format Keluaran: Anda HARUS membalas HANYA dengan sebuah objek JSON valid, tanpa teks tambahan apa pun sebelum atau sesudahnya.
 
@@ -41,9 +99,6 @@ PENTING: Untuk setiap item yang diidentifikasi, sertakan dua field tambahan:
 - confidence_score: angka pecahan antara 0.0 hingga 1.0 yang menunjukkan keyakinan Anda bahwa item tersebut perlu disempurnakan.
 
 Struktur JSON yang Diharuskan:
-"""
-
-    schema_block = """
 {
   "terms_to_define": [
     {
@@ -77,11 +132,9 @@ Struktur JSON yang Diharuskan:
   ]
 }
 """
-
+    planning_prompt = load_prompt("phase1_planning.prompt.md", default_prompt)
     prompt = (
-        prompt_intro
-        + "\n"
-        + schema_block
+        planning_prompt
         + "\n\nDokumen untuk Dianalisis:\n---\n"
         + markdown_content
         + "\n---\n"
