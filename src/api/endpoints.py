@@ -3,6 +3,8 @@ import tempfile
 import asyncio
 import json
 from pathlib import Path
+import hashlib
+from typing import Union
 
 from fastapi import APIRouter, UploadFile, File, HTTPException, Request
 from pydantic import BaseModel
@@ -19,9 +21,18 @@ from ..pipeline.phase_4_vectorization import vectorize_and_store
 from ..core.config import (
     RAG_PROMPT_TEMPLATE,
     CHROMA_COLLECTION,
-    PIPELINE_ARTEFACTS_DIR
+    PIPELINE_ARTEFACTS_DIR,
+    EMBEDDING_MODEL,
 )
-from .models import SuggestionItem, CuratedSuggestions, UploadResponse, EnhancementResponse
+from .models import (
+    SuggestionItem,
+    CuratedSuggestions,
+    UploadResponse,
+    EnhancementResponse,
+    RetrievedSource,
+    AskSingleVersionResponse,
+    AskBothVersionsResponse,
+)
 
 router = APIRouter()
 
@@ -29,8 +40,57 @@ class QueryRequest(BaseModel):
     document_id: str
     prompt: str
     version: str | None = "both"  # 'v1' | 'v2' | 'both'
+    trace: bool | None = False
+    k: int | None = 5
 
-async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Request) -> str:
+
+def _build_snippet(text: str, max_len: int = 280) -> str:
+    """Return a short snippet for display, cut on word boundary."""
+    t = (text or "").strip()
+    if len(t) <= max_len:
+        return t
+    cut = t[: max_len].rsplit(" ", 1)[0]
+    return (cut or t[: max_len]).strip() + "…"
+
+
+def _minmax_normalize(values: list[float], invert: bool = False) -> list[float]:
+    if not values:
+        return []
+    vmin, vmax = min(values), max(values)
+    if vmax == vmin:
+        return [1.0 for _ in values]
+    norm = [ (v - vmin) / (vmax - vmin) for v in values ]
+    return [1.0 - n if invert else n for n in norm]
+
+
+def _docs_to_sources(docs_with_scores: list[tuple], already_relevance: bool) -> list[RetrievedSource]:
+    """Convert (Document, score) to RetrievedSource list with normalized scores and snippets."""
+    docs = [d for d, _ in docs_with_scores]
+    scores = [s for _, s in docs_with_scores]
+    # If scores are already 0..1 relevance (higher is better), keep; if distances (lower is better), invert
+    if already_relevance:
+        norm_scores = _minmax_normalize(scores, invert=False) if (min(scores) < 0 or max(scores) > 1) else scores
+    else:
+        norm_scores = _minmax_normalize(scores, invert=True)
+
+    sources: list[RetrievedSource] = []
+    for (doc, _), ns in zip(docs_with_scores, norm_scores):
+        content = getattr(doc, "page_content", "") or ""
+        metadata = getattr(doc, "metadata", {}) or {}
+        sid = hashlib.md5(content.encode("utf-8")).hexdigest()[:12]
+        sources.append(
+            RetrievedSource(
+                id=sid,
+                score=float(round(ns, 4)),
+                snippet=_build_snippet(content, 300),
+                metadata=metadata,
+            )
+        )
+    # Sort by score desc
+    sources.sort(key=lambda x: x.score, reverse=True)
+    return sources
+
+async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Request, trace: bool = False, k: int = 5) -> tuple[str, list[RetrievedSource]]:
     """
     Menjalankan kueri RAG terhadap versi dokumen tertentu (v1 atau v2).
 
@@ -43,9 +103,11 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
         doc_id (str): ID unik dokumen yang akan dikueri.
         version (str): Versi dokumen ('v1' untuk asli, 'v2' untuk diperkaya).
         request (Request): Objek request FastAPI untuk mengakses state aplikasi.
+        trace (bool): Jika True, kembalikan juga sumber evidence hasil retrieval.
+        k (int): Top-k dokumen yang diambil untuk evidence.
 
     Returns:
-        str: Jawaban yang dihasilkan oleh model LLM.
+        tuple[str, list[RetrievedSource]]: Jawaban dan daftar sumber (bila trace=True).
     """
     try:
         client = request.app.state.chroma_client
@@ -55,21 +117,25 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
         if not all([client, embeddings, llm]):
             raise ValueError("Koneksi database atau model AI tidak tersedia. Periksa log startup.")
 
+        # Koleksi spesifik per model embedding untuk menghindari mismatch dimensi
+        collection_name = f"{CHROMA_COLLECTION}__{EMBEDDING_MODEL.replace(':','_').replace('-','_')}"
         vector_store = Chroma(
             client=client,
-            collection_name=CHROMA_COLLECTION,
+            collection_name=collection_name,
             embedding_function=embeddings,
         )
 
+        retrieval_filter = {
+            '$and': [
+                {'source_document': {'$eq': doc_id}},
+                {'version': {'$eq': version}}
+            ]
+        }
+
         retriever = vector_store.as_retriever(
             search_kwargs={
-                'k': 5,
-                'filter': {
-                    '$and': [
-                        {'source_document': {'$eq': doc_id}},
-                        {'version': {'$eq': version}}
-                    ]
-                }
+                'k': k,
+                'filter': retrieval_filter
             }
         )
 
@@ -90,11 +156,33 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
         result = await qa_chain.ainvoke({"query": prompt})
         answer = result.get("result", "Tidak ditemukan jawaban yang relevan dari dokumen.")
 
-        return answer.strip()
+        sources: list[RetrievedSource] = []
+        if trace:
+            # Try to get docs with relevance scores; fallback to distance scores
+            docs_with_scores = []
+            try:
+                pairs = vector_store.similarity_search_with_relevance_scores(
+                    prompt, k=k, filter=retrieval_filter
+                )
+                # expected [(Document, score)] where score ~ [0..1]
+                docs_with_scores = list(pairs)
+                sources = _docs_to_sources(docs_with_scores, already_relevance=True)
+            except Exception as e1:
+                try:
+                    pairs2 = vector_store.similarity_search_with_score(
+                        prompt, k=k, filter=retrieval_filter
+                    )
+                    docs_with_scores = list(pairs2)
+                    sources = _docs_to_sources(docs_with_scores, already_relevance=False)
+                except Exception as e2:
+                    logger.warning(f"Gagal mengambil evidence (dua metode gagal): {e1} | {e2}")
+
+        return answer.strip(), sources
 
     except Exception as e:
         logger.error(f"Error dalam RAG query untuk versi {version}: {e}")
-        return f"Terjadi kesalahan teknis saat mengambil jawaban: {str(e)}"
+        return f"Terjadi kesalahan teknis saat mengambil jawaban: {str(e)}", []
+
 
 @router.post("/upload-document/", status_code=201, response_model=UploadResponse)
 async def upload_document(request: Request, file: UploadFile = File(...)):
@@ -131,6 +219,7 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
             logger.error(f"Terjadi error saat menjalankan pipeline: {e}")
             raise HTTPException(status_code=500, detail=f"Pipeline gagal: {e}")
 
+
 @router.post("/start-enhancement/{document_id}")
 async def start_enhancement(document_id: str):
     """Menjalankan tugas latar belakang untuk Fase 1 (perencanaan) dan Fase 2 (generasi)."""
@@ -142,14 +231,16 @@ async def start_enhancement(document_id: str):
     async def _run():
         try:
             logger.info(f"[Enhancement] Mulai untuk dokumen: {document_id}")
-            create_enrichment_plan(str(md_path), str(doc_dir))
-            generate_bulk_content(str(doc_dir))
+            # Phase-1: Gate→Map→Reduce over segments.json (async)
+            await create_enrichment_plan(str(doc_dir))
+            await generate_bulk_content(str(doc_dir))
             logger.info(f"[Enhancement] Selesai untuk dokumen: {document_id}")
         except Exception as e:
             logger.error(f"[Enhancement] Gagal untuk dokumen {document_id}: {e}")
 
     asyncio.create_task(_run())
     return {"message": "Proses peningkatan dimulai", "document_id": document_id}
+
 
 @router.get("/get-suggestions/{document_id}", response_model=EnhancementResponse)
 async def get_suggestions(document_id: str):
@@ -167,6 +258,7 @@ async def get_suggestions(document_id: str):
         logger.error(f"Gagal membaca suggestions.json: {e}")
         suggestions = []
     return EnhancementResponse(document_id=document_id, suggestions=suggestions)
+
 
 @router.post("/finalize-document/")
 async def finalize_document(request: Request, payload: CuratedSuggestions):
@@ -192,14 +284,16 @@ async def finalize_document(request: Request, payload: CuratedSuggestions):
     if not chroma_client:
         raise HTTPException(status_code=503, detail="Chroma client tidak tersedia.")
 
-    ok_v1 = vectorize_and_store(str(doc_dir), chroma_client, "markdown_v1.md", "v1")
-    ok_v2 = vectorize_and_store(str(doc_dir), chroma_client, "markdown_v2.md", "v2")
+    embeddings = request.app.state.embedding_function
+    ok_v1 = vectorize_and_store(str(doc_dir), chroma_client, "markdown_v1.md", "v1", embeddings=embeddings)
+    ok_v2 = vectorize_and_store(str(doc_dir), chroma_client, "markdown_v2.md", "v2", embeddings=embeddings)
     if not (ok_v1 and ok_v2):
         raise HTTPException(status_code=500, detail="Vektorisasi gagal untuk salah satu versi.")
 
     return {"message": "Dokumen difinalisasi dan divektorisasi.", "document_id": doc_id}
 
-@router.post("/ask/")
+
+@router.post("/ask/", response_model=Union[AskSingleVersionResponse, AskBothVersionsResponse])
 async def ask_question(request: Request, query: QueryRequest):
     """
     Ajukan pertanyaan terhadap versi v1, v2, atau keduanya dari dokumen.
@@ -207,16 +301,25 @@ async def ask_question(request: Request, query: QueryRequest):
     try:
         version = (query.version or "both").lower()
         if version in ("v1", "v2"):
-            ans = await perform_rag_query(query.prompt, query.document_id, version, request)
-            return {"answer": ans, "version": version, "prompt": query.prompt}
+            ans, sources = await perform_rag_query(
+                query.prompt, query.document_id, version, request, trace=bool(query.trace), k=int(query.k or 5)
+            )
+            return {
+                "answer": ans,
+                "version": version,
+                "prompt": query.prompt,
+                "sources": sources if query.trace else [],
+            }
         else:
-            v1_task = perform_rag_query(query.prompt, query.document_id, "v1", request)
-            v2_task = perform_rag_query(query.prompt, query.document_id, "v2", request)
-            v1_answer, v2_answer = await asyncio.gather(v1_task, v2_task)
+            v1_task = perform_rag_query(query.prompt, query.document_id, "v1", request, trace=bool(query.trace), k=int(query.k or 5))
+            v2_task = perform_rag_query(query.prompt, query.document_id, "v2", request, trace=bool(query.trace), k=int(query.k or 5))
+            (v1_answer, v1_sources), (v2_answer, v2_sources) = await asyncio.gather(v1_task, v2_task)
             return {
                 "unenriched_answer": v1_answer,
                 "enriched_answer": v2_answer,
-                "prompt": query.prompt
+                "prompt": query.prompt,
+                "unenriched_sources": v1_sources if query.trace else [],
+                "enriched_sources": v2_sources if query.trace else [],
             }
     except Exception as e:
         logger.error(f"Error di endpoint /ask/: {e}")

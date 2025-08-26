@@ -1,41 +1,44 @@
-# src/core/config.py
 import os
 from dotenv import load_dotenv
-from pathlib import Path
+from pydantic_settings import BaseSettings
 
-# Muat variabel dari file .env
+# Load environment variables
 load_dotenv()
 
-# Konfigurasi Path
-BASE_DIR = Path(__file__).resolve().parent.parent
-PIPELINE_ARTEFACTS_DIR = "pipeline_artefacts"
+class Settings(BaseSettings):
+    # OpenAI
+    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+    LLM_MODEL: str = os.getenv("LLM_MODEL", "gpt-4.1")
+    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
 
-# Konfigurasi Kunci API
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+    # Chroma
+    CHROMA_COLLECTION: str = os.getenv("CHROMA_COLLECTION", "genesis_rag_collection")
+    CHROMA_DB_PATH: str = os.getenv("CHROMA_DB_PATH", "./chroma_db")
+    CHROMA_MODE: str = os.getenv("CHROMA_MODE", "embedded")  # or "server"
+    CHROMA_SERVER_HOST: str = os.getenv("CHROMA_SERVER_HOST", "localhost")
+    CHROMA_SERVER_PORT: int = int(os.getenv("CHROMA_SERVER_PORT", "8000"))
 
-# Konfigurasi Model
-PLANNING_MODEL = "gemini-2.5-flash"
-GENERATION_MODEL = "gemini-2.5-flash"
-CHAT_MODEL = "gemini-2.5-flash"
-EMBEDDING_MODEL = "models/embedding-001"
+    # Pipeline directories
+    PIPELINE_ARTEFACTS_DIR: str = os.getenv("PIPELINE_ARTEFACTS_DIR", "artefacts")
 
-# Konfigurasi ChromaDB
-CHROMA_DB_PATH = "chroma_db"  # digunakan saat embedded mode
-CHROMA_COLLECTION = "genesis_rag_collection"
+    # RAG prompt template (LangChain PromptTemplate expects {context} and {question})
+    RAG_PROMPT_TEMPLATE: str = (
+        "You are a precise assistant. Use only the CONTEXT to answer.\n\n"
+        "CONTEXT:\n{context}\n\n"
+        "QUESTION: {question}\n\n"
+        "If insufficient context, say you don't know."
+    )
 
-# Mode koneksi Chroma: 'server' (HTTP client) atau 'embedded'
-CHROMA_MODE = os.getenv("CHROMA_MODE", "server").lower()
-CHROMA_SERVER_HOST = os.getenv("CHROMA_SERVER_HOST", "localhost")
-CHROMA_SERVER_PORT = int(os.getenv("CHROMA_SERVER_PORT", "8001"))
+settings = Settings()
 
-# Konfigurasi Prompt Template
-RAG_PROMPT_TEMPLATE = """
-Anda adalah asisten yang membantu menjawab pertanyaan berdasarkan konteks yang diberikan.
-
-Konteks:
-{context}
-
-Pertanyaan: {question}
-
-Jawaban:
-"""
+# Backwards-compatibility constants (minimize churn in existing modules)
+OPENAI_API_KEY = settings.OPENAI_API_KEY
+EMBEDDING_MODEL = settings.EMBEDDING_MODEL
+CHAT_MODEL = settings.LLM_MODEL
+CHROMA_MODE = settings.CHROMA_MODE
+CHROMA_DB_PATH = settings.CHROMA_DB_PATH
+CHROMA_SERVER_HOST = settings.CHROMA_SERVER_HOST
+CHROMA_SERVER_PORT = settings.CHROMA_SERVER_PORT
+CHROMA_COLLECTION = settings.CHROMA_COLLECTION
+PIPELINE_ARTEFACTS_DIR = settings.PIPELINE_ARTEFACTS_DIR
+RAG_PROMPT_TEMPLATE = settings.RAG_PROMPT_TEMPLATE

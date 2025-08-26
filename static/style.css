@@ -373,13 +373,19 @@ body {
 .result-content { color: #1f2937; }
 .loading-text { color: #6b7280; }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .main-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 768px) {
-  .main-grid { grid-template-columns: 1fr; }
-}
+/* Evidence styles */
+.evidence-container { margin-top: 12px; padding-top: 10px; border-top: 1px dashed #e5e7eb; }
+.evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.evidence-card { background: #ffffff; border: 1px solid #e9eef5; border-radius: 10px; padding: 12px; }
+.evidence-card h4 { color: #374151; margin-bottom: 8px; }
+.evidence-list { display: flex; flex-direction: column; gap: 8px; }
+.evidence-item { border: 1px dashed #e5e7eb; border-radius: 8px; padding: 8px; background: #f9fbff; }
+.evidence-head { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.evidence-rank { font-weight: 700; color: #2d3a8c; }
+.evidence-score { font-size: 0.85rem; color: #6b7280; }
+.evidence-snippet { color: #1f2937; margin-bottom: 6px; white-space: pre-wrap; word-break: break-word; }
+.evidence-meta { font-size: 0.8rem; color: #6b7280; }
+@media (max-width: 1024px) { .evidence-grid { grid-template-columns: 1fr; } }
 
 /* ===== Premium Redesign: Stepper, Cards, Tabs, Main Layout ===== */
 /* Stepper */

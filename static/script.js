@@ -40,6 +40,22 @@ const v2Card = document.getElementById('v2-card');
 const fileInput = document.getElementById('file-input');
 const fileNameDiv = document.getElementById('file-name');
 
+// Evidence UI
+const toggleEvidence = document.getElementById('toggle-evidence');
+const evidenceContainer = document.getElementById('evidence-container');
+const v1EvidenceList = document.getElementById('v1-evidence-list');
+const v2EvidenceList = document.getElementById('v2-evidence-list');
+const v1EvidenceCard = document.getElementById('v1-evidence-card');
+const v2EvidenceCard = document.getElementById('v2-evidence-card');
+
+if (toggleEvidence) {
+    toggleEvidence.addEventListener('change', () => {
+        if (!evidenceContainer) return;
+        const anyItems = ((v1EvidenceList && v1EvidenceList.children.length) || (v2EvidenceList && v2EvidenceList.children.length));
+        evidenceContainer.style.display = (toggleEvidence.checked && anyItems) ? 'block' : 'none';
+    });
+}
+
 
 const messageContainer = document.createElement('div');
 messageContainer.className = 'message-container';
@@ -54,6 +70,31 @@ function showMessage(message, type = 'error') {
         messageDiv.style.opacity = '0';
         setTimeout(() => messageDiv.remove(), 500);
     }, 5000);
+}
+
+function renderEvidence(sources, targetEl) {
+    if (!targetEl) return;
+    targetEl.innerHTML = '';
+    if (!Array.isArray(sources) || sources.length === 0) {
+        targetEl.innerHTML = '<div class="muted">Tidak ada evidence.</div>';
+        return;
+    }
+    sources.forEach((s, idx) => {
+        const item = document.createElement('div');
+        item.className = 'evidence-item';
+        const scorePct = Math.round(((s && typeof s.score === 'number') ? s.score : 0) * 100);
+        const meta = s && s.metadata ? s.metadata : {};
+        const metaPairs = Object.entries(meta).slice(0, 6).map(([k,v]) => `${escapeHtml(String(k))}: ${escapeHtml(String(v))}`);
+        item.innerHTML = `
+            <div class="evidence-head">
+                <span class="evidence-rank">#${idx+1}</span>
+                <span class="evidence-score">Skor: ${scorePct}%</span>
+            </div>
+            <div class="evidence-snippet">${escapeHtml(s.snippet || '')}</div>
+            <div class="evidence-meta">${escapeHtml(metaPairs.join(' | '))}</div>
+        `;
+        targetEl.appendChild(item);
+    });
 }
 
 fileInput.addEventListener('change', (e) => {
@@ -304,15 +345,23 @@ async function askQuestion() {
     document.getElementById('query-display').textContent = `Pertanyaan: "${prompt}"`;
 
     const version = versionSelect.value || 'both';
+    const traceEnabled = !!(toggleEvidence && toggleEvidence.checked);
 
     v1Card.style.display = (version === 'v2') ? 'none' : 'block';
     v2Card.style.display = (version === 'v1') ? 'none' : 'block';
+
+    // Reset evidence UI
+    if (evidenceContainer) evidenceContainer.style.display = 'none';
+    if (v1EvidenceList) v1EvidenceList.innerHTML = '';
+    if (v2EvidenceList) v2EvidenceList.innerHTML = '';
+    if (v1EvidenceCard) v1EvidenceCard.style.display = (version === 'v2') ? 'none' : 'block';
+    if (v2EvidenceCard) v2EvidenceCard.style.display = (version === 'v1') ? 'none' : 'block';
 
     try {
         const response = await fetch(`${API_BASE_URL}/ask/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ document_id: currentDocumentId, prompt, version })
+            body: JSON.stringify({ document_id: currentDocumentId, prompt, version, trace: traceEnabled, k: 5 })
         });
         const data = await response.json();
         if (!response.ok) throw new Error(data.detail || 'Gagal mengirim pertanyaan');
@@ -326,11 +375,31 @@ async function askQuestion() {
             } else {
                 enrichedResultDiv.innerHTML = safe;
             }
+
+            if (traceEnabled) {
+                const sources = Array.isArray(data.sources) ? data.sources : [];
+                if (version === 'v1') {
+                    renderEvidence(sources, v1EvidenceList);
+                    if (v2EvidenceList) v2EvidenceList.innerHTML = '';
+                } else {
+                    renderEvidence(sources, v2EvidenceList);
+                    if (v1EvidenceList) v1EvidenceList.innerHTML = '';
+                }
+                evidenceContainer.style.display = sources.length ? 'block' : 'none';
+            }
         } else {
             const v1Ans = data.unenriched_answer || '';
             const v2Ans = data.enriched_answer || '';
             unenrichedResultDiv.innerHTML = sanitizeHTML(window.marked ? marked.parse(v1Ans) : escapeHtml(v1Ans));
             enrichedResultDiv.innerHTML = sanitizeHTML(window.marked ? marked.parse(v2Ans) : escapeHtml(v2Ans));
+
+            if (traceEnabled) {
+                const uSrc = Array.isArray(data.unenriched_sources) ? data.unenriched_sources : [];
+                const eSrc = Array.isArray(data.enriched_sources) ? data.enriched_sources : [];
+                renderEvidence(uSrc, v1EvidenceList);
+                renderEvidence(eSrc, v2EvidenceList);
+                evidenceContainer.style.display = (uSrc.length + eSrc.length) ? 'block' : 'none';
+            }
         }
     } catch (error) {
         showMessage(`Terjadi kesalahan: ${error.message}`);
@@ -391,7 +460,6 @@ function labelForType(t) {
     switch (t) {
         case 'term_to_define': return 'Definisi';
         case 'concept_to_simplify': return 'Penyederhanaan';
-        case 'image_description': return 'Deskripsi Gambar';
         default: return 'Pengayaan';
     }
 }

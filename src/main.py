@@ -16,12 +16,11 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from loguru import logger
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 
 from src.api.endpoints import router as api_router
 from src.core.config import (
     CHROMA_DB_PATH,
-    GOOGLE_API_KEY,
     EMBEDDING_MODEL,
     CHAT_MODEL,
     CHROMA_MODE,
@@ -62,8 +61,8 @@ async def lifespan(app: FastAPI):
                 logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
 
         # 2. Initialize AI models
-        app.state.embedding_function = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL, google_api_key=GOOGLE_API_KEY)
-        app.state.chat_model = ChatGoogleGenerativeAI(model=CHAT_MODEL, google_api_key=GOOGLE_API_KEY, temperature=0.7)
+        app.state.embedding_function = OpenAIEmbeddings(model=EMBEDDING_MODEL)
+        app.state.chat_model = ChatOpenAI(model=CHAT_MODEL, temperature=0.7)
         logger.info("Model AI berhasil diinisialisasi.")
 
     except Exception as e:

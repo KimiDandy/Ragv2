@@ -20,3 +20,23 @@ class UploadResponse(BaseModel):
 class EnhancementResponse(BaseModel):
     document_id: str
     suggestions: List[SuggestionItem]
+
+# Evidence tracing models for /ask endpoint
+class RetrievedSource(BaseModel):
+    id: str
+    score: float
+    snippet: str
+    metadata: dict
+
+class AskSingleVersionResponse(BaseModel):
+    answer: str
+    version: str
+    prompt: str
+    sources: List[RetrievedSource]
+
+class AskBothVersionsResponse(BaseModel):
+    prompt: str
+    unenriched_answer: str
+    enriched_answer: str
+    unenriched_sources: List[RetrievedSource]
+    enriched_sources: List[RetrievedSource]

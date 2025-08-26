@@ -1,197 +1,282 @@
 import json
 from pathlib import Path
-import google.generativeai as genai
-from loguru import logger
-import re
+from typing import List, Dict, Any
+from hashlib import sha256
+import asyncio
 import time
+import re
+from pydantic import BaseModel, Field
+from langchain_openai import ChatOpenAI
+from loguru import logger
 
-from ..core.config import GOOGLE_API_KEY, PLANNING_MODEL, PIPELINE_ARTEFACTS_DIR
+from ..core.config import CHAT_MODEL, PIPELINE_ARTEFACTS_DIR
 
 
-genai.configure(api_key=GOOGLE_API_KEY)
+class PlanItem(BaseModel):
+    """Unified item structure for planning with provenance."""
+    kind: str  # "term" | "concept" | "connection"
+    key: str
+    original_context: str
+    confidence_score: float = Field(ge=0.0, le=1.0)
+    provenance: Dict[str, Any]
 
-def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
-    """
-    Menganalisis dokumen markdown untuk membuat rencana enrichment yang komprehensif.
 
-    Fungsi ini adalah Fase 1 dari proyek Genesis-RAG.
-    Fungsi ini membaca konten dari markdown_v1.md, mengirimkannya ke Gemini API dengan
-    prompt spesifik, dan menyimpan hasilnya sebagai file JSON (enrichment_plan.json).
+class PlanOutput(BaseModel):
+    terms_to_define: List[Dict[str, Any]] = []
+    concepts_to_simplify: List[Dict[str, Any]] = []
+    inferred_connections: List[Dict[str, Any]] = []
 
-    Args:
-        markdown_path (str): Path menuju file markdown_v1.md.
-        doc_output_dir (str): Direktori tempat menyimpan file enrichment_plan.json.
 
-    Returns:
-        str: Path menuju file enrichment_plan.json yang telah dibuat.
-    """
-    try:
-        with open(markdown_path, 'r', encoding='utf-8') as f:
-            markdown_content = f.read()
-    except FileNotFoundError:
-        logger.error(f"File markdown tidak ditemukan di {markdown_path}")
-        return ""
+def _norm_key(s: str) -> str:
+    return re.sub(r"\s+", " ", (s or "").strip().lower())[:200]
 
-    prompt_intro = """Peran: Anda adalah analis riset multidisiplin.
-Tugas: Baca dokumen Markdown berikut secara menyeluruh. Identifikasi SEMUA item yang membutuhkan penjelasan lebih lanjut atau penyempurnaan agar mudah dipahami. JANGAN berikan penjelasannya sekarang.
-Format Keluaran: Anda HARUS membalas HANYA dengan sebuah objek JSON valid, tanpa teks tambahan apa pun sebelum atau sesudahnya.
 
-PENTING: Untuk setiap item yang diidentifikasi, sertakan dua field tambahan:
-- original_context: kalimat/paragraf persis (atau baris placeholder gambar persis) yang memicu item ini.
-- confidence_score: angka pecahan antara 0.0 hingga 1.0 yang menunjukkan keyakinan Anda bahwa item tersebut perlu disempurnakan.
+def _cache_path(doc_dir: Path, key: str) -> Path:
+    cdir = doc_dir / "cache_phase1"
+    cdir.mkdir(exist_ok=True)
+    return cdir / f"{key}.json"
 
-Struktur JSON yang Diharuskan:
-"""
 
-    schema_block = """
-{
-  "terms_to_define": [
-    {
-      "term": "string",
-      "original_context": "string (kalimat lengkap tempat istilah muncul)",
-      "confidence_score": 0.0
-    }
-  ],
-  "concepts_to_simplify": [
-    {
-      "identifier": "string (10 kata pertama paragraf)",
-      "original_context": "string (teks paragraf kompleks lengkap)",
-      "confidence_score": 0.0
-    }
-  ],
-  "images_to_describe": [
-    {
-      "image_file": "string (nama file dari placeholder, misal 'image_p3_42.png')",
-      "original_context": "string (baris placeholder persis, misal '[IMAGE_PLACEHOLDER: image_p3_42.png]')",
-      "confidence_score": 0.0
-    }
-  ],
-  "inferred_connections": [
-    {
-      "from_concept": "string (identifier paragraf sumber)",
-      "to_concept": "string (identifier paragraf tujuan)",
-      "relationship_type": "string (contoh: 'memberikan contoh untuk', 'adalah sanggahan terhadap')",
-      "confidence_score": 0.0,
-      "original_context": "string (kalimat/paragraf yang menunjukkan keterkaitan ini)"
-    }
-  ]
-}
-"""
+def _hash_for_segment(model: str, prompt: str, text: str) -> str:
+    h = sha256()
+    h.update(model.encode("utf-8"))
+    h.update(b"\x00")
+    h.update(prompt.encode("utf-8"))
+    h.update(b"\x00")
+    h.update(text.encode("utf-8"))
+    return h.hexdigest()
 
-    prompt = (
+
+def _build_prompt(segment_text: str) -> str:
+    # Use existing required schema to keep compatibility
+    prompt_intro = (
+        "Peran: Anda adalah analis riset multidisiplin.\n"
+        "Tugas: Baca paragraf berikut. Identifikasi item yang butuh definisi/simplifikasi atau koneksi implisit.\n"
+        "Balas HANYA satu objek JSON valid sesuai skema.\n"
+    )
+    schema_block = (
+        "{"
+        "\n  \"terms_to_define\": [{\n    \"term\": \"string\",\n    \"original_context\": \"string\",\n    \"confidence_score\": 0.0\n  }],"
+        "\n  \"concepts_to_simplify\": [{\n    \"identifier\": \"string\",\n    \"original_context\": \"string\",\n    \"confidence_score\": 0.0\n  }],"
+        "\n  \"inferred_connections\": [{\n    \"from_concept\": \"string\",\n    \"to_concept\": \"string\",\n    \"relationship_type\": \"string\",\n    \"confidence_score\": 0.0,\n    \"original_context\": \"string\"\n  }]\n}"
+    )
+    return (
         prompt_intro
-        + "\n"
+        + "\nSkema Wajib:\n"
         + schema_block
-        + "\n\nDokumen untuk Dianalisis:\n---\n"
-        + markdown_content
+        + "\n\nParagraf:\n---\n"
+        + segment_text
         + "\n---\n"
     )
 
-    logger.info("Mengirim permintaan ke Gemini untuk membuat rencana enrichment...")
-    model = genai.GenerativeModel(
-        PLANNING_MODEL,
-        generation_config={
-            "temperature": 0.2,
-            "response_mime_type": "application/json"
-        },
+
+async def _plan_one(chat: ChatOpenAI, doc_dir: Path, seg: dict, sem: asyncio.Semaphore, stats: dict) -> List[PlanItem]:
+    text = seg.get("text", "")
+    if not text.strip():
+        return []
+    prompt = _build_prompt(text)
+    key = _hash_for_segment(chat.model_name, prompt, text)
+    cpath = _cache_path(doc_dir, key)
+    if cpath.exists():
+        try:
+            with open(cpath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            stats["cache_hits"] += 1
+            return _to_items(data, seg)
+        except Exception:
+            pass
+
+    async with sem:
+        try:
+            resp = await asyncio.get_event_loop().run_in_executor(None, chat.invoke, prompt)
+            raw = getattr(resp, "content", None) or str(resp)
+        except Exception as e:
+            logger.warning(f"Map call failed for segment {seg.get('segment_id')}: {e}")
+            return []
+
+    # parse json
+    parsed = _parse_json_strict(raw)
+    if parsed is None:
+        return []
+
+    try:
+        with open(cpath, "w", encoding="utf-8") as f:
+            json.dump(parsed, f, ensure_ascii=False)
+    except Exception:
+        pass
+
+    stats["llm_calls"] += 1
+    return _to_items(parsed, seg)
+
+
+def _parse_json_strict(raw_text: str):
+    if not raw_text:
+        return None
+    js = raw_text.replace('```json', '').replace('```', '').strip()
+    try:
+        return json.loads(js)
+    except json.JSONDecodeError:
+        m = re.search(r"(\{[\s\S]*\}|\[[\s\S]*\])", js)
+        if m:
+            try:
+                return json.loads(m.group(0))
+            except json.JSONDecodeError:
+                return None
+        return None
+
+
+def _to_items(parsed: dict, seg: dict) -> List[PlanItem]:
+    items: List[PlanItem] = []
+    prov = {
+        "segment_id": seg.get("segment_id"),
+        "page": seg.get("page"),
+        "char_start": seg.get("char_start"),
+        "char_end": seg.get("char_end"),
+        "header_path": seg.get("header_path"),
+    }
+    for obj in (parsed.get("terms_to_define") or []):
+        if isinstance(obj, str):
+            term = obj
+            ctx = obj
+            conf = 0.5
+        else:
+            term = obj.get("term") or obj.get("name")
+            ctx = obj.get("original_context") or obj.get("context") or ""
+            conf = float(obj.get("confidence_score", 0.5))
+        if term:
+            items.append(PlanItem(kind="term", key=term, original_context=ctx, confidence_score=conf, provenance=prov))
+
+    for obj in (parsed.get("concepts_to_simplify") or []):
+        if isinstance(obj, str):
+            ident = obj
+            ctx = obj
+            conf = 0.5
+        else:
+            ident = obj.get("identifier") or obj.get("id") or obj.get("name")
+            ctx = obj.get("original_context") or obj.get("paragraph_text") or ""
+            conf = float(obj.get("confidence_score", 0.5))
+        if ident:
+            items.append(PlanItem(kind="concept", key=ident, original_context=ctx, confidence_score=conf, provenance=prov))
+
+    for obj in (parsed.get("inferred_connections") or []):
+        f = (obj or {}).get("from_concept")
+        t = (obj or {}).get("to_concept")
+        rel = (obj or {}).get("relationship_type")
+        ctx = (obj or {}).get("original_context") or ""
+        conf = float((obj or {}).get("confidence_score", 0.5))
+        if f and t:
+            items.append(PlanItem(kind="connection", key=f"{f} -> {t} ({rel})", original_context=ctx, confidence_score=conf, provenance=prov))
+    return items
+
+
+def _gate(segments: List[dict]) -> List[dict]:
+    gated = []
+    for s in segments:
+        if s.get("is_difficult") or s.get("contains_entities"):
+            gated.append(s)
+            continue
+        # header-based allowlist
+        hp = " ".join(s.get("header_path") or [])
+        if re.search(r"\b(introduction|overview|summary|conclusion|results)\b", hp, re.I):
+            gated.append(s)
+    return gated
+
+
+async def create_enrichment_plan(doc_output_dir: str) -> str:
+    """Phase-1: Gate → Map (async + file cache) → Reduce over segments.json.
+    Writes plan.json and enrichment_plan.json (compat) and metrics.
+    """
+    doc_dir = Path(doc_output_dir)
+    segments_path = doc_dir / "segments.json"
+    if not segments_path.exists():
+        logger.error(f"segments.json tidak ditemukan di {segments_path}")
+        return ""
+
+    with open(segments_path, "r", encoding="utf-8") as f:
+        segments: List[dict] = json.load(f)
+
+    gated = _gate(segments)
+    logger.info(f"Phase-1 Gate: {len(gated)}/{len(segments)} segmen dipilih")
+
+    chat = ChatOpenAI(model=CHAT_MODEL, temperature=0.2)
+    sem = asyncio.Semaphore(6)
+
+    stats = {"cache_hits": 0, "llm_calls": 0}
+    t0 = time.time()
+
+    results: List[List[PlanItem]] = await asyncio.gather(
+        *[_plan_one(chat, doc_dir, seg, sem, stats) for seg in gated]
     )
 
-    def _extract_text(resp):
-        raw = ""
-        if getattr(resp, "candidates", None):
-            for c in resp.candidates:
-                parts = getattr(c, "content", None) and c.content.parts or []
-                for p in parts:
-                    if hasattr(p, "text") and p.text:
-                        raw += p.text
-        if not raw:
-            try:
-                raw = resp.text
-            except Exception:
-                raw = ""
-        return (raw or "").strip()
+    flat: List[PlanItem] = [it for sub in results for it in sub]
 
-    # Retry hingga 3x dengan backoff jika JSON tidak valid
-    max_attempts = 3
-    plan_data = None
-    last_finish_reason = None
-    for attempt in range(1, max_attempts + 1):
-        try:
-            if attempt == 1:
-                prompt_to_send = prompt
+    # Reduce: dedup by normalized key
+    terms_map: Dict[str, Dict[str, Any]] = {}
+    concepts_map: Dict[str, Dict[str, Any]] = {}
+    connections: List[Dict[str, Any]] = []
+
+    for it in flat:
+        if it.kind == "term":
+            k = _norm_key(it.key)
+            if k not in terms_map:
+                terms_map[k] = {
+                    "term": it.key,
+                    "original_context": it.original_context,
+                    "confidence_score": it.confidence_score,
+                    "provenances": [it.provenance],
+                }
             else:
-                prompt_to_send = (
-                    prompt
-                    + "\n\nPERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid yang sesuai skema di atas. "
-                      "JANGAN sertakan narasi, penjelasan, atau code fence."
-                )
+                terms_map[k]["provenances"].append(it.provenance)
+                terms_map[k]["confidence_score"] = max(terms_map[k]["confidence_score"], it.confidence_score)
+        elif it.kind == "concept":
+            k = _norm_key(it.key)
+            if k not in concepts_map:
+                concepts_map[k] = {
+                    "identifier": it.key,
+                    "original_context": it.original_context,
+                    "confidence_score": it.confidence_score,
+                    "provenances": [it.provenance],
+                }
+            else:
+                concepts_map[k]["provenances"].append(it.provenance)
+                concepts_map[k]["confidence_score"] = max(concepts_map[k]["confidence_score"], it.confidence_score)
+        else:
+            connections.append({
+                "connection": it.key,
+                "original_context": it.original_context,
+                "confidence_score": it.confidence_score,
+                "provenance": it.provenance,
+            })
 
-            response = model.generate_content(prompt_to_send)
-            raw_text = _extract_text(response)
-            try:
-                with open(Path(doc_output_dir) / f"enrichment_plan_raw_attempt{attempt}.txt", 'w', encoding='utf-8') as f:
-                    f.write(raw_text)
-            except Exception:
-                pass
+    plan = PlanOutput(
+        terms_to_define=list(terms_map.values()),
+        concepts_to_simplify=list(concepts_map.values()),
+        inferred_connections=connections,
+    )
 
-            if raw_text:
-                json_str = raw_text.replace('```json', '').replace('```', '').strip()
-                try:
-                    plan_data = json.loads(json_str)
-                except json.JSONDecodeError:
-                    m = re.search(r"\{.*\}", json_str, re.DOTALL)
-                    if m:
-                        try:
-                            plan_data = json.loads(m.group(0))
-                        except json.JSONDecodeError:
-                            plan_data = None
+    plan_path = doc_dir / "plan.json"
+    with open(plan_path, "w", encoding="utf-8") as f:
+        json.dump(plan.model_dump(), f, ensure_ascii=False, indent=2)
 
-            if plan_data is not None:
-                break
+    # Back-compat for Phase-2
+    compat_path = doc_dir / "enrichment_plan.json"
+    with open(compat_path, "w", encoding="utf-8") as f:
+        json.dump(plan.model_dump(), f, ensure_ascii=False, indent=2)
 
-            # log alasan kegagalan percobaan
-            try:
-                last_finish_reason = response.candidates[0].finish_reason if response.candidates else None
-            except Exception:
-                last_finish_reason = None
-            logger.warning(f"Percobaan Fase 1 (planning) ke-{attempt} gagal parsing JSON. finish_reason={last_finish_reason}")
+    # Metrics
+    metrics = {
+        "gated": len(gated),
+        "total_segments": len(segments),
+        "llm_calls": stats["llm_calls"],
+        "cache_hits": stats["cache_hits"],
+        "duration_sec": time.time() - t0,
+    }
+    with open(doc_dir / "phase_1_metrics.json", "w", encoding="utf-8") as f:
+        json.dump(metrics, f, ensure_ascii=False, indent=2)
 
-        except Exception as e:
-            logger.warning(f"Percobaan Fase 1 (planning) ke-{attempt} error: {e}")
+    logger.info(f"Phase-1 selesai. plan.json disimpan di: {plan_path}")
+    return str(plan_path)
 
-        if attempt < max_attempts:
-            time.sleep(1.5 ** attempt)
-
-    if plan_data is None:
-        fr = last_finish_reason
-        logger.error(f"Gagal mendapatkan JSON rencana enrichment. finish_reason={fr}")
-        image_placeholders = []
-        try:
-            for m in re.finditer(r"\[IMAGE_PLACEHOLDER:\s*([^\]]+)\]", markdown_content or ""):
-                fname = (m.group(1) or "").strip()
-                if fname:
-                    image_placeholders.append({
-                        "image_file": fname,
-                        "original_context": m.group(0),
-                        "confidence_score": 0.4,
-                    })
-        except Exception:
-            image_placeholders = []
-
-        plan_data = {
-            "terms_to_define": [],
-            "concepts_to_simplify": [],
-            "images_to_describe": image_placeholders,
-            "inferred_connections": [],
-        }
-        logger.warning("Membuat enrichment_plan.json minimal sebagai fallback (list kosong + deteksi gambar)")
-
-    plan_output_path = Path(doc_output_dir) / "enrichment_plan.json"
-    with open(plan_output_path, 'w', encoding='utf-8') as f:
-        json.dump(plan_data, f, indent=2)
-
-    logger.info(f"Fase 1 selesai. Rencana enrichment disimpan di: {plan_output_path}")
-    return str(plan_output_path)
 
 if __name__ == '__main__':
     base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
@@ -203,6 +288,5 @@ if __name__ == '__main__':
             logger.error(f"Tidak ada direktori dokumen di '{PIPELINE_ARTEFACTS_DIR}'.")
         else:
             latest_doc_dir = max(all_doc_dirs, key=lambda d: d.stat().st_mtime)
-            markdown_file = latest_doc_dir / "markdown_v1.md"
-            logger.info(f"Menjalankan Fase 1 pada: {markdown_file}")
-            create_enrichment_plan(str(markdown_file), str(latest_doc_dir))
+            logger.info(f"Menjalankan Fase 1 pada direktori: {latest_doc_dir}")
+            asyncio.run(create_enrichment_plan(str(latest_doc_dir)))

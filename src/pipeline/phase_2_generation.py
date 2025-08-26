@@ -1,40 +1,32 @@
 import json
 import re
 from pathlib import Path
-import google.generativeai as genai
-from PIL import Image
+from langchain_openai import ChatOpenAI
 from loguru import logger
 import time
+import asyncio
 
-from ..core.config import GENERATION_MODEL, PIPELINE_ARTEFACTS_DIR, GOOGLE_API_KEY
+from ..core.config import CHAT_MODEL, PIPELINE_ARTEFACTS_DIR
 
-# Pastikan SDK dikonfigurasi ketika modul diimpor oleh FastAPI
-if GOOGLE_API_KEY:
-   try:
-       genai.configure(api_key=GOOGLE_API_KEY)
-   except Exception as _e:
-       logger.warning(f"Gagal mengkonfigurasi Google Generative AI SDK: {_e}")
+# ChatOpenAI will read OPENAI_API_KEY from environment
 
-def generate_bulk_content(doc_output_dir: str) -> str:
+async def generate_bulk_content(doc_output_dir: str) -> str:
     """
-    Mengeksekusi rencana enrichment untuk menghasilkan konten baru secara massal.
+    Phase-2 (async): Generate enrichment content per item with targeted context.
 
-    Fungsi ini adalah Fase 2 dari proyek Genesis-RAG.
-    Fungsi ini membaca rencana dari enrichment_plan.json, menggabungkannya dengan
-    dokumen asli dan gambar-gambar yang relevan, lalu mengirimkan permintaan multimodal
-    ke Gemini API untuk menghasilkan semua konten yang dibutuhkan dalam satu panggilan.
+    Optimizations for large docs (many pages/items):
+    - No single giant prompt. Generate per item with its original_context only.
+    - Concurrency with asyncio.Semaphore.
+    - Timeouts and small retries per item.
 
-    Args:
-        doc_output_dir (str): Direktori output dari fase sebelumnya yang berisi
-                              file-file yang diperlukan (markdown, plan, assets).
-
-    Returns:
-        str: Path menuju file generated_content.json yang berisi konten hasil generasi.
+    Returns path to suggestions.json.
     """
     doc_path = Path(doc_output_dir)
     markdown_path = doc_path / "markdown_v1.md"
-    plan_path = doc_path / "enrichment_plan.json"
-    assets_path = doc_path / "assets"
+    # Prefer structured plan.json produced by Phase-1; fallback to enrichment_plan.json
+    plan_path = doc_path / "plan.json"
+    if not plan_path.exists():
+        plan_path = doc_path / "enrichment_plan.json"
 
     try:
         with open(markdown_path, 'r', encoding='utf-8') as f:
@@ -45,155 +37,90 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         logger.error(f"File yang dibutuhkan tidak ditemukan - {e}")
         return ""
 
-    image_parts = []
-    images_to_describe = enrichment_plan.get("images_to_describe", [])
-    for item in images_to_describe:
-        # items may be strings (filenames) OR dicts with keys like 'image_file'/'filename'
-        if isinstance(item, str):
-            image_filename = item
-        elif isinstance(item, dict):
-            image_filename = item.get("image_file") or item.get("filename") or ""
-        else:
-            image_filename = ""
+    # Build targeted generation per item (no giant prompt)
+    chat = ChatOpenAI(model=CHAT_MODEL, temperature=0.2)
+    logger.info("Fase 2: menghasilkan konten per item dengan konteks terarah (async)...")
 
-        if not image_filename:
-            logger.warning("Item images_to_describe tanpa nama file, lewati.")
-            continue
+    # Load segments for richer context (optional)
+    seg_map = {}
+    try:
+        segs = json.loads((doc_path / "segments.json").read_text(encoding="utf-8"))
+        seg_map = {s.get("segment_id"): s for s in segs}
+    except Exception:
+        seg_map = {}
 
-        image_path = assets_path / image_filename
-        if image_path.exists():
+    terms_plan = list(enrichment_plan.get("terms_to_define", []) or [])
+    concepts_plan = list(enrichment_plan.get("concepts_to_simplify", []) or [])
+
+    # Helper to trim context length
+    def _clip(t: str, n: int = 1200) -> str:
+        t = (t or "").strip()
+        return t if len(t) <= n else (t[:n].rsplit(" ", 1)[0] or t[:n])
+
+    sem = asyncio.Semaphore(8)
+
+    async def _call_llm(prompt: str, timeout: float = 45.0, attempts: int = 2) -> str:
+        last_err = None
+        for i in range(1, attempts + 1):
             try:
-                img = Image.open(image_path)
-                image_parts.append(img)
-                image_parts.append(f"\n--- Image Filename: {image_filename} ---\n")
+                async with sem:
+                    resp = await asyncio.wait_for(chat.ainvoke(prompt), timeout=timeout)
+                txt = getattr(resp, "content", None) or str(resp)
+                return txt.strip()
             except Exception as e:
-                logger.warning(f"Tidak dapat memproses gambar {image_filename}: {e}")
-        else:
-            logger.warning(f"File gambar tidak ditemukan: {image_path}")
+                last_err = e
+                await asyncio.sleep(1.2 * i)
+        logger.warning(f"LLM gagal setelah {attempts} percobaan: {last_err}")
+        return ""
 
-    prompt_parts = [
-        "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.",
-        "Konteks: Saya memberikan dokumen asli, rencana enrichment, dan aset gambar yang relevan.",
-        "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat berdasarkan konteks dokumen.",
-        "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.",
-        "\n--- Dokumen Asli (untuk konteks) ---",
-        markdown_content,
-        "\n--- Rencana Enrichment untuk Dieksekusi ---",
-        json.dumps(enrichment_plan, indent=2),
-        "\n--- Aset Gambar ---"
-    ] + image_parts
+    async def _gen_term(item: dict) -> dict:
+        term = item.get("term") or item.get("name") or ""
+        ctx = item.get("original_context") or item.get("context") or ""
+        # enrich ctx with segment text if available
+        provs = item.get("provenances") or []
+        if provs:
+            sid = (provs[0] or {}).get("segment_id")
+            seg_text = (seg_map.get(sid, {}) or {}).get("text") or ""
+            if seg_text:
+                ctx = ctx + "\n\nSegmen terkait:\n" + _clip(seg_text, 800)
+        prompt = (
+            "Definisikan istilah berikut secara ringkas, akurat, dan netral (2-4 kalimat).\n"
+            f"Istilah: {term}\n"
+            f"Konteks: {_clip(ctx, 1000)}\n\n"
+            "Balas HANYA teks definisi tanpa format lain."
+        )
+        text = await _call_llm(prompt)
+        return {"term": term, "definition": text}
 
-    logger.info("Mengirim permintaan multimodal ke Gemini untuk generasi konten...")
-    model = genai.GenerativeModel(
-        GENERATION_MODEL,
-        generation_config={
-            "temperature": 0.2,
-            "response_mime_type": "application/json"
-        },
+    async def _gen_concept(item: dict) -> dict:
+        ident = item.get("identifier") or item.get("id") or item.get("name") or ""
+        ctx = item.get("original_context") or item.get("paragraph_text") or ""
+        provs = item.get("provenances") or []
+        if provs:
+            sid = (provs[0] or {}).get("segment_id")
+            seg_text = (seg_map.get(sid, {}) or {}).get("text") or ""
+            if seg_text:
+                ctx = ctx + "\n\nSegmen terkait:\n" + _clip(seg_text, 900)
+        prompt = (
+            "Sederhanakan konsep berikut agar mudah dipahami pembaca umum (3-6 kalimat).\n"
+            f"Konsep: {ident}\n"
+            f"Konteks: {_clip(ctx, 1100)}\n\n"
+            "Balas HANYA teks penjelasan tanpa format lain."
+        )
+        text = await _call_llm(prompt)
+        return {"identifier": ident, "simplified_text": text}
+
+    term_tasks = [_gen_term(it) for it in terms_plan]
+    concept_tasks = [_gen_concept(it) for it in concepts_plan]
+    term_results, concept_results = await asyncio.gather(
+        asyncio.gather(*term_tasks), asyncio.gather(*concept_tasks)
     )
 
-    def _extract_text(resp):
-        raw = ""
-        if getattr(resp, "candidates", None):
-            for c in resp.candidates:
-                parts = getattr(c, "content", None) and c.content.parts or []
-                for p in parts:
-                    if hasattr(p, "text") and p.text:
-                        raw += p.text
-        if not raw:
-            try:
-                raw = resp.text
-            except Exception:
-                raw = ""
-        return (raw or "").strip()
-
-    def _parse_json(raw_text: str):
-        if not raw_text:
-            return None
-        js = raw_text.replace('```json', '').replace('```', '').strip()
-        try:
-            return json.loads(js)
-        except json.JSONDecodeError:
-            # try to capture either an object {...} or an array [...]
-            m = re.search(r"(\{[\s\S]*\}|\[[\s\S]*\])", js)
-            if m:
-                try:
-                    return json.loads(m.group(0))
-                except json.JSONDecodeError:
-                    return None
-            return None
-
-    # Retry hingga 3x dengan variasi prompt dan backoff
-    max_attempts = 3
-    content_data = None
-    attempts_meta = []
-
-    for attempt in range(1, max_attempts + 1):
-        # Siapkan prompt per percobaan
-        if attempt == 1:
-            prompt_to_send = prompt_parts  # multimodal, termasuk gambar
-        elif attempt == 2:
-            strict_intro = (
-                "PERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid. "
-                "JANGAN sertakan penjelasan, code fence, atau teks tambahan apa pun."
-            )
-            prompt_to_send = [
-                "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.",
-                "Konteks: Saya memberikan dokumen asli dan rencana enrichment.",
-                "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat.",
-                "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.",
-                strict_intro,
-                "\n--- Dokumen Asli (untuk konteks) ---",
-                markdown_content,
-                "\n--- Rencana Enrichment untuk Dieksekusi ---",
-                json.dumps(enrichment_plan, indent=2),
-            ]
-        else:
-            strict_intro2 = (
-                "BALAS HANYA JSON VALID. Jika ragu, kembalikan objek kosong dengan keys: "
-                "terms_to_define, concepts_to_simplify, image_descriptions."
-            )
-            prompt_to_send = [
-                strict_intro2,
-                "\n--- Dokumen Asli (untuk konteks) ---",
-                markdown_content,
-                "\n--- Rencana Enrichment untuk Dieksekusi ---",
-                json.dumps(enrichment_plan, indent=2),
-            ]
-
-        try:
-            response = model.generate_content(prompt_to_send)
-            raw_text = _extract_text(response)
-            try:
-                with open(doc_path / f"generated_content_raw_attempt{attempt}.txt", 'w', encoding='utf-8') as rf:
-                    rf.write(raw_text)
-            except Exception:
-                pass
-
-            parsed = _parse_json(raw_text)
-            if parsed is not None:
-                content_data = parsed
-                break
-
-            # Kumpulkan meta untuk logging
-            try:
-                fr = response.candidates[0].finish_reason if response.candidates else None
-            except Exception:
-                fr = None
-            pf = getattr(response, "prompt_feedback", None)
-            attempts_meta.append({"attempt": attempt, "finish_reason": fr, "prompt_feedback": pf})
-            logger.warning(f"Percobaan Fase 2 (generation) ke-{attempt} gagal parsing JSON. finish_reason={fr}, prompt_feedback={pf}")
-        except Exception as e:
-            attempts_meta.append({"attempt": attempt, "error": str(e)})
-            logger.warning(f"Percobaan Fase 2 (generation) ke-{attempt} error: {e}")
-
-        if attempt < max_attempts:
-            time.sleep(1.5 ** attempt)
-
-    if content_data is None:
-        logger.error(f"Gagal mendapatkan JSON valid dari Gemini setelah {max_attempts} percobaan. detail={attempts_meta}")
-        # Fallback: tetap lanjutkan dengan membuat suggestions.json berbasis plan
-        content_data = {"terms_to_define": [], "concepts_to_simplify": [], "image_descriptions": []}
+    # Build content_data similar to previous shape for compatibility/logging
+    content_data = {
+        "terms_to_define": term_results,
+        "concepts_to_simplify": concept_results,
+    }
 
     # Simpan konten mentah untuk pelacakan
     output_path = doc_path / "generated_content.json"
@@ -209,9 +136,26 @@ def generate_bulk_content(doc_output_dir: str) -> str:
     plan = enrichment_plan
 
     # Peta bantu untuk lookup cepat dari hasil generasi
-    gen_terms = {i.get("term"): i for i in content_data.get("terms_to_define", [])} if isinstance(content_data, dict) else {}
-    gen_concepts = {i.get("identifier"): i for i in content_data.get("concepts_to_simplify", [])} if isinstance(content_data, dict) else {}
-    gen_images = {i.get("image_file"): i for i in content_data.get("image_descriptions", [])} if isinstance(content_data, dict) else {}
+    gen_terms: dict[str, dict] = {}
+    gen_concepts: dict[str, dict] = {}
+    if isinstance(content_data, dict):
+        # terms_to_define may be list[dict]|list[str]
+        for i in content_data.get("terms_to_define", []) or []:
+            if isinstance(i, dict):
+                key = i.get("term") or i.get("name")
+                if key:
+                    gen_terms[key] = i
+            elif isinstance(i, str):
+                gen_terms[i] = {"content": i}
+
+        # concepts_to_simplify may be list[dict]|list[str]
+        for i in content_data.get("concepts_to_simplify", []) or []:
+            if isinstance(i, dict):
+                key = i.get("identifier") or i.get("id") or i.get("name")
+                if key:
+                    gen_concepts[key] = i
+            elif isinstance(i, str):
+                gen_concepts[i] = {"content": i}
 
     # Istilah untuk didefinisikan
     for idx, item in enumerate(plan.get("terms_to_define", []) or []):
@@ -224,7 +168,16 @@ def generate_bulk_content(doc_output_dir: str) -> str:
             original_context = item.get("original_context") or item.get("context") or term or ""
             conf = float(item.get("confidence_score", 0.5))
         gen = gen_terms.get(term, {})
-        definition = gen.get("definition") or gen.get("content") or ""
+        # Beberapa kemungkinan nama field dari LLM
+        definition = (
+            gen.get("definition")
+            or gen.get("definition_text")
+            or gen.get("explanation")
+            or gen.get("expanded_definition")
+            or gen.get("text")
+            or gen.get("content")
+            or ""
+        )
         suggestions.append({
             "id": f"term_{idx}",
             "type": "term_to_define",
@@ -245,7 +198,15 @@ def generate_bulk_content(doc_output_dir: str) -> str:
             original_context = item.get("original_context") or item.get("paragraph_text") or identifier or ""
             conf = float(item.get("confidence_score", 0.5))
         gen = gen_concepts.get(identifier, {})
-        simplified = gen.get("simplified_text") or gen.get("content") or ""
+        simplified = (
+            gen.get("simplified_text")
+            or gen.get("simplified")
+            or gen.get("explanation")
+            or gen.get("summary")
+            or gen.get("text")
+            or gen.get("content")
+            or ""
+        )
         suggestions.append({
             "id": f"concept_{idx}",
             "type": "concept_to_simplify",
@@ -255,27 +216,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
             "status": "pending",
         })
 
-    # Gambar untuk dideskripsikan (plan bisa list[str] atau list[dict])
-    images_plan = plan.get("images_to_describe", []) or []
-    for idx, item in enumerate(images_plan):
-        if isinstance(item, str):
-            image_file = item
-            original_context = f"[IMAGE_PLACEHOLDER: {image_file}]"
-            conf = 0.5
-        else:
-            image_file = item.get("image_file") or item.get("filename")
-            original_context = item.get("original_context") or f"[IMAGE_PLACEHOLDER: {image_file}]"
-            conf = float(item.get("confidence_score", 0.5))
-        gen = gen_images.get(image_file, {})
-        desc = gen.get("description") or gen.get("content") or ""
-        suggestions.append({
-            "id": f"image_{idx}",
-            "type": "image_description",
-            "original_context": original_context,
-            "generated_content": desc,
-            "confidence_score": conf,
-            "status": "pending",
-        })
+    # teks-only: tidak ada gambar untuk dideskripsikan
 
     # Tulis suggestions.json
     suggestions_path = doc_path / "suggestions.json"
@@ -287,11 +228,6 @@ def generate_bulk_content(doc_output_dir: str) -> str:
     return str(suggestions_path)
 
 if __name__ == '__main__':
-    if GOOGLE_API_KEY:
-        genai.configure(api_key=GOOGLE_API_KEY)
-    else:
-        logger.error("GOOGLE_API_KEY tidak ditemukan. Harap set di file .env Anda.")
-
     base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
     if not base_artefacts_dir.exists():
         logger.error(f"Direktori '{PIPELINE_ARTEFACTS_DIR}' tidak ditemukan. Jalankan phase_0 terlebih dahulu.")
@@ -302,4 +238,4 @@ if __name__ == '__main__':
         else:
             latest_doc_dir = max(all_doc_dirs, key=lambda d: d.stat().st_mtime)
             logger.info(f"Menjalankan Fase 2 pada direktori: {latest_doc_dir}")
-            generate_bulk_content(str(latest_doc_dir))
+            asyncio.run(generate_bulk_content(str(latest_doc_dir)))

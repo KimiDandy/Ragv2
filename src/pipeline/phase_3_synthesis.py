@@ -1,6 +1,9 @@
 import json
+import time
 from pathlib import Path
 from loguru import logger
+import bisect
+import tiktoken
 
 from ..core.config import PIPELINE_ARTEFACTS_DIR
 
@@ -31,57 +34,95 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
     appendix_list: list[str] = []
     footnote_counter = 1
 
-    def _insert_footnote(anchor_text: str) -> bool:
-        """Mencoba menyisipkan penanda catatan kaki setelah kemunculan pertama dari anchor_text.
-        Pencocokan tidak peka huruf besar/kecil dan memiliki fallback pencocokan parsial.
+    def _build_token_maps(text: str):
+        """Bangun peta byte/token untuk penambatan aman berbasis tiktoken.
+        Returns (char_to_byte, token_start_bytes, total_bytes).
         """
-        nonlocal modified_markdown, footnote_counter
-        if not anchor_text:
-            return False
-        target = anchor_text
+        try:
+            enc = tiktoken.encoding_for_model("gpt-4o")
+        except Exception:
+            try:
+                enc = tiktoken.get_encoding("cl100k_base")
+            except Exception:
+                enc = None
+        if enc is None:
+            # Fallback: tanpa token map
+            return None, None, len(text.encode("utf-8"))
 
-        if target in modified_markdown:
-            modified_markdown = modified_markdown.replace(target, f"{target}[^{footnote_counter}]", 1)
-            return True
+        tokens = enc.encode(text, disallowed_special=())
+        token_bytes_list = enc.decode_tokens_bytes(tokens)
+        token_start_bytes: list[int] = []
+        bsum = 0
+        for tb in token_bytes_list:
+            token_start_bytes.append(bsum)
+            bsum += len(tb)
+
+        # char -> byte map
+        char_to_byte: list[int] = [0]
+        bcount = 0
+        for ch in text:
+            bcount += len(ch.encode("utf-8"))
+            char_to_byte.append(bcount)
+
+        return char_to_byte, token_start_bytes, bsum
+
+    def _find_anchor_span(text: str, anchor_text: str) -> tuple[int, int] | None:
+        """Cari rentang karakter [start, end) dari anchor di dalam text.
+        Coba exact, case-insensitive, dan fallback prefix/suffix.
+        """
+        if not anchor_text:
+            return None
+        target = anchor_text
+        idx = text.find(target)
+        if idx != -1:
+            return idx, idx + len(target)
         trimmed = target.strip()
-        if trimmed and trimmed in modified_markdown:
-            modified_markdown = modified_markdown.replace(trimmed, f"{trimmed}[^{footnote_counter}]", 1)
-            return True
-        lower_md = modified_markdown.lower()
+        if trimmed:
+            idx = text.find(trimmed)
+            if idx != -1:
+                return idx, idx + len(trimmed)
+        lower_text = text.lower()
         lower_anchor = target.lower().strip()
-        if lower_anchor and (idx := lower_md.find(lower_anchor)) != -1:
-            end = idx + len(lower_anchor)
-            original_slice = modified_markdown[idx:end]
-            modified_markdown = (
-                modified_markdown[:idx]
-                + f"{original_slice}[^{footnote_counter}]"
-                + modified_markdown[end:]
-            )
-            return True
+        if lower_anchor:
+            idx = lower_text.find(lower_anchor)
+            if idx != -1:
+                return idx, idx + len(lower_anchor)
         if len(trimmed) > 30:
             prefix = trimmed[:30].lower()
             suffix = trimmed[-30:].lower()
-            if (pidx := lower_md.find(prefix)) != -1:
-                start = pidx
-                end = pidx + len(prefix)
-                original_slice = modified_markdown[start:end]
-                modified_markdown = (
-                    modified_markdown[:start]
-                    + f"{original_slice}[^{footnote_counter}]"
-                    + modified_markdown[end:]
-                )
-                return True
-            if (sidx := lower_md.find(suffix)) != -1:
-                start = sidx
-                end = sidx + len(suffix)
-                original_slice = modified_markdown[start:end]
-                modified_markdown = (
-                    modified_markdown[:start]
-                    + f"{original_slice}[^{footnote_counter}]"
-                    + modified_markdown[end:]
-                )
-                return True
-        return False
+            pidx = lower_text.find(prefix)
+            if pidx != -1:
+                return pidx, pidx + len(prefix)
+            sidx = lower_text.find(suffix)
+            if sidx != -1:
+                return sidx, sidx + len(suffix)
+        return None
+
+    def _insert_token_aware_after_span(text: str, span: tuple[int, int], footnote_index: int) -> tuple[str, bool]:
+        """Sisipkan catatan kaki setelah rentang, digeser ke batas token terdekat (tiktoken) tanpa memotong karakter.
+        Mengembalikan (teks_baru, True) bila berhasil; fallback ke penempatan tepat setelah span bila token map tidak tersedia.
+        """
+        start, end = span
+        char_to_byte, token_starts, total_bytes = _build_token_maps(text)
+        insert_pos_char = end
+        if char_to_byte and token_starts is not None:
+            # Tentukan offset byte dari akhir span
+            end_byte = char_to_byte[end]
+            # Cari boundary token pertama di >= end_byte
+            j = bisect.bisect_left(token_starts, end_byte)
+            if j < len(token_starts):
+                target_byte = token_starts[j]
+            else:
+                target_byte = total_bytes
+            # Konversi kembali ke indeks karakter terdekat ke kanan
+            insert_pos_char = bisect.bisect_left(char_to_byte, target_byte)
+        # Sisipkan marker
+        new_text = text[:insert_pos_char] + f"[^{footnote_index}]" + text[insert_pos_char:]
+        return new_text, True
+
+    anchored_count = 0
+    appendix_count = 0
+    t0 = time.time()
 
     for s in curated_suggestions or []:
         status = (s.get("status") or "").lower()
@@ -96,16 +137,17 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
             label = "Definisi"
         elif s_type == "concept_to_simplify":
             label = "Penyederhanaan"
-        elif s_type == "image_description":
-            label = "Deskripsi Gambar"
 
-        if _insert_footnote(anchor):
+        span = _find_anchor_span(modified_markdown, anchor)
+        if span is not None:
+            modified_markdown, _ = _insert_token_aware_after_span(modified_markdown, span, footnote_counter)
             footnotes_list.append(f"[^{footnote_counter}]: **{label}:** {content}")
             footnote_counter += 1
+            anchored_count += 1
         else:
             logger.warning(f"Tidak dapat menemukan konteks untuk menyisipkan catatan kaki: id={s.get('id')} type={s_type}")
-            # simpan untuk lampiran agar pengguna tetap mendapat kontennya
             appendix_list.append(f"- **{label}** (unanchored): {content}")
+            appendix_count += 1
 
     final_content = modified_markdown
     if footnotes_list:
@@ -116,6 +158,19 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
     output_path = doc_path / "markdown_v2.md"
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(final_content)
+
+    # Metrics
+    metrics = {
+        "anchored": anchored_count,
+        "appendixed": appendix_count,
+        "total_processed": anchored_count + appendix_count,
+        "duration_sec": time.time() - t0,
+    }
+    try:
+        with open(doc_path / "phase_3_metrics.json", 'w', encoding='utf-8') as mf:
+            json.dump(metrics, mf, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
 
     logger.info(f"Fase 3 selesai. Markdown final disimpan di: {output_path}")
     return str(output_path)
