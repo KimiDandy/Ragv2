@@ -1,5 +1,4 @@
 from pathlib import Path
-import re
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 import chromadb
@@ -40,15 +39,8 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
         logger.error(f"File markdown final tidak ditemukan di {markdown_path}")
         return False
 
-    # For v2, exclude the appended Glossary section from vectorization to prevent biasing retrieval
+    # Gunakan seluruh konten apa adanya untuk vektorisasi (termasuk Glossary dan catatan kaki)
     content_for_vector = final_content
-    if str(version).lower() == "v2":
-        try:
-            m = re.search(r"(?mi)^##\s*Glossary\s*$", content_for_vector)
-            if m:
-                content_for_vector = content_for_vector[:m.start()].rstrip()
-        except Exception as _e:
-            logger.warning(f"Gagal memotong bagian Glossary untuk v2: {_e}")
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,

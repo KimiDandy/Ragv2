@@ -9,7 +9,11 @@ from pydantic import BaseModel
 from loguru import logger
 from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import RetrievalQA
+from langchain_core.messages import HumanMessage
+try:
+    from langchain_cohere import CohereRerank
+except Exception:
+    CohereRerank = None  # optional; fallback if not installed
 
 from ..pipeline.phase_0_extraction import process_pdf_local
 from ..pipeline.phase_0_5_glossary import extract_global_glossary
@@ -106,9 +110,10 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
 
         expanded_prompt = _expand_query(prompt)
 
+        # --- Retrieve-then-Rerank with HyDE ---
         retriever = vector_store.as_retriever(
             search_kwargs={
-                'k': 5,
+                'k': 20,  # ambil kandidat lebih banyak
                 'filter': {
                     '$and': [
                         {'source_document': {'$eq': doc_id}},
@@ -118,25 +123,67 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
             }
         )
 
+        # HyDE: buat jawaban hipotetis singkat untuk memperkaya query
+        hyde_template = PromptTemplate(
+            input_variables=["question"],
+            template=(
+                "Buat jawaban hipotetis yang singkat, lugas, dan realistis untuk pertanyaan berikut. "
+                "Jika menyangkut nominal, kembalikan hanya angka dan mata uang tanpa penjelasan panjang.\n\n"
+                "Pertanyaan: {question}\n\nJawaban hipotetis:" 
+            ),
+        )
+        try:
+            hyde_prompt = hyde_template.format(question=expanded_prompt)
+            hyde_resp = await llm.ainvoke([HumanMessage(content=hyde_prompt)])
+            hyde_text = (getattr(hyde_resp, "content", "") or "").strip()
+        except Exception:
+            hyde_text = ""
+        hyde_query = f"{expanded_prompt}\n\nHipotesis: {hyde_text}" if hyde_text else expanded_prompt
+
+        # Retrieve awal (lebih lebar)
+        try:
+            initial_docs = await retriever.aget_relevant_documents(hyde_query)
+        except Exception:
+            # fallback ke query asli jika retriever tidak mendukung async method khusus
+            initial_docs = await retriever.ainvoke(hyde_query)
+
+        logger.info(f"Retrieve awal mendapatkan {len(initial_docs)} dokumen kandidat.")
+
+        # Re-rank dengan Cohere (opsional). Jika tidak tersedia, ambil top-5 pertama.
+        reranked_docs = None
+        if CohereRerank is not None:
+            try:
+                cohere_reranker = CohereRerank(
+                    top_n=5,
+                    model="rerank-multilingual-v2.0",
+                )
+                reranked_docs = await cohere_reranker.acompress_documents(
+                    documents=initial_docs,
+                    query=prompt,
+                )
+                logger.info(f"Setelah re-ranking, terpilih {len(reranked_docs)} dokumen paling relevan.")
+            except Exception as e:
+                logger.warning(f"Cohere rerank gagal atau COHERE_API_KEY tidak tersedia: {e}. fallback ke 5 teratas tanpa rerank.")
+                reranked_docs = initial_docs[:5]
+        else:
+            reranked_docs = initial_docs[:5]
+
+        # Synthesize jawaban menggunakan prompt RAG yang ada
+        context = "\n\n".join([getattr(doc, 'page_content', '') or '' for doc in reranked_docs])
         prompt_template = PromptTemplate(
             input_variables=["context", "question"],
-            template=RAG_PROMPT_TEMPLATE
+            template=RAG_PROMPT_TEMPLATE,
         )
+        try:
+            filled = prompt_template.format(context=context, question=prompt)
+            gen_resp = await llm.ainvoke([HumanMessage(content=filled)])
+            answer = (getattr(gen_resp, "content", "") or "").strip()
+        except Exception as e:
+            logger.error(f"Gagal mensintesis jawaban: {e}")
+            answer = "Tidak ditemukan jawaban yang relevan dari dokumen."
 
-        qa_chain = RetrievalQA.from_chain_type(
-            llm=llm,
-            chain_type="stuff",
-            retriever=retriever,
-            return_source_documents=True,
-            chain_type_kwargs={"prompt": prompt_template}
-        )
-
-        logger.info(f"Menjalankan RAG chain untuk dokumen '{doc_id}' versi '{version}'...")
-        result = await qa_chain.ainvoke({"query": expanded_prompt})
-        answer = (result.get("result") or "Tidak ditemukan jawaban yang relevan dari dokumen.").strip()
-        raw_sources = result.get("source_documents", []) or []
         sources = []
-        for d in raw_sources:
+        for d in (reranked_docs or []):
             try:
                 content = getattr(d, "page_content", "") or ""
                 metadata = getattr(d, "metadata", {}) or {}

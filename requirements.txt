@@ -12,3 +12,5 @@ Pillow
 python-multipart
 langchain-text-splitters
 langchain-openai
+langchain-cohere
+cohere
