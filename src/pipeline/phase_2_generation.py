@@ -1,22 +1,18 @@
 import json
 import re
 from pathlib import Path
-import google.generativeai as genai
-from PIL import Image
+from langchain_openai import ChatOpenAI
+import base64
 from loguru import logger
 import time
 import asyncio
 from typing import List, Dict, Any
+from langchain_core.messages import HumanMessage
 
-from ..core.config import GENERATION_MODEL, PIPELINE_ARTEFACTS_DIR, GOOGLE_API_KEY
+from ..core.config import GENERATION_MODEL, PIPELINE_ARTEFACTS_DIR
 from ..core.prompts import load_prompt
 
-# Pastikan SDK dikonfigurasi ketika modul diimpor oleh FastAPI
-if GOOGLE_API_KEY:
-   try:
-       genai.configure(api_key=GOOGLE_API_KEY)
-   except Exception as _e:
-       logger.warning(f"Gagal mengkonfigurasi Google Generative AI SDK: {_e}")
+# OpenAI API key dibaca otomatis dari env (OPENAI_API_KEY) oleh langchain_openai
 
 async def process_chunks_for_enrichment(chunks: List[str], max_concurrency: int = 5, glossary: Dict[str, Any] | None = None) -> List[Dict[str, Any]]:
     """
@@ -41,13 +37,7 @@ async def process_chunks_for_enrichment(chunks: List[str], max_concurrency: int 
     if not chunks:
         return []
 
-    model = genai.GenerativeModel(
-        GENERATION_MODEL,
-        generation_config={
-            "temperature": 0.2,
-            "response_mime_type": "application/json"
-        },
-    )
+    llm = ChatOpenAI(model=GENERATION_MODEL, temperature=0.2)
 
     # Load externalized prompt and optionally append Global Glossary context
     default_prompt = (
@@ -93,43 +83,29 @@ async def process_chunks_for_enrichment(chunks: List[str], max_concurrency: int 
 
     async def _analyze_chunk(idx: int, text: str) -> List[Dict[str, Any]]:
         async with sem:
-            # Jalankan pemanggilan blokir di thread pool agar tidak memblokir event loop
-            def _call_model():
-                attempts = 3
-                last_raw = ""
-                for a in range(1, attempts + 1):
-                    try:
-                        resp = model.generate_content([
-                            prompt_header,
-                            glossary_block,
-                            "\n--- Cuplikan ---\n",
-                            text or "",
-                        ])
-                        raw = ""
-                        try:
-                            if getattr(resp, "candidates", None):
-                                for c in resp.candidates:
-                                    parts = getattr(c, "content", None) and c.content.parts or []
-                                    for p in parts:
-                                        if hasattr(p, "text") and p.text:
-                                            raw += p.text
-                            if not raw:
-                                raw = getattr(resp, "text", "") or ""
-                        except Exception:
-                            raw = getattr(resp, "text", "") or ""
-                        last_raw = raw
-                        arr = _parse_array(raw)
-                        if isinstance(arr, list):
-                            return arr
-                    except Exception as e:
-                        logger.warning(f"Gagal analisis chunk {idx} attempt {a}: {e}")
-                    time.sleep(1.2 ** a)
-                # fallback jika gagal total
-                if last_raw:
-                    return _parse_array(last_raw)
-                return []
-
-            return await asyncio.to_thread(_call_model)
+            attempts = 3
+            last_raw = ""
+            for a in range(1, attempts + 1):
+                try:
+                    prompt_to_send = (
+                        (prompt_header or "")
+                        + (glossary_block or "")
+                        + "\n--- Cuplikan ---\n"
+                        + (text or "")
+                    )
+                    resp = await llm.ainvoke(prompt_to_send)
+                    raw = getattr(resp, "content", "") or ""
+                    last_raw = raw
+                    arr = _parse_array(raw)
+                    if isinstance(arr, list):
+                        return arr
+                except Exception as e:
+                    logger.warning(f"Gagal analisis chunk {idx} attempt {a}: {e}")
+                await asyncio.sleep(1.2 ** a)
+            # fallback jika gagal total
+            if last_raw:
+                return _parse_array(last_raw)
+            return []
 
     tasks = [asyncio.create_task(_analyze_chunk(i, ch)) for i, ch in enumerate(chunks)]
     results_lists = await asyncio.gather(*tasks, return_exceptions=False)
@@ -176,7 +152,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
     Fungsi ini adalah Fase 2 dari proyek Genesis-RAG.
     Fungsi ini membaca rencana dari enrichment_plan.json, menggabungkannya dengan
     dokumen asli dan gambar-gambar yang relevan, lalu mengirimkan permintaan multimodal
-    ke Gemini API untuk menghasilkan semua konten yang dibutuhkan dalam satu panggilan.
+    ke OpenAI API untuk menghasilkan semua konten yang dibutuhkan dalam satu panggilan.
 
     Args:
         doc_output_dir (str): Direktori output dari fase sebelumnya yang berisi
@@ -199,10 +175,21 @@ def generate_bulk_content(doc_output_dir: str) -> str:
         logger.error(f"File yang dibutuhkan tidak ditemukan - {e}")
         return ""
 
-    image_parts = []
+    # Konversi gambar ke data URL base64 agar dapat dikirim ke OpenAI sebagai image_url
+    def _to_data_url(p: Path) -> str | None:
+        try:
+            suffix = (p.suffix or ".png").lower().lstrip(".")
+            mime = f"image/{'jpeg' if suffix in ('jpg', 'jpeg') else suffix}"
+            b = p.read_bytes()
+            enc = base64.b64encode(b).decode("ascii")
+            return f"data:{mime};base64,{enc}"
+        except Exception as e:
+            logger.warning(f"Gagal membuat data URL untuk {p}: {e}")
+            return None
+
+    image_parts: List[dict] = []
     images_to_describe = enrichment_plan.get("images_to_describe", [])
     for item in images_to_describe:
-        # items may be strings (filenames) OR dicts with keys like 'image_file'/'filename'
         if isinstance(item, str):
             image_filename = item
         elif isinstance(item, dict):
@@ -216,35 +203,28 @@ def generate_bulk_content(doc_output_dir: str) -> str:
 
         image_path = assets_path / image_filename
         if image_path.exists():
-            try:
-                img = Image.open(image_path)
-                image_parts.append(img)
-                image_parts.append(f"\n--- Image Filename: {image_filename} ---\n")
-            except Exception as e:
-                logger.warning(f"Tidak dapat memproses gambar {image_filename}: {e}")
+            data_url = _to_data_url(image_path)
+            if data_url:
+                image_parts.append({"type": "text", "text": f"\n--- Image Filename: {image_filename} ---\n"})
+                image_parts.append({"type": "image_url", "image_url": {"url": data_url}})
         else:
             logger.warning(f"File gambar tidak ditemukan: {image_path}")
 
-    prompt_parts = [
-        "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.",
-        "Konteks: Saya memberikan dokumen asli, rencana enrichment, dan aset gambar yang relevan.",
-        "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat berdasarkan konteks dokumen.",
-        "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.",
-        "\n--- Dokumen Asli (untuk konteks) ---",
-        markdown_content,
-        "\n--- Rencana Enrichment untuk Dieksekusi ---",
-        json.dumps(enrichment_plan, indent=2),
-        "\n--- Aset Gambar ---"
-    ] + image_parts
-
-    logger.info("Mengirim permintaan multimodal ke Gemini untuk generasi konten...")
-    model = genai.GenerativeModel(
-        GENERATION_MODEL,
-        generation_config={
-            "temperature": 0.2,
-            "response_mime_type": "application/json"
-        },
+    base_text = (
+        "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.\n"
+        "Konteks: Saya memberikan dokumen asli, rencana enrichment, dan aset gambar yang relevan.\n"
+        "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat berdasarkan konteks dokumen.\n"
+        "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.\n"
+        "\n--- Dokumen Asli (untuk konteks) ---\n"
+        + markdown_content
+        + "\n--- Rencana Enrichment untuk Dieksekusi ---\n"
+        + json.dumps(enrichment_plan, indent=2)
+        + "\n--- Aset Gambar ---\n"
     )
+
+    llm = ChatOpenAI(model=GENERATION_MODEL, temperature=0.2)
+
+    logger.info("Mengirim permintaan ke OpenAI untuk generasi konten...")
 
     def _extract_text(resp):
         raw = ""
@@ -285,39 +265,43 @@ def generate_bulk_content(doc_output_dir: str) -> str:
     for attempt in range(1, max_attempts + 1):
         # Siapkan prompt per percobaan
         if attempt == 1:
-            prompt_to_send = prompt_parts  # multimodal, termasuk gambar
+            content_parts = [{"type": "text", "text": base_text}] + image_parts
         elif attempt == 2:
+            
             strict_intro = (
                 "PERSYARATAN KETAT: Balas HANYA dengan satu objek JSON valid. "
                 "JANGAN sertakan penjelasan, code fence, atau teks tambahan apa pun."
             )
-            prompt_to_send = [
-                "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.",
-                "Konteks: Saya memberikan dokumen asli dan rencana enrichment.",
-                "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat.",
-                "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.",
-                strict_intro,
-                "\n--- Dokumen Asli (untuk konteks) ---",
-                markdown_content,
-                "\n--- Rencana Enrichment untuk Dieksekusi ---",
-                json.dumps(enrichment_plan, indent=2),
-            ]
+            text2 = (
+                "Peran: Anda adalah ensiklopedia hidup dan penulis teknis ahli.\n"
+                "Konteks: Saya memberikan dokumen asli dan rencana enrichment.\n"
+                "Tugas: Jalankan rencana enrichment. Hasilkan semua konten yang diminta dengan jelas dan akurat.\n"
+                "Format Keluaran: Anda HARUS membalas HANYA dengan satu objek JSON yang memetakan setiap item pada rencana ke konten yang Anda hasilkan.\n"
+                + strict_intro
+                + "\n--- Dokumen Asli (untuk konteks) ---\n"
+                + markdown_content
+                + "\n--- Rencana Enrichment untuk Dieksekusi ---\n"
+                + json.dumps(enrichment_plan, indent=2)
+            )
+            content_parts = [{"type": "text", "text": text2}]
         else:
             strict_intro2 = (
                 "BALAS HANYA JSON VALID. Jika ragu, kembalikan objek kosong dengan keys: "
                 "terms_to_define, concepts_to_simplify, image_descriptions."
             )
-            prompt_to_send = [
-                strict_intro2,
-                "\n--- Dokumen Asli (untuk konteks) ---",
-                markdown_content,
-                "\n--- Rencana Enrichment untuk Dieksekusi ---",
-                json.dumps(enrichment_plan, indent=2),
-            ]
+            text3 = (
+                strict_intro2
+                + "\n--- Dokumen Asli (untuk konteks) ---\n"
+                + markdown_content
+                + "\n--- Rencana Enrichment untuk Dieksekusi ---\n"
+                + json.dumps(enrichment_plan, indent=2)
+            )
+            content_parts = [{"type": "text", "text": text3}]
 
         try:
-            response = model.generate_content(prompt_to_send)
-            raw_text = _extract_text(response)
+            message = HumanMessage(content=content_parts)
+            resp = llm.invoke([message])
+            raw_text = getattr(resp, "content", "") or ""
             try:
                 with open(doc_path / f"generated_content_raw_attempt{attempt}.txt", 'w', encoding='utf-8') as rf:
                     rf.write(raw_text)
@@ -330,13 +314,10 @@ def generate_bulk_content(doc_output_dir: str) -> str:
                 break
 
             # Kumpulkan meta untuk logging
-            try:
-                fr = response.candidates[0].finish_reason if response.candidates else None
-            except Exception:
-                fr = None
-            pf = getattr(response, "prompt_feedback", None)
+            fr = None
+            pf = None
             attempts_meta.append({"attempt": attempt, "finish_reason": fr, "prompt_feedback": pf})
-            logger.warning(f"Percobaan Fase 2 (generation) ke-{attempt} gagal parsing JSON. finish_reason={fr}, prompt_feedback={pf}")
+            logger.warning(f"Percobaan Fase 2 (generation) ke-{attempt} gagal parsing JSON.")
         except Exception as e:
             attempts_meta.append({"attempt": attempt, "error": str(e)})
             logger.warning(f"Percobaan Fase 2 (generation) ke-{attempt} error: {e}")
@@ -345,7 +326,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
             time.sleep(1.5 ** attempt)
 
     if content_data is None:
-        logger.error(f"Gagal mendapatkan JSON valid dari Gemini setelah {max_attempts} percobaan. detail={attempts_meta}")
+        logger.error(f"Gagal mendapatkan JSON valid dari OpenAI setelah {max_attempts} percobaan. detail={attempts_meta}")
         # Fallback: tetap lanjutkan dengan membuat suggestions.json berbasis plan
         content_data = {"terms_to_define": [], "concepts_to_simplify": [], "image_descriptions": []}
 
@@ -441,10 +422,7 @@ def generate_bulk_content(doc_output_dir: str) -> str:
     return str(suggestions_path)
 
 if __name__ == '__main__':
-    if GOOGLE_API_KEY:
-        genai.configure(api_key=GOOGLE_API_KEY)
-    else:
-        logger.error("GOOGLE_API_KEY tidak ditemukan. Harap set di file .env Anda.")
+    # OPENAI_API_KEY harus tersedia di environment
 
     base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
     if not base_artefacts_dir.exists():

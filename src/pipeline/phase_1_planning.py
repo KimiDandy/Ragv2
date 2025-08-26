@@ -1,14 +1,14 @@
 import json
 from pathlib import Path
-import google.generativeai as genai
+from langchain_openai import ChatOpenAI
 from loguru import logger
 import re
 import time
 from ..core.prompts import load_prompt
 
-from ..core.config import GOOGLE_API_KEY, PLANNING_MODEL, PIPELINE_ARTEFACTS_DIR
+from ..core.config import PLANNING_MODEL, PIPELINE_ARTEFACTS_DIR
 
-genai.configure(api_key=GOOGLE_API_KEY)
+# OpenAI API key is read from environment (OPENAI_API_KEY) by langchain_openai
 
 def chunk_document(markdown_text: str, chunk_size: int = 1200, chunk_overlap: int = 250) -> list[str]:
     """
@@ -72,7 +72,7 @@ def create_enrichment_plan(markdown_path: str, doc_output_dir: str) -> str:
     Menganalisis dokumen markdown untuk membuat rencana enrichment yang komprehensif.
 
     Fungsi ini adalah Fase 1 dari proyek Genesis-RAG.
-    Fungsi ini membaca konten dari markdown_v1.md, mengirimkannya ke Gemini API dengan
+    Fungsi ini membaca konten dari markdown_v1.md, mengirimkannya ke OpenAI dengan
     prompt spesifik, dan menyimpan hasilnya sebagai file JSON (enrichment_plan.json).
 
     Args:
@@ -140,14 +140,8 @@ Struktur JSON yang Diharuskan:
         + "\n---\n"
     )
 
-    logger.info("Mengirim permintaan ke Gemini untuk membuat rencana enrichment...")
-    model = genai.GenerativeModel(
-        PLANNING_MODEL,
-        generation_config={
-            "temperature": 0.2,
-            "response_mime_type": "application/json"
-        },
-    )
+    logger.info("Mengirim permintaan ke OpenAI untuk membuat rencana enrichment...")
+    llm = ChatOpenAI(model=PLANNING_MODEL, temperature=0.2)
 
     def _extract_text(resp):
         raw = ""
@@ -179,8 +173,8 @@ Struktur JSON yang Diharuskan:
                       "JANGAN sertakan narasi, penjelasan, atau code fence."
                 )
 
-            response = model.generate_content(prompt_to_send)
-            raw_text = _extract_text(response)
+            resp = llm.invoke(prompt_to_send)
+            raw_text = getattr(resp, "content", "") or ""
             try:
                 with open(Path(doc_output_dir) / f"enrichment_plan_raw_attempt{attempt}.txt", 'w', encoding='utf-8') as f:
                     f.write(raw_text)
@@ -202,12 +196,9 @@ Struktur JSON yang Diharuskan:
             if plan_data is not None:
                 break
 
-            # log alasan kegagalan percobaan
-            try:
-                last_finish_reason = response.candidates[0].finish_reason if response.candidates else None
-            except Exception:
-                last_finish_reason = None
-            logger.warning(f"Percobaan Fase 1 (planning) ke-{attempt} gagal parsing JSON. finish_reason={last_finish_reason}")
+            # log alasan kegagalan percobaan (OpenAI via LangChain tidak menyediakan finish_reason di sini)
+            last_finish_reason = None
+            logger.warning(f"Percobaan Fase 1 (planning) ke-{attempt} gagal parsing JSON.")
 
         except Exception as e:
             logger.warning(f"Percobaan Fase 1 (planning) ke-{attempt} error: {e}")

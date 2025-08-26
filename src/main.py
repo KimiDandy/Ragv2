@@ -16,21 +16,18 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from loguru import logger
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 
 from src.api.endpoints import router as api_router
 from src.core.config import (
     CHROMA_DB_PATH,
-    GOOGLE_API_KEY,
     EMBEDDING_MODEL,
     CHAT_MODEL,
     CHROMA_MODE,
     CHROMA_SERVER_HOST,
     CHROMA_SERVER_PORT,
-    EMBEDDING_BACKEND,
-    EMBEDDING_LOCAL_MODEL,
     CHROMA_COLLECTION,
+    OPENAI_API_KEY,
 )
 
 logger.remove()
@@ -65,22 +62,12 @@ async def lifespan(app: FastAPI):
                 app.state.chroma_client = chromadb.HttpClient(host=CHROMA_SERVER_HOST, port=CHROMA_SERVER_PORT)
                 logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
 
-        # 2. Initialize AI models (embeddings backend + chat model)
-        # Chat model remains Google by default
-        app.state.chat_model = ChatGoogleGenerativeAI(model=CHAT_MODEL, google_api_key=GOOGLE_API_KEY, temperature=0.7)
+        # 2. Initialize AI models (OpenAI embeddings + chat model)
+        # Chat model (OpenAI)
+        app.state.chat_model = ChatOpenAI(model=CHAT_MODEL, temperature=0.7)
 
-        backend = (EMBEDDING_BACKEND or "google").lower()
-        if backend == "local" or not GOOGLE_API_KEY:
-            # Use local HF embeddings
-            logger.info(f"Inisialisasi embedding lokal HuggingFace: {EMBEDDING_LOCAL_MODEL}")
-            app.state.embedding_function = HuggingFaceEmbeddings(model_name=EMBEDDING_LOCAL_MODEL)
-        else:
-            try:
-                app.state.embedding_function = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL, google_api_key=GOOGLE_API_KEY)
-                logger.info("Embedding Google berhasil diinisialisasi.")
-            except Exception as e:
-                logger.warning(f"Gagal inisialisasi embedding Google: {e}. Fallback ke embedding lokal HuggingFace: {EMBEDDING_LOCAL_MODEL}")
-                app.state.embedding_function = HuggingFaceEmbeddings(model_name=EMBEDDING_LOCAL_MODEL)
+        # OpenAI Embeddings
+        app.state.embedding_function = OpenAIEmbeddings(model=EMBEDDING_MODEL)
 
         # Tentukan nama koleksi Chroma dinamis berdasarkan backend + dimensi embedding
         try:
@@ -90,7 +77,7 @@ async def lifespan(app: FastAPI):
             logger.warning(f"Gagal mengukur dimensi embedding: {e}")
             dim = None
 
-        backend_tag = (EMBEDDING_BACKEND or "google").lower()
+        backend_tag = "openai"
         suffix = f"{backend_tag}_{dim}d" if dim else backend_tag
         app.state.collection_name = f"{CHROMA_COLLECTION}_{suffix}"
 

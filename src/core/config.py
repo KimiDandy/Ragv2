@@ -11,18 +11,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PIPELINE_ARTEFACTS_DIR = "pipeline_artefacts"
 
 # Konfigurasi Kunci API
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# Konfigurasi Model
-PLANNING_MODEL = "gemini-2.5-flash"
-GENERATION_MODEL = "gemini-2.5-flash"
-CHAT_MODEL = "gemini-2.5-flash"
-EMBEDDING_MODEL = "models/embedding-001"
+# Konfigurasi Model (OpenAI)
+PLANNING_MODEL = "gpt-4.1"
+GENERATION_MODEL = "gpt-4.1"
+CHAT_MODEL = "gpt-4.1"
+EMBEDDING_MODEL = "text-embedding-3-small"
 
-# Backend Embedding: 'google' atau 'local'
-EMBEDDING_BACKEND = os.getenv("EMBEDDING_BACKEND", "google").lower()
-# Model lokal HuggingFace (butuh paket sentence-transformers terpasang)
-EMBEDDING_LOCAL_MODEL = os.getenv("EMBEDDING_LOCAL_MODEL", "all-MiniLM-L6-v2")
+# Backend Embedding: selalu OpenAI
 
 # Konfigurasi ChromaDB
 CHROMA_DB_PATH = "chroma_db"  # digunakan saat embedded mode

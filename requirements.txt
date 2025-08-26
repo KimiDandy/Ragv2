@@ -4,13 +4,11 @@ pymupdf4llm
 python-dotenv
 langchain
 langchain-community
-langchain-google-genai
 chromadb
 langchain-chroma
 numpy
 loguru
-google-generativeai
 Pillow
 python-multipart
-sentence-transformers
 langchain-text-splitters
+langchain-openai

@@ -2,18 +2,10 @@ from pathlib import Path
 import re
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
 import chromadb
 from loguru import logger
 import time
 import random
-
-from ..core.config import (
-    CHROMA_COLLECTION,
-    PIPELINE_ARTEFACTS_DIR,
-    CHROMA_DB_PATH,
-    EMBEDDING_LOCAL_MODEL,
-)
 
 
 
@@ -91,7 +83,7 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
         except Exception as e2:
             logger.warning(f"Gagal menghapus embeddings lama berdasarkan IDs (mungkin tidak ada): {e2}")
 
-    # Batch insertion with quota-aware retry to handle 429 ResourceExhausted from Gemini embeddings
+    # Batch insertion with quota-aware retry to handle 429/rate limits from OpenAI embeddings
     batch_size = 3
     max_retries = 5
     base_delay = 5  # seconds
@@ -131,44 +123,3 @@ def vectorize_and_store(doc_output_dir: str, client: chromadb.Client, markdown_f
 
     logger.info(f"Fase 4 selesai. Dokumen {doc_id} (versi: {version}) telah divektorisasi dan disimpan.")
     return True
-
-if __name__ == '__main__':
-    base_artefacts_dir = Path(PIPELINE_ARTEFACTS_DIR)
-    if not base_artefacts_dir.exists():
-        logger.error(f"'{PIPELINE_ARTEFACTS_DIR}' directory not found.")
-    else:
-        all_doc_dirs = [d for d in base_artefacts_dir.iterdir() if d.is_dir()]
-        if not all_doc_dirs:
-            logger.error(f"No document artefact directories found in '{PIPELINE_ARTEFACTS_DIR}'.")
-        else:
-            logger.info(f"Running in standalone mode. Initializing ChromaDB client from path: {CHROMA_DB_PATH}...")
-            standalone_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
-            
-            latest_doc_dir = max(all_doc_dirs, key=lambda p: p.stat().st_mtime)
-            doc_id = latest_doc_dir.name
-            logger.info(f"Processing the most recent document: {doc_id}")
-            
-
-            # In standalone mode, gunakan embedding lokal untuk menghindari ketergantungan API
-            local_embedder = HuggingFaceEmbeddings(model_name=EMBEDDING_LOCAL_MODEL)
-            try:
-                probe = local_embedder.embed_query("probe")
-                dim = len(probe) if hasattr(probe, "__len__") else None
-            except Exception:
-                dim = None
-            suffix = f"local_{dim}d" if dim else "local"
-            collection_name = f"{CHROMA_COLLECTION}_{suffix}"
-
-            success = vectorize_and_store(
-                doc_output_dir=str(latest_doc_dir), 
-                client=standalone_client, 
-                markdown_file="final_markdown.md", 
-                version=doc_id,
-                embedding_function=local_embedder,
-                collection_name=collection_name,
-            )
-
-            if success:
-                logger.info("Standalone vectorization test completed successfully.")
-            else:
-                logger.error("Standalone vectorization test failed.")

@@ -9,7 +9,7 @@ Sistem RAG standar seringkali gagal menjawab pertanyaan yang membutuhkan pemaham
 | :--- | :--- |
 | Backend | Python, FastAPI |
 | Orkestrasi AI | LangChain |
-| Model AI | Google Gemini (Embeddings & Generative) |
+| Model AI | OpenAI (GPT-4.1 untuk chat/generasi, text-embedding-3-small untuk embedding) |
 | Database Vektor | ChromaDB (Client-Server Mode) |
 | Pemrosesan Dokumen | PyMuPDF |
 | Frontend | Vanilla JavaScript, HTML5, CSS3 |
@@ -61,17 +61,17 @@ python -m venv venv
 # source venv/bin/activate
 
 # 3. Instal semua dependensi
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
 # 4. Siapkan environment variables
 cp .env_example .env
-# Edit file .env dan masukkan Google API Key Anda
+# Edit file .env dan masukkan OpenAI API Key Anda
 ```
 
 Contoh `.env` minimal:
 
 ```ini
-GOOGLE_API_KEY=your_google_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
 
 # Mode ChromaDB (default: server)
 CHROMA_MODE=server
@@ -188,7 +188,7 @@ Ajukan pertanyaan terhadap versi v1, v2, atau keduanya dari dokumen.
 
 ## Troubleshooting
 
-- **GOOGLE_API_KEY tidak diset**: Pastikan `.env` berisi `GOOGLE_API_KEY` yang valid.
+- **OPENAI_API_KEY tidak diset**: Pastikan `.env` berisi `OPENAI_API_KEY` yang valid.
 - **Tidak bisa konek ke ChromaDB (server)**: Jalankan `chroma run --path chroma_db --port 8001` terlebih dahulu atau ubah `CHROMA_MODE=embedded`.
 - **Polling saran terlalu lama**: Dokumen besar atau kuota API. Tunggu atau coba ulang. Log akan menampilkan status Fase 1/2.
 - **Saran kosong**: Sistem memiliki fallback dan akan tetap membuat file rencana minimal; pastikan log Fase 1/2 tidak berisi error.
