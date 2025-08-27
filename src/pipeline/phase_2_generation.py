@@ -17,8 +17,6 @@ from ..core.config import (
 from ..core.rate_limiter import AsyncLeakyBucket
 from ..core.token_meter import TokenBudget
 
-# ChatOpenAI will read OPENAI_API_KEY from environment
-
 async def generate_bulk_content(doc_output_dir: str) -> str:
     """
     Phase-2 (async): Generate enrichment content per item with targeted context.
@@ -32,7 +30,6 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
     """
     doc_path = Path(doc_output_dir)
     markdown_path = doc_path / "markdown_v1.md"
-    # Prefer structured plan.json produced by Phase-1; fallback to enrichment_plan.json
     plan_path = doc_path / "plan.json"
     if not plan_path.exists():
         plan_path = doc_path / "enrichment_plan.json"
@@ -46,11 +43,9 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
         logger.error(f"File yang dibutuhkan tidak ditemukan - {e}")
         return ""
 
-    # Build targeted generation per item (no giant prompt)
     chat = ChatOpenAI(model=CHAT_MODEL, temperature=0.2)
     logger.info("Fase 2: menghasilkan konten per item dengan konteks terarah (async)...")
 
-    # Load segments for richer context (optional)
     seg_map = {}
     try:
         segs = json.loads((doc_path / "segments.json").read_text(encoding="utf-8"))
@@ -61,12 +56,9 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
     terms_plan = list(enrichment_plan.get("terms_to_define", []) or [])
     concepts_plan = list(enrichment_plan.get("concepts_to_simplify", []) or [])
 
-    # Helper to trim context length
     def _clip(t: str, n: int = 1200) -> str:
         t = (t or "").strip()
         return t if len(t) <= n else (t[:n].rsplit(" ", 1)[0] or t[:n])
-
-    # Controls
     sem = asyncio.Semaphore(int(PHASE2_CONCURRENCY))
     limiter = AsyncLeakyBucket(rps=float(PHASE2_RPS), capacity=max(int(PHASE2_CONCURRENCY), 1))
     budget = TokenBudget(total=int(PHASE2_TOKEN_BUDGET))
@@ -75,14 +67,11 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
         last_err = None
         for i in range(1, attempts + 1):
             try:
-                # Token budget gating (approximate)
                 if not budget.can_afford(prompt, max_out=max_out):
                     logger.warning("Phase-2 token budget exhausted; skipping remaining items")
                     return ""
-                # Rate limit + concurrency
                 async with sem:
                     await limiter.acquire()
-                    # charge before call to account for concurrency
                     budget.charge(prompt, max_out=max_out)
                     resp = await asyncio.wait_for(chat.ainvoke(prompt), timeout=timeout)
                 txt = getattr(resp, "content", None) or str(resp)
@@ -96,7 +85,6 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
     async def _gen_term(item: dict) -> dict:
         term = item.get("term") or item.get("name") or ""
         ctx = item.get("original_context") or item.get("context") or ""
-        # enrich ctx with segment text if available
         provs = item.get("provenances") or []
         if provs:
             sid = (provs[0] or {}).get("segment_id")
@@ -129,7 +117,6 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
         )
         text = await _call_llm(prompt, max_out=260)
         return {"identifier": ident, "simplified_text": text}
-    # Progressive generation with checkpoints and metrics
     total_terms = len(terms_plan)
     total_concepts = len(concepts_plan)
     total_items = total_terms + total_concepts
@@ -141,7 +128,6 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
     concept_results: list[dict] = []
     suggestions_accum: list[dict] = []
 
-    # Build workers that return both generation result and suggestion entry
     def _mk_term_worker(idx: int, item: dict):
         async def _worker():
             t_start = time.time()
@@ -150,7 +136,6 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
             stats["latencies"].append(latency)
             stats["llm_calls"] += 1
 
-            # extract fields for suggestion
             if isinstance(item, str):
                 term = item
                 original_context = item
@@ -215,14 +200,12 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
             return gen, suggestion
         return _worker
 
-    # Create tasks
     tasks: list[asyncio.Task] = []
     for idx, it in enumerate(terms_plan):
         tasks.append(asyncio.create_task(_mk_term_worker(idx, it)()))
     for idx, it in enumerate(concepts_plan):
         tasks.append(asyncio.create_task(_mk_concept_worker(idx, it)()))
 
-    # Helpers to write checkpoints and progress
     def _write_progress():
         lat = stats.get("latencies", [])
         p50 = statistics.median(lat) if lat else 0.0
@@ -253,7 +236,6 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
             pass
 
     checkpoint_every = 10
-    # Consume results progressively
     for coro in asyncio.as_completed(tasks):
         try:
             gen, suggestion = await coro
@@ -270,7 +252,6 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
             _write_partial_suggestions()
             _write_progress()
 
-    # Final writes
     content_data = {
         "terms_to_define": term_results,
         "concepts_to_simplify": concept_results,
@@ -282,12 +263,9 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
     except Exception:
         pass
 
-    # Write final suggestions and remove partial if exists
     suggestions_path = doc_path / "suggestions.json"
     with open(suggestions_path, 'w', encoding='utf-8') as sf:
         json.dump(suggestions_accum, sf, indent=2, ensure_ascii=False)
-
-    # final progress write
     _write_progress()
     try:
         part = doc_path / "suggestions_partial.json"

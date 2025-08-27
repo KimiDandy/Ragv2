@@ -67,7 +67,6 @@ def _docs_to_sources(docs_with_scores: list[tuple], already_relevance: bool) -> 
     """Convert (Document, score) to RetrievedSource list with normalized scores and snippets."""
     docs = [d for d, _ in docs_with_scores]
     scores = [s for _, s in docs_with_scores]
-    # If scores are already 0..1 relevance (higher is better), keep; if distances (lower is better), invert
     if already_relevance:
         norm_scores = _minmax_normalize(scores, invert=False) if (min(scores) < 0 or max(scores) > 1) else scores
     else:
@@ -86,7 +85,6 @@ def _docs_to_sources(docs_with_scores: list[tuple], already_relevance: bool) -> 
                 metadata=metadata,
             )
         )
-    # Sort by score desc
     sources.sort(key=lambda x: x.score, reverse=True)
     return sources
 
@@ -117,7 +115,6 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
         if not all([client, embeddings, llm]):
             raise ValueError("Koneksi database atau model AI tidak tersedia. Periksa log startup.")
 
-        # Koleksi spesifik per model embedding untuk menghindari mismatch dimensi
         collection_name = f"{CHROMA_COLLECTION}__{EMBEDDING_MODEL.replace(':','_').replace('-','_')}"
         vector_store = Chroma(
             client=client,
@@ -158,13 +155,11 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
 
         sources: list[RetrievedSource] = []
         if trace:
-            # Try to get docs with relevance scores; fallback to distance scores
             docs_with_scores = []
             try:
                 pairs = vector_store.similarity_search_with_relevance_scores(
                     prompt, k=k, filter=retrieval_filter
                 )
-                # expected [(Document, score)] where score ~ [0..1]
                 docs_with_scores = list(pairs)
                 sources = _docs_to_sources(docs_with_scores, already_relevance=True)
             except Exception as e1:
@@ -231,7 +226,6 @@ async def start_enhancement(document_id: str):
     async def _run():
         try:
             logger.info(f"[Enhancement] Mulai untuk dokumen: {document_id}")
-            # Phase-1: Gate→Map→Reduce over segments.json (async)
             await create_enrichment_plan(str(doc_dir))
             await generate_bulk_content(str(doc_dir))
             logger.info(f"[Enhancement] Selesai untuk dokumen: {document_id}")
@@ -248,7 +242,6 @@ async def get_suggestions(document_id: str):
     doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
     sugg_path = doc_dir / "suggestions.json"
     if not sugg_path.exists():
-        # Fallback to partial suggestions if Phase-2 still running
         partial = doc_dir / "suggestions_partial.json"
         if partial.exists():
             try:
@@ -283,12 +276,10 @@ async def finalize_document(request: Request, payload: CuratedSuggestions):
     if not curated:
         logger.warning("Tidak ada saran yang disetujui/diedit untuk disintesis.")
 
-    # Synthesize v2
     final_path = synthesize_final_markdown(str(doc_dir), curated)
     if not final_path:
         raise HTTPException(status_code=500, detail="Sintesis dokumen gagal.")
 
-    # Vectorize v1 and v2
     chroma_client = request.app.state.chroma_client
     if not chroma_client:
         raise HTTPException(status_code=503, detail="Chroma client tidak tersedia.")
@@ -346,12 +337,8 @@ async def get_progress(document_id: str):
         doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
         if not doc_dir.exists():
             raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan.")
-
-        # Heuristik progres per fase
-        # Phase-0 dianggap selesai bila markdown_v1.md ada
         p0_done = (doc_dir / "markdown_v1.md").exists()
 
-        # Phase-1
         p1_progress = {}
         p1_progress_path = doc_dir / "phase_1_progress.json"
         if p1_progress_path.exists():
@@ -361,7 +348,6 @@ async def get_progress(document_id: str):
                 p1_progress = {}
         p1_done = (doc_dir / "plan.json").exists() or (p1_progress.get("processed", 0) >= p1_progress.get("preselected", 0) and p1_progress.get("preselected", 0) > 0)
 
-        # Phase-2
         p2_progress = {}
         p2_progress_path = doc_dir / "phase_2_progress.json"
         if p2_progress_path.exists():
@@ -371,17 +357,14 @@ async def get_progress(document_id: str):
                 p2_progress = {}
         p2_done = (doc_dir / "suggestions.json").exists()
 
-        # Hitung persen gabungan sederhana: P0(0.2) + P1(0.4) + P2(0.4)
         w0, w1, w2 = 0.2, 0.4, 0.4
         p0 = 1.0 if p0_done else 0.0
-        # Phase-1 percent: dari progress file jika ada; else 1 jika plan.json ada
         if p1_progress:
             pre = max(1, int(p1_progress.get("preselected", 1)))
             proc = int(p1_progress.get("processed", 0))
             p1 = min(1.0, max(0.0, proc / pre))
         else:
             p1 = 1.0 if p1_done else 0.0
-        # Phase-2 percent
         if p2_progress:
             p2 = float(p2_progress.get("percent", 0.0))
         else:

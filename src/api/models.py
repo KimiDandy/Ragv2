@@ -21,7 +21,6 @@ class EnhancementResponse(BaseModel):
     document_id: str
     suggestions: List[SuggestionItem]
 
-# Evidence tracing models for /ask endpoint
 class RetrievedSource(BaseModel):
     id: str
     score: float

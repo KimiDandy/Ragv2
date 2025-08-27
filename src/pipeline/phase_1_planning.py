@@ -24,8 +24,7 @@ from ..core import local_cache
 
 
 class PlanItem(BaseModel):
-    """Unified item structure for planning with provenance."""
-    kind: str  # "term" | "concept" | "connection"
+    kind: str  
     key: str
     original_context: str
     confidence_score: float = Field(ge=0.0, le=1.0)
@@ -59,7 +58,6 @@ def _hash_for_segment(model: str, prompt: str, text: str) -> str:
 
 
 def _build_prompt(segment_text: str) -> str:
-    # Use existing required schema to keep compatibility
     prompt_intro = (
         "Peran: Anda adalah analis riset multidisiplin.\n"
         "Tugas: Baca paragraf berikut. Identifikasi item yang butuh definisi/simplifikasi atau koneksi implisit.\n"
@@ -82,14 +80,13 @@ def _build_prompt(segment_text: str) -> str:
 
 
 def _build_skim_prompt(segment_text: str) -> str:
-    """Cheaper skim prompt: at most 1 term and 1 concept, no connections."""
     prompt_intro = (
         "Peran: Anda adalah analis cepat dan hemat token.\n"
         "Tugas: Baca paragraf berikut. Jika perlu, pilih MAKS 1 istilah untuk didefinisikan dan MAKS 1 konsep untuk disederhanakan.\n"
         "Balas HANYA JSON valid sesuai skema. Jangan tambahkan teks lain.\n"
     )
     schema_block = (
-        "{"  # keep minimal lists
+        "{" 
         "\n  \"terms_to_define\": [{\n    \"term\": \"string\",\n    \"original_context\": \"string\",\n    \"confidence_score\": 0.0\n  }],"
         "\n  \"concepts_to_simplify\": [{\n    \"identifier\": \"string\",\n    \"original_context\": \"string\",\n    \"confidence_score\": 0.0\n  }]\n}"
     )
@@ -109,14 +106,12 @@ async def _skim_one(chat: ChatOpenAI, limiter: AsyncLeakyBucket, budget: TokenBu
     if not text:
         return []
     prompt = _build_skim_prompt(text)
-    # shared cache (SQLite) keyed by model+doc+hash
     k = local_cache.key_for(_hash_for_segment(chat.model_name, prompt, text) + "|phase1_skim")
     cached = local_cache.get(k)
     if cached is not None:
         stats["cache_hits"] += 1
         return _to_items(cached, seg)
 
-    # enforce budgets and limits
     max_out = 200
     if not budget.can_afford(prompt, max_out=max_out):
         logger.warning("Phase-1 token budget exhausted before processing all segments")
@@ -229,7 +224,6 @@ def _pre_score_and_select(segments: List[dict], max_candidates: int = 80, header
         hp = " ".join(seg.get("header_path") or [])
         if re.search(r"\b(introduction|overview|summary|conclusion|results)\b", hp, re.I):
             sc += 0.2
-        # short boost for longer paragraphs (more context)
         tl = len(seg.get("text") or "")
         sc += min(tl, 800) / 4000.0
         return sc
@@ -303,11 +297,9 @@ async def create_enrichment_plan(doc_output_dir: str) -> str:
     with open(segments_path, "r", encoding="utf-8") as f:
         segments: List[dict] = json.load(f)
 
-    # Stage-A: static pre-score + header quotas
     preselected = _pre_score_and_select(segments, max_candidates=80, header_quota=8)
     logger.info(f"Phase-1 Stage-A: {len(preselected)}/{len(segments)} segmen dipilih untuk skim")
 
-    # Controls
     chat = ChatOpenAI(model=CHAT_MODEL, temperature=0.2)
     sem = asyncio.Semaphore(int(PHASE1_CONCURRENCY))
     limiter = AsyncLeakyBucket(rps=float(PHASE1_RPS), capacity=max(int(PHASE1_CONCURRENCY), 1))
@@ -328,7 +320,6 @@ async def create_enrichment_plan(doc_output_dir: str) -> str:
         plan_ckpt = doc_dir / "plan_checkpoint.json"
         with open(plan_ckpt, "w", encoding="utf-8") as f:
             json.dump(partial, f, ensure_ascii=False, indent=2)
-        # metrics/progress update
         lat = stats.get("latencies", [])
         p50 = statistics.median(lat) if lat else 0.0
         p95 = (statistics.quantiles(lat, n=100)[94] if len(lat) >= 20 else max(lat) if lat else 0.0)
@@ -349,7 +340,6 @@ async def create_enrichment_plan(doc_output_dir: str) -> str:
         with open(doc_dir / "phase_1_progress.json", "w", encoding="utf-8") as f:
             json.dump(metrics, f, ensure_ascii=False, indent=2)
 
-    # Consume results with checkpoints every 10
     checkpoint_every = 10
     for coro in asyncio.as_completed(tasks):
         try:
@@ -362,7 +352,6 @@ async def create_enrichment_plan(doc_output_dir: str) -> str:
         if stats["processed"] % checkpoint_every == 0:
             write_checkpoint()
 
-    # Final reduce
     final_plan_dict = _reduce_items(items_collected)
     plan = PlanOutput(
         terms_to_define=final_plan_dict.get("terms_to_define", []),
@@ -374,12 +363,9 @@ async def create_enrichment_plan(doc_output_dir: str) -> str:
     with open(plan_path, "w", encoding="utf-8") as f:
         json.dump(plan.model_dump(), f, ensure_ascii=False, indent=2)
 
-    # Back-compat for Phase-2
     compat_path = doc_dir / "enrichment_plan.json"
     with open(compat_path, "w", encoding="utf-8") as f:
         json.dump(plan.model_dump(), f, ensure_ascii=False, indent=2)
-
-    # Final metrics
     lat = stats.get("latencies", [])
     p50 = statistics.median(lat) if lat else 0.0
     p95 = (statistics.quantiles(lat, n=100)[94] if len(lat) >= 20 else max(lat) if lat else 0.0)

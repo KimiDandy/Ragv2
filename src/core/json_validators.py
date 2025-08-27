@@ -21,7 +21,6 @@ def validate_enrichment_plan(plan: Any) -> Tuple[bool, List[str]]:
     if not isinstance(concepts, list):
         errs.append("concepts_to_simplify must be a list")
 
-    # Validate terms
     if isinstance(terms, list):
         for i, it in enumerate(terms):
             if isinstance(it, str):
@@ -38,7 +37,6 @@ def validate_enrichment_plan(plan: Any) -> Tuple[bool, List[str]]:
             if it.get("original_context") and not _is_scalar_string(it.get("original_context")):
                 errs.append(f"terms_to_define[{i}].original_context too long or not string")
 
-    # Validate concepts
     if isinstance(concepts, list):
         for i, it in enumerate(concepts):
             if isinstance(it, str):
@@ -79,7 +77,6 @@ def validate_suggestions(suggestions: Any) -> Tuple[bool, List[str]]:
             _ = float(cs)
         except Exception:
             errs.append(f"suggestions[{i}].confidence_score must be numeric")
-        # status is optional but if present should be short string
         st = s.get("status")
         if st is not None and not _is_scalar_string(st):
             errs.append(f"suggestions[{i}].status invalid")

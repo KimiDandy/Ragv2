@@ -55,7 +55,6 @@ def _looks_like_header(line: str) -> int:
     if m:
         depth = m.group(1).count(".") + 1
         return min(depth, 6)
-    # ALL CAPS short line (not too long)
     if len(s) <= 80 and s.upper() == s and re.search(r"[A-Z]", s):
         return 1
     return 0
@@ -65,7 +64,6 @@ def _update_header_path(header_path: List[str], line: str, level: int) -> List[s
     new_path = list(header_path)
     if level <= 0:
         return new_path
-    # shrink or extend
     if level <= len(new_path):
         new_path = new_path[:level - 1]
     return new_path + [line.strip()]
@@ -73,13 +71,11 @@ def _update_header_path(header_path: List[str], line: str, level: int) -> List[s
 
 def _count_syllables(word: str) -> int:
     w = word.lower()
-    # very rough heuristic
     w = re.sub(r"[^a-z]", "", w)
     if not w:
         return 0
     vowels = re.findall(r"[aeiouy]+", w)
     count = len(vowels)
-    # silent 'e'
     if w.endswith("e") and count > 1:
         count -= 1
     return max(count, 1)
@@ -93,7 +89,6 @@ def _readability_is_difficult(text: str) -> bool:
     syllables = sum(_count_syllables(w) for w in words)
     words_count = len(words)
     sentences_count = max(len(sentences), 1)
-    # Flesch Reading Ease
     fre = 206.835 - 1.015 * (words_count / sentences_count) - 84.6 * (syllables / words_count)
     long_sentence = (words_count / sentences_count) > 25
     long_para = words_count > 120
@@ -143,7 +138,6 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
     for page_index in range(pages_count):
         page = doc.load_page(page_index)
         blocks = page.get_text("blocks") or []
-        # sort by y0, then x0
         blocks = sorted(blocks, key=lambda b: (b[1], b[0]))
 
         for b in blocks:
@@ -155,14 +149,12 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
             level = _looks_like_header(first_line)
             if level > 0:
                 header_path = _update_header_path(header_path, first_line, level)
-                # do not treat header as a content segment
                 final_markdown_content += text + "\n\n"
                 full_text_parts.append(text)
                 full_text_parts.append("\n\n")
-                char_offset += len(text) + 2  # account for the two newlines in full_text
+                char_offset += len(text) + 2 
                 continue
 
-            # create a paragraph segment
             para_text = text
             para_len = len(para_text)
             if para_len == 0:
@@ -170,7 +162,6 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
 
             contains_entities = _contains_entities(para_text)
             is_difficult = _readability_is_difficult(para_text)
-            # fraction of numeric characters in the paragraph
             try:
                 digits = sum(1 for ch in para_text if ch.isdigit())
                 numeric_ratio = digits / max(len(para_text), 1)
@@ -190,11 +181,10 @@ def process_pdf_local(pdf_path: str, output_base_dir: str = PIPELINE_ARTEFACTS_D
             )
             segments.append(seg)
 
-            # append to markdown and full_text reference
             final_markdown_content += para_text + "\n\n"
             full_text_parts.append(para_text)
             full_text_parts.append("\n\n")
-            char_offset += para_len + 2  # for the two newlines
+            char_offset += para_len + 2 
 
     md_output_path = doc_output_dir / "markdown_v1.md"
     with open(md_output_path, "w", encoding="utf-8") as f:

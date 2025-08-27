@@ -58,8 +58,6 @@ def vectorize_and_store(
         chunk_overlap=chunk_overlap,
         separators=["\n\n", "\n", " ", ""],
     )
-    # Older langchain versions do not support add_start_index on create_documents.
-    # Use split_text then compute spans manually with a forward cursor.
     chunks = text_splitter.split_text(final_content)
     if not chunks:
         logger.warning("Tidak ada potongan teks yang dihasilkan dari dokumen. Tidak ada yang perlu divektorisasi.")
@@ -69,7 +67,6 @@ def vectorize_and_store(
         logger.info("Menginisialisasi fungsi embedding OpenAI...")
         embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
 
-    # Gunakan nama koleksi yang spesifik ke model embedding untuk menghindari mismatch dimensi
     collection_name = f"{CHROMA_COLLECTION}__{EMBEDDING_MODEL.replace(':','_').replace('-','_')}"
 
     vector_store = Chroma(
@@ -78,7 +75,6 @@ def vectorize_and_store(
         embedding_function=embeddings,
     )
 
-    # Hapus data lama untuk dokumen+versi sebelum upsert (hygiene)
     try:
         vector_store.delete(where={
             "$and": [
@@ -90,7 +86,6 @@ def vectorize_and_store(
     except Exception as e:
         logger.warning(f"Gagal menghapus entri lama untuk doc={doc_id}, version={version}: {e}")
 
-    # Prepare rich metadata per chunk. For v1, enrich with header_path/page by intersecting Phase-0 segments.
     segments = []
     seg_path = Path(doc_output_dir) / "segments.json"
     if seg_path.exists():
@@ -109,14 +104,11 @@ def vectorize_and_store(
         spans: list[tuple[int, int]] = []
         cursor = 0
         for ch in parts:
-            # Search starting slightly before the previous end to handle overlaps
             search_start = max(0, cursor - approx_overlap - 50)
             idx = text.find(ch, search_start)
             if idx == -1:
-                # Fallback: global search
                 idx = text.find(ch)
                 if idx == -1:
-                    # Last resort: assume contiguous from cursor
                     idx = cursor
             start = idx
             end = start + len(ch)
@@ -155,7 +147,6 @@ def vectorize_and_store(
                 if _overlap(start, end, int(s.get("char_start", 0)), int(s.get("char_end", 0)))
             ]
             if overlaps:
-                # collect pages, header_paths, segment_ids
                 pages = sorted({int(s.get("page", 0)) for s in overlaps if s.get("page") is not None})
                 header_paths = [s.get("header_path") for s in overlaps if s.get("header_path")]
                 seg_ids = [s.get("segment_id") for s in overlaps if s.get("segment_id")]

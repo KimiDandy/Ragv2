@@ -46,7 +46,6 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
             except Exception:
                 enc = None
         if enc is None:
-            # Fallback: tanpa token map
             return None, None, len(text.encode("utf-8"))
 
         tokens = enc.encode(text, disallowed_special=())
@@ -57,7 +56,6 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
             token_start_bytes.append(bsum)
             bsum += len(tb)
 
-        # char -> byte map
         char_to_byte: list[int] = [0]
         bcount = 0
         for ch in text:
@@ -106,17 +104,13 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
         char_to_byte, token_starts, total_bytes = _build_token_maps(text)
         insert_pos_char = end
         if char_to_byte and token_starts is not None:
-            # Tentukan offset byte dari akhir span
             end_byte = char_to_byte[end]
-            # Cari boundary token pertama di >= end_byte
             j = bisect.bisect_left(token_starts, end_byte)
             if j < len(token_starts):
                 target_byte = token_starts[j]
             else:
                 target_byte = total_bytes
-            # Konversi kembali ke indeks karakter terdekat ke kanan
             insert_pos_char = bisect.bisect_left(char_to_byte, target_byte)
-        # Sisipkan marker
         new_text = text[:insert_pos_char] + f"[^{footnote_index}]" + text[insert_pos_char:]
         return new_text, True
 
@@ -159,7 +153,6 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(final_content)
 
-    # Metrics
     metrics = {
         "anchored": anchored_count,
         "appendixed": appendix_count,

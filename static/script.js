@@ -42,7 +42,7 @@ const v2Card = document.getElementById('v2-card');
 const fileInput = document.getElementById('file-input');
 const fileNameDiv = document.getElementById('file-name');
 
-// Evidence UI
+// Bukti UI
 const toggleEvidence = document.getElementById('toggle-evidence');
 const evidenceContainer = document.getElementById('evidence-container');
 const v1EvidenceList = document.getElementById('v1-evidence-list');
@@ -276,12 +276,10 @@ async function fetchProgress() {
                 scheduleProgressPoll();
             }
         } else {
-            // backoff but keep trying
             progressIntervalMs = Math.min(Math.round(progressIntervalMs * 1.5), 10000);
             scheduleProgressPoll();
         }
     } catch (_) {
-        // stop progress polling on error to avoid noise
         if (progressTimer) clearTimeout(progressTimer);
     }
 }
@@ -460,7 +458,6 @@ queryInput?.addEventListener('keypress', (e) => {
     }
 });
 
-// Bulk actions
 approveAllBtn?.addEventListener('click', () => {
     if (!suggestionsState.length) return;
     suggestionsState = suggestionsState.map(s => ({ ...s, status: 'approved' }));

@@ -51,7 +51,6 @@ async def lifespan(app: FastAPI):
             app.state.chroma_client = chromadb.HttpClient(host=CHROMA_SERVER_HOST, port=CHROMA_SERVER_PORT)
             logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
         else:
-            # Embedded mode (requires local dependencies). Jika gagal, log dan fallback ke server bila tersedia.
             try:
                 app.state.chroma_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
                 logger.info(f"ChromaDB embedded diinisialisasi dari path: {CHROMA_DB_PATH}")
