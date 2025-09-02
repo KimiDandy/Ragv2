@@ -1,0 +1,12 @@
+{
+  "preselected": 53,
+  "total_segments": 211,
+  "processed": 53,
+  "llm_calls": 0,
+  "cache_hits": 53,
+  "duration_sec": 0.015244483947753906,
+  "p50_latency_sec": 0.0,
+  "p95_latency_sec": 0.0,
+  "token_budget_used": 0,
+  "token_budget_total": 35000
+}

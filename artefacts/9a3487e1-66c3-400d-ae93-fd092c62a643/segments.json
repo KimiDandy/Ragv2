@@ -1,0 +1,2745 @@
+[
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_1",
+    "page": 1,
+    "char_start": 86,
+    "char_end": 116,
+    "header_path": [
+      "PROSPEKTUS PENAWARAN UMUM OBLIGASI SUBORDINASI BERKELANJUTAN I"
+    ],
+    "text": "PT BANK DIGITAL NUSANTARA Tbk.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_2",
+    "page": 1,
+    "char_start": 118,
+    "char_end": 129,
+    "header_path": [
+      "PROSPEKTUS PENAWARAN UMUM OBLIGASI SUBORDINASI BERKELANJUTAN I"
+    ],
+    "text": "![Logo BDN]",
+    "contains_entities": true,
+    "is_difficult": false,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_3",
+    "page": 1,
+    "char_start": 728,
+    "char_end": 955,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "Penawaran Umum Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 PT \nBank Digital Nusantara Tbk. (\"Obligasi\") dengan jumlah pokok sebesar \nRp2.500.000.000.000,00 (dua triliun lima ratus miliar Rupiah) yang terdiri dari:",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.08370044052863436
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_4",
+    "page": 1,
+    "char_start": 957,
+    "char_end": 1125,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "• \nSeri A: Obligasi Subordinasi dengan tingkat bunga tetap sebesar 8,75% (delapan \nkoma tujuh lima persen) per tahun, jangka waktu 7 (tujuh) tahun sejak Tanggal \nEmisi;",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.023809523809523808
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_5",
+    "page": 1,
+    "char_start": 1127,
+    "char_end": 1297,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "• \nSeri B: Obligasi Subordinasi dengan tingkat bunga tetap sebesar 9,25% \n(sembilan koma dua lima persen) per tahun, jangka waktu 10 (sepuluh) tahun \nsejak Tanggal Emisi;",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.029411764705882353
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_6",
+    "page": 1,
+    "char_start": 1299,
+    "char_end": 1544,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "• \nSeri C: Obligasi Subordinasi dengan tingkat bunga mengambang mengacu pada \nBI-Rate + 350 bps dengan floor rate 8,50% (delapan koma lima persen) dan cap \nrate 11,00% (sebelas persen) per tahun, jangka waktu 5 (lima) tahun sejak \nTanggal Emisi.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.044897959183673466
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_7",
+    "page": 1,
+    "char_start": 1546,
+    "char_end": 2098,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "Obligasi ini merupakan obligasi subordinasi yang dalam hal terjadi likuidasi terhadap \nPerseroan, maka hak tagih pemegang Obligasi atas jumlah pokok dan/atau bunga yang \nterutang berdasarkan Obligasi subordinasi ini memiliki kedudukan yang sama dengan \ninstrumen permodalan dalam bentuk utang subordinasi lainnya yang diterbitkan \nPerseroan namun tidak dijamin dan dalam hal pembayarannya akan mendapat prioritas \nterakhir yaitu hanya didahulukan terhadap hak pemegang saham Perseroan sesuai \ndengan ketentuan peraturan perundang-undangan yang berlaku.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_8",
+    "page": 2,
+    "char_start": 2100,
+    "char_end": 2130,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "Penjamin Pelaksana Emisi Efek:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_9",
+    "page": 2,
+    "char_start": 2132,
+    "char_end": 2182,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "• \nPT Sekuritas Digital Indonesia (Penjamin Utama)",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_10",
+    "page": 2,
+    "char_start": 2184,
+    "char_end": 2215,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "• \nPT Capital Markets Nusantara",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_11",
+    "page": 2,
+    "char_start": 2217,
+    "char_end": 2251,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "• \nPT Investment Banking Solutions",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_12",
+    "page": 2,
+    "char_start": 2253,
+    "char_end": 2291,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "Wali Amanat: PT Bank Kustodian Sentral",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_13",
+    "page": 2,
+    "char_start": 2293,
+    "char_end": 2476,
+    "header_path": [
+      "INFORMASI SINGKAT PENAWARAN"
+    ],
+    "text": "Tanggal Efektif: 15 Februari 2025 Masa Penawaran Umum: 20-24 Februari 2025 \nTanggal Penjatahan: 25 Februari 2025 Tanggal Distribusi: 28 Februari 2025 Tanggal \nPencatatan: 3 Maret 2025",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.16939890710382513
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_14",
+    "page": 2,
+    "char_start": 3407,
+    "char_end": 3809,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Ringkasan di bawah ini merupakan bagian yang tidak terpisahkan dan harus dibaca \ndalam kaitannya dengan keterangan yang lebih terinci serta Laporan Keuangan \nKonsolidasian Perseroan beserta catatan-catatan atas laporan keuangan yang \ntercantum dalam Prospektus ini. Seluruh informasi keuangan Perseroan yang disajikan \ndalam mata uang Rupiah, kecuali dinyatakan lain, telah disusun dan disajikan sesuai",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_15",
+    "page": 3,
+    "char_start": 3811,
+    "char_end": 4223,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "dengan Standar Akuntansi Keuangan di Indonesia (\"SAK\") yang ditetapkan oleh Ikatan \nAkuntan Indonesia (\"IAI\") dan peraturan pasar modal yang berlaku, termasuk namun \ntidak terbatas pada Peraturan OJK No. 7/POJK.04/2017 tentang Dokumen Pernyataan \nPendaftaran dalam Rangka Penawaran Umum Efek Bersifat Ekuitas, Efek Bersifat Utang \ndan/atau Sukuk sebagaimana telah diubah dengan Peraturan OJK No. 14/POJK.04/2019.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03640776699029126
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_16",
+    "page": 3,
+    "char_start": 4225,
+    "char_end": 4262,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Keterangan Singkat Mengenai Perseroan",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_17",
+    "page": 3,
+    "char_start": 4264,
+    "char_end": 5185,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "PT Bank Digital Nusantara Tbk. (\"Perseroan\" atau \"BDN\") merupakan perusahaan \nperbankan digital yang didirikan berdasarkan Akta Pendirian No. 47 tanggal 12 Maret \n2018 yang dibuat di hadapan Notaris Kartini Soedjendro, S.H., M.Kn., Notaris di Jakarta, \nyang telah memperoleh persetujuan dari Menteri Hukum dan Hak Asasi Manusia \nRepublik Indonesia berdasarkan Surat Keputusan No. AHU-0012345.AH.01.01.Tahun \n2018 tanggal 20 Maret 2018 (\"Akta Pendirian\"). Anggaran Dasar Perseroan telah \nmengalami beberapa kali perubahan, terakhir dengan Akta Pernyataan Keputusan \nPemegang Saham No. 89 tanggal 28 November 2024 yang dibuat di hadapan Notaris \nyang sama, sehubungan dengan peningkatan modal dasar Perseroan dalam rangka \npelaksanaan Employee Stock Option Program (\"ESOP\") Tahap II dan penyesuaian \ndengan Peraturan OJK No. 15/POJK.04/2020 tentang Rencana dan Penyelenggaraan \nRapat Umum Pemegang Saham Perusahaan Terbuka.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.048859934853420196
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_18",
+    "page": 3,
+    "char_start": 5187,
+    "char_end": 5910,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Perseroan berkedudukan di Jakarta Selatan dengan kantor pusat berlokasi di Menara \nDigital lantai 25-30, Jalan Jenderal Sudirman Kav. 52-53, Jakarta 12190. Perseroan telah \nmemperoleh izin usaha sebagai Bank Umum berdasarkan Keputusan Dewan \nKomisioner OJK No. KEP-123/D.03/2019 tanggal 15 Mei 2019 dan telah terdaftar serta \ndiawasi oleh OJK dengan nomor registrasi B.456.XII.2019. Dalam menjalankan kegiatan \noperasionalnya, Perseroan telah memperoleh berbagai perizinan yang diperlukan \ntermasuk namun tidak terbatas pada Surat Izin Usaha Perdagangan (\"SIUP\"), Tanda \nDaftar Perusahaan (\"TDP\"), Nomor Pokok Wajib Pajak (\"NPWP\"), serta berbagai \nperizinan operasional perbankan digital dari Bank Indonesia (\"BI\") dan OJK.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.048409405255878286
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_19",
+    "page": 3,
+    "char_start": 5912,
+    "char_end": 5926,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Kegiatan Usaha",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_20",
+    "page": 3,
+    "char_start": 5928,
+    "char_end": 6356,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Sesuai dengan Pasal 3 Anggaran Dasar Perseroan, ruang lingkup kegiatan usaha \nPerseroan adalah menjalankan usaha di bidang perbankan sesuai dengan peraturan \nperundang-undangan yang berlaku. Perseroan merupakan salah satu pelopor \ntransformasi digital dalam industri perbankan Indonesia dengan fokus utama pada \npenyediaan layanan perbankan digital yang inovatif, efisien, dan inklusif. Kegiatan \nusaha utama Perseroan mencakup:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.002336448598130841
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_21",
+    "page": 3,
+    "char_start": 6358,
+    "char_end": 6424,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "1. Penghimpunan Dana Masyarakat dalam bentuk simpanan berupa giro,",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.015151515151515152
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_22",
+    "page": 3,
+    "char_start": 6426,
+    "char_end": 6651,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "deposito berjangka, sertifikat deposito, tabungan, dan/atau bentuk lainnya yang \ndipersamakan dengan itu, dengan memanfaatkan platform digital yang \nterintegrasi dengan sistem Application Programming Interface (\"API\") Gateway",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_23",
+    "page": 4,
+    "char_start": 6653,
+    "char_end": 6924,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "proprietary yang memungkinkan nasabah melakukan transaksi perbankan \nsecara real-time melalui berbagai kanal digital termasuk mobile application, \ninternet banking, dan Automated Teller Machine (\"ATM\") network yang terhubung \ndengan jaringan ATM Bersama, Prima, dan Link.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_24",
+    "page": 4,
+    "char_start": 6926,
+    "char_end": 6999,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "2. Penyaluran Kredit yang difokuskan pada segmen retail banking dan Small",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0136986301369863
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_25",
+    "page": 4,
+    "char_start": 7001,
+    "char_end": 7634,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Medium Enterprise (\"SME\") banking dengan dukungan Credit Scoring Engine \nberbasis Artificial Intelligence (\"AI\") dan Machine Learning (\"ML\") yang \nmenganalisis lebih dari 500 parameter risiko secara real-time. Portofolio kredit \nPerseroan terdiri dari Kredit Tanpa Agunan (\"KTA\") digital dengan proses approval \nmaksimal 24 jam, Kredit Usaha Rakyat (\"KUR\") yang telah tersalurkan sebesar \nRp458,7 miliar per 31 Desember 2024 dengan Non-Performing Loan (\"NPL\") ratio \nsebesar 1,82%, serta Kredit Multi Guna (\"KMG\") dengan agunan properti yang \nmenggunakan Distributed Ledger Technology (\"DLT\") untuk proses verifikasi \ndokumen agunan.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.02843601895734597
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_26",
+    "page": 4,
+    "char_start": 7636,
+    "char_end": 7704,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "3. Layanan Perbankan Digital Lainnya mencakup layanan pembayaran dan",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.014705882352941176
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_27",
+    "page": 4,
+    "char_start": 7706,
+    "char_end": 8210,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "transfer dana melalui sistem BI-Real Time Gross Settlement (\"BI-RTGS\") dan \nSistem Kliring Nasional Bank Indonesia (\"SKNBI\"), perdagangan valuta asing \ndengan 25 mata uang major dan exotic pairs, bancassurance yang bekerjasama \ndengan 7 perusahaan asuransi terkemuka, wealth management untuk nasabah \nprioritas dengan minimum Assets Under Management (\"AUM\") sebesar Rp5 \nmiliar, serta layanan cash management untuk nasabah korporasi yang \nterintegrasi dengan Enterprise Resource Planning (\"ERP\") systems.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.007936507936507936
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_28",
+    "page": 4,
+    "char_start": 8212,
+    "char_end": 8253,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Struktur Permodalan dan Kepemilikan Saham",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_29",
+    "page": 4,
+    "char_start": 8255,
+    "char_end": 8395,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Berdasarkan Akta Pernyataan Keputusan Pemegang Saham No. 89 tanggal 28 \nNovember 2024, struktur permodalan Perseroan adalah sebagai berikut:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.05714285714285714
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_30",
+    "page": 4,
+    "char_start": 8397,
+    "char_end": 8441,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Keterangan \nNilai Nominal Rp100,- per \nsaham",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.06818181818181818
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_31",
+    "page": 4,
+    "char_start": 8443,
+    "char_end": 8477,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Jumlah Saham \nJumlah Nominal \n(Rp)",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_32",
+    "page": 4,
+    "char_start": 8479,
+    "char_end": 8525,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Modal Dasar \n50.000.000.000 \n5.000.000.000.000",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.5217391304347826
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_33",
+    "page": 4,
+    "char_start": 8527,
+    "char_end": 8598,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Modal Ditempatkan dan Disetor \nPenuh \n12.500.000.000 \n1.250.000.000.000",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.3380281690140845
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_34",
+    "page": 4,
+    "char_start": 8600,
+    "char_end": 8655,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Saham dalam Portepel \n37.500.000.000 \n3.750.000.000.000",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.43636363636363634
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_35",
+    "page": 4,
+    "char_start": 8657,
+    "char_end": 8726,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Komposisi pemegang saham Perseroan per tanggal Prospektus ini adalah:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_36",
+    "page": 5,
+    "char_start": 8728,
+    "char_end": 8778,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Pemegang Saham \nJumlah Saham Persentase Nilai (Rp)",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_37",
+    "page": 5,
+    "char_start": 8780,
+    "char_end": 8840,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "PT Digital Investama* \n6.250.000.000 50,00% \n625.000.000.000",
+    "contains_entities": true,
+    "is_difficult": false,
+    "numeric_ratio": 0.43333333333333335
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_38",
+    "page": 5,
+    "char_start": 8842,
+    "char_end": 8910,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Nusantara Capital Pte. Ltd.** \n3.125.000.000 25,00% \n312.500.000.000",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.38235294117647056
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_39",
+    "page": 5,
+    "char_start": 8912,
+    "char_end": 8982,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "PT Teknologi Finansial Indonesia 1.875.000.000 15,00% \n187.500.000.000",
+    "contains_entities": true,
+    "is_difficult": false,
+    "numeric_ratio": 0.37142857142857144
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_40",
+    "page": 5,
+    "char_start": 8984,
+    "char_end": 9032,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Publik*** \n1.250.000.000 10,00% \n125.000.000.000",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.5416666666666666
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_41",
+    "page": 5,
+    "char_start": 9034,
+    "char_end": 9082,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "Total \n12.500.000.000 100,00% \n1.250.000.000.000",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.6041666666666666
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_42",
+    "page": 5,
+    "char_start": 9084,
+    "char_end": 9307,
+    "header_path": [
+      "RINGKASAN PROSPEKTUS"
+    ],
+    "text": "*Merupakan pemegang saham pengendali yang terafiliasi dengan Grup Digital \nNusantara **Perusahaan investasi yang berkedudukan di Singapura ***Termasuk \nsaham yang dialokasikan melalui program ESOP sebanyak 125.000.000 saham",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.04035874439461883
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_43",
+    "page": 5,
+    "char_start": 9332,
+    "char_end": 9377,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "1.1. Latar Belakang dan Tujuan Penawaran Umum",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.044444444444444446
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_44",
+    "page": 5,
+    "char_start": 9379,
+    "char_end": 10247,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Penerbitan Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 (\"Obligasi\") \nmerupakan bagian integral dari strategi permodalan jangka panjang Perseroan dalam \nmendukung rencana ekspansi bisnis yang telah ditetapkan dalam Rencana Bisnis Bank \n(\"RBB\") periode 2025-2030 yang telah disetujui oleh OJK melalui Surat No. S-\n234/D.03/2024 tanggal 15 Desember 2024. Keputusan untuk menerbitkan Obligasi ini \ntelah mempertimbangkan berbagai faktor makroekonomi, kondisi pasar modal \ndomestik, proyeksi pertumbuhan industri perbankan digital, serta kebutuhan \npendanaan Perseroan dalam rangka mempertahankan Capital Adequacy Ratio (\"CAR\") \ndi atas ketentuan minimum yang dipersyaratkan oleh Basel III Framework dan Peraturan \nOJK No. 11/POJK.03/2016 tentang Kewajiban Penyediaan Modal Minimum Bank Umum \nsebagaimana telah diubah terakhir dengan POJK No. 12/POJK.03/2021.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.04953917050691244
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_45",
+    "page": 5,
+    "char_start": 10249,
+    "char_end": 10972,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Dalam konteks transformasi digital yang sedang berlangsung di industri perbankan \nIndonesia, Perseroan mengidentifikasi beberapa area strategis yang memerlukan \ninvestasi signifikan, antara lain pengembangan infrastruktur teknologi informasi \nberbasis cloud computing dengan arsitektur Zero Trust Security Framework, \nimplementasi Advanced Analytics Platform untuk meningkatkan kapabilitas risk \nmanagement dan customer intelligence, pengembangan ecosystem partnership \nmelalui Open Banking API yang compliant dengan standar Payment Services Directive 2 \n(\"PSD2\") dan ketentuan BI mengenai Standar Nasional Open API Pembayaran (\"SNAP\"), \nserta penguatan cyber security infrastructure dengan implementasi Security Operations",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0027662517289073307
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_46",
+    "page": 6,
+    "char_start": 10974,
+    "char_end": 11126,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Center (\"SOC\") 24/7 yang dilengkapi dengan Threat Intelligence Platform dan Security \nInformation and Event Management (\"SIEM\") system generasi terbaru.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.019736842105263157
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_47",
+    "page": 6,
+    "char_start": 11128,
+    "char_end": 11949,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Perseroan telah melakukan comprehensive feasibility study dengan bantuan konsultan \ninternasional McKinsey & Company yang mengindikasikan bahwa investasi sebesar \nRp2,5 triliun dalam teknologi dan infrastruktur digital akan menghasilkan Return on \nInvestment (\"ROI\") sebesar 23,5% per tahun dengan payback period selama 4,2 tahun, \nberdasarkan asumsi pertumbuhan Dana Pihak Ketiga (\"DPK\") sebesar 35% Compound \nAnnual Growth Rate (\"CAGR\") dan peningkatan fee-based income ratio menjadi 28% \ndari total operating income pada tahun 2028. Proyeksi ini sejalan dengan target \nPerseroan untuk mencapai posisi top 5 digital banking di Indonesia berdasarkan jumlah \nactive users yang ditargetkan mencapai 15 juta nasabah pada akhir tahun 2030, naik \nsignifikan dari posisi saat ini sebesar 3,7 juta nasabah per 31 Desember 2024.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03654080389768575
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_48",
+    "page": 6,
+    "char_start": 11951,
+    "char_end": 11988,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "1.2. Struktur Penawaran Umum Obligasi",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.05405405405405406
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_49",
+    "page": 6,
+    "char_start": 11990,
+    "char_end": 12697,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Struktur Penawaran Umum Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 \ntelah dirancang dengan mempertimbangkan appetite investor institusi domestik, \nkondisi likuiditas pasar, yield curve government bonds, serta credit spread untuk \ninstrumen sejenis yang diterbitkan oleh peer banks. Berdasarkan hasil bookbuilding \nexercise yang dilakukan oleh konsorsium Penjamin Pelaksana Emisi Efek (\"PPEE\") pada \ntanggal 5-9 Januari 2025, diperoleh indikasi minat dari 47 investor institusi dengan total \ndemand mencapai Rp3,85 triliun atau oversubscribed sebesar 1,54 kali, yang \nmengindikasikan strong market confidence terhadap credit profile Perseroan dan \noutlook industri perbankan digital Indonesia.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.02545968882602546
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_50",
+    "page": 6,
+    "char_start": 12699,
+    "char_end": 12781,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Obligasi ini diterbitkan dalam 3 (tiga) seri dengan karakteristik sebagai berikut:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.012195121951219513
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_51",
+    "page": 6,
+    "char_start": 12783,
+    "char_end": 12814,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Seri A: Fixed Rate Bond 7 Tahun",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.03225806451612903
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_52",
+    "page": 6,
+    "char_start": 12816,
+    "char_end": 12876,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJumlah Pokok: Rp1.000.000.000.000,- (satu triliun Rupiah)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.21666666666666667
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_53",
+    "page": 6,
+    "char_start": 12878,
+    "char_end": 12923,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nTingkat Bunga: 8,75% per annum, fixed rate",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.06666666666666667
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_54",
+    "page": 6,
+    "char_start": 12925,
+    "char_end": 12969,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJangka Waktu: 7 tahun sejak Tanggal Emisi",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.022727272727272728
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_55",
+    "page": 6,
+    "char_start": 12971,
+    "char_end": 13075,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nPembayaran Bunga: Triwulanan (quarterly) setiap tanggal 3 Maret, 3 Juni, 3 \nSeptember, dan 3 Desember",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.038461538461538464
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_56",
+    "page": 6,
+    "char_start": 13077,
+    "char_end": 13136,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nNilai Nominal: Rp1.000.000,- (satu juta Rupiah) per unit",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.11864406779661017
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_57",
+    "page": 6,
+    "char_start": 13138,
+    "char_end": 13168,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJumlah Unit: 1.000.000 unit",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.23333333333333334
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_58",
+    "page": 6,
+    "char_start": 13170,
+    "char_end": 13218,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nAmortisasi: Bullet payment pada maturity date",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_59",
+    "page": 6,
+    "char_start": 13220,
+    "char_end": 13416,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nCall Option: Perseroan memiliki hak opsi untuk melakukan pembelian kembali \n(buyback) sebagian atau seluruh Obligasi Seri A setelah tahun ke-5 dengan call \nprice sebesar 102% dari nilai nominal",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.02040816326530612
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_60",
+    "page": 7,
+    "char_start": 13418,
+    "char_end": 13450,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Seri B: Fixed Rate Bond 10 Tahun",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.0625
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_61",
+    "page": 7,
+    "char_start": 13452,
+    "char_end": 13512,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJumlah Pokok: Rp1.000.000.000.000,- (satu triliun Rupiah)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.21666666666666667
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_62",
+    "page": 7,
+    "char_start": 13514,
+    "char_end": 13559,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nTingkat Bunga: 9,25% per annum, fixed rate",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.06666666666666667
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_63",
+    "page": 7,
+    "char_start": 13561,
+    "char_end": 13606,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJangka Waktu: 10 tahun sejak Tanggal Emisi",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.044444444444444446
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_64",
+    "page": 7,
+    "char_start": 13608,
+    "char_end": 13693,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nPembayaran Bunga: Semesteran (semi-annual) setiap tanggal 3 Maret dan 3 \nSeptember",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.023529411764705882
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_65",
+    "page": 7,
+    "char_start": 13695,
+    "char_end": 13754,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nNilai Nominal: Rp5.000.000,- (lima juta Rupiah) per unit",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.11864406779661017
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_66",
+    "page": 7,
+    "char_start": 13756,
+    "char_end": 13784,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJumlah Unit: 200.000 unit",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.21428571428571427
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_67",
+    "page": 7,
+    "char_start": 13786,
+    "char_end": 13864,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nAmortisasi: 20% pada tahun ke-7, 30% pada tahun ke-9, dan 50% pada maturity",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.10256410256410256
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_68",
+    "page": 7,
+    "char_start": 13866,
+    "char_end": 14029,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nStep-up Coupon: Bunga akan meningkat menjadi 9,75% per annum mulai tahun \nke-8 apabila Perseroan tidak melakukan partial redemption minimal 30% pada \ntahun ke-7",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.04294478527607362
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_69",
+    "page": 7,
+    "char_start": 14031,
+    "char_end": 14065,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Seri C: Floating Rate Note 5 Tahun",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.029411764705882353
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_70",
+    "page": 7,
+    "char_start": 14067,
+    "char_end": 14130,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJumlah Pokok: Rp500.000.000.000,- (lima ratus miliar Rupiah)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.19047619047619047
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_71",
+    "page": 7,
+    "char_start": 14132,
+    "char_end": 14221,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nTingkat Bunga: BI-Rate + 350 basis points dengan floor 8,50% dan cap 11,00% \nper annum",
+    "contains_entities": true,
+    "is_difficult": false,
+    "numeric_ratio": 0.11235955056179775
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_72",
+    "page": 7,
+    "char_start": 14223,
+    "char_end": 14267,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJangka Waktu: 5 tahun sejak Tanggal Emisi",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.022727272727272728
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_73",
+    "page": 7,
+    "char_start": 14269,
+    "char_end": 14340,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nPembayaran Bunga: Bulanan (monthly) setiap tanggal 3 setiap bulannya",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.014084507042253521
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_74",
+    "page": 7,
+    "char_start": 14342,
+    "char_end": 14397,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nReset Period: Triwulanan mengikuti perubahan BI-Rate",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_75",
+    "page": 7,
+    "char_start": 14399,
+    "char_end": 14462,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nNilai Nominal: Rp10.000.000,- (sepuluh juta Rupiah) per unit",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.12698412698412698
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_76",
+    "page": 7,
+    "char_start": 14464,
+    "char_end": 14491,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nJumlah Unit: 50.000 unit",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.18518518518518517
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_77",
+    "page": 7,
+    "char_start": 14493,
+    "char_end": 14541,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nAmortisasi: Bullet payment pada maturity date",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_78",
+    "page": 7,
+    "char_start": 14543,
+    "char_end": 14703,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "• \nPut Option: Pemegang obligasi memiliki hak untuk menjual kembali obligasi \nkepada Perseroan pada tahun ke-3 dengan put price sebesar 100% dari nilai \nnominal",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.025
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_79",
+    "page": 7,
+    "char_start": 14705,
+    "char_end": 15249,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Seluruh seri Obligasi akan dicatatkan pada Bursa Efek Indonesia (\"BEI\") dan didaftarkan \npada PT Kustodian Sentral Efek Indonesia (\"KSEI\") dalam sistem scripless trading. \nObligasi ini memiliki status subordinasi dimana dalam hal terjadi likuidasi, hak tagih \npemegang Obligasi akan diprioritaskan setelah seluruh kewajiban Perseroan kepada \nkreditur non-subordinasi namun mendahului hak pemegang saham, sesuai dengan \nketentuan Pasal 2 ayat (2) Peraturan Bank Indonesia No. 15/12/PBI/2013 tentang \nKewajiban Penyediaan Modal Minimum Bank Umum.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.01838235294117647
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_80",
+    "page": 8,
+    "char_start": 15251,
+    "char_end": 15279,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "1.3. Rencana Penggunaan Dana",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.07142857142857142
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_81",
+    "page": 8,
+    "char_start": 15281,
+    "char_end": 15663,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Dana yang diperoleh dari hasil Penawaran Umum Obligasi ini, setelah dikurangi dengan \nbiaya-biaya emisi yang diperkirakan sebesar 1,85% dari total nilai emisi atau sekitar \nRp46,25 miliar (yang terdiri dari management fee, underwriting fee, selling fee, dan \nprofessional fees lainnya), akan dialokasikan secara bertahap sesuai dengan prioritas \nstrategis Perseroan sebagai berikut:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.01832460732984293
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_82",
+    "page": 8,
+    "char_start": 15665,
+    "char_end": 15744,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "a. Investasi Teknologi dan Infrastruktur Digital (45% atau Rp1.103.875.000.000)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.189873417721519
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_83",
+    "page": 8,
+    "char_start": 15746,
+    "char_end": 16551,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Alokasi terbesar dari proceeds Obligasi akan digunakan untuk modernisasi dan \nekspansi infrastruktur teknologi Perseroan yang mencakup beberapa inisiatif \ntransformasional. Pertama, implementasi Next-Generation Core Banking System \n(\"CBS\") berbasis microservices architecture dengan estimated investment sebesar \nRp425 miliar yang akan dilakukan secara bertahap selama 24 bulan. CBS baru ini akan \nmenggantikan legacy system yang saat ini memiliki keterbatasan dalam processing \ncapacity (maksimal 500 transaksi per detik) dan tidak mendukung real-time integration \ndengan third-party fintech platforms. Vendor yang telah dipilih melalui proses Request \nfor Proposal (\"RFP\") adalah Temenos AG, perusahaan asal Swiss yang memiliki track \nrecord implementasi di lebih dari 3.000 institusi keuangan globally.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.014906832298136646
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_84",
+    "page": 8,
+    "char_start": 16553,
+    "char_end": 17329,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Kedua, pembangunan Hybrid Cloud Infrastructure dengan kombinasi private cloud \nuntuk critical banking applications dan public cloud untuk customer-facing digital \nservices, dengan total investasi Rp285 miliar. Infrastruktur ini akan dibangun dengan \nmulti-cloud strategy menggunakan Amazon Web Services (\"AWS\") untuk region Asia \nPacific dan Microsoft Azure untuk disaster recovery site, dengan implementasi Active-\nActive configuration untuk memastikan 99,99% uptime availability. Perseroan juga akan \nmengimplementasikan Container Orchestration Platform menggunakan Kubernetes \nuntuk memfasilitasi continuous integration/continuous deployment (\"CI/CD\") pipeline \nyang akan mempercepat time-to-market untuk produk-produk digital baru dari rata-rata \n6 bulan menjadi 6 minggu.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.011597938144329897
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_85",
+    "page": 8,
+    "char_start": 17331,
+    "char_end": 17944,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Ketiga, pengembangan Advanced Analytics dan Artificial Intelligence Platform senilai \nRp195 miliar yang akan menjadi backbone untuk berbagai use cases seperti credit \nscoring optimization, fraud detection enhancement, customer churn prediction, dan \npersonalized product recommendation. Platform ini akan menggunakan kombinasi \nteknologi seperti Apache Spark untuk big data processing, TensorFlow dan PyTorch \nuntuk deep learning models, serta Hadoop Distributed File System (\"HDFS\") untuk data \nlake architecture yang mampu menyimpan dan memproses lebih dari 50 petabytes \ndata terstruktur dan tidak terstruktur.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.008156606851549755
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_86",
+    "page": 8,
+    "char_start": 17946,
+    "char_end": 18015,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "b. Ekspansi Jaringan dan Channel Digital (25% atau Rp613.263.888.889)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.2028985507246377
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_87",
+    "page": 9,
+    "char_start": 18017,
+    "char_end": 18785,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Dana sebesar Rp613,26 miliar akan dialokasikan untuk ekspansi jaringan distribusi dan \npenguatan channel digital Perseroan. Ini mencakup pembukaan 150 unit Digital Branch \ndi 75 kota tier-2 dan tier-3 di seluruh Indonesia dengan konsep phygital (physical + \ndigital) banking yang mengintegrasikan self-service banking machines, video banking \nfacilities, dan co-working spaces untuk nasabah SME. Setiap Digital Branch \nmemerlukan investasi rata-rata Rp2,5 miliar termasuk biaya sewa lokasi untuk 5 tahun, \nfit-out construction, teknologi, dan operational setup. Lokasi-lokasi strategis telah \ndiidentifikasi melalui geospatial analysis yang mempertimbangkan population density, \neconomic activity indicators, competition mapping, dan digital adoption readiness \nindex.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.01953125
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_88",
+    "page": 9,
+    "char_start": 18787,
+    "char_end": 19472,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Selain itu, Perseroan akan mengalokasikan Rp125 miliar untuk pengembangan Super \nApp BDN Mobile 3.0 yang akan diluncurkan pada Q3 2025. Aplikasi ini akan memiliki \nlebih dari 200 fitur perbankan dan non-perbankan termasuk integrated marketplace, \ndigital wallet interoperability dengan GoPay, OVO, DANA, dan LinkAja, cryptocurrency \ntrading untuk Bitcoin dan Ethereum (subject to regulatory approval), serta embedded \ninsurance products. User interface dan user experience (\"UI/UX\") design akan \ndikembangkan oleh renowned design agency IDEO dengan target achieving Net \nPromoter Score (\"NPS\") minimal 70 dan Monthly Active Users (\"MAU\") mencapai 5 juta \ndalam 12 bulan setelah launch.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.026277372262773723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_89",
+    "page": 9,
+    "char_start": 19474,
+    "char_end": 19542,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "c. Penguatan Modal Kerja dan Likuiditas (20% atau Rp490.611.111.111)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.20588235294117646
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_90",
+    "page": 9,
+    "char_start": 19544,
+    "char_end": 20401,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Alokasi sebesar Rp490,61 miliar akan digunakan untuk memperkuat posisi likuiditas \nPerseroan dan memenuhi kebutuhan modal kerja operasional. Dana ini akan \nditempatkan dalam portfolio instrumen likuid berkualitas tinggi sesuai dengan \nketentuan Liquidity Coverage Ratio (\"LCR\") dan Net Stable Funding Ratio (\"NSFR\") yang \ndipersyaratkan dalam Basel III framework. Portfolio investasi akan terdiri dari Surat \nPerbendaharaan Negara (\"SPN\") dan Obligasi Negara (\"ON\") dengan proporsi 60%, \nSertifikat Bank Indonesia (\"SBI\") dan Sukuk Bank Indonesia (\"SDBI\") sebesar 25%, serta \nhigh-grade corporate bonds dan medium-term notes dari BUMN dengan rating minimal \nAA- sebesar 15%. Strategi alokasi ini diproyeksikan akan menghasilkan weighted \naverage yield sebesar 7,25% per annum dengan modified duration maksimal 3,5 tahun \nuntuk memitigasi interest rate risk.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.01866977829638273
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_91",
+    "page": 9,
+    "char_start": 20403,
+    "char_end": 20493,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "d. Pengembangan Ekosistem Digital dan Strategic Partnerships (10% atau \nRp245.305.555.556)",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.15555555555555556
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_92",
+    "page": 9,
+    "char_start": 20495,
+    "char_end": 20915,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Sisa dana sebesar Rp245,31 miliar akan diinvestasikan untuk membangun ekosistem \ndigital yang komprehensif melalui strategic partnerships, minority investments, dan \njoint ventures dengan berbagai fintech companies dan technology providers. Perseroan \ntelah mengidentifikasi 12 potential partners dalam berbagai verticals seperti digital \nlending (peer-to-peer lending platforms), payment gateway services, robo-advisory",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.016666666666666666
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_93",
+    "page": 10,
+    "char_start": 20917,
+    "char_end": 21087,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "untuk wealth management, insurtech untuk embedded insurance products, regtech \nuntuk compliance automation, dan blockchain technology untuk trade finance \ndigitalization.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_94",
+    "page": 10,
+    "char_start": 21089,
+    "char_end": 21840,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Investment approach yang akan digunakan adalah kombinasi antara direct equity \ninvestment (maksimal 25% ownership untuk menjaga independence), revenue-sharing \nagreements untuk co-created products, dan technology licensing untuk proprietary \nsolutions. Due diligence process untuk setiap potential investment akan melibatkan \ncomprehensive assessment terhadap technology capabilities, regulatory compliance, \nfinancial sustainability, strategic fit, dan cultural alignment dengan nilai-nilai Perseroan. \nInvestment committee yang terdiri dari Direksi dan independent advisors akan \nmelakukan quarterly review terhadap portfolio performance dengan key metrics seperti \ncustomer acquisition cost (\"CAC\"), lifetime value (\"LTV\"), dan contribution margin.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.002663115845539281
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_95",
+    "page": 10,
+    "char_start": 21842,
+    "char_end": 21882,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "1.4. Pernyataan Utang dan Peringkat Efek",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.05
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_96",
+    "page": 10,
+    "char_start": 21884,
+    "char_end": 22160,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Posisi utang konsolidasian Perseroan per 31 Desember 2024 berdasarkan Laporan \nKeuangan Konsolidasian yang telah diaudit oleh Kantor Akuntan Publik (\"KAP\") \nTanudiredja, Wibisana, Rintis & Rekan (member firm dari PricewaterhouseCoopers \nGlobal Network) adalah sebagai berikut:",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.021739130434782608
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_97",
+    "page": 10,
+    "char_start": 22162,
+    "char_end": 22204,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Jenis Utang \nJumlah (Rp Miliar) Persentase",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_98",
+    "page": 10,
+    "char_start": 22206,
+    "char_end": 22225,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Utang Jangka Pendek",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_99",
+    "page": 10,
+    "char_start": 22227,
+    "char_end": 22249,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Giro \n3.245,67 \n18,54%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.45454545454545453
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_100",
+    "page": 10,
+    "char_start": 22251,
+    "char_end": 22277,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Tabungan \n5.123,89 \n29,27%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.38461538461538464
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_101",
+    "page": 10,
+    "char_start": 22279,
+    "char_end": 22338,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Deposito Berjangka (jatuh tempo ≤ 1 tahun) 4.567,12 \n26,09%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.1864406779661017
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_102",
+    "page": 10,
+    "char_start": 22340,
+    "char_end": 22370,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Utang Akseptasi \n234,56 \n1,34%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.26666666666666666
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_103",
+    "page": 10,
+    "char_start": 22372,
+    "char_end": 22427,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Pinjaman yang Diterima (current portion) \n456,78 \n2,61%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.14545454545454545
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_104",
+    "page": 10,
+    "char_start": 22429,
+    "char_end": 22454,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Utang Pajak \n89,23 \n0,51%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.28
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_105",
+    "page": 10,
+    "char_start": 22456,
+    "char_end": 22501,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Beban yang Masih Harus Dibayar \n167,45 \n0,96%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.17777777777777778
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_106",
+    "page": 10,
+    "char_start": 22503,
+    "char_end": 22551,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Sub-total Utang Jangka Pendek \n13.884,70 \n79,32%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.22916666666666666
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_107",
+    "page": 10,
+    "char_start": 22553,
+    "char_end": 22573,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Utang Jangka Panjang",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_108",
+    "page": 10,
+    "char_start": 22575,
+    "char_end": 22634,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Deposito Berjangka (jatuh tempo > 1 tahun) 2.345,67 \n13,40%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.1864406779661017
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_109",
+    "page": 10,
+    "char_start": 22636,
+    "char_end": 22683,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Obligasi dan Medium Term Notes \n1.000,00 \n5,71%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.19148936170212766
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_110",
+    "page": 11,
+    "char_start": 22685,
+    "char_end": 22727,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Jenis Utang \nJumlah (Rp Miliar) Persentase",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_111",
+    "page": 11,
+    "char_start": 22729,
+    "char_end": 22764,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Pinjaman Subordinasi \n275,50 \n1,57%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.22857142857142856
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_112",
+    "page": 11,
+    "char_start": 22766,
+    "char_end": 22814,
+    "header_path": [
+      "PENAWARAN UMUM"
+    ],
+    "text": "Sub-total Utang Jangka Panjang \n3.621,17 \n20,68%",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.20833333333333334
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_113",
+    "page": 11,
+    "char_start": 22849,
+    "char_end": 23576,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "Rasio utang terhadap ekuitas (Debt to Equity Ratio/\"DER\") Perseroan per 31 Desember \n2024 adalah 6,82x, masih dalam batas wajar untuk industri perbankan yang memiliki \nkarakteristik high leverage business model. Dengan penerbitan Obligasi Subordinasi ini, \nproforma DER akan meningkat menjadi 7,79x namun tetap manageable mengingat \nObligasi Subordinasi dapat diperhitungkan sebagai komponen Modal Pelengkap (Tier 2 \nCapital) sesuai dengan Surat Edaran Bank Indonesia No. 15/28/DPNP tanggal 31 Juli \n2013 perihal Penilaian Kualitas Aset Bank Umum, dengan catatan bahwa Obligasi \nSubordinasi tersebut memenuhi kriteria yang dipersyaratkan dalam ketentuan Basel III \nmengenai loss absorbency features pada point of non-viability.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03163686382393398
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_114",
+    "page": 11,
+    "char_start": 23578,
+    "char_end": 23592,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "Peringkat Efek",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_115",
+    "page": 11,
+    "char_start": 23594,
+    "char_end": 23743,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 telah memperoleh peringkat \ndari PT Pemeringkat Efek Indonesia (\"PEFINDO\") sebagai berikut:",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.026845637583892617
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_116",
+    "page": 11,
+    "char_start": 23745,
+    "char_end": 23815,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "• \nPeringkat Korporasi (Corporate Rating): idAA- dengan outlook Stable",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_117",
+    "page": 11,
+    "char_start": 23817,
+    "char_end": 23859,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "• \nPeringkat Obligasi (Issue Rating): idA+",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_118",
+    "page": 11,
+    "char_start": 23861,
+    "char_end": 24635,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "Perbedaan satu notch antara corporate rating dan issue rating mencerminkan \nkarakteristik subordinasi dari Obligasi yang menempatkan prioritas pembayarannya di \nbawah kewajiban senior namun di atas modal saham. Metodologi pemeringkatan yang \ndigunakan PEFINDO mempertimbangkan berbagai faktor kuantitatif dan kualitatif \ntermasuk namun tidak terbatas pada business position Perseroan dalam industri digital \nbanking, kualitas aset dengan NPL ratio yang terjaga di level 1,82% (significantly below \nindustri average 2,89%), profitabilitas yang solid dengan Return on Assets (\"ROA\") \n2,34% dan Return on Equity (\"ROE\") 18,76%, kapitalisasi yang kuat dengan CAR 19,23% \n(well above ketentuan minimum 12%), serta manajemen likuiditas yang prudent dengan \nLCR 142% dan NSFR 118%.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03229974160206718
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_119",
+    "page": 11,
+    "char_start": 24637,
+    "char_end": 25239,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "PEFINDO dalam laporan rating report tertanggal 25 Januari 2025 menyatakan bahwa key \nrating drivers untuk Perseroan mencakup: (i) strong franchise value sebagai salah satu \ntop 3 digital banks di Indonesia berdasarkan jumlah nasabah aktif; (ii) superior digital \ncapabilities yang tercermin dari 78% transaksi dilakukan melalui digital channels; (iii) \ndiversified revenue streams dengan kontribusi fee-based income mencapai 23% dari \ntotal operating income; (iv) experienced management team dengan average tenure di \nindustri perbankan lebih dari 15 tahun; dan (v) strong capital support dari pemegang",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.02159468438538206
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_120",
+    "page": 12,
+    "char_start": 25241,
+    "char_end": 25388,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "saham pengendali PT Digital Investama yang merupakan bagian dari Digital Nusantara \nGroup dengan total consolidated assets lebih dari Rp45 triliun.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.013605442176870748
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_121",
+    "page": 12,
+    "char_start": 25390,
+    "char_end": 25426,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "1.5. Jadwal Sementara Penawaran Umum",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.05555555555555555
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_122",
+    "page": 12,
+    "char_start": 25428,
+    "char_end": 25601,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "Berikut adalah jadwal sementara Penawaran Umum Obligasi yang dapat mengalami \nperubahan sewaktu-waktu sesuai dengan kondisi pasar dan persetujuan dari pihak \nyang berwenang:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_123",
+    "page": 12,
+    "char_start": 25603,
+    "char_end": 25620,
+    "header_path": [
+      "TOTAL UTANG"
+    ],
+    "text": "Tanggal \nKegiatan",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_124",
+    "page": 12,
+    "char_start": 25746,
+    "char_end": 25822,
+    "header_path": [
+      "5 Februari 2025"
+    ],
+    "text": "7-9 Februari 2025 \nBookbuilding dan Price Discovery untuk Investor Institusi",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.07894736842105263
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_125",
+    "page": 12,
+    "char_start": 26057,
+    "char_end": 26096,
+    "header_path": [
+      "17 Februari 2025"
+    ],
+    "text": "20-24 Februari 2025 Masa Penawaran Umum",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.20512820512820512
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_126",
+    "page": 12,
+    "char_start": 26303,
+    "char_end": 26822,
+    "header_path": [
+      "3 Maret 2025"
+    ],
+    "text": "Proses Penawaran Umum akan dilakukan melalui sistem elektronik yang terintegrasi \ndengan e-IPO platform BEI untuk memastikan transparansi dan efisiensi dalam proses \npemesanan, penjatahan, dan distribusi. Investor retail dapat melakukan pemesanan \nmelalui Participating Underwriters dan Selling Agents yang telah ditunjuk, sementara \ninvestor institusi dapat melakukan pemesanan langsung kepada Lead Underwriter \ndengan minimum subscription amount sebesar Rp10 miliar untuk Seri A dan B, serta \nRp5 miliar untuk Seri C.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.005780346820809248
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_127",
+    "page": 13,
+    "char_start": 26854,
+    "char_end": 27530,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Investasi pada Obligasi Subordinasi mengandung berbagai risiko. Sebelum \nmemutuskan untuk berinvestasi pada Obligasi yang ditawarkan ini, calon investor harus \nmempertimbangkan secara cermat faktor-faktor risiko yang diuraikan di bawah ini serta \ninformasi lainnya yang tercantum dalam Prospektus ini. Faktor-faktor risiko di bawah ini \nmerupakan risiko-risiko material yang dapat mempengaruhi kondisi keuangan dan \nkelangsungan usaha Perseroan yang pada akhirnya akan berdampak pada kemampuan \nPerseroan dalam memenuhi kewajibannya terkait dengan Obligasi. Risiko-risiko \ntersebut disusun berdasarkan bobot risiko yang material terhadap Perseroan, dimulai \ndari risiko utama.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_128",
+    "page": 13,
+    "char_start": 27532,
+    "char_end": 27623,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "2.1. Risiko Utama Yang Mempunyai Pengaruh Signifikan Terhadap Kelangsungan \nUsaha Perseroan",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.02197802197802198
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_129",
+    "page": 13,
+    "char_start": 27625,
+    "char_end": 27659,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "a. Risiko Kredit dan Kualitas Aset",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_130",
+    "page": 13,
+    "char_start": 27661,
+    "char_end": 28473,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Risiko kredit merupakan risiko terbesar yang dihadapi Perseroan sebagai institusi \nperbankan yang menjalankan fungsi intermediasi keuangan. Eksposur risiko kredit \nPerseroan terutama berasal dari portfolio kredit yang per 31 Desember 2024 mencapai \nRp12,345 triliun atau 52,3% dari total aset. Meskipun NPL ratio Perseroan saat ini \nterjaga di level 1,82% (lebih baik dari rata-rata industri 2,89%), namun terdapat \nbeberapa faktor yang dapat mempengaruhi kualitas aset di masa depan. Pertama, \nkonsentrasi kredit pada segmen KTA digital yang mencapai 35% dari total portfolio \nmemiliki inherent risk yang lebih tinggi mengingat karakteristik unsecured lending dan \nrelatif terbatasnya track record untuk behavioral scoring model pada segmen nasabah \nmillennial dan Gen-Z yang mendominasi 68% dari borrower base.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.029556650246305417
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_131",
+    "page": 13,
+    "char_start": 28475,
+    "char_end": 29342,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Kedua, rapid growth strategy Perseroan dengan target pertumbuhan kredit 40% year-on-\nyear dapat menimbulkan risiko adverse selection apabila credit underwriting standards \ndilonggarkan untuk mencapai target volume. Machine Learning models yang digunakan \nuntuk automated credit decisioning, meskipun telah di-backtest menggunakan data \nhistoris 5 tahun, belum teruji dalam kondisi severe economic downturn atau systemic \ncrisis. False acceptance rate dari AI-based credit scoring system saat ini adalah 3,2% \nyang apabila diekstrapolasi ke projected loan book tahun 2025 sebesar Rp17,3 triliun \ndapat menghasilkan potential losses sebesar Rp553,6 miliar. Perseroan telah \nmembentuk Expected Credit Loss (\"ECL\") provision sesuai PSAK 71 sebesar Rp487,2 \nmiliar namun coverage ratio sebesar 87,9% masih di bawah beberapa peer banks yang \nmemiliki coverage di atas 100%.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03229527104959631
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_132",
+    "page": 13,
+    "char_start": 29344,
+    "char_end": 29741,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Ketiga, risiko concentration pada sektor-sektor tertentu dimana eksposur kredit \nPerseroan kepada sektor perdagangan, hotel dan restoran mencapai 28% dari total \nportfolio. Sektor-sektor ini memiliki vulnerability terhadap economic cycles dan \nconsumer sentiment. Stress testing yang dilakukan menggunakan Monte Carlo \nsimulation dengan 10.000 scenarios menunjukkan bahwa dalam worst-case scenario",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.017632241813602016
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_133",
+    "page": 14,
+    "char_start": 29743,
+    "char_end": 30046,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "(probability 5%) dengan asumsi GDP contraction 3%, unemployment rate naik menjadi \n8%, dan BI-Rate naik 200 bps, NPL ratio Perseroan dapat meningkat menjadi 5,4% yang \nakan memerlukan additional provisioning sebesar Rp823 miliar dan berdampak pada \npenurunan CAR menjadi 15,7% dari current level 19,23%.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0594059405940594
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_134",
+    "page": 14,
+    "char_start": 30048,
+    "char_end": 30090,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "b. Risiko Likuiditas dan Maturity Mismatch",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_135",
+    "page": 14,
+    "char_start": 30092,
+    "char_end": 30792,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Perseroan menghadapi structural liquidity risk yang inherent dalam bisnis perbankan \ndimana terdapat maturity mismatch antara aset (didominasi kredit jangka menengah-\npanjang dengan average maturity 3,2 tahun) dan liabilitas (didominasi dana pihak ketiga \njangka pendek dengan average maturity 8,5 bulan). Loan to Deposit Ratio (\"LDR\") \nPerseroan per 31 Desember 2024 sebesar 91,3% mendekati batas atas ketentuan BI \nyang mensyaratkan LDR dalam rentang 78%-94%. Concentration risk pada deposito \nberjangka dimana top 20 depositors menyumbang 31% dari total deposito dengan \naverage ticket size Rp125 miliar per nasabah menciptakan potential liquidity squeeze \napabila terjadi simultaneous withdrawal.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03428571428571429
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_136",
+    "page": 14,
+    "char_start": 30794,
+    "char_end": 31396,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Komposisi funding Perseroan yang didominasi oleh time deposits (45%) dan demand \ndeposits (32%) dengan CASA ratio hanya 35% (dibandingkan industri average 48%) \nmengindikasikan higher funding cost dan vulnerability terhadap interest rate volatility. \nSimulasi liquidity stress test dengan asumsi 25% withdrawal rate untuk demand \ndeposits dan 15% non-renewal rate untuk time deposits menunjukkan bahwa \nPerseroan akan menghadapi liquidity gap sebesar Rp2,1 triliun yang harus di-cover \nmelalui secondary reserves liquidation atau emergency funding dari interbank market \ndengan potentially higher cost.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.023255813953488372
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_137",
+    "page": 14,
+    "char_start": 31398,
+    "char_end": 32046,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Perseroan memiliki committed credit facilities dari 5 bank koresponden dengan total \nlimit Rp3,5 triliun namun actual drawdown capacity tergantung pada market conditions \ndan counterparty risk assessment yang dapat berubah sewaktu-waktu. Liquid asset \nbuffer berupa government securities dan central bank instruments sebesar Rp4,2 triliun \n(17,8% dari total aset) memberikan cushion namun forced liquidation dalam stressed \nmarket conditions dapat mengakibatkan mark-to-market losses terutama untuk \nsecurities dalam Available for Sale (\"AFS\") portfolio yang per 31 Desember 2024 \nmemiliki unrealized loss Rp67,3 miliar akibat kenaikan yield curve.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.026234567901234566
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_138",
+    "page": 14,
+    "char_start": 32048,
+    "char_end": 32088,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "2.2. Risiko Teknologi dan Keamanan Siber",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.05
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_139",
+    "page": 14,
+    "char_start": 32090,
+    "char_end": 32583,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Sebagai digital-first bank, Perseroan memiliki critical dependency pada teknologi \ninformasi dimana 78% transaksi nasabah dilakukan melalui digital channels. System \navailability menjadi paramount importance dengan current Service Level Agreement \n(\"SLA\") commitment 99,95% uptime yang berarti maksimal downtime tolerance hanya \n4,38 jam per tahun. Historical data menunjukkan bahwa Perseroan mengalami 12 \nincidents kategori high-severity dalam 24 bulan terakhir dengan total downtime 8,7 jam",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.030425963488843813
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_140",
+    "page": 15,
+    "char_start": 32585,
+    "char_end": 32694,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "yang mengakibatkan opportunity loss diestimasi Rp145 juta dan reputational damage \nyang sulit dikuantifikasi.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.027522935779816515
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_141",
+    "page": 15,
+    "char_start": 32696,
+    "char_end": 33469,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Cyber threat landscape yang terus evolving dengan sophisticated attack vectors seperti \nAdvanced Persistent Threats (\"APT\"), zero-day exploits, dan AI-powered attacks \nmenciptakan constant challenge untuk security infrastructure. Security Operations \nCenter (\"SOC\") Perseroan mendeteksi rata-rata 2,3 juta security events per hari dimana \n0,03% dikategorikan sebagai critical incidents yang memerlukan immediate response. \nMeskipun belum pernah terjadi successful data breach, namun attempted attacks \nmeningkat 340% year-on-year dengan increasing sophistication level. Investment \ndalam cyber security sebesar Rp125 miliar per tahun (0,53% dari total aset) masih di \nbawah international best practice 0,7%-1% untuk financial institutions dengan similar \ndigital footprint.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.02199223803363519
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_142",
+    "page": 15,
+    "char_start": 33471,
+    "char_end": 34162,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Vendor concentration risk merupakan another critical concern dimana Core Banking \nSystem, Mobile Banking Platform, dan Payment Gateway bergantung pada third-party \nvendors dengan limited alternative options. Service disruption atau bankruptcy dari key \nvendors dapat mengakibatkan significant operational disruption. Business Continuity \nPlanning (\"BCP\") dan Disaster Recovery (\"DR\") testing yang dilakukan quarterly \nmenunjukkan Recovery Time Objective (\"RTO\") 4 jam dan Recovery Point Objective \n(\"RPO\") 1 jam untuk critical systems, namun full-scale disaster simulation belum \npernah dilakukan yang menciptakan uncertainty tentang actual recovery capability \ndalam real disaster scenario.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.002894356005788712
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_143",
+    "page": 15,
+    "char_start": 34164,
+    "char_end": 34768,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Regulatory compliance untuk data protection dengan berlakunya Undang-Undang \nPerlindungan Data Pribadi (\"UU PDP\") menciptakan additional compliance burden \ndengan potential penalties hingga 2% dari annual revenue untuk serious breach. \nCurrent data governance maturity assessment menempatkan Perseroan pada level 3 \n(Defined) dari 5 levels, masih memerlukan significant improvement untuk mencapai \nlevel 5 (Optimized). Personal data inventory mencakup 127 juta data points dari 3,7 juta \nnasabah yang tersebar across 47 different systems menciptakan complexity dalam \nensuring end-to-end data protection.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.018211920529801324
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_144",
+    "page": 15,
+    "char_start": 34770,
+    "char_end": 34812,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "2.3. Risiko Persaingan dan Market Dynamics",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.047619047619047616
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_145",
+    "page": 15,
+    "char_start": 34814,
+    "char_end": 35448,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Intensitas persaingan dalam digital banking sector terus meningkat dengan masuknya \nnew players baik dari traditional banks yang melakukan digital transformation maupun \npure-play digital banks backed oleh large technology companies. Market share \nPerseroan dalam digital banking segment sebesar 8,7% menghadapi pressure dari \naggressive expansion oleh kompetitor. Customer acquisition cost (\"CAC\") meningkat \n67% year-on-year menjadi Rp287.000 per nasabah sementara Customer Lifetime Value \n(\"CLV\") hanya meningkat 23% menjadi Rp1,235.000 mengindikasikan deteriorating unit \neconomics yang dapat mempengaruhi long-term profitability.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.02996845425867508
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_146",
+    "page": 16,
+    "char_start": 35450,
+    "char_end": 36041,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Regulatory changes dengan dibukanya digital banking licenses untuk foreign players \ndan potential entry dari global technology giants seperti Apple, Google, atau Amazon \ndapat fundamentally alter competitive landscape. Network effects dan ecosystem \nadvantages yang dimiliki super-apps seperti Gojek dan Grab dengan captive user base \npuluhan juta dapat menciptakan insurmountable competitive advantage. Perseroan's \nstrategy untuk build proprietary ecosystem masih dalam early stage dengan hanya 12% \nnasabah yang menggunakan lebih dari 3 produk (cross-sell ratio) dibandingkan target \n35%.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.008460236886632826
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_147",
+    "page": 16,
+    "char_start": 36043,
+    "char_end": 36608,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Price competition terutama dalam deposito dan kredit consumer telah mengakibatkan \nNet Interest Margin (\"NIM\") compression dari 5,2% tahun 2022 menjadi 4,7% tahun \n2024 dengan projection further decline menjadi 4,3% tahun 2025. Ability untuk \nmaintain pricing power terbatas mengingat low switching cost dan increasing price \ntransparency melalui comparison platforms. Fee-based income yang diharapkan \nmenjadi buffer terhadap NIM compression masih terkendala oleh customer expectation \nuntuk free digital services dan regulatory pressure untuk reduce banking fees.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03185840707964602
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_148",
+    "page": 16,
+    "char_start": 36610,
+    "char_end": 36644,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "2.4. Risiko Regulasi dan Kepatuhan",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.058823529411764705
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_149",
+    "page": 16,
+    "char_start": 36646,
+    "char_end": 37173,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Perbankan merupakan highly regulated industry dengan complex dan evolving \nregulatory requirements. Perseroan harus comply dengan lebih dari 200 peraturan dari \nberbagai otoritas termasuk OJK, BI, Ministry of Communications and Information \n(\"Kominfo\"), dan Ministry of Finance. Recent regulatory developments seperti tightening \ndalam Loan to Value (\"LTV\") ratio untuk property loans, pembatasan suku bunga \npinjaman online, dan requirements untuk open banking API dapat significantly impact \nbusiness model dan profitability.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0056925996204933585
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_150",
+    "page": 16,
+    "char_start": 37175,
+    "char_end": 37779,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Compliance cost terus meningkat dengan total spending untuk regulatory compliance, \nrisk management, dan internal audit mencapai Rp234 miliar tahun 2024 atau 8,7% dari \noperating expenses. Anti-Money Laundering (\"AML\") dan Counter-Terrorism Financing \n(\"CTF\") compliance memerlukan sophisticated transaction monitoring systems yang \nmenghasilkan average 1.200 suspicious transaction alerts per hari dimana 3% \nescalated menjadi Suspicious Transaction Reports (\"STR\") ke PPATK. False positive rate \nsebesar 85% menciptakan operational burden namun threshold adjustment dapat \nmeningkatkan regulatory risk.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.026490066225165563
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_151",
+    "page": 16,
+    "char_start": 37781,
+    "char_end": 38281,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Basel III implementation dengan requirements untuk Capital Conservation Buffer \n(\"CCB\") 2,5%, Countercyclical Buffer up to 2,5%, dan potential Domestic Systemically \nImportant Bank (\"D-SIB\") surcharge dapat memerlukan additional capital hingga Rp750 \nmiliar dalam 3 tahun ke depan. Net Stable Funding Ratio (\"NSFR\") requirement minimal \n100% membatasi flexibility dalam asset-liability management dan dapat meningkatkan \nfunding cost. Leverage ratio requirement 3% meskipun currently met (Perseroan's",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.024
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_152",
+    "page": 17,
+    "char_start": 38283,
+    "char_end": 38385,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "leverage ratio 4,2%) dapat menjadi binding constraint apabila aggressive growth \nstrategy dilanjutkan.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0196078431372549
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_153",
+    "page": 17,
+    "char_start": 38387,
+    "char_end": 38877,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Tax regulation changes termasuk potential implementation dari global minimum tax \nrate 15% untuk multinational corporations dan digital service tax dapat impact bottom \nline. Current effective tax rate Perseroan 22,3% dapat meningkat menjadi 25-27% \ndengan full implementation dari various tax reforms. Transfer pricing documentation \nrequirements untuk transactions dengan related parties terutama technology licensing \ndari foreign affiliates menciptakan additional compliance complexity.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.018367346938775512
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_154",
+    "page": 17,
+    "char_start": 38879,
+    "char_end": 38926,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "2.5. Risiko Operasional dan Sumber Daya Manusia",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0425531914893617
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_155",
+    "page": 17,
+    "char_start": 38928,
+    "char_end": 39420,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Operational risk events dalam 24 bulan terakhir mengakibatkan total losses Rp67,8 \nmiliar yang terdiri dari internal fraud (12%), external fraud (31%), employment practices \n(8%), clients & business practices (15%), damage to physical assets (3%), business \ndisruption (18%), dan execution & process management (13%). Meskipun masih dalam \nrisk appetite threshold 0,3% dari gross income, namun frequency of events meningkat \n45% year-on-year mengindikasikan deteriorating control environment.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.042682926829268296
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_156",
+    "page": 17,
+    "char_start": 39422,
+    "char_end": 40040,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Human capital risk menjadi increasingly critical dengan employee turnover rate 18,3% \nper tahun, significantly higher dari industry average 12%. Turnover pada critical \npositions seperti data scientists, cyber security specialists, dan digital product \nmanagers mencapai 27% menciptakan knowledge drain dan project delays. \nCompetition untuk scarce digital talent dengan technology companies yang \nmenawarkan compensation packages 40-60% lebih tinggi membuat talent retention \nchallenging. Total employee cost meningkat 22% year-on-year sementara productivity \nmeasured dengan revenue per employee hanya meningkat 11%.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.024271844660194174
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_157",
+    "page": 17,
+    "char_start": 40042,
+    "char_end": 40594,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Vendor dan outsourcing risk meningkat seiring dependency pada third parties untuk \ncritical functions. Currently 34% dari IT operations di-outsource ke external vendors \ndengan concentration pada 3 major providers yang collectively handle 67% dari \noutsourced activities. Vendor performance issues dalam 12 bulan terakhir \nmengakibatkan 23 SLA breaches dengan total penalties collected hanya Rp4,3 miliar \natau 18% dari estimated losses. Vendor bankruptcy risk menjadi real concern setelah 2 \ntechnology vendors mengalami financial distress tahun lalu.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.025362318840579712
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_158",
+    "page": 17,
+    "char_start": 40596,
+    "char_end": 41070,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Business process complexity dengan average 47 steps untuk end-to-end loan \norigination process dan 23 handoffs antar departments menciptakan operational \ninefficiency dan error-prone environment. Process automation initiatives menggunakan \nRobotic Process Automation (\"RPA\") baru cover 23% dari target processes dengan \nslower than expected ROI realization. Change management resistance dari employees \nyang concerned tentang job displacement menghambat automation adoption.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.012658227848101266
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_159",
+    "page": 17,
+    "char_start": 41072,
+    "char_end": 41106,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "2.6. Risiko Makroekonomi dan Pasar",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.058823529411764705
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_160",
+    "page": 18,
+    "char_start": 41108,
+    "char_end": 41557,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Perseroan's performance highly correlated dengan macroeconomic conditions dimana \nhistorical analysis menunjukkan bahwa 1% decline dalam GDP growth mengakibatkan \n0,7% increase dalam NPL ratio dan 0,4% decrease dalam loan growth. Current \nmacroeconomic uncertainties termasuk global inflation persistence, geopolitical \ntensions, supply chain disruptions, dan potential recession dalam major economies \nmenciptakan challenging operating environment.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.011135857461024499
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_161",
+    "page": 18,
+    "char_start": 41559,
+    "char_end": 42086,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Interest rate volatility impact both sides dari balance sheet. Rising rate environment \nmeningkatkan funding cost lebih cepat dari repricing assets mengingat 45% dari \ndeposits adalah fixed-rate time deposits sementara hanya 28% dari loans adalah \nfloating rate. Duration gap analysis menunjukkan bahwa 100 bps parallel shift dalam \nyield curve mengakibatkan Rp145 miliar decline dalam Economic Value of Equity \n(\"EVE\"). Negative convexity dari mortgage portfolio dengan prepayment options \nmenciptakan asymmetric risk profile.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.018975332068311195
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_162",
+    "page": 18,
+    "char_start": 42088,
+    "char_end": 42628,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Foreign exchange exposure meskipun limited (net open position 3,8% dari modal) dapat \nmenjadi significant dalam extreme volatility scenario. Perseroan memiliki US Dollar \nfunding lines USD 125 million untuk trade finance activities yang di-hedge \nmenggunakan cross-currency swaps namun hedge effectiveness dapat deteriorate \ndalam stressed market conditions dengan widening basis spreads. Indirect FX exposure \nmelalui borrowers dengan FX revenues atau costs mencapai 23% dari loan portfolio \nyang vulnerable terhadap currency depreciation.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.012962962962962963
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_163",
+    "page": 18,
+    "char_start": 42630,
+    "char_end": 43169,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Commodity price volatility terutama energy dan food prices impact borrower repayment \ncapacity. Correlation analysis menunjukkan bahwa 10% increase dalam fuel prices \nmengakibatkan 0,3% increase dalam consumer loan defaults dengan 3-6 months lag. \nPalm oil price volatility significantly impact SME borrowers dalam agribusiness sector \nyang represent 12% dari SME portfolio. Climate change physical dan transition risks \nmulai materialized dengan increasing frequency dari extreme weather events dan \nregulatory push untuk green financing.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.014842300556586271
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_164",
+    "page": 18,
+    "char_start": 43171,
+    "char_end": 43214,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "2.7. Risiko Reputasi dan Kepercayaan Publik",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.046511627906976744
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_165",
+    "page": 18,
+    "char_start": 43216,
+    "char_end": 43807,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Dalam era digital dan social media, reputational risk dapat escalate rapidly dengan viral \npotential dari negative news atau customer complaints. Social media monitoring \nmenunjukkan average 3.400 mentions per hari tentang Perseroan dimana 12% adalah \nnegative sentiments mainly terkait service issues, system downtime, atau fraud cases. \nSingle viral complaint dapat reach millions within hours seperti incident 6 bulan lalu \ndimana customer complaint tentang unauthorized transaction mencapai 4,7 juta views \ndan mengakibatkan 2,3% decline dalam new account openings dalam following month.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.018612521150592216
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_166",
+    "page": 18,
+    "char_start": 43809,
+    "char_end": 44060,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Trust deficit dalam digital banking dimana 34% potential customers masih prefer \ntraditional banks untuk high-value transactions atau investment products. Security \nbreaches atau fraud cases pada any digital bank dapat trigger industry-wide confidence",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.00796812749003984
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_167",
+    "page": 19,
+    "char_start": 44062,
+    "char_end": 44327,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "crisis. Perseroan's Net Promoter Score (\"NPS\") currently at 42 masih di bawah target 60 \ndan industry leader at 67. Customer complaint resolution time average 5,7 days masih \ndi atas service standard 3 days dengan escalation rate ke OJK meningkat 23% year-on-\nyear.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.04150943396226415
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_168",
+    "page": 19,
+    "char_start": 44329,
+    "char_end": 44801,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Media coverage analysis menunjukkan declining share of voice dari 12,3% ke 9,7% \ndalam digital banking category dengan competitors gaining ground melalui aggressive \nmarketing dan PR campaigns. Marketing spend efficiency measured dengan brand \nawareness per marketing dollar spent deteriorating 18% year-on-year. Influencer \nmarketing initiatives generating mixed results dengan several high-profile campaign \nfailures damaging brand perception among younger demographics.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.014830508474576272
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_169",
+    "page": 19,
+    "char_start": 44803,
+    "char_end": 44837,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "2.8. Risiko Strategis dan Eksekusi",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.058823529411764705
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_170",
+    "page": 19,
+    "char_start": 44839,
+    "char_end": 45347,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Strategic initiatives failure rate concerning dengan hanya 43% dari 37 strategic projects \nlaunched dalam 3 tahun terakhir achieving intended outcomes. Digital transformation \nroadmap experiencing significant delays dengan current progress at 54% versus \nplanned 78% completion. Time to market untuk new products average 8,3 bulan versus \ntarget 3 bulan membuat Perseroan often late dalam capturing market opportunities. \nFirst-mover advantage dalam several product categories lost ke more agile competitors.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.023622047244094488
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_171",
+    "page": 19,
+    "char_start": 45349,
+    "char_end": 45858,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Investment allocation misalignment dimana retrospective analysis menunjukkan \nbahwa 35% dari capex investments dalam 3 tahun terakhir generated returns below \nhurdle rate 15%. Sunk cost dalam failed initiatives mencapai Rp234 miliar termasuk \nabandoned blockchain project, unsuccessful robo-advisory platform, dan \nunderperforming merchant acquisition program. Portfolio optimization exercise \nidentified Rp450 miliar potential reallocation opportunities namun organizational inertia \npreventing swift action.",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.021611001964636542
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_172",
+    "page": 19,
+    "char_start": 45860,
+    "char_end": 46352,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Partnership execution challenges dengan 8 dari 15 strategic partnerships signed dalam \n2 tahun terakhir underdelivering expected synergies. Average time dari MOU ke actual \nimplementation 11 bulan dengan multiple delays dari legal negotiations, technical \nintegration, dan regulatory approvals. Revenue sharing disputes dengan 3 partners \ncurrently dalam arbitration dengan potential liabilities Rp67 miliar. Cultural \nmisalignment dan governance issues hampering joint venture effectiveness.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.018292682926829267
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_173",
+    "page": 19,
+    "char_start": 46354,
+    "char_end": 46831,
+    "header_path": [
+      "FAKTOR-FAKTOR RISIKO"
+    ],
+    "text": "Innovation pipeline weakness dengan R&D spending hanya 1,2% dari revenues versus \nindustry best practice 3-5%. Patent applications limited ke 3 dalam 3 tahun mostly \ndefensive rather than breakthrough innovations. Internal innovation program generating \nmostly incremental improvements rather than disruptive solutions. Talent gap dalam \nemerging technologies seperti quantum computing, advanced AI, dan blockchain \nlimiting ability untuk explore next-generation opportunities.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.012578616352201259
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_174",
+    "page": 20,
+    "char_start": 46923,
+    "char_end": 46977,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "3.1. Keterangan Mengenai Penjamin Pelaksana Emisi Efek",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.037037037037037035
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_175",
+    "page": 20,
+    "char_start": 46979,
+    "char_end": 47321,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Berdasarkan Perjanjian Penjaminan Emisi Efek tanggal 10 Januari 2025 dan Akta \nPerubahan I tanggal 25 Januari 2025, susunan dan jumlah porsi penjaminan serta \npersentase dari anggota sindikasi Penjamin Pelaksana Emisi Efek dalam Penawaran \nUmum Obligasi Subordinasi ini adalah berdasarkan kesanggupan penuh (full \ncommitment) sebagai berikut:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.03508771929824561
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_176",
+    "page": 20,
+    "char_start": 47323,
+    "char_end": 47359,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "a. Penjamin Utama (Lead Underwriter)",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_177",
+    "page": 20,
+    "char_start": 47361,
+    "char_end": 47391,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "PT Sekuritas Digital Indonesia",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_178",
+    "page": 20,
+    "char_start": 47393,
+    "char_end": 48020,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "PT Sekuritas Digital Indonesia (\"SDI\") merupakan perusahaan efek yang didirikan \nberdasarkan Akta Pendirian No. 23 tanggal 8 Juni 2015 yang dibuat dihadapan Fathiah \nHelmi, S.H., Notaris di Jakarta. SDI telah memperoleh izin usaha sebagai Perantara \nPedagang Efek, Penjamin Emisi Efek dan Manajer Investasi berdasarkan Surat \nKeputusan Ketua Badan Pengawas Pasar Modal dan Lembaga Keuangan (\"BAPEPAM-\nLK\") No. KEP-234/BL/2015 tanggal 15 September 2015. SDI merupakan anggota Bursa \nEfek Indonesia dan memiliki Sistem Pengelolaan Investasi Terpadu (\"S-INVEST\") yang \ntelah terintegrasi dengan sistem C-BEST untuk online trading.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03189792663476874
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_179",
+    "page": 20,
+    "char_start": 48022,
+    "char_end": 48206,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Alamat Kantor: Gedung Bursa Efek Indonesia Tower II, Lantai 18 Jl. Jenderal Sudirman \nKav. 52-53 Jakarta 12190 Telepon: (021) 515-3055 Faksimili: (021) 515-3056 Website: \nwww.sdi.co.id",
+    "contains_entities": true,
+    "is_difficult": false,
+    "numeric_ratio": 0.16847826086956522
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_180",
+    "page": 20,
+    "char_start": 48208,
+    "char_end": 48238,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Susunan Direksi dan Komisaris:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_181",
+    "page": 20,
+    "char_start": 48240,
+    "char_end": 48284,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nKomisaris Utama: Dr. Hendrawan Supratikno",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_182",
+    "page": 20,
+    "char_start": 48286,
+    "char_end": 48342,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nKomisaris Independen: Prof. Dr. Marsudi Wahyu Kisworo",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_183",
+    "page": 20,
+    "char_start": 48344,
+    "char_end": 48385,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nDirektur Utama: Jonathan Sugiarto, MBA",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_184",
+    "page": 20,
+    "char_start": 48387,
+    "char_end": 48417,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nDirektur: Linda Wijaya, CFA",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_185",
+    "page": 20,
+    "char_start": 48419,
+    "char_end": 48453,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nDirektur: Michael Tandiono, FRM",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_186",
+    "page": 20,
+    "char_start": 48455,
+    "char_end": 48883,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Pengalaman Penjaminan Emisi: SDI telah berpengalaman sebagai Penjamin \nPelaksana Emisi Efek untuk 47 transaksi IPO dan penerbitan obligasi dengan total nilai \ntransaksi mencapai Rp23,7 triliun dalam 5 tahun terakhir. Beberapa transaksi notable \ntermasuk IPO PT Tech Unicorn Indonesia Tbk (Rp4,5 triliun), Obligasi Berkelanjutan PT \nInfrastructure Capital (Rp3,2 triliun), dan Sukuk Ijarah PT Sharia Development (Rp2,1 \ntriliun).",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.028037383177570093
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_187",
+    "page": 21,
+    "char_start": 48885,
+    "char_end": 48902,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Porsi Penjaminan:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_188",
+    "page": 21,
+    "char_start": 48904,
+    "char_end": 48947,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri A: Rp400.000.000.000 (40%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_189",
+    "page": 21,
+    "char_start": 48949,
+    "char_end": 48992,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri B: Rp400.000.000.000 (40%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_190",
+    "page": 21,
+    "char_start": 48994,
+    "char_end": 49037,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri C: Rp200.000.000.000 (40%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_191",
+    "page": 21,
+    "char_start": 49039,
+    "char_end": 49074,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nTotal: Rp1.000.000.000.000 (40%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.42857142857142855
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_192",
+    "page": 21,
+    "char_start": 49076,
+    "char_end": 49097,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "b. Penjamin Pelaksana",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_193",
+    "page": 21,
+    "char_start": 49099,
+    "char_end": 49127,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "PT Capital Markets Nusantara",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_194",
+    "page": 21,
+    "char_start": 49129,
+    "char_end": 49493,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "PT Capital Markets Nusantara (\"CMN\") didirikan pada tahun 2012 dan telah \nberkembang menjadi salah satu investment bank terkemuka di Indonesia dengan fokus \npada debt capital markets, equity capital markets, dan financial advisory services. CMN \nmemiliki izin usaha sebagai Penjamin Emisi Efek dan Perantara Pedagang Efek \nberdasarkan SK OJK No. KEP-567/D.04/2012.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.03571428571428571
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_195",
+    "page": 21,
+    "char_start": 49495,
+    "char_end": 49654,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Alamat Kantor: Sampoerna Strategic Square, North Tower Lt. 27 Jl. Jenderal Sudirman \nKav. 45-46 Jakarta 12930 Telepon: (021) 577-2288 Faksimili: (021) 577-2290",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.1949685534591195
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_196",
+    "page": 21,
+    "char_start": 49656,
+    "char_end": 49673,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Porsi Penjaminan:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_197",
+    "page": 21,
+    "char_start": 49675,
+    "char_end": 49718,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri A: Rp300.000.000.000 (30%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_198",
+    "page": 21,
+    "char_start": 49720,
+    "char_end": 49763,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri B: Rp300.000.000.000 (30%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_199",
+    "page": 21,
+    "char_start": 49765,
+    "char_end": 49808,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri C: Rp150.000.000.000 (30%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_200",
+    "page": 21,
+    "char_start": 49810,
+    "char_end": 49843,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nTotal: Rp750.000.000.000 (30%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.42424242424242425
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_201",
+    "page": 21,
+    "char_start": 49845,
+    "char_end": 49876,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "PT Investment Banking Solutions",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_202",
+    "page": 21,
+    "char_start": 49878,
+    "char_end": 50193,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "PT Investment Banking Solutions (\"IBS\") merupakan boutique investment bank yang \nspecializes dalam structured finance dan complex debt transactions. Didirikan tahun \n2017 oleh former senior bankers dari global investment banks, IBS telah involved dalam \nbeberapa landmark transactions di Indonesian capital markets.",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.012698412698412698
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_203",
+    "page": 21,
+    "char_start": 50195,
+    "char_end": 50375,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Alamat Kantor: Pacific Century Place, Lt. 35 Sudirman Central Business District Jl. \nJenderal Sudirman Kav. 52-53 Jakarta 12190 Telepon: (021) 2935-8888 Faksimili: (021) \n2935-8889",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.18333333333333332
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_204",
+    "page": 21,
+    "char_start": 50377,
+    "char_end": 50394,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "Porsi Penjaminan:",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_205",
+    "page": 21,
+    "char_start": 50396,
+    "char_end": 50439,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri A: Rp300.000.000.000 (30%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_206",
+    "page": 21,
+    "char_start": 50441,
+    "char_end": 50484,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri B: Rp300.000.000.000 (30%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_207",
+    "page": 21,
+    "char_start": 50486,
+    "char_end": 50529,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nObligasi Seri C: Rp150.000.000.000 (30%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.32558139534883723
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_208",
+    "page": 22,
+    "char_start": 50531,
+    "char_end": 50564,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "• \nTotal: Rp750.000.000.000 (30%)",
+    "contains_entities": false,
+    "is_difficult": false,
+    "numeric_ratio": 0.42424242424242425
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_209",
+    "page": 22,
+    "char_start": 50566,
+    "char_end": 50602,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "3.2. Keterangan Mengenai Wali Amanat",
+    "contains_entities": false,
+    "is_difficult": true,
+    "numeric_ratio": 0.05555555555555555
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_210",
+    "page": 22,
+    "char_start": 50604,
+    "char_end": 50629,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "PT Bank Kustodian Sentral",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.0
+  },
+  {
+    "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_211",
+    "page": 22,
+    "char_start": 50631,
+    "char_end": 51041,
+    "header_path": [
+      "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+    ],
+    "text": "PT Bank Kustodian Sentral (\"BKS\") ditunjuk sebagai Wali Amanat berdasarkan Akta \nPerjanjian Perwaliamanatan Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 \nPT Bank Digital Nusantara Tbk. No. 45 tanggal 12 Januari 2025 yang dibuat di hadapan \nNotaris Ashoya Ratam, S.H., MKn. BKS merupakan bank yang memiliki izin sebagai \nKustodian dari OJK dan terdaftar sebagai Wali Amanat di OJK berdasarkan Surat",
+    "contains_entities": true,
+    "is_difficult": true,
+    "numeric_ratio": 0.02926829268292683
+  }
+]

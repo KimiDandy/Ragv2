@@ -1,0 +1,362 @@
+[
+  {
+    "id": "term_3",
+    "type": "term_to_define",
+    "original_context": "implementasi Next-Generation Core Banking System (\"CBS\") berbasis microservices architecture",
+    "generated_content": "Microservices architecture adalah pendekatan pengembangan perangkat lunak di mana aplikasi dibangun sebagai kumpulan layanan-layanan kecil yang saling terpisah dan dapat berjalan secara independen. Setiap layanan biasanya menjalankan fungsi bisnis tertentu, berkomunikasi melalui API, dan dapat dikembangkan, diuji, serta di-deploy secara terpisah. Dalam konteks Core Banking System, arsitektur ini memungkinkan skalabilitas, fleksibilitas integrasi, dan pemeliharaan sistem yang lebih efisien dibandingkan dengan sistem monolitik tradisional.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_0",
+    "type": "term_to_define",
+    "original_context": "sehubungan dengan peningkatan modal dasar Perseroan dalam rangka pelaksanaan Employee Stock Option Program (\"ESOP\") Tahap II",
+    "generated_content": "Employee Stock Option Program (ESOP) adalah program yang memberikan hak kepada karyawan untuk membeli saham perusahaan pada harga dan periode tertentu. Tujuan ESOP adalah memberikan insentif kepada karyawan agar berkontribusi lebih baik terhadap kinerja perusahaan serta meningkatkan rasa kepemilikan. Dalam konteks peningkatan modal dasar, ESOP dapat dilakukan dengan menerbitkan saham baru yang dialokasikan khusus untuk karyawan.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_2",
+    "type": "term_to_define",
+    "original_context": "asumsi pertumbuhan Dana Pihak Ketiga (\"DPK\") sebesar 35% Compound Annual Growth Rate (\"CAGR\")",
+    "generated_content": "Compound Annual Growth Rate (CAGR) adalah tingkat pertumbuhan tahunan rata-rata suatu nilai investasi atau indikator keuangan selama periode waktu tertentu, dengan asumsi pertumbuhan terjadi secara konstan setiap tahunnya. CAGR digunakan untuk mengukur dan membandingkan kinerja pertumbuhan dari waktu ke waktu, meskipun dalam kenyataannya pertumbuhan aktual bisa berfluktuasi setiap tahun.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_1",
+    "type": "term_to_define",
+    "original_context": "dalam rangka mempertahankan Capital Adequacy Ratio (\"CAR\") di atas ketentuan minimum yang dipersyaratkan oleh Basel III Framework dan Peraturan OJK No. 11/POJK.03/2016",
+    "generated_content": "Capital Adequacy Ratio (CAR) adalah rasio yang mengukur kecukupan modal suatu bank untuk menutup risiko kerugian yang mungkin timbul dari aktivitas usahanya. CAR dihitung dengan membandingkan modal bank terhadap aset tertimbang menurut risiko, sesuai ketentuan regulator seperti Basel III dan Peraturan OJK. Rasio ini bertujuan memastikan bank memiliki modal yang cukup untuk menjaga stabilitas dan kepercayaan sistem keuangan.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_5",
+    "type": "term_to_define",
+    "original_context": "Meskipun NPL ratio Perseroan saat ini terjaga di level 1,82% (lebih baik dari rata-rata industri 2,89%)",
+    "generated_content": "NPL ratio (Non-Performing Loan ratio) adalah rasio yang menunjukkan persentase kredit bermasalah (non-performing loans) terhadap total kredit yang disalurkan oleh bank. Rasio ini digunakan untuk mengukur kualitas aset kredit bank dan tingkat risiko kredit yang dihadapi. Semakin rendah NPL ratio, semakin baik kualitas kredit bank, karena menunjukkan proporsi kredit bermasalah yang lebih kecil.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_6",
+    "type": "term_to_define",
+    "original_context": "dapat menimbulkan risiko adverse selection apabila credit underwriting standards dilonggarkan untuk mencapai target volume",
+    "generated_content": "Adverse selection adalah situasi di mana pihak yang memiliki informasi lebih baik mengenai risiko atau kualitas suatu transaksi cenderung memanfaatkan ketidakseimbangan informasi tersebut untuk keuntungan pribadi. Dalam konteks kredit, adverse selection terjadi ketika pelonggaran standar penilaian kredit menarik peminjam dengan risiko gagal bayar lebih tinggi, sehingga meningkatkan potensi kerugian bagi pemberi pinjaman.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_4",
+    "type": "term_to_define",
+    "original_context": "Dana ini akan ditempatkan dalam portfolio instrumen likuid berkualitas tinggi sesuai dengan ketentuan Liquidity Coverage Ratio (\"LCR\") dan Net Stable Funding Ratio (\"NSFR\") yang dipersyaratkan dalam Basel III framework.",
+    "generated_content": "Liquidity Coverage Ratio (LCR) adalah rasio yang mengukur kemampuan bank untuk memenuhi kewajiban likuiditas jangka pendek dengan memiliki aset likuid berkualitas tinggi yang cukup untuk menutupi arus kas keluar selama 30 hari ke depan dalam kondisi stres keuangan. LCR merupakan salah satu persyaratan Basel III yang bertujuan untuk meningkatkan ketahanan likuiditas bank dan menjaga stabilitas sistem keuangan.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_8",
+    "type": "term_to_define",
+    "original_context": "karakteristik subordinasi dari Obligasi yang menempatkan prioritas pembayarannya di bawah kewajiban senior namun di atas modal saham",
+    "generated_content": "Subordinasi adalah karakteristik suatu instrumen keuangan, seperti obligasi, yang menempatkan prioritas pembayaran klaimnya di bawah kewajiban senior namun di atas pemegang saham. Dalam konteks obligasi, subordinasi berarti bahwa jika terjadi likuidasi atau kebangkrutan, pembayaran kepada pemegang obligasi subordinasi hanya dilakukan setelah kewajiban senior dilunasi, tetapi sebelum distribusi kepada pemegang saham.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_9",
+    "type": "term_to_define",
+    "original_context": "Cyber threat landscape yang terus evolving dengan sophisticated attack vectors seperti Advanced Persistent Threats (\"APT\"), zero-day exploits, dan AI-powered attacks",
+    "generated_content": "Advanced Persistent Threats (APT) adalah serangan siber yang dilakukan secara terorganisir, canggih, dan berkelanjutan oleh aktor dengan sumber daya besar, seperti kelompok kriminal atau negara. Tujuan utama APT adalah mendapatkan akses tidak sah ke jaringan target dalam jangka waktu lama untuk mencuri data sensitif atau mengganggu operasi. Serangan ini biasanya sulit dideteksi karena menggunakan teknik yang kompleks dan beradaptasi terhadap upaya pertahanan.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_11",
+    "type": "term_to_define",
+    "original_context": "Due diligence process untuk setiap potential investment akan melibatkan comprehensive assessment terhadap technology capabilities, regulatory compliance, financial sustainability, strategic fit, dan cultural alignment dengan nilai-nilai Perseroan.",
+    "generated_content": "Due diligence process adalah serangkaian langkah sistematis untuk menilai secara menyeluruh aspek-aspek penting dari suatu investasi potensial, seperti kapabilitas teknologi, kepatuhan regulasi, keberlanjutan finansial, kesesuaian strategi, dan keselarasan budaya. Proses ini bertujuan untuk mengidentifikasi risiko dan peluang, serta memastikan keputusan investasi yang informasional dan sesuai dengan nilai-nilai perusahaan.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_10",
+    "type": "term_to_define",
+    "original_context": "dengan konsep phygital (physical + digital) banking yang mengintegrasikan self-service banking machines, video banking facilities, dan co-working spaces untuk nasabah SME.",
+    "generated_content": "Phygital adalah konsep yang menggabungkan pengalaman fisik dan digital secara terintegrasi untuk memberikan layanan yang lebih efisien dan fleksibel. Dalam konteks perbankan, phygital banking mengacu pada penggabungan layanan fisik seperti mesin self-service, fasilitas video banking, dan ruang kerja bersama dengan teknologi digital untuk memenuhi kebutuhan nasabah, khususnya pelaku usaha kecil dan menengah (SME).",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_7",
+    "type": "term_to_define",
+    "original_context": "dengan implementasi Active-Active configuration untuk memastikan 99,99% uptime availability",
+    "generated_content": "Active-Active configuration adalah arsitektur sistem di mana dua atau lebih server atau data center beroperasi secara bersamaan dan berbagi beban kerja secara real-time. Konfigurasi ini dirancang untuk meningkatkan ketersediaan layanan, sehingga jika salah satu komponen mengalami gangguan, komponen lain tetap dapat melayani permintaan tanpa downtime. Dengan pendekatan ini, uptime availability yang tinggi, seperti 99,99%, dapat dicapai karena tidak ada satu titik kegagalan (single point of failure).",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_14",
+    "type": "term_to_define",
+    "original_context": "pengembangan infrastruktur teknologi informasi berbasis cloud computing dengan arsitektur Zero Trust Security Framework",
+    "generated_content": "Zero Trust Security Framework adalah pendekatan keamanan siber yang mengasumsikan bahwa tidak ada pengguna atau perangkat, baik di dalam maupun di luar jaringan organisasi, yang dapat dipercaya secara otomatis. Dalam kerangka ini, setiap permintaan akses ke sumber daya cloud computing harus diverifikasi, divalidasi, dan diawasi secara ketat menggunakan prinsip \"never trust, always verify.\" Framework ini bertujuan meminimalkan risiko kebocoran data dan serangan siber dengan menerapkan kontrol akses yang ketat dan segmentasi jaringan.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_15",
+    "type": "term_to_define",
+    "original_context": "Perseroan menghadapi structural liquidity risk yang inherent dalam bisnis perbankan dimana terdapat maturity mismatch antara aset ... dan liabilitas ...",
+    "generated_content": "Structural liquidity risk adalah risiko yang timbul akibat ketidaksesuaian jatuh tempo antara aset dan liabilitas bank, di mana aset umumnya berjangka waktu lebih panjang dibandingkan liabilitas. Risiko ini dapat menyebabkan bank kesulitan memenuhi kewajiban likuiditasnya jika terjadi penarikan dana secara besar-besaran, karena aset tidak dapat segera dicairkan tanpa menimbulkan kerugian.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_12",
+    "type": "term_to_define",
+    "original_context": "Dengan penerbitan Obligasi Subordinasi ini, proforma DER akan meningkat menjadi 7,79x namun tetap manageable mengingat Obligasi Subordinasi dapat diperhitungkan sebagai komponen Modal Pelengkap (Tier 2 Capital)...",
+    "generated_content": "Obligasi Subordinasi adalah surat utang yang diterbitkan oleh perusahaan, terutama bank, yang memiliki prioritas klaim lebih rendah dibandingkan utang lain jika terjadi likuidasi. Dalam konteks perbankan, obligasi ini dapat dihitung sebagai Modal Pelengkap (Tier 2 Capital) apabila memenuhi persyaratan regulator, sehingga membantu memperkuat struktur permodalan bank. Namun, pemegang obligasi subordinasi menanggung risiko lebih tinggi karena pembayaran kembali baru dilakukan setelah seluruh kewajiban senior dilunasi.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_13",
+    "type": "term_to_define",
+    "original_context": "Keputusan Dewan Komisioner OJK No. KEP-123/D.03/2019 tanggal 15 Mei 2019 dan telah terdaftar serta diawasi oleh OJK",
+    "generated_content": "OJK adalah singkatan dari Otoritas Jasa Keuangan, yaitu lembaga negara yang independen dan bertugas mengatur, mengawasi, memeriksa, dan melindungi seluruh kegiatan di sektor jasa keuangan di Indonesia. OJK memiliki wewenang untuk memberikan izin usaha, melakukan pengawasan, serta menetapkan peraturan di bidang perbankan, pasar modal, dan industri keuangan non-bank.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_17",
+    "type": "term_to_define",
+    "original_context": "forced liquidation dalam stressed market conditions dapat mengakibatkan mark-to-market losses terutama untuk securities dalam Available for Sale (\"AFS\") portfolio",
+    "generated_content": "Mark-to-market losses adalah kerugian yang timbul ketika nilai pasar suatu aset, seperti sekuritas dalam portofolio Available for Sale (AFS), turun di bawah nilai tercatatnya. Dalam kondisi pasar yang tertekan, forced liquidation dapat memperbesar kerugian ini karena aset harus dijual pada harga pasar yang lebih rendah dari nilai perolehan atau nilai buku.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_16",
+    "type": "term_to_define",
+    "original_context": "menunjukkan Recovery Time Objective (\"RTO\") 4 jam dan Recovery Point Objective (\"RPO\") 1 jam untuk critical systems",
+    "generated_content": "Recovery Time Objective (RTO) adalah batas maksimum waktu yang diperbolehkan untuk memulihkan dan mengembalikan sistem atau layanan ke kondisi operasional setelah terjadi gangguan. Dalam konteks ini, RTO 4 jam berarti critical systems harus sudah kembali beroperasi paling lambat 4 jam setelah terjadi insiden atau gangguan.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_18",
+    "type": "term_to_define",
+    "original_context": "mengindikasikan deteriorating unit economics yang dapat mempengaruhi long-term profitability",
+    "generated_content": "Unit economics adalah analisis pendapatan dan biaya yang terkait dengan satu unit produk atau layanan yang dijual perusahaan. Dalam konteks bisnis, unit economics digunakan untuk menilai profitabilitas setiap pelanggan atau transaksi secara individual. Deteriorating unit economics berarti biaya untuk memperoleh dan melayani pelanggan meningkat lebih cepat dibandingkan pendapatan yang dihasilkan per pelanggan, sehingga dapat berdampak negatif pada profitabilitas jangka panjang perusahaan.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_19",
+    "type": "term_to_define",
+    "original_context": "Kredit Multi Guna (\"KMG\") dengan agunan properti yang menggunakan Distributed Ledger Technology (\"DLT\") untuk proses verifikasi dokumen agunan.",
+    "generated_content": "Distributed Ledger Technology (DLT) adalah sistem pencatatan digital terdesentralisasi yang memungkinkan data disimpan secara aman dan transparan di berbagai lokasi atau node dalam jaringan. Dalam konteks verifikasi dokumen agunan, DLT memastikan integritas, keaslian, dan keterlacakan dokumen melalui mekanisme konsensus tanpa memerlukan otoritas pusat.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_22",
+    "type": "term_to_define",
+    "original_context": "investor institusi dapat melakukan pemesanan langsung kepada Lead Underwriter dengan minimum subscription amount sebesar Rp10 miliar untuk Seri A dan B, serta Rp5 miliar untuk Seri C.",
+    "generated_content": "Lead Underwriter adalah penjamin emisi utama yang bertanggung jawab memimpin dan mengoordinasikan proses penawaran umum efek, termasuk penentuan harga, alokasi, dan distribusi saham kepada investor. Dalam konteks penawaran umum, Lead Underwriter juga menjadi pihak utama yang menerima pemesanan langsung dari investor institusi sesuai ketentuan minimum pemesanan yang ditetapkan.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_20",
+    "type": "term_to_define",
+    "original_context": "SDI telah memperoleh izin usaha sebagai Perantara Pedagang Efek, Penjamin Emisi Efek dan Manajer Investasi...",
+    "generated_content": "Perantara Pedagang Efek adalah pihak yang melakukan kegiatan usaha jual beli Efek untuk kepentingan sendiri atau pihak lain. Dalam konteks pasar modal, Perantara Pedagang Efek bertindak sebagai perantara antara investor dengan pasar untuk melakukan transaksi Efek seperti saham dan obligasi. Perusahaan yang berperan sebagai Perantara Pedagang Efek wajib memiliki izin usaha dari otoritas yang berwenang.",
+    "confidence_score": 0.8,
+    "status": "pending"
+  },
+  {
+    "id": "term_23",
+    "type": "term_to_define",
+    "original_context": "bancassurance yang bekerjasama dengan 7 perusahaan asuransi terkemuka",
+    "generated_content": "Bancassurance adalah kerja sama antara bank dan perusahaan asuransi dalam memasarkan produk asuransi melalui jaringan distribusi bank. Dalam konteks ini, bank bertindak sebagai perantara yang menawarkan produk asuransi dari beberapa perusahaan asuransi terkemuka kepada nasabahnya.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_21",
+    "type": "term_to_define",
+    "original_context": "Current data governance maturity assessment menempatkan Perseroan pada level 3 (Defined) dari 5 levels, masih memerlukan significant improvement untuk mencapai level 5 (Optimized).",
+    "generated_content": "Data governance maturity assessment adalah proses evaluasi tingkat kematangan tata kelola data dalam suatu organisasi berdasarkan kerangka kerja tertentu. Penilaian ini mengukur sejauh mana kebijakan, prosedur, dan praktik pengelolaan data telah diterapkan secara konsisten dan efektif. Hasilnya digunakan untuk mengidentifikasi area yang perlu ditingkatkan agar organisasi dapat memenuhi standar tata kelola data yang optimal, termasuk kepatuhan terhadap regulasi seperti UU Perlindungan Data Pribadi.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_24",
+    "type": "term_to_define",
+    "original_context": "SDI telah berpengalaman sebagai Penjamin Pelaksana Emisi Efek untuk 47 transaksi IPO dan penerbitan obligasi",
+    "generated_content": "Penjamin Pelaksana Emisi Efek adalah pihak yang bertanggung jawab untuk membantu emiten dalam proses penawaran umum efek, seperti saham atau obligasi, kepada masyarakat. Tugas utamanya meliputi penjaminan atas terjualnya efek yang ditawarkan dan pelaksanaan distribusi efek tersebut kepada investor sesuai ketentuan yang berlaku.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_25",
+    "type": "term_to_define",
+    "original_context": "Efek Bersifat Utang dan/atau Sukuk sebagaimana telah diubah dengan Peraturan OJK No. 14/POJK.04/2019.",
+    "generated_content": "Sukuk adalah surat berharga syariah yang mewakili kepemilikan atas aset, proyek, atau investasi tertentu yang sesuai dengan prinsip syariah. Dalam konteks pasar modal Indonesia, sukuk diterbitkan sebagai alternatif pembiayaan yang tidak mengandung unsur riba, gharar, dan maisir, serta tunduk pada peraturan OJK dan Standar Akuntansi Keuangan yang berlaku.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_27",
+    "type": "term_to_define",
+    "original_context": "CMN memiliki izin usaha sebagai Penjamin Emisi Efek dan Perantara Pedagang Efek berdasarkan SK OJK No. KEP-567/D.04/2012.",
+    "generated_content": "Penjamin Emisi Efek adalah pihak yang membantu emiten dalam melakukan penawaran umum efek kepada masyarakat, termasuk menanggung risiko apabila sebagian efek yang ditawarkan tidak seluruhnya terjual. Penjamin Emisi Efek bertanggung jawab untuk memastikan proses penawaran berjalan sesuai ketentuan dan dapat bertindak sebagai penjamin penuh (full commitment) atau penjamin terbaik (best effort).",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_26",
+    "type": "term_to_define",
+    "original_context": "PT Bank Kustodian Sentral (\"BKS\") ditunjuk sebagai Wali Amanat berdasarkan Akta Perjanjian Perwaliamanatan Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 PT Bank Digital Nusantara Tbk.",
+    "generated_content": "Wali Amanat adalah pihak yang mewakili kepentingan pemegang obligasi dalam rangka penerbitan dan pelaksanaan perjanjian obligasi. Wali Amanat bertugas mengawasi, memastikan, dan melindungi hak-hak pemegang obligasi sesuai dengan perjanjian yang telah disepakati antara penerbit obligasi dan pemegang obligasi.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_29",
+    "type": "term_to_define",
+    "original_context": "proprietary yang memungkinkan nasabah melakukan transaksi perbankan secara real-time melalui berbagai kanal digital",
+    "generated_content": "Proprietary dalam konteks perbankan merujuk pada sistem, platform, atau teknologi yang dikembangkan dan dimiliki secara eksklusif oleh suatu bank atau institusi keuangan. Sistem proprietary ini memungkinkan nasabah melakukan transaksi perbankan secara real-time melalui berbagai kanal digital seperti aplikasi mobile, internet banking, dan jaringan ATM yang terintegrasi dengan jaringan ATM nasional.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_28",
+    "type": "term_to_define",
+    "original_context": "specializes dalam structured finance dan complex debt transactions",
+    "generated_content": "Structured finance adalah bidang keuangan yang berfokus pada perancangan instrumen dan transaksi keuangan yang kompleks untuk memenuhi kebutuhan pembiayaan khusus, di luar produk pinjaman konvensional. Biasanya melibatkan sekuritisasi aset, pembentukan entitas khusus (special purpose vehicle/SPV), dan penggunaan berbagai lapisan utang untuk mengelola risiko dan meningkatkan efisiensi pembiayaan.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_31",
+    "type": "term_to_define",
+    "original_context": "Termasuk saham yang dialokasikan melalui program ESOP sebanyak 125.000.000 saham",
+    "generated_content": "ESOP (Employee Stock Ownership Plan) adalah program kepemilikan saham oleh karyawan yang memungkinkan perusahaan mengalokasikan saham kepada karyawannya sebagai bagian dari kompensasi atau insentif. Melalui ESOP, karyawan dapat memiliki sebagian kepemilikan di perusahaan, yang bertujuan meningkatkan motivasi dan loyalitas.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_30",
+    "type": "term_to_define",
+    "original_context": "platform digital yang terintegrasi dengan sistem Application Programming Interface (\"API\") Gateway",
+    "generated_content": "Application Programming Interface (\"API\") Gateway adalah sistem perantara yang mengelola lalu lintas data antara berbagai aplikasi atau layanan melalui API. Dalam konteks platform digital, API Gateway memungkinkan integrasi dan komunikasi yang efisien, aman, serta terpusat antara sistem internal dan eksternal. API Gateway juga dapat menyediakan fungsi tambahan seperti autentikasi, otorisasi, pemantauan, dan pembatasan akses.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_32",
+    "type": "term_to_define",
+    "original_context": "total consolidated assets lebih dari Rp45 triliun",
+    "generated_content": "Consolidated assets adalah total aset yang dimiliki oleh suatu grup perusahaan setelah dilakukan konsolidasi laporan keuangan induk dan seluruh entitas anaknya. Nilai ini mencerminkan jumlah keseluruhan aset yang dikendalikan oleh grup secara kolektif, dengan mengeliminasi transaksi antar perusahaan dalam grup tersebut.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_33",
+    "type": "term_to_define",
+    "original_context": "PT Sekuritas Digital Indonesia (Penjamin Utama)",
+    "generated_content": "Penjamin Utama adalah pihak yang bertanggung jawab untuk menjamin terlaksananya emisi efek, seperti saham atau obligasi, dalam suatu penawaran umum di pasar modal. Dalam konteks PT Sekuritas Digital Indonesia, Penjamin Utama berperan memastikan seluruh efek yang ditawarkan dapat terjual kepada investor sesuai dengan ketentuan yang berlaku.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_34",
+    "type": "term_to_define",
+    "original_context": "Direktur Utama: Jonathan Sugiarto, MBA",
+    "generated_content": "MBA adalah singkatan dari Master of Business Administration, yaitu gelar magister di bidang manajemen dan administrasi bisnis. Gelar ini umumnya diperoleh setelah menyelesaikan program pendidikan pascasarjana yang berfokus pada pengembangan keterampilan manajerial, kepemimpinan, dan analisis bisnis.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_35",
+    "type": "term_to_define",
+    "original_context": "Direktur: Michael Tandiono, FRM",
+    "generated_content": "FRM adalah singkatan dari Financial Risk Manager, yaitu sertifikasi profesional internasional di bidang manajemen risiko keuangan yang diberikan oleh Global Association of Risk Professionals (GARP). Gelar FRM menunjukkan bahwa pemegangnya memiliki pengetahuan dan keahlian dalam mengidentifikasi, menganalisis, dan mengelola risiko keuangan di berbagai institusi.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "term_36",
+    "type": "term_to_define",
+    "original_context": "diversified revenue streams dengan kontribusi fee-based income mencapai 23% dari total operating income",
+    "generated_content": "Fee-based income adalah pendapatan yang diperoleh bank atau lembaga keuangan dari jasa atau layanan non-penyaluran kredit, seperti biaya administrasi, komisi, dan transaksi. Pendapatan ini bersifat tidak bergantung pada bunga pinjaman, sehingga membantu mendiversifikasi sumber pendapatan perusahaan. Fee-based income memberikan stabilitas tambahan terhadap fluktuasi pendapatan berbasis bunga.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_37",
+    "type": "term_to_define",
+    "original_context": "Berikut adalah jadwal sementara Penawaran Umum Obligasi yang dapat mengalami perubahan sewaktu-waktu sesuai dengan kondisi pasar dan persetujuan dari pihak yang berwenang:",
+    "generated_content": "Penawaran Umum Obligasi adalah kegiatan penawaran dan penjualan obligasi yang dilakukan oleh suatu perusahaan atau entitas kepada masyarakat luas melalui pasar modal. Proses ini dilakukan sesuai dengan peraturan yang berlaku dan biasanya memerlukan persetujuan dari otoritas yang berwenang.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_38",
+    "type": "term_to_define",
+    "original_context": "Bookbuilding dan Price Discovery untuk Investor Institusi",
+    "generated_content": "Bookbuilding adalah proses pengumpulan permintaan (order) dari investor institusi untuk menentukan minat dan harga saham yang akan ditawarkan dalam penawaran umum perdana (IPO) atau penawaran sekuritas lainnya. Melalui bookbuilding, penjamin emisi (underwriter) mengumpulkan indikasi harga dan jumlah saham yang diinginkan investor, sehingga dapat membantu menetapkan harga penawaran yang optimal berdasarkan permintaan pasar.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_39",
+    "type": "term_to_define",
+    "original_context": "Peringkat Korporasi (Corporate Rating): idAA- dengan outlook Stable",
+    "generated_content": "idAA- adalah peringkat kredit yang diberikan oleh PT Pemeringkat Efek Indonesia (PEFINDO) untuk menunjukkan kemampuan sangat kuat suatu korporasi dalam memenuhi komitmen keuangan jangka panjangnya di Indonesia, namun sedikit lebih rendah dari idAA. Simbol “-” menunjukkan posisi terendah dalam kategori idAA. Outlook Stable berarti prospek peringkat tersebut diperkirakan tidak berubah dalam waktu dekat.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "concept_0",
+    "type": "concept_to_simplify",
+    "original_context": "Penerbitan Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 (\"Obligasi\") merupakan bagian integral dari strategi permodalan jangka panjang Perseroan",
+    "generated_content": "Obligasi Subordinasi Berkelanjutan adalah surat utang jangka panjang yang diterbitkan oleh perusahaan, dalam hal ini bank, untuk mendapatkan dana tambahan. Dana dari obligasi ini akan digunakan untuk mendukung rencana pengembangan bisnis bank hingga tahun 2030. Penerbitan obligasi ini juga bertujuan agar bank tetap memiliki cadangan modal yang cukup sesuai aturan yang berlaku. Dengan begitu, bank bisa terus berkembang dan memenuhi standar keamanan keuangan yang ditetapkan oleh regulator.",
+    "confidence_score": 0.9,
+    "status": "pending"
+  },
+  {
+    "id": "term_40",
+    "type": "term_to_define",
+    "original_context": "Peringkat Obligasi (Issue Rating): idA+",
+    "generated_content": "idA+ adalah peringkat obligasi yang diberikan oleh PT Pemeringkat Efek Indonesia (PEFINDO) yang menunjukkan kemampuan emiten untuk memenuhi komitmen keuangan jangka panjang atas efek utang yang diterbitkan dinilai kuat, sedikit di bawah kategori tertinggi. Tanda \"+\" menunjukkan bahwa peringkat tersebut berada pada posisi teratas dalam kategori idA. Peringkat ini mencerminkan risiko gagal bayar yang relatif rendah, meskipun masih dapat dipengaruhi oleh perubahan kondisi ekonomi yang merugikan.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "concept_1",
+    "type": "concept_to_simplify",
+    "original_context": "konsentrasi kredit pada segmen KTA digital yang mencapai 35% dari total portfolio memiliki inherent risk yang lebih tinggi mengingat karakteristik unsecured lending",
+    "generated_content": "Inherent risk pada unsecured lending berarti risiko bawaan yang lebih tinggi karena pinjaman ini tidak dijamin aset atau agunan. Jika banyak kredit diberikan dalam bentuk KTA digital (tanpa jaminan), bank lebih rentan jika peminjam gagal membayar. Risiko ini makin besar karena banyak peminjam adalah generasi muda yang riwayat kreditnya masih terbatas, sehingga sulit menilai kemampuan mereka membayar. Jadi, konsentrasi kredit di segmen ini membuat bank harus lebih waspada terhadap potensi gagal bayar di masa depan.",
+    "confidence_score": 0.85,
+    "status": "pending"
+  },
+  {
+    "id": "concept_3",
+    "type": "concept_to_simplify",
+    "original_context": "20-24 Februari 2025 Masa Penawaran Umum",
+    "generated_content": "Masa Penawaran Umum adalah periode waktu ketika perusahaan menawarkan saham atau obligasi kepada masyarakat untuk pertama kalinya. Pada masa ini, siapa saja yang berminat bisa membeli saham atau obligasi tersebut sesuai ketentuan yang berlaku. Dalam konteks ini, Masa Penawaran Umum berlangsung dari 20 hingga 24 Februari 2025. Setelah periode ini berakhir, penawaran tidak lagi dibuka untuk umum.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  },
+  {
+    "id": "concept_2",
+    "type": "concept_to_simplify",
+    "original_context": "Obligasi Subordinasi tersebut memenuhi kriteria yang dipersyaratkan dalam ketentuan Basel III mengenai loss absorbency features pada point of non-viability.",
+    "generated_content": "Loss absorbency features pada point of non-viability berarti obligasi subordinasi ini bisa digunakan untuk menanggung kerugian bank jika bank mengalami kesulitan keuangan yang sangat serius. Jika bank dianggap sudah tidak mampu lagi bertahan (non-viability), maka nilai obligasi ini bisa dikurangi atau bahkan dihapuskan untuk membantu menstabilkan kondisi bank. Dengan kata lain, investor yang membeli obligasi ini harus siap jika investasinya bisa berkurang nilainya atau hilang sama sekali dalam situasi darurat demi menjaga kelangsungan bank.",
+    "confidence_score": 0.95,
+    "status": "pending"
+  }
+]

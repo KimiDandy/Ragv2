@@ -1,6 +1,4 @@
 venv
 chroma_db
-pipeline_artefacts
 .env
 __pycache__
-artefacts

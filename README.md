@@ -94,7 +94,7 @@ Ada dua mode penyimpanan vektor Chroma:
 - Embedded (default): tidak perlu server terpisah.
 - Server: jalankan chroma sebagai service lalu hubungkan dari aplikasi.
 
-Opsi Server (opsional):
+Opsi Server:
 ```bash
 # Jalankan bila CHROMA_MODE=server
 # Gunakan port berbeda dari app FastAPI (8001 disarankan)

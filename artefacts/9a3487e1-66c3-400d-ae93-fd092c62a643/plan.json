@@ -1,0 +1,772 @@
+{
+  "terms_to_define": [
+    {
+      "term": "Employee Stock Option Program (ESOP)",
+      "original_context": "sehubungan dengan peningkatan modal dasar Perseroan dalam rangka pelaksanaan Employee Stock Option Program (\"ESOP\") Tahap II",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_17",
+          "page": 3,
+          "char_start": 4264,
+          "char_end": 5185,
+          "header_path": [
+            "RINGKASAN PROSPEKTUS"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Capital Adequacy Ratio",
+      "original_context": "dalam rangka mempertahankan Capital Adequacy Ratio (\"CAR\") di atas ketentuan minimum yang dipersyaratkan oleh Basel III Framework dan Peraturan OJK No. 11/POJK.03/2016",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_44",
+          "page": 5,
+          "char_start": 9379,
+          "char_end": 10247,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Compound Annual Growth Rate (CAGR)",
+      "original_context": "asumsi pertumbuhan Dana Pihak Ketiga (\"DPK\") sebesar 35% Compound Annual Growth Rate (\"CAGR\")",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_47",
+          "page": 6,
+          "char_start": 11128,
+          "char_end": 11949,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "microservices architecture",
+      "original_context": "implementasi Next-Generation Core Banking System (\"CBS\") berbasis microservices architecture",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_83",
+          "page": 8,
+          "char_start": 15746,
+          "char_end": 16551,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Liquidity Coverage Ratio (LCR)",
+      "original_context": "Dana ini akan ditempatkan dalam portfolio instrumen likuid berkualitas tinggi sesuai dengan ketentuan Liquidity Coverage Ratio (\"LCR\") dan Net Stable Funding Ratio (\"NSFR\") yang dipersyaratkan dalam Basel III framework.",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_90",
+          "page": 9,
+          "char_start": 19544,
+          "char_end": 20401,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "NPL ratio",
+      "original_context": "Meskipun NPL ratio Perseroan saat ini terjaga di level 1,82% (lebih baik dari rata-rata industri 2,89%)",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_130",
+          "page": 13,
+          "char_start": 27661,
+          "char_end": 28473,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "adverse selection",
+      "original_context": "dapat menimbulkan risiko adverse selection apabila credit underwriting standards dilonggarkan untuk mencapai target volume",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_131",
+          "page": 13,
+          "char_start": 28475,
+          "char_end": 29342,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Active-Active configuration",
+      "original_context": "dengan implementasi Active-Active configuration untuk memastikan 99,99% uptime availability",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_84",
+          "page": 8,
+          "char_start": 16553,
+          "char_end": 17329,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "subordinasi",
+      "original_context": "karakteristik subordinasi dari Obligasi yang menempatkan prioritas pembayarannya di bawah kewajiban senior namun di atas modal saham",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_118",
+          "page": 11,
+          "char_start": 23861,
+          "char_end": 24635,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Advanced Persistent Threats",
+      "original_context": "Cyber threat landscape yang terus evolving dengan sophisticated attack vectors seperti Advanced Persistent Threats (\"APT\"), zero-day exploits, dan AI-powered attacks",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_141",
+          "page": 15,
+          "char_start": 32696,
+          "char_end": 33469,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "phygital",
+      "original_context": "dengan konsep phygital (physical + digital) banking yang mengintegrasikan self-service banking machines, video banking facilities, dan co-working spaces untuk nasabah SME.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_87",
+          "page": 9,
+          "char_start": 18017,
+          "char_end": 18785,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "due diligence process",
+      "original_context": "Due diligence process untuk setiap potential investment akan melibatkan comprehensive assessment terhadap technology capabilities, regulatory compliance, financial sustainability, strategic fit, dan cultural alignment dengan nilai-nilai Perseroan.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_94",
+          "page": 10,
+          "char_start": 21089,
+          "char_end": 21840,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Obligasi Subordinasi",
+      "original_context": "Dengan penerbitan Obligasi Subordinasi ini, proforma DER akan meningkat menjadi 7,79x namun tetap manageable mengingat Obligasi Subordinasi dapat diperhitungkan sebagai komponen Modal Pelengkap (Tier 2 Capital)...",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_113",
+          "page": 11,
+          "char_start": 22849,
+          "char_end": 23576,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        },
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_6",
+          "page": 1,
+          "char_start": 1299,
+          "char_end": 1544,
+          "header_path": [
+            "INFORMASI SINGKAT PENAWARAN"
+          ]
+        },
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_3",
+          "page": 1,
+          "char_start": 728,
+          "char_end": 955,
+          "header_path": [
+            "INFORMASI SINGKAT PENAWARAN"
+          ]
+        },
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_115",
+          "page": 11,
+          "char_start": 23594,
+          "char_end": 23743,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        },
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_7",
+          "page": 1,
+          "char_start": 1546,
+          "char_end": 2098,
+          "header_path": [
+            "INFORMASI SINGKAT PENAWARAN"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "OJK",
+      "original_context": "Keputusan Dewan Komisioner OJK No. KEP-123/D.03/2019 tanggal 15 Mei 2019 dan telah terdaftar serta diawasi oleh OJK",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_18",
+          "page": 3,
+          "char_start": 5187,
+          "char_end": 5910,
+          "header_path": [
+            "RINGKASAN PROSPEKTUS"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Zero Trust Security Framework",
+      "original_context": "pengembangan infrastruktur teknologi informasi berbasis cloud computing dengan arsitektur Zero Trust Security Framework",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_45",
+          "page": 5,
+          "char_start": 10249,
+          "char_end": 10972,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "structural liquidity risk",
+      "original_context": "Perseroan menghadapi structural liquidity risk yang inherent dalam bisnis perbankan dimana terdapat maturity mismatch antara aset ... dan liabilitas ...",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_135",
+          "page": 14,
+          "char_start": 30092,
+          "char_end": 30792,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Recovery Time Objective (RTO)",
+      "original_context": "menunjukkan Recovery Time Objective (\"RTO\") 4 jam dan Recovery Point Objective (\"RPO\") 1 jam untuk critical systems",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_142",
+          "page": 15,
+          "char_start": 33471,
+          "char_end": 34162,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "mark-to-market losses",
+      "original_context": "forced liquidation dalam stressed market conditions dapat mengakibatkan mark-to-market losses terutama untuk securities dalam Available for Sale (\"AFS\") portfolio",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_137",
+          "page": 14,
+          "char_start": 31398,
+          "char_end": 32046,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "unit economics",
+      "original_context": "mengindikasikan deteriorating unit economics yang dapat mempengaruhi long-term profitability",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_145",
+          "page": 15,
+          "char_start": 34814,
+          "char_end": 35448,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Distributed Ledger Technology",
+      "original_context": "Kredit Multi Guna (\"KMG\") dengan agunan properti yang menggunakan Distributed Ledger Technology (\"DLT\") untuk proses verifikasi dokumen agunan.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_25",
+          "page": 4,
+          "char_start": 7001,
+          "char_end": 7634,
+          "header_path": [
+            "RINGKASAN PROSPEKTUS"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Perantara Pedagang Efek",
+      "original_context": "SDI telah memperoleh izin usaha sebagai Perantara Pedagang Efek, Penjamin Emisi Efek dan Manajer Investasi...",
+      "confidence_score": 0.8,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_178",
+          "page": 20,
+          "char_start": 47393,
+          "char_end": 48020,
+          "header_path": [
+            "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "data governance maturity assessment",
+      "original_context": "Current data governance maturity assessment menempatkan Perseroan pada level 3 (Defined) dari 5 levels, masih memerlukan significant improvement untuk mencapai level 5 (Optimized).",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_143",
+          "page": 15,
+          "char_start": 34164,
+          "char_end": 34768,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Lead Underwriter",
+      "original_context": "investor institusi dapat melakukan pemesanan langsung kepada Lead Underwriter dengan minimum subscription amount sebesar Rp10 miliar untuk Seri A dan B, serta Rp5 miliar untuk Seri C.",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_126",
+          "page": 12,
+          "char_start": 26303,
+          "char_end": 26822,
+          "header_path": [
+            "3 Maret 2025"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "bancassurance",
+      "original_context": "bancassurance yang bekerjasama dengan 7 perusahaan asuransi terkemuka",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_27",
+          "page": 4,
+          "char_start": 7706,
+          "char_end": 8210,
+          "header_path": [
+            "RINGKASAN PROSPEKTUS"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Penjamin Pelaksana Emisi Efek",
+      "original_context": "SDI telah berpengalaman sebagai Penjamin Pelaksana Emisi Efek untuk 47 transaksi IPO dan penerbitan obligasi",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_186",
+          "page": 20,
+          "char_start": 48455,
+          "char_end": 48883,
+          "header_path": [
+            "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Sukuk",
+      "original_context": "Efek Bersifat Utang dan/atau Sukuk sebagaimana telah diubah dengan Peraturan OJK No. 14/POJK.04/2019.",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_15",
+          "page": 3,
+          "char_start": 3811,
+          "char_end": 4223,
+          "header_path": [
+            "RINGKASAN PROSPEKTUS"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Wali Amanat",
+      "original_context": "PT Bank Kustodian Sentral (\"BKS\") ditunjuk sebagai Wali Amanat berdasarkan Akta Perjanjian Perwaliamanatan Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 PT Bank Digital Nusantara Tbk.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_211",
+          "page": 22,
+          "char_start": 50631,
+          "char_end": 51041,
+          "header_path": [
+            "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+          ]
+        },
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_12",
+          "page": 2,
+          "char_start": 2253,
+          "char_end": 2291,
+          "header_path": [
+            "INFORMASI SINGKAT PENAWARAN"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Penjamin Emisi Efek",
+      "original_context": "CMN memiliki izin usaha sebagai Penjamin Emisi Efek dan Perantara Pedagang Efek berdasarkan SK OJK No. KEP-567/D.04/2012.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_194",
+          "page": 21,
+          "char_start": 49129,
+          "char_end": 49493,
+          "header_path": [
+            "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "structured finance",
+      "original_context": "specializes dalam structured finance dan complex debt transactions",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_202",
+          "page": 21,
+          "char_start": 49878,
+          "char_end": 50193,
+          "header_path": [
+            "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "proprietary",
+      "original_context": "proprietary yang memungkinkan nasabah melakukan transaksi perbankan secara real-time melalui berbagai kanal digital",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_23",
+          "page": 4,
+          "char_start": 6653,
+          "char_end": 6924,
+          "header_path": [
+            "RINGKASAN PROSPEKTUS"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Application Programming Interface (\"API\") Gateway",
+      "original_context": "platform digital yang terintegrasi dengan sistem Application Programming Interface (\"API\") Gateway",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_22",
+          "page": 3,
+          "char_start": 6426,
+          "char_end": 6651,
+          "header_path": [
+            "RINGKASAN PROSPEKTUS"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "ESOP",
+      "original_context": "Termasuk saham yang dialokasikan melalui program ESOP sebanyak 125.000.000 saham",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_42",
+          "page": 5,
+          "char_start": 9084,
+          "char_end": 9307,
+          "header_path": [
+            "RINGKASAN PROSPEKTUS"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "consolidated assets",
+      "original_context": "total consolidated assets lebih dari Rp45 triliun",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_120",
+          "page": 12,
+          "char_start": 25241,
+          "char_end": 25388,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Penjamin Utama",
+      "original_context": "PT Sekuritas Digital Indonesia (Penjamin Utama)",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_9",
+          "page": 2,
+          "char_start": 2132,
+          "char_end": 2182,
+          "header_path": [
+            "INFORMASI SINGKAT PENAWARAN"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "MBA",
+      "original_context": "Direktur Utama: Jonathan Sugiarto, MBA",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_183",
+          "page": 20,
+          "char_start": 48344,
+          "char_end": 48385,
+          "header_path": [
+            "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "FRM",
+      "original_context": "Direktur: Michael Tandiono, FRM",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_185",
+          "page": 20,
+          "char_start": 48419,
+          "char_end": 48453,
+          "header_path": [
+            "INFORMASI MENGENAI PENJAMIN PELAKSANA EMISI EFEK DAN LEMBAGA PROFESI"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "fee-based income",
+      "original_context": "diversified revenue streams dengan kontribusi fee-based income mencapai 23% dari total operating income",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_119",
+          "page": 11,
+          "char_start": 24637,
+          "char_end": 25239,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Penawaran Umum Obligasi",
+      "original_context": "Berikut adalah jadwal sementara Penawaran Umum Obligasi yang dapat mengalami perubahan sewaktu-waktu sesuai dengan kondisi pasar dan persetujuan dari pihak yang berwenang:",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_122",
+          "page": 12,
+          "char_start": 25428,
+          "char_end": 25601,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Bookbuilding",
+      "original_context": "Bookbuilding dan Price Discovery untuk Investor Institusi",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_124",
+          "page": 12,
+          "char_start": 25746,
+          "char_end": 25822,
+          "header_path": [
+            "5 Februari 2025"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "idAA-",
+      "original_context": "Peringkat Korporasi (Corporate Rating): idAA- dengan outlook Stable",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_116",
+          "page": 11,
+          "char_start": 23745,
+          "char_end": 23815,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "idA+",
+      "original_context": "Peringkat Obligasi (Issue Rating): idA+",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_117",
+          "page": 11,
+          "char_start": 23817,
+          "char_end": 23859,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        }
+      ]
+    }
+  ],
+  "concepts_to_simplify": [
+    {
+      "identifier": "Obligasi Subordinasi Berkelanjutan",
+      "original_context": "Penerbitan Obligasi Subordinasi Berkelanjutan I Tahap III Tahun 2025 (\"Obligasi\") merupakan bagian integral dari strategi permodalan jangka panjang Perseroan",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_44",
+          "page": 5,
+          "char_start": 9379,
+          "char_end": 10247,
+          "header_path": [
+            "PENAWARAN UMUM"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "inherent risk pada unsecured lending",
+      "original_context": "konsentrasi kredit pada segmen KTA digital yang mencapai 35% dari total portfolio memiliki inherent risk yang lebih tinggi mengingat karakteristik unsecured lending",
+      "confidence_score": 0.85,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_130",
+          "page": 13,
+          "char_start": 27661,
+          "char_end": 28473,
+          "header_path": [
+            "FAKTOR-FAKTOR RISIKO"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "loss absorbency features pada point of non-viability",
+      "original_context": "Obligasi Subordinasi tersebut memenuhi kriteria yang dipersyaratkan dalam ketentuan Basel III mengenai loss absorbency features pada point of non-viability.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_113",
+          "page": 11,
+          "char_start": 22849,
+          "char_end": 23576,
+          "header_path": [
+            "TOTAL UTANG"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "Masa Penawaran Umum",
+      "original_context": "20-24 Februari 2025 Masa Penawaran Umum",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "9a3487e1-66c3-400d-ae93-fd092c62a643_125",
+          "page": 12,
+          "char_start": 26057,
+          "char_end": 26096,
+          "header_path": [
+            "17 Februari 2025"
+          ]
+        }
+      ]
+    }
+  ],
+  "inferred_connections": []
+}
