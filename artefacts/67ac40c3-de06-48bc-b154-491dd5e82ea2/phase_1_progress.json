@@ -1,0 +1,13 @@
+{
+  "phase": "phase-1",
+  "status": "done",
+  "document_id": "67ac40c3-de06-48bc-b154-491dd5e82ea2",
+  "segments_total": 30,
+  "preselected": 1,
+  "processed": 0,
+  "token_used": 0,
+  "timeouts": 0,
+  "cache_hits": 0,
+  "finished_at": 1756870558.7934208,
+  "duration_sec": 1.016
+}

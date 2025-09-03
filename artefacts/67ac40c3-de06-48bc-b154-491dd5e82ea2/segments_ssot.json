@@ -1,0 +1,512 @@
+[
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_1",
+    "page": 1,
+    "char": [
+      0,
+      9
+    ],
+    "header_path": [],
+    "text": "Halaman 1",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.1111111111111111,
+    "hash": "sha256:4c70d16c2e98c2bf69484f28c164e39103f00c2697f38b4d493f2cda8967158d"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_2",
+    "page": 1,
+    "char": [
+      11,
+      65
+    ],
+    "header_path": [],
+    "text": "[Kop Surat: Logo Fiktif \"Nusantara Capital Investasi\"]",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:98caf3174eef77f2a50d51e8877e6bd4472da68ef517a5f9799700c0f5205516"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_3",
+    "page": 1,
+    "char": [
+      67,
+      130
+    ],
+    "header_path": [],
+    "text": "PERJANJIAN PEMBUKAAN REKENING EFEK Nomor: PCI/2025/IV/REG-00872",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.14285714285714285,
+    "hash": "sha256:6cb0bb59b1a46123bafcbb8248c9e79bc601ad6925c5ab143e2fc591618a84d4"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_4",
+    "page": 1,
+    "char": [
+      132,
+      276
+    ],
+    "header_path": [],
+    "text": "Perjanjian Pembukaan Rekening Efek (\"Perjanjian\") ini dibuat dan ditandatangani di \nJakarta pada hari ini, Jumat, 18 Juli 2025, oleh dan antara:",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.041666666666666664,
+    "hash": "sha256:d2a9a5e17354898eec83c756efcf9f07bf17831eadaf86526109a94ef22a1292"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_5",
+    "page": 1,
+    "char": [
+      278,
+      556
+    ],
+    "header_path": [],
+    "text": "PT Nusantara Capital Investasi, sebuah Perusahaan Efek yang berkedudukan di \nJakarta Selatan, beralamat di Grand Tower Lt. 42, Jl. Jenderal Sudirman Kav. 55, Jakarta, \ndalam hal ini diwakili secara sah oleh Bpk. Dr. H. S. Nugroho, selanjutnya disebut \nsebagai \"Perusahaan Efek\".",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.014388489208633094,
+    "hash": "sha256:42bdbf3df568988e94ed05cea87a8febca6abd2af5ae44fb53b0f47129040054"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_6",
+    "page": 1,
+    "char": [
+      558,
+      561
+    ],
+    "header_path": [],
+    "text": "dan",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:ec4f2dbb3b140095550c9afbbb69b5d6fd9e814b9da82fad0b34e9fcbe56f1cb"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_7",
+    "page": 1,
+    "char": [
+      563,
+      709
+    ],
+    "header_path": [],
+    "text": "Kimi Dandy Yudanarko, pemegang KTP No. 3509xxxxxxxxxxxx, beralamat di Jl. Jawa No. \n17, Jember, Jawa Timur, selanjutnya disebut sebagai \"Nasabah\".",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0410958904109589,
+    "hash": "sha256:29824ba521b664d532507e16250f596bb21fdd00606bb5a52f6cd3fd0269816c"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_8",
+    "page": 1,
+    "char": [
+      711,
+      956
+    ],
+    "header_path": [],
+    "text": "Pasal 1: Pembukaan Rekening Perusahaan Efek setuju untuk membuka Rekening Efek \natas nama Nasabah untuk tujuan transaksi jual beli Efek di Bursa Efek Indonesia (BEI). \nNasabah akan mendapatkan fasilitas Online Trading melalui platform NCI-Trade.",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.004081632653061225,
+    "hash": "sha256:916168f4c755d01333a63deb3bca2a5c0724cf8a1a68bead6735df57c763f401"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_9",
+    "page": 1,
+    "char": [
+      958,
+      1222
+    ],
+    "header_path": [],
+    "text": "Pasal 2: Setoran Awal Nasabah setuju untuk melakukan setoran awal ke Rekening \nDana Nasabah (RDN) di Bank Mitra yang ditunjuk, yaitu Bank Central Asia (BCA), \nsebesar minimal Rp 5.000.000,- (lima juta rupiah) dalam waktu 3x24 jam setelah \nPerjanjian ini disetujui.",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.041666666666666664,
+    "hash": "sha256:641ebe8e9c2476a5d73712f63dc76011f9e7aced2a90aa4c4724acc99f84b861"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_10",
+    "page": 1,
+    "char": [
+      1224,
+      1575
+    ],
+    "header_path": [],
+    "text": "Pasal 3: Pernyataan dan Jaminan Nasabah Nasabah dengan ini menyatakan bahwa \nseluruh dana yang digunakan untuk transaksi bukan berasal dari tindak pidana \npencucian uang. Nasabah juga memahami segala risiko investasi yang mungkin timbul. \nManajer Investasi (MI) yang bertanggung jawab atas pengelolaan portofolio nasabah \nadalah Ibu A. Wulandari, CFA.",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.002849002849002849,
+    "hash": "sha256:3175bb39cf54c1bcac99ed9250ec6a83be1779d2aba53397491adeb87e7b663e"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_11",
+    "page": 1,
+    "char": [
+      1577,
+      1611
+    ],
+    "header_path": [],
+    "text": "Disetujui dan Ditandatangani oleh:",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:7405f388ea48b44d5900b5d9e9878555841eaa2f17d43da3b0eeb9fbf98782ca"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_12",
+    "page": 1,
+    "char": [
+      1613,
+      1641
+    ],
+    "header_path": [],
+    "text": "(Dr. H. S. Nugroho) Dir. Ut.",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:25a3d243c49a12d0b3488ebf97a88a0c6aac6ea3a464222d1899b6e41cb449a0"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_13",
+    "page": 1,
+    "char": [
+      1643,
+      1673
+    ],
+    "header_path": [],
+    "text": "(Kimi Dandy Yudanarko) Nasabah",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:814046233203300262ee4c7ed20e5836750ba40ecdd014afc10fe1feff2e796e"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_14",
+    "page": 2,
+    "char": [
+      1675,
+      1684
+    ],
+    "header_path": [],
+    "text": "Halaman 2",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.1111111111111111,
+    "hash": "sha256:7ce8bd105e285895c89527b88e45af7e724bcba510f491de5a7c70c006227fc7"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_15",
+    "page": 2,
+    "char": [
+      1686,
+      1740
+    ],
+    "header_path": [],
+    "text": "[Kop Surat: Logo Fiktif \"Nusantara Capital Investasi\"]",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:98caf3174eef77f2a50d51e8877e6bd4472da68ef517a5f9799700c0f5205516"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_16",
+    "page": 2,
+    "char": [
+      1779,
+      1804
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "1. Biaya Transaksi Saham:",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.04,
+    "hash": "sha256:8a4457f4730ffff70eed19b85dda60b6ae8386a05d72df03745899ba4a1ffefe"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_17",
+    "page": 2,
+    "char": [
+      1806,
+      1859
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nKomisi Beli (Fee Beli): 0.15% dari nilai transaksi",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.05660377358490566,
+    "hash": "sha256:2711816b72794e0048c26c3a72b53a25eace18ab5392efe48677cbec07beaf27"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_18",
+    "page": 2,
+    "char": [
+      1861,
+      1914
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nKomisi Jual (Fee Jual): 0.25% dari nilai transaksi",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.05660377358490566,
+    "hash": "sha256:a89b2e099467dbe6357eaa2dff50911516617064956f838b70b5c29be31167fc"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_19",
+    "page": 2,
+    "char": [
+      1916,
+      1935
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "2. Biaya Lain-lain:",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.05263157894736842,
+    "hash": "sha256:574e1097fd0ab55f5fb18a5deb18d0e8a0f8fd884f919ff423a471297ee6593a"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_20",
+    "page": 2,
+    "char": [
+      1937,
+      1995
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nBiaya Kustodian: 0.01% per tahun dari nilai portofolio.",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.05172413793103448,
+    "hash": "sha256:5bb79af10a4c7ded94e8758c9258cb08d6e76d11076fb9cf5fec7b310d72a3e1"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_21",
+    "page": 2,
+    "char": [
+      1997,
+      2047
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nBiaya Transfer Dana: Sesuai ketentuan Bank RDN.",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:f254e37010b010ab133fe418435ab803ef3d75af52536a816846b11db9fd13ff"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_22",
+    "page": 2,
+    "char": [
+      2049,
+      2075
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "3. Kontak Layanan Nasabah:",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.038461538461538464,
+    "hash": "sha256:d24bec835d8d29bab3dbffccf106832d170a280a2da3f7faa98337c3ba7c0a8c"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_23",
+    "page": 2,
+    "char": [
+      2077,
+      2113
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nEmail: support@nusantaracap.co.id",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:e9ca13d3bbd8e243245165f378b2fc1b10ab3f158309488427e26a03af37bd45"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_24",
+    "page": 2,
+    "char": [
+      2115,
+      2141
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nTelepon: (021) 555-0123",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.38461538461538464,
+    "hash": "sha256:e031f5fe9755f7cc00e8388150ff6842314401bbd4a8692ce784f1c2b22148c1"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_25",
+    "page": 2,
+    "char": [
+      2143,
+      2202
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nHubungi Relationship Manager (RM) Anda untuk konsultasi.",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:9f116ad256e2ab4c081460ccbf7e0918f294743ba39cb85c770ac068db77fceb"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_26",
+    "page": 2,
+    "char": [
+      2204,
+      2223
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "4. Pejabat Terkait:",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": false
+    },
+    "numeric_ratio": 0.05263157894736842,
+    "hash": "sha256:b623c22f0b11d905371c0debfadad99f37f79e913064e802cd9c69118c66ec3d"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_27",
+    "page": 2,
+    "char": [
+      2225,
+      2272
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nDirektur Kepatuhan :R. Soeprapto, S.H., M.H.",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:c79b0aa696ae0521186d3eafef8ca16522d31c9a042e754a23fcdf660e987724"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_28",
+    "page": 2,
+    "char": [
+      2274,
+      2305
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "• \nKepala Div Ops: Siti Halimah",
+    "flags": {
+      "contains_entities": false,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:742bd3a8918295e00029e5305eed9a13e2ac0b65d434301aeb0b30f8e82e766d"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_29",
+    "page": 2,
+    "char": [
+      2307,
+      2543
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "CATATAN PENTING: Segala bentuk komunikasi resmi hanya akan dilakukan melalui \nemail terdaftar. Perusahaan Efek tidak bertanggung jawab atas informasi yang diterima \ndari sumber tidak resmi. Semua aktivitas trading akan diawasi oleh OJK.",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.0,
+    "hash": "sha256:de99d1ba4dbdf4585b95dd2d4b97bdac62487e95f06abdad948d9981831e1c6f"
+  },
+  {
+    "id": "67ac40c3-de06-48bc-b154-491dd5e82ea2_30",
+    "page": 2,
+    "char": [
+      2545,
+      2635
+    ],
+    "header_path": [
+      "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+    ],
+    "text": "PT Nusantara Capital Investasi Grand Tower Lt. 42, Jl. Jenderal Sudirman Kav. 55, \nJakarta",
+    "flags": {
+      "contains_entities": true,
+      "is_difficult": true
+    },
+    "numeric_ratio": 0.044444444444444446,
+    "hash": "sha256:cc6b8934bf441ee3c390c787a47cbe22c52dee46f35943c997fa1b357bdb9dd9"
+  }
+]

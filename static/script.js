@@ -8,7 +8,20 @@ const maxPollAttempts = 60;
 let progressTimer = null;
 let progressIntervalMs = 2000;
 
-const API_BASE_URL = window.location.origin;
+const API_BASE_URL = (() => {
+    const origin = window.location.origin || '';
+    // If opened via file:// or unknown, fallback to local API
+    if (!origin.startsWith('http')) return 'http://127.0.0.1:8000';
+    // Normalize localhost to 127.0.0.1 to avoid IPv6 (::1) mismatch on some Windows setups
+    try {
+        const url = new URL(origin);
+        if (url.hostname === 'localhost') {
+            url.hostname = '127.0.0.1';
+            return url.toString().replace(/\/$/, '');
+        }
+    } catch (_) {}
+    return origin;
+})();
 
 
 const uploadContainer = document.getElementById('upload-container');

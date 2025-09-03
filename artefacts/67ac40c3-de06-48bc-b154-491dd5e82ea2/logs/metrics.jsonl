@@ -1,0 +1,4 @@
+{"ts": "2025-09-03T03:35:57.777Z", "doc_id": "67ac40c3-de06-48bc-b154-491dd5e82ea2", "phase": "phase-1", "event": "start", "values": {"total": 30, "preselected": 1}, "meta": {}}
+{"ts": "2025-09-03T03:35:57.778Z", "doc_id": "67ac40c3-de06-48bc-b154-491dd5e82ea2", "phase": "phase-1", "event": "start", "values": {"total": 1}, "meta": {}}
+{"ts": "2025-09-03T03:35:57.780Z", "doc_id": "67ac40c3-de06-48bc-b154-491dd5e82ea2", "phase": "phase-1", "event": "end", "values": {"token_used": 0, "cache_hits": 0, "timeouts": 0, "processed": 0, "total_candidates": 1}, "meta": {}}
+{"ts": "2025-09-03T03:35:58.793Z", "doc_id": "67ac40c3-de06-48bc-b154-491dd5e82ea2", "phase": "phase-1", "event": "end", "values": {"processed": 0, "total": 1}, "meta": {}}
