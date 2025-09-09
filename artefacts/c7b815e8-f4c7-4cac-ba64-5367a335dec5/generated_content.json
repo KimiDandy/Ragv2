@@ -1,0 +1,41 @@
+{
+  "terms_to_define": [
+    {
+      "term": "Rekening Efek",
+      "definition": "Rekening Efek adalah rekening yang dibuka oleh Nasabah pada Perusahaan Efek untuk mencatat kepemilikan dan transaksi Efek, seperti saham atau obligasi, di Bursa Efek Indonesia (BEI). Rekening ini digunakan sebagai sarana administrasi dan penyimpanan Efek yang diperdagangkan oleh Nasabah melalui Perusahaan Efek."
+    },
+    {
+      "term": "CFA",
+      "definition": "CFA (Chartered Financial Analyst) adalah gelar profesional internasional di bidang keuangan dan investasi yang diberikan oleh CFA Institute. Gelar ini menunjukkan bahwa pemegangnya telah lulus serangkaian ujian ketat dan memenuhi persyaratan pengalaman kerja di bidang analisis keuangan dan manajemen investasi."
+    },
+    {
+      "term": "Rekening Dana Nasabah (RDN)",
+      "definition": "Rekening Dana Nasabah (RDN) adalah rekening bank atas nama nasabah yang dibuka di bank mitra yang ditunjuk oleh perusahaan sekuritas. RDN digunakan khusus untuk menampung dana milik nasabah yang akan digunakan dalam transaksi efek di pasar modal, seperti pembelian atau penjualan saham."
+    },
+    {
+      "term": "Perusahaan Efek",
+      "definition": "Perusahaan Efek adalah badan usaha yang telah memperoleh izin usaha dari Otoritas Jasa Keuangan (OJK) untuk menjalankan kegiatan sebagai perantara pedagang efek, penjamin emisi efek, dan/atau manajer investasi di pasar modal. Perusahaan ini berperan sebagai perantara antara investor dan pasar modal dalam transaksi jual beli efek serta layanan terkait lainnya."
+    },
+    {
+      "term": "OJK",
+      "definition": "OJK adalah singkatan dari Otoritas Jasa Keuangan, yaitu lembaga independen yang bertugas mengatur dan mengawasi sektor jasa keuangan di Indonesia, termasuk perbankan, pasar modal, dan industri keuangan non-bank. OJK bertujuan untuk menjaga stabilitas sistem keuangan serta melindungi kepentingan konsumen dan masyarakat."
+    },
+    {
+      "term": "Relationship Manager (RM)",
+      "definition": "Relationship Manager (RM) adalah seorang profesional yang bertugas membangun dan memelihara hubungan antara perusahaan, khususnya institusi keuangan, dengan nasabah atau klien. RM berperan sebagai penghubung utama, memberikan layanan konsultasi, solusi keuangan, serta membantu memenuhi kebutuhan dan tujuan nasabah."
+    },
+    {
+      "term": "Kustodian",
+      "definition": "Kustodian adalah lembaga atau pihak yang bertanggung jawab menyimpan, mengadministrasikan, dan menjaga keamanan aset atau portofolio investasi milik nasabah. Dalam konteks investasi, kustodian juga melakukan pencatatan transaksi, penyelesaian efek, serta pelaporan kepemilikan aset."
+    },
+    {
+      "term": "Bank RDN",
+      "definition": "Bank RDN adalah bank yang ditunjuk untuk membuka dan mengelola Rekening Dana Nasabah (RDN), yaitu rekening khusus milik nasabah di pasar modal. Bank RDN bertugas menampung, menyimpan, dan memfasilitasi transaksi dana nasabah terkait aktivitas investasi sesuai ketentuan yang berlaku. Biaya dan layanan yang dikenakan mengikuti kebijakan masing-masing Bank RDN."
+    },
+    {
+      "term": "Komisi Beli",
+      "definition": "Komisi Beli adalah biaya yang dikenakan kepada investor setiap kali melakukan pembelian efek atau saham melalui perusahaan sekuritas. Besaran komisi ini biasanya dinyatakan sebagai persentase dari nilai transaksi, misalnya 0,15% dari total pembelian. Komisi ini merupakan salah satu sumber pendapatan bagi perusahaan sekuritas."
+    }
+  ],
+  "concepts_to_simplify": []
+}

@@ -1,0 +1,11 @@
+{
+  "total_items": 9,
+  "processed": 9,
+  "llm_calls": 9,
+  "duration_sec": 12.079612731933594,
+  "p50_latency_sec": 4.616271734237671,
+  "p95_latency_sec": 7.697546005249023,
+  "token_budget_used": 3055,
+  "token_budget_total": 50000,
+  "percent": 1.0
+}
