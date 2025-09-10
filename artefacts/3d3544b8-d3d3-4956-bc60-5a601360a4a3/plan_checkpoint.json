@@ -1,0 +1,117 @@
+{
+  "terms_to_define": [
+    {
+      "term": "CFA",
+      "original_context": "Manajer Investasi (MI) yang bertanggung jawab atas pengelolaan portofolio nasabah adalah Ibu A. Wulandari, CFA.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "3d3544b8-d3d3-4956-bc60-5a601360a4a3_10",
+          "page": 1,
+          "char_start": 1224,
+          "char_end": 1575,
+          "header_path": []
+        }
+      ]
+    },
+    {
+      "term": "Perusahaan Efek",
+      "original_context": "PT Nusantara Capital Investasi, sebuah Perusahaan Efek yang berkedudukan di Jakarta Selatan",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "3d3544b8-d3d3-4956-bc60-5a601360a4a3_5",
+          "page": 1,
+          "char_start": 278,
+          "char_end": 556,
+          "header_path": []
+        }
+      ]
+    },
+    {
+      "term": "Rekening Dana Nasabah (RDN)",
+      "original_context": "setoran awal ke Rekening Dana Nasabah (RDN) di Bank Mitra yang ditunjuk",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "3d3544b8-d3d3-4956-bc60-5a601360a4a3_9",
+          "page": 1,
+          "char_start": 958,
+          "char_end": 1222,
+          "header_path": []
+        }
+      ]
+    },
+    {
+      "term": "Rekening Efek",
+      "original_context": "Perusahaan Efek setuju untuk membuka Rekening Efek atas nama Nasabah untuk tujuan transaksi jual beli Efek di Bursa Efek Indonesia (BEI).",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "3d3544b8-d3d3-4956-bc60-5a601360a4a3_8",
+          "page": 1,
+          "char_start": 711,
+          "char_end": 956,
+          "header_path": []
+        },
+        {
+          "segment_id": "3d3544b8-d3d3-4956-bc60-5a601360a4a3_3",
+          "page": 1,
+          "char_start": 67,
+          "char_end": 130,
+          "header_path": []
+        }
+      ]
+    },
+    {
+      "term": "OJK",
+      "original_context": "Semua aktivitas trading akan diawasi oleh OJK.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "3d3544b8-d3d3-4956-bc60-5a601360a4a3_29",
+          "page": 2,
+          "char_start": 2307,
+          "char_end": 2543,
+          "header_path": [
+            "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Relationship Manager (RM)",
+      "original_context": "Hubungi Relationship Manager (RM) Anda untuk konsultasi.",
+      "confidence_score": 0.95,
+      "provenances": [
+        {
+          "segment_id": "3d3544b8-d3d3-4956-bc60-5a601360a4a3_25",
+          "page": 2,
+          "char_start": 2143,
+          "char_end": 2202,
+          "header_path": [
+            "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "Bank RDN",
+      "original_context": "Sesuai ketentuan Bank RDN.",
+      "confidence_score": 0.9,
+      "provenances": [
+        {
+          "segment_id": "3d3544b8-d3d3-4956-bc60-5a601360a4a3_21",
+          "page": 2,
+          "char_start": 1997,
+          "char_end": 2047,
+          "header_path": [
+            "LAMPIRAN A: STRUKTUR BIAYA & KOMISI"
+          ]
+        }
+      ]
+    }
+  ],
+  "concepts_to_simplify": [],
+  "inferred_connections": []
+}
