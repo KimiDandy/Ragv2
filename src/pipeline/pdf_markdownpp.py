@@ -139,18 +139,37 @@ def _ocr_image_to_text(img_path: Path) -> str:
     if pytesseract is None or Image is None:
         return ""
     try:
+        # Try to fix Windows Tesseract PATH issue
+        import shutil
+        if not shutil.which("tesseract"):
+            # Common Windows Tesseract locations
+            possible_paths = [
+                r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+                r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe",
+                r"C:\Users\{}\AppData\Local\Programs\Tesseract-OCR\tesseract.exe".format(os.environ.get("USERNAME", "")),
+            ]
+            for path in possible_paths:
+                if os.path.exists(path):
+                    pytesseract.pytesseract.tesseract_cmd = path
+                    logger.info(f"[PDF++] Found Tesseract at: {path}")
+                    break
+        
         img = Image.open(img_path)
         # Light pre-processing could be added here
         text = pytesseract.image_to_string(img, lang="eng+ind")
         return _norm_spaces(text)
-    except Exception:
+    except Exception as e:
+        logger.warning(f"[PDF++] Tesseract OCR failed: {e}")
         return ""
 
 
 def _gpt4o_describe_image(img_path: Path, api_key: str) -> str:
     """GPT-4o mini vision: comprehensive detailed description for figures/charts."""
     if not api_key:
+        logger.warning("[PDF++] GPT-4o: No API key provided")
         return ""
+    
+    logger.info(f"[PDF++] GPT-4o: Starting analysis of {img_path}")
     try:
         import base64
         from openai import OpenAI
@@ -158,6 +177,8 @@ def _gpt4o_describe_image(img_path: Path, api_key: str) -> str:
         
         with open(img_path, "rb") as f:
             img_data = base64.b64encode(f.read()).decode("utf-8")
+        
+        logger.info(f"[PDF++] GPT-4o: Image encoded, size: {len(img_data)} chars")
         
         try:
             resp = client.chat.completions.create(
@@ -191,10 +212,14 @@ Write in Indonesian. Be thorough and precise - this description will be used by 
                 max_tokens=800,
                 temperature=0.1,
             )
-            return (resp.choices[0].message.content or "").strip()
-        except Exception:
+            result = (resp.choices[0].message.content or "").strip()
+            logger.info(f"[PDF++] GPT-4o: Success, response length: {len(result)}")
+            return result
+        except Exception as e:
+            logger.error(f"[PDF++] GPT-4o API call failed: {e}")
             return ""
-    except Exception:
+    except Exception as e:
+        logger.error(f"[PDF++] GPT-4o setup failed: {e}")
         return ""
 
 
@@ -217,7 +242,15 @@ def process_pdf_markdownpp(pdf_path: str, mode: str = "basic", doc_id: Optional[
     for d in (pages_dir, tables_dir, figures_dir, meta_dir):
         d.mkdir(parents=True, exist_ok=True)
 
+    # Load API key if needed for smart mode
+    api_key = os.environ.get("OPENAI_API_KEY") if mode == "smart" else None
+    
     logger.info(f"[PDF++] Start conversion: {pdf_path} -> {doc_dir}")
+    logger.info(f"[PDF++] Mode: {mode}")
+    logger.info(f"[PDF++] Tesseract available: {pytesseract is not None}")
+    logger.info(f"[PDF++] API key loaded: {'Yes' if api_key else 'No'}")
+    if mode == "smart" and not api_key:
+        logger.warning("[PDF++] Smart mode requested but no API key available")
 
     try:
         doc = fitz.open(pdf_path)
@@ -240,8 +273,6 @@ def process_pdf_markdownpp(pdf_path: str, mode: str = "basic", doc_id: Optional[
 
     # Document-level heading path stack
     heading_stack: List[str] = []
-
-    api_key = os.environ.get("OPENAI_API_KEY") if mode == "smart" else None
 
     for i in range(doc.page_count):
         page = doc.load_page(i)
@@ -273,32 +304,106 @@ def process_pdf_markdownpp(pdf_path: str, mode: str = "basic", doc_id: Optional[
                 else:
                     parts.append(text + "\n\n")
                     section = heading_stack[-1] if heading_stack else ""
-                    units_meta.append(asdict(UnitMetadata(doc_id, page_no, "paragraph", section, bbox)))
-            elif btype == 1:
-                # Figure/image
+                    units_meta.append(asdict(UnitMetadata(doc_id, page_no, "paragraph", section, bbox, panel=section)))
+
+        figure_count = 0
+        for block_no, block in enumerate(blocks):
+            block_type = block.get('type', 'unknown')
+            logger.info(f"[PDF++] Page {page_no} Block {block_no}: type={block_type}, bbox={block.get('bbox', 'no-bbox')}")
+            
+            if "type" in block and block["type"] == 1:  # Image block
+                figure_count += 1
+                bbox = fitz.Rect(block["bbox"])
+                logger.info(f"[PDF++] Found image block on page {page_no}: bbox={bbox}")
                 try:
-                    # Crop image area
-                    rect = fitz.Rect(*bbox)
-                    pix = page.get_pixmap(clip=rect, colorspace=fitz.csRGB)
-                    img_path = figures_dir / f"figure_p{page_no}_{int(rect.x0)}_{int(rect.y0)}.png"
+                    pix = page.get_pixmap(clip=bbox, colorspace=fitz.csRGB)
+                    img_path = figures_dir / f"figure_p{page_no}_{int(bbox.x0)}_{int(bbox.y0)}.png"
                     pix.save(str(img_path))
+                    logger.info(f"[PDF++] Saved image: {img_path}")
+                    
                     # Basic OCR label
-                    alt_text = _ocr_image_to_text(img_path) if pytesseract else ""
+                    alt_text = ""
+                    if pytesseract:
+                        logger.info(f"[PDF++] Running Tesseract OCR on {img_path}")
+                        alt_text = _ocr_image_to_text(img_path)
+                        logger.info(f"[PDF++] Tesseract result: {alt_text[:100]}..." if alt_text else "[PDF++] Tesseract: no text found")
+                    else:
+                        logger.warning("[PDF++] Tesseract not available")
+                    
                     narrative = ""
                     if mode == "smart":
+                        logger.info(f"[PDF++] Running Smart OCR (GPT-4o) on {img_path}")
                         narrative = _gpt4o_describe_image(img_path, api_key)
+                        logger.info(f"[PDF++] GPT-4o result: {narrative[:100]}..." if narrative else "[PDF++] GPT-4o: no result")
+                    
                     # Compose markdown for figure
                     rel = img_path.relative_to(doc_dir).as_posix()
                     web_path = f"/artefacts/{doc_id}/{rel}"
                     parts.append(f"![Gambar halaman {page_no}]({web_path})\n\n")
                     if narrative:
-                        parts.append(narrative + "\n\n")
+                        parts.append(f"**[Smart OCR]** {narrative}\n\n")
                     elif alt_text:
-                        parts.append(f"_{alt_text}_\n\n")
+                        parts.append(f"**[Tesseract OCR]** _{alt_text}_\n\n")
                     section = heading_stack[-1] if heading_stack else ""
                     units_meta.append(asdict(UnitMetadata(doc_id, page_no, "figure", section, bbox)))
-                except Exception:
+                except Exception as e:
+                    logger.error(f"[PDF++] Error processing figure: {e}")
                     continue
+        
+        # Method 2: Alternative image detection using get_images()
+        try:
+            image_list = page.get_images()
+            logger.info(f"[PDF++] Page {page_no}: get_images() found {len(image_list)} images")
+            
+            for img_index, img in enumerate(image_list):
+                if figure_count >= 10:  # Limit to avoid too many images
+                    break
+                try:
+                    # Extract image
+                    xref = img[0]
+                    pix = fitz.Pixmap(doc, xref)
+                    
+                    if pix.n - pix.alpha < 4:  # GRAY or RGB
+                        img_path = figures_dir / f"figure_p{page_no}_img{img_index}.png"
+                        pix.save(str(img_path))
+                        logger.info(f"[PDF++] Extracted image via get_images(): {img_path}")
+                        
+                        # OCR processing
+                        alt_text = ""
+                        if pytesseract:
+                            logger.info(f"[PDF++] Running Tesseract OCR on {img_path}")
+                            alt_text = _ocr_image_to_text(img_path)
+                            logger.info(f"[PDF++] Tesseract result: {alt_text[:100]}..." if alt_text else "[PDF++] Tesseract: no text found")
+                        
+                        narrative = ""
+                        if mode == "smart":
+                            logger.info(f"[PDF++] Running Smart OCR (GPT-4o) on {img_path}")
+                            narrative = _gpt4o_describe_image(img_path, api_key)
+                            logger.info(f"[PDF++] GPT-4o result: {narrative[:100]}..." if narrative else "[PDF++] GPT-4o: no result")
+                        
+                        # Add to markdown
+                        rel = img_path.relative_to(doc_dir).as_posix()
+                        web_path = f"/artefacts/{doc_id}/{rel}"
+                        parts.append(f"![Gambar halaman {page_no} #{img_index}]({web_path})\n\n")
+                        if narrative:
+                            parts.append(f"**[Smart OCR]** {narrative}\n\n")
+                        elif alt_text:
+                            parts.append(f"**[Tesseract OCR]** _{alt_text}_\n\n")
+                        
+                        figure_count += 1
+                        section = heading_stack[-1] if heading_stack else ""
+                        # Use approximate bbox since get_images doesn't provide it
+                        bbox = [0, 0, 100, 100]  
+                        units_meta.append(asdict(UnitMetadata(doc_id, page_no, "figure", section, bbox)))
+                    
+                    pix = None  # Release memory
+                except Exception as e:
+                    logger.error(f"[PDF++] Error extracting image {img_index}: {e}")
+                    continue
+        except Exception as e:
+            logger.error(f"[PDF++] Error in get_images() method: {e}")
+        
+        logger.info(f"[PDF++] Page {page_no}: Total images processed: {figure_count}")
 
         # Tables via Camelot on this page
         tables = _read_tables_with_camelot(pdf_path, page_no)

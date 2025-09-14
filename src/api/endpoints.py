@@ -548,3 +548,51 @@ async def conversion_result(document_id: str):
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Gagal membaca hasil: {e}")
+
+
+@router.get("/debug/ocr-test")
+async def test_ocr_components():
+    """Debug endpoint to test OCR components availability."""
+    import os
+    
+    debug_info = {
+        "tesseract_available": False,
+        "tesseract_path": None,
+        "openai_api_key_set": False,
+        "api_key_length": 0,
+        "system_path": os.environ.get("PATH", "").split(os.pathsep)[:5]  # First 5 PATH entries
+    }
+    
+    # Test Tesseract
+    try:
+        import pytesseract
+        from PIL import Image
+        debug_info["tesseract_available"] = True
+        debug_info["tesseract_path"] = pytesseract.pytesseract.tesseract_cmd
+        
+        # Try to run a simple test
+        try:
+            pytesseract.get_tesseract_version()
+            debug_info["tesseract_working"] = True
+        except Exception as e:
+            debug_info["tesseract_working"] = False
+            debug_info["tesseract_error"] = str(e)
+    except Exception as e:
+        debug_info["tesseract_import_error"] = str(e)
+    
+    # Test OpenAI API key
+    api_key = os.getenv("OPENAI_API_KEY")
+    if api_key:
+        debug_info["openai_api_key_set"] = True
+        debug_info["api_key_length"] = len(api_key)
+        debug_info["api_key_prefix"] = api_key[:10] + "..." if len(api_key) > 10 else api_key
+        
+        # Test OpenAI connection
+        try:
+            from openai import OpenAI
+            client = OpenAI(api_key=api_key)
+            debug_info["openai_client_created"] = True
+        except Exception as e:
+            debug_info["openai_client_error"] = str(e)
+    
+    return debug_info
