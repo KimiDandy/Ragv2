@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genesis-RAG: Document Enhancement</title>
-    <link rel="stylesheet" href="/static/style.css?v=2.4">
+    <link rel="stylesheet" href="/static/style.css?v=2.6">
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
@@ -26,10 +26,41 @@
             <div class="upload-container" id="upload-container">
                 <input type="file" id="file-input" accept=".pdf">
                 <button class="upload-btn" onclick="document.getElementById('file-input').click()">
-                    Pilih File PDF
+                    Pilih File PDF untuk Konversi Markdown++
                 </button>
                 <div class="file-name" id="file-name"></div>
+                <div class="muted" style="margin-top: 10px;">Upload → Pilih Mode → Konversi → Preview</div>
             </div>
+
+            <!-- Mode selection dialog (shown after upload, before processing) -->
+            <section class="card" id="mode-dialog" style="display:none;">
+                <div class="card-header">
+                    <h2>Pilih Mode Konversi</h2>
+                </div>
+                <div class="card-body">
+                    <div class="mode-options">
+                        <label class="toggle">
+                            <input type="radio" name="ocr-mode" id="mode-basic" value="basic" checked>
+                            OCR Biasa (lokal)
+                        </label>
+                        <div class="muted" id="desc-basic">
+                            Teks diekstrak dengan PyMuPDF; tabel dengan Camelot (lattice→stream); gambar hanya label/alt-text via OCR lokal.
+                            Angka selalu dari extractor/OCR tabel. Tidak ada data yang dikirim ke cloud.
+                        </div>
+                        <label class="toggle" style="margin-top:8px;">
+                            <input type="radio" name="ocr-mode" id="mode-smart" value="smart">
+                            Smart OCR (GPT untuk gambar/diagram)
+                        </label>
+                        <div class="muted" id="desc-smart">
+                            Sama seperti mode biasa, namun gambar/diagram penting akan diberi deskripsi naratif singkat via GPT-4o mini.
+                            Hanya cuplikan gambar terkait yang dikirim, angka tetap dari extractor/OCR tabel. Butuh OPENAI_API_KEY.
+                        </div>
+                    </div>
+                    <div class="action-bar" style="margin-top:12px;">
+                        <button id="start-conversion-btn" class="btn btn-primary">Mulai Konversi</button>
+                    </div>
+                </div>
+            </section>
 
             <div class="loading-container" id="loading-container">
                 <div class="spinner"></div>
@@ -94,7 +125,7 @@
                             <label class="toggle"><input type="checkbox" id="toggle-evidence"> Tampilkan Bukti</label>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id="chat-container">
                         <div class="chat-input-area premium">
                             <textarea id="query-input" placeholder="Tanyakan apa pun mengenai dokumen... Contoh: 'Ringkas isi perjanjian halaman 1'"></textarea>
                             <button class="btn btn-primary" id="query-btn">Kirim Pertanyaan</button>
@@ -123,6 +154,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Token usage per query will be injected here by script.js -->
+                            <div id="token-usage-container" class="token-usage-container" style="display:none;"></div>
                         </div>
                     </div>
                 </section>
@@ -130,6 +163,6 @@
         </div>
     </div>
 
-    <script src="/static/script.js?v=2.5"></script>
+    <script src="/static/script.js?v=3.0"></script>
 </body>
 </html>

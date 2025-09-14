@@ -26,6 +26,7 @@ from src.core.config import (
     CHROMA_MODE,
     CHROMA_SERVER_HOST,
     CHROMA_SERVER_PORT,
+    PIPELINE_ARTEFACTS_DIR,
 )
 
 logger.remove()
@@ -89,6 +90,7 @@ app = FastAPI(
 if not os.path.exists("static"):
     os.makedirs("static")
 app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/artefacts", StaticFiles(directory=PIPELINE_ARTEFACTS_DIR), name="artefacts")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

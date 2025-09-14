@@ -12,6 +12,8 @@ from ..core.config import (
     PIPELINE_ARTEFACTS_DIR,
     CHROMA_DB_PATH
 )
+from ..obs.token_ledger import log_tokens
+from ..obs.token_count import count_tokens
 
 
 
@@ -161,7 +163,26 @@ def vectorize_and_store(
         ids.append(f"{doc_id}_{version}_{i}")
 
     logger.info(f"Menambahkan {len(texts)} potongan teks ke vector store Chroma (versi: {version})...")
+    
+    # Track token usage untuk embeddings
+    total_text = " ".join(texts)
+    input_tokens = count_tokens(total_text)
+    
+    # Add texts ke vector store
     vector_store.add_texts(texts=texts, metadatas=metadatas, ids=ids)
+    
+    # Log embedding tokens
+    log_tokens(
+        step="embed",
+        model=EMBEDDING_MODEL,
+        input_tokens=input_tokens,
+        output_tokens=0,  # Embeddings tidak memiliki output tokens
+        phase="phase_4",
+        doc_id=doc_id,
+        version=version,
+        num_chunks=len(texts),
+        total_chars=len(total_text)
+    )
 
     logger.info(f"Fase 4 selesai. Dokumen {doc_id} (versi: {version}) telah divektorisasi dan disimpan.")
     return True

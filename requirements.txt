@@ -16,3 +16,7 @@ tenacity
 redis
 celery
 pydantic-settings
+camelot-py[cv]
+opencv-python-headless
+pytesseract
+Pillow

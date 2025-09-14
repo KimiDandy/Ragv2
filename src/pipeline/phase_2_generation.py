@@ -2,6 +2,7 @@ import json
 import re
 from pathlib import Path
 from langchain_openai import ChatOpenAI
+from langchain_community.callbacks.manager import get_openai_callback
 from loguru import logger
 import time
 import asyncio
@@ -16,6 +17,8 @@ from ..core.config import (
 )
 from ..core.rate_limiter import AsyncLeakyBucket
 from ..core.token_meter import TokenBudget
+from ..obs.token_ledger import log_tokens
+from ..obs.token_count import count_tokens
 
 async def generate_bulk_content(doc_output_dir: str) -> str:
     """
@@ -73,11 +76,45 @@ async def generate_bulk_content(doc_output_dir: str) -> str:
                 async with sem:
                     await limiter.acquire()
                     budget.charge(prompt, max_out=max_out)
-                    resp = await asyncio.wait_for(chat.ainvoke(prompt), timeout=timeout)
-                txt = getattr(resp, "content", None) or str(resp)
-                return txt.strip()
+                    
+                    # Track token usage dengan callback
+                    with get_openai_callback() as cb:
+                        resp = await asyncio.wait_for(chat.ainvoke(prompt), timeout=timeout)
+                    
+                    txt = getattr(resp, "content", None) or str(resp)
+                    
+                    # Log token usage
+                    input_tokens = getattr(cb, 'prompt_tokens', 0)
+                    output_tokens = getattr(cb, 'completion_tokens', 0)
+                    
+                    # Fallback jika callback tidak memberikan token count
+                    if input_tokens == 0 and output_tokens == 0:
+                        input_tokens = count_tokens(prompt)
+                        output_tokens = count_tokens(txt)
+                    
+                    # Log ke token ledger
+                    log_tokens(
+                        step="enhancement",
+                        model=CHAT_MODEL,
+                        input_tokens=input_tokens,
+                        output_tokens=output_tokens,
+                        phase="phase_2",
+                        prompt_length=len(prompt),
+                        response_length=len(txt)
+                    )
+                    
+                    return txt.strip()
             except Exception as e:
                 last_err = e
+                # Log error event
+                log_tokens(
+                    step="enhancement",
+                    model=CHAT_MODEL,
+                    input_tokens=count_tokens(prompt),
+                    output_tokens=0,
+                    phase="phase_2",
+                    error=str(e)
+                )
                 await asyncio.sleep(1.2 * i)
         logger.warning(f"LLM gagal setelah {attempts} percobaan: {last_err}")
         return ""

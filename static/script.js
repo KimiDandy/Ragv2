@@ -1,3 +1,4 @@
+// Cache busters: v3.0 - NEW PDF WORKFLOW
 let currentDocumentId = null;
 let markdownV1 = '';
 let suggestionsState = []; 
@@ -15,6 +16,10 @@ const uploadContainer = document.getElementById('upload-container');
 const loadingContainer = document.getElementById('loading-container');
 const mainLayout = document.getElementById('main-layout');
 const stepperEl = document.getElementById('stepper');
+const modeDialog = document.getElementById('mode-dialog');
+const startConversionBtn = document.getElementById('start-conversion-btn');
+const modeBasic = document.getElementById('mode-basic');
+const modeSmart = document.getElementById('mode-smart');
 
 // Panel 1: Preview
 const v1Rendered = document.getElementById('v1-rendered');
@@ -78,63 +83,252 @@ function renderEvidence(sources, targetEl) {
     if (!targetEl) return;
     targetEl.innerHTML = '';
     if (!Array.isArray(sources) || sources.length === 0) {
-        targetEl.innerHTML = '<div class="muted">Tidak ada evidence.</div>';
+        targetEl.innerHTML = '<div class="muted">Tidak ada evidence dari LangChain.</div>';
         return;
     }
+    
+    // Header untuk evidence
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'evidence-header';
+    headerDiv.innerHTML = `<h4>📄 Dokumen Evidence (${sources.length} chunk)</h4>`;
+    targetEl.appendChild(headerDiv);
+    
     sources.forEach((s, idx) => {
         const item = document.createElement('div');
         item.className = 'evidence-item';
-        const scorePct = Math.round(((s && typeof s.score === 'number') ? s.score : 0) * 100);
+        const hasScore = (s && typeof s.score === 'number' && !Number.isNaN(s.score));
+        const scorePct = hasScore ? Math.round(s.score * 100) : null;
         const meta = s && s.metadata ? s.metadata : {};
-        const metaPairs = Object.entries(meta).slice(0, 6).map(([k,v]) => `${escapeHtml(String(k))}: ${escapeHtml(String(v))}`);
+        
+        // Format metadata yang lebih informatif
+        const relevantMeta = [];
+        if (meta.source_document) relevantMeta.push(`Doc: ${meta.source_document}`);
+        if (meta.version) relevantMeta.push(`Ver: ${meta.version}`);
+        if (meta.page) relevantMeta.push(`Hal: ${meta.page}`);
+        if (meta.chunk_id) relevantMeta.push(`Chunk: ${meta.chunk_id}`);
+        if (meta.char_start && meta.char_end) {
+            relevantMeta.push(`Pos: ${meta.char_start}-${meta.char_end}`);
+        }
+        
         item.innerHTML = `
             <div class="evidence-head">
                 <span class="evidence-rank">#${idx+1}</span>
-                <span class="evidence-score">Skor: ${scorePct}%</span>
+                <span class="evidence-score">Similarity: ${scorePct === null ? '—' : scorePct + '%'}</span>
             </div>
             <div class="evidence-snippet">${escapeHtml(s.snippet || '')}</div>
-            <div class="evidence-meta">${escapeHtml(metaPairs.join(' | '))}</div>
+            <div class="evidence-meta">${escapeHtml(relevantMeta.join(' • '))}</div>
         `;
         targetEl.appendChild(item);
     });
+}
+
+function displayTokenUsage(tokenUsage, version) {
+    // Create or find token usage container
+    let tokenContainer = document.getElementById('token-usage-container');
+    if (!tokenContainer) {
+        tokenContainer = document.createElement('div');
+        tokenContainer.id = 'token-usage-container';
+        tokenContainer.className = 'token-usage-container';
+        
+        // Insert after chat results
+        const chatContainer = document.getElementById('chat-container');
+        if (chatContainer) {
+            chatContainer.appendChild(tokenContainer);
+        }
+    }
+    tokenContainer.style.display = 'block';
+    
+    const versionLabel = version === 'v1' ? 'Original' : 'Enhanced';
+    const inputTokens = tokenUsage.input_tokens || 0;
+    const outputTokens = tokenUsage.output_tokens || 0;
+    const totalTokens = tokenUsage.total_tokens || (inputTokens + outputTokens);
+    
+    tokenContainer.innerHTML = `
+        <div class="token-usage-box">
+            <h4>🔢 Token Usage - ${versionLabel}</h4>
+            <div class="token-stats">
+                <div class="token-stat">
+                    <span class="token-label">Input:</span>
+                    <span class="token-value">${inputTokens.toLocaleString()}</span>
+                </div>
+                <div class="token-stat">
+                    <span class="token-label">Output:</span>
+                    <span class="token-value">${outputTokens.toLocaleString()}</span>
+                </div>
+                <div class="token-stat total">
+                    <span class="token-label">Total:</span>
+                    <span class="token-value">${totalTokens.toLocaleString()}</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function displayTokenUsageComparison(v1Tokens, v2Tokens) {
+    // Create or find token usage container
+    let tokenContainer = document.getElementById('token-usage-container');
+    if (!tokenContainer) {
+        tokenContainer = document.createElement('div');
+        tokenContainer.id = 'token-usage-container';
+        tokenContainer.className = 'token-usage-container';
+        
+        // Insert after chat results
+        const chatContainer = document.getElementById('chat-container');
+        if (chatContainer) {
+            chatContainer.appendChild(tokenContainer);
+        }
+    }
+    
+    const v1Input = v1Tokens.input_tokens || 0;
+    const v1Output = v1Tokens.output_tokens || 0;
+    const v1Total = v1Tokens.total_tokens || (v1Input + v1Output);
+    
+    const v2Input = v2Tokens.input_tokens || 0;
+    const v2Output = v2Tokens.output_tokens || 0;
+    const v2Total = v2Tokens.total_tokens || (v2Input + v2Output);
+    
+    const totalCombined = v1Total + v2Total;
+    
+    tokenContainer.innerHTML = `
+        <div class="token-usage-box comparison">
+            <h4>🔢 Token Usage Comparison</h4>
+            <div class="token-comparison">
+                <div class="token-version">
+                    <h5>Original (v1)</h5>
+                    <div class="token-stats">
+                        <div class="token-stat">
+                            <span class="token-label">Input:</span>
+                            <span class="token-value">${v1Input.toLocaleString()}</span>
+                        </div>
+                        <div class="token-stat">
+                            <span class="token-label">Output:</span>
+                            <span class="token-value">${v1Output.toLocaleString()}</span>
+                        </div>
+                        <div class="token-stat total">
+                            <span class="token-label">Total:</span>
+                            <span class="token-value">${v1Total.toLocaleString()}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="token-version">
+                    <h5>Enhanced (v2)</h5>
+                    <div class="token-stats">
+                        <div class="token-stat">
+                            <span class="token-label">Input:</span>
+                            <span class="token-value">${v2Input.toLocaleString()}</span>
+                        </div>
+                        <div class="token-stat">
+                            <span class="token-label">Output:</span>
+                            <span class="token-value">${v2Output.toLocaleString()}</span>
+                        </div>
+                        <div class="token-stat total">
+                            <span class="token-label">Total:</span>
+                            <span class="token-value">${v2Total.toLocaleString()}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="token-summary">
+                    <div class="token-stat grand-total">
+                        <span class="token-label">Combined Total:</span>
+                        <span class="token-value">${totalCombined.toLocaleString()}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if (file) {
         fileNameDiv.textContent = `File terpilih: ${file.name}`;
-        uploadFile(file);
+        uploadPdf(file);
     }
 });
 
-async function uploadFile(file) {
+async function uploadPdf(file) {
     const formData = new FormData();
     formData.append('file', file);
-
-    uploadContainer.style.display = 'none';
-    loadingContainer.style.display = 'block';
-
     try {
-        const response = await fetch(`${API_BASE_URL}/upload-document/`, {
+        const response = await fetch(`${API_BASE_URL}/upload-pdf`, {
             method: 'POST',
             body: formData
         });
         const data = await response.json();
-        if (!response.ok) {
-            throw new Error(data.detail || 'Gagal mengunggah file');
-        }
+        if (!response.ok) throw new Error(data.detail || 'Gagal mengunggah file');
         currentDocumentId = data.document_id;
-        markdownV1 = data.markdown_content || '';
-        renderV1Preview();
-        loadingContainer.style.display = 'none';
-        mainLayout.style.display = 'flex';
-        setStepperPhase('enhance');
-        setStatus('Siap', 'ready');
-        showMessage('Dokumen berhasil diproses!', 'success');
+        // Tampilkan dialog mode
+        modeDialog.style.display = 'block';
+        showMessage('File terunggah. Pilih mode lalu mulai konversi.', 'success');
     } catch (error) {
         showMessage(`Terjadi kesalahan: ${error.message}`);
         loadingContainer.style.display = 'none';
         uploadContainer.style.display = 'block';
+    }
+}
+
+startConversionBtn?.addEventListener('click', async () => {
+    if (!currentDocumentId) { showMessage('Unggah PDF terlebih dahulu.'); return; }
+    const mode = (modeSmart && modeSmart.checked) ? 'smart' : 'basic';
+    try {
+        // UI states
+        uploadContainer.style.display = 'none';
+        modeDialog.style.display = 'none';
+        loadingContainer.style.display = 'block';
+        setStatus('Berjalan...', 'running');
+        setStepperPhase('enhance');
+
+        const resp = await fetch(`${API_BASE_URL}/start-conversion`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ document_id: currentDocumentId, mode })
+        });
+        const data = await resp.json();
+        if (!resp.ok) throw new Error(data.detail || 'Gagal memulai konversi');
+        pollConversion(currentDocumentId);
+    } catch (err) {
+        showMessage(err.message || 'Gagal memulai konversi');
+        loadingContainer.style.display = 'none';
+        uploadContainer.style.display = 'block';
+        setStatus('Galat', 'error');
+    }
+});
+
+async function pollConversion(docId) {
+    try {
+        const resp = await fetch(`${API_BASE_URL}/conversion-progress/${docId}`);
+        const data = await resp.json();
+        if (resp.ok) {
+            const pct = Math.round(((data && data.percent) ? data.percent : 0) * 100);
+            setStatus(`Berjalan... ${pct}%`, 'running');
+            if ((data.status || '') === 'complete' || pct >= 100) {
+                await loadConversionResult(docId);
+                return;
+            }
+        }
+        setTimeout(() => pollConversion(docId), 1200);
+    } catch (_) {
+        setTimeout(() => pollConversion(docId), 1500);
+    }
+}
+
+async function loadConversionResult(docId) {
+    try {
+        const resp = await fetch(`${API_BASE_URL}/conversion-result/${docId}`);
+        const data = await resp.json();
+        if (!resp.ok) throw new Error(data.detail || 'Gagal mengambil hasil konversi');
+        markdownV1 = data.markdown_content || '';
+        renderV1Preview();
+        loadingContainer.style.display = 'none';
+        mainLayout.style.display = 'flex';
+        setStatus('Siap', 'ready');
+        setStepperPhase('enhance');
+        showMessage('Konversi selesai. Markdown siap!', 'success');
+    } catch (e) {
+        showMessage(e.message || 'Gagal memuat hasil konversi');
+        loadingContainer.style.display = 'none';
+        uploadContainer.style.display = 'block';
+        setStatus('Galat', 'error');
     }
 }
 
@@ -395,6 +589,9 @@ async function askQuestion() {
     if (v2EvidenceList) v2EvidenceList.innerHTML = '';
     if (v1EvidenceCard) v1EvidenceCard.style.display = (version === 'v2') ? 'none' : 'block';
     if (v2EvidenceCard) v2EvidenceCard.style.display = (version === 'v1') ? 'none' : 'block';
+    // Reset token usage UI
+    const tokenBox = document.getElementById('token-usage-container');
+    if (tokenBox) { tokenBox.style.display = 'none'; tokenBox.innerHTML = ''; }
 
     try {
         const response = await fetch(`${API_BASE_URL}/ask/`, {
@@ -415,6 +612,11 @@ async function askQuestion() {
                 enrichedResultDiv.innerHTML = safe;
             }
 
+            // Display token usage untuk query ini
+            if (data.token_usage) {
+                displayTokenUsage(data.token_usage, version);
+            }
+
             if (traceEnabled) {
                 const sources = Array.isArray(data.sources) ? data.sources : [];
                 if (version === 'v1') {
@@ -431,6 +633,11 @@ async function askQuestion() {
             const v2Ans = data.enriched_answer || '';
             unenrichedResultDiv.innerHTML = sanitizeHTML(window.marked ? marked.parse(v1Ans) : escapeHtml(v1Ans));
             enrichedResultDiv.innerHTML = sanitizeHTML(window.marked ? marked.parse(v2Ans) : escapeHtml(v2Ans));
+
+            // Display token usage untuk kedua versi
+            if (data.unenriched_token_usage && data.enriched_token_usage) {
+                displayTokenUsageComparison(data.unenriched_token_usage, data.enriched_token_usage);
+            }
 
             if (traceEnabled) {
                 const uSrc = Array.isArray(data.unenriched_sources) ? data.unenriched_sources : [];

@@ -27,11 +27,17 @@ class RetrievedSource(BaseModel):
     snippet: str
     metadata: dict
 
+class TokenUsage(BaseModel):
+    input_tokens: int
+    output_tokens: int
+    total_tokens: int
+
 class AskSingleVersionResponse(BaseModel):
     answer: str
     version: str
     prompt: str
     sources: List[RetrievedSource]
+    token_usage: TokenUsage | None = None
 
 class AskBothVersionsResponse(BaseModel):
     prompt: str
@@ -39,3 +45,26 @@ class AskBothVersionsResponse(BaseModel):
     enriched_answer: str
     unenriched_sources: List[RetrievedSource]
     enriched_sources: List[RetrievedSource]
+    unenriched_token_usage: TokenUsage | None = None
+    enriched_token_usage: TokenUsage | None = None
+
+# --- PDF→Markdown++ conversion models ---
+
+class UploadPdfResponse(BaseModel):
+    document_id: str
+    file_name: str
+
+class StartConversionRequest(BaseModel):
+    document_id: str
+    mode: str  # 'basic' | 'smart'
+
+class ConversionProgress(BaseModel):
+    status: str
+    percent: float
+    message: str | None = None
+
+class ConversionResult(BaseModel):
+    document_id: str
+    markdown_content: str
+    artefacts: List[str]
+    metadata_path: str | None = None
