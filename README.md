@@ -11,7 +11,7 @@ Sistem RAG standar seringkali gagal menjawab pertanyaan yang membutuhkan pemaham
 | Orkestrasi AI | LangChain |
 | Model AI | OpenAI (Chat + Embeddings via `langchain-openai`) |
 | Database Vektor | ChromaDB (Embedded/Server Mode) |
-| Pemrosesan Dokumen | PyMuPDF (`fitz`) untuk ekstraksi teks & segmentasi |
+| Pemrosesan Dokumen | PyMuPDF (`fitz`), Camelot (tabel), Tesseract OCR (gambar) |
 | Frontend | Vanilla JavaScript, HTML5, CSS3 |
 | Observabilitas | Progress/metrics JSON per fase, Loguru |
 
@@ -218,10 +218,103 @@ Ajukan pertanyaan terhadap versi v1, v2, atau keduanya dari dokumen. Parameter t
 
 ## Metode & Teknik Per Fase
 
-- __[Fase 0: Ekstraksi & Segmentasi]__
-  - Ekstraksi PDF → teks/Markdown dengan PyMuPDF (`fitz`) menghasilkan `markdown_v1.md` dan `full_text.txt`.
-  - Segmentasi paragraf dengan metadata: `segments.json` berisi `segment_id`, `page`, `char_start/end`, `header_path`, `text`, serta sinyal statis `contains_entities`, `is_difficult`, `numeric_ratio` untuk membantu pemilihan kandidat.
-  - Catatan: Pipeline ini text-only; gambar tidak diproses.
+- __[Fase 0: Ekstraksi & Konversi PDF ke Markdown]__
+  
+  **Pipeline PDF→Markdown Multi-Modal dengan Klasifikasi Blok Cerdas**
+  
+  Sistem ekstraksi PDF menggunakan PyMuPDF (`fitz`) dengan algoritma klasifikasi blok tiga tahap yang dapat menangani dokumen dengan teks, tabel, dan gambar secara bersamaan. Pipeline ini dirancang untuk memproses dokumen Indonesia/Inggris dengan robust handling untuk berbagai format PDF.
+  
+  **Arsitektur Ekstraksi:**
+  ```
+  PDF Input → [Block Detection] → [Classification] → [Content Extraction] → Markdown Output
+       ↓              ↓                  ↓                   ↓
+   PyMuPDF      Smart Classifier    Text/Table/Image    Staged Synthesis
+                                    Processors
+  ```
+  
+  **1. Deteksi dan Klasifikasi Blok**
+  - **Klasifikasi Otomatis**: Setiap blok PDF diklasifikasikan sebagai `paragraph`, `table-candidate`, atau `figure`
+  - **Multi-Method Text Extraction**: 
+    - Method 1: Standard PyMuPDF (lines → spans → text)
+    - Method 2: Direct text field extraction
+    - Method 3: Fallback field scanning
+  - **Algoritma Klasifikasi Cerdas**:
+    - Analisis rasio karakter (digit vs alphabetic vs punctuation)
+    - Pattern matching untuk tabel (mata uang, persentase, tanggal)
+    - Deteksi konten numerik vs tekstual
+    - Generous paragraph classification untuk mengurangi false negatives
+  
+  **2. Pemrosesan Teks (Text Processing)**
+  - **Ekstraksi Span-by-Span**: Menggabungkan spans dengan proper character separation
+  - **Deteksi Heading**: Analisis font size, style, dan positioning untuk struktur hierarkis
+  - **Text Normalization**: Cleanup whitespace, karakter artifacts, dan formatting issues
+  - **Minimum Content Filtering**: Hanya teks ≥10 karakter yang dianggap meaningful paragraph
+  
+  **3. Ekstraksi Tabel (Table Extraction)**
+  - **Camelot Integration**: Library khusus untuk table detection dan parsing
+  - **Dual-Mode Processing**:
+    - Stream mode: Untuk tabel dengan garis pemisah yang jelas
+    - Lattice mode: Untuk tabel dengan border/grid structure
+  - **Table Area Detection**: Otomatis mendeteksi region yang mengandung struktur tabular
+  - **CSV/Markdown Conversion**: Output tabel dalam format Markdown yang readable
+  - **Quality Filtering**: Hanya tabel dengan struktur yang valid yang diproses
+  
+  **4. Ekstraksi Gambar dan OCR (Image/Figure Processing)**
+  - **Multi-Platform OCR Support**:
+    - **Tesseract OCR**: Automatic Windows path detection (`C:\Program Files\Tesseract-OCR`)
+    - **Multi-Language**: Indonesian + English (`-l ind+eng`)
+    - **Multiple OCR Configs**: Fallback configurations untuk optimal text extraction
+  - **Image Extraction Pipeline**:
+    ```
+    PDF Figure Block → Image Extraction → OCR Processing → Text Integration
+         ↓                    ↓               ↓               ↓
+    Bounding Box        PNG Generation   Tesseract      Markdown Embed
+    Detection           (High-res)       Multi-config
+    ```
+  - **Smart OCR Modes**:
+    - `--psm 6`: Uniform text block (default)
+    - `--psm 8`: Single word mode (fallback)
+    - `--psm 11`: Sparse text mode (final fallback)
+  - **OCR Text Cleanup**: Whitespace normalization, artifact removal, quality filtering
+  - **Graceful Degradation**: System continues processing even if Tesseract unavailable
+  
+  **5. Staged Content Synthesis**
+  - **Three-Stage Assembly**:
+    - Stage 1: Text-first approach (all paragraphs and headings)
+    - Stage 2: Table integration with proper spacing
+    - Stage 3: Figure integration with OCR text as alt-text
+  - **Content Ordering**: Maintains original document flow and page sequence
+  - **Metadata Preservation**: Page numbers, bounding boxes, section headers
+  - **Quality Assurance**: Fallback to basic text extraction if structured processing fails
+  
+  **6. Output dan Artefak**
+  - **Primary Output**: `markdown_v1.md` - Clean, structured markdown
+  - **Text Backup**: `full_text.txt` - Raw text fallback
+  - **Image Assets**: `figures/` directory dengan PNG files + web paths
+  - **Table Data**: Embedded markdown tables atau CSV references
+  - **Metadata**: `segments.json` dengan segment info untuk phase selanjutnya
+  - **Processing Metrics**: `phase_0_metrics.json` untuk monitoring dan debugging
+  
+  **7. Error Handling dan Robustness**
+  - **Multi-Level Fallbacks**: Text → Table → Image processing dengan independent failure handling
+  - **Block Classification Fallback**: Jika semua blok 'unknown', gunakan basic text extraction
+  - **OCR Error Recovery**: Continue processing tanpa OCR jika Tesseract tidak tersedia
+  - **Memory Management**: Efficient processing untuk dokumen besar
+  - **Progress Tracking**: Real-time progress updates via JSON artifacts
+  
+  **Supported Document Types:**
+  - ✅ Text-heavy documents (reports, articles, papers)
+  - ✅ Table-intensive documents (financial reports, data sheets)
+  - ✅ Image-heavy documents (presentations, infographics)
+  - ✅ Mixed-content documents (comprehensive reports dengan text+table+images)
+  - ✅ Indonesian/English bilingual documents
+  
+  **Technical Requirements:**
+  - PyMuPDF (fitz) untuk core PDF processing
+  - Camelot untuk advanced table extraction
+  - Tesseract OCR untuk image text extraction (optional tapi recommended)
+  - PIL/Pillow untuk image processing
+  - Robust error handling untuk production use
 
 - __[Fase 1: Perencanaan (Two-stage gating)]__
   - Stage-A: pre-scoring statis + kuota per header untuk memilih kandidat terbaik dari `segments.json`.
