@@ -6,7 +6,7 @@ import uuid
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
-
+import re
 import fitz  # PyMuPDF
 from loguru import logger
 
@@ -19,6 +19,29 @@ except Exception:
 try:
     import pytesseract  # type: ignore
     from PIL import Image
+    
+    # Configure Tesseract path for Windows installation
+    if os.name == 'nt':  # Windows
+        import platform
+        possible_paths = [
+            r'C:\Program Files\Tesseract-OCR\tesseract.exe',
+            r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe',
+            r'C:\Users\{}\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'.format(os.getenv('USERNAME', '')),
+        ]
+        
+        for path in possible_paths:
+            if os.path.exists(path):
+                pytesseract.pytesseract.tesseract_cmd = path
+                logger.info(f"[PDF++] Found Tesseract at: {path}")
+                break
+        else:
+            # Try to find tesseract in PATH
+            try:
+                pytesseract.get_tesseract_version()
+                logger.info("[PDF++] Using Tesseract from system PATH")
+            except Exception:
+                logger.warning("[PDF++] Tesseract not found in standard locations or PATH")
+                
 except Exception:
     pytesseract = None
     Image = None
@@ -77,27 +100,436 @@ def _bbox_of_block(block: Dict[str, Any]) -> Tuple[float, float, float, float]:
 
 
 def _norm_spaces(text: str) -> str:
-    return "\n".join([" ".join(line.split()) for line in (text or "").splitlines()]).strip()
+    return " ".join(text.split())
 
 
-def _markdown_table_from_df(df) -> str:
-    # df is a pandas DataFrame from camelot
-    import pandas as pd  # local import to avoid hard dep at import time
-    if not isinstance(df, pd.DataFrame) or df.empty:
+def _ocr_image_to_text(image_path: str) -> str:
+    """Extract text from image using Tesseract OCR."""
+    try:
+        if not pytesseract or not Image:
+            logger.debug(f"[PDF++] OCR unavailable (pytesseract: {pytesseract is not None}, PIL: {Image is not None})")
+            return ""
+        
+        # Test if Tesseract executable is available
+        try:
+            pytesseract.get_tesseract_version()
+        except Exception as exe_error:
+            logger.warning(f"[PDF++] Tesseract executable not found: {exe_error}")
+            logger.info("[PDF++] Install Tesseract to enable OCR: https://github.com/tesseract-ocr/tesseract")
+            return ""
+        
+        # Open and process the image
+        with Image.open(image_path) as img:
+            # Convert to RGB if needed (handles various formats)
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+            
+            # Try multiple OCR configurations
+            configs = [
+                r'--oem 3 --psm 6 -l eng',  # English only first
+                r'--oem 3 --psm 6',         # Default language
+                r'--oem 3 --psm 8',         # Single word mode
+                r'--oem 3 --psm 11'         # Sparse text mode
+            ]
+            
+            for config in configs:
+                try:
+                    text = pytesseract.image_to_string(img, config=config)
+                    if text and text.strip():
+                        # Clean up the text
+                        text = text.strip()
+                        # Remove excessive whitespace
+                        text = re.sub(r'\s+', ' ', text)
+                        # Remove common OCR artifacts
+                        text = re.sub(r'[|\\/_]+', '', text)
+                        logger.debug(f"[PDF++] OCR success with config: {config}")
+                        return text
+                except Exception:
+                    continue
+            
+            return ""
+            
+    except Exception as e:
+        logger.warning(f"[PDF++] OCR error for {image_path}: {e}")
         return ""
-    # Ensure strings
-    df = df.fillna("")
-    # Align numbers right by adding spaces; in Markdown this is limited, but okay.
-    headers = [str(h) for h in df.columns.tolist()]
-    lines = []
-    lines.append("| " + " | ".join(headers) + " |")
-    aligns = [":-" if not str(h).strip() else "-:" if any(ch.isdigit() for ch in str(h)) else ":-:" for h in headers]
-    # Simplified alignment row
-    lines.append("| " + " | ".join(["---" for _ in headers]) + " |")
-    for _, row in df.iterrows():
-        vals = [str(v) for v in row.tolist()]
-        lines.append("| " + " | ".join(vals) + " |")
-    return "\n".join(lines)
+
+
+def _classify_block_content(block: Dict[str, Any]) -> str:
+    """Classify block as 'paragraph', 'table-candidate', or 'figure'."""
+    try:
+        # Debug: Log block structure for diagnosis
+        block_type = block.get("type", -1)
+        
+        # Only log debug for first few blocks to avoid spam
+        if hasattr(_classify_block_content, '_debug_count'):
+            _classify_block_content._debug_count += 1
+        else:
+            _classify_block_content._debug_count = 1
+            
+        if _classify_block_content._debug_count <= 5:
+            logger.debug(f"Block type: {block_type}, keys: {list(block.keys())}")
+        
+        # Image blocks
+        if block_type == 1:
+            return "figure"
+        
+        # Extract ALL text from block regardless of structure
+        text_parts = []
+        
+        # Method 1: Standard PyMuPDF structure (lines -> spans -> text)
+        if "lines" in block:
+            for line in block.get("lines", []):
+                for span in line.get("spans", []):
+                    text = span.get("text", "")
+                    if text:
+                        text_parts.append(text)
+        
+        # Method 2: Direct text field
+        elif "text" in block:
+            text = block.get("text", "")
+            if text:
+                text_parts.append(text)
+        
+        # Method 3: Check for other text fields
+        else:
+            for key in block.keys():
+                if isinstance(block[key], str) and block[key].strip():
+                    text_parts.append(block[key])
+        
+        # Join all found text
+        full_text = " ".join(text_parts).strip()
+        
+        # Debug: Log extracted text (limit debug output)
+        if _classify_block_content._debug_count <= 10:  # More debug samples
+            if full_text:
+                logger.info(f"[PDF++] Block text found: '{full_text[:100]}...' (len={len(full_text)}, words={len(full_text.split())})")
+            else:
+                logger.info(f"[PDF++] No text in block with keys: {list(block.keys())}")
+                # Debug: Log the structure to see what's inside
+                if "lines" in block:
+                    logger.info(f"[PDF++] Block has {len(block['lines'])} lines")
+                    for i, line in enumerate(block.get('lines', [])[:2]):  # First 2 lines
+                        spans = line.get('spans', [])
+                        logger.info(f"[PDF++] Line {i}: {len(spans)} spans")
+                        for j, span in enumerate(spans[:2]):  # First 2 spans per line
+                            logger.info(f"[PDF++] Span {j}: '{span.get('text', 'NO_TEXT')}'")
+        
+        # If no text found, return unknown
+        if not full_text:
+            return "unknown"
+        
+        # Improved classification logic
+        
+        # Very short text (likely metadata or noise)
+        if len(full_text) < 3:
+            return "unknown"
+        
+        # Basic text classification
+        words = full_text.split()
+        word_count = len(words)
+        
+        # Calculate character ratios
+        total_chars = len(full_text)
+        digit_chars = sum(1 for c in full_text if c.isdigit())
+        alpha_chars = sum(1 for c in full_text if c.isalpha())
+        space_chars = sum(1 for c in full_text if c.isspace())
+        punct_chars = sum(1 for c in full_text if c in '.,;:!?()[]{}"\'-')
+        
+        digit_ratio = digit_chars / total_chars if total_chars > 0 else 0
+        alpha_ratio = alpha_chars / total_chars if total_chars > 0 else 0
+        
+        # Enhanced table detection:
+        # 1. High digit ratio with few words (numeric data)
+        if digit_ratio > 0.4 and word_count <= 3 and total_chars < 20:
+            return "table-candidate"
+        
+        # 2. Very high digit ratio (financial/numeric tables)
+        if digit_ratio > 0.6:
+            return "table-candidate"
+        
+        # 3. Common table patterns (currency, percentages, dates)
+        table_patterns = [r'\d+[.,]\d+%', r'\d+[.,]\d+', r'\$\d+', r'Rp\d+', r'\d{1,2}/\d{1,2}/\d{2,4}']
+        table_match_count = sum(1 for pattern in table_patterns if re.search(pattern, full_text))
+        if table_match_count >= 2 or (table_match_count >= 1 and word_count <= 5):
+            return "table-candidate"
+        
+        # 4. Short text with mostly symbols/numbers (table headers/values)
+        if word_count <= 2 and (digit_ratio > 0.3 or punct_chars > alpha_chars):
+            return "table-candidate"
+        
+        # Otherwise, if we have reasonable text content, classify as paragraph
+        # Be much more generous with paragraph classification
+        if word_count >= 1 and alpha_ratio > 0.2:  # Lowered thresholds
+            return "paragraph"
+        
+        # Fallback for edge cases - any substantial text
+        if len(full_text) >= 5:  # Lowered from 10
+            return "paragraph"
+        
+        # Even more generous: if we extracted any text, it's probably meaningful
+        if full_text and len(full_text.strip()) > 0:
+            return "paragraph"
+        
+        return "unknown"
+    
+    except Exception as e:
+        logger.error(f"Classification error for block: {e}")
+        logger.error(f"Block structure: {block}")
+        return "unknown"
+
+
+def _join_text_spans_properly(block: Dict[str, Any]) -> str:
+    """Join spans from a text block, fixing character separation issues."""
+    all_lines = []
+    
+    for line in block.get("lines", []):
+        spans = line.get("spans", [])
+        if not spans:
+            continue
+        
+        # Collect all span texts for this line
+        line_texts = []
+        for span in spans:
+            text = span.get("text", "")
+            if text:  # Keep even whitespace-only text
+                line_texts.append(text)
+        
+        if line_texts:
+            # Join spans intelligently
+            line_text = ""
+            for i, text in enumerate(line_texts):
+                if i == 0:
+                    line_text = text
+                else:
+                    # Check if we need a space between spans
+                    # Don't add space if previous ends with space or current starts with space
+                    if line_text and not line_text[-1].isspace() and text and not text[0].isspace():
+                        # Check for artificially separated characters
+                        # Single char to single char usually means separated
+                        if (len(line_text.strip()) == 1 and len(text.strip()) == 1 and 
+                            line_text.strip().isalnum() and text.strip().isalnum()):
+                            line_text += text  # No space
+                        else:
+                            line_text += " " + text
+                    else:
+                        line_text += text
+            
+            all_lines.append(line_text.strip())
+    
+    # Join all lines
+    result = " ".join(all_lines)
+    
+    # Fix common separation patterns
+    # Fix separated single letters: "K a m i s" -> "Kamis"
+    result = re.sub(r'\b([A-Z])\s+(?=[a-z])', r'\1', result)
+    
+    # Fix separated date components: "1 3" -> "13", "2 0 2 5" -> "2025"
+    result = re.sub(r'\b(\d)\s+(\d)\s+(\d)\s+(\d)\b', r'\1\2\3\4', result)
+    result = re.sub(r'\b(\d)\s+(\d)\b', r'\1\2', result)
+    
+    # Fix month names that might be separated
+    months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 
+              'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+    for month in months:
+        # Create pattern for separated month name
+        separated = ' '.join(month)
+        if separated in result:
+            result = result.replace(separated, month)
+    
+    # Fix common Indonesian words that might be separated
+    common_words = ['Kamis', 'Senin', 'Selasa', 'Rabu', 'Jumat', 'Sabtu', 'Minggu']
+    for word in common_words:
+        separated = ' '.join(word)
+        if separated in result:
+            result = result.replace(separated, word)
+    
+    return _norm_spaces(result)
+
+
+def _is_bbox_overlap(bbox1: List[float], bbox2: List[float], threshold: float = 0.1) -> bool:
+    """Check if two bounding boxes overlap significantly."""
+    x1_min, y1_min, x1_max, y1_max = bbox1
+    x2_min, y2_min, x2_max, y2_max = bbox2
+    
+    # Calculate intersection
+    x_overlap = max(0, min(x1_max, x2_max) - max(x1_min, x2_min))
+    y_overlap = max(0, min(y1_max, y2_max) - max(y1_min, y2_min))
+    
+    if x_overlap == 0 or y_overlap == 0:
+        return False
+    
+    intersection_area = x_overlap * y_overlap
+    area1 = (x1_max - x1_min) * (y1_max - y1_min)
+    area2 = (x2_max - x2_min) * (y2_max - y2_min)
+    
+    min_area = min(area1, area2)
+    overlap_ratio = intersection_area / min_area if min_area > 0 else 0
+    
+    return overlap_ratio > threshold
+
+
+def _is_plausible_table_bbox(page_rect: "fitz.Rect", bbox: List[float],
+                             min_area_ratio: float = 0.01,
+                             max_area_ratio: float = 0.60) -> bool:
+    """Heuristic check to ensure a table bbox is not implausibly large or tiny.
+
+    Prevents masking entire pages when Camelot returns overly large boxes.
+    """
+    try:
+        px0, py0, px1, py1 = page_rect.x0, page_rect.y0, page_rect.x1, page_rect.y1
+        pw = max(1.0, px1 - px0)
+        ph = max(1.0, py1 - py0)
+        page_area = pw * ph
+        bx0, by0, bx1, by1 = bbox
+        bw = max(0.0, bx1 - bx0)
+        bh = max(0.0, by1 - by0)
+        box_area = bw * bh
+        if box_area <= 0:
+            return False
+        ratio = box_area / page_area
+        return (min_area_ratio <= ratio <= max_area_ratio)
+    except Exception:
+        return False
+
+
+def _filter_plausible_table_bboxes(page_rect: "fitz.Rect",
+                                   bboxes: List[List[float]]) -> List[List[float]]:
+    """Filter Camelot bboxes by plausibility to avoid over-masking text."""
+    return [bb for bb in bboxes if _is_plausible_table_bbox(page_rect, bb)]
+
+
+def _split_merged_table_cells(text: str) -> str:
+    """Split merged table cell values that should be in separate columns."""
+    original = text
+    
+    # Pattern 1: Merged percentages like "3.00%0.50%" -> "3.00% | 0.50%"
+    text = re.sub(r'(\d+\.\d+%)(\d+\.\d+%)', r'\1 | \2', text)
+    
+    # Pattern 2: Merged numbers with % like "3.000.50" -> "3.00 | 0.50"
+    text = re.sub(r'(\d+\.\d{2})(\d+\.\d{2})', r'\1 | \2', text)
+    
+    # Pattern 3: Values with brackets like "44593.65 44368.5(0.50)" -> "44593.65 | 44368.5 | (0.50)"
+    text = re.sub(r'(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\(([\d\.\-]+)\)', r'\1 | \2 | (\3)', text)
+    
+    # Pattern 4: Two numbers separated by space (likely different columns)
+    if '|' not in text:  # Only if not already split
+        # Check for pattern like "1636 1638" (two 4-digit numbers)
+        text = re.sub(r'\b(\d{4,})\s+(\d{4,})\b', r'\1 | \2', text)
+        
+        # Check for decimal numbers separated by space
+        text = re.sub(r'\b(\d+\.\d+)\s+(\d+\.\d+)\b', r'\1 | \2', text)
+    
+    # Pattern 5: Fix merged text+number like "TRIES(YoY)" -> "TRIES | (YoY)"
+    text = re.sub(r'([A-Z]+)\(([^)]+)\)', r'\1 | (\2)', text)
+    
+    if text != original:
+        logger.debug(f"Cell split: '{original}' -> '{text}'")
+    
+    return text
+
+def _detect_panel_structure(df: Any) -> bool:
+    """Detect if DataFrame represents a panel-style financial table."""
+    try:
+        # Check first row for panel indicators
+        first_row = ' '.join(str(val) for val in df.iloc[0] if val)
+        panel_keywords = ['INTEREST RATES', 'COUNTRIES', 'BONDS', 'INDEXES', 'FOREX', 'Economic Data']
+        
+        for keyword in panel_keywords:
+            if keyword.upper() in first_row.upper():
+                return True
+        
+        # Check for percentage and number patterns
+        all_text = ' '.join(str(val) for row in df.values for val in row if val)
+        has_percentages = '%' in all_text
+        has_rates = bool(re.search(r'\b\d+\.\d{2,}\b', all_text))
+        
+        return has_percentages and has_rates
+    except:
+        return False
+
+def _process_panel_table(df: Any) -> Any:
+    """Process panel-style financial tables with special handling."""
+    try:
+        import pandas as pd
+        
+        # Try to identify and separate merged columns
+        new_rows = []
+        
+        for _, row in df.iterrows():
+            new_row = []
+            for cell in row:
+                cell_str = str(cell)
+                # Apply aggressive splitting for panel data
+                split_cell = _split_merged_table_cells(cell_str)
+                
+                # If cell was split, we might need to expand columns
+                if '|' in split_cell:
+                    parts = [p.strip() for p in split_cell.split('|')]
+                    new_row.extend(parts)
+                else:
+                    new_row.append(cell_str)
+            
+            new_rows.append(new_row)
+        
+        # Create new DataFrame with expanded columns
+        max_cols = max(len(row) for row in new_rows)
+        
+        # Pad rows to have same number of columns
+        for row in new_rows:
+            while len(row) < max_cols:
+                row.append('')
+        
+        # Create new DataFrame
+        new_df = pd.DataFrame(new_rows)
+        
+        # Clean up empty columns
+        new_df = new_df.loc[:, (new_df != '').any(axis=0)]
+        
+        return new_df
+    except Exception as e:
+        logger.debug(f"Panel table processing failed: {e}")
+        return df
+
+def _markdown_table_from_df(df: Any) -> str:
+    """Convert a DataFrame to Markdown table format with schema-aware recovery."""
+    try:
+        import pandas as pd
+        
+        if not isinstance(df, pd.DataFrame):
+            return ""
+        
+        if df.empty:
+            return ""
+        
+        # Clean and process the DataFrame
+        df = df.fillna("")
+        df = df.astype(str)
+        
+        # Schema-aware processing
+        # First, try to detect if this is a panel-style table
+        is_panel = _detect_panel_structure(df)
+        
+        if is_panel:
+            df = _process_panel_table(df)
+        else:
+            # Apply general cell splitting for all cells
+            for i in range(len(df)):
+                for j in range(len(df.columns)):
+                    cell_value = str(df.iloc[i, j])
+                    split_values = _split_merged_table_cells(cell_value)
+                    if '|' in split_values:  # Multiple values detected
+                        # For now, keep first value in cell, log the issue
+                        parts = split_values.split('|')
+                        df.iloc[i, j] = parts[0]
+                        if len(parts) > 1:
+                            logger.debug(f"Split cell at ({i},{j}): {cell_value} -> {parts}")
+        
+        # Convert to markdown
+        md_table = df.to_markdown(index=False)
+        return md_table if md_table else ""
+    except Exception as e:
+        logger.debug(f"DataFrame to markdown conversion failed: {e}")
+        return ""
 
 
 def _read_tables_with_camelot(pdf_path: str, page_no: int) -> List[Dict[str, Any]]:
@@ -122,105 +554,34 @@ def _read_tables_with_camelot(pdf_path: str, page_no: int) -> List[Dict[str, Any
                 md = _markdown_table_from_df(df)
                 if not md.strip():
                     continue
+                # Extract actual bbox from Camelot table object
+                bbox = [0, 0, 100, 100]  # Default fallback
+                try:
+                    if hasattr(t, '_bbox'):
+                        bbox = list(t._bbox)
+                    elif hasattr(t, 'bbox'):
+                        bbox = list(t.bbox)
+                    elif hasattr(t, 'cells') and t.cells:
+                        # Calculate from cell coordinates
+                        all_x = [cell.x1 for cell in t.cells] + [cell.x2 for cell in t.cells]
+                        all_y = [cell.y1 for cell in t.cells] + [cell.y2 for cell in t.cells]
+                        if all_x and all_y:
+                            bbox = [min(all_x), min(all_y), max(all_x), max(all_y)]
+                except Exception:
+                    pass
+                
                 results.append({
                     "flavor": flavor,
                     "index": idx,
                     "df": df,  # will not be JSON-serializable; drop later
                     "markdown": md,
+                    "bbox": bbox,
                 })
             except Exception:
                 continue
         if results:
             break
     return results
-
-
-def _ocr_image_to_text(img_path: Path) -> str:
-    if pytesseract is None or Image is None:
-        return ""
-    try:
-        # Try to fix Windows Tesseract PATH issue
-        import shutil
-        if not shutil.which("tesseract"):
-            # Common Windows Tesseract locations
-            possible_paths = [
-                r"C:\Program Files\Tesseract-OCR\tesseract.exe",
-                r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe",
-                r"C:\Users\{}\AppData\Local\Programs\Tesseract-OCR\tesseract.exe".format(os.environ.get("USERNAME", "")),
-            ]
-            for path in possible_paths:
-                if os.path.exists(path):
-                    pytesseract.pytesseract.tesseract_cmd = path
-                    logger.info(f"[PDF++] Found Tesseract at: {path}")
-                    break
-        
-        img = Image.open(img_path)
-        # Light pre-processing could be added here
-        text = pytesseract.image_to_string(img, lang="eng+ind")
-        return _norm_spaces(text)
-    except Exception as e:
-        logger.warning(f"[PDF++] Tesseract OCR failed: {e}")
-        return ""
-
-
-def _gpt4o_describe_image(img_path: Path, api_key: str) -> str:
-    """GPT-4o mini vision: comprehensive detailed description for figures/charts."""
-    if not api_key:
-        logger.warning("[PDF++] GPT-4o: No API key provided")
-        return ""
-    
-    logger.info(f"[PDF++] GPT-4o: Starting analysis of {img_path}")
-    try:
-        import base64
-        from openai import OpenAI
-        client = OpenAI(api_key=api_key)
-        
-        with open(img_path, "rb") as f:
-            img_data = base64.b64encode(f.read()).decode("utf-8")
-        
-        logger.info(f"[PDF++] GPT-4o: Image encoded, size: {len(img_data)} chars")
-        
-        try:
-            resp = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "text",
-                                "text": """Analyze this image/chart/diagram comprehensively and provide a detailed textual description. Include:
-
-1. Type of visualization (chart, graph, table, diagram, etc.)
-2. All visible text, labels, titles, and legends
-3. Data structure and categories shown
-4. Trends, patterns, or relationships visible
-5. All numerical values that are clearly readable
-6. Axis labels, units, scales if present
-7. Colors, symbols, or visual elements that convey meaning
-8. Any annotations or callouts
-
-Write in Indonesian. Be thorough and precise - this description will be used by an AI system to understand the content when the original image cannot be processed. Do not fabricate or guess numbers that aren't clearly visible, but describe everything that IS visible in detail.""",
-                            },
-                            {
-                                "type": "image_url",
-                                "image_url": {"url": f"data:image/png;base64,{img_data}"},
-                            },
-                        ],
-                    }
-                ],
-                max_tokens=800,
-                temperature=0.1,
-            )
-            result = (resp.choices[0].message.content or "").strip()
-            logger.info(f"[PDF++] GPT-4o: Success, response length: {len(result)}")
-            return result
-        except Exception as e:
-            logger.error(f"[PDF++] GPT-4o API call failed: {e}")
-            return ""
-    except Exception as e:
-        logger.error(f"[PDF++] GPT-4o setup failed: {e}")
-        return ""
 
 
 def process_pdf_markdownpp(pdf_path: str, mode: str = "basic", doc_id: Optional[str] = None) -> Dict[str, Any]:
@@ -258,7 +619,7 @@ def process_pdf_markdownpp(pdf_path: str, mode: str = "basic", doc_id: Optional[
         raise RuntimeError(f"Tidak bisa membuka PDF: {e}")
 
     units_meta: List[Dict[str, Any]] = []
-    parts: List[str] = []
+    all_content = []
 
     # Progress artefact
     progress_path = doc_dir / "conversion_progress.json"
@@ -274,6 +635,11 @@ def process_pdf_markdownpp(pdf_path: str, mode: str = "basic", doc_id: Optional[
     # Document-level heading path stack
     heading_stack: List[str] = []
 
+    # STAGED SYNTHESIS: Collect content by type first, then synthesize
+    all_paragraphs = []
+    all_tables = []
+    all_figures = []
+    
     for i in range(doc.page_count):
         page = doc.load_page(i)
         page_no = i + 1
@@ -283,140 +649,276 @@ def process_pdf_markdownpp(pdf_path: str, mode: str = "basic", doc_id: Optional[
         blocks = raw.get("blocks", [])
         blocks = sorted(blocks, key=lambda b: (b.get("bbox", [0, 0, 0, 0])[1], b.get("bbox", [0, 0, 0, 0])[0]))
 
-        # Extract text blocks and figures
-        for b in blocks:
-            btype = b.get("type", 0)  # 0=text, 1=image
-            bbox = _bbox_of_block(b)
-            if btype == 0:
-                lines = b.get("lines", [])
-                spans_all: List[Dict[str, Any]] = []
-                for ln in lines:
-                    spans = ln.get("spans", [])
-                    spans_all.extend(spans)
-                text = _norm_spaces(" ".join([s.get("text", "") for s in spans_all]))
-                if not text:
-                    continue
-                # Heading heuristic
-                if _detect_headings_from_spans(spans_all):
-                    heading_stack.append(text)
-                    parts.append(f"\n\n## {text}\n\n")
-                    units_meta.append(asdict(UnitMetadata(doc_id, page_no, "paragraph", text, bbox, panel=text)))
-                else:
-                    parts.append(text + "\n\n")
-                    section = heading_stack[-1] if heading_stack else ""
-                    units_meta.append(asdict(UnitMetadata(doc_id, page_no, "paragraph", section, bbox, panel=section)))
+        # STEP 1: Extract tables first to get their bboxes for masking
+        logger.info(f"[PDF++] Page {page_no}: Extracting tables first...")
+        page_tables = _read_tables_with_camelot(pdf_path, page_no)
+        table_bboxes = []
+        
+        for t_idx, table_data in enumerate(page_tables):
+            bbox = table_data.get("bbox", [0, 0, 100, 100])
+            table_bboxes.append(bbox)
+            
+            # Process table with schema-aware recovery
+            df = table_data.get("df")
+            if df is not None:
+                md_table = _markdown_table_from_df(df)
+                if md_table.strip():
+                    section = heading_stack[-1] if heading_stack else f"Tabel Halaman {page_no}"
+                    all_tables.append({
+                        "page": page_no,
+                        "title": f"{section} — Tabel {t_idx+1}",
+                        "content": md_table,
+                        "bbox": bbox,
+                        "section": section
+                    })
+                    units_meta.append(asdict(UnitMetadata(doc_id, page_no, "table", section, bbox)))
 
+        # Filter table bboxes by plausibility to avoid masking entire pages
+        table_bboxes = _filter_plausible_table_bboxes(page.rect, table_bboxes)
+        logger.info(f"[PDF++] Page {page_no}: Found {len(page_tables)} tables; using {len(table_bboxes)} plausible bboxes for masking")
+
+        # STEP 2: TEXT-FIRST APPROACH - Extract ALL text blocks first
+        paragraph_count = 0
+        table_candidate_count = 0
         figure_count = 0
+        
+        # Debug: Enable detailed logging for first few blocks (without changing logger level)
+        debug_blocks = min(3, len(blocks))
+        logger.info(f"[PDF++] Page {page_no}: Processing {len(blocks)} blocks (debugging first {debug_blocks})")
+        
+        added_paragraphs_this_page = 0
         for block_no, block in enumerate(blocks):
-            block_type = block.get('type', 'unknown')
-            logger.info(f"[PDF++] Page {page_no} Block {block_no}: type={block_type}, bbox={block.get('bbox', 'no-bbox')}")
+            block_type = _classify_block_content(block)
+            bbox = list(_bbox_of_block(block))
+            if block_no < debug_blocks:
+                try:
+                    logger.debug(f"[PDF++] DEBUG Page {page_no} Block {block_no} keys: {list(block.keys())}")
+                except Exception:
+                    pass
             
-            if "type" in block and block["type"] == 1:  # Image block
+            # Count block types for logging
+            if block_type == "paragraph":
+                paragraph_count += 1
+            elif block_type == "table-candidate":
+                table_candidate_count += 1
+            elif block_type == "figure":
                 figure_count += 1
-                bbox = fitz.Rect(block["bbox"])
-                logger.info(f"[PDF++] Found image block on page {page_no}: bbox={bbox}")
-                try:
-                    pix = page.get_pixmap(clip=bbox, colorspace=fitz.csRGB)
-                    img_path = figures_dir / f"figure_p{page_no}_{int(bbox.x0)}_{int(bbox.y0)}.png"
-                    pix.save(str(img_path))
-                    logger.info(f"[PDF++] Saved image: {img_path}")
-                    
-                    # Basic OCR label
-                    alt_text = ""
-                    if pytesseract:
-                        logger.info(f"[PDF++] Running Tesseract OCR on {img_path}")
-                        alt_text = _ocr_image_to_text(img_path)
-                        logger.info(f"[PDF++] Tesseract result: {alt_text[:100]}..." if alt_text else "[PDF++] Tesseract: no text found")
-                    else:
-                        logger.warning("[PDF++] Tesseract not available")
-                    
-                    narrative = ""
-                    if mode == "smart":
-                        logger.info(f"[PDF++] Running Smart OCR (GPT-4o) on {img_path}")
-                        narrative = _gpt4o_describe_image(img_path, api_key)
-                        logger.info(f"[PDF++] GPT-4o result: {narrative[:100]}..." if narrative else "[PDF++] GPT-4o: no result")
-                    
-                    # Compose markdown for figure
-                    rel = img_path.relative_to(doc_dir).as_posix()
-                    web_path = f"/artefacts/{doc_id}/{rel}"
-                    parts.append(f"![Gambar halaman {page_no}]({web_path})\n\n")
-                    if narrative:
-                        parts.append(f"**[Smart OCR]** {narrative}\n\n")
-                    elif alt_text:
-                        parts.append(f"**[Tesseract OCR]** _{alt_text}_\n\n")
-                    section = heading_stack[-1] if heading_stack else ""
-                    units_meta.append(asdict(UnitMetadata(doc_id, page_no, "figure", section, bbox)))
-                except Exception as e:
-                    logger.error(f"[PDF++] Error processing figure: {e}")
-                    continue
-        
-        # Method 2: Alternative image detection using get_images()
-        try:
-            image_list = page.get_images()
-            logger.info(f"[PDF++] Page {page_no}: get_images() found {len(image_list)} images")
             
-            for img_index, img in enumerate(image_list):
-                if figure_count >= 10:  # Limit to avoid too many images
-                    break
-                try:
-                    # Extract image
-                    xref = img[0]
-                    pix = fitz.Pixmap(doc, xref)
+            # Log all classifications for debugging
+            logger.info(f"[PDF++] Page {page_no} Block {block_no}: '{block_type}' (bbox: {bbox})")
+            
+            # TEXT-FIRST: Process all text blocks regardless of table overlap
+            # Table masking disabled to ensure all text is captured
+            
+            if block_type == "paragraph":
+                # Process as clean paragraph
+                text = _join_text_spans_properly(block)
+                if text and len(text.strip()) > 10:  # Minimum length for meaningful paragraph
+                    # Check for heading
+                    spans_all = []
+                    for line in block.get("lines", []):
+                        spans_all.extend(line.get("spans", []))
                     
-                    if pix.n - pix.alpha < 4:  # GRAY or RGB
-                        img_path = figures_dir / f"figure_p{page_no}_img{img_index}.png"
-                        pix.save(str(img_path))
-                        logger.info(f"[PDF++] Extracted image via get_images(): {img_path}")
-                        
-                        # OCR processing
-                        alt_text = ""
-                        if pytesseract:
-                            logger.info(f"[PDF++] Running Tesseract OCR on {img_path}")
-                            alt_text = _ocr_image_to_text(img_path)
-                            logger.info(f"[PDF++] Tesseract result: {alt_text[:100]}..." if alt_text else "[PDF++] Tesseract: no text found")
-                        
-                        narrative = ""
-                        if mode == "smart":
-                            logger.info(f"[PDF++] Running Smart OCR (GPT-4o) on {img_path}")
-                            narrative = _gpt4o_describe_image(img_path, api_key)
-                            logger.info(f"[PDF++] GPT-4o result: {narrative[:100]}..." if narrative else "[PDF++] GPT-4o: no result")
-                        
-                        # Add to markdown
-                        rel = img_path.relative_to(doc_dir).as_posix()
-                        web_path = f"/artefacts/{doc_id}/{rel}"
-                        parts.append(f"![Gambar halaman {page_no} #{img_index}]({web_path})\n\n")
-                        if narrative:
-                            parts.append(f"**[Smart OCR]** {narrative}\n\n")
-                        elif alt_text:
-                            parts.append(f"**[Tesseract OCR]** _{alt_text}_\n\n")
-                        
-                        figure_count += 1
-                        section = heading_stack[-1] if heading_stack else ""
-                        # Use approximate bbox since get_images doesn't provide it
-                        bbox = [0, 0, 100, 100]  
-                        units_meta.append(asdict(UnitMetadata(doc_id, page_no, "figure", section, bbox)))
+                    is_heading = _detect_headings_from_spans(spans_all)
                     
-                    pix = None  # Release memory
-                except Exception as e:
-                    logger.error(f"[PDF++] Error extracting image {img_index}: {e}")
-                    continue
-        except Exception as e:
-            logger.error(f"[PDF++] Error in get_images() method: {e}")
+                    if is_heading:
+                        heading_stack.append(text)
+                        all_paragraphs.append({
+                            "page": page_no,
+                            "content": f"## {text}",
+                            "bbox": bbox,
+                            "is_heading": True
+                        })
+                    else:
+                        all_paragraphs.append({
+                            "page": page_no,
+                            "content": text,
+                            "bbox": bbox,
+                            "is_heading": False
+                        })
+                    
+                    # Add to metadata
+                    section = heading_stack[-1] if heading_stack else "Main"
+                    units_meta.append(asdict(UnitMetadata(
+                        doc_id, page_no, "paragraph", section, bbox
+                    )))
+            
+            elif block_type == "table-candidate" and not overlaps_table:
+                # These are small text fragments that look like table data
+                # but are outside the main table areas - might be labels or isolated values
+                text = _join_text_spans_properly(block)
+                if text and len(text.strip()) > 1:
+                    # Check if it's actually a small heading or label
+                    if text.strip().isalpha() or (len(text.split()) <= 2 and any(c.isalpha() for c in text)):
+                        # Treat as a small paragraph/label
+                        all_paragraphs.append({
+                            "page": page_no,
+                            "content": text,
+                            "bbox": bbox,
+                            "is_heading": False
+                        })
+                    # Otherwise ignore - it's likely a stray table fragment
+            
+            elif block_type == "figure":
+                # Process as figure
+                all_figures.append({
+                    "page": page_no,
+                    "block": block,
+                    "bbox": bbox
+                })
+                
+                # Add to metadata
+                section = heading_stack[-1] if heading_stack else "Main"
+                units_meta.append(asdict(UnitMetadata(
+                    doc_id, page_no, "figure", section, bbox
+                )))
         
-        logger.info(f"[PDF++] Page {page_no}: Total images processed: {figure_count}")
+        # Fallback: If still no paragraphs, force extract from unknown blocks
+        if added_paragraphs_this_page == 0:
+            logger.warning(f"[PDF++] Page {page_no}: 0 paragraphs found — forcing extraction from unknown blocks")
+            for block_no, block in enumerate(blocks):
+                # Try to extract text from ANY block, regardless of classification
+                text = _join_text_spans_properly(block)
+                if text and len(text.strip()) > 5:
+                    bbox = list(_bbox_of_block(block))
+                    logger.info(f"[PDF++] Force-extracted text: '{text[:50]}...'")
+                    
+                    all_paragraphs.append({
+                        "page": page_no,
+                        "content": text,
+                        "bbox": bbox,
+                        "is_heading": False
+                    })
+                    
+                    section = heading_stack[-1] if heading_stack else "Main"
+                    units_meta.append(asdict(UnitMetadata(
+                        doc_id, page_no, "paragraph", section, bbox
+                    )))
+                    added_paragraphs_this_page += 1
 
-        # Tables via Camelot on this page
-        tables = _read_tables_with_camelot(pdf_path, page_no)
-        for t_idx, t in enumerate(tables):
-            md_table = t.get("markdown", "").strip()
-            if not md_table:
+        # Final page-level fallback: use PyMuPDF basic text extraction if still nothing
+        if added_paragraphs_this_page == 0:
+            try:
+                basic_text = page.get_text("text") or ""
+            except Exception:
+                basic_text = ""
+            if basic_text.strip():
+                bbox_full = [float(page.rect.x0), float(page.rect.y0), float(page.rect.x1), float(page.rect.y1)]
+                normalized = _norm_spaces(basic_text)
+                all_paragraphs.append({
+                    "page": page_no,
+                    "content": normalized,
+                    "bbox": bbox_full,
+                    "is_heading": False
+                })
+                section = heading_stack[-1] if heading_stack else "Main"
+                units_meta.append(asdict(UnitMetadata(
+                    doc_id, page_no, "paragraph", section, bbox_full
+                )))
+                added_paragraphs_this_page += 1
+                logger.warning(f"[PDF++] Page {page_no}: used basic text fallback (PyMuPDF)")
+
+        # Log summary for this page
+        logger.info(f"[PDF++] Page {page_no} block classification summary: "
+                   f"{paragraph_count} paragraphs, {table_candidate_count} table-candidates, "
+                   f"{figure_count} figures")
+        
+        # Process extracted figures (from PyMuPDF image blocks)
+        # Create a copy to avoid modification during iteration
+        figures_to_process = [fig for fig in all_figures if fig["page"] == page_no]
+        
+        for fig_data in figures_to_process:
+            # Safely get block reference
+            block = fig_data.get("block")
+            if not block:
+                logger.warning(f"[PDF++] Figure missing block reference: {fig_data}")
                 continue
-            # Heuristic title: try to use nearest heading
-            section = heading_stack[-1] if heading_stack else f"Tabel Halaman {page_no}"
-            parts.append(f"### {section} — Tabel {t_idx+1}\n\n")
-            parts.append(md_table + "\n\n")
-            # Basic metadata for table (no bbox available from Camelot in this simple form)
-            units_meta.append(asdict(UnitMetadata(doc_id, page_no, "table", section, (0, 0, 0, 0), panel=section)))
+            
+            figure_bbox = fitz.Rect(fig_data["bbox"])
+            
+            try:
+                pix = page.get_pixmap(clip=figure_bbox, colorspace=fitz.csRGB)
+                img_path = figures_dir / f"figure_p{page_no}_{int(figure_bbox.x0)}_{int(figure_bbox.y0)}.png"
+                pix.save(str(img_path))
+                logger.info(f"[PDF++] Saved image: {img_path}")
+                
+                # OCR processing (graceful degradation)
+                alt_text = ""
+                if pytesseract:
+                    logger.info(f"[PDF++] Running Tesseract OCR on {img_path}")
+                    alt_text = _ocr_image_to_text(img_path)
+                    if alt_text:
+                        logger.info(f"[PDF++] Tesseract result: {alt_text[:100]}...")
+                    else:
+                        logger.debug("[PDF++] Tesseract: no text found")
+                else:
+                    logger.debug("[PDF++] OCR skipped (Tesseract unavailable)")
+                
+                narrative = ""
+                if mode == "smart":
+                    logger.info(f"[PDF++] Running Smart OCR (GPT-4o) on {img_path}")
+                    narrative = _gpt4o_describe_image(img_path, api_key)
+                    logger.info(f"[PDF++] GPT-4o result: {narrative[:100]}..." if narrative else "[PDF++] GPT-4o: no result")
+                
+                # Store figure data
+                rel = img_path.relative_to(doc_dir).as_posix()
+                web_path = f"/artefacts/{doc_id}/{rel}"
+                section = heading_stack[-1] if heading_stack else ""
+                
+                description = ""
+                if narrative:
+                    description = f"**[Smart OCR]** {narrative}"
+                elif alt_text:
+                    description = f"**[Tesseract OCR]** _{alt_text}_"
+                
+                # Add to content for markdown output
+                all_content.append(f"![Figure]({web_path})")
+                if description:
+                    all_content.append(f"_{description}_")
+                all_content.append("")  # Empty line
+                
+                units_meta.append(asdict(UnitMetadata(doc_id, page_no, "figure", section, list(figure_bbox))))
+                
+            except Exception as e:
+                logger.error(f"[PDF++] Error processing figure: {e}")
+                continue
+            
+
+        # Log page statistics
+        page_para_count = len([p for p in all_paragraphs if p.get('page') == page_no])
+        page_table_count = len([t for t in all_tables if t.get('page') == page_no])
+        page_fig_count = len([f for f in all_figures if f.get('page') == page_no])
+        logger.info(f"[PDF++] Page {page_no}: Processed {page_para_count} paragraphs, {page_table_count} tables, {page_fig_count} figures")
+
+    # STEP 3: STAGED SYNTHESIS - Assemble final markdown in logical order
+    logger.info("[PDF++] Starting staged synthesis...")
+    
+    # Sort content by page and reading order
+    all_paragraphs.sort(key=lambda x: (x["page"], x["bbox"][1], x["bbox"][0]))
+    all_tables.sort(key=lambda x: (x["page"], x["bbox"][1], x["bbox"][0]))  
+    all_figures.sort(key=lambda x: (x["page"], x["bbox"][1], x["bbox"][0]))
+    
+    # Initialize parts list for markdown assembly
+    parts = []
+    
+    # Output: Paragraphs first (narrative flow)
+    for para in all_paragraphs:
+        if para.get("is_heading", False):
+            parts.append(f"\n\n{para['content']}\n\n")
+        else:
+            parts.append(f"{para['content']}\n\n")
+    
+    # Output: Tables second (structured data)
+    for table in all_tables:
+        parts.append(f"### {table['title']}\n\n")
+        parts.append(f"{table['content']}\n\n")
+    
+    # Output: Figures third (visual content)
+    for figure in all_figures:
+        if 'path' in figure:
+            parts.append(f"![Gambar halaman {figure['page']}]({figure['path']})\n\n")
+            if figure.get("description"):
+                parts.append(f"{figure['description']}\n\n")
 
     # Finish
     markdown = "".join(parts).strip() + "\n"
