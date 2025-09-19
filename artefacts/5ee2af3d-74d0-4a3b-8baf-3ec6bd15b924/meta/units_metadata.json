@@ -1,0 +1,92 @@
+[
+  {
+    "unit_id": "u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p1_para_0",
+    "doc_id": "5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "y0": 0.0,
+    "source": "pymupdf",
+    "anchor": "md://u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p1_para_0",
+    "content": "PRODUK REKSA DANA \n1.\u200b ASHMORE DANA PASAR UANG NUSANTARA (pasar uang dan setara) \n2.\u200b BAHANA DANA LIKUID KELAS G (pasar uang dan setara) \n3.\u200b BATAVIA DANA KAS MAKSIMA (pasar uang dan setara) \n4.\u200b BATAVIA DANA LIKUID (pasar uang dan setara) \n5.\u200b BNP PARIBAS RUPIAH PLUS (pasar uang dan setara) \n6.\u200b BRI SERUNI PASAR UANG II KELAS A (pasar uang dan setara) \n7.\u200b EASTSPRING INVESTMENTS CASH RESERVE KELAS A (pasar uang dan setara) \n8.\u200b SCHRODER DANA LIKUID (pasar uang dan setara) \n9.\u200b SUCORINVEST MONEY MARKET FUND (pasar uang dan setara) \n10.\u200bASHMORE DANA OBLIGASI NUSANTARA* (obligasi jangka pendek) \n11.\u200bASHMORE DANA OBLIGASI UNGGULAN NUSANTARA* (obligasi jangka pendek) \n12.\u200bBAHANA ABF INDONESIA BOND INDEX FUND (obligasi jangka menengah) \n13.\u200bBATAVIA DANA OBLIGASI ULTIMA* (obligasi jangka pendek) \n14.\u200bBNP PARIBAS OMEGA (obligasi jangka menengah) \n15.\u200bBNP PARIBAS PRIMA II KELAS RK1 (obligasi jangka menengah) \n16.\u200bEASTSPRING INVESTMENTS IDR HIGH GRADE KELAS A*  \n17.\u200bEASTSPRING INVESTMENTS YIELD DISCOVERY KELAS A* \n18.\u200bManulife Obligasi Negara Indonesia II Kelas A (obligasi jangka panjang) \n19.\u200bMANULIFE OBLIGASI UNGGULAN KELAS A* (obligasi jangka pendek) \n20.\u200bMANULIFE PENDAPATAN BULANAN II*(obligasi jangka pendek) \n21.\u200bSCHRODER DANA ANDALAN II*(obligasi jangka pendek) \n22.\u200bSCHRODER DANA MANTAP PLUS II* (obligasi jangka menengah) \n23.\u200bSUCORINVEST MONTHLY INCOME FUND*(obligasi jangka pendek) \n24.\u200bBNP PARIBAS EQUITRA CAMPURAN HARMONI* (campuran obligasi - saham) \n25.\u200bBNP PARIBAS SPEKTRA (campuran obligasi - saham) \n26.\u200bBRI SYARIAH BERIMBANG (campuran obligasi - saham) \n27.\u200bMANULIFE DANA CAMPURAN II (campuran obligasi - saham) \n28.\u200bSCHRODER DANA KOMBINASI (campuran obligasi - saham) \n29.\u200bSCHRODER SYARIAH BALANCED FUND (campuran obligasi - saham) \n30.\u200bSCHRODER DANA TERPADU II (campuran obligasi - saham) \n31.\u200bSUCORINVEST PREMIUM FUND (campuran obligasi - saham) \n32.\u200bASHMORE DANA EKUITAS NUSANTARA* (saham big cap) \n33.\u200bASHMORE DANA PROGRESIF NUSANTARA (saham all cap) \n34.\u200bASHMORE DIGITAL EQUITY SUSTAINABLE FUND (saham all cap) \n35.\u200bBahana Dana Ekuitas Prima (saham all cap) \n36.\u200bBAHANA PRIMAVERA PLUS (saham all cap) \n37.\u200bBATAVIA DANA SAHAM (saham big cap) \n38.\u200bBATAVIA DANA SAHAM OPTIMAL (saham all cap) \n39.\u200bBATAVIA DISRUPTIVE EQUITY (saham all cap) \n40.\u200bBNP PARIBAS EKUITAS (saham big cap) \n41.\u200bBNP PARIBAS INFRASTRUKTUR PLUS (saham all cap) \n42.\u200bBNP PARIBAS PESONA (saham big cap) \n43.\u200bBNP PARIBAS PESONA SYARIAH (saham all cap) \n44.\u200bBNP PARIBAS SOLARIS (saham small-mid cap)",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p2_para_0",
+    "doc_id": "5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "y0": 0.0,
+    "source": "pymupdf",
+    "anchor": "md://u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p2_para_0",
+    "content": "45.\u200bBRI MAWAR (saham big cap) \n46.\u200bEASTSPRING INVESTMENTS ALPHA NAVIGATOR KELAS A (saham all cap) \n47.\u200bEASTSPRING INVESTMENTS VALUE DISCOVERY KELAS A (saham big cap) \n48.\u200bMANULIFE DANA SAHAM KELAS A (saham big cap) \n49.\u200bMANULIFE SAHAM ANDALAN (saham all cap) \n50.\u200bMANULIFE SYARIAH SEKTORAL AMANAH Kelas A  \n51.\u200bSCHRODER DANA ISTIMEWA (saham all cap) \n52.\u200bSCHRODER DANA PRESTASI (saham big cap) \n53.\u200bSCHRODER DANA PRESTASI PLUS (saham big cap) \n54.\u200bSCHRODER 90 PLUS EQUITY FUND (saham all cap) \n55.\u200bSUCORINVEST EQUITY FUND (saham all cap) \n56.\u200bBNP PARIBAS SRI \u2013 KEHATI (saham big cap) \n57.\u200bBATAVIA LQ45 PLUS (saham big cap)  \n58.\u200bBNP PARIBAS IDX GROWTH30 (saham big cap) \n59.\u200bBRI MSCI INDONESIA ESG SCREENED (saham big cap) \n60.\u200bEASTSPRING IDX ESG LEADERS PLUS (saham big cap) \n61.\u200bBAHANA LIQUID USD (pasar uang dan setara) \n62.\u200bASHMORE DANA USD NUSANTARA (obligasi jangka panjang) \n63.\u200bBNP PARIBAS PRIMA USD KELAS RK1 (obligasi jangka menengah) \n64.\u200bBRI MELATI PREMIUM DOLLAR (obligasi jangka menengah) \n65.\u200bMANULIFE USD FIXED INCOME KELAS A (obligasi jangka pendek) \n66.\u200bSCHRODER USD BOND FUND (obligasi jangka pendek) \n67.\u200bBATAVIA USD BALANCED ASIA (campuran obligasi - saham) \n68.\u200bASHMORE DANA USD EQUITY NUSANTARA (obligasi jangka menengah-panjang) \n69.\u200bBNP PARIBAS CAKRA SYARIAH USD KELAS RK 1 (saham big cap) \n70.\u200bBNP PARIBAS GREATER CHINA EQUITY SYARIAH USD RK1 (saham offshore) \n71.\u200bBNP PARIBAS DJIM GLOBAL TECH. TITANS 50 SY. USD (saham offshore) \n72.\u200bMANULIFE SAHAM SYARIAH ASIA PASIFIK DOLLAR AS (saham offshore) \n73.\u200bMANULIFE SAHAM SY. GLOBAL DIVIDEN DOLAR AS KA3 (saham offshore) \n74.\u200bSCHRODER GLOBAL SHARIA EQUITY FUND USD (saham offshore) \n \nPRODUK OBLIGASI \n1.\u200b ORI21 \n2.\u200b ORI22 \n3.\u200b ORI23 (T3) \n4.\u200b ORI24 (T3) \n5.\u200b ORI25 (T3) \n6.\u200b ORI23 (T6) \n7.\u200b ORI24 (T6) \n8.\u200b ORI25 (T6) \n9.\u200b SR16 \n10.\u200bSR17 \n11.\u200bSR18 (T3)",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p3_para_0",
+    "doc_id": "5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924",
+    "page": 3,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "y0": 0.0,
+    "source": "pymupdf",
+    "anchor": "md://u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p3_para_0",
+    "content": "12.\u200bSR19 (T3) \n13.\u200bSR20 (T3) \n14.\u200bSR21 (T3) \n15.\u200bSR18 (T5) \n16.\u200bSR19 (T5) \n17.\u200bSR20 (T5) \n18.\u200bSR21 (T5) \n19.\u200bPBS36 \n20.\u200bPBS32 \n21.\u200bPBS3 \n22.\u200bPBS30 \n23.\u200bPBS37 \n24.\u200bPBS4 \n25.\u200bPBS39 \n26.\u200bPBS33 \n27.\u200bPBS38 \n28.\u200bFR81 \n29.\u200bFR86 \n30.\u200bFR56 \n31.\u200bFR90 \n32.\u200bFR59 \n33.\u200bFR64 \n34.\u200bFR95 \n35.\u200bFR71 \n36.\u200bFR101 \n37.\u200bFR78 \n38.\u200bFR104 \n39.\u200bFR82 \n40.\u200bFR87 \n41.\u200bFR73 \n42.\u200bFR91 \n43.\u200bFR74 \n44.\u200bFR96 \n45.\u200bFR65 \n46.\u200bFR100 \n47.\u200bFR68 \n48.\u200bFR80 \n49.\u200bFR103 \n50.\u200bFR72 \n51.\u200bFR88 \n52.\u200bFR93 \n53.\u200bFR75 \n54.\u200bFR98 \n55.\u200bFR79 \n56.\u200bFR83",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p4_para_0",
+    "doc_id": "5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "y0": 0.0,
+    "source": "pymupdf",
+    "anchor": "md://u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p4_para_0",
+    "content": "57.\u200bFR62 \n58.\u200bFR92 \n59.\u200bFR97 \n60.\u200bFR76 \n61.\u200bFR89 \n62.\u200bFR102 \n63.\u200bFR105 \n64.\u200bADMFIJ 5.6  25 \n65.\u200bBMRIIJ 7\u00be  25 \n66.\u200bBBRIIJ 5\u00be  25 \n67.\u200bADMFIJ 6 26 \n68.\u200bADMFIJ 6\u00bc  27 \n69.\u200bINDON 25 \n70.\u200bINDOIS 25 \n71.\u200bINDOIS 25 NEW \n72.\u200bINDON 26 \n73.\u200bINDOIS 26 \n74.\u200bINDOIS 26 NEW \n75.\u200bINDON 27 \n76.\u200bINDOIS 27 \n77.\u200bINDOIS 27 NEW \n78.\u200bINDON 27 NEW \n79.\u200bINDON 27 NEW 2 \n80.\u200bINDON 28 \n81.\u200bINDON 28 NEW 2 \n82.\u200bINDOIS 28 \n83.\u200bINDON 28 NEW \n84.\u200bINDOIS 28 NEW \n85.\u200bINDON 29 \n86.\u200bINDOIS 29 \n87.\u200bINDOIS 29 NEW \n88.\u200bINDON 29 NEW \n89.\u200bINDON 29 NEW 2 \n90.\u200bINDON 30 \n91.\u200bINDOIS 30 \n92.\u200bINDON 30 NEW \n93.\u200bINDON 31 \n94.\u200bINDOIS 31 \n95.\u200bINDON 31 NEW \n96.\u200bINDON 32 \n97.\u200bINDOIS 32 \n98.\u200bINDON 32 NEW \n99.\u200bINDON 33 \n100.\u200b\nINDOIS 33 \n101.\u200b\nINDON 34",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p5_para_0",
+    "doc_id": "5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924",
+    "page": 5,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "y0": 0.0,
+    "source": "pymupdf",
+    "anchor": "md://u_5ee2af3d-74d0-4a3b-8baf-3ec6bd15b924_p5_para_0",
+    "content": "102.\u200b\nINDON 34 NEW \n103.\u200b\nINDOIS 34 \n104.\u200b\nINDON 37 \n105.\u200b\nINDON 42 \n106.\u200b\nINDON 43 \n107.\u200b\nINDON 45 \n108.\u200b\nINDON 47 \n109.\u200b\nINDON 47 NEW \n110.\u200b\nINDON 48 \n111.\u200b\nINDON 49 \n112.\u200b\nINDON 49 NEW \n113.\u200b\nINDON 50 \n114.\u200b\nINDOIS 50 \n115.\u200b\nINDON 50 NEW \n116.\u200b\nINDON 51 \n117.\u200b\nINDOIS 51 \n118.\u200b\nINDON 52 \n119.\u200b\nINDON 52 NEW \n120.\u200b\nINDON 53 \n121.\u200b\nINDON 54 \n122.\u200b\nINDOIS 54 \n123.\u200b\nINDON 54 NEW \n \n \nSTRUCTURED PRODUCTS \n1.\u200b Market Linked Deposit \n2.\u200b Dual Currency Investment",
+    "extra": {}
+  }
+]

@@ -14,12 +14,12 @@ from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 
-# Removed old phase_0_extraction - now using pdf_markdownpp directly
+# Using new extractor_v2 for PDF extraction
+from ..extract.extractor_v2 import extract_pdf_to_markdown
 from ..pipeline.phase_1_planning import create_enrichment_plan
 from ..pipeline.phase_2_generation import generate_bulk_content
 from ..pipeline.phase_3_synthesis import synthesize_final_markdown
 from ..pipeline.phase_4_vectorization import vectorize_and_store
-from ..pipeline.pdf_markdownpp import run_conversion_and_persist
 from ..core.config import (
     RAG_PROMPT_TEMPLATE,
     CHROMA_COLLECTION,
@@ -199,9 +199,14 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
 
         try:
             logger.info("--- Memulai PDF Extraction dengan Workflow Baru ---")
-            extraction_results = run_conversion_and_persist(str(temp_pdf_path))
-            doc_output_dir = extraction_results["output_dir"]
-            doc_id = extraction_results["document_id"]
+            # Use new extractor_v2
+            extraction_results = extract_pdf_to_markdown(
+                doc_id=hashlib.md5(temp_pdf_path.read_bytes()).hexdigest()[:16],
+                pdf_path=str(temp_pdf_path),
+                out_dir=str(PIPELINE_ARTEFACTS_DIR)
+            )
+            doc_output_dir = extraction_results.artefacts_dir
+            doc_id = extraction_results.doc_id
             logger.info(f"--- PDF Extraction Selesai. Artefak di: {doc_output_dir} ---")
 
             md_path = Path(doc_output_dir) / "markdown_v1.md"
@@ -494,7 +499,16 @@ async def start_conversion(payload: StartConversionRequest):
 
     async def _run():
         try:
-            await asyncio.to_thread(run_conversion_and_persist, str(pdf_path), mode, payload.document_id)
+            # Use new extractor_v2 with mode support
+            await asyncio.to_thread(
+                extract_pdf_to_markdown,
+                doc_id=payload.document_id,
+                pdf_path=str(pdf_path),
+                out_dir=str(PIPELINE_ARTEFACTS_DIR),
+                # Smart mode uses better OCR settings
+                ocr_primary_psm=3 if mode == "smart" else 6,
+                ocr_fallback_psm=[6, 11, 3] if mode == "smart" else [11]
+            )
         except Exception as e:
             logger.error(f"[PDF++] Konversi gagal untuk {payload.document_id}: {e}")
             progress_path = doc_dir / "conversion_progress.json"
