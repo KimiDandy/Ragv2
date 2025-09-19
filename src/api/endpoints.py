@@ -14,7 +14,7 @@ from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 
-from ..pipeline.phase_0_extraction import process_pdf_local
+# Removed old phase_0_extraction - now using pdf_markdownpp directly
 from ..pipeline.phase_1_planning import create_enrichment_plan
 from ..pipeline.phase_2_generation import generate_bulk_content
 from ..pipeline.phase_3_synthesis import synthesize_final_markdown
@@ -198,11 +198,11 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
         logger.info(f"File sementara disimpan di: {temp_pdf_path}")
 
         try:
-            logger.info("--- Memulai Fase 0: Ekstraksi ---")
-            phase_0_results = process_pdf_local(str(temp_pdf_path))
-            doc_output_dir = phase_0_results["output_dir"]
-            doc_id = Path(doc_output_dir).name
-            logger.info(f"--- Fase 0 Selesai. Artefak di: {doc_output_dir} ---")
+            logger.info("--- Memulai PDF Extraction dengan Workflow Baru ---")
+            extraction_results = run_conversion_and_persist(str(temp_pdf_path))
+            doc_output_dir = extraction_results["output_dir"]
+            doc_id = extraction_results["document_id"]
+            logger.info(f"--- PDF Extraction Selesai. Artefak di: {doc_output_dir} ---")
 
             md_path = Path(doc_output_dir) / "markdown_v1.md"
             try:

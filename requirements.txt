@@ -17,6 +17,8 @@ redis
 celery
 pydantic-settings
 camelot-py[cv]
+pdfplumber
 opencv-python-headless
 pytesseract
 Pillow
+pandas
