@@ -14,6 +14,9 @@ import json
 import os
 import re
 import hashlib
+import json
+import os
+import re
 import time
 import logging
 from pathlib import Path
@@ -117,8 +120,9 @@ class PDFExtractorV2:
     
     def __init__(self, **kwargs):
         self.ocr_lang = kwargs.get('ocr_lang', 'ind+eng')
-        self.ocr_primary_psm = kwargs.get('ocr_primary_psm', 3)
-        self.ocr_fallback_psm = kwargs.get('ocr_fallback_psm', [6, 11])
+        self.ocr_dpi = kwargs.get('ocr_dpi', 300)  # Optimal balance speed/quality
+        self.enable_ocr = kwargs.get('enable_ocr', True) and TESSERACT_AVAILABLE
+        self.ocr_fast_mode = kwargs.get('ocr_fast_mode', True)  # Use optimized settings
         self.dpi_fullpage = kwargs.get('dpi_fullpage', 300)
         self.zoom_clip = kwargs.get('zoom_clip', 2.0)
         self.enable_pdfplumber_fallback = kwargs.get('enable_pdfplumber_fallback', True)
@@ -142,10 +146,13 @@ class PDFExtractorV2:
         x0, y0, x1, y1 = bbox
         
         # Convert pdfplumber/pdfminer coordinates (bottom-left origin) to PyMuPDF (top-left origin)
-        if source in {'pdfplumber', 'pdfminer'}:
+        if source in {'pdfplumber', 'pdfminer', 'camelot'}:
             y0_new = page_height - y1
             y1_new = page_height - y0
             y0, y1 = y0_new, y1_new
+        # PyMuPDF coordinates are already in the correct system, just validate
+        elif source == 'pymupdf':
+            pass  # Already in correct coordinate system
         
         # Handle rotation (simplified - most PDFs are 0 degrees)
         if rotation == 90:
@@ -336,34 +343,121 @@ class PDFExtractorV2:
             page_tables.append(table_schema)
             page_units.append(table_unit)
             
-            # Add to exclusion zones with small padding
+            # Add to exclusion zones with proper padding
             bbox = table_schema.bbox
+            # Use reasonable padding to catch text that's part of the table
             padded_bbox = (
-                bbox[0] - 2, bbox[1] - 2,
-                bbox[2] + 2, bbox[3] + 2
+                max(0, bbox[0] - 5), 
+                max(0, bbox[1] - 5),
+                min(page.rect.width, bbox[2] + 5), 
+                min(page.rect.height, bbox[3] + 5)
             )
             exclusion_zones.append(padded_bbox)
+            logger.info(f"Added exclusion zone for table at {bbox} -> padded to {padded_bbox}")
         
         # 4) Extract paragraphs avoiding table zones
         text_blocks = [b for b in layout['blocks'] if b['type'] == 'text']
         
-        # Log for debugging
+        # Log for debugging with detailed bbox information
         logger.info(f"Page {page_num}: Found {len(text_blocks)} text blocks before filtering")
         logger.info(f"Page {page_num}: {len(exclusion_zones)} exclusion zones from tables")
         
+        # Log exclusion zones for debugging
+        for i, zone in enumerate(exclusion_zones):
+            logger.info(f"Page {page_num}: Exclusion zone {i}: {zone}")
+        
+        # Log text blocks for debugging
+        for i, block in enumerate(text_blocks[:5]):  # Log first 5 blocks
+            logger.info(f"Page {page_num}: Text block {i}: bbox={block['bbox']}, text_preview='{block.get('text', '')[:50]}...'")
+        
         filtered_blocks = []
         
-        for block in text_blocks:
-            if not self._is_in_exclusion_zone(block['bbox'], exclusion_zones):
+        for i, block in enumerate(text_blocks):
+            # Ensure text block bbox is normalized to same coordinate system
+            raw_bbox = block['bbox']
+            # PyMuPDF blocks should already be in correct coordinate system, but normalize for consistency  
+            block_bbox = self.normalize_bbox(raw_bbox, 'pymupdf', page.rect.width, page.rect.height, 0)
+            block['bbox'] = block_bbox  # Update the block with normalized bbox
+            
+            # Calculate block area and text length for better filtering decisions
+            block_area = (block_bbox[2] - block_bbox[0]) * (block_bbox[3] - block_bbox[1])
+            text_length = len(block.get('text', ''))
+            
+            is_excluded = self._is_in_exclusion_zone(block_bbox, exclusion_zones)
+            
+            # Special handling: Don't exclude large text blocks (likely important paragraphs)
+            if is_excluded and (block_area > 5000 or text_length > 100):
+                logger.warning(f"Page {page_num}: OVERRIDING exclusion for large text block {i} - area:{block_area:.1f}, text_len:{text_length}")
+                is_excluded = False
+            
+            if not is_excluded:
                 filtered_blocks.append(block)
+                logger.info(f"Page {page_num}: KEPT text block {i} at {block_bbox}, area:{block_area:.1f}, text_len:{text_length}")
             else:
-                logger.debug(f"Page {page_num}: Filtered text block at {block['bbox']}")
+                logger.info(f"Page {page_num}: FILTERED text block {i} at {block_bbox} - overlaps with table")
         
-        logger.info(f"Page {page_num}: {len(filtered_blocks)} text blocks after filtering")
+        logger.info(f"Page {page_num}: {len(filtered_blocks)} text blocks after filtering (removed {len(text_blocks) - len(filtered_blocks)})")
+        
+        # Safety check: if ALL text blocks are filtered out, use more lenient criteria
+        if not filtered_blocks and text_blocks and exclusion_zones:
+            logger.warning(f"Page {page_num}: ALL text blocks filtered out! Using emergency fallback...")
+            
+            # Emergency fallback: only filter blocks that are ENTIRELY inside tables
+            emergency_filtered = []
+            for i, block in enumerate(text_blocks):
+                block_bbox = block['bbox']
+                should_exclude = False
+                
+                for zone in exclusion_zones:
+                    # Only exclude if block is COMPLETELY inside table (very strict)
+                    if (block_bbox[0] >= zone[0] and block_bbox[1] >= zone[1] and 
+                        block_bbox[2] <= zone[2] and block_bbox[3] <= zone[3]):
+                        should_exclude = True
+                        logger.info(f"Page {page_num}: Emergency filter - block {i} completely inside table {zone}")
+                        break
+                
+                if not should_exclude:
+                    emergency_filtered.append(block)
+                    logger.info(f"Page {page_num}: Emergency keep - block {i} at {block_bbox}")
+            
+            filtered_blocks = emergency_filtered
+            logger.warning(f"Page {page_num}: Emergency fallback kept {len(filtered_blocks)} text blocks")
         
         # Group by column and process
         paragraphs = self._build_paragraphs(filtered_blocks, columns, page_num, doc_id)
         page_units.extend(paragraphs)
+        
+        # Final validation and fallback
+        text_units = [u for u in paragraphs if u.unit_type == 'paragraph']
+        table_units = [u for u in page_units if u.unit_type == 'table']
+        
+        # If we have very few text units but there should be more content, try OCR fallback
+        if len(text_units) < 2 and len(table_units) > 0:
+            logger.warning(f"Page {page_num}: Very few text units ({len(text_units)}) detected, trying OCR backup...")
+            
+            # Get simple text and check if there's substantial content missing
+            simple_text = page.get_text("text")
+            if len(simple_text) > 500:  # There should be more content
+                # Try to extract text from non-table areas using OCR
+                ocr_text = self._ocr_non_table_areas(page, page_num, exclusion_zones, artefacts_dir)
+                if ocr_text:
+                    ocr_unit = Unit(
+                        unit_id=f"u_{doc_id}_p{page_num}_ocr_backup",
+                        doc_id=doc_id,
+                        page=page_num,
+                        unit_type="paragraph",
+                        column="full",
+                        bbox=(0, 0, page.rect.width, page.rect.height),
+                        y0=0,
+                        source="ocr_backup",
+                        anchor=f"md://u_{doc_id}_p{page_num}_ocr_backup",
+                        content=ocr_text
+                    )
+                    page_units.append(ocr_unit)
+                    text_units.append(ocr_unit)
+                    logger.info(f"Added OCR backup unit with {len(ocr_text)} characters")
+        
+        logger.info(f"Page {page_num} FINAL RESULT: {len(text_units)} text units, {len(table_units)} table units")
         
         # 5) Extract figures if any
         figure_blocks = [b for b in layout['blocks'] if b['type'] == 'figure']
@@ -377,7 +471,14 @@ class PDFExtractorV2:
         
         # 6) OCR full page if no text found
         if not text_blocks and not table_results and TESSERACT_AVAILABLE:
+            logger.info(f"Page {page_num}: No text/tables found, performing full-page OCR...")
+            ocr_start = time.time()
+            
             ocr_text = self._ocr_full_page(page, page_num, artefacts_dir)
+            
+            ocr_duration = time.time() - ocr_start
+            logger.info(f"Page {page_num}: OCR completed in {ocr_duration:.2f} seconds")
+            
             if ocr_text:
                 unit = Unit(
                     unit_id=f"u_{doc_id}_p{page_num}_ocr",
@@ -392,20 +493,22 @@ class PDFExtractorV2:
                     content=ocr_text
                 )
                 page_units.append(unit)
+                logger.info(f"Page {page_num}: OCR extracted {len(ocr_text)} characters")
         
         return page_units, page_tables, page_figures
     
     def _build_layout_map(self, page: fitz.Page) -> Dict[str, Any]:
-        """Build layout map from page rawdict"""
+        """Build layout map from page - IMPROVED VERSION"""
         layout = {'blocks': [], 'page_rect': tuple(page.rect)}
         
-        # Get raw dictionary for detailed structure
-        raw_dict = page.get_text("rawdict")
+        # Try multiple extraction methods for better coverage
+        # Method 1: Use dict extraction (more reliable than rawdict)
+        dict_data = page.get_text("dict")
         
-        # Also try simple text extraction as fallback
+        # Also get simple text for validation
         simple_text = page.get_text("text")
         
-        for block_idx, block in enumerate(raw_dict.get('blocks', [])):
+        for block_idx, block in enumerate(dict_data.get('blocks', [])):
             block_type = block.get('type', 0)
             bbox = block.get('bbox', (0, 0, 0, 0))
             
@@ -437,20 +540,196 @@ class PDFExtractorV2:
                     })
         
         # Fallback: if no text blocks found but simple_text has content
+        # Split into paragraphs to avoid single full-page block
         if not any(b['type'] == 'text' for b in layout['blocks']) and simple_text.strip():
-            logger.warning("No text blocks from rawdict, using simple text extraction")
-            # Create a single text block from simple text
-            layout['blocks'].append({
-                'type': 'text',
-                'bbox': tuple(page.rect),
-                'text': simple_text.strip(),
-                'lines': [],
-                'block_idx': -1
-            })
+            logger.warning("No text blocks from rawdict, using simple text extraction with paragraph splitting")
+            
+            # Split text into paragraphs
+            paragraphs = [p.strip() for p in simple_text.split('\n\n') if p.strip()]
+            
+            # Create multiple text blocks instead of one massive block
+            page_height = page.rect.height
+            block_height = page_height / max(len(paragraphs), 1)
+            
+            for i, para in enumerate(paragraphs):
+                y0 = i * block_height
+                y1 = min((i + 1) * block_height, page_height)
+                
+                layout['blocks'].append({
+                    'type': 'text',
+                    'bbox': (0.0, y0, page.rect.width, y1),
+                    'text': para,
+                    'lines': [],
+                    'block_idx': f"fallback_{i}"
+                })
         
-        logger.debug(f"Layout map: {len(layout['blocks'])} blocks ({len([b for b in layout['blocks'] if b['type'] == 'text'])} text, {len([b for b in layout['blocks'] if b['type'] == 'figure'])} figures)")
+        text_blocks = [b for b in layout['blocks'] if b['type'] == 'text']
+        figure_blocks = [b for b in layout['blocks'] if b['type'] == 'figure']
+        
+        logger.info(f"Layout map: {len(layout['blocks'])} total blocks ({len(text_blocks)} text, {len(figure_blocks)} figures)")
+        
+        # ENHANCED DEBUGGING: Log all text blocks in detail
+        for i, block in enumerate(text_blocks):
+            bbox = block['bbox']
+            text_preview = block.get('text', '')[:150]
+            bbox_area = (bbox[2] - bbox[0]) * (bbox[3] - bbox[1])
+            logger.info(f"Text block {i}: bbox={bbox}, area={bbox_area:.1f}, text='{text_preview}...'")
+        
+        # If very few text blocks found, try alternative extraction
+        if len(text_blocks) < 3:
+            logger.warning(f"VERY FEW TEXT BLOCKS ({len(text_blocks)})! Trying alternative extraction...")
+            
+            # Try blocks extraction with different method
+            alternative_blocks = self._extract_text_blocks_alternative(page)
+            if alternative_blocks:
+                logger.info(f"Alternative method found {len(alternative_blocks)} additional blocks")
+                layout['blocks'].extend(alternative_blocks)
+        
+        # If no text blocks found, log warning
+        if not text_blocks:
+            logger.warning(f"NO TEXT BLOCKS FOUND! Simple text length: {len(simple_text)}")
+            if simple_text:
+                logger.warning(f"Simple text preview: '{simple_text[:400]}...'")
         
         return layout
+    
+    def _extract_text_blocks_alternative(self, page: fitz.Page) -> List[Dict]:
+        """Alternative text extraction method using different PyMuPDF approaches"""
+        alternative_blocks = []
+        
+        try:
+            # Method 1: Use text blocks directly
+            text_page = page.get_textpage()
+            blocks = text_page.extractBLOCKS()
+            
+            for i, block in enumerate(blocks):
+                # block format: (x0, y0, x1, y1, "text", block_no, block_type)
+                if len(block) >= 5:
+                    x0, y0, x1, y1, text = block[:5]
+                    text = text.strip()
+                    
+                    # Skip very small text blocks
+                    if len(text) > 10 and (x1 - x0) > 30 and (y1 - y0) > 10:
+                        alternative_blocks.append({
+                            'type': 'text',
+                            'bbox': (x0, y0, x1, y1),
+                            'text': text,
+                            'source': 'extractBLOCKS'
+                        })
+                        
+        except Exception as e:
+            logger.debug(f"Alternative text extraction failed: {e}")
+        
+        # Method 2: Try textbox extraction if first method didn't work
+        if not alternative_blocks:
+            try:
+                # Use get_text with 'dict' but process differently
+                words = page.get_text("words")
+                
+                # Group words into lines based on Y position
+                lines = {}
+                for word in words:
+                    x0, y0, x1, y1, text, block_no, line_no, word_no = word
+                    line_key = int(y0)  # Group by Y position
+                    
+                    if line_key not in lines:
+                        lines[line_key] = {'words': [], 'bbox': [x0, y0, x1, y1]}
+                    
+                    lines[line_key]['words'].append(text)
+                    # Expand bbox
+                    bbox = lines[line_key]['bbox']
+                    lines[line_key]['bbox'] = [
+                        min(bbox[0], x0), min(bbox[1], y0),
+                        max(bbox[2], x1), max(bbox[3], y1)
+                    ]
+                
+                # Convert lines to blocks
+                for line_y, line_data in lines.items():
+                    text = ' '.join(line_data['words'])
+                    if len(text.strip()) > 15:  # Only substantial text
+                        bbox = line_data['bbox']
+                        alternative_blocks.append({
+                            'type': 'text',
+                            'bbox': tuple(bbox),
+                            'text': text.strip(),
+                            'source': 'words_grouped'
+                        })
+                        
+            except Exception as e:
+                logger.debug(f"Words extraction failed: {e}")
+        
+        logger.info(f"Alternative extraction found {len(alternative_blocks)} blocks")
+        return alternative_blocks
+    
+    def _ocr_non_table_areas(self, page: fitz.Page, page_num: int, 
+                            exclusion_zones: List[Tuple], artefacts_dir: Path) -> Optional[str]:
+        """OPTIMIZED OCR non-table areas when text detection fails"""
+        if not TESSERACT_AVAILABLE:
+            return None
+            
+        try:
+            # OPTIMIZED: Use same efficient method as main OCR
+            mat = fitz.Matrix(300 / 72.0, 300 / 72.0)  # Optimal DPI
+            pix = page.get_pixmap(matrix=mat)
+            
+            # OPTIMIZED: Direct memory OCR (no temp files)
+            img_data = pix.tobytes("png")
+            from PIL import Image
+            import io
+            
+            img = Image.open(io.BytesIO(img_data))
+            
+            # OCR with balanced config (same as main OCR)
+            full_text = pytesseract.image_to_string(
+                img,
+                lang=self.ocr_lang,
+                config='--oem 3 --psm 6 -c tessedit_create_hocr=0'
+            )
+            
+            # Enhanced post-processing
+            if full_text:
+                full_text = self._post_process_ocr_text(full_text)
+                
+                # Filter out table-like content
+                if exclusion_zones:
+                    lines = full_text.split('\n')
+                    filtered_lines = []
+                    
+                    for line in lines:
+                        line = line.strip()
+                        # Keep substantial text lines
+                        if len(line) > 20 and not self._is_likely_table_text(line):
+                            filtered_lines.append(line)
+                    
+                    result = '\n'.join(filtered_lines)
+                    return result.strip() if result.strip() else None
+            
+            return full_text.strip() if full_text else None
+            
+        except Exception as e:
+            logger.warning(f"OCR backup failed on page {page_num}: {e}")
+            return None
+    
+    def _is_likely_table_text(self, text: str) -> bool:
+        """Check if text line is likely from a table"""
+        # Simple heuristics to identify table text
+        text = text.strip()
+        
+        # Very short text
+        if len(text) < 10:
+            return True
+        
+        # Mostly numbers and punctuation
+        non_alpha = sum(1 for c in text if not c.isalpha())
+        if len(text) > 0 and non_alpha / len(text) > 0.7:
+            return True
+        
+        # Common table patterns
+        table_patterns = ['%', '$', '|', 'USD', 'IDR', 'Feb', 'Jan']
+        if any(pattern in text for pattern in table_patterns):
+            return True
+        
+        return False
     
     def _remove_headers_footers(self, layout: Dict, page_rect: fitz.Rect) -> Dict:
         """Remove headers and footers based on mode"""
@@ -572,88 +851,91 @@ class PDFExtractorV2:
     
     def _extract_tables(self, page: fitz.Page, page_num: int, 
                        doc_id: str) -> List[Tuple[TableSchema, Unit]]:
-        """Extract tables using Camelot with pdfplumber fallback"""
+        """Extract tables - prioritize PDFPlumber (more reliable) over Camelot"""
         results = []
         
-        # Try Camelot if available
-        if CAMELOT_AVAILABLE:
-            try:
-                import tempfile
-                # Save page as temp PDF for Camelot
-                with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as tmp:
-                    temp_pdf = tmp.name
-                
-                temp_doc = fitz.open()
-                temp_doc.insert_pdf(page.parent, from_page=page_num-1, to_page=page_num-1)
-                temp_doc.save(temp_pdf)
-                temp_doc.close()
-                
-                # Try lattice mode
-                lattice_tables = None
-                stream_tables = None
-                
-                try:
-                    lattice_tables = camelot.read_pdf(temp_pdf, flavor='lattice', pages='1')
-                except Exception as e:
-                    logger.debug(f"Camelot lattice failed: {e}")
-                
-                # Try stream mode
-                try:
-                    stream_tables = camelot.read_pdf(temp_pdf, flavor='stream', pages='1')
-                except Exception as e:
-                    logger.debug(f"Camelot stream failed: {e}")
-                
-                # Select best tables
-                best_tables = self._select_best_tables(lattice_tables, stream_tables)
-                
-                for idx, table in enumerate(best_tables):
-                    table_id = f"t_{doc_id}_p{page_num}_{idx}"
-                    
-                    # Post-process table
-                    df = self._postprocess_table(table.df)
-                    
-                    # Get bbox (Camelot bbox is (x1,y1,x2,y2))
-                    bbox = (table.bbox[0], page.rect.height - table.bbox[3], 
-                           table.bbox[2], page.rect.height - table.bbox[1])
-                    
-                    # Create schema
-                    schema = TableSchema(
-                        table_id=table_id,
-                        page=page_num,
-                        bbox=bbox,
-                        headers=df.columns.tolist(),
-                        rows=df.values.tolist(),
-                        fixes={'merged_tokens': self.metrics.get('merged_tokens', 0)},
-                        provenance=f'camelot:{table.flavor}'
-                    )
-                    
-                    # Create unit
-                    unit = Unit(
-                        unit_id=f"u_{table_id}",
-                        doc_id=doc_id,
-                        page=page_num,
-                        unit_type="table",
-                        column="full",
-                        bbox=bbox,
-                        y0=bbox[1],
-                        source="camelot",
-                        anchor=f"md://u_{table_id}",
-                        content=self._table_to_markdown(df),
-                        extra={'table_id': table_id}
-                    )
-                    
-                    results.append((schema, unit))
-                
-                # Clean up temp file
-                if os.path.exists(temp_pdf):
-                    os.remove(temp_pdf)
-                    
-            except Exception as e:
-                logger.warning(f"Camelot failed on page {page_num}: {e}")
+        # Try PDFPlumber first (generally more reliable for most tables)
+        if PDFPLUMBER_AVAILABLE and self.enable_pdfplumber_fallback:
+            results = self._extract_tables_pdfplumber(page, page_num, doc_id)
+            if results:
+                logger.info(f"PDFPlumber found {len(results)} tables on page {page_num}")
+                return results
         
-        # Fallback to pdfplumber if no tables found
-        if not results and PDFPLUMBER_AVAILABLE and self.enable_pdfplumber_fallback:
-            results.extend(self._extract_tables_pdfplumber(page, page_num, doc_id))
+        # Fallback to Camelot if PDFPlumber found nothing
+        if CAMELOT_AVAILABLE and not results:
+            results = self._extract_tables_camelot(page, page_num, doc_id)
+            if results:
+                logger.info(f"Camelot found {len(results)} tables on page {page_num}")
+        
+        return results
+    
+    def _extract_tables_camelot(self, page: fitz.Page, page_num: int,
+                                doc_id: str) -> List[Tuple[TableSchema, Unit]]:
+        """Extract tables using Camelot"""
+        results = []
+        
+        try:
+            import tempfile
+            # Save page as temp PDF for Camelot
+            with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as tmp:
+                temp_pdf = tmp.name
+            
+            temp_doc = fitz.open()
+            temp_doc.insert_pdf(page.parent, from_page=page_num-1, to_page=page_num-1)
+            temp_doc.save(temp_pdf)
+            temp_doc.close()
+            
+            # Try lattice mode (better for bordered tables)
+            tables = []
+            try:
+                tables = camelot.read_pdf(temp_pdf, flavor='lattice', pages='1')
+            except:
+                # Fallback to stream mode
+                try:
+                    tables = camelot.read_pdf(temp_pdf, flavor='stream', pages='1')
+                except:
+                    pass
+            
+            for idx, table in enumerate(tables):
+                df = self._postprocess_table(table.df)
+                
+                # Convert Camelot bbox to PyMuPDF coordinates
+                bbox = (table.bbox[0], page.rect.height - table.bbox[3], 
+                       table.bbox[2], page.rect.height - table.bbox[1])
+                
+                table_id = f"t_{doc_id}_p{page_num}_cm_{idx}"
+                
+                schema = TableSchema(
+                    table_id=table_id,
+                    page=page_num,
+                    bbox=bbox,
+                    headers=df.columns.tolist(),
+                    rows=df.values.tolist(),
+                    provenance='camelot'
+                )
+                
+                unit = Unit(
+                    unit_id=f"u_{table_id}",
+                    doc_id=doc_id,
+                    page=page_num,
+                    unit_type="table",
+                    column="full",
+                    bbox=bbox,
+                    y0=bbox[1],
+                    source="camelot",
+                    anchor=f"md://u_{table_id}",
+                    content=self._table_to_markdown(df),
+                    extra={'table_id': table_id}
+                )
+                
+                results.append((schema, unit))
+            
+            # Clean up
+            if os.path.exists(temp_pdf):
+                os.remove(temp_pdf)
+                
+        except Exception as e:
+            logger.warning(f"Camelot failed on page {page_num}: {e}")
         
         return results
     
@@ -904,17 +1186,22 @@ class PDFExtractorV2:
         return '\n'.join(lines)
     
     def _is_in_exclusion_zone(self, bbox: Tuple, exclusion_zones: List[Tuple]) -> bool:
-        """Check if bbox overlaps with any exclusion zone using improved overlap detection"""
+        """Check if bbox overlaps with any exclusion zone - FIXED VERSION"""
         for zone in exclusion_zones:
-            # Use the new comprehensive overlap metrics
-            metrics = self.calculate_overlap_metrics(bbox, zone)
+            # Calculate simple overlap
+            x_overlap = max(0, min(bbox[2], zone[2]) - max(bbox[0], zone[0]))
+            y_overlap = max(0, min(bbox[3], zone[3]) - max(bbox[1], zone[1]))
             
-            # Stricter criteria to avoid false positives
-            if (metrics['overlap_ratio'] > 0.15 and 
-                metrics['x_overlap_ratio'] > 0.5 and 
-                metrics['iou'] > 0.1):
-                logger.debug(f"Text bbox {bbox} excluded by table zone {zone} - overlap: {metrics}")
-                return True
+            # If there's any significant overlap, exclude it
+            if x_overlap > 0 and y_overlap > 0:
+                overlap_area = x_overlap * y_overlap
+                bbox_area = (bbox[2] - bbox[0]) * (bbox[3] - bbox[1])
+                
+                # Exclude if more than 10% of text block overlaps with table
+                if bbox_area > 0 and (overlap_area / bbox_area) > 0.1:
+                    logger.info(f"Text bbox {bbox} excluded by table zone {zone} - overlap: {overlap_area/bbox_area:.2%}")
+                    return True
+        
         return False
     
     def _horizontal_overlap(self, bbox1: Tuple, bbox2: Tuple) -> float:
@@ -1068,50 +1355,35 @@ class PDFExtractorV2:
         return None
     
     def _ocr_full_page(self, page: fitz.Page, page_num: int, artefacts_dir: Path) -> Optional[str]:
-        """OCR full page when no text detected with improved settings for small text"""
+        """OPTIMIZED OCR full page - faster and more accurate"""
         if not TESSERACT_AVAILABLE:
             return None
         
         try:
-            # Render page at higher DPI for better OCR of small text
-            # Use 400 DPI for better small text recognition
-            mat = fitz.Matrix(400 / 72.0, 400 / 72.0)
+            # PERFORMANCE OPTIMIZATION 1: Use optimal DPI (300 vs 400)
+            # 300 DPI is sweet spot for speed vs quality
+            mat = fitz.Matrix(300 / 72.0, 300 / 72.0)
             pix = page.get_pixmap(matrix=mat)
             
-            # Save as temp image
-            temp_path = artefacts_dir / f"temp_page_{page_num}.png"
-            pix.save(str(temp_path))
+            # PERFORMANCE OPTIMIZATION 2: Direct memory OCR (no temp files!)
+            # Convert pixmap to PIL Image in memory
+            img_data = pix.tobytes("png")
+            from PIL import Image
+            import io
             
-            # Try two-pass OCR for better accuracy on small text and numbers
-            try:
-                # Pass 1: General OCR with enhanced settings
-                text1 = pytesseract.image_to_string(
-                    str(temp_path),
-                    lang=self.ocr_lang,
-                    config='--oem 3 --psm 6 -c preserve_interword_spaces=1'
-                )
-                
-                # Pass 2: Numeric-focused OCR for better number recognition
-                text2 = pytesseract.image_to_string(
-                    str(temp_path),
-                    lang='eng',
-                    config='--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789.()-%/ -c preserve_interword_spaces=1'
-                )
-                
-                # Merge results: use numeric pass for number-heavy lines
-                final_text = self._merge_ocr_results(text1, text2)
-                
-            except Exception:
-                # Fallback to simple OCR
-                final_text = pytesseract.image_to_string(
-                    str(temp_path),
-                    lang=self.ocr_lang,
-                    config=f'--oem 3 --psm {self.ocr_primary_psm}'
-                )
+            img = Image.open(io.BytesIO(img_data))
             
-            # Clean up
-            if temp_path.exists():
-                temp_path.unlink()
+            # PERFORMANCE + ACCURACY OPTIMIZATION: Balanced OCR config
+            # PSM 6: Uniform block of text (better for structured docs)
+            final_text = pytesseract.image_to_string(
+                img,
+                lang=self.ocr_lang,
+                config='--oem 3 --psm 6 -c preserve_interword_spaces=1 -c tessedit_create_hocr=0'
+            )
+            
+            # ACCURACY OPTIMIZATION: Enhanced post-processing
+            if final_text:
+                final_text = self._post_process_ocr_text(final_text)
             
             return final_text.strip() if final_text else None
             
@@ -1119,34 +1391,82 @@ class PDFExtractorV2:
             logger.warning(f"OCR failed on page {page_num}: {e}")
             return None
     
-    def _merge_ocr_results(self, text1: str, text2: str) -> str:
-        """Merge two OCR results, preferring numeric pass for number-heavy lines"""
-        if not text1:
-            return text2 or ""
-        if not text2:
-            return text1
+    def _post_process_ocr_text(self, text: str) -> str:
+        """IMPROVED OCR text post-processing - preserving structure"""
+        import re
         
-        lines1 = text1.split('\n')
-        lines2 = text2.split('\n')
+        # CONSERVATIVE approach - preserve layout structure
         
-        merged_lines = []
-        max_lines = max(len(lines1), len(lines2))
+        # Fix common OCR mistakes but be more careful
+        corrections = {
+            # Only fix very obvious mistakes
+            'dan': ['daan'],  # Conservative - only clear mistakes
+            'yang': ['yano'], 
+            'untuk': ['unluk'],
+        }
         
-        for i in range(max_lines):
-            line1 = lines1[i] if i < len(lines1) else ""
-            line2 = lines2[i] if i < len(lines2) else ""
+        # Apply corrections carefully
+        for correct, mistakes in corrections.items():
+            for mistake in mistakes:
+                text = re.sub(r'\b' + re.escape(mistake) + r'\b', correct, text, flags=re.IGNORECASE)
+        
+        # CRITICAL: Preserve numbered sections structure
+        # Fix pattern: "1.46\n1.47\nTIN atau..." → "1.46 TIN atau...\n1.47 ..."
+        lines = text.split('\n')
+        processed_lines = []
+        
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
             
-            # Count digits in each line
-            digits1 = sum(c.isdigit() for c in line1)
-            digits2 = sum(c.isdigit() for c in line2)
-            
-            # If line2 has significantly more digits and is not empty, prefer it
-            if digits2 > digits1 and len(line2.strip()) > 0 and digits2 > 3:
-                merged_lines.append(line2)
+            # Check if current line is a number/section marker
+            if re.match(r'^\d+\.?\d*\.?\s*$', line) and i + 1 < len(lines):
+                # Look ahead for the actual content
+                next_line = lines[i + 1].strip()
+                
+                # If next line is also a number, collect all numbers first
+                if re.match(r'^\d+\.?\d*\.?\s*$', next_line):
+                    numbers = [line]
+                    j = i + 1
+                    while j < len(lines) and re.match(r'^\d+\.?\d*\.?\s*$', lines[j].strip()):
+                        numbers.append(lines[j].strip())
+                        j += 1
+                    
+                    # Now find content lines
+                    content_start = j
+                    for k, num in enumerate(numbers):
+                        if content_start + k < len(lines):
+                            content = lines[content_start + k].strip()
+                            if content:
+                                processed_lines.append(f"{num} {content}")
+                            else:
+                                processed_lines.append(num)
+                        else:
+                            processed_lines.append(num)
+                    
+                    i = content_start + len(numbers) - 1
+                else:
+                    # Simple case: number followed by content
+                    if next_line and not re.match(r'^\d+\.?\d*\.?\s*$', next_line):
+                        processed_lines.append(f"{line} {next_line}")
+                        i += 1
+                    else:
+                        processed_lines.append(line)
             else:
-                merged_lines.append(line1)
+                processed_lines.append(line)
+            
+            i += 1
         
-        return '\n'.join(merged_lines)
+        # Reconstruct text with preserved structure
+        text = '\n'.join(processed_lines)
+        
+        # Minimal cleanup - preserve structure
+        text = re.sub(r'\n\s*\n\s*\n+', '\n\n', text)  # Remove excessive breaks
+        text = re.sub(r'[ \t]+', ' ', text)  # Multiple spaces to single
+        text = re.sub(r'^ +| +$', '', text, flags=re.MULTILINE)  # Trim lines
+        
+        return text
+    
     
     def _assemble_markdown(self, units: List[Unit]) -> str:
         """Assemble final markdown from units sorted by position"""
