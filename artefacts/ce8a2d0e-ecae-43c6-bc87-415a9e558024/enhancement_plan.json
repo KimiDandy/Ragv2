@@ -1,0 +1,2918 @@
+{
+  "doc_id": "ce8a2d0e-ecae-43c6-bc87-415a9e558024",
+  "run_id": "plan_2025-09-21T17:52:45.970259",
+  "windows": [
+    {
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24",
+      "doc_id": "ce8a2d0e-ecae-43c6-bc87-415a9e558024",
+      "window_index": 0,
+      "token_span": [
+        0,
+        7653
+      ],
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_1",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3"
+      ],
+      "text_preview": "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA  Ringkasan Informasi Produk dan Layanan Versi Umum  Nama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata Uang  Rupiah  Jenis Produk  Asuransi Kematian Berjangka  Nama Penerbit  PT. Asuransi BRI Life  | Col0             | Ringkasan Informasi Produk dan Layanan Versi Umum   | None                                                                         | Col3   |\n|:-----------------|:-----------------------...",
+      "total_tokens": 7653
+    },
+    {
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b",
+      "doc_id": "ce8a2d0e-ecae-43c6-bc87-415a9e558024",
+      "window_index": 1,
+      "token_span": [
+        7605,
+        14441
+      ],
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_pb_1",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_pb_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_4",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_4",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_5",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p6_ocr_backup",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p6_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p6_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_para_0"
+      ],
+      "text_preview": "D  695  1.390  2.085  2.780  3.475  Untuk Masa Asuransi 5 tahun  Tidak tersedia untuk usia > 45 tahun  | Col0                                                                                              | None     | Keterangan: *) Premi yang disajikan dalam tabel merupakan premi bulanan, adapun premi tahunan adalah 10 x premi bulanan. **)Premi berdasarkan pilihan Manfaat Asuransi dengan atau tanpa Manfaat Tambahan, sebagai berikut: Manfaat dasar + manfaat tambahan Penyakit Kritis + manfaat A : C...",
+      "total_tokens": 6836
+    },
+    {
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4",
+      "doc_id": "ce8a2d0e-ecae-43c6-bc87-415a9e558024",
+      "window_index": 2,
+      "token_span": [
+        14441,
+        21919
+      ],
+      "pages": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p9_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_left_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "text_preview": "| Col0   | v. Tertanggung turut dalam suatu penerbangan udara selain sebagai penumpang resmi atau          | Col2   |\n|:-------|:------------------------------------------------------------------------------------------------|:-------|\n|        | awak pesawat dari suatu maskapai penerbangan sipil komersial yang berlisensi dan                |        |\n|        | beroperasi dalam penerbangan rutin;                                                             |        |\n|        | vi. Perang, invas...",
+      "total_tokens": 7478
+    },
+    {
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a",
+      "doc_id": "ce8a2d0e-ecae-43c6-bc87-415a9e558024",
+      "window_index": 3,
+      "token_span": [
+        21541,
+        25959
+      ],
+      "pages": [
+        11,
+        12,
+        13
+      ],
+      "unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p12_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p12_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p12_pb_1",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p12_pb_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p12_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p12_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p13_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p13_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p13_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p13_para_2"
+      ],
+      "text_preview": "terdaftar dalam manifes, dan/atau awak pesawat dari maskapai  penerbangan sipil komersial yang berlisensi dan beroperasi dalam rute  penerbangan rutin dan merupakan rute resmi;   Pemegang Polis adalah orang yang mengadakan perjanjian pertanggungan  dengan BRI Life.   Polis adalah dokumen yang memuat pertanggungan antara Pemegang Polis  dengan PT. Asuransi BRI Life.  Premi adalah sejumlah pembayaran kepada PT. Asuransi BRI Life untuk  pertanggungan dari Pemegang Polis yang Berhak.  Ringkasan ...",
+      "total_tokens": 4418
+    }
+  ],
+  "all_candidates": [
+    {
+      "cand_id": "cand_glossary_d51e2fea",
+      "type": "glossary",
+      "title": "Uang Pertanggungan",
+      "rationale": "Istilah ini merupakan istilah utama dalam produk asuransi jiwa dan sering membingungkan pembaca awam. Penjelasan tentang arti uang pertanggungan akan membantu pemahaman manfaat dan besaran perlindungan yang diberikan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:UANG PERTANGGUNGAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_c7f2e90e",
+      "type": "glossary",
+      "title": "Premi",
+      "rationale": "Premi adalah istilah kunci dalam asuransi yang wajib dipahami oleh calon nasabah. Penjelasan tentang premi akan membantu pembaca memahami kewajiban pembayaran dan kaitannya dengan manfaat asuransi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        3,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PREMI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_53c93b91",
+      "type": "glossary",
+      "title": "No Claim Bonus",
+      "rationale": "Istilah ini tidak umum di masyarakat awam dan merupakan fitur penting yang membedakan produk. Penjelasan akan membantu pembaca memahami keuntungan jika tidak ada klaim selama masa asuransi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3"
+      ],
+      "pages": [
+        1,
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:NO CLAIM BONUS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_7f25d57d",
+      "type": "glossary",
+      "title": "Asuransi Kematian Berjangka",
+      "rationale": "Jenis produk ini memiliki karakteristik khusus yang membedakannya dari asuransi jiwa seumur hidup. Penjelasan akan membantu pembaca memahami cakupan perlindungan dan masa berlaku polis.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:ASURANSI KEMATIAN BERJANGKA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_0ee6cade",
+      "type": "glossary",
+      "title": "Manfaat Tambahan",
+      "rationale": "Istilah manfaat tambahan sering digunakan dalam produk asuransi namun tidak selalu jelas cakupannya. Penjelasan akan membantu pembaca membedakan antara manfaat dasar dan tambahan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2"
+      ],
+      "pages": [
+        1,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANFAAT TAMBAHAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_e72c5865",
+      "type": "glossary",
+      "title": "Cacat Tetap Total dan Sebagian",
+      "rationale": "Istilah ini penting karena terkait dengan manfaat asuransi tambahan yang diberikan. Penjelasan akan membantu pembaca memahami kondisi yang dimaksud dan hak klaimnya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1"
+      ],
+      "pages": [
+        1,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:CACAT TETAP TOTAL DAN SEBAGIAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_f56dee68",
+      "type": "highlight",
+      "title": "Manfaat 300% dan 200% Uang Pertanggungan",
+      "rationale": "Persentase manfaat yang tinggi (300% dan 200% uang pertanggungan) merupakan keunggulan produk yang sangat menarik dan perlu disorot agar calon nasabah memahami besarnya perlindungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_36847e6e",
+      "type": "highlight",
+      "title": "Pengembalian Premi jika Tidak Ada Klaim",
+      "rationale": "Fitur pengembalian premi (No Claim Bonus) merupakan nilai tambah utama yang membedakan produk ini dari produk asuransi lain dan sangat penting untuk disorot.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_7a531ef3",
+      "type": "highlight",
+      "title": "Batas Usia Masuk Pemegang Polis",
+      "rationale": "Batas usia masuk minimum 21 tahun dan maksimum 70 tahun merupakan informasi penting bagi calon nasabah dan perlu disorot agar tidak terjadi kesalahpahaman.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_73870fcb",
+      "type": "highlight",
+      "title": "Pilihan Masa Asuransi 3 dan 5 Tahun",
+      "rationale": "Pilihan masa asuransi yang fleksibel (3 dan 5 tahun) merupakan fitur penting yang perlu disorot agar calon nasabah dapat memilih sesuai kebutuhan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_caption_268632a8",
+      "type": "caption",
+      "title": "Penjelasan Tabel Premi dan Uang Pertanggungan",
+      "rationale": "Tabel premi dan uang pertanggungan pada halaman 2 dan 3 cukup kompleks dan memuat banyak angka. Caption yang menjelaskan cara membaca tabel dan keterkaitan antara usia, plan, premi, dan uang pertanggungan sangat membantu pembaca.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_2"
+      ],
+      "pages": [
+        2,
+        3
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_5a5ce3b8",
+      "type": "faq",
+      "title": "Apa yang dimaksud dengan manfaat 300% dan 200% uang pertanggungan?",
+      "rationale": "Persentase manfaat sering membingungkan pembaca awam. FAQ ini akan membantu menjelaskan bagaimana perhitungan dan kondisi pencairan manfaat tersebut.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang dimaksud dengan manfaat 300% dan 200% uang pertanggungan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_6deed2e3",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan pengembalian premi (No Claim Bonus)?",
+      "rationale": "Proses dan syarat pengembalian premi sering menjadi pertanyaan utama calon nasabah. FAQ ini akan membantu mengurangi kebingungan dan meningkatkan transparansi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan pengembalian premi (No Claim Bonus)?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_a2363e64",
+      "type": "faq",
+      "title": "Apa saja manfaat tambahan yang tersedia dalam produk ini?",
+      "rationale": "Produk menawarkan beberapa manfaat tambahan seperti penyakit kritis dan cacat tetap. FAQ ini akan membantu pembaca memahami cakupan perlindungan secara lebih rinci.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja manfaat tambahan yang tersedia dalam produk ini?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_3b4b7d86",
+      "type": "faq",
+      "title": "Siapa saja yang dapat menjadi pemegang polis dan tertanggung?",
+      "rationale": "Batasan usia dan ketentuan pemegang polis sering menjadi pertanyaan utama. FAQ ini akan membantu memperjelas syarat kepesertaan.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Siapa saja yang dapat menjadi pemegang polis dan tertanggung?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_c7f2e90e",
+      "type": "glossary",
+      "title": "Premi",
+      "rationale": "Premi adalah istilah utama dalam asuransi yang sering membingungkan pembaca awam. Penjelasan tentang apa itu premi, bagaimana cara pembayarannya (bulanan/tahunan), dan kaitannya dengan manfaat sangat penting untuk pemahaman dokumen.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "TERM:PREMI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_glossary_d51e2fea",
+      "type": "glossary",
+      "title": "Uang Pertanggungan",
+      "rationale": "Istilah ini sangat penting dalam produk asuransi jiwa dan seringkali tidak dipahami secara jelas oleh nasabah. Penjelasan tentang arti uang pertanggungan dan kapan dibayarkan akan membantu pembaca memahami manfaat produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_3"
+      ],
+      "pages": [
+        3,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:UANG PERTANGGUNGAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_glossary_53c93b91",
+      "type": "glossary",
+      "title": "No Claim Bonus",
+      "rationale": "No Claim Bonus adalah fitur yang tidak umum di semua produk asuransi dan dapat membingungkan pembaca. Penjelasan tentang mekanisme dan syarat mendapatkan bonus ini sangat membantu.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:NO CLAIM BONUS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_glossary_0ee6cade",
+      "type": "glossary",
+      "title": "Manfaat Tambahan",
+      "rationale": "Istilah manfaat tambahan (rider) seperti penyakit kritis dan cacat tetap total seringkali tidak dipahami secara detail oleh nasabah. Penjelasan istilah ini akan meningkatkan pemahaman produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANFAAT TAMBAHAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_highlight_9412033e",
+      "type": "highlight",
+      "title": "Premi Bulanan dan Tahunan",
+      "rationale": "Penjelasan bahwa premi tahunan adalah 10 kali premi bulanan merupakan insight penting yang harus disorot agar pembaca tidak salah mengerti perhitungan biaya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_highlight_9a422ed3",
+      "type": "highlight",
+      "title": "Batas Usia Pertanggungan",
+      "rationale": "Informasi bahwa produk tidak tersedia untuk usia di atas 45 tahun sangat penting dan harus disorot agar calon nasabah tidak salah paham.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_caption_0f3104b7",
+      "type": "caption",
+      "title": "Tabel Premi Pertanggungan Perpanjangan",
+      "rationale": "Tabel premi dengan angka-angka (695, 1.390, dst) dan penjelasan masa asuransi 3 dan 5 tahun dapat membingungkan tanpa caption yang menjelaskan kolom dan cara membaca tabel.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_caption_c10bb6cf",
+      "type": "caption",
+      "title": "Simulasi Pembayaran No Claim Bonus",
+      "rationale": "Perhitungan 25% x (Rp. 1.050.000 x 12 x 5) = Rp. 15.750.000 dan 25% x (Rp. 1.950.000 x 12 x 5) = Rp. 29.250.000 membutuhkan caption agar pembaca memahami konteks dan cara perhitungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_774d8189",
+      "type": "faq",
+      "title": "Bagaimana cara menghitung premi tahunan dari premi bulanan?",
+      "rationale": "Pembaca mungkin bingung dengan konversi premi bulanan ke tahunan, sehingga FAQ ini akan membantu memperjelas perhitungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara menghitung premi tahunan dari premi bulanan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_919fcb07",
+      "type": "faq",
+      "title": "Apa yang terjadi jika usia saya di atas 45 tahun?",
+      "rationale": "Karena ada batasan usia, pembaca yang berusia di atas 45 tahun perlu tahu konsekuensi dan alternatif yang tersedia.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang terjadi jika usia saya di atas 45 tahun?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_6576257f",
+      "type": "faq",
+      "title": "Apa saja manfaat tambahan yang bisa dipilih?",
+      "rationale": "Karena terdapat beberapa pilihan manfaat tambahan, pembaca perlu penjelasan detail mengenai opsi yang tersedia dan perbedaannya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja manfaat tambahan yang bisa dipilih?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_44f6271a",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan No Claim Bonus?",
+      "rationale": "Mekanisme dan syarat mendapatkan No Claim Bonus seringkali membingungkan, sehingga FAQ ini akan sangat membantu.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan No Claim Bonus?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_highlight_208889dc",
+      "type": "highlight",
+      "title": "Manfaat 300% Uang Pertanggungan",
+      "rationale": "Pembayaran 300% uang pertanggungan adalah fitur utama yang sangat menarik dan perlu disorot agar pembaca memahami keunggulan produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_glossary_702df31f",
+      "type": "glossary",
+      "title": "Tertanggung",
+      "rationale": "Istilah tertanggung merupakan istilah utama dalam polis asuransi yang sering membingungkan pembaca awam. Penjelasan siapa yang dimaksud dengan tertanggung sangat penting untuk menghindari salah persepsi.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        7,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:TERTANGGUNG",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_3b6bb8c2",
+      "type": "glossary",
+      "title": "Pemegang Polis",
+      "rationale": "Istilah pemegang polis seringkali disalahartikan sebagai tertanggung. Penjelasan perbedaan dan peran pemegang polis sangat penting untuk pemahaman hak dan kewajiban.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PEMEGANG POLIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_987c386b",
+      "type": "glossary",
+      "title": "Polis",
+      "rationale": "Polis adalah dokumen utama dalam perjanjian asuransi. Definisi jelas akan membantu pembaca memahami dokumen yang menjadi dasar hak dan kewajiban.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:POLIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_c853e40d",
+      "type": "glossary",
+      "title": "Free Look Periode",
+      "rationale": "Free Look Periode adalah istilah penting yang berkaitan dengan hak pembatalan polis oleh nasabah. Penjelasan istilah ini sangat krusial untuk perlindungan konsumen.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:FREE LOOK PERIODE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_9b1ff163",
+      "type": "glossary",
+      "title": "Manfaat Penyakit Kritis",
+      "rationale": "Istilah ini spesifik pada produk asuransi kesehatan dan sering menjadi pertanyaan utama nasabah. Penjelasan detail akan membantu pemahaman manfaat produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANFAAT PENYAKIT KRITIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_25329901",
+      "type": "glossary",
+      "title": "Surat Permohonan Asuransi (SPA)",
+      "rationale": "SPA adalah dokumen penting dalam proses pendaftaran asuransi. Penjelasan istilah ini membantu nasabah memahami proses administrasi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_para_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:SURAT PERMOHONAN ASURANSI (SPA)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_highlight_a8d85dbd",
+      "type": "highlight",
+      "title": "Free Look Periode 14 Hari",
+      "rationale": "Masa 14 hari untuk Free Look Periode adalah hak penting bagi nasabah untuk membatalkan polis tanpa penalti. Data numerik ini perlu disorot agar tidak terlewat.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_highlight_7ea119cb",
+      "type": "highlight",
+      "title": "Manfaat Penyakit Kritis Hanya Dibayarkan Satu Kali",
+      "rationale": "Pembatasan pembayaran manfaat penyakit kritis hanya satu kali selama masa berlaku polis adalah informasi penting yang harus disorot agar nasabah tidak salah paham.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_highlight_9c094195",
+      "type": "highlight",
+      "title": "Premi Sudah Termasuk Biaya Administrasi",
+      "rationale": "Informasi bahwa premi sudah termasuk biaya administrasi, pemeliharaan polis, dan biaya lainnya sangat penting untuk transparansi biaya kepada nasabah.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_0d695d7c",
+      "type": "faq",
+      "title": "Apa yang terjadi jika informasi pada saat klaim tidak sesuai?",
+      "rationale": "Risiko klaim tidak dibayarkan akibat ketidaksesuaian informasi adalah kekhawatiran utama nasabah. Penjelasan dalam bentuk FAQ akan sangat membantu.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_1"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang terjadi jika informasi pada saat klaim tidak sesuai?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_6e1b2f5d",
+      "type": "faq",
+      "title": "Bagaimana cara mengajukan asuransi?",
+      "rationale": "Proses pendaftaran asuransi sering menjadi pertanyaan utama. Penjelasan langkah-langkah pendaftaran sangat membantu calon nasabah.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_para_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mengajukan asuransi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_72df56f7",
+      "type": "faq",
+      "title": "Apa saja risiko klaim yang perlu diketahui?",
+      "rationale": "Risiko klaim merupakan informasi penting yang seringkali membingungkan nasabah. Penjelasan dalam bentuk FAQ akan meningkatkan pemahaman.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_left_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja risiko klaim yang perlu diketahui?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_caption_4b4f174c",
+      "type": "caption",
+      "title": "Tabel Pengecualian Pertanggungan",
+      "rationale": "Tabel yang memuat pengecualian pertanggungan (misal: bunuh diri, perang, narkotika, dll) seringkali membingungkan dan perlu penjelasan ringkas agar pembaca memahami risiko yang tidak dijamin.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_pb_0"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_caption_475c83c5",
+      "type": "caption",
+      "title": "Tabel Informasi Tambahan",
+      "rationale": "Tabel pada halaman 11 berisi informasi tambahan yang penting namun bisa membingungkan tanpa penjelasan. Caption akan membantu pembaca memahami isi tabel.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_pb_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_caption_e6963b0b",
+      "type": "caption",
+      "title": "Tabel Call Center dan Alamat",
+      "rationale": "Tabel ini berisi informasi kontak penting dan syarat ketentuan. Caption akan membantu pembaca menemukan informasi layanan nasabah dengan mudah.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_3b6bb8c2",
+      "type": "glossary",
+      "title": "Pemegang Polis",
+      "rationale": "Istilah ini merupakan peran utama dalam kontrak asuransi dan sering membingungkan antara pemegang polis dan tertanggung. Penjelasan akan membantu pembaca memahami siapa yang memiliki hak dan kewajiban dalam polis.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PEMEGANG POLIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_987c386b",
+      "type": "glossary",
+      "title": "Polis",
+      "rationale": "Polis adalah dokumen legal utama dalam asuransi. Definisi jelas akan membantu pembaca memahami pentingnya dokumen ini dan apa saja yang tercakup di dalamnya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:POLIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_c7f2e90e",
+      "type": "glossary",
+      "title": "Premi",
+      "rationale": "Premi adalah istilah kunci dalam asuransi yang sering disalahpahami sebagai tabungan atau investasi. Penjelasan akan mengurangi miskonsepsi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PREMI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_c853e40d",
+      "type": "glossary",
+      "title": "Free Look Periode",
+      "rationale": "Fitur ini sangat penting bagi konsumen karena memberikan waktu untuk meninjau polis dan membatalkan jika tidak sesuai. Banyak nasabah tidak memahami hak ini.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:FREE LOOK PERIODE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_9b1ff163",
+      "type": "glossary",
+      "title": "Manfaat Penyakit Kritis",
+      "rationale": "Istilah ini spesifik pada produk asuransi jiwa dengan rider penyakit kritis. Penjelasan akan membantu pembaca memahami cakupan dan batasannya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANFAAT PENYAKIT KRITIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_highlight_a8d85dbd",
+      "type": "highlight",
+      "title": "Free Look Periode 14 Hari",
+      "rationale": "Masa 14 hari untuk meninjau dan membatalkan polis tanpa penalti adalah hak penting konsumen yang sering terlewatkan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_highlight_cfcbb191",
+      "type": "highlight",
+      "title": "Manfaat Penyakit Kritis Hanya Dibayarkan Sekali",
+      "rationale": "Pembatasan pembayaran manfaat penyakit kritis hanya satu kali selama masa polis adalah informasi penting yang harus disorot agar tidak terjadi ekspektasi berlebih.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_faq_6cf5f3b4",
+      "type": "faq",
+      "title": "Apa yang dimaksud dengan Free Look Periode?",
+      "rationale": "Banyak nasabah baru yang belum memahami hak mereka untuk membatalkan polis dalam periode tertentu. FAQ ini akan menjawab pertanyaan umum terkait fitur tersebut.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang dimaksud dengan Free Look Periode?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_faq_58605688",
+      "type": "faq",
+      "title": "Apakah manfaat penyakit kritis dapat diklaim lebih dari satu kali?",
+      "rationale": "Pembaca mungkin bertanya apakah mereka bisa mengklaim manfaat penyakit kritis lebih dari sekali. FAQ ini akan mengklarifikasi batasan penting produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah manfaat penyakit kritis dapat diklaim lebih dari satu kali?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_db3c0730",
+      "type": "glossary",
+      "title": "Manifes",
+      "rationale": "Istilah manifes dalam konteks asuransi perjalanan udara sering tidak dipahami oleh nasabah umum. Penjelasan akan membantu memahami syarat klaim kecelakaan pesawat.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_1"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANIFES",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_841aa4de",
+      "type": "glossary",
+      "title": "Maskapai Penerbangan Sipil Komersial",
+      "rationale": "Istilah ini penting untuk membedakan cakupan asuransi pada penerbangan resmi dan berlisensi, bukan penerbangan charter atau ilegal.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_1"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MASKAPAI PENERBANGAN SIPIL KOMERSIAL",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_faq_84cb0f31",
+      "type": "faq",
+      "title": "Siapa yang dapat menjadi Pemegang Polis?",
+      "rationale": "Seringkali pembaca ingin tahu apakah mereka memenuhi syarat sebagai pemegang polis. FAQ ini akan memperjelas syarat dan ketentuan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Siapa yang dapat menjadi Pemegang Polis?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_06768168",
+      "type": "glossary",
+      "title": "Pertanggungan",
+      "rationale": "Istilah pertanggungan sering digunakan dalam dokumen asuransi namun bisa membingungkan bagi pembaca awam. Penjelasan akan memperjelas cakupan perlindungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PERTANGGUNGAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    }
+  ],
+  "final_candidates": [
+    {
+      "cand_id": "cand_glossary_d51e2fea",
+      "type": "glossary",
+      "title": "Uang Pertanggungan",
+      "rationale": "Istilah ini merupakan istilah utama dalam produk asuransi jiwa dan sering membingungkan pembaca awam. Penjelasan tentang arti uang pertanggungan akan membantu pemahaman manfaat dan besaran perlindungan yang diberikan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:UANG PERTANGGUNGAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_c7f2e90e",
+      "type": "glossary",
+      "title": "Premi",
+      "rationale": "Premi adalah istilah kunci dalam asuransi yang wajib dipahami oleh calon nasabah. Penjelasan tentang premi akan membantu pembaca memahami kewajiban pembayaran dan kaitannya dengan manfaat asuransi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        3,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PREMI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_53c93b91",
+      "type": "glossary",
+      "title": "No Claim Bonus",
+      "rationale": "Istilah ini tidak umum di masyarakat awam dan merupakan fitur penting yang membedakan produk. Penjelasan akan membantu pembaca memahami keuntungan jika tidak ada klaim selama masa asuransi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3"
+      ],
+      "pages": [
+        1,
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:NO CLAIM BONUS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_7f25d57d",
+      "type": "glossary",
+      "title": "Asuransi Kematian Berjangka",
+      "rationale": "Jenis produk ini memiliki karakteristik khusus yang membedakannya dari asuransi jiwa seumur hidup. Penjelasan akan membantu pembaca memahami cakupan perlindungan dan masa berlaku polis.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:ASURANSI KEMATIAN BERJANGKA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_0ee6cade",
+      "type": "glossary",
+      "title": "Manfaat Tambahan",
+      "rationale": "Istilah manfaat tambahan sering digunakan dalam produk asuransi namun tidak selalu jelas cakupannya. Penjelasan akan membantu pembaca membedakan antara manfaat dasar dan tambahan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2"
+      ],
+      "pages": [
+        1,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANFAAT TAMBAHAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_e72c5865",
+      "type": "glossary",
+      "title": "Cacat Tetap Total dan Sebagian",
+      "rationale": "Istilah ini penting karena terkait dengan manfaat asuransi tambahan yang diberikan. Penjelasan akan membantu pembaca memahami kondisi yang dimaksud dan hak klaimnya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1"
+      ],
+      "pages": [
+        1,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:CACAT TETAP TOTAL DAN SEBAGIAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_f56dee68",
+      "type": "highlight",
+      "title": "Manfaat 300% dan 200% Uang Pertanggungan",
+      "rationale": "Persentase manfaat yang tinggi (300% dan 200% uang pertanggungan) merupakan keunggulan produk yang sangat menarik dan perlu disorot agar calon nasabah memahami besarnya perlindungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_36847e6e",
+      "type": "highlight",
+      "title": "Pengembalian Premi jika Tidak Ada Klaim",
+      "rationale": "Fitur pengembalian premi (No Claim Bonus) merupakan nilai tambah utama yang membedakan produk ini dari produk asuransi lain dan sangat penting untuk disorot.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_7a531ef3",
+      "type": "highlight",
+      "title": "Batas Usia Masuk Pemegang Polis",
+      "rationale": "Batas usia masuk minimum 21 tahun dan maksimum 70 tahun merupakan informasi penting bagi calon nasabah dan perlu disorot agar tidak terjadi kesalahpahaman.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_73870fcb",
+      "type": "highlight",
+      "title": "Pilihan Masa Asuransi 3 dan 5 Tahun",
+      "rationale": "Pilihan masa asuransi yang fleksibel (3 dan 5 tahun) merupakan fitur penting yang perlu disorot agar calon nasabah dapat memilih sesuai kebutuhan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_caption_268632a8",
+      "type": "caption",
+      "title": "Penjelasan Tabel Premi dan Uang Pertanggungan",
+      "rationale": "Tabel premi dan uang pertanggungan pada halaman 2 dan 3 cukup kompleks dan memuat banyak angka. Caption yang menjelaskan cara membaca tabel dan keterkaitan antara usia, plan, premi, dan uang pertanggungan sangat membantu pembaca.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_2"
+      ],
+      "pages": [
+        2,
+        3
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_5a5ce3b8",
+      "type": "faq",
+      "title": "Apa yang dimaksud dengan manfaat 300% dan 200% uang pertanggungan?",
+      "rationale": "Persentase manfaat sering membingungkan pembaca awam. FAQ ini akan membantu menjelaskan bagaimana perhitungan dan kondisi pencairan manfaat tersebut.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang dimaksud dengan manfaat 300% dan 200% uang pertanggungan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_6deed2e3",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan pengembalian premi (No Claim Bonus)?",
+      "rationale": "Proses dan syarat pengembalian premi sering menjadi pertanyaan utama calon nasabah. FAQ ini akan membantu mengurangi kebingungan dan meningkatkan transparansi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan pengembalian premi (No Claim Bonus)?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_a2363e64",
+      "type": "faq",
+      "title": "Apa saja manfaat tambahan yang tersedia dalam produk ini?",
+      "rationale": "Produk menawarkan beberapa manfaat tambahan seperti penyakit kritis dan cacat tetap. FAQ ini akan membantu pembaca memahami cakupan perlindungan secara lebih rinci.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja manfaat tambahan yang tersedia dalam produk ini?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_3b4b7d86",
+      "type": "faq",
+      "title": "Siapa saja yang dapat menjadi pemegang polis dan tertanggung?",
+      "rationale": "Batasan usia dan ketentuan pemegang polis sering menjadi pertanyaan utama. FAQ ini akan membantu memperjelas syarat kepesertaan.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Siapa saja yang dapat menjadi pemegang polis dan tertanggung?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_9412033e",
+      "type": "highlight",
+      "title": "Premi Bulanan dan Tahunan",
+      "rationale": "Penjelasan bahwa premi tahunan adalah 10 kali premi bulanan merupakan insight penting yang harus disorot agar pembaca tidak salah mengerti perhitungan biaya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_highlight_9a422ed3",
+      "type": "highlight",
+      "title": "Batas Usia Pertanggungan",
+      "rationale": "Informasi bahwa produk tidak tersedia untuk usia di atas 45 tahun sangat penting dan harus disorot agar calon nasabah tidak salah paham.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_caption_0f3104b7",
+      "type": "caption",
+      "title": "Tabel Premi Pertanggungan Perpanjangan",
+      "rationale": "Tabel premi dengan angka-angka (695, 1.390, dst) dan penjelasan masa asuransi 3 dan 5 tahun dapat membingungkan tanpa caption yang menjelaskan kolom dan cara membaca tabel.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_caption_c10bb6cf",
+      "type": "caption",
+      "title": "Simulasi Pembayaran No Claim Bonus",
+      "rationale": "Perhitungan 25% x (Rp. 1.050.000 x 12 x 5) = Rp. 15.750.000 dan 25% x (Rp. 1.950.000 x 12 x 5) = Rp. 29.250.000 membutuhkan caption agar pembaca memahami konteks dan cara perhitungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_774d8189",
+      "type": "faq",
+      "title": "Bagaimana cara menghitung premi tahunan dari premi bulanan?",
+      "rationale": "Pembaca mungkin bingung dengan konversi premi bulanan ke tahunan, sehingga FAQ ini akan membantu memperjelas perhitungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara menghitung premi tahunan dari premi bulanan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_919fcb07",
+      "type": "faq",
+      "title": "Apa yang terjadi jika usia saya di atas 45 tahun?",
+      "rationale": "Karena ada batasan usia, pembaca yang berusia di atas 45 tahun perlu tahu konsekuensi dan alternatif yang tersedia.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang terjadi jika usia saya di atas 45 tahun?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_6576257f",
+      "type": "faq",
+      "title": "Apa saja manfaat tambahan yang bisa dipilih?",
+      "rationale": "Karena terdapat beberapa pilihan manfaat tambahan, pembaca perlu penjelasan detail mengenai opsi yang tersedia dan perbedaannya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja manfaat tambahan yang bisa dipilih?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_44f6271a",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan No Claim Bonus?",
+      "rationale": "Mekanisme dan syarat mendapatkan No Claim Bonus seringkali membingungkan, sehingga FAQ ini akan sangat membantu.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan No Claim Bonus?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_highlight_208889dc",
+      "type": "highlight",
+      "title": "Manfaat 300% Uang Pertanggungan",
+      "rationale": "Pembayaran 300% uang pertanggungan adalah fitur utama yang sangat menarik dan perlu disorot agar pembaca memahami keunggulan produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_glossary_702df31f",
+      "type": "glossary",
+      "title": "Tertanggung",
+      "rationale": "Istilah tertanggung merupakan istilah utama dalam polis asuransi yang sering membingungkan pembaca awam. Penjelasan siapa yang dimaksud dengan tertanggung sangat penting untuk menghindari salah persepsi.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        7,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:TERTANGGUNG",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_3b6bb8c2",
+      "type": "glossary",
+      "title": "Pemegang Polis",
+      "rationale": "Istilah pemegang polis seringkali disalahartikan sebagai tertanggung. Penjelasan perbedaan dan peran pemegang polis sangat penting untuk pemahaman hak dan kewajiban.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PEMEGANG POLIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_987c386b",
+      "type": "glossary",
+      "title": "Polis",
+      "rationale": "Polis adalah dokumen utama dalam perjanjian asuransi. Definisi jelas akan membantu pembaca memahami dokumen yang menjadi dasar hak dan kewajiban.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:POLIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_c853e40d",
+      "type": "glossary",
+      "title": "Free Look Periode",
+      "rationale": "Free Look Periode adalah istilah penting yang berkaitan dengan hak pembatalan polis oleh nasabah. Penjelasan istilah ini sangat krusial untuk perlindungan konsumen.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:FREE LOOK PERIODE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_9b1ff163",
+      "type": "glossary",
+      "title": "Manfaat Penyakit Kritis",
+      "rationale": "Istilah ini spesifik pada produk asuransi kesehatan dan sering menjadi pertanyaan utama nasabah. Penjelasan detail akan membantu pemahaman manfaat produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANFAAT PENYAKIT KRITIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_25329901",
+      "type": "glossary",
+      "title": "Surat Permohonan Asuransi (SPA)",
+      "rationale": "SPA adalah dokumen penting dalam proses pendaftaran asuransi. Penjelasan istilah ini membantu nasabah memahami proses administrasi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_para_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:SURAT PERMOHONAN ASURANSI (SPA)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_highlight_a8d85dbd",
+      "type": "highlight",
+      "title": "Free Look Periode 14 Hari",
+      "rationale": "Masa 14 hari untuk Free Look Periode adalah hak penting bagi nasabah untuk membatalkan polis tanpa penalti. Data numerik ini perlu disorot agar tidak terlewat.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_highlight_7ea119cb",
+      "type": "highlight",
+      "title": "Manfaat Penyakit Kritis Hanya Dibayarkan Satu Kali",
+      "rationale": "Pembatasan pembayaran manfaat penyakit kritis hanya satu kali selama masa berlaku polis adalah informasi penting yang harus disorot agar nasabah tidak salah paham.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_highlight_9c094195",
+      "type": "highlight",
+      "title": "Premi Sudah Termasuk Biaya Administrasi",
+      "rationale": "Informasi bahwa premi sudah termasuk biaya administrasi, pemeliharaan polis, dan biaya lainnya sangat penting untuk transparansi biaya kepada nasabah.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_0d695d7c",
+      "type": "faq",
+      "title": "Apa yang terjadi jika informasi pada saat klaim tidak sesuai?",
+      "rationale": "Risiko klaim tidak dibayarkan akibat ketidaksesuaian informasi adalah kekhawatiran utama nasabah. Penjelasan dalam bentuk FAQ akan sangat membantu.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_1"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang terjadi jika informasi pada saat klaim tidak sesuai?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_6e1b2f5d",
+      "type": "faq",
+      "title": "Bagaimana cara mengajukan asuransi?",
+      "rationale": "Proses pendaftaran asuransi sering menjadi pertanyaan utama. Penjelasan langkah-langkah pendaftaran sangat membantu calon nasabah.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_para_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mengajukan asuransi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_72df56f7",
+      "type": "faq",
+      "title": "Apa saja risiko klaim yang perlu diketahui?",
+      "rationale": "Risiko klaim merupakan informasi penting yang seringkali membingungkan nasabah. Penjelasan dalam bentuk FAQ akan meningkatkan pemahaman.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_left_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja risiko klaim yang perlu diketahui?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_caption_4b4f174c",
+      "type": "caption",
+      "title": "Tabel Pengecualian Pertanggungan",
+      "rationale": "Tabel yang memuat pengecualian pertanggungan (misal: bunuh diri, perang, narkotika, dll) seringkali membingungkan dan perlu penjelasan ringkas agar pembaca memahami risiko yang tidak dijamin.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_pb_0"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_caption_475c83c5",
+      "type": "caption",
+      "title": "Tabel Informasi Tambahan",
+      "rationale": "Tabel pada halaman 11 berisi informasi tambahan yang penting namun bisa membingungkan tanpa penjelasan. Caption akan membantu pembaca memahami isi tabel.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_pb_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_caption_e6963b0b",
+      "type": "caption",
+      "title": "Tabel Call Center dan Alamat",
+      "rationale": "Tabel ini berisi informasi kontak penting dan syarat ketentuan. Caption akan membantu pembaca menemukan informasi layanan nasabah dengan mudah.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_6cf5f3b4",
+      "type": "faq",
+      "title": "Apa yang dimaksud dengan Free Look Periode?",
+      "rationale": "Banyak nasabah baru yang belum memahami hak mereka untuk membatalkan polis dalam periode tertentu. FAQ ini akan menjawab pertanyaan umum terkait fitur tersebut.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang dimaksud dengan Free Look Periode?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_faq_58605688",
+      "type": "faq",
+      "title": "Apakah manfaat penyakit kritis dapat diklaim lebih dari satu kali?",
+      "rationale": "Pembaca mungkin bertanya apakah mereka bisa mengklaim manfaat penyakit kritis lebih dari sekali. FAQ ini akan mengklarifikasi batasan penting produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah manfaat penyakit kritis dapat diklaim lebih dari satu kali?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_db3c0730",
+      "type": "glossary",
+      "title": "Manifes",
+      "rationale": "Istilah manifes dalam konteks asuransi perjalanan udara sering tidak dipahami oleh nasabah umum. Penjelasan akan membantu memahami syarat klaim kecelakaan pesawat.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_1"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANIFES",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_841aa4de",
+      "type": "glossary",
+      "title": "Maskapai Penerbangan Sipil Komersial",
+      "rationale": "Istilah ini penting untuk membedakan cakupan asuransi pada penerbangan resmi dan berlisensi, bukan penerbangan charter atau ilegal.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_1"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MASKAPAI PENERBANGAN SIPIL KOMERSIAL",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_faq_84cb0f31",
+      "type": "faq",
+      "title": "Siapa yang dapat menjadi Pemegang Polis?",
+      "rationale": "Seringkali pembaca ingin tahu apakah mereka memenuhi syarat sebagai pemegang polis. FAQ ini akan memperjelas syarat dan ketentuan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Siapa yang dapat menjadi Pemegang Polis?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_06768168",
+      "type": "glossary",
+      "title": "Pertanggungan",
+      "rationale": "Istilah pertanggungan sering digunakan dalam dokumen asuransi namun bisa membingungkan bagi pembaca awam. Penjelasan akan memperjelas cakupan perlindungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PERTANGGUNGAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    }
+  ],
+  "selected_candidates": [
+    {
+      "cand_id": "cand_faq_58605688",
+      "type": "faq",
+      "title": "Apakah manfaat penyakit kritis dapat diklaim lebih dari satu kali?",
+      "rationale": "Pembaca mungkin bertanya apakah mereka bisa mengklaim manfaat penyakit kritis lebih dari sekali. FAQ ini akan mengklarifikasi batasan penting produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah manfaat penyakit kritis dapat diklaim lebih dari satu kali?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_d51e2fea",
+      "type": "glossary",
+      "title": "Uang Pertanggungan",
+      "rationale": "Istilah ini merupakan istilah utama dalam produk asuransi jiwa dan sering membingungkan pembaca awam. Penjelasan tentang arti uang pertanggungan akan membantu pemahaman manfaat dan besaran perlindungan yang diberikan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:UANG PERTANGGUNGAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_c7f2e90e",
+      "type": "glossary",
+      "title": "Premi",
+      "rationale": "Premi adalah istilah kunci dalam asuransi yang wajib dipahami oleh calon nasabah. Penjelasan tentang premi akan membantu pembaca memahami kewajiban pembayaran dan kaitannya dengan manfaat asuransi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        3,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PREMI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_0ee6cade",
+      "type": "glossary",
+      "title": "Manfaat Tambahan",
+      "rationale": "Istilah manfaat tambahan sering digunakan dalam produk asuransi namun tidak selalu jelas cakupannya. Penjelasan akan membantu pembaca membedakan antara manfaat dasar dan tambahan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2"
+      ],
+      "pages": [
+        1,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANFAAT TAMBAHAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_f56dee68",
+      "type": "highlight",
+      "title": "Manfaat 300% dan 200% Uang Pertanggungan",
+      "rationale": "Persentase manfaat yang tinggi (300% dan 200% uang pertanggungan) merupakan keunggulan produk yang sangat menarik dan perlu disorot agar calon nasabah memahami besarnya perlindungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_36847e6e",
+      "type": "highlight",
+      "title": "Pengembalian Premi jika Tidak Ada Klaim",
+      "rationale": "Fitur pengembalian premi (No Claim Bonus) merupakan nilai tambah utama yang membedakan produk ini dari produk asuransi lain dan sangat penting untuk disorot.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_208889dc",
+      "type": "highlight",
+      "title": "Manfaat 300% Uang Pertanggungan",
+      "rationale": "Pembayaran 300% uang pertanggungan adalah fitur utama yang sangat menarik dan perlu disorot agar pembaca memahami keunggulan produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_right_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_highlight_9c094195",
+      "type": "highlight",
+      "title": "Premi Sudah Termasuk Biaya Administrasi",
+      "rationale": "Informasi bahwa premi sudah termasuk biaya administrasi, pemeliharaan polis, dan biaya lainnya sangat penting untuk transparansi biaya kepada nasabah.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_7f25d57d",
+      "type": "glossary",
+      "title": "Asuransi Kematian Berjangka",
+      "rationale": "Jenis produk ini memiliki karakteristik khusus yang membedakannya dari asuransi jiwa seumur hidup. Penjelasan akan membantu pembaca memahami cakupan perlindungan dan masa berlaku polis.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:ASURANSI KEMATIAN BERJANGKA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_caption_268632a8",
+      "type": "caption",
+      "title": "Penjelasan Tabel Premi dan Uang Pertanggungan",
+      "rationale": "Tabel premi dan uang pertanggungan pada halaman 2 dan 3 cukup kompleks dan memuat banyak angka. Caption yang menjelaskan cara membaca tabel dan keterkaitan antara usia, plan, premi, dan uang pertanggungan sangat membantu pembaca.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_2"
+      ],
+      "pages": [
+        2,
+        3
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_2:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_5a5ce3b8",
+      "type": "faq",
+      "title": "Apa yang dimaksud dengan manfaat 300% dan 200% uang pertanggungan?",
+      "rationale": "Persentase manfaat sering membingungkan pembaca awam. FAQ ini akan membantu menjelaskan bagaimana perhitungan dan kondisi pencairan manfaat tersebut.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_3"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang dimaksud dengan manfaat 300% dan 200% uang pertanggungan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_6576257f",
+      "type": "faq",
+      "title": "Apa saja manfaat tambahan yang bisa dipilih?",
+      "rationale": "Karena terdapat beberapa pilihan manfaat tambahan, pembaca perlu penjelasan detail mengenai opsi yang tersedia dan perbedaannya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja manfaat tambahan yang bisa dipilih?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_glossary_3b6bb8c2",
+      "type": "glossary",
+      "title": "Pemegang Polis",
+      "rationale": "Istilah pemegang polis seringkali disalahartikan sebagai tertanggung. Penjelasan perbedaan dan peran pemegang polis sangat penting untuk pemahaman hak dan kewajiban.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PEMEGANG POLIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_987c386b",
+      "type": "glossary",
+      "title": "Polis",
+      "rationale": "Polis adalah dokumen utama dalam perjanjian asuransi. Definisi jelas akan membantu pembaca memahami dokumen yang menjadi dasar hak dan kewajiban.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:POLIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_9b1ff163",
+      "type": "glossary",
+      "title": "Manfaat Penyakit Kritis",
+      "rationale": "Istilah ini spesifik pada produk asuransi kesehatan dan sering menjadi pertanyaan utama nasabah. Penjelasan detail akan membantu pemahaman manfaat produk.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANFAAT PENYAKIT KRITIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_25329901",
+      "type": "glossary",
+      "title": "Surat Permohonan Asuransi (SPA)",
+      "rationale": "SPA adalah dokumen penting dalam proses pendaftaran asuransi. Penjelasan istilah ini membantu nasabah memahami proses administrasi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_para_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:SURAT PERMOHONAN ASURANSI (SPA)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_72df56f7",
+      "type": "faq",
+      "title": "Apa saja risiko klaim yang perlu diketahui?",
+      "rationale": "Risiko klaim merupakan informasi penting yang seringkali membingungkan nasabah. Penjelasan dalam bentuk FAQ akan meningkatkan pemahaman.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_left_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja risiko klaim yang perlu diketahui?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_caption_4b4f174c",
+      "type": "caption",
+      "title": "Tabel Pengecualian Pertanggungan",
+      "rationale": "Tabel yang memuat pengecualian pertanggungan (misal: bunuh diri, perang, narkotika, dll) seringkali membingungkan dan perlu penjelasan ringkas agar pembaca memahami risiko yang tidak dijamin.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_pb_0"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_06768168",
+      "type": "glossary",
+      "title": "Pertanggungan",
+      "rationale": "Istilah pertanggungan sering digunakan dalam dokumen asuransi namun bisa membingungkan bagi pembaca awam. Penjelasan akan memperjelas cakupan perlindungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:PERTANGGUNGAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_53c93b91",
+      "type": "glossary",
+      "title": "No Claim Bonus",
+      "rationale": "Istilah ini tidak umum di masyarakat awam dan merupakan fitur penting yang membedakan produk. Penjelasan akan membantu pembaca memahami keuntungan jika tidak ada klaim selama masa asuransi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3"
+      ],
+      "pages": [
+        1,
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:NO CLAIM BONUS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_e72c5865",
+      "type": "glossary",
+      "title": "Cacat Tetap Total dan Sebagian",
+      "rationale": "Istilah ini penting karena terkait dengan manfaat asuransi tambahan yang diberikan. Penjelasan akan membantu pembaca memahami kondisi yang dimaksud dan hak klaimnya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p4_para_1"
+      ],
+      "pages": [
+        1,
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:CACAT TETAP TOTAL DAN SEBAGIAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_glossary_702df31f",
+      "type": "glossary",
+      "title": "Tertanggung",
+      "rationale": "Istilah tertanggung merupakan istilah utama dalam polis asuransi yang sering membingungkan pembaca awam. Penjelasan siapa yang dimaksud dengan tertanggung sangat penting untuk menghindari salah persepsi.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p7_pb_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        7,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:TERTANGGUNG",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_highlight_7a531ef3",
+      "type": "highlight",
+      "title": "Batas Usia Masuk Pemegang Polis",
+      "rationale": "Batas usia masuk minimum 21 tahun dan maksimum 70 tahun merupakan informasi penting bagi calon nasabah dan perlu disorot agar tidak terjadi kesalahpahaman.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_73870fcb",
+      "type": "highlight",
+      "title": "Pilihan Masa Asuransi 3 dan 5 Tahun",
+      "rationale": "Pilihan masa asuransi yang fleksibel (3 dan 5 tahun) merupakan fitur penting yang perlu disorot agar calon nasabah dapat memilih sesuai kebutuhan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_highlight_9412033e",
+      "type": "highlight",
+      "title": "Premi Bulanan dan Tahunan",
+      "rationale": "Penjelasan bahwa premi tahunan adalah 10 kali premi bulanan merupakan insight penting yang harus disorot agar pembaca tidak salah mengerti perhitungan biaya.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_highlight_9a422ed3",
+      "type": "highlight",
+      "title": "Batas Usia Pertanggungan",
+      "rationale": "Informasi bahwa produk tidak tersedia untuk usia di atas 45 tahun sangat penting dan harus disorot agar calon nasabah tidak salah paham.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_caption_0f3104b7",
+      "type": "caption",
+      "title": "Tabel Premi Pertanggungan Perpanjangan",
+      "rationale": "Tabel premi dengan angka-angka (695, 1.390, dst) dan penjelasan masa asuransi 3 dan 5 tahun dapat membingungkan tanpa caption yang menjelaskan kolom dan cara membaca tabel.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_highlight_7ea119cb",
+      "type": "highlight",
+      "title": "Manfaat Penyakit Kritis Hanya Dibayarkan Satu Kali",
+      "rationale": "Pembatasan pembayaran manfaat penyakit kritis hanya satu kali selama masa berlaku polis adalah informasi penting yang harus disorot agar nasabah tidak salah paham.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_6deed2e3",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan pengembalian premi (No Claim Bonus)?",
+      "rationale": "Proses dan syarat pengembalian premi sering menjadi pertanyaan utama calon nasabah. FAQ ini akan membantu mengurangi kebingungan dan meningkatkan transparansi.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_2",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_4"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan pengembalian premi (No Claim Bonus)?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_a2363e64",
+      "type": "faq",
+      "title": "Apa saja manfaat tambahan yang tersedia dalam produk ini?",
+      "rationale": "Produk menawarkan beberapa manfaat tambahan seperti penyakit kritis dan cacat tetap. FAQ ini akan membantu pembaca memahami cakupan perlindungan secara lebih rinci.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_left_3",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p1_right_2"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja manfaat tambahan yang tersedia dalam produk ini?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_3b4b7d86",
+      "type": "faq",
+      "title": "Siapa saja yang dapat menjadi pemegang polis dan tertanggung?",
+      "rationale": "Batasan usia dan ketentuan pemegang polis sering menjadi pertanyaan utama. FAQ ini akan membantu memperjelas syarat kepesertaan.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_pb_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Siapa saja yang dapat menjadi pemegang polis dan tertanggung?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_0_ef2eaf24"
+    },
+    {
+      "cand_id": "cand_faq_774d8189",
+      "type": "faq",
+      "title": "Bagaimana cara menghitung premi tahunan dari premi bulanan?",
+      "rationale": "Pembaca mungkin bingung dengan konversi premi bulanan ke tahunan, sehingga FAQ ini akan membantu memperjelas perhitungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara menghitung premi tahunan dari premi bulanan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_glossary_c853e40d",
+      "type": "glossary",
+      "title": "Free Look Periode",
+      "rationale": "Free Look Periode adalah istilah penting yang berkaitan dengan hak pembatalan polis oleh nasabah. Penjelasan istilah ini sangat krusial untuk perlindungan konsumen.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:FREE LOOK PERIODE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_0d695d7c",
+      "type": "faq",
+      "title": "Apa yang terjadi jika informasi pada saat klaim tidak sesuai?",
+      "rationale": "Risiko klaim tidak dibayarkan akibat ketidaksesuaian informasi adalah kekhawatiran utama nasabah. Penjelasan dalam bentuk FAQ akan sangat membantu.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_right_1"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang terjadi jika informasi pada saat klaim tidak sesuai?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_6e1b2f5d",
+      "type": "faq",
+      "title": "Bagaimana cara mengajukan asuransi?",
+      "rationale": "Proses pendaftaran asuransi sering menjadi pertanyaan utama. Penjelasan langkah-langkah pendaftaran sangat membantu calon nasabah.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p8_para_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mengajukan asuransi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_glossary_db3c0730",
+      "type": "glossary",
+      "title": "Manifes",
+      "rationale": "Istilah manifes dalam konteks asuransi perjalanan udara sering tidak dipahami oleh nasabah umum. Penjelasan akan membantu memahami syarat klaim kecelakaan pesawat.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_1"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANIFES",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_glossary_841aa4de",
+      "type": "glossary",
+      "title": "Maskapai Penerbangan Sipil Komersial",
+      "rationale": "Istilah ini penting untuk membedakan cakupan asuransi pada penerbangan resmi dan berlisensi, bukan penerbangan charter atau ilegal.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_1"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MASKAPAI PENERBANGAN SIPIL KOMERSIAL",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_faq_84cb0f31",
+      "type": "faq",
+      "title": "Siapa yang dapat menjadi Pemegang Polis?",
+      "rationale": "Seringkali pembaca ingin tahu apakah mereka memenuhi syarat sebagai pemegang polis. FAQ ini akan memperjelas syarat dan ketentuan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_2"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Siapa yang dapat menjadi Pemegang Polis?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_highlight_a8d85dbd",
+      "type": "highlight",
+      "title": "Free Look Periode 14 Hari",
+      "rationale": "Masa 14 hari untuk Free Look Periode adalah hak penting bagi nasabah untuk membatalkan polis tanpa penalti. Data numerik ini perlu disorot agar tidak terlewat.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_faq_919fcb07",
+      "type": "faq",
+      "title": "Apa yang terjadi jika usia saya di atas 45 tahun?",
+      "rationale": "Karena ada batasan usia, pembaca yang berusia di atas 45 tahun perlu tahu konsekuensi dan alternatif yang tersedia.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p3_para_3"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang terjadi jika usia saya di atas 45 tahun?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_44f6271a",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan No Claim Bonus?",
+      "rationale": "Mekanisme dan syarat mendapatkan No Claim Bonus seringkali membingungkan, sehingga FAQ ini akan sangat membantu.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan No Claim Bonus?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_faq_6cf5f3b4",
+      "type": "faq",
+      "title": "Apa yang dimaksud dengan Free Look Periode?",
+      "rationale": "Banyak nasabah baru yang belum memahami hak mereka untuk membatalkan polis dalam periode tertentu. FAQ ini akan menjawab pertanyaan umum terkait fitur tersebut.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_para_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa yang dimaksud dengan Free Look Periode?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_3_0a4a709a"
+    },
+    {
+      "cand_id": "cand_caption_c10bb6cf",
+      "type": "caption",
+      "title": "Simulasi Pembayaran No Claim Bonus",
+      "rationale": "Perhitungan 25% x (Rp. 1.050.000 x 12 x 5) = Rp. 15.750.000 dan 25% x (Rp. 1.950.000 x 12 x 5) = Rp. 29.250.000 membutuhkan caption agar pembaca memahami konteks dan cara perhitungan.",
+      "source_unit_ids": [
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1",
+        "u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_1:u_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p5_left_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_1_7ffdf01b"
+    },
+    {
+      "cand_id": "cand_caption_475c83c5",
+      "type": "caption",
+      "title": "Tabel Informasi Tambahan",
+      "rationale": "Tabel pada halaman 11 berisi informasi tambahan yang penting namun bisa membingungkan tanpa penjelasan. Caption akan membantu pembaca memahami isi tabel.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_pb_0"
+      ],
+      "pages": [
+        11
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p11_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    },
+    {
+      "cand_id": "cand_caption_e6963b0b",
+      "type": "caption",
+      "title": "Tabel Call Center dan Alamat",
+      "rationale": "Tabel ini berisi informasi kontak penting dan syarat ketentuan. Caption akan membantu pembaca menemukan informasi layanan nasabah dengan mudah.",
+      "source_unit_ids": [
+        "u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ce8a2d0e-ecae-43c6-bc87-415a9e558024_p10_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ce8a2d0e-ecae-43c6-bc87-415a9e558024_2_fd74a3e4"
+    }
+  ],
+  "metrics": {
+    "total_windows": 4,
+    "total_candidates": 56,
+    "unique_candidates": 45,
+    "selected_count": 45
+  }
+}

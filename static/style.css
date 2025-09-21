@@ -231,6 +231,12 @@ body {
 .message.success {
     background-color: #2ecc71;
 }
+.message.info {
+    background-color: #3498db;
+}
+.message.warning {
+    background-color: #f39c12;
+}
 
 /* Token Usage Styles */
 .token-usage-container {
@@ -516,7 +522,26 @@ body {
 .suggestion-head { display: flex; justify-content: space-between; margin-bottom: 8px; }
 .suggestion-type { font-weight: 600; color: #374151; }
 .suggestion-conf { font-size: 0.85rem; color: #6b7280; }
+.suggestion-source { font-size: 0.85rem; color: #666; font-style: italic; }
+.suggestion-hint { font-size: 0.75rem; color: #6b7280; font-style: italic; }
+.suggestion-content { 
+    font-size: 0.95rem; 
+    color: #374151; 
+    line-height: 1.5; 
+    margin: 8px 0; 
+    padding: 8px; 
+    background: #f8fafc; 
+    border-radius: 6px; 
+    border: 1px solid #e5e7eb;
+}
+.suggestion-card.card-selected { border-color: #3b82f6; box-shadow: 0 0 0 2px #dbeafe; background-color: #f8faff; }
+.suggestion-card { cursor: pointer; transition: all 0.2s ease; }
+.suggestion-card:hover { border-color: #9ca3af; }
 .suggestion-context { font-size: 0.95rem; color: #4b5563; background: #f8fafc; border: 1px dashed #e5e7eb; padding: 8px; border-radius: 8px; margin-bottom: 8px; }
+.src-item { margin-bottom: 6px; color: #374151; }
+.src-item strong { color: #111827; }
+.src-snippet { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.85rem; background: #f1f5f9; border: 1px dashed #e5e7eb; padding: 6px; border-radius: 6px; margin-top: 4px; white-space: pre-wrap; color: #374151; }
+mark.src-highlight, span.src-highlight { background: #fef08a; color: #111827; padding: 0 2px; border-radius: 2px; font-weight: 600; }
 .suggestion-editor { width: 100%; min-height: 80px; padding: 8px; border: 1px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: none; overflow: hidden; }
 .suggestion-actions { display: flex; gap: 8px; margin-top: 8px; }
 

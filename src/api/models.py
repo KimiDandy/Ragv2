@@ -1,13 +1,17 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional, Dict, Any
 
 class SuggestionItem(BaseModel):
-    id: str  
-    type: str  
-    original_context: str  
-    generated_content: str  
-    confidence_score: float 
-    status: str = "pending" 
+    id: str
+    type: str
+    original_context: str
+    generated_content: str
+    # Jadikan opsional agar kita tidak mengirim skor dummy ke UI
+    confidence_score: Optional[float] = None
+    status: str = "pending"
+    # Field tambahan untuk keterbacaan manusia di UI
+    source_units: Optional[List[str]] = None
+    source_previews: Optional[List[Dict[str, Any]]] = None
 
 class CuratedSuggestions(BaseModel):
     document_id: str

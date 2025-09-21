@@ -19,6 +19,7 @@ from loguru import logger
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 
 from src.api.endpoints import router as api_router
+from src.api.enhancement_routes import router as enhancement_router
 from src.core.config import (
     CHROMA_DB_PATH,
     EMBEDDING_MODEL,
@@ -100,6 +101,7 @@ app.add_middleware(
 )
 
 app.include_router(api_router)
+app.include_router(enhancement_router)
 
 @app.get("/")
 async def read_root(request: Request):

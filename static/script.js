@@ -4,10 +4,10 @@ let markdownV1 = '';
 let suggestionsState = []; 
 let pollTimer = null;
 let pollAttempts = 0;
-let pollIntervalMs = 3000; 
+let pollIntervalMs = 1200; 
 const maxPollAttempts = 60; 
 let progressTimer = null;
-let progressIntervalMs = 2000;
+let progressIntervalMs = 1200;
 
 const API_BASE_URL = window.location.origin;
 
@@ -25,6 +25,7 @@ const modeSmart = document.getElementById('mode-smart');
 const v1Rendered = document.getElementById('v1-rendered');
 const v1Raw = document.getElementById('v1-raw');
 const toggleRaw = document.getElementById('toggle-raw');
+let highlightedMarkdownV1 = '';
 
 // Panel 2: Suggestions
 const startEnhancementBtn = document.getElementById('start-enhancement-btn');
@@ -334,16 +335,25 @@ async function loadConversionResult(docId) {
 
 function renderV1Preview() {
     try {
+        const md = highlightedMarkdownV1 || markdownV1 || '';
         if (window.marked) {
-            v1Rendered.innerHTML = marked.parse(markdownV1 || '');
+            v1Rendered.innerHTML = marked.parse(md);
         } else {
-            v1Rendered.textContent = markdownV1 || '';
+            v1Rendered.textContent = md;
         }
         v1Raw.textContent = markdownV1 || '';
     } catch (e) {
-        v1Rendered.textContent = markdownV1 || '';
+        v1Rendered.textContent = highlightedMarkdownV1 || markdownV1 || '';
         v1Raw.textContent = markdownV1 || '';
     }
+}
+
+function clearHighlights() {
+    highlightedMarkdownV1 = '';
+    renderV1Preview();
+    // Clear selected cards
+    const cards = suggestionsList.querySelectorAll('.suggestion-card');
+    cards.forEach(c => c.classList.remove('card-selected'));
 }
 
 function setStatus(text, tone = 'idle') {
@@ -384,23 +394,48 @@ function updateBulkButtonsState() {
 startEnhancementBtn?.addEventListener('click', async () => {
     if (!currentDocumentId) return;
     startEnhancementBtn.disabled = true;
-    setStatus('Berjalan...', 'running');
+    setStatus('Enhancement V2: Memulai...', 'running');
     setStepperPhase('enhance');
+    
+    // Show enhanced status message
+    showMessage('🚀 Memulai Enhancement...', 'info');
+    
     try {
         const resp = await fetch(`${API_BASE_URL}/start-enhancement/${currentDocumentId}`, { method: 'POST' });
         if (!resp.ok) {
-            const d = await resp.json().catch(()=>({detail:'Gagal memulai peningkatan'}));
-            throw new Error(d.detail || 'Gagal memulai peningkatan');
+            const d = await resp.json().catch(()=>({detail:'Gagal memulai Enhancement'}));
+            throw new Error(d.detail || 'Gagal memulai Enhancement');
         }
+        
+        // Show progress phases
+        const phases = [
+            '🔄 Membuat token windows...',
+            '🗺️ Map-Reduce planning...',
+            '⚡ Micro-batch generation...',
+            '📝 Markdown v2 synthesis...'
+        ];
+        
+        let phaseIndex = 0;
+        const phaseInterval = setInterval(() => {
+            if (phaseIndex < phases.length) {
+                setStatus(phases[phaseIndex], 'running');
+                phaseIndex++;
+            } else {
+                clearInterval(phaseInterval);
+                setStatus('Enhancement: Berjalan...', 'running');
+            }
+        }, 1200);
+        
         if (pollTimer) clearTimeout(pollTimer);
         if (progressTimer) clearTimeout(progressTimer);
         pollAttempts = 0;
-        pollIntervalMs = 3000;
-        progressIntervalMs = 2000;
+        // start faster to improve UX
+        pollIntervalMs = 1200;
+        progressIntervalMs = 1200;
         scheduleNextPoll();
         scheduleProgressPoll();
     } catch (err) {
-        showMessage(err.message || 'Gagal memulai peningkatan');
+        showMessage(err.message || 'Gagal memulai Enhancement', 'error');
         startEnhancementBtn.disabled = false;
         setStatus('Galat', 'error');
     }
@@ -478,20 +513,222 @@ async function fetchProgress() {
     }
 }
 
+// Duplikasi function dihapus - menggunakan yang lengkap di bawah
+
+// ============ SOURCE HIGHLIGHTING IN MARKDOWN (Panel atas) ============
+function buildHighlightTargets(previews) {
+    const targets = [];
+    console.log('Building targets from previews:', previews);
+    
+    (previews || []).forEach(p => {
+        console.log('Processing preview:', p);
+        
+        if (p.table_preview) {
+            console.log('Table preview found:', p.table_preview);
+            // Use header and hit row text for table highlighting
+            const lines = String(p.table_preview).split('\n').filter(Boolean);
+            lines.forEach(ln => {
+                // Extract cell contents for more flexible matching
+                const cells = ln.split('|').map(c => c.trim()).filter(c => c && c !== ':---' && !c.match(/^:?-+:?$/));
+                cells.forEach(cell => {
+                    if (cell.length >= 3) {
+                        targets.push(cell.slice(0, 80));
+                        console.log('Added table cell target:', cell.slice(0, 80));
+                    }
+                });
+                // Also add the whole line
+                const cleaned = ln.replace(/\|/g, ' ').replace(/\s+/g, ' ').trim();
+                if (cleaned.length >= 6) {
+                    targets.push(cleaned.slice(0, 120));
+                    console.log('Added table line target:', cleaned.slice(0, 120));
+                }
+            });
+        } 
+        
+        if (p.snippet) {
+            console.log('Snippet found:', p.snippet);
+            // For paragraphs, extract meaningful phrases
+            const cleaned = String(p.snippet).replace(/\s+/g, ' ').trim();
+            if (cleaned.length >= 6) {
+                // Add full snippet
+                targets.push(cleaned.slice(0, 160));
+                console.log('Added snippet target:', cleaned.slice(0, 50) + '...');
+                
+                // Extract sentences for better matching
+                const sentences = cleaned.split(/[.!?]+/).filter(s => s.trim().length > 10);
+                sentences.forEach(sentence => {
+                    const trimmed = sentence.trim();
+                    if (trimmed.length >= 10) {
+                        targets.push(trimmed.slice(0, 120));
+                        console.log('Added sentence target:', trimmed.slice(0, 30) + '...');
+                    }
+                });
+            }
+        }
+        
+        // Also try common financial terms from the preview data
+        const commonTerms = ['BI RATE', 'FED RATE', 'INTEREST RATES', 'BONDS'];
+        const previewText = (p.snippet || p.table_preview || '').toUpperCase();
+        commonTerms.forEach(term => {
+            if (previewText.includes(term)) {
+                targets.push(term);
+                console.log('Added common term target:', term);
+            }
+        });
+    });
+    
+    // Deduplicate and filter out very short targets
+    const finalTargets = Array.from(new Set(targets)).filter(t => t.length >= 3);
+    console.log('Final targets:', finalTargets);
+    return finalTargets;
+}
+
+function escapeRegex(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function highlightMarkdownWithTargets(md, targets) {
+    let out = md;
+    // Sort targets by length descending to match longer phrases first
+    const sortedTargets = targets.sort((a, b) => b.length - a.length);
+    
+    sortedTargets.forEach(t => {
+        if (t.length < 3) return;
+        
+        // Create flexible pattern that handles whitespace variations
+        const pat = escapeRegex(t)
+            .replace(/\s+/g, '\\s+')  // More flexible whitespace matching
+            .replace(/\\\|/g, '\\s*\\|\\s*');  // Handle table pipes with optional spaces
+        
+        try {
+            const re = new RegExp(`(${pat})`, 'gi');
+            // Use HTML mark tags that will survive markdown parsing
+            out = out.replace(re, '<span class="src-highlight">$1</span>');
+        } catch (e) {
+            // Skip if regex is invalid
+            console.warn('Invalid regex for target:', t);
+        }
+    });
+    return out;
+}
+
+function highlightInRenderedHTML(targets) {
+    console.log('Trying direct HTML highlighting...');
+    let html = v1Rendered.innerHTML;
+    const sortedTargets = targets.sort((a, b) => b.length - a.length);
+    
+    sortedTargets.forEach(t => {
+        if (t.length < 3) return;
+        
+        const pat = escapeRegex(t)
+            .replace(/\s+/g, '\\s+')
+            .replace(/\\\|/g, '\\s*\\|\\s*');
+        
+        try {
+            const re = new RegExp(`(${pat})`, 'gi');
+            html = html.replace(re, '<mark class="src-highlight">$1</mark>');
+        } catch (e) {
+            console.warn('Invalid HTML regex for target:', t);
+        }
+    });
+    
+    if (html !== v1Rendered.innerHTML) {
+        v1Rendered.innerHTML = html;
+        console.log('Applied direct HTML highlighting');
+        const highlights = v1Rendered.querySelectorAll('mark.src-highlight, span.src-highlight');
+        if (highlights.length > 0) {
+            highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+}
+
+function scrollToFirstHighlight() {
+    setTimeout(() => {
+        const el = v1Rendered.querySelector('mark.src-highlight, span.src-highlight');
+        if (el && typeof el.scrollIntoView === 'function') {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }, 50);
+}
+
+function highlightSourcesInPreview(suggestion) {
+    const previews = Array.isArray(suggestion.source_previews) ? suggestion.source_previews : [];
+    const targets = buildHighlightTargets(previews);
+    
+    console.log('Original markdown length:', markdownV1.length);
+    console.log('Highlighting targets:', targets);
+    
+    if (targets.length > 0) {
+        highlightedMarkdownV1 = highlightMarkdownWithTargets(markdownV1, targets);
+        console.log('Highlighted markdown length:', highlightedMarkdownV1.length);
+        console.log('Contains highlights:', highlightedMarkdownV1.includes('src-highlight'));
+    } else {
+        // Reset to normal if no targets
+        highlightedMarkdownV1 = '';
+    }
+    
+    renderV1Preview();
+    
+    if (targets.length > 0) {
+        // Wait longer for DOM update and check if highlights exist
+        setTimeout(() => {
+            const highlights = v1Rendered.querySelectorAll('mark.src-highlight, span.src-highlight');
+            console.log('Found highlights in DOM:', highlights.length);
+            if (highlights.length > 0) {
+                highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                console.error('No highlights found in DOM after rendering!');
+                // Fallback: try direct HTML highlighting
+                highlightInRenderedHTML(targets);
+            }
+        }, 100);
+    }
+}
+
+// Handle click on suggestion cards to trigger highlight  
+function setupCardClickHandlers() {
+    const cards = suggestionsList.querySelectorAll('.suggestion-card');
+    cards.forEach((card, idx) => {
+        card.addEventListener('click', (e) => {
+            const target = e.target;
+            
+            // Ignore clicks on buttons and textarea
+            if (target.closest('[data-action]')) return;
+            if (target.closest('textarea')) return;
+            if (target.tagName === 'BUTTON') return;
+            if (target.tagName === 'TEXTAREA') return;
+            
+            // Highlight this card and show sources in viewer
+            cards.forEach(c => c.classList.remove('card-selected'));
+            card.classList.add('card-selected');
+            
+            if (suggestionsState[idx]) {
+                highlightSourcesInPreview(suggestionsState[idx]);
+            }
+        });
+    });
+}
+
 function renderSuggestions() {
     suggestionsEmpty.style.display = suggestionsState.length ? 'none' : 'block';
     suggestionsList.innerHTML = '';
     suggestionsState.forEach((s, idx) => {
         const card = document.createElement('div');
         card.className = 'suggestion-card';
+        card.dataset.idx = idx;
+        
+        
         card.innerHTML = `
             <div class="suggestion-head">
                <span class="suggestion-type ${s.type}">${labelForType(s.type)}</span>
-               <span class="suggestion-conf">Keyakinan: ${(s.confidence_score ?? 0).toFixed(2)}</span>
+               <span class="suggestion-hint">Klik untuk lihat rujukan di viewer atas</span>
             </div>
-            <div class="suggestion-context">${escapeHtml(s.original_context || '')}</div>
-            <textarea class="suggestion-editor" data-idx="${idx}">${s.generated_content || ''}</textarea>
+            <div class="suggestion-content">
+                ${s.generated_content || `[DEBUG] No content found. Available fields: ${Object.keys(s).join(', ')}`}
+            </div>
+            <textarea class="suggestion-editor" data-idx="${idx}" style="display:none;">${s.generated_content || ''}</textarea>
             <div class="suggestion-actions">
+                <button class="btn btn-secondary" data-action="edit" data-idx="${idx}">Edit</button>
                 <button class="btn btn-secondary" data-action="approve" data-idx="${idx}">Setujui</button>
                 <button class="btn btn-secondary" data-action="reject" data-idx="${idx}">Tolak</button>
             </div>
@@ -518,17 +755,112 @@ function renderSuggestions() {
         btn.addEventListener('click', (e) => {
             const action = e.target.dataset.action;
             const i = Number(e.target.dataset.idx);
-            if (action === 'approve') suggestionsState[i].status = 'approved';
-            if (action === 'reject') suggestionsState[i].status = 'rejected';
-            // visual cue
             const card = e.target.closest('.suggestion-card');
+            
+            if (action === 'edit') {
+                const contentDiv = card.querySelector('.suggestion-content');
+                const textarea = card.querySelector('.suggestion-editor');
+                const editBtn = card.querySelector('[data-action="edit"]');
+                
+                if (textarea.style.display === 'none') {
+                    // Show editor
+                    contentDiv.style.display = 'none';
+                    textarea.style.display = 'block';
+                    textarea.focus();
+                    editBtn.textContent = 'Simpan';
+                } else {
+                    // Save and hide editor
+                    const newContent = textarea.value;
+                    suggestionsState[i].generated_content = newContent;
+                    suggestionsState[i].status = 'edited';
+                    contentDiv.innerHTML = newContent || 'Konten enhancement tidak tersedia...';
+                    contentDiv.style.display = 'block';
+                    textarea.style.display = 'none';
+                    editBtn.textContent = 'Edit';
+                    updateBulkButtonsState();
+                }
+            } else if (action === 'approve') {
+                suggestionsState[i].status = 'approved';
+            } else if (action === 'reject') {
+                suggestionsState[i].status = 'rejected';
+            }
+            
+            // visual cue
             card.dataset.state = suggestionsState[i].status;
             updateBulkButtonsState();
         });
     });
 
+    // Setup click handlers for highlighting
+    setupCardClickHandlers();
     updateBulkButtonsState();
 }
+
+// Add double-click to clear highlights on empty area
+suggestionsList.addEventListener('dblclick', (e) => {
+    if (e.target === suggestionsList) {
+        clearHighlights();
+    }
+});
+
+// Also add a clear button to the preview panel
+v1Rendered.addEventListener('dblclick', () => {
+    clearHighlights();
+});
+
+// Test function for debugging
+function testHighlighting() {
+    console.log('=== HIGHLIGHTING TEST ===');
+    const testTargets = ['BI RATE', 'FED RATE', '5.75', '4.5'];
+    console.log('Test targets:', testTargets);
+    console.log('Current markdown exists:', !!markdownV1);
+    console.log('v1Rendered element exists:', !!v1Rendered);
+    
+    if (!markdownV1) {
+        console.error('No markdownV1 content found!');
+        return;
+    }
+    
+    console.log('Original markdown sample (first 200 chars):', markdownV1.slice(0, 200));
+    
+    // Test markdown highlighting
+    const highlighted = highlightMarkdownWithTargets(markdownV1, testTargets);
+    console.log('Highlighted markdown contains spans:', highlighted.includes('src-highlight'));
+    console.log('Highlighted sample (first 200 chars):', highlighted.slice(0, 200));
+    
+    // Apply directly to test
+    highlightedMarkdownV1 = highlighted;
+    renderV1Preview();
+    
+    setTimeout(() => {
+        const highlights = v1Rendered.querySelectorAll('mark.src-highlight, span.src-highlight');
+        console.log('DOM highlights found:', highlights.length);
+        
+        if (highlights.length === 0) {
+            console.log('No highlights in DOM, trying direct HTML method...');
+            const currentHTML = v1Rendered.innerHTML;
+            console.log('Current HTML sample (first 200 chars):', currentHTML.slice(0, 200));
+            
+            // Test direct HTML highlighting
+            highlightInRenderedHTML(testTargets);
+            
+            setTimeout(() => {
+                const newHighlights = v1Rendered.querySelectorAll('mark.src-highlight, span.src-highlight');
+                console.log('Direct HTML highlights found:', newHighlights.length);
+                if (newHighlights.length > 0) {
+                    console.log('SUCCESS: Direct HTML highlighting worked!');
+                } else {
+                    console.error('FAILED: No highlighting method worked!');
+                }
+            }, 50);
+        } else {
+            console.log('SUCCESS: Markdown highlighting worked!');
+        }
+    }, 100);
+}
+
+// Make test function globally available for console debugging
+window.testHighlighting = testHighlighting;
 
 finalizeBtn?.addEventListener('click', async () => {
     const curated = suggestionsState.filter(s => ['approved','edited'].includes((s.status||'').toLowerCase()));
@@ -703,8 +1035,42 @@ function sanitizeHTML(html) {
 
 function labelForType(t) {
     switch (t) {
+        case 'glossary': return 'Glossarium';
+        case 'highlight': return 'Sorotan';
+        case 'faq': return 'FAQ';
+        case 'caption': return 'Keterangan';
         case 'term_to_define': return 'Definisi';
         case 'concept_to_simplify': return 'Penyederhanaan';
         default: return 'Pengayaan';
     }
+}
+
+function getReadableSourceInfo(suggestion) {
+    // 1) Gunakan source_previews jika tersedia (lebih manusiawi)
+    const previews = Array.isArray(suggestion.source_previews) ? suggestion.source_previews : null;
+    if (previews && previews.length) {
+        const list = previews.map(p => {
+            const label = p.label || (p.type === 'table' ? 'Tabel' : 'Paragraf');
+            const page = p.page ? `Hal ${p.page}` : '';
+            return `${label}${page ? ` (${page})` : ''}`;
+        });
+        return list.join(', ');
+    }
+
+    // 2) Fallback: parse source_unit_ids bila previews belum ada
+    const sourceUnits = suggestion.source_units || suggestion.source_unit_ids || [];
+    if (!sourceUnits.length) return 'Tidak diketahui';
+
+    const sources = sourceUnits.map(unitId => {
+        const parts = unitId.split('_');
+        if (parts.length >= 5) {
+            const type = parts[1];
+            const pageNum = parts[3];
+            const sequence = parts[parts.length - 1];
+            if (type === 't') return `Tabel ${sequence} (${pageNum.replace('p', 'Hal ')})`;
+            return `Paragraf ${sequence} (${pageNum.replace('p', 'Hal ')})`;
+        }
+        return unitId.slice(-8);
+    });
+    return sources.join(', ');
 }

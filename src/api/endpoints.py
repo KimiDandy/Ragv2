@@ -12,20 +12,21 @@ from pydantic import BaseModel
 from loguru import logger
 from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import RetrievalQA
-
-# Using new extractor_v2 for PDF extraction
-from ..extract.extractor_v2 import extract_pdf_to_markdown
-from ..pipeline.phase_1_planning import create_enrichment_plan
-from ..pipeline.phase_2_generation import generate_bulk_content
-from ..pipeline.phase_3_synthesis import synthesize_final_markdown
-from ..pipeline.phase_4_vectorization import vectorize_and_store
 from ..core.config import (
+    CHROMA_DB_PATH,
+    EMBEDDING_MODEL,
+    CHAT_MODEL,
+    CHROMA_MODE,
+    CHROMA_SERVER_HOST,
+    CHROMA_SERVER_PORT,
+    PIPELINE_ARTEFACTS_DIR,
     RAG_PROMPT_TEMPLATE,
     CHROMA_COLLECTION,
-    PIPELINE_ARTEFACTS_DIR,
-    EMBEDDING_MODEL,
 )
+from ..core.rate_limiter import AsyncLeakyBucket
+from ..extract.extractor_v2 import extract_pdf_to_markdown
+from ..pipeline.phase_3_synthesis import synthesize_final_markdown
+from ..pipeline.phase_4_vectorization import vectorize_and_store
 from ..core.rag_builder import build_rag_chain, answer_with_sources, create_filtered_retriever
 from ..obs.token_ledger import get_token_ledger, log_tokens
 from .models import (
@@ -225,7 +226,7 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
 
 @router.post("/start-enhancement/{document_id}")
 async def start_enhancement(document_id: str):
-    """Menjalankan tugas latar belakang untuk Fase 1 (perencanaan) dan Fase 2 (generasi)."""
+    """Menjalankan tugas latar belakang Enhancement V2 (windowing + map-reduce)."""
     doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
     md_path = doc_dir / "markdown_v1.md"
     if not md_path.exists():
@@ -233,15 +234,114 @@ async def start_enhancement(document_id: str):
 
     async def _run():
         try:
-            logger.info(f"[Enhancement] Mulai untuk dokumen: {document_id}")
-            await create_enrichment_plan(str(doc_dir))
-            await generate_bulk_content(str(doc_dir))
-            logger.info(f"[Enhancement] Selesai untuk dokumen: {document_id}")
+            logger.info(f"[Enhancement V2] Mulai untuk dokumen: {document_id}")
+            
+            # Import Enhancement V2 components
+            from ..enhancement import (
+                EnhancementConfig, EnhancementPlanner, EnhancementGenerator, 
+                MarkdownSynthesizer, EnhancementIndexer
+            )
+            from ..enhancement.windowing import TokenWindowManager
+            
+            # Initialize components
+            config = EnhancementConfig()
+            window_manager = TokenWindowManager(
+                window_size=config.window_tokens,
+                overlap_size=config.window_overlap_tokens
+            )
+            planner = EnhancementPlanner(config)
+            generator = EnhancementGenerator(config)
+            synthesizer = MarkdownSynthesizer()
+            
+            # Load units metadata
+            units_meta_path = doc_dir / "units_metadata.json"
+            if not units_meta_path.exists():
+                units_meta_path = doc_dir / "meta" / "units_metadata.json"
+            
+            if not units_meta_path.exists():
+                logger.error(f"Units metadata not found for {document_id}")
+                return
+            
+            with open(units_meta_path, 'r', encoding='utf-8') as f:
+                units_metadata = json.load(f)
+            
+            # Step 1: Create windows and plan
+            logger.info(f"[Enhancement V2] Creating windows for {document_id}")
+            windows = window_manager.create_windows(
+                doc_id=document_id,
+                units_metadata=units_metadata,
+                markdown_path=str(md_path)
+            )
+            
+            logger.info(f"[Enhancement V2] Planning enhancements for {document_id}")
+            planning_result = await planner.plan_enhancements(
+                doc_id=document_id,
+                windows=windows,
+                units_metadata=units_metadata
+            )
+            
+            # Save plan in both old and new format for compatibility
+            plan_file_new = doc_dir / "enhancement_plan.json"
+            with open(plan_file_new, 'w', encoding='utf-8') as f:
+                json.dump(planning_result, f, ensure_ascii=False, indent=2)
+            
+            # Convert to old format for backward compatibility
+            old_format_plan = _convert_to_old_format(planning_result)
+            enrichment_plan_file = doc_dir / "enrichment_plan.json"
+            with open(enrichment_plan_file, 'w', encoding='utf-8') as f:
+                json.dump(old_format_plan, f, ensure_ascii=False, indent=2)
+            
+            # Step 2: Generate enhancements
+            logger.info(f"[Enhancement V2] Generating content for {document_id}")
+            from ..enhancement.planner import EnhancementCandidate
+            
+            candidate_objects = [
+                EnhancementCandidate(**c) for c in planning_result['selected_candidates']
+            ]
+            
+            generation_result = await generator.generate_enhancements(
+                candidates=candidate_objects,
+                units_metadata=units_metadata,
+                doc_id=document_id
+            )
+            
+            # Step 3: Create suggestions.json for frontend compatibility
+            suggestions = _convert_to_suggestions(generation_result['items'], units_metadata)
+            suggestions_file = doc_dir / "suggestions.json"
+            with open(suggestions_file, 'w', encoding='utf-8') as f:
+                json.dump(suggestions, f, ensure_ascii=False, indent=2)
+            
+            # Step 4: Synthesize Markdown v2
+            logger.info(f"[Enhancement V2] Synthesizing Markdown v2 for {document_id}")
+            markdown_v2_path = doc_dir / "markdown_v2.md"
+            synthesizer.synthesize(
+                doc_id=document_id,
+                markdown_v1_path=str(md_path),
+                enhancements=generation_result['items'],
+                units_metadata=units_metadata,
+                output_path=str(markdown_v2_path)
+            )
+            
+            # Save complete enhancements data
+            enhancements_file = doc_dir / "enhancements.json"
+            synthesizer.save_enhancements_json(
+                doc_id=document_id,
+                planning_result=planning_result,
+                generation_result=generation_result,
+                output_path=str(enhancements_file)
+            )
+            
+            logger.info(f"[Enhancement V2] Selesai untuk dokumen: {document_id}")
+            
         except Exception as e:
-            logger.error(f"[Enhancement] Gagal untuk dokumen {document_id}: {e}")
+            logger.error(f"[Enhancement V2] Gagal untuk dokumen {document_id}: {e}")
+            # Create empty suggestions for frontend
+            suggestions_file = doc_dir / "suggestions.json"
+            with open(suggestions_file, 'w', encoding='utf-8') as f:
+                json.dump([], f)
 
     asyncio.create_task(_run())
-    return {"message": "Proses peningkatan dimulai", "document_id": document_id}
+    return {"message": "Proses peningkatan V2 dimulai", "document_id": document_id}
 
 
 @router.get("/get-suggestions/{document_id}", response_model=EnhancementResponse)
@@ -610,3 +710,173 @@ async def test_ocr_components():
             debug_info["openai_client_error"] = str(e)
     
     return debug_info
+
+
+# ===============================================
+# CONVERSION FUNCTIONS FOR BACKWARD COMPATIBILITY
+# ===============================================
+
+def _convert_to_old_format(planning_result: dict) -> list:
+    """Convert Enhancement V2 planning result to old enrichment_plan.json format."""
+    old_format = []
+    
+    for candidate in planning_result.get('selected_candidates', []):
+        # Convert Enhancement V2 candidate to old format
+        old_item = {
+            "kind": candidate.get('type', 'unknown'),
+            "key": candidate.get('title', 'Unknown'),
+            "original_context": f"Pages {candidate.get('pages', [])}: {candidate.get('rationale', '')}",
+            "confidence_score": candidate.get('priority', 0.5),
+            "source_unit_ids": candidate.get('source_unit_ids', []),
+            "section": candidate.get('section', 'General')
+        }
+        old_format.append(old_item)
+    
+    return old_format
+
+
+def _convert_to_suggestions(enhancement_items: list, units_metadata: list) -> list:
+    """Convert Enhancement V2 items to suggestions.json format used by the frontend.
+
+    Tambahkan field yang mudah dibaca manusia: source_units dan source_previews,
+    serta kosongkan confidence_score agar UI tidak menampilkan skor dummy.
+    """
+    # Build quick lookup for units metadata
+    unit_map = {u.get('unit_id'): u for u in (units_metadata or [])}
+
+    suggestions = []
+
+    for item in enhancement_items:
+        unit_ids = item.get('source_unit_ids', []) or []
+
+        # Helpers to create better, precise previews
+        def _extract_numbers(text: str):
+            import re
+            return re.findall(r"\d[\d\.,]*%?", text or "")
+
+        def _digits_only(s: str) -> str:
+            import re
+            return re.sub(r"[^0-9]", "", s or "")
+
+        def _select_terms(text: str, title: str):
+            import re
+            words = re.findall(r"[A-Za-z]{4,}", (text or "") + " " + (title or ""))
+            nums = _extract_numbers(text or "")
+            # Prioritaskan angka dan kata kunci penting (maks 6)
+            key = [w.lower() for w in words[:6]] + [n.replace(',', '').lower() for n in nums[:6]]
+            # Tambah istilah umum domain agar baris tabel mudah ditemukan
+            domain = ['bi', 'rate', 'fed', 'ihsg', 'obligasi', 'usd', 'idr']
+            return key + domain
+
+        terms = _select_terms(item.get('text', ''), item.get('title', ''))
+
+        # Build human-readable previews
+        previews = []
+        for uid in unit_ids:
+            meta = unit_map.get(uid, {})
+            utype = meta.get('unit_type', 'paragraph')
+            label = 'Tabel' if utype == 'table' else 'Paragraf'
+            page = meta.get('page')
+            content = (meta.get('content') or '').strip()
+
+            # Buat snippet yang lebih presisi
+            locator = None
+            snippet = ""
+            if utype == 'table' and content:
+                lines = [ln.strip() for ln in content.splitlines() if ln.strip().startswith('|')]
+                # Cari baris yang mengandung salah satu terms
+                hit_line = None
+                header_line = None
+                align_line = None
+                for ln in lines:
+                    ln_low = ln.lower()
+                    # 1) Cocokkan kata kunci text/title
+                    word_hit = any(t for t in terms if t and t.isalpha() and t in ln_low)
+                    # 2) Cocokkan angka dengan normalisasi digit-only
+                    ln_digits = _digits_only(ln_low)
+                    num_hit = any(_digits_only(t) in ln_digits for t in terms if any(ch.isdigit() for ch in t))
+                    # Tangkap header & alignment (biasanya 2 baris pertama pada blok tabel)
+                    if header_line is None:
+                        header_line = ln
+                        continue
+                    if align_line is None and set(ln.replace('|','').strip()) <= set(': -') and ':' in ln:
+                        align_line = ln
+                        continue
+                    if word_hit or num_hit:
+                        hit_line = ln
+                        break
+                if hit_line:
+                    # Estimasikan nama baris dari kolom pertama setelah '|'
+                    cells = [c.strip() for c in hit_line.strip('|').split('|')]
+                    if cells:
+                        locator = f"Baris '{cells[0]}'"
+                    snippet = hit_line[:200] + ('...' if len(hit_line) > 200 else '')
+                    # Buat preview tabel minimal: header + alignment + baris yang kena
+                    table_preview = None
+                    if header_line and align_line:
+                        table_preview = "\n".join([header_line, align_line, hit_line])
+                else:
+                    snippet = content[:160] + ('...' if len(content) > 160 else '')
+                    table_preview = None
+            else:
+                # Paragraf: cuplikan di sekitar kata kunci/angka pertama yang cocok
+                low = content.lower()
+                idx = -1
+                for t in terms:
+                    if not t:
+                        continue
+                    # 1) Cari kata langsung
+                    idx = low.find(t)
+                    if idx != -1:
+                        break
+                    # 2) Jika t numerik, cari dengan normalisasi digit-only
+                    if any(ch.isdigit() for ch in t):
+                        low_digits = _digits_only(low)
+                        if _digits_only(t) and _digits_only(t) in low_digits:
+                            # mapping indeks ke posisi kasar di teks asli
+                            idx = max(0, low_digits.find(_digits_only(t)) - 1)
+                            break
+                if idx == -1:
+                    snippet = content[:200] + ('...' if len(content) > 200 else '')
+                else:
+                    start = max(0, idx - 60)
+                    end = min(len(content), idx + 120)
+                    snippet = (('...' if start > 0 else '') + content[start:end].strip() + ('...' if end < len(content) else ''))
+
+            anchor = meta.get('anchor')
+            previews.append({
+                'unit_id': uid,
+                'page': page,
+                'type': utype,
+                'label': label,
+                'snippet': snippet,
+                'locator': locator,
+                'anchor': anchor,
+                'table_preview': table_preview if utype == 'table' else None
+            })
+
+        # Compose original context in Bahasa Indonesia
+        if previews:
+            def _fmt(p):
+                base = f"{p['label']} (Hal {p['page']})" if p.get('page') else p['label']
+                return base + (f" → {p['locator']}" if p.get('locator') else '')
+            human_sources = [_fmt(p) for p in previews]
+            ctx_sources = ', '.join(human_sources)
+            original_context = f"Rujukan: {ctx_sources}."
+        else:
+            original_context = "Rujukan: tidak tersedia."
+
+        suggestion_item = {
+            "id": item.get('enh_id', f"enh_{len(suggestions)}"),
+            "type": item.get('type', 'unknown'),
+            "original_context": original_context,
+            "generated_content": item.get('text', ''),  # Direct field mapping
+            "confidence_score": None,
+            "status": "pending",
+            "source_units": unit_ids,
+            "source_previews": previews
+        }
+
+        suggestions.append(suggestion_item)
+
+    return suggestions
