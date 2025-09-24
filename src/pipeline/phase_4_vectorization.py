@@ -14,7 +14,7 @@ from ..core.config import (
 )
 from ..obs.token_ledger import log_tokens
 from ..obs.token_count import count_tokens
-
+from ..utils.doc_meta import get_markdown_relative_path
 
 
 def vectorize_and_store(
@@ -205,27 +205,29 @@ if __name__ == '__main__':
 
             ok_v1 = False
             ok_v2 = False
-            v1_path = latest_doc_dir / "markdown_v1.md"
+            v1_rel = get_markdown_relative_path(latest_doc_dir, "v1")
+            v1_path = latest_doc_dir / v1_rel
             if v1_path.exists():
                 ok_v1 = vectorize_and_store(
                     doc_output_dir=str(latest_doc_dir),
                     client=standalone_client,
-                    markdown_file="markdown_v1.md",
+                    markdown_file=v1_rel,
                     version="v1",
                 )
             else:
-                logger.warning("markdown_v1.md tidak ditemukan untuk dokumen terbaru.")
+                logger.warning(f"Markdown v1 ({v1_rel}) tidak ditemukan untuk dokumen terbaru.")
 
-            v2_path = latest_doc_dir / "markdown_v2.md"
+            v2_rel = get_markdown_relative_path(latest_doc_dir, "v2")
+            v2_path = latest_doc_dir / v2_rel
             if v2_path.exists():
                 ok_v2 = vectorize_and_store(
                     doc_output_dir=str(latest_doc_dir),
                     client=standalone_client,
-                    markdown_file="markdown_v2.md",
+                    markdown_file=v2_rel,
                     version="v2",
                 )
             else:
-                logger.warning("markdown_v2.md tidak ditemukan untuk dokumen terbaru (mungkin belum disintesis).")
+                logger.warning(f"Markdown v2 ({v2_rel}) tidak ditemukan untuk dokumen terbaru (mungkin belum disintesis).")
 
             if ok_v1 or ok_v2:
                 logger.info("Standalone vectorization completed (setidaknya satu versi berhasil).")

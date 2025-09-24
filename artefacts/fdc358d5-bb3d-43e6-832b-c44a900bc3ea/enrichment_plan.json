@@ -1,0 +1,92 @@
+[
+  {
+    "kind": "glossary",
+    "key": "BI Rate",
+    "original_context": "Pages [1]: BI Rate adalah suku bunga acuan yang ditetapkan oleh Bank Indonesia dan menjadi referensi utama dalam penentuan suku bunga kredit dan simpanan di Indonesia. Banyak pembaca awam yang belum memahami peran penting BI Rate dalam perekonomian nasional.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Fed Rate",
+    "original_context": "Pages [1]: Fed Rate adalah suku bunga acuan yang ditetapkan oleh Federal Reserve Amerika Serikat. Istilah ini penting dijelaskan karena sangat mempengaruhi pasar keuangan global dan sering menjadi acuan dalam analisis ekonomi internasional.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "faq",
+    "key": "Mengapa BI Rate dan Fed Rate Penting untuk Investor?",
+    "original_context": "Pages [1]: Banyak pembaca mungkin bertanya mengapa kedua suku bunga acuan ini selalu dicantumkan dalam laporan keuangan. Penjelasan tentang dampak langsung BI Rate dan Fed Rate terhadap pasar modal, obligasi, dan nilai tukar akan sangat membantu pemahaman pembaca.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "S&P 500",
+    "original_context": "Pages [1]: S&P 500 adalah indeks saham yang terdiri dari 500 perusahaan besar di Amerika Serikat dan sering dijadikan barometer kesehatan pasar saham AS. Banyak pembaca Indonesia yang belum familiar dengan indeks ini.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Dow Jones Industrial Average",
+    "original_context": "Pages [1]: Dow Jones Industrial Average adalah salah satu indeks saham tertua dan paling dikenal di Amerika Serikat, terdiri dari 30 perusahaan besar. Penjelasan ini penting untuk pembaca yang belum memahami signifikansinya.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Nasdaq Composite",
+    "original_context": "Pages [1]: Nasdaq Composite adalah indeks saham yang didominasi oleh perusahaan teknologi di Amerika Serikat. Penjelasan ini penting mengingat pengaruh besar sektor teknologi terhadap pergerakan indeks ini.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "highlight",
+    "key": "Kenaikan Indeks Saham AS",
+    "original_context": "Pages [1]: S&P 500 naik 1,04%, Dow Jones naik 0,77%, dan Nasdaq naik 1,5% dalam satu hari perdagangan. Ini merupakan pergerakan signifikan yang menandakan sentimen positif di pasar saham Amerika Serikat.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "faq",
+    "key": "Apa Dampak Tarif Timbal Balik AS terhadap Pasar Saham?",
+    "original_context": "Pages [1]: Kebijakan tarif timbal balik yang diumumkan Presiden AS Donald Trump dapat memicu pertanyaan tentang dampaknya terhadap pasar saham global, sehingga penjelasan singkat akan sangat membantu pembaca.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "caption",
+    "key": "Tabel Interest Rates",
+    "original_context": "Pages [1]: Tabel ini menampilkan perbandingan suku bunga acuan Indonesia (BI Rate) dan Amerika Serikat (Fed Rate) yang menjadi faktor utama dalam pergerakan pasar keuangan domestik dan global. Penjelasan singkat akan membantu pembaca memahami relevansi data ini.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+    ],
+    "section": "General"
+  }
+]

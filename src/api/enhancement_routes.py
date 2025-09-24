@@ -173,7 +173,7 @@ async def plan_enhancements(request: PlanRequest):
             units_metadata = json.load(f)
         
         # Load markdown
-        markdown_path = base_dir / "markdown_v1.md"
+        markdown_path = get_markdown_path(base_dir, "v1")
         if not markdown_path.exists():
             raise HTTPException(
                 status_code=404,
@@ -337,7 +337,7 @@ async def synthesize_markdown(request: SynthesizeRequest):
         
         # Load paths
         base_dir = Path(config.artifacts_dir) / doc_id
-        markdown_v1_path = base_dir / "markdown_v1.md"
+        markdown_v1_path = get_markdown_path(base_dir, "v1")
         enhancements_file = base_dir / "enhancements.json"
         
         if not markdown_v1_path.exists():

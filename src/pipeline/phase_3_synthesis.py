@@ -6,6 +6,12 @@ import bisect
 import tiktoken
 
 from ..core.config import PIPELINE_ARTEFACTS_DIR
+from ..utils.doc_meta import (
+    get_markdown_path,
+    get_base_name,
+    default_markdown_filename,
+    set_markdown_info,
+)
 
 def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dict]) -> str:
     """
@@ -20,13 +26,13 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
         str: Path menuju file markdown_v2.md yang telah disintesis.
     """
     doc_path = Path(doc_output_dir)
-    markdown_path = doc_path / "markdown_v1.md"
+    markdown_path = get_markdown_path(doc_path, "v1")
 
     try:
         with open(markdown_path, 'r', encoding='utf-8') as f:
             markdown_content = f.read()
     except FileNotFoundError as e:
-        logger.error(f"File markdown_v1.md tidak ditemukan - {e}")
+        logger.error(f"File markdown v1 tidak ditemukan - {e}")
         return ""
 
     modified_markdown = markdown_content
@@ -149,9 +155,18 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
     if appendix_list:
         final_content += "\n\n## Catatan Pengayaan (unanchored)\n\n" + "\n".join(appendix_list)
 
-    output_path = doc_path / "markdown_v2.md"
+    base_name = get_base_name(doc_path)
+    output_filename = default_markdown_filename("v2", base_name)
+    output_path = doc_path / output_filename
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(final_content)
+    
+    set_markdown_info(
+        doc_path,
+        "v2",
+        filename=output_filename,
+        relative_path=output_filename,
+    )
 
     metrics = {
         "anchored": anchored_count,

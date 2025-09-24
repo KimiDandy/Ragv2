@@ -1,0 +1,3278 @@
+{
+  "doc_id": "3ecc7679-76ae-4b48-9dd0-46333a9b1c6e",
+  "run_id": "plan_2025-09-24T10:17:34.445817",
+  "windows": [
+    {
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c",
+      "doc_id": "3ecc7679-76ae-4b48-9dd0-46333a9b1c6e",
+      "window_index": 0,
+      "token_span": [
+        0,
+        7917
+      ],
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p1_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p1_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p4_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p4_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p5_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_right_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_right_2",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_right_5",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_right_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_right_2",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_right_5",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p9_right_6",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_left_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_2"
+      ],
+      "text_preview": "PRODUCT FOCUS Q1 2025 PRODUCT FOCUS\nQ1 2025 Wealth Management Wealth Management Overview: Publikasi Product Focus ini diterbitkan oleh Tim Advisory & Market Strategist Bank Danamon Indonesia dan bertujuan untuk memberikan tambahan informasi mengenai produk reksa dana/obligasi pilihan, berdasarkan profil risiko Anda (Risk Rating) – didukung oleh proses analisa internal kami, karakteristik utama dari reksa dana/obligasi, serta risiko & performa masa lalu. Publikasi ini terdiri dari beberapa produk...",
+      "total_tokens": 7917
+    },
+    {
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909",
+      "doc_id": "3ecc7679-76ae-4b48-9dd0-46333a9b1c6e",
+      "window_index": 1,
+      "token_span": [
+        7656,
+        15067
+      ],
+      "pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_2",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_right_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_right_2",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_left_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_right_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_left_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_left_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p12_left_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p13_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p13_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p13_right_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p13_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p13_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p13_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p13_right_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p13_left_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_right_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_left_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_right_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_left_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_left_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p14_left_4",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_left_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_right_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_right_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p15_left_2",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_pb_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_5",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_6",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_7",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_8",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_pb_0"
+      ],
+      "text_preview": "| Karakteristik Utama ReksaDana   | None                   |\n|:--------------------------------|:-----------------------|\n| ManajerInvestasi                | PT Schroder Investment |\n|                                 | Management Indonesia   |\n| TanggalPenawaran                | 27 Des2004             |\n| DanaKelolaan                    | Rp 492 Milyar          |\n| TolakUkur                       | Rata-rata bunga        |\n|                                 | deposito net + 2%      |\n| KodeISIN  ...",
+      "total_tokens": 7411
+    },
+    {
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870",
+      "doc_id": "3ecc7679-76ae-4b48-9dd0-46333a9b1c6e",
+      "window_index": 2,
+      "token_span": [
+        14668,
+        22492
+      ],
+      "pages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_5",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_6",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_7",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_8",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_right_0",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_right_2",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p17_right_4",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_right_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_right_2",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_pb_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p18_right_4",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p19_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p19_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p19_right_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p19_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p19_right_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p19_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p19_right_4",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_right_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_right_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p20_right_5",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p21_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p21_right_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p21_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p21_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p21_right_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p21_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p21_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p21_right_5",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p22_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p22_right_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p22_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p22_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p22_right_2",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "text_preview": "INDOIS 4.4 06/06/27  INDOIS 2.3 06/23/25  INDOIS 5.6 11/15/33 Pasar Uang  13% MANUFIX -0.78% 0.79% 0.79% -1.30% -0.27% Tolak Ukur 0.14% 1.81% 1.81% 1.75% 1.42% Obligasi  Pemerintah 87% Sumber: Ringkasan Informasi Produk Desember 2024 • Perhitungan NAB berdasarkan kumulatif. • Reksa Dana memiliki biaya transaksi pembelian, penjualan. dan pengalihan • Kinerja 3 dan 5 tahun telah disetahunkan. Kinerja di atas merupakan rekam jejak kinerja reksa dana dan tidak mencerminkan atau merupakan jaminan ata...",
+      "total_tokens": 7824
+    },
+    {
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae",
+      "doc_id": "3ecc7679-76ae-4b48-9dd0-46333a9b1c6e",
+      "window_index": 3,
+      "token_span": [
+        22131,
+        23464
+      ],
+      "pages": [
+        23,
+        24
+      ],
+      "unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_para_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_pb_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_para_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_para_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_para_5"
+      ],
+      "text_preview": "•  SMIF •  ORI/SR/ST •  MANUFIX •  FR100 •  FR106 •  INDON30N2 Short- Medium Bonds Cash • Portfolio adalah contoh kombinasi produk sesuai dengan product focus kecuali untuk reksa dana pasar uang. Untuk pilihan produk lain bisa dilihat pada list   product focus. • Expected return dihitung berdasarkan analisa dari berbagai sumber yang diolah tim Wealth Advisory dan merupakan indikasi bukan kepastian • Informasimengenaiprospectusdan Ringkasan informasi produkdapat dilihat melalui  :  https://www.da...",
+      "total_tokens": 1333
+    }
+  ],
+  "all_candidates": [
+    {
+      "cand_id": "cand_glossary_b636b7a5",
+      "type": "glossary",
+      "title": "Reksa Dana",
+      "rationale": "Istilah reksa dana sering digunakan dalam dokumen dan merupakan produk investasi utama yang dibahas. Banyak pembaca awam membutuhkan penjelasan tentang apa itu reksa dana, cara kerjanya, dan risikonya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        2,
+        3
+      ],
+      "section": "General",
+      "dup_key": "TERM:REKSA DANA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_c535fbda",
+      "type": "glossary",
+      "title": "Obligasi",
+      "rationale": "Obligasi adalah salah satu produk utama yang diulas. Penjelasan tentang obligasi, karakteristik, dan risikonya sangat penting untuk pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        2,
+        3,
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:OBLIGASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_19410ee8",
+      "type": "glossary",
+      "title": "Profil Risiko (Risk Rating)",
+      "rationale": "Profil risiko menjadi dasar rekomendasi produk. Banyak investor pemula belum memahami konsep ini, sehingga penjelasan sangat membantu.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "TERM:PROFIL RISIKO (RISK RATING)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_4f191628",
+      "type": "glossary",
+      "title": "Manajer Investasi",
+      "rationale": "Peran manajer investasi sangat krusial dalam pengelolaan reksa dana, namun istilah ini sering membingungkan investor baru.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        7,
+        10,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANAJER INVESTASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_4723cafc",
+      "type": "glossary",
+      "title": "Pasar Uang",
+      "rationale": "Komponen portofolio reksa dana sering mencantumkan pasar uang, yang perlu dijelaskan agar pembaca memahami peran dan risikonya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4"
+      ],
+      "pages": [
+        7,
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:PASAR UANG",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_ad516f35",
+      "type": "glossary",
+      "title": "FR (Fixed Rate)",
+      "rationale": "FR adalah kode seri obligasi pemerintah Indonesia yang sering muncul dalam portofolio reksa dana, namun tidak semua pembaca memahami maknanya.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:FR (FIXED RATE)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_f577bf87",
+      "type": "glossary",
+      "title": "YTD (Year to Date)",
+      "rationale": "YTD adalah istilah umum dalam pelaporan kinerja investasi, namun seringkali membingungkan pembaca awam.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:YTD (YEAR TO DATE)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_4966ee5f",
+      "type": "highlight",
+      "title": "Ekspektasi Penurunan Suku Bunga 100bps",
+      "rationale": "Ekspektasi penurunan suku bunga sebesar 100 basis poin pada 2025 merupakan insight makroekonomi penting yang mempengaruhi strategi investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_9353ee60",
+      "type": "highlight",
+      "title": "Komposisi Portofolio Pasar Uang 27%",
+      "rationale": "Porsi pasar uang sebesar 27% dalam portofolio reksa dana menunjukkan strategi konservatif dan likuiditas tinggi, penting untuk investor memahami implikasinya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4"
+      ],
+      "pages": [
+        7
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_caption_1a7d9ed2",
+      "type": "caption",
+      "title": "Tabel Kinerja Reksa Dana Periode Desember 2024",
+      "rationale": "Tabel kinerja reksa dana menampilkan data multi-periode (1 bulan, YTD, 1 tahun, 3 tahun, 5 tahun) yang kompleks dan membutuhkan penjelasan agar pembaca dapat menginterpretasikan hasil investasi.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_caption_0c2fd1d7",
+      "type": "caption",
+      "title": "Tabel 5 Besar Efek Dalam Portofolio",
+      "rationale": "Tabel ini menampilkan komposisi efek terbesar dalam portofolio reksa dana, yang penting untuk memahami eksposur risiko dan strategi manajer investasi.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_1:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_02283077",
+      "type": "faq",
+      "title": "Apakah publikasi ini merupakan rekomendasi investasi?",
+      "rationale": "Banyak pembaca mungkin mengira dokumen ini adalah rekomendasi investasi. Penegasan bahwa ini hanya informasi sangat penting untuk menghindari mispersepsi dan risiko hukum.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_2"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah publikasi ini merupakan rekomendasi investasi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_f8b77047",
+      "type": "faq",
+      "title": "Apa risiko utama berinvestasi di reksa dana dan obligasi?",
+      "rationale": "Risiko investasi adalah pertanyaan utama investor. Penjelasan risiko utama membantu pembaca membuat keputusan yang lebih bijak.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa risiko utama berinvestasi di reksa dana dan obligasi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_d406611a",
+      "type": "faq",
+      "title": "Bagaimana proses analisa produk dilakukan oleh tim advisory?",
+      "rationale": "Pembaca mungkin ingin tahu bagaimana produk dipilih dan dianalisis, sehingga transparansi proses analisa internal meningkatkan kepercayaan.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_1"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana proses analisa produk dilakukan oleh tim advisory?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_ec2965a7",
+      "type": "highlight",
+      "title": "Strategi Menghadapi Skenario No Cut di Q1 2025",
+      "rationale": "Skenario 'No Cut' pada suku bunga di Q1 2025 menjadi pertimbangan penting dalam strategi investasi, perlu disorot agar investor memahami konteks makro.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p5_para_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p5_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_71fc8d9b",
+      "type": "glossary",
+      "title": "Equity (Saham)",
+      "rationale": "Equity adalah istilah yang sering muncul dalam strategi investasi, namun tidak semua pembaca memahami bahwa ini merujuk pada saham.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_2"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:EQUITY (SAHAM)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_ca02d2f0",
+      "type": "glossary",
+      "title": "Onshore dan Offshore",
+      "rationale": "Istilah onshore dan offshore dalam konteks investasi sering membingungkan pembaca awam, sehingga perlu dijelaskan perbedaannya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_2"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:ONSHORE DAN OFFSHORE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_4f191628",
+      "type": "glossary",
+      "title": "Manajer Investasi",
+      "rationale": "Istilah ini sangat penting dalam konteks reksa dana dan sering membingungkan investor pemula. Penjelasan tentang peran, tanggung jawab, dan regulasi Manajer Investasi di Indonesia akan membantu pembaca memahami siapa yang mengelola dana mereka.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_right_1"
+      ],
+      "pages": [
+        10,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANAJER INVESTASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_8bd5020f",
+      "type": "glossary",
+      "title": "Dana Kelolaan",
+      "rationale": "Dana kelolaan (AUM) adalah indikator utama skala dan kepercayaan investor terhadap reksa dana. Istilah ini perlu dijelaskan agar pembaca memahami signifikansinya.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:DANA KELOLAAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_0e77b134",
+      "type": "glossary",
+      "title": "Tolak Ukur Reksa Dana",
+      "rationale": "Tolak ukur (benchmark) seperti rata-rata bunga deposito net + 2% sering digunakan, namun banyak investor awam tidak memahami maknanya. Penjelasan akan membantu pembaca membandingkan kinerja reksa dana secara objektif.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:TOLAK UKUR REKSA DANA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_c535fbda",
+      "type": "glossary",
+      "title": "Obligasi",
+      "rationale": "Obligasi merupakan instrumen utama dalam portofolio reksa dana campuran dan pendapatan tetap. Penjelasan tentang obligasi, jenis, dan risikonya sangat membantu.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:OBLIGASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_a5869362",
+      "type": "glossary",
+      "title": "Saham",
+      "rationale": "Saham adalah komponen penting dalam portofolio reksa dana. Penjelasan tentang saham, karakteristik, dan risikonya akan memperkaya pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:SAHAM",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_highlight_c34aeb44",
+      "type": "highlight",
+      "title": "Komposisi Portofolio SDK",
+      "rationale": "SDK memiliki komposisi portofolio 24% saham dan 72% obligasi. Data ini penting untuk menilai profil risiko dan strategi investasi reksa dana.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_highlight_472ca0c9",
+      "type": "highlight",
+      "title": "Dana Kelolaan SDK",
+      "rationale": "Dana kelolaan SDK sebesar Rp 492 Milyar menunjukkan skala dan tingkat kepercayaan investor. Angka ini penting untuk disorot.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_caption_3d53db1c",
+      "type": "caption",
+      "title": "Penjelasan Tabel Kinerja Reksa Dana",
+      "rationale": "Tabel kinerja per Des 2024 menampilkan return dalam berbagai periode (1Bln, YTD, 1Thn, 3Thn, 5Thn). Caption diperlukan agar pembaca memahami arti setiap kolom dan cara membaca data.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_caption_3c4c4b71",
+      "type": "caption",
+      "title": "Penjelasan Tabel 5 Besar Efek Dalam Portofolio",
+      "rationale": "Tabel ini menampilkan 5 efek terbesar dalam portofolio reksa dana. Caption akan membantu pembaca memahami signifikansi dan cara interpretasi data.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_1"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_c5e2d394",
+      "type": "faq",
+      "title": "Apa arti tolok ukur rata-rata bunga deposito net + 2%?",
+      "rationale": "Banyak investor awam tidak memahami bagaimana tolok ukur ini digunakan untuk menilai kinerja reksa dana. FAQ ini akan menjawab kebingungan tersebut.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti tolok ukur rata-rata bunga deposito net + 2%?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_1536bf07",
+      "type": "faq",
+      "title": "Bagaimana cara membaca tabel kinerja reksa dana?",
+      "rationale": "Tabel kinerja sering membingungkan pembaca awam. FAQ ini akan membantu mereka memahami cara membaca dan menginterpretasikan data return.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara membaca tabel kinerja reksa dana?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_52894923",
+      "type": "faq",
+      "title": "Apa saja risiko utama berinvestasi di reksa dana campuran seperti SDK?",
+      "rationale": "Risiko adalah aspek penting yang sering diabaikan investor pemula. FAQ ini akan memberikan pemahaman tentang risiko utama yang relevan.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_left_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja risiko utama berinvestasi di reksa dana campuran seperti SDK?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_highlight_cdce090f",
+      "type": "highlight",
+      "title": "Tanggal Penawaran SDK",
+      "rationale": "SDK telah ditawarkan sejak 27 Desember 2004, menunjukkan rekam jejak panjang dan stabilitas produk.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_d058ee1a",
+      "type": "glossary",
+      "title": "INDOIS",
+      "rationale": "INDOIS adalah kode untuk Obligasi Negara Indonesia (Indonesia Sovereign Bonds) yang sering digunakan dalam portofolio reksa dana pendapatan tetap. Penjelasan ini penting agar pembaca memahami instrumen yang menjadi underlying asset produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_5"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:INDOIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_62692f69",
+      "type": "glossary",
+      "title": "NAB (Nilai Aktiva Bersih)",
+      "rationale": "NAB adalah istilah utama dalam reksa dana yang sering membingungkan investor pemula. Penjelasan tentang NAB sangat penting untuk memahami perhitungan kinerja dan nilai investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:NAB (NILAI AKTIVA BERSIH)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_8bd8b37b",
+      "type": "glossary",
+      "title": "Tolak Ukur (Benchmark)",
+      "rationale": "Tolak ukur adalah acuan kinerja yang digunakan untuk membandingkan hasil investasi reksa dana. Istilah ini penting dijelaskan agar pembaca memahami konteks perbandingan kinerja.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:TOLAK UKUR (BENCHMARK)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_4ef7a9a3",
+      "type": "glossary",
+      "title": "Obligasi Pemerintah",
+      "rationale": "Obligasi pemerintah adalah instrumen utama dalam portofolio reksa dana pendapatan tetap. Penjelasan ini membantu pembaca memahami risiko dan karakteristik produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:OBLIGASI PEMERINTAH",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_4723cafc",
+      "type": "glossary",
+      "title": "Pasar Uang",
+      "rationale": "Pasar uang adalah salah satu aset dalam portofolio reksa dana. Penjelasan ini penting untuk membedakan antara instrumen pasar uang dan obligasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:PASAR UANG",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_ec8c919f",
+      "type": "highlight",
+      "title": "Komposisi Portofolio MANUFIX",
+      "rationale": "Portofolio MANUFIX terdiri dari 87% obligasi pemerintah dan 13% pasar uang. Komposisi ini penting untuk menilai profil risiko dan potensi imbal hasil produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_69234244",
+      "type": "highlight",
+      "title": "Kinerja MANUFIX",
+      "rationale": "Kinerja MANUFIX selama 1 bulan, YTD, 1 tahun, 3 tahun, dan 5 tahun menunjukkan fluktuasi dan hasil yang perlu dicermati investor. Data ini penting untuk pengambilan keputusan investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_d40fd3ff",
+      "type": "highlight",
+      "title": "Perbandingan Kinerja dengan Tolak Ukur",
+      "rationale": "Perbandingan antara kinerja MANUFIX dan tolak ukur pada berbagai periode waktu memberikan insight penting tentang performa relatif produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_caption_7c7ebff7",
+      "type": "caption",
+      "title": "Tabel Kinerja MANUFIX dan Tolak Ukur",
+      "rationale": "Tabel yang menampilkan kinerja MANUFIX dan tolak ukur dalam berbagai periode waktu memerlukan caption yang menjelaskan arti setiap kolom dan konteks data.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_faq_d354cbc1",
+      "type": "faq",
+      "title": "Apa arti kinerja disetahunkan?",
+      "rationale": "Banyak investor awam tidak memahami istilah kinerja disetahunkan. Penjelasan ini penting agar pembaca tidak salah menafsirkan data return.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti kinerja disetahunkan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_faq_1f1f3a9a",
+      "type": "faq",
+      "title": "Apakah kinerja masa lalu menjamin hasil di masa depan?",
+      "rationale": "Penjelasan ini penting karena sering terjadi mispersepsi bahwa kinerja historis akan berulang, padahal tidak ada jaminan demikian.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah kinerja masa lalu menjamin hasil di masa depan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_faq_bf29e9aa",
+      "type": "faq",
+      "title": "Apa saja biaya yang dikenakan pada reksa dana?",
+      "rationale": "Banyak investor tidak menyadari adanya biaya transaksi pembelian, penjualan, dan pengalihan. Penjelasan ini penting untuk transparansi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja biaya yang dikenakan pada reksa dana?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_9b21d2af",
+      "type": "glossary",
+      "title": "SMIF",
+      "rationale": "SMIF adalah singkatan dari Sucorinvest Monthly Income Fund, salah satu produk reksa dana pendapatan tetap yang sering disebut dalam portofolio. Definisi ini penting agar pembaca memahami karakteristik produk yang dimaksud.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:SMIF",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_bdef4963",
+      "type": "glossary",
+      "title": "ORI/SR/ST",
+      "rationale": "ORI (Obligasi Negara Ritel), SR (Sukuk Ritel), dan ST (Sukuk Tabungan) adalah instrumen Surat Berharga Negara untuk investor ritel. Penjelasan istilah ini krusial karena sering muncul dalam portofolio dan dapat membingungkan pembaca awam.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:ORI/SR/ST",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_5928baed",
+      "type": "glossary",
+      "title": "MANUFIX",
+      "rationale": "MANUFIX adalah Manulife USD Fixed Income Fund, produk reksa dana pendapatan tetap berdenominasi dolar AS. Penjelasan ini penting untuk membedakan dari produk lain dan menjelaskan eksposur mata uang asing.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANUFIX",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_699c483d",
+      "type": "glossary",
+      "title": "FR100 dan FR106",
+      "rationale": "FR100 dan FR106 adalah seri Surat Utang Negara (SUN) dengan kode tertentu. Penjelasan kode seri ini penting agar pembaca memahami jenis obligasi pemerintah yang dimaksud.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:FR100 DAN FR106",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_067386eb",
+      "type": "glossary",
+      "title": "INDON30N2 dan INDON35N",
+      "rationale": "INDON30N2 dan INDON35N adalah kode obligasi pemerintah Indonesia berdenominasi USD dengan jatuh tempo tertentu. Penjelasan kode ini penting untuk menghindari kebingungan terkait produk yang diinvestasikan.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:INDON30N2 DAN INDON35N",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_8a6444b5",
+      "type": "glossary",
+      "title": "Short-Medium Bonds",
+      "rationale": "Short-Medium Bonds mengacu pada obligasi dengan jangka waktu pendek hingga menengah. Penjelasan ini penting untuk memahami profil risiko dan potensi return produk dalam portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:SHORT-MEDIUM BONDS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_069b30db",
+      "type": "glossary",
+      "title": "Cash",
+      "rationale": "Cash dalam konteks portofolio investasi merujuk pada alokasi dana tunai atau instrumen pasar uang yang sangat likuid. Penjelasan ini penting agar pembaca memahami fungsi cash dalam diversifikasi portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:CASH",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_d349106b",
+      "type": "glossary",
+      "title": "ABF IBI FUND",
+      "rationale": "ABF IBI FUND adalah Bahana ABF Indonesia Bond Index Fund, reksa dana indeks yang mengikuti kinerja obligasi pemerintah Indonesia. Penjelasan ini penting untuk membedakan dari reksa dana aktif.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:ABF IBI FUND",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_ac8eb48a",
+      "type": "glossary",
+      "title": "PRIMA USD",
+      "rationale": "PRIMA USD adalah produk reksa dana atau obligasi berdenominasi dolar AS. Penjelasan ini penting untuk memahami eksposur mata uang asing dalam portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:PRIMA USD",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_20b99f1d",
+      "type": "glossary",
+      "title": "Expected Return",
+      "rationale": "Expected return adalah estimasi tingkat pengembalian investasi berdasarkan analisa historis dan proyeksi. Penjelasan ini penting karena sering disalahartikan sebagai jaminan hasil.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:EXPECTED RETURN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_highlight_f04494f8",
+      "type": "highlight",
+      "title": "Expected Return sebagai Indikasi",
+      "rationale": "Pernyataan bahwa expected return merupakan indikasi, bukan kepastian, sangat penting untuk mengelola ekspektasi investor dan menghindari mispersepsi risiko.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_faq_6bf69f92",
+      "type": "faq",
+      "title": "Di mana saya bisa mendapatkan informasi detail tentang produk?",
+      "rationale": "Banyak pembaca akan mencari prospectus atau ringkasan informasi produk sebelum berinvestasi. FAQ ini mengarahkan mereka ke sumber resmi untuk informasi lebih lanjut.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Di mana saya bisa mendapatkan informasi detail tentang produk?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_faq_d4ee1f95",
+      "type": "faq",
+      "title": "Apa arti Balanced dalam Risk Profile?",
+      "rationale": "Istilah Balanced pada risk profile dapat membingungkan pembaca awam. Penjelasan tentang arti dan implikasi profil risiko Balanced akan membantu pemahaman.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_4"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti Balanced dalam Risk Profile?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_caption_7a3db269",
+      "type": "caption",
+      "title": "Penjelasan Tabel Growth",
+      "rationale": "Tabel pada halaman 24 berjudul Growth namun seluruh kolomnya bertuliskan None. Penjelasan diperlukan agar pembaca memahami apakah data belum tersedia, tidak relevan, atau ada alasan lain.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_pb_0"
+      ],
+      "pages": [
+        24
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    }
+  ],
+  "final_candidates": [
+    {
+      "cand_id": "cand_glossary_b636b7a5",
+      "type": "glossary",
+      "title": "Reksa Dana",
+      "rationale": "Istilah reksa dana sering digunakan dalam dokumen dan merupakan produk investasi utama yang dibahas. Banyak pembaca awam membutuhkan penjelasan tentang apa itu reksa dana, cara kerjanya, dan risikonya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        2,
+        3
+      ],
+      "section": "General",
+      "dup_key": "TERM:REKSA DANA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_c535fbda",
+      "type": "glossary",
+      "title": "Obligasi",
+      "rationale": "Obligasi adalah salah satu produk utama yang diulas. Penjelasan tentang obligasi, karakteristik, dan risikonya sangat penting untuk pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        2,
+        3,
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:OBLIGASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_19410ee8",
+      "type": "glossary",
+      "title": "Profil Risiko (Risk Rating)",
+      "rationale": "Profil risiko menjadi dasar rekomendasi produk. Banyak investor pemula belum memahami konsep ini, sehingga penjelasan sangat membantu.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "TERM:PROFIL RISIKO (RISK RATING)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_4f191628",
+      "type": "glossary",
+      "title": "Manajer Investasi",
+      "rationale": "Peran manajer investasi sangat krusial dalam pengelolaan reksa dana, namun istilah ini sering membingungkan investor baru.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        7,
+        10,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANAJER INVESTASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_4723cafc",
+      "type": "glossary",
+      "title": "Pasar Uang",
+      "rationale": "Komponen portofolio reksa dana sering mencantumkan pasar uang, yang perlu dijelaskan agar pembaca memahami peran dan risikonya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4"
+      ],
+      "pages": [
+        7,
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:PASAR UANG",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_ad516f35",
+      "type": "glossary",
+      "title": "FR (Fixed Rate)",
+      "rationale": "FR adalah kode seri obligasi pemerintah Indonesia yang sering muncul dalam portofolio reksa dana, namun tidak semua pembaca memahami maknanya.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:FR (FIXED RATE)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_f577bf87",
+      "type": "glossary",
+      "title": "YTD (Year to Date)",
+      "rationale": "YTD adalah istilah umum dalam pelaporan kinerja investasi, namun seringkali membingungkan pembaca awam.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:YTD (YEAR TO DATE)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_4966ee5f",
+      "type": "highlight",
+      "title": "Ekspektasi Penurunan Suku Bunga 100bps",
+      "rationale": "Ekspektasi penurunan suku bunga sebesar 100 basis poin pada 2025 merupakan insight makroekonomi penting yang mempengaruhi strategi investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_9353ee60",
+      "type": "highlight",
+      "title": "Komposisi Portofolio Pasar Uang 27%",
+      "rationale": "Porsi pasar uang sebesar 27% dalam portofolio reksa dana menunjukkan strategi konservatif dan likuiditas tinggi, penting untuk investor memahami implikasinya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4"
+      ],
+      "pages": [
+        7
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_caption_1a7d9ed2",
+      "type": "caption",
+      "title": "Tabel Kinerja Reksa Dana Periode Desember 2024",
+      "rationale": "Tabel kinerja reksa dana menampilkan data multi-periode (1 bulan, YTD, 1 tahun, 3 tahun, 5 tahun) yang kompleks dan membutuhkan penjelasan agar pembaca dapat menginterpretasikan hasil investasi.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_caption_0c2fd1d7",
+      "type": "caption",
+      "title": "Tabel 5 Besar Efek Dalam Portofolio",
+      "rationale": "Tabel ini menampilkan komposisi efek terbesar dalam portofolio reksa dana, yang penting untuk memahami eksposur risiko dan strategi manajer investasi.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_1:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_02283077",
+      "type": "faq",
+      "title": "Apakah publikasi ini merupakan rekomendasi investasi?",
+      "rationale": "Banyak pembaca mungkin mengira dokumen ini adalah rekomendasi investasi. Penegasan bahwa ini hanya informasi sangat penting untuk menghindari mispersepsi dan risiko hukum.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_2"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah publikasi ini merupakan rekomendasi investasi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_f8b77047",
+      "type": "faq",
+      "title": "Apa risiko utama berinvestasi di reksa dana dan obligasi?",
+      "rationale": "Risiko investasi adalah pertanyaan utama investor. Penjelasan risiko utama membantu pembaca membuat keputusan yang lebih bijak.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa risiko utama berinvestasi di reksa dana dan obligasi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_d406611a",
+      "type": "faq",
+      "title": "Bagaimana proses analisa produk dilakukan oleh tim advisory?",
+      "rationale": "Pembaca mungkin ingin tahu bagaimana produk dipilih dan dianalisis, sehingga transparansi proses analisa internal meningkatkan kepercayaan.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_1"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana proses analisa produk dilakukan oleh tim advisory?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_ec2965a7",
+      "type": "highlight",
+      "title": "Strategi Menghadapi Skenario No Cut di Q1 2025",
+      "rationale": "Skenario 'No Cut' pada suku bunga di Q1 2025 menjadi pertimbangan penting dalam strategi investasi, perlu disorot agar investor memahami konteks makro.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p5_para_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p5_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_71fc8d9b",
+      "type": "glossary",
+      "title": "Equity (Saham)",
+      "rationale": "Equity adalah istilah yang sering muncul dalam strategi investasi, namun tidak semua pembaca memahami bahwa ini merujuk pada saham.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_2"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:EQUITY (SAHAM)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_ca02d2f0",
+      "type": "glossary",
+      "title": "Onshore dan Offshore",
+      "rationale": "Istilah onshore dan offshore dalam konteks investasi sering membingungkan pembaca awam, sehingga perlu dijelaskan perbedaannya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_2"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:ONSHORE DAN OFFSHORE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_8bd5020f",
+      "type": "glossary",
+      "title": "Dana Kelolaan",
+      "rationale": "Dana kelolaan (AUM) adalah indikator utama skala dan kepercayaan investor terhadap reksa dana. Istilah ini perlu dijelaskan agar pembaca memahami signifikansinya.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:DANA KELOLAAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_0e77b134",
+      "type": "glossary",
+      "title": "Tolak Ukur Reksa Dana",
+      "rationale": "Tolak ukur (benchmark) seperti rata-rata bunga deposito net + 2% sering digunakan, namun banyak investor awam tidak memahami maknanya. Penjelasan akan membantu pembaca membandingkan kinerja reksa dana secara objektif.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:TOLAK UKUR REKSA DANA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_a5869362",
+      "type": "glossary",
+      "title": "Saham",
+      "rationale": "Saham adalah komponen penting dalam portofolio reksa dana. Penjelasan tentang saham, karakteristik, dan risikonya akan memperkaya pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:SAHAM",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_highlight_c34aeb44",
+      "type": "highlight",
+      "title": "Komposisi Portofolio SDK",
+      "rationale": "SDK memiliki komposisi portofolio 24% saham dan 72% obligasi. Data ini penting untuk menilai profil risiko dan strategi investasi reksa dana.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_highlight_472ca0c9",
+      "type": "highlight",
+      "title": "Dana Kelolaan SDK",
+      "rationale": "Dana kelolaan SDK sebesar Rp 492 Milyar menunjukkan skala dan tingkat kepercayaan investor. Angka ini penting untuk disorot.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_caption_3d53db1c",
+      "type": "caption",
+      "title": "Penjelasan Tabel Kinerja Reksa Dana",
+      "rationale": "Tabel kinerja per Des 2024 menampilkan return dalam berbagai periode (1Bln, YTD, 1Thn, 3Thn, 5Thn). Caption diperlukan agar pembaca memahami arti setiap kolom dan cara membaca data.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_caption_3c4c4b71",
+      "type": "caption",
+      "title": "Penjelasan Tabel 5 Besar Efek Dalam Portofolio",
+      "rationale": "Tabel ini menampilkan 5 efek terbesar dalam portofolio reksa dana. Caption akan membantu pembaca memahami signifikansi dan cara interpretasi data.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_1"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_c5e2d394",
+      "type": "faq",
+      "title": "Apa arti tolok ukur rata-rata bunga deposito net + 2%?",
+      "rationale": "Banyak investor awam tidak memahami bagaimana tolok ukur ini digunakan untuk menilai kinerja reksa dana. FAQ ini akan menjawab kebingungan tersebut.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti tolok ukur rata-rata bunga deposito net + 2%?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_1536bf07",
+      "type": "faq",
+      "title": "Bagaimana cara membaca tabel kinerja reksa dana?",
+      "rationale": "Tabel kinerja sering membingungkan pembaca awam. FAQ ini akan membantu mereka memahami cara membaca dan menginterpretasikan data return.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara membaca tabel kinerja reksa dana?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_52894923",
+      "type": "faq",
+      "title": "Apa saja risiko utama berinvestasi di reksa dana campuran seperti SDK?",
+      "rationale": "Risiko adalah aspek penting yang sering diabaikan investor pemula. FAQ ini akan memberikan pemahaman tentang risiko utama yang relevan.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_left_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja risiko utama berinvestasi di reksa dana campuran seperti SDK?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_d058ee1a",
+      "type": "glossary",
+      "title": "INDOIS",
+      "rationale": "INDOIS adalah kode untuk Obligasi Negara Indonesia (Indonesia Sovereign Bonds) yang sering digunakan dalam portofolio reksa dana pendapatan tetap. Penjelasan ini penting agar pembaca memahami instrumen yang menjadi underlying asset produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_5"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:INDOIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_62692f69",
+      "type": "glossary",
+      "title": "NAB (Nilai Aktiva Bersih)",
+      "rationale": "NAB adalah istilah utama dalam reksa dana yang sering membingungkan investor pemula. Penjelasan tentang NAB sangat penting untuk memahami perhitungan kinerja dan nilai investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:NAB (NILAI AKTIVA BERSIH)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_8bd8b37b",
+      "type": "glossary",
+      "title": "Tolak Ukur (Benchmark)",
+      "rationale": "Tolak ukur adalah acuan kinerja yang digunakan untuk membandingkan hasil investasi reksa dana. Istilah ini penting dijelaskan agar pembaca memahami konteks perbandingan kinerja.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:TOLAK UKUR (BENCHMARK)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_4ef7a9a3",
+      "type": "glossary",
+      "title": "Obligasi Pemerintah",
+      "rationale": "Obligasi pemerintah adalah instrumen utama dalam portofolio reksa dana pendapatan tetap. Penjelasan ini membantu pembaca memahami risiko dan karakteristik produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:OBLIGASI PEMERINTAH",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_ec8c919f",
+      "type": "highlight",
+      "title": "Komposisi Portofolio MANUFIX",
+      "rationale": "Portofolio MANUFIX terdiri dari 87% obligasi pemerintah dan 13% pasar uang. Komposisi ini penting untuk menilai profil risiko dan potensi imbal hasil produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_69234244",
+      "type": "highlight",
+      "title": "Kinerja MANUFIX",
+      "rationale": "Kinerja MANUFIX selama 1 bulan, YTD, 1 tahun, 3 tahun, dan 5 tahun menunjukkan fluktuasi dan hasil yang perlu dicermati investor. Data ini penting untuk pengambilan keputusan investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_d40fd3ff",
+      "type": "highlight",
+      "title": "Perbandingan Kinerja dengan Tolak Ukur",
+      "rationale": "Perbandingan antara kinerja MANUFIX dan tolak ukur pada berbagai periode waktu memberikan insight penting tentang performa relatif produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_caption_7c7ebff7",
+      "type": "caption",
+      "title": "Tabel Kinerja MANUFIX dan Tolak Ukur",
+      "rationale": "Tabel yang menampilkan kinerja MANUFIX dan tolak ukur dalam berbagai periode waktu memerlukan caption yang menjelaskan arti setiap kolom dan konteks data.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_faq_d354cbc1",
+      "type": "faq",
+      "title": "Apa arti kinerja disetahunkan?",
+      "rationale": "Banyak investor awam tidak memahami istilah kinerja disetahunkan. Penjelasan ini penting agar pembaca tidak salah menafsirkan data return.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti kinerja disetahunkan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_faq_1f1f3a9a",
+      "type": "faq",
+      "title": "Apakah kinerja masa lalu menjamin hasil di masa depan?",
+      "rationale": "Penjelasan ini penting karena sering terjadi mispersepsi bahwa kinerja historis akan berulang, padahal tidak ada jaminan demikian.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah kinerja masa lalu menjamin hasil di masa depan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_faq_bf29e9aa",
+      "type": "faq",
+      "title": "Apa saja biaya yang dikenakan pada reksa dana?",
+      "rationale": "Banyak investor tidak menyadari adanya biaya transaksi pembelian, penjualan, dan pengalihan. Penjelasan ini penting untuk transparansi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja biaya yang dikenakan pada reksa dana?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_9b21d2af",
+      "type": "glossary",
+      "title": "SMIF",
+      "rationale": "SMIF adalah singkatan dari Sucorinvest Monthly Income Fund, salah satu produk reksa dana pendapatan tetap yang sering disebut dalam portofolio. Definisi ini penting agar pembaca memahami karakteristik produk yang dimaksud.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:SMIF",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_bdef4963",
+      "type": "glossary",
+      "title": "ORI/SR/ST",
+      "rationale": "ORI (Obligasi Negara Ritel), SR (Sukuk Ritel), dan ST (Sukuk Tabungan) adalah instrumen Surat Berharga Negara untuk investor ritel. Penjelasan istilah ini krusial karena sering muncul dalam portofolio dan dapat membingungkan pembaca awam.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:ORI/SR/ST",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_5928baed",
+      "type": "glossary",
+      "title": "MANUFIX",
+      "rationale": "MANUFIX adalah Manulife USD Fixed Income Fund, produk reksa dana pendapatan tetap berdenominasi dolar AS. Penjelasan ini penting untuk membedakan dari produk lain dan menjelaskan eksposur mata uang asing.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANUFIX",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_699c483d",
+      "type": "glossary",
+      "title": "FR100 dan FR106",
+      "rationale": "FR100 dan FR106 adalah seri Surat Utang Negara (SUN) dengan kode tertentu. Penjelasan kode seri ini penting agar pembaca memahami jenis obligasi pemerintah yang dimaksud.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:FR100 DAN FR106",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_067386eb",
+      "type": "glossary",
+      "title": "INDON30N2 dan INDON35N",
+      "rationale": "INDON30N2 dan INDON35N adalah kode obligasi pemerintah Indonesia berdenominasi USD dengan jatuh tempo tertentu. Penjelasan kode ini penting untuk menghindari kebingungan terkait produk yang diinvestasikan.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:INDON30N2 DAN INDON35N",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_8a6444b5",
+      "type": "glossary",
+      "title": "Short-Medium Bonds",
+      "rationale": "Short-Medium Bonds mengacu pada obligasi dengan jangka waktu pendek hingga menengah. Penjelasan ini penting untuk memahami profil risiko dan potensi return produk dalam portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:SHORT-MEDIUM BONDS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_069b30db",
+      "type": "glossary",
+      "title": "Cash",
+      "rationale": "Cash dalam konteks portofolio investasi merujuk pada alokasi dana tunai atau instrumen pasar uang yang sangat likuid. Penjelasan ini penting agar pembaca memahami fungsi cash dalam diversifikasi portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:CASH",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_d349106b",
+      "type": "glossary",
+      "title": "ABF IBI FUND",
+      "rationale": "ABF IBI FUND adalah Bahana ABF Indonesia Bond Index Fund, reksa dana indeks yang mengikuti kinerja obligasi pemerintah Indonesia. Penjelasan ini penting untuk membedakan dari reksa dana aktif.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:ABF IBI FUND",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_ac8eb48a",
+      "type": "glossary",
+      "title": "PRIMA USD",
+      "rationale": "PRIMA USD adalah produk reksa dana atau obligasi berdenominasi dolar AS. Penjelasan ini penting untuk memahami eksposur mata uang asing dalam portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:PRIMA USD",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_20b99f1d",
+      "type": "glossary",
+      "title": "Expected Return",
+      "rationale": "Expected return adalah estimasi tingkat pengembalian investasi berdasarkan analisa historis dan proyeksi. Penjelasan ini penting karena sering disalahartikan sebagai jaminan hasil.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:EXPECTED RETURN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_highlight_f04494f8",
+      "type": "highlight",
+      "title": "Expected Return sebagai Indikasi",
+      "rationale": "Pernyataan bahwa expected return merupakan indikasi, bukan kepastian, sangat penting untuk mengelola ekspektasi investor dan menghindari mispersepsi risiko.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_faq_6bf69f92",
+      "type": "faq",
+      "title": "Di mana saya bisa mendapatkan informasi detail tentang produk?",
+      "rationale": "Banyak pembaca akan mencari prospectus atau ringkasan informasi produk sebelum berinvestasi. FAQ ini mengarahkan mereka ke sumber resmi untuk informasi lebih lanjut.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Di mana saya bisa mendapatkan informasi detail tentang produk?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_faq_d4ee1f95",
+      "type": "faq",
+      "title": "Apa arti Balanced dalam Risk Profile?",
+      "rationale": "Istilah Balanced pada risk profile dapat membingungkan pembaca awam. Penjelasan tentang arti dan implikasi profil risiko Balanced akan membantu pemahaman.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_4"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti Balanced dalam Risk Profile?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_caption_7a3db269",
+      "type": "caption",
+      "title": "Penjelasan Tabel Growth",
+      "rationale": "Tabel pada halaman 24 berjudul Growth namun seluruh kolomnya bertuliskan None. Penjelasan diperlukan agar pembaca memahami apakah data belum tersedia, tidak relevan, atau ada alasan lain.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_pb_0"
+      ],
+      "pages": [
+        24
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    }
+  ],
+  "selected_candidates": [
+    {
+      "cand_id": "cand_highlight_4966ee5f",
+      "type": "highlight",
+      "title": "Ekspektasi Penurunan Suku Bunga 100bps",
+      "rationale": "Ekspektasi penurunan suku bunga sebesar 100 basis poin pada 2025 merupakan insight makroekonomi penting yang mempengaruhi strategi investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_f8b77047",
+      "type": "faq",
+      "title": "Apa risiko utama berinvestasi di reksa dana dan obligasi?",
+      "rationale": "Risiko investasi adalah pertanyaan utama investor. Penjelasan risiko utama membantu pembaca membuat keputusan yang lebih bijak.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        3
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa risiko utama berinvestasi di reksa dana dan obligasi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_52894923",
+      "type": "faq",
+      "title": "Apa saja risiko utama berinvestasi di reksa dana campuran seperti SDK?",
+      "rationale": "Risiko adalah aspek penting yang sering diabaikan investor pemula. FAQ ini akan memberikan pemahaman tentang risiko utama yang relevan.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_left_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja risiko utama berinvestasi di reksa dana campuran seperti SDK?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_b636b7a5",
+      "type": "glossary",
+      "title": "Reksa Dana",
+      "rationale": "Istilah reksa dana sering digunakan dalam dokumen dan merupakan produk investasi utama yang dibahas. Banyak pembaca awam membutuhkan penjelasan tentang apa itu reksa dana, cara kerjanya, dan risikonya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        2,
+        3
+      ],
+      "section": "General",
+      "dup_key": "TERM:REKSA DANA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_4f191628",
+      "type": "glossary",
+      "title": "Manajer Investasi",
+      "rationale": "Peran manajer investasi sangat krusial dalam pengelolaan reksa dana, namun istilah ini sering membingungkan investor baru.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_pb_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p11_right_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        7,
+        10,
+        11
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANAJER INVESTASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_19410ee8",
+      "type": "glossary",
+      "title": "Profil Risiko (Risk Rating)",
+      "rationale": "Profil risiko menjadi dasar rekomendasi produk. Banyak investor pemula belum memahami konsep ini, sehingga penjelasan sangat membantu.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "TERM:PROFIL RISIKO (RISK RATING)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_8bd5020f",
+      "type": "glossary",
+      "title": "Dana Kelolaan",
+      "rationale": "Dana kelolaan (AUM) adalah indikator utama skala dan kepercayaan investor terhadap reksa dana. Istilah ini perlu dijelaskan agar pembaca memahami signifikansinya.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:DANA KELOLAAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_0e77b134",
+      "type": "glossary",
+      "title": "Tolak Ukur Reksa Dana",
+      "rationale": "Tolak ukur (benchmark) seperti rata-rata bunga deposito net + 2% sering digunakan, namun banyak investor awam tidak memahami maknanya. Penjelasan akan membantu pembaca membandingkan kinerja reksa dana secara objektif.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:TOLAK UKUR REKSA DANA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_c5e2d394",
+      "type": "faq",
+      "title": "Apa arti tolok ukur rata-rata bunga deposito net + 2%?",
+      "rationale": "Banyak investor awam tidak memahami bagaimana tolok ukur ini digunakan untuk menilai kinerja reksa dana. FAQ ini akan menjawab kebingungan tersebut.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_2"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti tolok ukur rata-rata bunga deposito net + 2%?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_bf29e9aa",
+      "type": "faq",
+      "title": "Apa saja biaya yang dikenakan pada reksa dana?",
+      "rationale": "Banyak investor tidak menyadari adanya biaya transaksi pembelian, penjualan, dan pengalihan. Penjelasan ini penting untuk transparansi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa saja biaya yang dikenakan pada reksa dana?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_d349106b",
+      "type": "glossary",
+      "title": "ABF IBI FUND",
+      "rationale": "ABF IBI FUND adalah Bahana ABF Indonesia Bond Index Fund, reksa dana indeks yang mengikuti kinerja obligasi pemerintah Indonesia. Penjelasan ini penting untuk membedakan dari reksa dana aktif.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:ABF IBI FUND",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_c535fbda",
+      "type": "glossary",
+      "title": "Obligasi",
+      "rationale": "Obligasi adalah salah satu produk utama yang diulas. Penjelasan tentang obligasi, karakteristik, dan risikonya sangat penting untuk pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p3_para_0"
+      ],
+      "pages": [
+        2,
+        3,
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:OBLIGASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_4723cafc",
+      "type": "glossary",
+      "title": "Pasar Uang",
+      "rationale": "Komponen portofolio reksa dana sering mencantumkan pasar uang, yang perlu dijelaskan agar pembaca memahami peran dan risikonya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4"
+      ],
+      "pages": [
+        7,
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:PASAR UANG",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_f577bf87",
+      "type": "glossary",
+      "title": "YTD (Year to Date)",
+      "rationale": "YTD adalah istilah umum dalam pelaporan kinerja investasi, namun seringkali membingungkan pembaca awam.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:YTD (YEAR TO DATE)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_472ca0c9",
+      "type": "highlight",
+      "title": "Dana Kelolaan SDK",
+      "rationale": "Dana kelolaan SDK sebesar Rp 492 Milyar menunjukkan skala dan tingkat kepercayaan investor. Angka ini penting untuk disorot.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_ad516f35",
+      "type": "glossary",
+      "title": "FR (Fixed Rate)",
+      "rationale": "FR adalah kode seri obligasi pemerintah Indonesia yang sering muncul dalam portofolio reksa dana, namun tidak semua pembaca memahami maknanya.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1"
+      ],
+      "pages": [
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:FR (FIXED RATE)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_caption_1a7d9ed2",
+      "type": "caption",
+      "title": "Tabel Kinerja Reksa Dana Periode Desember 2024",
+      "rationale": "Tabel kinerja reksa dana menampilkan data multi-periode (1 bulan, YTD, 1 tahun, 3 tahun, 5 tahun) yang kompleks dan membutuhkan penjelasan agar pembaca dapat menginterpretasikan hasil investasi.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_3:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_02283077",
+      "type": "faq",
+      "title": "Apakah publikasi ini merupakan rekomendasi investasi?",
+      "rationale": "Banyak pembaca mungkin mengira dokumen ini adalah rekomendasi investasi. Penegasan bahwa ini hanya informasi sangat penting untuk menghindari mispersepsi dan risiko hukum.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_2"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah publikasi ini merupakan rekomendasi investasi?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_71fc8d9b",
+      "type": "glossary",
+      "title": "Equity (Saham)",
+      "rationale": "Equity adalah istilah yang sering muncul dalam strategi investasi, namun tidak semua pembaca memahami bahwa ini merujuk pada saham.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_2"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:EQUITY (SAHAM)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_ca02d2f0",
+      "type": "glossary",
+      "title": "Onshore dan Offshore",
+      "rationale": "Istilah onshore dan offshore dalam konteks investasi sering membingungkan pembaca awam, sehingga perlu dijelaskan perbedaannya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p6_para_2"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:ONSHORE DAN OFFSHORE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_glossary_a5869362",
+      "type": "glossary",
+      "title": "Saham",
+      "rationale": "Saham adalah komponen penting dalam portofolio reksa dana. Penjelasan tentang saham, karakteristik, dan risikonya akan memperkaya pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "TERM:SAHAM",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_faq_1536bf07",
+      "type": "faq",
+      "title": "Bagaimana cara membaca tabel kinerja reksa dana?",
+      "rationale": "Tabel kinerja sering membingungkan pembaca awam. FAQ ini akan membantu mereka memahami cara membaca dan menginterpretasikan data return.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara membaca tabel kinerja reksa dana?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_glossary_d058ee1a",
+      "type": "glossary",
+      "title": "INDOIS",
+      "rationale": "INDOIS adalah kode untuk Obligasi Negara Indonesia (Indonesia Sovereign Bonds) yang sering digunakan dalam portofolio reksa dana pendapatan tetap. Penjelasan ini penting agar pembaca memahami instrumen yang menjadi underlying asset produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_4",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_right_5"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:INDOIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_62692f69",
+      "type": "glossary",
+      "title": "NAB (Nilai Aktiva Bersih)",
+      "rationale": "NAB adalah istilah utama dalam reksa dana yang sering membingungkan investor pemula. Penjelasan tentang NAB sangat penting untuk memahami perhitungan kinerja dan nilai investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:NAB (NILAI AKTIVA BERSIH)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_8bd8b37b",
+      "type": "glossary",
+      "title": "Tolak Ukur (Benchmark)",
+      "rationale": "Tolak ukur adalah acuan kinerja yang digunakan untuk membandingkan hasil investasi reksa dana. Istilah ini penting dijelaskan agar pembaca memahami konteks perbandingan kinerja.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:TOLAK UKUR (BENCHMARK)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_4ef7a9a3",
+      "type": "glossary",
+      "title": "Obligasi Pemerintah",
+      "rationale": "Obligasi pemerintah adalah instrumen utama dalam portofolio reksa dana pendapatan tetap. Penjelasan ini membantu pembaca memahami risiko dan karakteristik produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "TERM:OBLIGASI PEMERINTAH",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_glossary_9b21d2af",
+      "type": "glossary",
+      "title": "SMIF",
+      "rationale": "SMIF adalah singkatan dari Sucorinvest Monthly Income Fund, salah satu produk reksa dana pendapatan tetap yang sering disebut dalam portofolio. Definisi ini penting agar pembaca memahami karakteristik produk yang dimaksud.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:SMIF",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_bdef4963",
+      "type": "glossary",
+      "title": "ORI/SR/ST",
+      "rationale": "ORI (Obligasi Negara Ritel), SR (Sukuk Ritel), dan ST (Sukuk Tabungan) adalah instrumen Surat Berharga Negara untuk investor ritel. Penjelasan istilah ini krusial karena sering muncul dalam portofolio dan dapat membingungkan pembaca awam.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:ORI/SR/ST",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_5928baed",
+      "type": "glossary",
+      "title": "MANUFIX",
+      "rationale": "MANUFIX adalah Manulife USD Fixed Income Fund, produk reksa dana pendapatan tetap berdenominasi dolar AS. Penjelasan ini penting untuk membedakan dari produk lain dan menjelaskan eksposur mata uang asing.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:MANUFIX",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_699c483d",
+      "type": "glossary",
+      "title": "FR100 dan FR106",
+      "rationale": "FR100 dan FR106 adalah seri Surat Utang Negara (SUN) dengan kode tertentu. Penjelasan kode seri ini penting agar pembaca memahami jenis obligasi pemerintah yang dimaksud.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:FR100 DAN FR106",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_067386eb",
+      "type": "glossary",
+      "title": "INDON30N2 dan INDON35N",
+      "rationale": "INDON30N2 dan INDON35N adalah kode obligasi pemerintah Indonesia berdenominasi USD dengan jatuh tempo tertentu. Penjelasan kode ini penting untuk menghindari kebingungan terkait produk yang diinvestasikan.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:INDON30N2 DAN INDON35N",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_8a6444b5",
+      "type": "glossary",
+      "title": "Short-Medium Bonds",
+      "rationale": "Short-Medium Bonds mengacu pada obligasi dengan jangka waktu pendek hingga menengah. Penjelasan ini penting untuk memahami profil risiko dan potensi return produk dalam portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:SHORT-MEDIUM BONDS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_069b30db",
+      "type": "glossary",
+      "title": "Cash",
+      "rationale": "Cash dalam konteks portofolio investasi merujuk pada alokasi dana tunai atau instrumen pasar uang yang sangat likuid. Penjelasan ini penting agar pembaca memahami fungsi cash dalam diversifikasi portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:CASH",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_ac8eb48a",
+      "type": "glossary",
+      "title": "PRIMA USD",
+      "rationale": "PRIMA USD adalah produk reksa dana atau obligasi berdenominasi dolar AS. Penjelasan ini penting untuk memahami eksposur mata uang asing dalam portofolio.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_5"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:PRIMA USD",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_glossary_20b99f1d",
+      "type": "glossary",
+      "title": "Expected Return",
+      "rationale": "Expected return adalah estimasi tingkat pengembalian investasi berdasarkan analisa historis dan proyeksi. Penjelasan ini penting karena sering disalahartikan sebagai jaminan hasil.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "TERM:EXPECTED RETURN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_faq_6bf69f92",
+      "type": "faq",
+      "title": "Di mana saya bisa mendapatkan informasi detail tentang produk?",
+      "rationale": "Banyak pembaca akan mencari prospectus atau ringkasan informasi produk sebelum berinvestasi. FAQ ini mengarahkan mereka ke sumber resmi untuk informasi lebih lanjut.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Di mana saya bisa mendapatkan informasi detail tentang produk?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_highlight_9353ee60",
+      "type": "highlight",
+      "title": "Komposisi Portofolio Pasar Uang 27%",
+      "rationale": "Porsi pasar uang sebesar 27% dalam portofolio reksa dana menunjukkan strategi konservatif dan likuiditas tinggi, penting untuk investor memahami implikasinya.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4"
+      ],
+      "pages": [
+        7
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_ec2965a7",
+      "type": "highlight",
+      "title": "Strategi Menghadapi Skenario No Cut di Q1 2025",
+      "rationale": "Skenario 'No Cut' pada suku bunga di Q1 2025 menjadi pertimbangan penting dalam strategi investasi, perlu disorot agar investor memahami konteks makro.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p5_para_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p5_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_highlight_c34aeb44",
+      "type": "highlight",
+      "title": "Komposisi Portofolio SDK",
+      "rationale": "SDK memiliki komposisi portofolio 24% saham dan 72% obligasi. Data ini penting untuk menilai profil risiko dan strategi investasi reksa dana.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_3:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_right_4",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_caption_3d53db1c",
+      "type": "caption",
+      "title": "Penjelasan Tabel Kinerja Reksa Dana",
+      "rationale": "Tabel kinerja per Des 2024 menampilkan return dalam berbagai periode (1Bln, YTD, 1Thn, 3Thn, 5Thn). Caption diperlukan agar pembaca memahami arti setiap kolom dan cara membaca data.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_3",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_highlight_ec8c919f",
+      "type": "highlight",
+      "title": "Komposisi Portofolio MANUFIX",
+      "rationale": "Portofolio MANUFIX terdiri dari 87% obligasi pemerintah dan 13% pasar uang. Komposisi ini penting untuk menilai profil risiko dan potensi imbal hasil produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_69234244",
+      "type": "highlight",
+      "title": "Kinerja MANUFIX",
+      "rationale": "Kinerja MANUFIX selama 1 bulan, YTD, 1 tahun, 3 tahun, dan 5 tahun menunjukkan fluktuasi dan hasil yang perlu dicermati investor. Data ini penting untuk pengambilan keputusan investasi.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_d40fd3ff",
+      "type": "highlight",
+      "title": "Perbandingan Kinerja dengan Tolak Ukur",
+      "rationale": "Perbandingan antara kinerja MANUFIX dan tolak ukur pada berbagai periode waktu memberikan insight penting tentang performa relatif produk.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_highlight_f04494f8",
+      "type": "highlight",
+      "title": "Expected Return sebagai Indikasi",
+      "rationale": "Pernyataan bahwa expected return merupakan indikasi, bukan kepastian, sangat penting untuk mengelola ekspektasi investor dan menghindari mispersepsi risiko.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_caption_0c2fd1d7",
+      "type": "caption",
+      "title": "Tabel 5 Besar Efek Dalam Portofolio",
+      "rationale": "Tabel ini menampilkan komposisi efek terbesar dalam portofolio reksa dana, yang penting untuk memahami eksposur risiko dan strategi manajer investasi.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_1",
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p7_pb_1:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p8_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_d406611a",
+      "type": "faq",
+      "title": "Bagaimana proses analisa produk dilakukan oleh tim advisory?",
+      "rationale": "Pembaca mungkin ingin tahu bagaimana produk dipilih dan dianalisis, sehingga transparansi proses analisa internal meningkatkan kepercayaan.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p2_para_1"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana proses analisa produk dilakukan oleh tim advisory?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_0_63635e8c"
+    },
+    {
+      "cand_id": "cand_faq_d354cbc1",
+      "type": "faq",
+      "title": "Apa arti kinerja disetahunkan?",
+      "rationale": "Banyak investor awam tidak memahami istilah kinerja disetahunkan. Penjelasan ini penting agar pembaca tidak salah menafsirkan data return.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti kinerja disetahunkan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_faq_1f1f3a9a",
+      "type": "faq",
+      "title": "Apakah kinerja masa lalu menjamin hasil di masa depan?",
+      "rationale": "Penjelasan ini penting karena sering terjadi mispersepsi bahwa kinerja historis akan berulang, padahal tidak ada jaminan demikian.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_3"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apakah kinerja masa lalu menjamin hasil di masa depan?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_faq_d4ee1f95",
+      "type": "faq",
+      "title": "Apa arti Balanced dalam Risk Profile?",
+      "rationale": "Istilah Balanced pada risk profile dapat membingungkan pembaca awam. Penjelasan tentang arti dan implikasi profil risiko Balanced akan membantu pemahaman.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_3",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p23_para_4"
+      ],
+      "pages": [
+        23
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa arti Balanced dalam Risk Profile?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    },
+    {
+      "cand_id": "cand_caption_3c4c4b71",
+      "type": "caption",
+      "title": "Penjelasan Tabel 5 Besar Efek Dalam Portofolio",
+      "rationale": "Tabel ini menampilkan 5 efek terbesar dalam portofolio reksa dana. Caption akan membantu pembaca memahami signifikansi dan cara interpretasi data.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_1"
+      ],
+      "pages": [
+        10
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p10_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_1_c59d1909"
+    },
+    {
+      "cand_id": "cand_caption_7c7ebff7",
+      "type": "caption",
+      "title": "Tabel Kinerja MANUFIX dan Tolak Ukur",
+      "rationale": "Tabel yang menampilkan kinerja MANUFIX dan tolak ukur dalam berbagai periode waktu memerlukan caption yang menjelaskan arti setiap kolom dan konteks data.",
+      "source_unit_ids": [
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1",
+        "u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2"
+      ],
+      "pages": [
+        16
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_1:u_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p16_left_2",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_2_a210b870"
+    },
+    {
+      "cand_id": "cand_caption_7a3db269",
+      "type": "caption",
+      "title": "Penjelasan Tabel Growth",
+      "rationale": "Tabel pada halaman 24 berjudul Growth namun seluruh kolomnya bertuliskan None. Penjelasan diperlukan agar pembaca memahami apakah data belum tersedia, tidak relevan, atau ada alasan lain.",
+      "source_unit_ids": [
+        "u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_pb_0"
+      ],
+      "pages": [
+        24
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_p24_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_3ecc7679-76ae-4b48-9dd0-46333a9b1c6e_3_d6b8b7ae"
+    }
+  ],
+  "metrics": {
+    "total_windows": 4,
+    "total_candidates": 56,
+    "unique_candidates": 52,
+    "selected_count": 52
+  }
+}

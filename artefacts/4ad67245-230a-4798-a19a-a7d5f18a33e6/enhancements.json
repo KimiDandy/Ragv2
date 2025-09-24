@@ -1,0 +1,870 @@
+{
+  "doc_id": "4ad67245-230a-4798-a19a-a7d5f18a33e6",
+  "run_id": "enh_2025-09-24T10:22:46.726143",
+  "windows": [
+    {
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187",
+      "doc_id": "4ad67245-230a-4798-a19a-a7d5f18a33e6",
+      "window_index": 0,
+      "token_span": [
+        0,
+        6860
+      ],
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p2_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p3_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p3_para_1",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p4_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p4_para_1",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p5_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p5_para_1",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p6_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p7_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p8_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p9_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p10_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p11_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p12_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p13_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p14_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p15_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p16_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p17_para_0"
+      ],
+      "text_preview": "Danamon LEBIH PRO  Product Highlight  Tabungan Danamon LEBIH PRO merupakan tabungan dengan lebih dari satu jenis mata uang  asing yang menawarkan #BanyakLebihnya untuk segala kebutuhan transaksi harian Anda.   Benefit yang ditawarkan Danamon LEBIH PRO ada 4 yaitu Transaksi Valuta Asing, Transaksi  Keuangan Harian, Transaksi Kebutuhan Harian, dan Kartu Debit Danamon LEBIH PRO. Berikut  adalah penjelasan detailnya :  1.​ Transaksi Valuta Asing  Nikmati kemudahan pengelolaan dana dengan beragam mat...",
+      "total_tokens": 6860
+    }
+  ],
+  "candidates": [
+    {
+      "cand_id": "cand_glossary_ccf71211",
+      "type": "glossary",
+      "title": "Tabungan Multi Mata Uang",
+      "rationale": "Istilah ini penting dijelaskan karena tidak semua pembaca memahami konsep tabungan yang dapat menggunakan lebih dari satu mata uang asing. Penjelasan ini membantu pembaca memahami keunggulan produk Danamon LEBIH PRO dibanding tabungan konvensional.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:TABUNGAN MULTI MATA UANG",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_c7399e70",
+      "type": "glossary",
+      "title": "Valuta Asing",
+      "rationale": "Valuta asing adalah istilah keuangan yang sering digunakan namun dapat membingungkan bagi sebagian pembaca awam. Definisi ini penting agar pembaca memahami layanan transaksi yang ditawarkan produk Danamon LEBIH PRO.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:VALUTA ASING",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_45b3b96f",
+      "type": "glossary",
+      "title": "Deposito Berjangka",
+      "rationale": "Deposito berjangka adalah produk simpanan yang memiliki karakteristik berbeda dengan tabungan biasa. Penjelasan ini penting agar pembaca memahami manfaat dan risiko produk yang ditawarkan.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p5_para_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:DEPOSITO BERJANGKA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_86416cf3",
+      "type": "glossary",
+      "title": "Deposito On Call",
+      "rationale": "Istilah ini relatif teknis dan tidak umum diketahui oleh masyarakat awam. Penjelasan akan membantu pembaca membedakan antara deposito berjangka biasa dan on call.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p5_para_1"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:DEPOSITO ON CALL",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_a8c97c3e",
+      "type": "glossary",
+      "title": "TabunganKu",
+      "rationale": "Produk TabunganKu merupakan program nasional yang memiliki ketentuan khusus. Penjelasan singkat akan membantu pembaca memahami tujuan dan keunggulan produk ini.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p4_para_0"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:TABUNGANKU",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_100f4971",
+      "type": "glossary",
+      "title": "Tabungan Syariah iB Wadiah",
+      "rationale": "Produk berbasis prinsip syariah memiliki istilah dan mekanisme khusus. Penjelasan istilah Wadiah penting agar pembaca memahami perbedaan dengan tabungan konvensional.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p15_para_0"
+      ],
+      "pages": [
+        15
+      ],
+      "section": "General",
+      "dup_key": "TERM:TABUNGAN SYARIAH IB WADIAH",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_313582db",
+      "type": "glossary",
+      "title": "Giro",
+      "rationale": "Giro adalah istilah perbankan yang sering digunakan dalam konteks bisnis, namun tidak selalu dipahami oleh nasabah individu. Penjelasan ini akan memperjelas manfaat produk Giro BISA dan Prima Giro.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p7_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p8_para_0"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "dup_key": "TERM:GIRO",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_fcdbbc5e",
+      "type": "glossary",
+      "title": "Asuransi Jiwa",
+      "rationale": "Produk asuransi jiwa seperti Primajaga 100 dan Primajaga Umum memiliki istilah dan manfaat yang perlu dijelaskan agar pembaca memahami perlindungan yang diberikan.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p11_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p12_para_0"
+      ],
+      "pages": [
+        11,
+        12
+      ],
+      "section": "General",
+      "dup_key": "TERM:ASURANSI JIWA",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_af1bb41b",
+      "type": "glossary",
+      "title": "Proteksi Penyakit Kritis",
+      "rationale": "Proteksi Prima Kritis Andalan menawarkan perlindungan terhadap penyakit kritis, istilah yang perlu dijelaskan agar pembaca memahami cakupan dan manfaatnya.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p9_para_0"
+      ],
+      "pages": [
+        9
+      ],
+      "section": "General",
+      "dup_key": "TERM:PROTEKSI PENYAKIT KRITIS",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_glossary_259a72ff",
+      "type": "glossary",
+      "title": "Proteksi Warisan",
+      "rationale": "Proteksi Prima Warisan Terencana adalah produk yang berfokus pada perencanaan warisan. Penjelasan istilah ini akan membantu pembaca memahami tujuan produk.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p13_para_0"
+      ],
+      "pages": [
+        13
+      ],
+      "section": "General",
+      "dup_key": "TERM:PROTEKSI WARISAN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_highlight_a3b6cb66",
+      "type": "highlight",
+      "title": "Fitur Multi Mata Uang pada Danamon LEBIH PRO",
+      "rationale": "Fitur multi mata uang merupakan keunggulan utama yang membedakan produk ini dari tabungan biasa. Highlight ini akan menarik perhatian pembaca pada manfaat utama produk.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_highlight_057c955b",
+      "type": "highlight",
+      "title": "TabunganKu: Program Nasional untuk Inklusi Keuangan",
+      "rationale": "TabunganKu merupakan program nasional yang bertujuan meningkatkan inklusi keuangan. Highlight ini penting agar pembaca memahami signifikansi produk dalam konteks kebijakan nasional.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p4_para_0"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p4_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_highlight_78235271",
+      "type": "highlight",
+      "title": "Deposito Online: Kemudahan Pembukaan Simpanan Berjangka",
+      "rationale": "Deposito Online menawarkan kemudahan pembukaan simpanan berjangka secara digital, sebuah tren penting dalam digitalisasi layanan perbankan. Highlight ini akan membantu pembaca memahami inovasi produk.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p6_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_faq_b8800fce",
+      "type": "faq",
+      "title": "Apa perbedaan antara Tabungan, Giro, dan Deposito?",
+      "rationale": "Banyak pembaca awam yang bingung membedakan antara produk tabungan, giro, dan deposito. FAQ ini akan membantu menjawab pertanyaan mendasar dan meningkatkan pemahaman produk perbankan.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p5_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p7_para_0"
+      ],
+      "pages": [
+        1,
+        5,
+        7
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa perbedaan antara Tabungan, Giro, dan Deposito?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_faq_12ec5463",
+      "type": "faq",
+      "title": "Apa keunggulan Tabungan Syariah dibanding tabungan konvensional?",
+      "rationale": "Produk syariah memiliki prinsip dan keunggulan berbeda dengan produk konvensional. FAQ ini akan membantu pembaca memahami perbedaan mendasar dan manfaat produk syariah.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p15_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p16_para_0"
+      ],
+      "pages": [
+        15,
+        16
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa keunggulan Tabungan Syariah dibanding tabungan konvensional?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_faq_e9ef288d",
+      "type": "faq",
+      "title": "Bagaimana cara membuka Deposito Online di Danamon?",
+      "rationale": "Dengan adanya fitur Deposito Online, pembaca kemungkinan besar ingin mengetahui proses pembukaan rekening secara digital. FAQ ini akan memberikan panduan praktis.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara membuka Deposito Online di Danamon?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_faq_eb0b1355",
+      "type": "faq",
+      "title": "Apa manfaat utama memiliki tabungan multi mata uang?",
+      "rationale": "Tabungan multi mata uang adalah fitur baru yang belum umum. FAQ ini akan membantu pembaca memahami manfaat praktis dari produk Danamon LEBIH PRO.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa manfaat utama memiliki tabungan multi mata uang?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    },
+    {
+      "cand_id": "cand_faq_ea746d2d",
+      "type": "faq",
+      "title": "Apa perlindungan yang diberikan oleh produk asuransi Danamon?",
+      "rationale": "Produk asuransi yang ditawarkan memiliki cakupan dan manfaat berbeda. FAQ ini akan membantu pembaca memahami perlindungan yang bisa didapatkan dari masing-masing produk asuransi Danamon.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p9_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p10_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p11_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p12_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p13_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p14_para_0"
+      ],
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa perlindungan yang diberikan oleh produk asuransi Danamon?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_4ad67245-230a-4798-a19a-a7d5f18a33e6_0_9a5ab187"
+    }
+  ],
+  "items": [
+    {
+      "enh_id": "enh_faq_99632f68",
+      "cand_id": "cand_faq_b8800fce",
+      "type": "faq",
+      "title": "Apa perbedaan antara Tabungan, Giro, dan Deposito?",
+      "text": "Apa perbedaan antara Tabungan, Giro, dan Deposito? Tabungan adalah simpanan yang dapat diambil kapan saja dan cocok untuk kebutuhan harian. Giro umumnya digunakan untuk transaksi bisnis dengan fasilitas penarikan menggunakan cek atau bilyet giro. Deposito adalah simpanan berjangka dengan jangka waktu tertentu dan biasanya menawarkan suku bunga lebih tinggi dibanding tabungan biasa.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p5_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p7_para_0"
+      ],
+      "pages": [
+        1,
+        5,
+        7
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_5f4cd3ad",
+      "cand_id": "cand_glossary_ccf71211",
+      "type": "glossary",
+      "title": "Tabungan Multi Mata Uang",
+      "text": "Tabungan Multi Mata Uang adalah produk tabungan yang memungkinkan nasabah menyimpan dana dalam lebih dari satu jenis mata uang asing, sehingga memudahkan transaksi internasional dan diversifikasi simpanan.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_6020536f",
+      "cand_id": "cand_glossary_a8c97c3e",
+      "type": "glossary",
+      "title": "TabunganKu",
+      "text": "TabunganKu adalah produk simpanan yang ditujukan bagi nasabah perorangan dengan persyaratan mudah dan ringan, serta penarikan saldo dapat dilakukan kapan saja sesuai ketentuan bank.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p4_para_0"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_507e9092",
+      "cand_id": "cand_glossary_100f4971",
+      "type": "glossary",
+      "title": "Tabungan Syariah iB Wadiah",
+      "text": "Tabungan Syariah iB Wadiah adalah produk tabungan berbasis prinsip syariah dengan akad wadiah (titipan), yang dapat digunakan oleh nasabah perorangan maupun non perorangan sebagai solusi transaksi keuangan sesuai syariah.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p15_para_0"
+      ],
+      "pages": [
+        15
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_faq_c6c11b4c",
+      "cand_id": "cand_faq_eb0b1355",
+      "type": "faq",
+      "title": "Apa manfaat utama memiliki tabungan multi mata uang?",
+      "text": "Apa manfaat utama memiliki tabungan multi mata uang? Tabungan multi mata uang memudahkan nasabah dalam melakukan transaksi internasional dan mengelola dana dalam berbagai mata uang tanpa perlu membuka rekening terpisah untuk setiap mata uang.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_8b272412",
+      "cand_id": "cand_glossary_313582db",
+      "type": "glossary",
+      "title": "Giro",
+      "text": "Giro adalah simpanan di bank yang penarikannya dapat dilakukan setiap saat menggunakan cek, bilyet giro, atau sarana perintah pembayaran lainnya, dan umumnya digunakan untuk keperluan transaksi bisnis.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p7_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p8_para_0"
+      ],
+      "pages": [
+        7,
+        8
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_32ff80b6",
+      "cand_id": "cand_glossary_fcdbbc5e",
+      "type": "glossary",
+      "title": "Asuransi Jiwa",
+      "text": "Asuransi Jiwa adalah produk perlindungan keuangan yang memberikan manfaat uang pertanggungan kepada ahli waris jika tertanggung meninggal dunia. Produk ini, seperti Primajaga 100 dan Primajaga Umum, juga dapat menawarkan fitur pengembalian premi sebesar 100% sesuai ketentuan yang berlaku.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p11_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p12_para_0"
+      ],
+      "pages": [
+        11,
+        12
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_faq_9a221bc8",
+      "cand_id": "cand_faq_12ec5463",
+      "type": "faq",
+      "title": "Apa keunggulan Tabungan Syariah dibanding tabungan konvensional?",
+      "text": "Tabungan Syariah memiliki keunggulan berupa penggunaan akad wadiah (titipan) sehingga dana nasabah dikelola sesuai prinsip syariah, tanpa bunga dan bebas dari unsur riba. Selain itu, tabungan ini memberikan rasa aman dan ketenangan bagi nasabah yang ingin bertransaksi sesuai nilai-nilai syariah.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p15_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p16_para_0"
+      ],
+      "pages": [
+        15,
+        16
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_faq_80c18ef3",
+      "cand_id": "cand_faq_ea746d2d",
+      "type": "faq",
+      "title": "Apa perlindungan yang diberikan oleh produk asuransi Danamon?",
+      "text": "Produk asuransi Danamon memberikan perlindungan berupa manfaat pertanggungan jiwa, perlindungan terhadap penyakit kritis, manfaat rawat inap, serta perencanaan waris dan pendapatan. Produk-produk seperti Primajaga 100, Proteksi Prima Kritis Andalan, dan Proteksi Prima Warisan Terencana dirancang untuk menjaga ketahanan keuangan nasabah dan keluarga dari risiko kehidupan.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p9_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p10_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p11_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p12_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p13_para_0",
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p14_para_0"
+      ],
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_highlight_0c5422a8",
+      "cand_id": "cand_highlight_a3b6cb66",
+      "type": "highlight",
+      "title": "Fitur Multi Mata Uang pada Danamon LEBIH PRO",
+      "text": "Fitur Multi Mata Uang pada Danamon LEBIH PRO memungkinkan nasabah memiliki hingga 9 mata uang berbeda dalam satu rekening. Hal ini memudahkan transaksi internasional dan memberikan fleksibilitas dalam pengelolaan dana.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_highlight_8e0f204a",
+      "cand_id": "cand_highlight_057c955b",
+      "type": "highlight",
+      "title": "TabunganKu: Program Nasional untuk Inklusi Keuangan",
+      "text": "TabunganKu merupakan program nasional yang bertujuan meningkatkan inklusi keuangan dengan persyaratan pembukaan rekening yang mudah dan ringan. Produk ini memudahkan masyarakat untuk menabung dan melakukan penarikan saldo tanpa biaya administrasi bulanan.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p4_para_0"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": {
+        "extracted_numbers": [
+          0.0,
+          25.0,
+          0.0,
+          500.0,
+          500.0,
+          1.0,
+          1.0,
+          500.0,
+          0.0,
+          500.0,
+          0.0,
+          0.0,
+          0.0,
+          25.0,
+          0.0,
+          0.0,
+          100.0,
+          4000.0
+        ],
+        "formatted_numbers": [
+          "Rp0",
+          "Rp25",
+          "Rp0",
+          "Rp500",
+          "Rp500",
+          "Rp1",
+          "Rp1",
+          "Rp500",
+          "Rp0",
+          "Rp500",
+          "Rp0",
+          "Rp0",
+          "Rp0",
+          "Rp25",
+          "Rp0",
+          "Rp0",
+          "Rp100",
+          "Rp4,000"
+        ],
+        "change": {
+          "old_value": 0.0,
+          "new_value": 4000.0,
+          "absolute_change": 4000.0,
+          "percent_change": "N/A"
+        }
+      },
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_d57b3777",
+      "cand_id": "cand_glossary_45b3b96f",
+      "type": "glossary",
+      "title": "Deposito Berjangka",
+      "text": "Deposito Berjangka adalah simpanan berjangka dengan pilihan jangka waktu dan mata uang yang fleksibel, serta memberikan rasa aman bagi nasabah. Produk ini cocok untuk nasabah yang ingin mendapatkan imbal hasil tetap dalam periode tertentu.",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p5_para_0"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_f4dc0889",
+      "cand_id": "cand_glossary_86416cf3",
+      "type": "glossary",
+      "title": "Deposito On Call",
+      "text": "Deposito On Call adalah produk simpanan berjangka pendek dengan jangka waktu fleksibel antara 7 hingga 27 hari, yang menawarkan suku bunga sesuai kesepakatan dan dapat dicairkan sesuai kebutuhan nasabah. (Halaman: [5])",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p5_para_1"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_faq_2b299194",
+      "cand_id": "cand_faq_e9ef288d",
+      "type": "faq",
+      "title": "Bagaimana cara membuka Deposito Online di Danamon?",
+      "text": "Untuk membuka Deposito Online di Danamon, nasabah dapat mengakses layanan perbankan digital Danamon kapan saja dan di mana saja, lalu mengikuti proses pembukaan simpanan berjangka secara online sesuai petunjuk yang tersedia. (Halaman: [6])",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_highlight_91580f72",
+      "cand_id": "cand_highlight_78235271",
+      "type": "highlight",
+      "title": "Deposito Online: Kemudahan Pembukaan Simpanan Berjangka",
+      "text": "Deposito Online memberikan kemudahan bagi nasabah untuk membuka simpanan berjangka secara digital, tanpa harus datang ke kantor cabang, serta menawarkan suku bunga tinggi yang kompetitif. (Halaman: [6])",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_55d88748",
+      "cand_id": "cand_glossary_c7399e70",
+      "type": "glossary",
+      "title": "Valuta Asing",
+      "text": "Valuta Asing adalah mata uang selain Rupiah yang digunakan dalam transaksi keuangan internasional, seperti dolar Amerika Serikat, euro, atau yen Jepang. (Halaman: [1])",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_7fb24b03",
+      "cand_id": "cand_glossary_af1bb41b",
+      "type": "glossary",
+      "title": "Proteksi Penyakit Kritis",
+      "text": "Proteksi Penyakit Kritis adalah produk asuransi kesehatan yang memberikan manfaat pertanggungan terhadap risiko penyakit kritis tertentu, sehingga membantu meringankan beban finansial nasabah jika terdiagnosis penyakit tersebut. (Halaman: [9])",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p9_para_0"
+      ],
+      "pages": [
+        9
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_14460309",
+      "cand_id": "cand_glossary_259a72ff",
+      "type": "glossary",
+      "title": "Proteksi Warisan",
+      "text": "Proteksi Warisan adalah produk asuransi jiwa seumur hidup yang memberikan manfaat perlindungan dan perencanaan waris, membantu memastikan kelangsungan finansial ahli waris sesuai keinginan pemegang polis. (Halaman: [13])",
+      "source_unit_ids": [
+        "u_4ad67245-230a-4798-a19a-a7d5f18a33e6_p13_para_0"
+      ],
+      "pages": [
+        13
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    }
+  ],
+  "metrics": {
+    "planning": {
+      "total_windows": 1,
+      "total_candidates": 19,
+      "unique_candidates": 18,
+      "selected_count": 18
+    },
+    "generation": {
+      "total_candidates": 18,
+      "total_batches": 3,
+      "total_items": 18,
+      "validation_pass_rate": 1.0,
+      "usage": {
+        "prompt_tokens": 3658,
+        "completion_tokens": 1028
+      }
+    },
+    "version": "v2.0"
+  }
+}

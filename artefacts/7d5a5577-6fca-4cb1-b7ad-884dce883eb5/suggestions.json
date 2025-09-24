@@ -1,0 +1,311 @@
+[
+  {
+    "id": "enh_faq_faa3ba03",
+    "type": "faq",
+    "original_context": "Rujukan: Paragraf (Hal 1).",
+    "generated_content": "Risiko utama dari investasi di reksa dana obligasi adalah potensi fluktuasi harga akibat perubahan suku bunga dan risiko gagal bayar dari penerbit obligasi. Sementara itu, reksa dana pasar uang memiliki risiko yang lebih rendah, namun tetap menghadapi risiko likuiditas dan potensi penurunan imbal hasil jika suku bunga turun.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "page": 1,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...informasi rekomendasi alokasi portofolio berdasarkan profil risiko nasabah.   Profil Risiko Moderat  Nasabah dengan profil risiko  moderat  cenderung mencari keseimbangan antara  p...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_glossary_90523b8f",
+    "type": "glossary",
+    "original_context": "Rujukan: Paragraf (Hal 1).",
+    "generated_content": "Profil Risiko Moderat adalah kategori profil investor yang memiliki toleransi risiko menengah dan mengharapkan pertumbuhan investasi yang stabil dengan risiko yang relatif terkendali.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "page": 1,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko nasabah.   Profil Risiko Moderat  Nasabah dengan profil risiko  moderat  cenderung mencari keseimbangan an...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_glossary_95550713",
+    "type": "glossary",
+    "original_context": "Rujukan: Paragraf (Hal 1).",
+    "generated_content": "Reksa Dana Pasar Uang adalah jenis reksa dana yang menginvestasikan dana pada instrumen pasar uang seperti deposito dan surat berharga dengan jatuh tempo kurang dari satu tahun, sehingga risikonya relatif rendah.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "page": 1,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...rtofolio investasi yang  disarankan terdiri dari kombinasi  reksa dana pasar uang dan reksa dana obligasi , dengan  mayoritas dialokasikan ke instrumen obligasi berjangka pendek hi...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_glossary_a51c8d29",
+    "type": "glossary",
+    "original_context": "Rujukan: Paragraf (Hal 1).",
+    "generated_content": "Reksa Dana Obligasi adalah reksa dana yang mayoritas investasinya ditempatkan pada surat utang atau obligasi, baik pemerintah maupun korporasi, dengan potensi imbal hasil dan risiko yang lebih tinggi dibandingkan reksa dana pasar uang.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "page": 1,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...rtofolio investasi yang  disarankan terdiri dari kombinasi  reksa dana pasar uang dan reksa dana obligasi , dengan  mayoritas dialokasikan ke instrumen obligasi berjangka pendek hi...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_glossary_dd07c235",
+    "type": "glossary",
+    "original_context": "Rujukan: Paragraf (Hal 2).",
+    "generated_content": "Profil Risiko Balanced (seimbang) adalah tipe investor yang memiliki toleransi risiko lebih tinggi dibandingkan profil moderat, dengan tujuan memperoleh imbal hasil yang lebih optimal melalui kombinasi investasi pada instrumen pendapatan tetap dan saham.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p2_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p2_para_0",
+        "page": 2,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "Profil Risiko Balanced  Nasabah dengan profil risiko  balanced  (seimbang) memiliki toleransi risiko yang lebih tinggi...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p2_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_glossary_769f6060",
+    "type": "glossary",
+    "original_context": "Rujukan: Paragraf (Hal 3).",
+    "generated_content": "Profil Risiko Growth adalah kategori investor dengan toleransi risiko paling tinggi dibandingkan balanced dan moderat, serta berfokus pada pertumbuhan investasi jangka panjang melalui alokasi yang lebih besar pada instrumen saham.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p3_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p3_para_0",
+        "page": 3,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "Profil Risiko Growth  Nasabah dengan profil risiko  growth  memiliki toleransi risiko yang lebih tinggi dibandingkan  pr...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p3_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_glossary_0409b5be",
+    "type": "glossary",
+    "original_context": "Rujukan: Paragraf (Hal 4).",
+    "generated_content": "Profil Risiko Aggressive adalah kategori investor yang memiliki toleransi risiko tinggi dan berorientasi pada pertumbuhan investasi maksimal dalam jangka panjang. Investor dengan profil ini cenderung memilih instrumen investasi dengan potensi imbal hasil tinggi meskipun disertai risiko yang besar.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p4_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p4_para_0",
+        "page": 4,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "Profil Risiko Aggressive  Nasabah dengan profil risiko  aggressive  memiliki toleransi risiko yang tinggi dan berorienta...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p4_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_faq_a0e2350a",
+    "type": "faq",
+    "original_context": "Rujukan: Paragraf (Hal 1).",
+    "generated_content": "Profil risiko dalam investasi adalah penilaian terhadap tingkat toleransi risiko seorang investor, yang digunakan untuk menentukan strategi dan alokasi portofolio yang sesuai dengan tujuan keuangan dan preferensi risiko masing-masing individu.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "page": 1,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko nasabah.   Profil Risiko Moderat  Nasabah dengan profil risiko  moderat  cenderung mencari keseimbangan an...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_faq_6d8238d8",
+    "type": "faq",
+    "original_context": "Rujukan: Paragraf (Hal 1), Paragraf (Hal 2), Paragraf (Hal 3), Paragraf (Hal 4).",
+    "generated_content": "Alokasi portofolio berbeda untuk setiap profil risiko karena setiap investor memiliki tingkat toleransi risiko dan tujuan investasi yang berbeda. Penyesuaian ini bertujuan untuk mengoptimalkan hasil investasi sesuai dengan kenyamanan dan ekspektasi masing-masing investor.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p2_para_0",
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p3_para_0",
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p4_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "page": 1,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko nasab...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "table_preview": null
+      },
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p2_para_0",
+        "page": 2,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...tap mempertahankan stabilitas investasi. Portofolio ini mengalokasikan dana ke  kombinasi  reksa dana pasar uang dan reksa dana pendapatan tetap (obligasi pemerintah) ,  dengan por...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p2_para_0",
+        "table_preview": null
+      },
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p3_para_0",
+        "page": 3,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...tetap berbasis  obligasi pemerintah , dengan hanya sedikit alokasi pada instrumen pasar uang untuk menjaga  likuiditas.  Alokasi Portofolio & Produk Rekomendasi Profil Risiko Grow...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p3_para_0",
+        "table_preview": null
+      },
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p4_para_0",
+        "page": 4,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...saham (big cap dan small-mid cap equity) , dengan sebagian alokasi tetap  pada  obligasi pemerintah dan pasar uang  untuk menjaga keseimbangan risiko.  Alokasi Portofolio & Produk...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p4_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_glossary_bbc956ad",
+    "type": "glossary",
+    "original_context": "Rujukan: Paragraf (Hal 1).",
+    "generated_content": "Imbal Hasil (Return) adalah keuntungan atau kerugian yang diperoleh dari suatu investasi dalam periode tertentu, biasanya dinyatakan dalam bentuk persentase dari jumlah dana yang diinvestasikan.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "page": 1,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...ko  moderat  cenderung mencari keseimbangan antara  potensi imbal  hasil (return) yang lebih tinggi dibandingkan produk konservatif , namun tetap  mempertahankan tingkat risiko yan...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_faq_7c3e79fe",
+    "type": "faq",
+    "original_context": "Rujukan: Paragraf (Hal 5).",
+    "generated_content": "Hasil investasi yang ditampilkan tidak dijamin pasti tercapai, karena angka yang disajikan hanya merupakan estimasi berdasarkan asumsi tertentu dan kondisi pasar yang dapat berubah sewaktu-waktu.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p5_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p5_para_0",
+        "page": 5,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "...bahwa angka ini hanya merupakan estimasi dan  bukan jaminan hasil  pasti .  Catatan Tambahan  ●​ Portofolio ini merupakan contoh alokasi investasi yang disesuaikan dengan strategi...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p5_para_0",
+        "table_preview": null
+      }
+    ]
+  },
+  {
+    "id": "enh_highlight_e570e18d",
+    "type": "highlight",
+    "original_context": "Rujukan: Paragraf (Hal 5).",
+    "generated_content": "Estimasi hasil investasi yang tercantum pada dokumen ini bukan merupakan jaminan hasil pasti, melainkan hanya sebagai ilustrasi untuk membantu investor memahami potensi kinerja portofolio.",
+    "confidence_score": null,
+    "status": "pending",
+    "source_units": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p5_para_0"
+    ],
+    "source_previews": [
+      {
+        "unit_id": "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p5_para_0",
+        "page": 5,
+        "type": "paragraph",
+        "label": "Paragraf",
+        "snippet": "●​ Harap dicatat bahwa angka ini hanya merupakan estimasi dan  bukan jaminan hasil  pasti .  Catatan Tambahan  ●​ Portofolio ini merupakan contoh alokasi investasi yang...",
+        "locator": null,
+        "anchor": "md://u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p5_para_0",
+        "table_preview": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,125 @@
+[
+  {
+    "kind": "faq",
+    "key": "Apa risiko utama dari investasi di reksa dana obligasi dan pasar uang?",
+    "original_context": "Pages [1]: Pertanyaan ini relevan karena kedua instrumen tersebut direkomendasikan dalam portofolio. Penjelasan risiko akan membantu pembaca membuat keputusan yang lebih sadar.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Profil Risiko Moderat",
+    "original_context": "Pages [1]: Istilah ini merupakan kategori penting dalam segmentasi nasabah investasi. Penjelasan tentang apa yang dimaksud dengan profil risiko moderat akan membantu pembaca memahami karakteristik dan tujuan investasi yang sesuai.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Reksa Dana Pasar Uang",
+    "original_context": "Pages [1]: Produk investasi ini sering disebut dalam rekomendasi portofolio. Penjelasan singkat mengenai reksa dana pasar uang akan membantu pembaca awam memahami instrumen yang dimaksud.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Reksa Dana Obligasi",
+    "original_context": "Pages [1]: Instrumen ini menjadi bagian penting dari portofolio yang disarankan. Definisi singkat akan memperjelas perbedaan dengan reksa dana lainnya.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Profil Risiko Balanced",
+    "original_context": "Pages [2]: Kategori profil risiko ini memiliki karakteristik unik yang perlu dijelaskan agar pembaca memahami perbedaan dengan profil lain.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p2_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Profil Risiko Growth",
+    "original_context": "Pages [3]: Istilah ini merupakan salah satu kategori utama dalam segmentasi risiko nasabah. Penjelasan akan membantu pembaca memahami toleransi risiko dan tujuan investasi yang lebih agresif.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p3_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Profil Risiko Aggressive",
+    "original_context": "Pages [4]: Profil risiko ini menunjukkan toleransi risiko tertinggi. Penjelasan akan membantu pembaca memahami karakteristik dan implikasi investasi bagi nasabah dengan profil ini.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p4_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "faq",
+    "key": "Apa yang dimaksud dengan profil risiko dalam investasi?",
+    "original_context": "Pages [1]: Pertanyaan ini sangat mungkin muncul dari pembaca awam yang belum memahami konsep segmentasi risiko dalam investasi. Jawaban akan membantu mereka memahami dasar rekomendasi portofolio.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "faq",
+    "key": "Mengapa alokasi portofolio berbeda untuk setiap profil risiko?",
+    "original_context": "Pages [1, 2, 3, 4]: Pembaca mungkin bertanya mengapa rekomendasi portofolio tidak sama untuk semua nasabah. Penjelasan akan memperjelas hubungan antara toleransi risiko dan strategi investasi.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0",
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p2_para_0",
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p3_para_0",
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p4_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Imbal Hasil (Return)",
+    "original_context": "Pages [1]: Istilah ini sangat penting dalam konteks investasi dan sering digunakan dalam dokumen. Penjelasan akan membantu pembaca memahami arti dan relevansinya dalam portofolio.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p1_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "faq",
+    "key": "Apakah hasil investasi yang ditampilkan dijamin pasti tercapai?",
+    "original_context": "Pages [5]: Pernyataan tentang estimasi hasil investasi dapat menimbulkan pertanyaan tentang kepastian hasil. Penjelasan akan menghindari kesalahpahaman dan memperkuat edukasi risiko.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p5_para_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "highlight",
+    "key": "Estimasi Bukan Jaminan Hasil",
+    "original_context": "Pages [5]: Penegasan bahwa angka estimasi bukan jaminan hasil pasti sangat penting untuk mengelola ekspektasi nasabah dan menghindari mispersepsi risiko.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_7d5a5577-6fca-4cb1-b7ad-884dce883eb5_p5_para_0"
+    ],
+    "section": "General"
+  }
+]

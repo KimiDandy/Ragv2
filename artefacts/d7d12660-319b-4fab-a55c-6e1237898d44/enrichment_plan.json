@@ -1,0 +1,82 @@
+[
+  {
+    "kind": "glossary",
+    "key": "BI Rate",
+    "original_context": "Pages [1]: BI Rate adalah suku bunga acuan yang ditetapkan oleh Bank Indonesia dan menjadi referensi utama bagi perbankan dalam menentukan suku bunga kredit dan simpanan. Istilah ini sangat penting untuk dipahami oleh pembaca karena mempengaruhi seluruh sistem keuangan Indonesia.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "caption",
+    "key": "Tabel Suku Bunga Acuan (Interest Rates)",
+    "original_context": "Pages [1]: Tabel ini membandingkan suku bunga acuan Bank Indonesia (BI Rate) dan Federal Reserve (FED Rate) yang menjadi indikator utama arah kebijakan moneter di Indonesia dan Amerika Serikat. Perbedaan tingkat suku bunga ini dapat mempengaruhi arus modal dan nilai tukar rupiah.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "FED Rate",
+    "original_context": "Pages [1]: FED Rate adalah suku bunga acuan yang ditetapkan oleh Federal Reserve (bank sentral Amerika Serikat). Perubahan pada FED Rate berdampak signifikan pada pasar keuangan global, termasuk Indonesia.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "faq",
+    "key": "Mengapa perbedaan BI Rate dan FED Rate penting bagi Indonesia?",
+    "original_context": "Pages [1]: Pembaca mungkin bertanya mengapa perbedaan suku bunga acuan antara Indonesia dan AS penting. Penjelasan ini membantu memahami dampaknya pada arus modal, nilai tukar rupiah, dan kebijakan moneter domestik.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Imbal Hasil Obligasi",
+    "original_context": "Pages [1]: Imbal hasil obligasi adalah tingkat pengembalian yang diperoleh investor dari obligasi. Istilah ini sering muncul dalam analisis pasar keuangan dan penting untuk dipahami pembaca awam.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "glossary",
+    "key": "Inflasi Konsumen",
+    "original_context": "Pages [1]: Inflasi konsumen adalah kenaikan harga barang dan jasa yang dikonsumsi masyarakat. Data inflasi konsumen menjadi acuan utama dalam penentuan kebijakan suku bunga oleh bank sentral.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "highlight",
+    "key": "Kenaikan Imbal Hasil Obligasi AS",
+    "original_context": "Pages [1]: Imbal hasil obligasi Amerika Serikat melonjak setelah inflasi konsumen naik lebih dari ekspektasi. Ini menandakan tekanan inflasi yang kuat dan potensi kenaikan suku bunga lebih lanjut oleh The Fed, yang berdampak pada pasar global.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+    ],
+    "section": "General"
+  },
+  {
+    "kind": "faq",
+    "key": "Apa dampak kenaikan inflasi konsumen di AS terhadap pasar Indonesia?",
+    "original_context": "Pages [1]: Pertanyaan ini membantu pembaca memahami hubungan antara inflasi di AS, kebijakan The Fed, dan dampaknya terhadap pasar keuangan Indonesia, termasuk nilai tukar dan arus modal.",
+    "confidence_score": 0.5,
+    "source_unit_ids": [
+      "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+    ],
+    "section": "General"
+  }
+]

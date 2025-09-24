@@ -1,0 +1,412 @@
+{
+  "doc_id": "d7d12660-319b-4fab-a55c-6e1237898d44",
+  "run_id": "enh_2025-09-24T10:11:10.263594",
+  "windows": [
+    {
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405",
+      "doc_id": "d7d12660-319b-4fab-a55c-6e1237898d44",
+      "window_index": 0,
+      "token_span": [
+        0,
+        2387
+      ],
+      "pages": [
+        1
+      ],
+      "unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0",
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0",
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_1",
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_2",
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_1",
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_3",
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_2",
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_4",
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_5"
+      ],
+      "text_preview": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  | Global Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru ...",
+      "total_tokens": 2387
+    }
+  ],
+  "candidates": [
+    {
+      "cand_id": "cand_glossary_d8a1399f",
+      "type": "glossary",
+      "title": "BI Rate",
+      "rationale": "BI Rate adalah suku bunga acuan yang ditetapkan oleh Bank Indonesia dan menjadi referensi utama bagi perbankan dalam menentukan suku bunga kredit dan simpanan. Istilah ini sangat penting untuk dipahami oleh pembaca karena mempengaruhi seluruh sistem keuangan Indonesia.",
+      "source_unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:BI RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405"
+    },
+    {
+      "cand_id": "cand_glossary_a54f40fc",
+      "type": "glossary",
+      "title": "FED Rate",
+      "rationale": "FED Rate adalah suku bunga acuan yang ditetapkan oleh Federal Reserve (bank sentral Amerika Serikat). Perubahan pada FED Rate berdampak signifikan pada pasar keuangan global, termasuk Indonesia.",
+      "source_unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:FED RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405"
+    },
+    {
+      "cand_id": "cand_highlight_804732e5",
+      "type": "highlight",
+      "title": "Kenaikan Imbal Hasil Obligasi AS",
+      "rationale": "Imbal hasil obligasi Amerika Serikat melonjak setelah inflasi konsumen naik lebih dari ekspektasi. Ini menandakan tekanan inflasi yang kuat dan potensi kenaikan suku bunga lebih lanjut oleh The Fed, yang berdampak pada pasar global.",
+      "source_unit_ids": [
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405"
+    },
+    {
+      "cand_id": "cand_caption_34ece3dc",
+      "type": "caption",
+      "title": "Tabel Suku Bunga Acuan (Interest Rates)",
+      "rationale": "Tabel ini membandingkan suku bunga acuan Bank Indonesia (BI Rate) dan Federal Reserve (FED Rate) yang menjadi indikator utama arah kebijakan moneter di Indonesia dan Amerika Serikat. Perbedaan tingkat suku bunga ini dapat mempengaruhi arus modal dan nilai tukar rupiah.",
+      "source_unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405"
+    },
+    {
+      "cand_id": "cand_faq_8376a924",
+      "type": "faq",
+      "title": "Mengapa perbedaan BI Rate dan FED Rate penting bagi Indonesia?",
+      "rationale": "Pembaca mungkin bertanya mengapa perbedaan suku bunga acuan antara Indonesia dan AS penting. Penjelasan ini membantu memahami dampaknya pada arus modal, nilai tukar rupiah, dan kebijakan moneter domestik.",
+      "source_unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Mengapa perbedaan BI Rate dan FED Rate penting bagi Indonesia?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405"
+    },
+    {
+      "cand_id": "cand_glossary_2d97480a",
+      "type": "glossary",
+      "title": "Imbal Hasil Obligasi",
+      "rationale": "Imbal hasil obligasi adalah tingkat pengembalian yang diperoleh investor dari obligasi. Istilah ini sering muncul dalam analisis pasar keuangan dan penting untuk dipahami pembaca awam.",
+      "source_unit_ids": [
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:IMBAL HASIL OBLIGASI",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405"
+    },
+    {
+      "cand_id": "cand_glossary_779118cc",
+      "type": "glossary",
+      "title": "Inflasi Konsumen",
+      "rationale": "Inflasi konsumen adalah kenaikan harga barang dan jasa yang dikonsumsi masyarakat. Data inflasi konsumen menjadi acuan utama dalam penentuan kebijakan suku bunga oleh bank sentral.",
+      "source_unit_ids": [
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:INFLASI KONSUMEN",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405"
+    },
+    {
+      "cand_id": "cand_faq_e342ab91",
+      "type": "faq",
+      "title": "Apa dampak kenaikan inflasi konsumen di AS terhadap pasar Indonesia?",
+      "rationale": "Pertanyaan ini membantu pembaca memahami hubungan antara inflasi di AS, kebijakan The Fed, dan dampaknya terhadap pasar keuangan Indonesia, termasuk nilai tukar dan arus modal.",
+      "source_unit_ids": [
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa dampak kenaikan inflasi konsumen di AS terhadap pasar Indonesia?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_d7d12660-319b-4fab-a55c-6e1237898d44_0_f4378405"
+    }
+  ],
+  "items": [
+    {
+      "enh_id": "enh_glossary_d0c43599",
+      "cand_id": "cand_glossary_d8a1399f",
+      "type": "glossary",
+      "title": "BI Rate",
+      "text": "BI Rate adalah tingkat suku bunga acuan yang ditetapkan oleh Bank Indonesia sebagai instrumen utama kebijakan moneter untuk mengendalikan inflasi dan menjaga stabilitas nilai tukar rupiah.",
+      "source_unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_caption_4c50f181",
+      "cand_id": "cand_caption_34ece3dc",
+      "type": "caption",
+      "title": "Tabel Suku Bunga Acuan (Interest Rates)",
+      "text": "Tabel Suku Bunga Acuan menampilkan BI Rate sebesar 5,75% dan Fed Rate 4,5%, memberikan gambaran perbandingan suku bunga acuan antara Indonesia dan Amerika Serikat.",
+      "source_unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [
+        "Many terms not in source: menampilkan, sebesar, memberikan",
+        "Many numbers unverified: [5.0, 575.0]"
+      ],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_3f0b534c",
+      "cand_id": "cand_glossary_a54f40fc",
+      "type": "glossary",
+      "title": "FED Rate",
+      "text": "Fed Rate adalah tingkat suku bunga acuan yang ditetapkan oleh Federal Reserve (bank sentral Amerika Serikat) yang memengaruhi biaya pinjaman dan kondisi likuiditas di pasar keuangan global.",
+      "source_unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_faq_9991c794",
+      "cand_id": "cand_faq_8376a924",
+      "type": "faq",
+      "title": "Mengapa perbedaan BI Rate dan FED Rate penting bagi Indonesia?",
+      "text": "Perbedaan BI Rate dan Fed Rate penting bagi Indonesia karena dapat memengaruhi arus modal, nilai tukar rupiah, dan stabilitas ekonomi domestik. Selisih suku bunga ini juga berdampak pada keputusan investasi asing di Indonesia.",
+      "source_unit_ids": [
+        "u_t_d7d12660-319b-4fab-a55c-6e1237898d44_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_4499c6e0",
+      "cand_id": "cand_glossary_2d97480a",
+      "type": "glossary",
+      "title": "Imbal Hasil Obligasi",
+      "text": "Imbal hasil obligasi adalah tingkat keuntungan yang diperoleh investor dari kepemilikan obligasi, biasanya dinyatakan dalam persentase tahunan dari nilai nominal obligasi.",
+      "source_unit_ids": [
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_83369248",
+      "cand_id": "cand_glossary_779118cc",
+      "type": "glossary",
+      "title": "Inflasi Konsumen",
+      "text": "Inflasi konsumen adalah kenaikan harga barang dan jasa yang dikonsumsi masyarakat secara umum dalam suatu periode tertentu, yang diukur melalui indeks harga konsumen (IHK).",
+      "source_unit_ids": [
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_highlight_329c9ec5",
+      "cand_id": "cand_highlight_804732e5",
+      "type": "highlight",
+      "title": "Kenaikan Imbal Hasil Obligasi AS",
+      "text": "Imbal hasil obligasi Amerika Serikat (AS) melonjak setelah inflasi konsumen naik lebih tinggi dari perkiraan pada bulan Januari. Kenaikan ini memicu penurunan di pasar saham global, termasuk indeks S&P 500 yang turun 0,27%.",
+      "source_unit_ids": [
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": {
+        "extracted_numbers": [
+          27.0,
+          5.0,
+          3.0,
+          6.051,
+          44.368,
+          19.649,
+          500.0,
+          27.0,
+          5197.0,
+          22509.0,
+          5.0,
+          44.0,
+          36856.0,
+          3.0,
+          19.0,
+          64995.0
+        ],
+        "formatted_numbers": [
+          "Rp27",
+          "Rp5",
+          "Rp3",
+          "Rp6",
+          "Rp44",
+          "Rp20",
+          "Rp500",
+          "Rp27",
+          "Rp5,197",
+          "Rp22,509",
+          "Rp5",
+          "Rp44",
+          "Rp36,856",
+          "Rp3",
+          "Rp19",
+          "Rp64,995"
+        ],
+        "change": {
+          "old_value": 27.0,
+          "new_value": 64995.0,
+          "absolute_change": 64968.0,
+          "percent_change": 240622.22
+        }
+      },
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_faq_63275f78",
+      "cand_id": "cand_faq_e342ab91",
+      "type": "faq",
+      "title": "Apa dampak kenaikan inflasi konsumen di AS terhadap pasar Indonesia?",
+      "text": "Kenaikan inflasi konsumen di AS dapat menyebabkan imbal hasil obligasi AS naik, sehingga investor global cenderung menarik dana dari pasar negara berkembang, termasuk Indonesia. Hal ini berpotensi menekan pasar keuangan domestik dan nilai tukar rupiah.",
+      "source_unit_ids": [
+        "u_d7d12660-319b-4fab-a55c-6e1237898d44_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    }
+  ],
+  "metrics": {
+    "planning": {
+      "total_windows": 1,
+      "total_candidates": 10,
+      "unique_candidates": 8,
+      "selected_count": 8
+    },
+    "generation": {
+      "total_candidates": 8,
+      "total_batches": 2,
+      "total_items": 8,
+      "validation_pass_rate": 1.0,
+      "usage": {
+        "prompt_tokens": 1864,
+        "completion_tokens": 392
+      }
+    },
+    "version": "v2.0"
+  }
+}

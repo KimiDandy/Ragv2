@@ -27,6 +27,15 @@ from ..core.rate_limiter import AsyncLeakyBucket
 from ..extract.extractor_v2 import extract_pdf_to_markdown
 from ..pipeline.phase_3_synthesis import synthesize_final_markdown
 from ..pipeline.phase_4_vectorization import vectorize_and_store
+from ..utils.doc_meta import (
+    get_markdown_path,
+    get_markdown_relative_path,
+    get_base_name,
+    default_markdown_filename,
+    set_markdown_info,
+    set_original_pdf_filename,
+    get_original_pdf_filename,
+)
 from ..core.rag_builder import build_rag_chain, answer_with_sources, create_filtered_retriever
 from ..obs.token_ledger import get_token_ledger, log_tokens
 from .models import (
@@ -204,17 +213,18 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
             extraction_results = extract_pdf_to_markdown(
                 doc_id=hashlib.md5(temp_pdf_path.read_bytes()).hexdigest()[:16],
                 pdf_path=str(temp_pdf_path),
-                out_dir=str(PIPELINE_ARTEFACTS_DIR)
+                out_dir=str(PIPELINE_ARTEFACTS_DIR),
+                original_filename=file.filename,
             )
             doc_output_dir = extraction_results.artefacts_dir
             doc_id = extraction_results.doc_id
             logger.info(f"--- PDF Extraction Selesai. Artefak di: {doc_output_dir} ---")
 
-            md_path = Path(doc_output_dir) / "markdown_v1.md"
+            md_path = get_markdown_path(Path(doc_output_dir), "v1")
             try:
                 markdown_text = md_path.read_text(encoding='utf-8')
             except Exception as e:
-                logger.error(f"Gagal membaca markdown_v1.md: {e}")
+                logger.error(f"Gagal membaca markdown hasil ekstraksi: {e}")
                 raise HTTPException(status_code=500, detail="Gagal membaca markdown hasil ekstraksi.")
 
             return UploadResponse(document_id=doc_id, markdown_content=markdown_text)
@@ -228,7 +238,7 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
 async def start_enhancement(document_id: str):
     """Menjalankan tugas latar belakang Enhancement V2 (windowing + map-reduce)."""
     doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
-    md_path = doc_dir / "markdown_v1.md"
+    md_path = get_markdown_path(doc_dir, "v1")
     if not md_path.exists():
         raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan atau belum diunggah.")
 
@@ -313,13 +323,21 @@ async def start_enhancement(document_id: str):
             
             # Step 4: Synthesize Markdown v2
             logger.info(f"[Enhancement V2] Synthesizing Markdown v2 for {document_id}")
-            markdown_v2_path = doc_dir / "markdown_v2.md"
+            base_name = get_base_name(doc_dir)
+            markdown_v2_filename = default_markdown_filename("v2", base_name)
+            markdown_v2_path = doc_dir / markdown_v2_filename
             synthesizer.synthesize(
                 doc_id=document_id,
                 markdown_v1_path=str(md_path),
                 enhancements=generation_result['items'],
                 units_metadata=units_metadata,
                 output_path=str(markdown_v2_path)
+            )
+            set_markdown_info(
+                doc_dir,
+                "v2",
+                filename=markdown_v2_filename,
+                relative_path=markdown_v2_filename,
             )
             
             # Save complete enhancements data
@@ -377,7 +395,7 @@ async def finalize_document(request: Request, payload: CuratedSuggestions):
     """
     doc_id = payload.document_id
     doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / doc_id
-    if not (doc_dir / "markdown_v1.md").exists():
+    if not get_markdown_path(doc_dir, "v1").exists():
         raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan.")
 
     curated = [s.dict() for s in payload.suggestions if (s.status or "").lower() in ("approved", "edited")]
@@ -393,8 +411,10 @@ async def finalize_document(request: Request, payload: CuratedSuggestions):
         raise HTTPException(status_code=503, detail="Chroma client tidak tersedia.")
 
     embeddings = request.app.state.embedding_function
-    ok_v1 = vectorize_and_store(str(doc_dir), chroma_client, "markdown_v1.md", "v1", embeddings=embeddings)
-    ok_v2 = vectorize_and_store(str(doc_dir), chroma_client, "markdown_v2.md", "v2", embeddings=embeddings)
+    v1_rel = get_markdown_relative_path(doc_dir, "v1")
+    v2_rel = get_markdown_relative_path(doc_dir, "v2")
+    ok_v1 = vectorize_and_store(str(doc_dir), chroma_client, v1_rel, "v1", embeddings=embeddings)
+    ok_v2 = vectorize_and_store(str(doc_dir), chroma_client, v2_rel, "v2", embeddings=embeddings)
     if not (ok_v1 and ok_v2):
         raise HTTPException(status_code=500, detail="Vektorisasi gagal untuk salah satu versi.")
 
@@ -448,7 +468,7 @@ async def get_progress(document_id: str):
         doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
         if not doc_dir.exists():
             raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan.")
-        p0_done = (doc_dir / "markdown_v1.md").exists()
+        p0_done = get_markdown_path(doc_dir, "v1").exists()
 
         p1_progress = {}
         p1_progress_path = doc_dir / "phase_1_progress.json"
@@ -580,6 +600,7 @@ async def upload_pdf(file: UploadFile = File(...)):
     try:
         with open(pdf_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
+        set_original_pdf_filename(doc_dir, file.filename)
         logger.info(f"[PDF++] Uploaded '{file.filename}' as {pdf_path}")
         return UploadPdfResponse(document_id=doc_id, file_name=file.filename)
     except Exception as e:
@@ -600,11 +621,13 @@ async def start_conversion(payload: StartConversionRequest):
     async def _run():
         try:
             # Use new extractor_v2 with mode support
+            original_filename = get_original_pdf_filename(doc_dir)
             await asyncio.to_thread(
                 extract_pdf_to_markdown,
                 doc_id=payload.document_id,
                 pdf_path=str(pdf_path),
                 out_dir=str(PIPELINE_ARTEFACTS_DIR),
+                original_filename=original_filename,
                 # Smart mode uses better OCR settings
                 ocr_primary_psm=3 if mode == "smart" else 6,
                 ocr_fallback_psm=[6, 11, 3] if mode == "smart" else [11]
@@ -642,7 +665,7 @@ async def conversion_progress(document_id: str):
 @router.get("/conversion-result/{document_id}", response_model=ConversionResult)
 async def conversion_result(document_id: str):
     doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
-    md_path = doc_dir / "markdown_v1.md"
+    md_path = get_markdown_path(doc_dir, "v1")
     meta_path = doc_dir / "meta" / "units_metadata.json"
     if not md_path.exists():
         raise HTTPException(status_code=404, detail="Hasil markdown belum tersedia.")

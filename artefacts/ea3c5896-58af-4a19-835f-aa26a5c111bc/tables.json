@@ -1,0 +1,336 @@
+[
+  {
+    "table_id": "t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0",
+    "page": 1,
+    "bbox": [
+      330.0,
+      53.34000000000003,
+      490.0,
+      629.81
+    ],
+    "headers": [
+      "INTEREST RATES",
+      "%"
+    ],
+    "rows": [
+      [
+        "BI RATE",
+        "5.75"
+      ],
+      [
+        "FED RATE",
+        "4.50"
+      ]
+    ],
+    "fixes": {
+      "merged_tokens": 0
+    },
+    "provenance": "pdfplumber"
+  },
+  {
+    "table_id": "t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_1",
+    "page": 1,
+    "bbox": [
+      297.0,
+      220,
+      507.0,
+      300
+    ],
+    "headers": [
+      "COUNTRIES",
+      "Inflation (YoY)",
+      "Inflation (MoM)"
+    ],
+    "rows": [
+      [
+        "INDONESIA",
+        "0.76%",
+        "(0.76%)"
+      ],
+      [
+        "U.S",
+        "3.00%",
+        "0.50%"
+      ]
+    ],
+    "fixes": {
+      "merged_tokens": 0
+    },
+    "provenance": "pdfplumber"
+  },
+  {
+    "table_id": "t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_2",
+    "page": 1,
+    "bbox": [
+      50,
+      340,
+      266.0,
+      440
+    ],
+    "headers": [
+      "BONDS",
+      "13-Feb",
+      "14-Feb",
+      "%"
+    ],
+    "rows": [
+      [
+        "INA 10 YR\n(IDR)",
+        "6.84",
+        "6.77",
+        "-0.97"
+      ],
+      [
+        "INA 10 YR\n(USD)",
+        "5.45",
+        "5.39",
+        "-1.01"
+      ],
+      [
+        "UST 10 YR",
+        "4.53",
+        "4.48",
+        "-1.16"
+      ]
+    ],
+    "fixes": {
+      "merged_tokens": 0
+    },
+    "provenance": "pdfplumber"
+  },
+  {
+    "table_id": "t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_3",
+    "page": 1,
+    "bbox": [
+      297.0,
+      460,
+      513.0,
+      680
+    ],
+    "headers": [
+      "INDEXES",
+      "13-Feb",
+      "14-Feb",
+      "%"
+    ],
+    "rows": [
+      [
+        "IHSG",
+        "6613.57",
+        "6638.46",
+        "0.38"
+      ],
+      [
+        "LQ45",
+        "769.73",
+        "772.41",
+        "0.35"
+      ],
+      [
+        "S&P 500",
+        "6115.07",
+        "6114.63",
+        "-0.01"
+      ],
+      [
+        "DOW JONES",
+        "44711.43",
+        "44546.0",
+        "-0.37"
+      ],
+      [
+        "NASDAQ",
+        "19945.64",
+        "20026.7",
+        "0.41"
+      ],
+      [
+        "FTSE 100",
+        "8764.72",
+        "8732.46",
+        "-0.37"
+      ],
+      [
+        "HANG SENG",
+        "21814.37",
+        "22620.3",
+        "3.69"
+      ],
+      [
+        "SHANGHAI",
+        "3332.48",
+        "3346.72",
+        "0.43"
+      ],
+      [
+        "NIKKEI 225",
+        "39461.47",
+        "39149.4",
+        "-0.79"
+      ]
+    ],
+    "fixes": {
+      "merged_tokens": 0
+    },
+    "provenance": "pdfplumber"
+  },
+  {
+    "table_id": "t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_4",
+    "page": 1,
+    "bbox": [
+      50,
+      580,
+      266.0,
+      740
+    ],
+    "headers": [
+      "Economic Data & Event",
+      "None",
+      "Actual",
+      "Previous",
+      "Forecast"
+    ],
+    "rows": [
+      [
+        "JP",
+        "GDP Growth Rate QoQ Prel Q4",
+        "0.7%",
+        "0.4%",
+        "0.5%"
+      ],
+      [
+        "JP",
+        "GDP Growth Annualized Prel Q4",
+        "2.8%",
+        "1.7%",
+        "2.1%"
+      ],
+      [
+        "EA",
+        "Balance of Trade DEC",
+        "",
+        "\u20ac16.4B",
+        "\u20ac 33B"
+      ],
+      [
+        "ID",
+        "Balance of Trade JAN",
+        "",
+        "$2.24B",
+        "$2.2B"
+      ],
+      [
+        "ID",
+        "Exports & Imports YoY JAN",
+        "",
+        "4.78% & 11.07%",
+        ""
+      ],
+      [
+        "US",
+        "Fed Officials Speech",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "fixes": {
+      "merged_tokens": 0
+    },
+    "provenance": "pdfplumber"
+  },
+  {
+    "table_id": "t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_5",
+    "page": 1,
+    "bbox": [
+      297.0,
+      700,
+      513.0,
+      980
+    ],
+    "headers": [
+      "FOREX",
+      "14-Feb",
+      "17-Feb",
+      "%"
+    ],
+    "rows": [
+      [
+        "USD/IDR",
+        "16300",
+        "16200",
+        "-0.61"
+      ],
+      [
+        "EUR/IDR",
+        "17050",
+        "17015",
+        "-0.20"
+      ],
+      [
+        "GBP/IDR",
+        "20478",
+        "20404",
+        "-0.36"
+      ],
+      [
+        "AUD/IDR",
+        "10310",
+        "10315",
+        "0.05"
+      ],
+      [
+        "NZD/IDR",
+        "9280",
+        "9310",
+        "0.33"
+      ],
+      [
+        "SGD/IDR",
+        "12123",
+        "12101",
+        "-0.18"
+      ],
+      [
+        "CNY/IDR",
+        "2237",
+        "2234",
+        "-0.14"
+      ],
+      [
+        "JPY/IDR",
+        "106.59",
+        "106.69",
+        "0.09"
+      ],
+      [
+        "EUR/USD",
+        "1.0460",
+        "1.0503",
+        "0.41"
+      ],
+      [
+        "GBP/USD",
+        "1.2563",
+        "1.2595",
+        "0.25"
+      ],
+      [
+        "AUD/USD",
+        "0.6325",
+        "0.6367",
+        "0.66"
+      ],
+      [
+        "NZD/USD",
+        "0.5693",
+        "0.5747",
+        "0.95"
+      ]
+    ],
+    "fixes": {
+      "merged_tokens": 0
+    },
+    "provenance": "pdfplumber"
+  }
+]

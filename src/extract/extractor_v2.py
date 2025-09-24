@@ -22,6 +22,13 @@ import logging
 from pathlib import Path
 from collections import defaultdict
 
+from ..utils.doc_meta import (
+    set_original_pdf_filename,
+    get_base_name,
+    default_markdown_filename,
+    set_markdown_info,
+)
+
 # Optional imports with graceful degradation
 try:
     import camelot
@@ -110,6 +117,7 @@ class ExtractionResult:
     units_meta_path: str
     artefacts_dir: str
     metrics_path: str
+    original_pdf_filename: Optional[str] = None
     
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -209,7 +217,13 @@ class PDFExtractorV2:
         }
 
     
-    def extract(self, doc_id: str, pdf_path: str, out_dir: str) -> ExtractionResult:
+    def extract(
+        self,
+        doc_id: str,
+        pdf_path: str,
+        out_dir: str,
+        original_filename: Optional[str] = None,
+    ) -> ExtractionResult:
         """Main extraction entry point"""
         start_time = time.time()
         
@@ -227,6 +241,12 @@ class PDFExtractorV2:
         progress_path = artefacts_dir / "conversion_progress.json"
         self._update_progress(progress_path, "running", 0.1, "Memulai ekstraksi PDF...")
         
+        # Persist original filename metadata if available
+        if original_filename:
+            set_original_pdf_filename(artefacts_dir, original_filename)
+
+        base_name = get_base_name(artefacts_dir)
+
         # Set up logging
         log_path = logs_dir / "extract.log"
         file_handler = logging.FileHandler(log_path, mode='w')
@@ -272,8 +292,15 @@ class PDFExtractorV2:
         markdown_content = self._assemble_markdown(all_units)
         
         # 8) Persist outputs
-        markdown_path = artefacts_dir / "markdown_v1.md"
+        markdown_filename = default_markdown_filename("v1", base_name)
+        markdown_path = artefacts_dir / markdown_filename
         markdown_path.write_text(markdown_content, encoding='utf-8')
+        set_markdown_info(
+            artefacts_dir,
+            "v1",
+            filename=markdown_filename,
+            relative_path=markdown_filename,
+        )
         
         # Save metadata in both locations for compatibility
         units_meta = [unit.to_dict() for unit in all_units]
@@ -315,7 +342,8 @@ class PDFExtractorV2:
             markdown_path=str(markdown_path),
             units_meta_path=str(units_meta_path),
             artefacts_dir=str(artefacts_dir),
-            metrics_path=str(metrics_path)
+            metrics_path=str(metrics_path),
+            original_pdf_filename=original_filename,
         )
     
     def _process_page(self, page: fitz.Page, page_num: int, doc_id: str, 
@@ -1550,6 +1578,7 @@ def extract_pdf_to_markdown(
     doc_id: str,
     pdf_path: str,
     out_dir: str,
+    original_filename: Optional[str] = None,
     ocr_lang: str = "ind+eng",
     ocr_primary_psm: int = 3,
     ocr_fallback_psm: list = None,
@@ -1611,4 +1640,11 @@ def extract_pdf_to_markdown(
     )
     
     # Run extraction
-    return extractor.extract(doc_id, pdf_path, out_dir)
+    if original_filename is None:
+        original_filename = Path(pdf_path).name
+    return extractor.extract(
+        doc_id=doc_id,
+        pdf_path=pdf_path,
+        out_dir=out_dir,
+        original_filename=original_filename,
+    )

@@ -1,0 +1,529 @@
+{
+  "doc_id": "fdc358d5-bb3d-43e6-832b-c44a900bc3ea",
+  "run_id": "plan_2025-09-24T10:13:02.214615",
+  "windows": [
+    {
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894",
+      "doc_id": "fdc358d5-bb3d-43e6-832b-c44a900bc3ea",
+      "window_index": 0,
+      "token_span": [
+        0,
+        2357
+      ],
+      "pages": [
+        1
+      ],
+      "unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0",
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0",
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_1",
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_2",
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_1",
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_3",
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_2",
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_4",
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_5"
+      ],
+      "text_preview": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  | Global Saham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencananya untuk mengenakan \"tarif timbal balik\" pada ...",
+      "total_tokens": 2357
+    }
+  ],
+  "all_candidates": [
+    {
+      "cand_id": "cand_glossary_d8a1399f",
+      "type": "glossary",
+      "title": "BI Rate",
+      "rationale": "BI Rate adalah suku bunga acuan yang ditetapkan oleh Bank Indonesia dan menjadi referensi utama dalam penentuan suku bunga kredit dan simpanan di Indonesia. Banyak pembaca awam yang belum memahami peran penting BI Rate dalam perekonomian nasional.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:BI RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_3c39b88f",
+      "type": "glossary",
+      "title": "Fed Rate",
+      "rationale": "Fed Rate adalah suku bunga acuan yang ditetapkan oleh Federal Reserve Amerika Serikat. Istilah ini penting dijelaskan karena sangat mempengaruhi pasar keuangan global dan sering menjadi acuan dalam analisis ekonomi internasional.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:FED RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_highlight_3a780457",
+      "type": "highlight",
+      "title": "Kenaikan Indeks Saham AS",
+      "rationale": "S&P 500 naik 1,04%, Dow Jones naik 0,77%, dan Nasdaq naik 1,5% dalam satu hari perdagangan. Ini merupakan pergerakan signifikan yang menandakan sentimen positif di pasar saham Amerika Serikat.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_faq_0ea54e23",
+      "type": "faq",
+      "title": "Mengapa BI Rate dan Fed Rate Penting untuk Investor?",
+      "rationale": "Banyak pembaca mungkin bertanya mengapa kedua suku bunga acuan ini selalu dicantumkan dalam laporan keuangan. Penjelasan tentang dampak langsung BI Rate dan Fed Rate terhadap pasar modal, obligasi, dan nilai tukar akan sangat membantu pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Mengapa BI Rate dan Fed Rate Penting untuk Investor?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_caption_e779560d",
+      "type": "caption",
+      "title": "Tabel Interest Rates",
+      "rationale": "Tabel ini menampilkan perbandingan suku bunga acuan Indonesia (BI Rate) dan Amerika Serikat (Fed Rate) yang menjadi faktor utama dalam pergerakan pasar keuangan domestik dan global. Penjelasan singkat akan membantu pembaca memahami relevansi data ini.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_0f68b090",
+      "type": "glossary",
+      "title": "S&P 500",
+      "rationale": "S&P 500 adalah indeks saham yang terdiri dari 500 perusahaan besar di Amerika Serikat dan sering dijadikan barometer kesehatan pasar saham AS. Banyak pembaca Indonesia yang belum familiar dengan indeks ini.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:S&P 500",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_38ff4bca",
+      "type": "glossary",
+      "title": "Dow Jones Industrial Average",
+      "rationale": "Dow Jones Industrial Average adalah salah satu indeks saham tertua dan paling dikenal di Amerika Serikat, terdiri dari 30 perusahaan besar. Penjelasan ini penting untuk pembaca yang belum memahami signifikansinya.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:DOW JONES INDUSTRIAL AVERAGE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_aa5a90cf",
+      "type": "glossary",
+      "title": "Nasdaq Composite",
+      "rationale": "Nasdaq Composite adalah indeks saham yang didominasi oleh perusahaan teknologi di Amerika Serikat. Penjelasan ini penting mengingat pengaruh besar sektor teknologi terhadap pergerakan indeks ini.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:NASDAQ COMPOSITE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_faq_1b8890de",
+      "type": "faq",
+      "title": "Apa Dampak Tarif Timbal Balik AS terhadap Pasar Saham?",
+      "rationale": "Kebijakan tarif timbal balik yang diumumkan Presiden AS Donald Trump dapat memicu pertanyaan tentang dampaknya terhadap pasar saham global, sehingga penjelasan singkat akan sangat membantu pembaca.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa Dampak Tarif Timbal Balik AS terhadap Pasar Saham?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    }
+  ],
+  "final_candidates": [
+    {
+      "cand_id": "cand_glossary_d8a1399f",
+      "type": "glossary",
+      "title": "BI Rate",
+      "rationale": "BI Rate adalah suku bunga acuan yang ditetapkan oleh Bank Indonesia dan menjadi referensi utama dalam penentuan suku bunga kredit dan simpanan di Indonesia. Banyak pembaca awam yang belum memahami peran penting BI Rate dalam perekonomian nasional.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:BI RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_3c39b88f",
+      "type": "glossary",
+      "title": "Fed Rate",
+      "rationale": "Fed Rate adalah suku bunga acuan yang ditetapkan oleh Federal Reserve Amerika Serikat. Istilah ini penting dijelaskan karena sangat mempengaruhi pasar keuangan global dan sering menjadi acuan dalam analisis ekonomi internasional.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:FED RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_highlight_3a780457",
+      "type": "highlight",
+      "title": "Kenaikan Indeks Saham AS",
+      "rationale": "S&P 500 naik 1,04%, Dow Jones naik 0,77%, dan Nasdaq naik 1,5% dalam satu hari perdagangan. Ini merupakan pergerakan signifikan yang menandakan sentimen positif di pasar saham Amerika Serikat.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_faq_0ea54e23",
+      "type": "faq",
+      "title": "Mengapa BI Rate dan Fed Rate Penting untuk Investor?",
+      "rationale": "Banyak pembaca mungkin bertanya mengapa kedua suku bunga acuan ini selalu dicantumkan dalam laporan keuangan. Penjelasan tentang dampak langsung BI Rate dan Fed Rate terhadap pasar modal, obligasi, dan nilai tukar akan sangat membantu pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Mengapa BI Rate dan Fed Rate Penting untuk Investor?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_caption_e779560d",
+      "type": "caption",
+      "title": "Tabel Interest Rates",
+      "rationale": "Tabel ini menampilkan perbandingan suku bunga acuan Indonesia (BI Rate) dan Amerika Serikat (Fed Rate) yang menjadi faktor utama dalam pergerakan pasar keuangan domestik dan global. Penjelasan singkat akan membantu pembaca memahami relevansi data ini.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_0f68b090",
+      "type": "glossary",
+      "title": "S&P 500",
+      "rationale": "S&P 500 adalah indeks saham yang terdiri dari 500 perusahaan besar di Amerika Serikat dan sering dijadikan barometer kesehatan pasar saham AS. Banyak pembaca Indonesia yang belum familiar dengan indeks ini.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:S&P 500",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_38ff4bca",
+      "type": "glossary",
+      "title": "Dow Jones Industrial Average",
+      "rationale": "Dow Jones Industrial Average adalah salah satu indeks saham tertua dan paling dikenal di Amerika Serikat, terdiri dari 30 perusahaan besar. Penjelasan ini penting untuk pembaca yang belum memahami signifikansinya.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:DOW JONES INDUSTRIAL AVERAGE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_aa5a90cf",
+      "type": "glossary",
+      "title": "Nasdaq Composite",
+      "rationale": "Nasdaq Composite adalah indeks saham yang didominasi oleh perusahaan teknologi di Amerika Serikat. Penjelasan ini penting mengingat pengaruh besar sektor teknologi terhadap pergerakan indeks ini.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:NASDAQ COMPOSITE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_faq_1b8890de",
+      "type": "faq",
+      "title": "Apa Dampak Tarif Timbal Balik AS terhadap Pasar Saham?",
+      "rationale": "Kebijakan tarif timbal balik yang diumumkan Presiden AS Donald Trump dapat memicu pertanyaan tentang dampaknya terhadap pasar saham global, sehingga penjelasan singkat akan sangat membantu pembaca.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa Dampak Tarif Timbal Balik AS terhadap Pasar Saham?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    }
+  ],
+  "selected_candidates": [
+    {
+      "cand_id": "cand_glossary_d8a1399f",
+      "type": "glossary",
+      "title": "BI Rate",
+      "rationale": "BI Rate adalah suku bunga acuan yang ditetapkan oleh Bank Indonesia dan menjadi referensi utama dalam penentuan suku bunga kredit dan simpanan di Indonesia. Banyak pembaca awam yang belum memahami peran penting BI Rate dalam perekonomian nasional.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:BI RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_3c39b88f",
+      "type": "glossary",
+      "title": "Fed Rate",
+      "rationale": "Fed Rate adalah suku bunga acuan yang ditetapkan oleh Federal Reserve Amerika Serikat. Istilah ini penting dijelaskan karena sangat mempengaruhi pasar keuangan global dan sering menjadi acuan dalam analisis ekonomi internasional.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:FED RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_faq_0ea54e23",
+      "type": "faq",
+      "title": "Mengapa BI Rate dan Fed Rate Penting untuk Investor?",
+      "rationale": "Banyak pembaca mungkin bertanya mengapa kedua suku bunga acuan ini selalu dicantumkan dalam laporan keuangan. Penjelasan tentang dampak langsung BI Rate dan Fed Rate terhadap pasar modal, obligasi, dan nilai tukar akan sangat membantu pemahaman pembaca.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Mengapa BI Rate dan Fed Rate Penting untuk Investor?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_0f68b090",
+      "type": "glossary",
+      "title": "S&P 500",
+      "rationale": "S&P 500 adalah indeks saham yang terdiri dari 500 perusahaan besar di Amerika Serikat dan sering dijadikan barometer kesehatan pasar saham AS. Banyak pembaca Indonesia yang belum familiar dengan indeks ini.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:S&P 500",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_38ff4bca",
+      "type": "glossary",
+      "title": "Dow Jones Industrial Average",
+      "rationale": "Dow Jones Industrial Average adalah salah satu indeks saham tertua dan paling dikenal di Amerika Serikat, terdiri dari 30 perusahaan besar. Penjelasan ini penting untuk pembaca yang belum memahami signifikansinya.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:DOW JONES INDUSTRIAL AVERAGE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_glossary_aa5a90cf",
+      "type": "glossary",
+      "title": "Nasdaq Composite",
+      "rationale": "Nasdaq Composite adalah indeks saham yang didominasi oleh perusahaan teknologi di Amerika Serikat. Penjelasan ini penting mengingat pengaruh besar sektor teknologi terhadap pergerakan indeks ini.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:NASDAQ COMPOSITE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_highlight_3a780457",
+      "type": "highlight",
+      "title": "Kenaikan Indeks Saham AS",
+      "rationale": "S&P 500 naik 1,04%, Dow Jones naik 0,77%, dan Nasdaq naik 1,5% dalam satu hari perdagangan. Ini merupakan pergerakan signifikan yang menandakan sentimen positif di pasar saham Amerika Serikat.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_faq_1b8890de",
+      "type": "faq",
+      "title": "Apa Dampak Tarif Timbal Balik AS terhadap Pasar Saham?",
+      "rationale": "Kebijakan tarif timbal balik yang diumumkan Presiden AS Donald Trump dapat memicu pertanyaan tentang dampaknya terhadap pasar saham global, sehingga penjelasan singkat akan sangat membantu pembaca.",
+      "source_unit_ids": [
+        "u_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa Dampak Tarif Timbal Balik AS terhadap Pasar Saham?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    },
+    {
+      "cand_id": "cand_caption_e779560d",
+      "type": "caption",
+      "title": "Tabel Interest Rates",
+      "rationale": "Tabel ini menampilkan perbandingan suku bunga acuan Indonesia (BI Rate) dan Amerika Serikat (Fed Rate) yang menjadi faktor utama dalam pergerakan pasar keuangan domestik dan global. Penjelasan singkat akan membantu pembaca memahami relevansi data ini.",
+      "source_unit_ids": [
+        "u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_p1_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_fdc358d5-bb3d-43e6-832b-c44a900bc3ea_0_1c30d894"
+    }
+  ],
+  "metrics": {
+    "total_windows": 1,
+    "total_candidates": 9,
+    "unique_candidates": 9,
+    "selected_count": 9
+  }
+}

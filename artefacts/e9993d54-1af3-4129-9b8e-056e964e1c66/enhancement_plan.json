@@ -1,0 +1,899 @@
+{
+  "doc_id": "e9993d54-1af3-4129-9b8e-056e964e1c66",
+  "run_id": "plan_2025-09-24T10:20:54.882452",
+  "windows": [
+    {
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5",
+      "doc_id": "e9993d54-1af3-4129-9b8e-056e964e1c66",
+      "window_index": 0,
+      "token_span": [
+        0,
+        6728
+      ],
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_pb_1",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_pb_0",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_pb_2",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_pb_3",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_1",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_2",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_pb_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_1",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_pb_1",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p3_ocr_backup",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p3_para_0",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p3_pb_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_0",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_1",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_pb_0"
+      ],
+      "text_preview": "STANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009  Team  : Deepening & VRM  Script Month  : July 2025  Campaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014)  Penawaran kedua: TDO  Link Related to  Product  ortal/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites %2FAltWMPortal%2FShared%20Documents%2FBonds%2FSBR0 13...",
+      "total_tokens": 6728
+    }
+  ],
+  "all_candidates": [
+    {
+      "cand_id": "cand_glossary_af7acf78",
+      "type": "glossary",
+      "title": "SBR014",
+      "rationale": "SBR014 adalah istilah produk keuangan spesifik (Savings Bond Ritel seri 014) yang kemungkinan belum dipahami oleh nasabah awam. Penjelasan detail akan membantu nasabah memahami karakteristik, manfaat, dan risiko produk ini.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_0"
+      ],
+      "pages": [
+        4,
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:SBR014",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_6546b086",
+      "type": "glossary",
+      "title": "IPO (Initial Public Offering)",
+      "rationale": "Istilah IPO digunakan dalam konteks program cashback dan promo, namun banyak nasabah ritel yang belum memahami maknanya dalam konteks obligasi pemerintah. Penjelasan akan mengurangi kebingungan.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:IPO (INITIAL PUBLIC OFFERING)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_08dd733c",
+      "type": "glossary",
+      "title": "Cashback",
+      "rationale": "Cashback adalah istilah promosi yang sering digunakan, namun mekanisme, syarat, dan ketentuannya bisa berbeda-beda. Penjelasan akan membantu nasabah memahami manfaat dan cara mendapatkannya pada program ini.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:CASHBACK",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_b3aa3b51",
+      "type": "glossary",
+      "title": "TD Online (TDO)",
+      "rationale": "TD Online adalah produk keuangan yang ditawarkan sebagai penawaran kedua. Penjelasan istilah ini penting agar nasabah memahami perbedaan dan keunggulan dibandingkan produk lain.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:TD ONLINE (TDO)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_6f4e9fe6",
+      "type": "glossary",
+      "title": "UU PDP (Undang-Undang Perlindungan Data Pribadi)",
+      "rationale": "UU PDP adalah regulasi penting yang menjadi dasar mandatory introduction dalam script. Penjelasan singkat akan meningkatkan kepercayaan dan pemahaman nasabah terkait perlindungan data mereka.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:UU PDP (UNDANG-UNDANG PERLINDUNGAN DATA PRIBADI)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_9b9d8c20",
+      "type": "highlight",
+      "title": "Periode Penawaran SBR014",
+      "rationale": "Periode penawaran SBR014 disebutkan secara spesifik (14-30 Juli 2025 dan 22 Jul – 07 Aug 2025). Penekanan pada tanggal penting ini akan membantu nasabah tidak melewatkan kesempatan investasi.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_1",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0"
+      ],
+      "pages": [
+        2,
+        4,
+        6
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_1:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_d9beb013",
+      "type": "highlight",
+      "title": "Promo Cashback SBR014",
+      "rationale": "Adanya program cashback dan tambahan cashback merupakan nilai jual utama yang perlu disorot agar nasabah memahami benefit finansial yang bisa didapatkan dari pembelian SBR014.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_faq_cfe11576",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan cashback pada program SBR014?",
+      "rationale": "Nasabah kemungkinan besar akan bertanya tentang mekanisme dan syarat mendapatkan cashback. FAQ ini akan mengurangi pertanyaan berulang dan meningkatkan transparansi.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan cashback pada program SBR014?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_faq_0dfab0d5",
+      "type": "faq",
+      "title": "Apa risiko berinvestasi di SBR014?",
+      "rationale": "Nasabah awam seringkali hanya fokus pada benefit tanpa memahami risiko. FAQ ini penting untuk edukasi dan perlindungan konsumen.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa risiko berinvestasi di SBR014?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_faq_884e1d70",
+      "type": "faq",
+      "title": "Apa perbedaan antara SBR014 dan TD Online?",
+      "rationale": "Karena kedua produk ditawarkan dalam satu script, nasabah perlu memahami perbedaan utama agar dapat memilih produk yang paling sesuai dengan kebutuhan mereka.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa perbedaan antara SBR014 dan TD Online?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_caption_a9dde042",
+      "type": "caption",
+      "title": "Tabel Detail Product IPO SBR014-T2 dan SBR014-T4",
+      "rationale": "Tabel pada halaman 6 memuat detail teknis dua seri SBR014 (T2 dan T4) yang kompleks. Caption akan membantu pembaca memahami isi tabel secara ringkas dan jelas.",
+      "source_unit_ids": [
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_pb_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_caption_2564124a",
+      "type": "caption",
+      "title": "Tabel Ketentuan Program Cashback",
+      "rationale": "Tabel pada halaman 4 berisi ketentuan program cashback yang cukup detail. Caption akan membantu pembaca memahami struktur dan isi tabel dengan cepat.",
+      "source_unit_ids": [
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_41db8d8e",
+      "type": "highlight",
+      "title": "Mandatory Introduction terkait UU PDP",
+      "rationale": "Bagian mandatory introduction terkait UU PDP adalah kewajiban hukum dan penting untuk membangun kepercayaan nasabah. Penekanan pada bagian ini akan meningkatkan kepatuhan dan awareness.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_d8f9925c",
+      "type": "highlight",
+      "title": "Penawaran Terbatas Waktu",
+      "rationale": "Script menekankan bahwa penawaran hanya berlaku pada periode tertentu (limited time offer). Penekanan pada urgensi ini dapat meningkatkan konversi penjualan dan membantu nasabah mengambil keputusan tepat waktu.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_2d12a384",
+      "type": "glossary",
+      "title": "Deepening & VRM",
+      "rationale": "Nama tim Deepening & VRM digunakan dalam dokumen, namun istilah ini tidak umum bagi nasabah. Penjelasan singkat tentang fungsi dan peran tim akan meningkatkan pemahaman konteks.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:DEEPENING & VRM",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    }
+  ],
+  "final_candidates": [
+    {
+      "cand_id": "cand_glossary_af7acf78",
+      "type": "glossary",
+      "title": "SBR014",
+      "rationale": "SBR014 adalah istilah produk keuangan spesifik (Savings Bond Ritel seri 014) yang kemungkinan belum dipahami oleh nasabah awam. Penjelasan detail akan membantu nasabah memahami karakteristik, manfaat, dan risiko produk ini.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_0"
+      ],
+      "pages": [
+        4,
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:SBR014",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_6546b086",
+      "type": "glossary",
+      "title": "IPO (Initial Public Offering)",
+      "rationale": "Istilah IPO digunakan dalam konteks program cashback dan promo, namun banyak nasabah ritel yang belum memahami maknanya dalam konteks obligasi pemerintah. Penjelasan akan mengurangi kebingungan.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:IPO (INITIAL PUBLIC OFFERING)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_08dd733c",
+      "type": "glossary",
+      "title": "Cashback",
+      "rationale": "Cashback adalah istilah promosi yang sering digunakan, namun mekanisme, syarat, dan ketentuannya bisa berbeda-beda. Penjelasan akan membantu nasabah memahami manfaat dan cara mendapatkannya pada program ini.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:CASHBACK",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_b3aa3b51",
+      "type": "glossary",
+      "title": "TD Online (TDO)",
+      "rationale": "TD Online adalah produk keuangan yang ditawarkan sebagai penawaran kedua. Penjelasan istilah ini penting agar nasabah memahami perbedaan dan keunggulan dibandingkan produk lain.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:TD ONLINE (TDO)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_6f4e9fe6",
+      "type": "glossary",
+      "title": "UU PDP (Undang-Undang Perlindungan Data Pribadi)",
+      "rationale": "UU PDP adalah regulasi penting yang menjadi dasar mandatory introduction dalam script. Penjelasan singkat akan meningkatkan kepercayaan dan pemahaman nasabah terkait perlindungan data mereka.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:UU PDP (UNDANG-UNDANG PERLINDUNGAN DATA PRIBADI)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_9b9d8c20",
+      "type": "highlight",
+      "title": "Periode Penawaran SBR014",
+      "rationale": "Periode penawaran SBR014 disebutkan secara spesifik (14-30 Juli 2025 dan 22 Jul – 07 Aug 2025). Penekanan pada tanggal penting ini akan membantu nasabah tidak melewatkan kesempatan investasi.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_1",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0"
+      ],
+      "pages": [
+        2,
+        4,
+        6
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_1:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_d9beb013",
+      "type": "highlight",
+      "title": "Promo Cashback SBR014",
+      "rationale": "Adanya program cashback dan tambahan cashback merupakan nilai jual utama yang perlu disorot agar nasabah memahami benefit finansial yang bisa didapatkan dari pembelian SBR014.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_faq_cfe11576",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan cashback pada program SBR014?",
+      "rationale": "Nasabah kemungkinan besar akan bertanya tentang mekanisme dan syarat mendapatkan cashback. FAQ ini akan mengurangi pertanyaan berulang dan meningkatkan transparansi.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan cashback pada program SBR014?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_faq_0dfab0d5",
+      "type": "faq",
+      "title": "Apa risiko berinvestasi di SBR014?",
+      "rationale": "Nasabah awam seringkali hanya fokus pada benefit tanpa memahami risiko. FAQ ini penting untuk edukasi dan perlindungan konsumen.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa risiko berinvestasi di SBR014?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_faq_884e1d70",
+      "type": "faq",
+      "title": "Apa perbedaan antara SBR014 dan TD Online?",
+      "rationale": "Karena kedua produk ditawarkan dalam satu script, nasabah perlu memahami perbedaan utama agar dapat memilih produk yang paling sesuai dengan kebutuhan mereka.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa perbedaan antara SBR014 dan TD Online?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_caption_a9dde042",
+      "type": "caption",
+      "title": "Tabel Detail Product IPO SBR014-T2 dan SBR014-T4",
+      "rationale": "Tabel pada halaman 6 memuat detail teknis dua seri SBR014 (T2 dan T4) yang kompleks. Caption akan membantu pembaca memahami isi tabel secara ringkas dan jelas.",
+      "source_unit_ids": [
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_pb_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_caption_2564124a",
+      "type": "caption",
+      "title": "Tabel Ketentuan Program Cashback",
+      "rationale": "Tabel pada halaman 4 berisi ketentuan program cashback yang cukup detail. Caption akan membantu pembaca memahami struktur dan isi tabel dengan cepat.",
+      "source_unit_ids": [
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_41db8d8e",
+      "type": "highlight",
+      "title": "Mandatory Introduction terkait UU PDP",
+      "rationale": "Bagian mandatory introduction terkait UU PDP adalah kewajiban hukum dan penting untuk membangun kepercayaan nasabah. Penekanan pada bagian ini akan meningkatkan kepatuhan dan awareness.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_d8f9925c",
+      "type": "highlight",
+      "title": "Penawaran Terbatas Waktu",
+      "rationale": "Script menekankan bahwa penawaran hanya berlaku pada periode tertentu (limited time offer). Penekanan pada urgensi ini dapat meningkatkan konversi penjualan dan membantu nasabah mengambil keputusan tepat waktu.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_2d12a384",
+      "type": "glossary",
+      "title": "Deepening & VRM",
+      "rationale": "Nama tim Deepening & VRM digunakan dalam dokumen, namun istilah ini tidak umum bagi nasabah. Penjelasan singkat tentang fungsi dan peran tim akan meningkatkan pemahaman konteks.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:DEEPENING & VRM",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    }
+  ],
+  "selected_candidates": [
+    {
+      "cand_id": "cand_faq_0dfab0d5",
+      "type": "faq",
+      "title": "Apa risiko berinvestasi di SBR014?",
+      "rationale": "Nasabah awam seringkali hanya fokus pada benefit tanpa memahami risiko. FAQ ini penting untuk edukasi dan perlindungan konsumen.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa risiko berinvestasi di SBR014?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_af7acf78",
+      "type": "glossary",
+      "title": "SBR014",
+      "rationale": "SBR014 adalah istilah produk keuangan spesifik (Savings Bond Ritel seri 014) yang kemungkinan belum dipahami oleh nasabah awam. Penjelasan detail akan membantu nasabah memahami karakteristik, manfaat, dan risiko produk ini.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_0"
+      ],
+      "pages": [
+        4,
+        6
+      ],
+      "section": "General",
+      "dup_key": "TERM:SBR014",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_6546b086",
+      "type": "glossary",
+      "title": "IPO (Initial Public Offering)",
+      "rationale": "Istilah IPO digunakan dalam konteks program cashback dan promo, namun banyak nasabah ritel yang belum memahami maknanya dalam konteks obligasi pemerintah. Penjelasan akan mengurangi kebingungan.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:IPO (INITIAL PUBLIC OFFERING)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_08dd733c",
+      "type": "glossary",
+      "title": "Cashback",
+      "rationale": "Cashback adalah istilah promosi yang sering digunakan, namun mekanisme, syarat, dan ketentuannya bisa berbeda-beda. Penjelasan akan membantu nasabah memahami manfaat dan cara mendapatkannya pada program ini.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "TERM:CASHBACK",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_b3aa3b51",
+      "type": "glossary",
+      "title": "TD Online (TDO)",
+      "rationale": "TD Online adalah produk keuangan yang ditawarkan sebagai penawaran kedua. Penjelasan istilah ini penting agar nasabah memahami perbedaan dan keunggulan dibandingkan produk lain.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:TD ONLINE (TDO)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_6f4e9fe6",
+      "type": "glossary",
+      "title": "UU PDP (Undang-Undang Perlindungan Data Pribadi)",
+      "rationale": "UU PDP adalah regulasi penting yang menjadi dasar mandatory introduction dalam script. Penjelasan singkat akan meningkatkan kepercayaan dan pemahaman nasabah terkait perlindungan data mereka.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "TERM:UU PDP (UNDANG-UNDANG PERLINDUNGAN DATA PRIBADI)",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_9b9d8c20",
+      "type": "highlight",
+      "title": "Periode Penawaran SBR014",
+      "rationale": "Periode penawaran SBR014 disebutkan secara spesifik (14-30 Juli 2025 dan 22 Jul – 07 Aug 2025). Penekanan pada tanggal penting ini akan membantu nasabah tidak melewatkan kesempatan investasi.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_1",
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0"
+      ],
+      "pages": [
+        2,
+        4,
+        6
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_1:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "global",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_glossary_2d12a384",
+      "type": "glossary",
+      "title": "Deepening & VRM",
+      "rationale": "Nama tim Deepening & VRM digunakan dalam dokumen, namun istilah ini tidak umum bagi nasabah. Penjelasan singkat tentang fungsi dan peran tim akan meningkatkan pemahaman konteks.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:DEEPENING & VRM",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_d9beb013",
+      "type": "highlight",
+      "title": "Promo Cashback SBR014",
+      "rationale": "Adanya program cashback dan tambahan cashback merupakan nilai jual utama yang perlu disorot agar nasabah memahami benefit finansial yang bisa didapatkan dari pembelian SBR014.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2",
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_41db8d8e",
+      "type": "highlight",
+      "title": "Mandatory Introduction terkait UU PDP",
+      "rationale": "Bagian mandatory introduction terkait UU PDP adalah kewajiban hukum dan penting untuk membangun kepercayaan nasabah. Penekanan pada bagian ini akan meningkatkan kepatuhan dan awareness.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1"
+      ],
+      "pages": [
+        5
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p5_para_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_highlight_d8f9925c",
+      "type": "highlight",
+      "title": "Penawaran Terbatas Waktu",
+      "rationale": "Script menekankan bahwa penawaran hanya berlaku pada periode tertentu (limited time offer). Penekanan pada urgensi ini dapat meningkatkan konversi penjualan dan membantu nasabah mengambil keputusan tepat waktu.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0"
+      ],
+      "pages": [
+        2
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_e9993d54-1af3-4129-9b8e-056e964e1c66_p2_para_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_faq_cfe11576",
+      "type": "faq",
+      "title": "Bagaimana cara mendapatkan cashback pada program SBR014?",
+      "rationale": "Nasabah kemungkinan besar akan bertanya tentang mekanisme dan syarat mendapatkan cashback. FAQ ini akan mengurangi pertanyaan berulang dan meningkatkan transparansi.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_para_2"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Bagaimana cara mendapatkan cashback pada program SBR014?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_faq_884e1d70",
+      "type": "faq",
+      "title": "Apa perbedaan antara SBR014 dan TD Online?",
+      "rationale": "Karena kedua produk ditawarkan dalam satu script, nasabah perlu memahami perbedaan utama agar dapat memilih produk yang paling sesuai dengan kebutuhan mereka.",
+      "source_unit_ids": [
+        "u_e9993d54-1af3-4129-9b8e-056e964e1c66_p1_para_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa perbedaan antara SBR014 dan TD Online?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_caption_a9dde042",
+      "type": "caption",
+      "title": "Tabel Detail Product IPO SBR014-T2 dan SBR014-T4",
+      "rationale": "Tabel pada halaman 6 memuat detail teknis dua seri SBR014 (T2 dan T4) yang kompleks. Caption akan membantu pembaca memahami isi tabel secara ringkas dan jelas.",
+      "source_unit_ids": [
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_pb_0"
+      ],
+      "pages": [
+        6
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p6_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    },
+    {
+      "cand_id": "cand_caption_2564124a",
+      "type": "caption",
+      "title": "Tabel Ketentuan Program Cashback",
+      "rationale": "Tabel pada halaman 4 berisi ketentuan program cashback yang cukup detail. Caption akan membantu pembaca memahami struktur dan isi tabel dengan cepat.",
+      "source_unit_ids": [
+        "u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1"
+      ],
+      "pages": [
+        4
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_e9993d54-1af3-4129-9b8e-056e964e1c66_p4_pb_1",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_e9993d54-1af3-4129-9b8e-056e964e1c66_0_ab1371d5"
+    }
+  ],
+  "metrics": {
+    "total_windows": 1,
+    "total_candidates": 15,
+    "unique_candidates": 15,
+    "selected_count": 15
+  }
+}

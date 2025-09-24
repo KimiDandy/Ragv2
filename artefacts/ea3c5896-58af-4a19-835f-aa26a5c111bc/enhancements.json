@@ -1,0 +1,514 @@
+{
+  "doc_id": "ea3c5896-58af-4a19-835f-aa26a5c111bc",
+  "run_id": "enh_2025-09-24T10:14:03.689387",
+  "windows": [
+    {
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204",
+      "doc_id": "ea3c5896-58af-4a19-835f-aa26a5c111bc",
+      "window_index": 0,
+      "token_span": [
+        0,
+        2358
+      ],
+      "pages": [
+        1
+      ],
+      "unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0",
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0",
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_1",
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_2",
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_1",
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_3",
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_2",
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_4",
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_5"
+      ],
+      "text_preview": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  | Global Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif P...",
+      "total_tokens": 2358
+    }
+  ],
+  "candidates": [
+    {
+      "cand_id": "cand_glossary_d8a1399f",
+      "type": "glossary",
+      "title": "BI Rate",
+      "rationale": "BI Rate adalah suku bunga acuan yang ditetapkan oleh Bank Indonesia dan sangat berpengaruh terhadap suku bunga perbankan serta perekonomian nasional. Banyak pembaca awam belum memahami peran dan dampaknya.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:BI RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_glossary_3c39b88f",
+      "type": "glossary",
+      "title": "Fed Rate",
+      "rationale": "Fed Rate adalah suku bunga acuan yang ditetapkan oleh Federal Reserve Amerika Serikat, mempengaruhi pasar keuangan global dan nilai tukar. Istilah ini penting untuk dipahami dalam konteks pengaruh global terhadap ekonomi Indonesia.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:FED RATE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_highlight_87b447e6",
+      "type": "highlight",
+      "title": "Perbandingan BI Rate dan Fed Rate",
+      "rationale": "Perbedaan antara BI Rate (5,75%) dan Fed Rate (4,5%) menunjukkan kebijakan moneter Indonesia yang lebih ketat dibandingkan AS, yang dapat mempengaruhi arus modal dan nilai tukar rupiah.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_caption_31bb85c5",
+      "type": "caption",
+      "title": "Penjelasan Tabel Interest Rates",
+      "rationale": "Tabel ini membandingkan suku bunga acuan Indonesia (BI Rate) dan Amerika Serikat (Fed Rate), yang merupakan indikator utama kebijakan moneter kedua negara dan berdampak pada pasar keuangan domestik dan global.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "CAPTION:u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_glossary_38ff4bca",
+      "type": "glossary",
+      "title": "Dow Jones Industrial Average",
+      "rationale": "Dow Jones adalah indeks saham utama di Amerika Serikat yang sering dijadikan indikator kesehatan ekonomi AS. Banyak pembaca Indonesia belum familiar dengan komposisi dan maknanya.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:DOW JONES INDUSTRIAL AVERAGE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_glossary_0f68b090",
+      "type": "glossary",
+      "title": "S&P 500",
+      "rationale": "S&P 500 adalah indeks saham yang terdiri dari 500 perusahaan besar di AS dan menjadi acuan utama kinerja pasar saham global. Penjelasan diperlukan untuk pembaca awam.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:S&P 500",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_glossary_aa5a90cf",
+      "type": "glossary",
+      "title": "Nasdaq Composite",
+      "rationale": "Nasdaq Composite adalah indeks saham yang didominasi oleh perusahaan teknologi di AS. Istilah ini penting untuk dipahami karena sering digunakan dalam analisis pasar global.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "TERM:NASDAQ COMPOSITE",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_highlight_c40b09ac",
+      "type": "highlight",
+      "title": "Kinerja Indeks Saham AS",
+      "rationale": "Dow Jones turun 0,37%, S&P 500 turun 0,01%, dan Nasdaq naik 0,41% pada hari Jumat, namun secara mingguan ketiganya mencatat kenaikan. Ini menunjukkan volatilitas harian namun tren mingguan positif, penting untuk investor global.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "HIGHLIGHT:u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_faq_d74a19d7",
+      "type": "faq",
+      "title": "Mengapa perbedaan BI Rate dan Fed Rate penting bagi Indonesia?",
+      "rationale": "Pembaca mungkin bertanya mengapa perbedaan suku bunga acuan antara Indonesia dan AS menjadi perhatian. Penjelasan ini penting untuk memahami dampaknya terhadap arus modal, nilai tukar, dan kebijakan moneter nasional.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0",
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Mengapa perbedaan BI Rate dan Fed Rate penting bagi Indonesia?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    },
+    {
+      "cand_id": "cand_faq_07cda917",
+      "type": "faq",
+      "title": "Apa dampak pergerakan indeks saham AS terhadap pasar Indonesia?",
+      "rationale": "Banyak pembaca ingin tahu bagaimana perubahan indeks Dow Jones, S&P 500, dan Nasdaq mempengaruhi IHSG dan pasar modal Indonesia. Penjelasan ini akan membantu memahami keterkaitan pasar global.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "dup_key": "FAQ:Apa dampak pergerakan indeks saham AS terhadap pasar Indonesia?",
+      "priority": 0.5,
+      "confidence": 0.8,
+      "suggested_placement": "page",
+      "window_id": "w_ea3c5896-58af-4a19-835f-aa26a5c111bc_0_f0ea8204"
+    }
+  ],
+  "items": [
+    {
+      "enh_id": "enh_glossary_44fb5432",
+      "cand_id": "cand_glossary_d8a1399f",
+      "type": "glossary",
+      "title": "BI Rate",
+      "text": "BI Rate adalah tingkat suku bunga acuan yang ditetapkan oleh Bank Indonesia sebagai instrumen utama kebijakan moneter untuk mengendalikan inflasi dan stabilitas nilai tukar rupiah.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_highlight_39886d70",
+      "cand_id": "cand_highlight_87b447e6",
+      "type": "highlight",
+      "title": "Perbandingan BI Rate dan Fed Rate",
+      "text": "Perbandingan BI Rate sebesar 5,75% dan Fed Rate sebesar 4,5% menunjukkan bahwa suku bunga acuan di Indonesia lebih tinggi dibandingkan Amerika Serikat pada periode yang sama.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": {
+        "extracted_numbers": [
+          5.75,
+          4.5,
+          75.0
+        ],
+        "formatted_numbers": [
+          "Rp6",
+          "Rp4",
+          "Rp75"
+        ],
+        "change": {
+          "old_value": 5.75,
+          "new_value": 75.0,
+          "absolute_change": 69.25,
+          "percent_change": 1204.35
+        }
+      },
+      "confidence": 0.8,
+      "review_flags": [
+        "Many terms not in source: perbandingan, sebesar, sebesar",
+        "Many numbers unverified: [5.0, 575.0]"
+      ],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_f71966aa",
+      "cand_id": "cand_glossary_3c39b88f",
+      "type": "glossary",
+      "title": "Fed Rate",
+      "text": "Fed Rate adalah suku bunga acuan yang ditetapkan oleh Federal Reserve (bank sentral Amerika Serikat) dan digunakan sebagai referensi utama dalam penentuan suku bunga pinjaman antar bank di AS.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_9d7533b0",
+      "cand_id": "cand_glossary_38ff4bca",
+      "type": "glossary",
+      "title": "Dow Jones Industrial Average",
+      "text": "Dow Jones Industrial Average adalah indeks pasar saham yang terdiri dari 30 perusahaan besar di Amerika Serikat dan digunakan sebagai indikator utama kinerja pasar saham AS.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_63043a8e",
+      "cand_id": "cand_glossary_0f68b090",
+      "type": "glossary",
+      "title": "S&P 500",
+      "text": "S&P 500 adalah indeks pasar saham yang mencakup 500 perusahaan besar di Amerika Serikat dan sering dijadikan acuan untuk mengukur kinerja pasar saham secara keseluruhan.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_glossary_21736af2",
+      "cand_id": "cand_glossary_aa5a90cf",
+      "type": "glossary",
+      "title": "Nasdaq Composite",
+      "text": "Nasdaq Composite adalah indeks pasar saham yang mencakup lebih dari 3.000 perusahaan, terutama di sektor teknologi, yang terdaftar di bursa Nasdaq Amerika Serikat.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_faq_23a28878",
+      "cand_id": "cand_faq_d74a19d7",
+      "type": "faq",
+      "title": "Mengapa perbedaan BI Rate dan Fed Rate penting bagi Indonesia?",
+      "text": "Mengapa perbedaan BI Rate dan Fed Rate penting bagi Indonesia? Perbedaan antara BI Rate sebesar 5,75% dan Fed Rate sebesar 4,5% mempengaruhi arus modal asing, nilai tukar rupiah, serta kebijakan moneter di Indonesia.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0",
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [
+        "Many terms not in source: mengapa, perbedaan, penting"
+      ],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_highlight_e5c0c021",
+      "cand_id": "cand_highlight_c40b09ac",
+      "type": "highlight",
+      "title": "Kinerja Indeks Saham AS",
+      "text": "Tiga indeks utama saham Amerika Serikat ditutup bervariasi, dengan Dow Jones turun 0,37% dan S&P 500 turun 0,01%. Pergerakan ini mencerminkan sentimen pasar global yang dapat memengaruhi pasar keuangan di negara lain, termasuk Indonesia.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": {
+        "extracted_numbers": [
+          37.0,
+          1.0,
+          41.0,
+          44.546,
+          6.114,
+          20.026,
+          16535.0,
+          37.0,
+          44.0,
+          54608.0,
+          500.0,
+          1.0,
+          11463.0,
+          41.0,
+          20.0,
+          2677.0
+        ],
+        "formatted_numbers": [
+          "Rp37",
+          "Rp1",
+          "Rp41",
+          "Rp45",
+          "Rp6",
+          "Rp20",
+          "Rp16,535",
+          "Rp37",
+          "Rp44",
+          "Rp54,608",
+          "Rp500",
+          "Rp1",
+          "Rp11,463",
+          "Rp41",
+          "Rp20",
+          "Rp2,677"
+        ],
+        "change": {
+          "old_value": 37.0,
+          "new_value": 2677.0,
+          "absolute_change": 2640.0,
+          "percent_change": 7135.14
+        }
+      },
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_faq_d3d2d736",
+      "cand_id": "cand_faq_07cda917",
+      "type": "faq",
+      "title": "Apa dampak pergerakan indeks saham AS terhadap pasar Indonesia?",
+      "text": "Apa dampak pergerakan indeks saham AS terhadap pasar Indonesia? Pergerakan indeks saham AS sering menjadi acuan bagi investor global, sehingga fluktuasi di pasar AS dapat memicu reaksi di pasar saham Indonesia, baik dalam bentuk aliran modal maupun perubahan harga saham.",
+      "source_unit_ids": [
+        "u_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_left_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [],
+      "model": "gpt-4.1",
+      "usage": null
+    },
+    {
+      "enh_id": "enh_caption_cc56dc5a",
+      "cand_id": "cand_caption_31bb85c5",
+      "type": "caption",
+      "title": "Penjelasan Tabel Interest Rates",
+      "text": "Tabel Suku Bunga Acuan menampilkan BI Rate sebesar 5,75% dan Fed Rate sebesar 4,5%, memberikan gambaran perbandingan tingkat suku bunga antara Indonesia dan Amerika Serikat.",
+      "source_unit_ids": [
+        "u_t_ea3c5896-58af-4a19-835f-aa26a5c111bc_p1_pb_0"
+      ],
+      "pages": [
+        1
+      ],
+      "section": "General",
+      "as_of_date": null,
+      "derived": true,
+      "server_calcs": null,
+      "confidence": 0.8,
+      "review_flags": [
+        "Many terms not in source: menampilkan, sebesar, sebesar",
+        "Many numbers unverified: [5.0, 575.0]"
+      ],
+      "model": "gpt-4.1",
+      "usage": null
+    }
+  ],
+  "metrics": {
+    "planning": {
+      "total_windows": 1,
+      "total_candidates": 10,
+      "unique_candidates": 10,
+      "selected_count": 10
+    },
+    "generation": {
+      "total_candidates": 10,
+      "total_batches": 2,
+      "total_items": 10,
+      "validation_pass_rate": 1.0,
+      "usage": {
+        "prompt_tokens": 2228,
+        "completion_tokens": 484
+      }
+    },
+    "version": "v2.0"
+  }
+}
