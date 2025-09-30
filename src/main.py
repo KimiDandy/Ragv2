@@ -13,6 +13,7 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from loguru import logger
 
 from src.api.routes import router as api_router
+from src.api.namespace_routes import router as namespace_router
 from src.core.config import (
     EMBEDDING_MODEL,
     CHAT_MODEL,
@@ -87,11 +88,19 @@ app.add_middleware(
 )
 
 app.include_router(api_router)
+app.include_router(namespace_router)
 
 @app.get("/")
 async def read_root(request: Request):
     from fastapi.responses import FileResponse
     return FileResponse('index.html')
+
+
+@app.get("/batch_upload.html")
+async def batch_upload_page(request: Request):
+    """Serve the batch upload page."""
+    from fastapi.responses import FileResponse
+    return FileResponse('batch_upload.html')
 
 
 if __name__ == "__main__":

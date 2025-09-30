@@ -25,6 +25,7 @@ def vectorize_and_store(
     markdown_file: str,
     version: str,
     embeddings: OpenAIEmbeddings | None = None,
+    namespace: str = "",
 ) -> bool:
     """
     Melakukan vektorisasi pada file markdown dan menyimpannya ke dalam Pinecone.
@@ -40,6 +41,7 @@ def vectorize_and_store(
         markdown_file (str): Nama file markdown yang akan diproses (misalnya, 'markdown_v2.md').
         version (str): Versi dokumen ('v1' atau 'v2') untuk metadata.
         embeddings (OpenAIEmbeddings | None): Fungsi embedding yang sudah diinisialisasi.
+        namespace (str): Namespace Pinecone untuk isolasi data (default: "" untuk testing).
 
     Returns:
         bool: True jika berhasil, False jika terjadi kesalahan.
@@ -71,18 +73,19 @@ def vectorize_and_store(
         logger.info("Menginisialisasi fungsi embedding OpenAI...")
         embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
 
-    # Clean up old entries for this document and version
+    # Clean up old entries for this document and version in the specified namespace
     try:
         # Delete by metadata filter (more efficient for Pinecone v3+)
         pinecone_index.delete(
             filter={
                 "source_document": doc_id,
                 "version": version
-            }
+            },
+            namespace=namespace
         )
-        logger.info(f"Membersihkan entri lama untuk doc={doc_id}, version={version}")
+        logger.info(f"Membersihkan entri lama untuk doc={doc_id}, version={version}, namespace='{namespace}'")
     except Exception as e:
-        logger.warning(f"Gagal menghapus entri lama untuk doc={doc_id}, version={version}: {e}")
+        logger.warning(f"Gagal menghapus entri lama untuk doc={doc_id}, version={version}, namespace='{namespace}': {e}")
 
     segments = []
     seg_path = Path(doc_output_dir) / "segments.json"
@@ -143,7 +146,13 @@ def vectorize_and_store(
     for i, (chunk, (start, end)) in enumerate(zip(chunks, spans)):
         chunk = chunk or ""
 
-        md = {"source_document": doc_id, "version": version, "char_start": start, "char_end": end}
+        md = {
+            "source_document": doc_id,
+            "version": version,
+            "char_start": start,
+            "char_end": end,
+            "namespace": namespace
+        }
 
         if version == "v1" and segments:
             overlaps = [
@@ -164,7 +173,7 @@ def vectorize_and_store(
         metadatas.append(_sanitize_metadata(md))
         ids.append(f"{doc_id}_{version}_{i}")
 
-    logger.info(f"Menambahkan {len(texts)} potongan teks ke Pinecone index (versi: {version})...")
+    logger.info(f"Menambahkan {len(texts)} potongan teks ke Pinecone index (versi: {version}, namespace: '{namespace}')...")
     
     # Track token usage untuk embeddings
     total_text = " ".join(texts)
@@ -186,11 +195,11 @@ def vectorize_and_store(
             }
         })
     
-    # Upsert to Pinecone in batches
+    # Upsert to Pinecone in batches with namespace support
     batch_size = 100
     for i in range(0, len(vectors_to_upsert), batch_size):
         batch = vectors_to_upsert[i:i + batch_size]
-        pinecone_index.upsert(vectors=batch)
+        pinecone_index.upsert(vectors=batch, namespace=namespace)
         logger.info(f"Uploaded batch {i//batch_size + 1}/{(len(vectors_to_upsert) + batch_size - 1)//batch_size}")
     
     # Log embedding tokens
@@ -202,11 +211,12 @@ def vectorize_and_store(
         phase="phase_4",
         doc_id=doc_id,
         version=version,
+        namespace=namespace,
         num_chunks=len(texts),
         total_chars=len(total_text)
     )
 
-    logger.info(f"Fase 4 selesai. Dokumen {doc_id} (versi: {version}) telah divektorisasi dan disimpan ke Pinecone.")
+    logger.info(f"Fase 4 selesai. Dokumen {doc_id} (versi: {version}) telah divektorisasi dan disimpan ke Pinecone namespace '{namespace}'.")
     return True
 
 if __name__ == '__main__':
