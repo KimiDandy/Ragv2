@@ -14,29 +14,31 @@ load_dotenv()
 class EnhancementConfig(BaseSettings):
     """Configuration for the Enhancement system."""
     
-    # Window configuration for planning
-    # Lebih besar agar dokumen kecil tidak terbelah jadi 2 window tanpa perlu
-    window_tokens: int = Field(default=8000, env='ENH_WINDOW_TOKENS')
-    window_overlap_tokens: int = Field(default=400, env='ENH_WINDOW_OVERLAP_TOKENS')
+    # Window configuration optimized for GPT-4.1 (reduced for JSON stability)
+    # Smaller windows for better JSON output consistency
+    window_tokens: int = Field(default=12000, env='ENH_WINDOW_TOKENS')  # Reduced from 32k to 12k
+    window_overlap_tokens: int = Field(default=1500, env='ENH_WINDOW_OVERLAP_TOKENS')
     
-    # Planning configuration
     planner_parallelism: int = Field(default=1, env='ENH_PLANNER_PARALLELISM')
     planner_model: str = Field(default="gpt-4.1", env='ENH_PLANNER_MODEL')
-    max_candidates_per_window: int = Field(default=30, env='ENH_MAX_CANDIDATES_PER_WINDOW')
+    max_candidates_per_window: int = Field(default=0, env='ENH_MAX_CANDIDATES_PER_WINDOW')  # 0 = no limit
     
-    # Generation configuration
-    gen_microbatch_size: int = Field(default=6, env='ENH_GEN_MICROBATCH_SIZE')
+    # Generation configuration - MAXIMIZE GPT-4.1 OUTPUT
+    gen_microbatch_size: int = Field(default=6, env='ENH_GEN_MICROBATCH_SIZE')  # Quality over quantity
     gen_model: str = Field(default="gpt-4.1", env='ENH_GEN_MODEL')
-    # Target total item per dokumen (akan dipangkas oleh dedup). Naikkan untuk dokumen kaya informasi
-    target_items: int = Field(default=120, env='ENH_TARGET_ITEMS')
-    max_generation_tokens: int = Field(default=150, env='ENH_MAX_GEN_TOKENS')
+    target_items: int = Field(default=0, env='ENH_TARGET_ITEMS')  # 0 = no artificial limit
+    max_generation_tokens: int = Field(default=3000, env='ENH_MAX_GEN_TOKENS')  # Safe limit for GPT-4.1
     
-    # Enhancement types toggles
-    enable_glossary: bool = Field(default=True, env='ENH_ENABLE_GLOSSARY')
-    enable_highlight: bool = Field(default=True, env='ENH_ENABLE_HIGHLIGHT')
-    enable_faq: bool = Field(default=True, env='ENH_ENABLE_FAQ')
-    enable_caption: bool = Field(default=True, env='ENH_ENABLE_CAPTION')
-    enable_ondemand: bool = Field(default=True, env='ENH_ENABLE_ONDEMAND')
+    # Enhancement types toggles - PRIORITIZE IMPLICIT INFO
+    enable_formula_discovery: bool = Field(default=True, env='ENH_ENABLE_FORMULA')
+    enable_scenario_analysis: bool = Field(default=True, env='ENH_ENABLE_SCENARIO')
+    enable_pattern_recognition: bool = Field(default=True, env='ENH_ENABLE_PATTERN')
+    enable_projection: bool = Field(default=True, env='ENH_ENABLE_PROJECTION')
+    enable_requirement_synthesis: bool = Field(default=True, env='ENH_ENABLE_REQUIREMENT')
+    # Legacy (for backward compatibility)
+    enable_glossary: bool = Field(default=False, env='ENH_ENABLE_GLOSSARY')
+    enable_highlight: bool = Field(default=False, env='ENH_ENABLE_HIGHLIGHT')
+    enable_faq: bool = Field(default=False, env='ENH_ENABLE_FAQ')
     
     # Embedding configuration
     embedding_model: str = Field(default="text-embedding-3-small", env='ENH_EMBEDDING_MODEL')
@@ -52,6 +54,10 @@ class EnhancementConfig(BaseSettings):
     openai_max_retries: int = Field(default=3, env='ENH_OPENAI_MAX_RETRIES')
     openai_timeout: int = Field(default=60, env='ENH_OPENAI_TIMEOUT')
     
+    # Pinecone configuration
+    pinecone_api_key: str = Field(env='PINECONE_API_KEY')
+    pinecone_index_name: str = Field(env='PINECONE_INDEX_NAME')
+    
     # Rate limiting
     requests_per_second: float = Field(default=2.0, env='ENH_REQUESTS_PER_SECOND')
     
@@ -59,15 +65,10 @@ class EnhancementConfig(BaseSettings):
     cache_dir: str = Field(default="./cache/enhancement", env='ENH_CACHE_DIR')
     artifacts_dir: str = Field(default="./artefacts", env='ENH_ARTIFACTS_DIR')
     
-    # Priority terms for financial/insurance domain
-    priority_terms: List[str] = Field(
-        default=[
-            "premi", "polis", "klaim", "pengecualian", "underwriting",
-            "tenor", "yield", "bps", "bunga", "suku bunga", "investasi",
-            "pertanggungan", "manfaat", "risiko", "asuransi", "nasabah",
-            "deposito", "tabungan", "giro", "kredit", "dana", "valas",
-            "OJK", "Bank Indonesia", "BI", "BPJS", "LPS"
-        ]
+    # Universal priority indicators (not domain-specific)
+    priority_indicators: List[str] = Field(
+        default=[],  # Empty by default - let system detect from content
+        description="Dynamic list populated based on document analysis"
     )
     
     # Numeric calculation settings
@@ -97,4 +98,5 @@ class EnhancementConfig(BaseSettings):
         data = self.dict()
         # Remove sensitive keys
         data.pop('openai_api_key', None)
+        data.pop('pinecone_api_key', None)
         return data

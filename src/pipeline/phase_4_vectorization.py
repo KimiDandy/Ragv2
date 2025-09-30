@@ -1,16 +1,18 @@
 from pathlib import Path
 import json
+import uuid
+from typing import List, Dict, Any
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
-from langchain_chroma import Chroma
-import chromadb
+from langchain_pinecone import PineconeVectorStore
+from pinecone import Pinecone
 from loguru import logger
 
 from ..core.config import (
     EMBEDDING_MODEL,
-    CHROMA_COLLECTION,
+    PINECONE_API_KEY,
+    PINECONE_INDEX_NAME,
     PIPELINE_ARTEFACTS_DIR,
-    CHROMA_DB_PATH
 )
 from ..obs.token_ledger import log_tokens
 from ..obs.token_count import count_tokens
@@ -19,22 +21,22 @@ from ..utils.doc_meta import get_markdown_relative_path
 
 def vectorize_and_store(
     doc_output_dir: str,
-    client: chromadb.Client,
+    pinecone_index,
     markdown_file: str,
     version: str,
     embeddings: OpenAIEmbeddings | None = None,
 ) -> bool:
     """
-    Melakukan vektorisasi pada file markdown dan menyimpannya ke dalam ChromaDB.
+    Melakukan vektorisasi pada file markdown dan menyimpannya ke dalam Pinecone.
 
     Fungsi ini adalah Fase 4 dari proyek Genesis-RAG.
     Fungsi ini membaca file markdown (v1 atau v2), membaginya menjadi beberapa bagian (chunks),
     membuat embedding untuk setiap chunk menggunakan OpenAI Embeddings, dan menyimpannya
-    ke dalam koleksi ChromaDB dengan metadata yang sesuai.
+    ke dalam index Pinecone dengan metadata yang sesuai.
 
     Args:
         doc_output_dir (str): Direktori output yang berisi file markdown.
-        client (chromadb.Client): Klien ChromaDB yang sudah diinisialisasi.
+        pinecone_index: Index Pinecone yang sudah diinisialisasi.
         markdown_file (str): Nama file markdown yang akan diproses (misalnya, 'markdown_v2.md').
         version (str): Versi dokumen ('v1' atau 'v2') untuk metadata.
         embeddings (OpenAIEmbeddings | None): Fungsi embedding yang sudah diinisialisasi.
@@ -69,22 +71,16 @@ def vectorize_and_store(
         logger.info("Menginisialisasi fungsi embedding OpenAI...")
         embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
 
-    collection_name = f"{CHROMA_COLLECTION}__{EMBEDDING_MODEL.replace(':','_').replace('-','_')}"
-
-    vector_store = Chroma(
-        client=client,
-        collection_name=collection_name,
-        embedding_function=embeddings,
-    )
-
+    # Clean up old entries for this document and version
     try:
-        vector_store.delete(where={
-            "$and": [
-                {"source_document": {"$eq": doc_id}},
-                {"version": {"$eq": version}},
-            ]
-        })
-        logger.info(f"Membersihkan entri lama untuk doc={doc_id}, version={version} di koleksi {collection_name}")
+        # Delete by metadata filter (more efficient for Pinecone v3+)
+        pinecone_index.delete(
+            filter={
+                "source_document": doc_id,
+                "version": version
+            }
+        )
+        logger.info(f"Membersihkan entri lama untuk doc={doc_id}, version={version}")
     except Exception as e:
         logger.warning(f"Gagal menghapus entri lama untuk doc={doc_id}, version={version}: {e}")
 
@@ -119,13 +115,19 @@ def vectorize_and_store(
         return spans
 
     def _sanitize_metadata(md: dict) -> dict:
-        """Ensure Chroma-compatible metadata: only scalars or None.
-        Lists/dicts will be JSON-serialized strings.
+        """Ensure Pinecone-compatible metadata: only scalars, lists, or None.
+        Pinecone supports string, number, boolean, and list of strings.
         """
         cleaned = {}
         for k, v in md.items():
             if isinstance(v, (str, int, float, bool)) or v is None:
                 cleaned[k] = v
+            elif isinstance(v, list):
+                # Convert list items to strings if needed
+                if all(isinstance(item, (str, int, float, bool)) for item in v):
+                    cleaned[k] = [str(item) for item in v]
+                else:
+                    cleaned[k] = json.dumps(v, ensure_ascii=False)
             else:
                 try:
                     cleaned[k] = json.dumps(v, ensure_ascii=False)
@@ -162,14 +164,34 @@ def vectorize_and_store(
         metadatas.append(_sanitize_metadata(md))
         ids.append(f"{doc_id}_{version}_{i}")
 
-    logger.info(f"Menambahkan {len(texts)} potongan teks ke vector store Chroma (versi: {version})...")
+    logger.info(f"Menambahkan {len(texts)} potongan teks ke Pinecone index (versi: {version})...")
     
     # Track token usage untuk embeddings
     total_text = " ".join(texts)
     input_tokens = count_tokens(total_text)
     
-    # Add texts ke vector store
-    vector_store.add_texts(texts=texts, metadatas=metadatas, ids=ids)
+    # Generate embeddings
+    embeddings_list = embeddings.embed_documents(texts)
+    
+    # Prepare vectors for Pinecone
+    vectors_to_upsert = []
+    for i, (text, metadata, embedding) in enumerate(zip(texts, metadatas, embeddings_list)):
+        vector_id = f"{doc_id}_{version}_{i}"
+        vectors_to_upsert.append({
+            "id": vector_id,
+            "values": embedding,
+            "metadata": {
+                **metadata,
+                "text": text  # Store the actual text content
+            }
+        })
+    
+    # Upsert to Pinecone in batches
+    batch_size = 100
+    for i in range(0, len(vectors_to_upsert), batch_size):
+        batch = vectors_to_upsert[i:i + batch_size]
+        pinecone_index.upsert(vectors=batch)
+        logger.info(f"Uploaded batch {i//batch_size + 1}/{(len(vectors_to_upsert) + batch_size - 1)//batch_size}")
     
     # Log embedding tokens
     log_tokens(
@@ -184,7 +206,7 @@ def vectorize_and_store(
         total_chars=len(total_text)
     )
 
-    logger.info(f"Fase 4 selesai. Dokumen {doc_id} (versi: {version}) telah divektorisasi dan disimpan.")
+    logger.info(f"Fase 4 selesai. Dokumen {doc_id} (versi: {version}) telah divektorisasi dan disimpan ke Pinecone.")
     return True
 
 if __name__ == '__main__':
@@ -196,8 +218,9 @@ if __name__ == '__main__':
         if not all_doc_dirs:
             logger.error(f"No document artefact directories found in '{PIPELINE_ARTEFACTS_DIR}'.")
         else:
-            logger.info(f"Running in standalone mode. Initializing ChromaDB client from path: {CHROMA_DB_PATH}...")
-            standalone_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
+            logger.info(f"Running in standalone mode. Initializing Pinecone client...")
+            pc = Pinecone(api_key=PINECONE_API_KEY)
+            pinecone_index = pc.Index(PINECONE_INDEX_NAME)
 
             latest_doc_dir = max(all_doc_dirs, key=lambda p: p.stat().st_mtime)
             doc_id = latest_doc_dir.name
@@ -210,7 +233,7 @@ if __name__ == '__main__':
             if v1_path.exists():
                 ok_v1 = vectorize_and_store(
                     doc_output_dir=str(latest_doc_dir),
-                    client=standalone_client,
+                    pinecone_index=pinecone_index,
                     markdown_file=v1_rel,
                     version="v1",
                 )
@@ -222,7 +245,7 @@ if __name__ == '__main__':
             if v2_path.exists():
                 ok_v2 = vectorize_and_store(
                     doc_output_dir=str(latest_doc_dir),
-                    client=standalone_client,
+                    pinecone_index=pinecone_index,
                     markdown_file=v2_rel,
                     version="v2",
                 )

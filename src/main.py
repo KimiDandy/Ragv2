@@ -1,32 +1,24 @@
 import uvicorn
-import time
-import asyncio
-from contextlib import asynccontextmanager
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 import sys
 import os
 from contextlib import asynccontextmanager
 
-import chromadb
-import uvicorn
+from pinecone import Pinecone
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from loguru import logger
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 
 from src.api.endpoints import router as api_router
 from src.api.enhancement_routes import router as enhancement_router
 from src.core.config import (
-    CHROMA_DB_PATH,
     EMBEDDING_MODEL,
     CHAT_MODEL,
-    CHROMA_MODE,
-    CHROMA_SERVER_HOST,
-    CHROMA_SERVER_PORT,
+    PINECONE_API_KEY,
+    PINECONE_INDEX_NAME,
     PIPELINE_ARTEFACTS_DIR,
 )
 
@@ -43,23 +35,16 @@ load_dotenv()
 async def lifespan(app: FastAPI):
     """
     Mengelola event startup dan shutdown untuk aplikasi FastAPI.
-    Fungsi ini menginisialisasi client ChromaDB dan model-model AI
+    Fungsi ini menginisialisasi client Pinecone dan model-model AI
     saat aplikasi pertama kali dijalankan untuk memastikan semua sumber daya siap pakai.
     """
     logger.info("Startup Aplikasi: Menginisialisasi semua sumber daya...")
     try:
-        # 1. Inisialisasi ChromaDB sesuai mode
-        if CHROMA_MODE == "server":
-            app.state.chroma_client = chromadb.HttpClient(host=CHROMA_SERVER_HOST, port=CHROMA_SERVER_PORT)
-            logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
-        else:
-            try:
-                app.state.chroma_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
-                logger.info(f"ChromaDB embedded diinisialisasi dari path: {CHROMA_DB_PATH}")
-            except Exception as emb_err:
-                logger.warning(f"Embedded mode gagal: {emb_err}. Mencoba HttpClient ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}...")
-                app.state.chroma_client = chromadb.HttpClient(host=CHROMA_SERVER_HOST, port=CHROMA_SERVER_PORT)
-                logger.info(f"ChromaDB HTTP client terhubung ke http://{CHROMA_SERVER_HOST}:{CHROMA_SERVER_PORT}")
+        # 1. Inisialisasi Pinecone
+        pc = Pinecone(api_key=PINECONE_API_KEY)
+        app.state.pinecone_client = pc
+        app.state.pinecone_index = pc.Index(PINECONE_INDEX_NAME)
+        logger.info(f"Pinecone client terhubung ke index: {PINECONE_INDEX_NAME}")
 
         # 2. Initialize AI models
         app.state.embedding_function = OpenAIEmbeddings(model=EMBEDDING_MODEL)
@@ -68,14 +53,16 @@ async def lifespan(app: FastAPI):
 
     except Exception as e:
         logger.critical(f"GAGAL TOTAL SAAT STARTUP! Tidak dapat menginisialisasi sumber daya. Error: {e}")
-        app.state.chroma_client = None
+        app.state.pinecone_client = None
+        app.state.pinecone_index = None
         app.state.embedding_function = None
         app.state.chat_model = None
 
     yield
 
     logger.info("Shutdown Aplikasi: Membersihkan sumber daya...")
-    app.state.chroma_client = None
+    app.state.pinecone_client = None
+    app.state.pinecone_index = None
     app.state.embedding_function = None
     app.state.chat_model = None
     logger.info("Sumber daya berhasil dibersihkan.")

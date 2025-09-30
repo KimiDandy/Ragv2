@@ -10,18 +10,14 @@ from typing import Union
 from fastapi import APIRouter, UploadFile, File, HTTPException, Request
 from pydantic import BaseModel
 from loguru import logger
-from langchain_chroma import Chroma
+from langchain_pinecone import PineconeVectorStore
 from langchain_core.prompts import PromptTemplate
 from ..core.config import (
-    CHROMA_DB_PATH,
     EMBEDDING_MODEL,
     CHAT_MODEL,
-    CHROMA_MODE,
-    CHROMA_SERVER_HOST,
-    CHROMA_SERVER_PORT,
+    PINECONE_INDEX_NAME,
     PIPELINE_ARTEFACTS_DIR,
     RAG_PROMPT_TEMPLATE,
-    CHROMA_COLLECTION,
 )
 from ..core.rate_limiter import AsyncLeakyBucket
 from ..extract.extractor_v2 import extract_pdf_to_markdown
@@ -46,20 +42,21 @@ from .models import (
     StartConversionRequest,
     ConversionProgress,
     ConversionResult,
-    EnhancementResponse,
     RetrievedSource,
+    TokenUsage,
     AskSingleVersionResponse,
     AskBothVersionsResponse,
+    EnhancementResponse,
+    QueryRequest,
 )
 
-router = APIRouter()
+# Global progress tracking for enhancement tasks
+progress_state = {}
 
-class QueryRequest(BaseModel):
-    document_id: str
-    prompt: str
-    version: str | None = "both"  # 'v1' | 'v2' | 'both'
-    trace: bool | None = False
-    k: int | None = 5
+# Global rate limiter instance
+rate_limiter = AsyncLeakyBucket(rps=2.0)  # 2 requests per second
+
+router = APIRouter()
 
 
 def _build_snippet(text: str, max_len: int = 280) -> str:
@@ -125,18 +122,16 @@ async def perform_rag_query(prompt: str, doc_id: str, version: str, request: Req
         tuple[str, list[RetrievedSource]]: Jawaban dan daftar sumber yang tepat.
     """
     try:
-        client = request.app.state.chroma_client
+        pinecone_index = request.app.state.pinecone_index
         embeddings = request.app.state.embedding_function
         llm = request.app.state.chat_model
 
-        if not all([client, embeddings, llm]):
+        if not all([pinecone_index, embeddings, llm]):
             raise ValueError("Koneksi database atau model AI tidak tersedia. Periksa log startup.")
 
-        collection_name = f"{CHROMA_COLLECTION}__{EMBEDDING_MODEL.replace(':','_').replace('-','_')}"
-        vector_store = Chroma(
-            client=client,
-            collection_name=collection_name,
-            embedding_function=embeddings,
+        vector_store = PineconeVectorStore(
+            index=pinecone_index,
+            embedding=embeddings,
         )
 
         # Buat retriever dengan filter
@@ -236,7 +231,153 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
 
 @router.post("/start-enhancement/{document_id}")
 async def start_enhancement(document_id: str):
-    """Menjalankan tugas latar belakang Enhancement V2 (windowing + map-reduce)."""
+    """Start direct single-step enhancement (NEW FAST METHOD)"""
+    
+    # Use direct enhancement method
+    doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
+    md_path = get_markdown_path(doc_dir, "v1")
+    if not md_path.exists():
+        raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan atau belum diunggah.")
+    
+    # Start direct enhancement in background
+    asyncio.create_task(_run_direct_enhancement(document_id))
+    
+    return {
+        "status": "started",
+        "message": "Direct enhancement dimulai",
+        "doc_id": document_id
+    }
+
+async def _run_direct_enhancement(document_id: str):
+    """Background task untuk direct enhancement - SINGLE STEP"""
+    try:
+        from src.enhancement.direct_enhancer_v2 import DirectEnhancerV2
+        from src.enhancement.config import EnhancementConfig
+        
+        logger.info(f"[Direct Enhancement] Starting for document: {document_id}")
+        
+        # Update progress
+        progress_state[document_id] = {
+            "status": "processing",
+            "phase": "direct_enhancement",
+            "progress": 10,
+            "message": "Memulai direct enhancement (single step)..."
+        }
+        
+        # Load required files
+        doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
+        md_path = get_markdown_path(doc_dir, "v1")
+        
+        # Load metadata
+        units_metadata_path = doc_dir / "units_metadata.json"
+        if not units_metadata_path.exists():
+            units_metadata_path = doc_dir / "meta" / "units_metadata.json"
+        
+        units_metadata = {}
+        if units_metadata_path.exists():
+            with open(units_metadata_path, 'r', encoding='utf-8') as f:
+                units_metadata = json.load(f)
+        
+        # Load tables
+        tables_path = doc_dir / "tables.json"
+        tables_data = []
+        if tables_path.exists():
+            with open(tables_path, 'r', encoding='utf-8') as f:
+                tables_data = json.load(f)
+        
+        # Update progress
+        progress_state[document_id]["progress"] = 20
+        progress_state[document_id]["message"] = "Generating enhancements directly (no planning phase)..."
+        
+        # Run direct enhancement with professional V2 implementation
+        config = EnhancementConfig()
+        enhancer = DirectEnhancerV2(config)
+        
+        enhancements = await enhancer.enhance_document(
+            doc_id=document_id,
+            markdown_path=str(md_path),
+            units_metadata=units_metadata,
+            tables_data=tables_data
+        )
+        
+        logger.info(f"[Direct Enhancement] Generated {len(enhancements)} enhancements")
+        
+        # Update progress
+        progress_state[document_id]["progress"] = 80
+        progress_state[document_id]["message"] = "Menyintesis hasil..."
+        
+        # Synthesize markdown - simple version for direct enhancement
+        enhanced_md_path = doc_dir / f"{md_path.stem}_enhanced.md"
+        
+        # Create simple enhanced markdown by appending enhancements
+        original_content = md_path.read_text(encoding='utf-8')
+        enhancement_content = "\n\n# Enhancements\n\n"
+        
+        for i, enh in enumerate(enhancements, 1):
+            enhancement_content += f"## {i}. {enh.title}\n\n"
+            enhancement_content += f"**Tipe:** {enh.enhancement_type}\n\n"
+            enhancement_content += f"{enh.generated_content}\n\n"
+            enhancement_content += "---\n\n"
+        
+        final_content = original_content + enhancement_content
+        enhanced_md_path.write_text(final_content, encoding='utf-8')
+        
+        synthesis_result = {
+            "doc_id": document_id,
+            "enhanced_path": str(enhanced_md_path),
+            "total_enhancements": len(enhancements)
+        }
+        
+        # Convert enhancements to SuggestionItem format for frontend compatibility
+        suggestions = []
+        for enh in enhancements:
+            suggestion = {
+                "id": enh.enhancement_id,
+                "type": enh.enhancement_type,
+                "original_context": enh.original_context,
+                "generated_content": enh.generated_content,
+                "confidence_score": enh.confidence_score,
+                "status": "pending",
+                "source_units": enh.source_units,
+                "source_previews": [{"content": preview} for preview in enh.source_previews]
+            }
+            suggestions.append(suggestion)
+        
+        # Save in format expected by frontend
+        with open(doc_dir / "suggestions.json", 'w', encoding='utf-8') as f:
+            json.dump(suggestions, f, ensure_ascii=False, indent=2)
+        
+        # Also save detailed enhancements for backup
+        enhancements_json = [enh.dict() for enh in enhancements]
+        with open(doc_dir / "enhancements.json", 'w', encoding='utf-8') as f:
+            json.dump(enhancements_json, f, ensure_ascii=False, indent=2)
+        
+        # Update progress - complete
+        progress_state[document_id] = {
+            "status": "completed",
+            "phase": "direct_enhancement",
+            "progress": 100,
+            "message": f"Direct enhancement selesai! {len(enhancements)} enhancements dibuat.",
+            "result": {
+                "total_enhancements": len(enhancements),
+                "synthesis": synthesis_result
+            }
+        }
+        
+        logger.info(f"[Direct Enhancement] Completed for document: {document_id}")
+        
+    except Exception as e:
+        logger.error(f"[Direct Enhancement] Failed: {e}", exc_info=True)
+        progress_state[document_id] = {
+            "status": "error",
+            "phase": "direct_enhancement",
+            "progress": 0,
+            "message": f"Error: {str(e)}"
+        }
+
+@router.post("/start-enhancement-v2/{document_id}")
+async def start_enhancement_v2(document_id: str):
+    """Menjalankan tugas latar belakang Enhancement V2 (windowing + map-reduce) - OLD METHOD."""
     doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
     md_path = get_markdown_path(doc_dir, "v1")
     if not md_path.exists():
@@ -248,9 +389,10 @@ async def start_enhancement(document_id: str):
             
             # Import Enhancement V2 components
             from ..enhancement import (
-                EnhancementConfig, EnhancementPlanner, EnhancementGenerator, 
-                MarkdownSynthesizer, EnhancementIndexer
+                EnhancementConfig, MarkdownSynthesizer, EnhancementIndexer
             )
+            from ..enhancement.planner_v2 import EnhancementPlannerV2
+            from ..enhancement.generator_v2 import EnhancementGeneratorV2
             from ..enhancement.windowing import TokenWindowManager
             
             # Initialize components
@@ -259,8 +401,8 @@ async def start_enhancement(document_id: str):
                 window_size=config.window_tokens,
                 overlap_size=config.window_overlap_tokens
             )
-            planner = EnhancementPlanner(config)
-            generator = EnhancementGenerator(config)
+            planner = EnhancementPlannerV2(config)
+            generator = EnhancementGeneratorV2(config)
             synthesizer = MarkdownSynthesizer()
             
             # Load units metadata
@@ -284,11 +426,19 @@ async def start_enhancement(document_id: str):
             )
             
             logger.info(f"[Enhancement V2] Planning enhancements for {document_id}")
-            planning_result = await planner.plan_enhancements(
+            candidates, metrics = await planner.plan_enhancements(
                 doc_id=document_id,
                 windows=windows,
                 units_metadata=units_metadata
             )
+            
+            # Convert to old format for compatibility
+            planning_result = {
+                "doc_id": document_id,
+                "windows": [w.to_dict() for w in windows],
+                "selected_candidates": [c.dict() for c in candidates],
+                "metrics": metrics
+            }
             
             # Save plan in both old and new format for compatibility
             plan_file_new = doc_dir / "enhancement_plan.json"
@@ -303,20 +453,18 @@ async def start_enhancement(document_id: str):
             
             # Step 2: Generate enhancements
             logger.info(f"[Enhancement V2] Generating content for {document_id}")
-            from ..enhancement.planner import EnhancementCandidate
+            from ..enhancement.enhancement_types_universal import AdaptiveEnhancementCandidate as EnhancementCandidate
             
-            candidate_objects = [
-                EnhancementCandidate(**c) for c in planning_result['selected_candidates']
-            ]
+            candidate_objects = candidates  # Already EnhancementCandidate objects
             
-            generation_result = await generator.generate_enhancements(
+            enhancements, gen_metrics = await generator.generate_enhancements(
                 candidates=candidate_objects,
                 units_metadata=units_metadata,
                 doc_id=document_id
             )
             
             # Step 3: Create suggestions.json for frontend compatibility
-            suggestions = _convert_to_suggestions(generation_result['items'], units_metadata)
+            suggestions = _convert_to_suggestions(enhancements, units_metadata)
             suggestions_file = doc_dir / "suggestions.json"
             with open(suggestions_file, 'w', encoding='utf-8') as f:
                 json.dump(suggestions, f, ensure_ascii=False, indent=2)
@@ -329,7 +477,7 @@ async def start_enhancement(document_id: str):
             synthesizer.synthesize(
                 doc_id=document_id,
                 markdown_v1_path=str(md_path),
-                enhancements=generation_result['items'],
+                enhancements=enhancements,
                 units_metadata=units_metadata,
                 output_path=str(markdown_v2_path)
             )
@@ -342,6 +490,12 @@ async def start_enhancement(document_id: str):
             
             # Save complete enhancements data
             enhancements_file = doc_dir / "enhancements.json"
+            # Create generation result structure
+            generation_result = {
+                'items': enhancements,
+                'metrics': gen_metrics
+            }
+            
             synthesizer.save_enhancements_json(
                 doc_id=document_id,
                 planning_result=planning_result,
@@ -406,15 +560,15 @@ async def finalize_document(request: Request, payload: CuratedSuggestions):
     if not final_path:
         raise HTTPException(status_code=500, detail="Sintesis dokumen gagal.")
 
-    chroma_client = request.app.state.chroma_client
-    if not chroma_client:
-        raise HTTPException(status_code=503, detail="Chroma client tidak tersedia.")
+    pinecone_index = request.app.state.pinecone_index
+    if not pinecone_index:
+        raise HTTPException(status_code=503, detail="Pinecone index tidak tersedia.")
 
     embeddings = request.app.state.embedding_function
     v1_rel = get_markdown_relative_path(doc_dir, "v1")
     v2_rel = get_markdown_relative_path(doc_dir, "v2")
-    ok_v1 = vectorize_and_store(str(doc_dir), chroma_client, v1_rel, "v1", embeddings=embeddings)
-    ok_v2 = vectorize_and_store(str(doc_dir), chroma_client, v2_rel, "v2", embeddings=embeddings)
+    ok_v1 = vectorize_and_store(str(doc_dir), pinecone_index, v1_rel, "v1", embeddings=embeddings)
+    ok_v2 = vectorize_and_store(str(doc_dir), pinecone_index, v2_rel, "v2", embeddings=embeddings)
     if not (ok_v1 and ok_v2):
         raise HTTPException(status_code=500, detail="Vektorisasi gagal untuk salah satu versi.")
 
@@ -504,6 +658,18 @@ async def get_progress(document_id: str):
         overall = min(1.0, w0 * p0 + w1 * p1 + w2 * p2)
         status = "complete" if p2_done else ("running" if overall > 0.0 else "idle")
 
+        # Check for direct enhancement progress
+        direct_progress = progress_state.get(document_id)
+        if direct_progress:
+            return {
+                "document_id": document_id,
+                "percent": direct_progress.get("progress", 0) / 100.0,
+                "status": direct_progress.get("status", "running"),
+                "phase": direct_progress.get("phase", "direct_enhancement"),
+                "message": direct_progress.get("message", "Processing..."),
+                "result": direct_progress.get("result", {})
+            }
+        
         return {
             "document_id": document_id,
             "percent": overall,

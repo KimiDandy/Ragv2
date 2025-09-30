@@ -72,3 +72,10 @@ class ConversionResult(BaseModel):
     markdown_content: str
     artefacts: List[str]
     metadata_path: str | None = None
+
+class QueryRequest(BaseModel):
+    document_id: str
+    prompt: str
+    version: str | None = "both"  # 'v1' | 'v2' | 'both'
+    trace: bool | None = False  
+    k: int | None = 5

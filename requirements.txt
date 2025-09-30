@@ -5,8 +5,8 @@ python-dotenv
 langchain
 langchain-community
 langchain-openai>=0.1.7
-chromadb
-langchain-chroma
+pinecone-client>=3.0.0
+langchain-pinecone
 numpy
 loguru
 openai

@@ -1,0 +1,407 @@
+[
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1_Formula_Kenaikan_Uang_Pertangg",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Kenaikan Uang Pertanggungan Tahunan dan Implikasinya pada Nilai Proteksi",
+    "original_context": "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata Uang  Rupiah  Jenis Produk  Asuransi Kematian Berjangka  Nama Penerbit  PT. Asuransi BRI Life \n\n| Col0             | Ringkasan Informasi Produk dan Layanan Versi Umum   | None                                                                         | Col3   |\n|:-----------------|:--------------------",
+    "generated_content": "Analisis mendalam terhadap fitur kenaikan Uang Pertanggungan (UP) pada Asuransi Jiwa PELITA mengungkap adanya formula pertumbuhan nilai proteksi yang tidak dijelaskan secara eksplisit. Berdasarkan data di Tabel 2 dan narasi, UP bertambah 5% setiap tahun, dengan batas maksimum 25% untuk masa asuransi 3 tahun dan 45% untuk masa asuransi 5 tahun. Formula tersembunyi yang dapat disintesis adalah: UP_tahun_n = UP_awal × (1 + 5%)^n, dengan n adalah jumlah tahun berjalan, namun dibatasi oleh plafon maksimum (25% atau 45% dari UP_awal tergantung masa asuransi). Artinya, untuk masa asuransi 3 tahun, kenaikan maksimum adalah 25% (UP_akhir = UP_awal × 1,25), sedangkan untuk 5 tahun, maksimum 45% (UP_akhir = UP_awal × 1,45). Pentingnya formula ini terletak pada proyeksi nilai klaim dan pengelolaan risiko perusahaan asuransi, serta pengambilan keputusan nasabah dalam memilih masa asuransi optimal. Praktisnya, nasabah dengan horizon kebutuhan proteksi lebih panjang akan mendapatkan pertumbuhan nilai proteksi lebih signifikan. Bagi perusahaan, formula ini mempengaruhi pricing premi dan cadangan klaim. Risiko yang perlu diantisipasi adalah potensi underpricing premi jika proyeksi kenaikan UP tidak diakomodasi secara tepat dalam perhitungan premi awal.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_left_0",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_pb_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_2"
+    ],
+    "source_previews": [
+      "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata "
+    ],
+    "confidence_score": 0.92,
+    "priority": 10,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2_Formula_Tersembunyi_Perhitunga",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Tersembunyi Perhitungan No Claim Bonus dan Implikasinya terhadap Nilai Manfaat",
+    "original_context": "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak akan membayarkan manfaat No Claim Bonus. \n\n Selanjutnya selama periode pertanggungan 5 tahun perpanjangan: \n\na. tidak pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life akan membayarkan manfaat No Claim Bonus sebesar: \n\n25% x (Rp. 1",
+    "generated_content": "Problem: Dokumen menyajikan dua contoh perhitungan No Claim Bonus (NCB) dengan nilai premi berbeda pada dua periode (awal dan perpanjangan), namun tidak secara eksplisit menjelaskan logika umum di balik formula tersebut. \nAnalysis: Dari data (\"25% x (Rp. 1.050.000 x 12 x 5) = Rp. 15.750.000\" dan \"25% x (Rp. 1.950.000 x 12 x 5) = Rp. 29.250.000\"), dapat diinferensikan bahwa NCB dihitung sebagai persentase tetap (25%) dari total premi yang dibayarkan selama periode tertentu (premi bulanan x 12 bulan x 5 tahun). Ini berarti, semakin tinggi premi bulanan atau semakin panjang periode pertanggungan, semakin besar nilai NCB yang akan diterima jika tidak ada klaim. Namun, rumus ini juga mengimplikasikan bahwa NCB hanya berlaku jika tidak ada klaim sama sekali dalam periode tersebut, sehingga insentif utama adalah menjaga klaim tetap nol.\nPractical Application: Formula ini dapat digunakan untuk melakukan simulasi manfaat NCB pada berbagai skenario premi dan periode pertanggungan, sehingga calon pemegang polis dapat mengoptimalkan pembayaran premi dan memilih periode yang paling menguntungkan.\nDecision Support: Manajemen asuransi dapat menggunakan formula ini untuk merancang produk dengan struktur insentif yang optimal, sementara nasabah dapat menghitung potensi manfaat NCB sebelum mengambil keputusan pembelian.\nRisk/Opportunity: Risiko utama adalah jika terjadi klaim sekecil apa pun, NCB hangus untuk periode tersebut. Peluangnya, bagi nasabah yang sehat dan jarang klaim, NCB menjadi insentif finansial yang signifikan.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_3",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_3"
+    ],
+    "source_previews": [
+      "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak aka"
+    ],
+    "confidence_score": 0.92,
+    "priority": 10,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2",
+      "window_number": 2,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1_Rumus_Pengembalian_Premi_No_C",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "formula_discovery",
+    "title": "Rumus Pengembalian Premi (No Claim Bonus) dan Dampaknya pada Nilai Efektif Premi",
+    "original_context": "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata Uang  Rupiah  Jenis Produk  Asuransi Kematian Berjangka  Nama Penerbit  PT. Asuransi BRI Life \n\n| Col0             | Ringkasan Informasi Produk dan Layanan Versi Umum   | None                                                                         | Col3   |\n|:-----------------|:--------------------",
+    "generated_content": "Produk ini menawarkan pengembalian premi sebesar 25% dari total premi yang dibayarkan jika tidak ada klaim selama masa asuransi (No Claim Bonus). Formula tersembunyi yang dapat diidentifikasi: Pengembalian = 25% × Total Premi Dibayarkan selama masa asuransi. Dengan demikian, nilai efektif premi yang benar-benar 'hangus' bagi nasabah adalah 75% dari total premi jika tidak terjadi klaim. Secara praktis, ini menurunkan cost of insurance bagi nasabah yang tidak melakukan klaim, dan dapat menjadi selling point utama dalam pemasaran. Bagi perusahaan, fitur ini meningkatkan daya tarik produk namun menambah beban potensi liabilitas di akhir masa asuransi, sehingga perlu diantisipasi dalam perhitungan cadangan teknis. Keputusan strategis yang didukung: perusahaan dapat menggunakan fitur ini untuk meningkatkan retention rate, sedangkan nasabah dapat mengoptimalkan manfaat dengan menjaga kesehatan dan menghindari klaim selama masa asuransi. Risiko yang perlu diperhatikan adalah potensi adverse selection, di mana nasabah dengan risiko rendah lebih tertarik pada produk ini, sehingga perlu penyesuaian pricing premi.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_left_0",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_pb_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_2"
+    ],
+    "source_previews": [
+      "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata "
+    ],
+    "confidence_score": 0.91,
+    "priority": 10,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3_Formula_Perhitungan_Manfaat_Ke",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Perhitungan Manfaat Kehilangan Fungsi Anggota Tubuh",
+    "original_context": "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah jangka waktu selama 45 (empat puluh lima) hari  kalender sejak tanggal jatuh tempo pembayaran Premi yang mana  pertanggungan tetap berlaku meskipun Premi belum dibayar oleh  Pemegang Polis.   Kecelakaan yang Terjadi Ketika Menggunakan Fasilitas Transportasi Umum  adalah Kecelakaan atas diri Tertangg",
+    "generated_content": "Analisis mendalam terhadap Tabel 2 mengungkap adanya skema kalkulasi manfaat asuransi berbasis persentase dari Uang Pertanggungan (UP) yang tidak dijelaskan secara eksplisit dalam narasi dokumen. Formula tersirat yang digunakan adalah: Manfaat = Persentase Kehilangan Fungsi × Uang Pertanggungan. Persentase ini bervariasi berdasarkan jenis kehilangan fungsi, misal kehilangan dua tangan = 100%, kehilangan satu kaki atau satu tangan = 50%, kehilangan satu ibu jari tangan = 10%, dst. Pentingnya formula ini terletak pada transparansi dan prediktabilitas nilai klaim, sehingga Pemegang Polis dapat secara mandiri menghitung estimasi manfaat yang akan diterima untuk setiap skenario kehilangan fungsi. Secara praktis, formula ini dapat digunakan oleh tim underwriting, nasabah, dan agen untuk simulasi manfaat serta sebagai dasar dalam pembuatan produk baru atau penyesuaian premi. Dalam pengambilan keputusan, formula ini mendukung proses validasi klaim dan mitigasi risiko moral hazard (misal, klaim berulang untuk kehilangan fungsi minor). Risiko yang teridentifikasi adalah potensi underinsurance jika UP terlalu kecil atau overclaim jika persentase tidak dikalibrasi dengan baik. Peluangnya adalah edukasi nasabah dan digitalisasi kalkulator manfaat berbasis formula ini.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_3",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_pb_0"
+    ],
+    "source_previews": [
+      "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah j"
+    ],
+    "confidence_score": 0.9,
+    "priority": 10,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3",
+      "window_number": 3,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1_Analisis_Implikasi_Ketentuan_U",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "implication_analysis",
+    "title": "Analisis Implikasi Ketentuan Usia Masuk dan Masa Asuransi terhadap Eligibility dan Segmentasi Pasar",
+    "original_context": "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata Uang  Rupiah  Jenis Produk  Asuransi Kematian Berjangka  Nama Penerbit  PT. Asuransi BRI Life \n\n| Col0             | Ringkasan Informasi Produk dan Layanan Versi Umum   | None                                                                         | Col3   |\n|:-----------------|:--------------------",
+    "generated_content": "Ketentuan usia masuk dan masa asuransi pada produk Asuransi Jiwa PELITA menyiratkan adanya segmentasi pasar dan pembatasan eligibility yang tidak dijelaskan secara langsung. Berdasarkan Tabel 2 dan 3, terdapat beberapa skenario: (1) Pemegang polis usia 21-70 tahun dengan total usia masuk + masa asuransi ≤ 80 tahun; (2) Untuk masa asuransi 3 atau 5 tahun dengan perpanjangan otomatis, usia masuk minimum 18 tahun dan maksimum 55 tahun, dengan batas usia masuk + masa asuransi ≤ 61 tahun (untuk 3 tahun) atau ≤ 65 tahun (untuk 5 tahun). Implikasi tersiratnya adalah: semakin tua usia masuk, semakin pendek masa asuransi yang bisa dipilih, sehingga proteksi jangka panjang hanya tersedia untuk peserta yang masuk di usia relatif muda. Hal ini secara strategis membatasi risiko perusahaan terhadap klaim pada usia lanjut, sekaligus mendorong akuisisi nasabah usia muda. Bagi nasabah, pemahaman terhadap skema eligibility ini krusial untuk perencanaan keuangan jangka panjang. Keputusan yang didukung: perusahaan dapat menargetkan pemasaran pada segmen usia produktif, sementara nasabah perlu mempertimbangkan timing optimal untuk masuk agar mendapatkan masa proteksi maksimal.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_left_0",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_pb_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_2"
+    ],
+    "source_previews": [
+      "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata "
+    ],
+    "confidence_score": 0.89,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2_Sintesis_Persyaratan_dan_Kondi",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "requirement_synthesis",
+    "title": "Sintesis Persyaratan dan Kondisi Pembayaran No Claim Bonus secara End-to-End",
+    "original_context": "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak akan membayarkan manfaat No Claim Bonus. \n\n Selanjutnya selama periode pertanggungan 5 tahun perpanjangan: \n\na. tidak pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life akan membayarkan manfaat No Claim Bonus sebesar: \n\n25% x (Rp. 1",
+    "generated_content": "Problem: Syarat pembayaran NCB tersebar di beberapa bagian dokumen dan tidak dirangkum secara sistematis.\nAnalysis: Dari berbagai paragraf, dapat disintesis bahwa syarat utama NCB adalah: (1) Tidak ada klaim manfaat asuransi yang dibayarkan selama periode pertanggungan (baik awal maupun perpanjangan); (2) Jika pernah ada klaim pada periode awal, NCB hanya dibayarkan pada akhir periode perpanjangan, dan sebaliknya; (3) Besaran NCB dihitung dari total premi yang dibayarkan selama periode tersebut; (4) Pengecualian polis tetap berlaku, sehingga klaim yang termasuk pengecualian tidak mempengaruhi eligibility NCB. Checklist end-to-end: a) Pastikan tidak ada klaim selama periode berjalan; b) Verifikasi seluruh pembayaran premi lunas; c) Pastikan tidak ada pelanggaran syarat pengecualian; d) Ajukan klaim NCB pada akhir periode.\nPractical Application: Checklist ini dapat digunakan oleh nasabah dan agen untuk memastikan eligibility NCB sebelum mengajukan klaim, serta oleh perusahaan untuk standardisasi proses verifikasi NCB.\nDecision Support: Mendukung keputusan nasabah dalam memilih strategi klaim (klaim kecil vs NCB besar) dan perusahaan dalam mengelola payout.\nRisk/Opportunity: Risiko utama adalah kehilangan NCB akibat klaim kecil; peluangnya adalah edukasi nasabah untuk meningkatkan retensi dan kepuasan.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_3",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_3"
+    ],
+    "source_previews": [
+      "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak aka"
+    ],
+    "confidence_score": 0.89,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2",
+      "window_number": 2,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1_Pola_Eskalasi_Manfaat_Kematian",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Eskalasi Manfaat Kematian Akibat Kecelakaan dan Transportasi Umum sebagai Risk Differentiator",
+    "original_context": "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata Uang  Rupiah  Jenis Produk  Asuransi Kematian Berjangka  Nama Penerbit  PT. Asuransi BRI Life \n\n| Col0             | Ringkasan Informasi Produk dan Layanan Versi Umum   | None                                                                         | Col3   |\n|:-----------------|:--------------------",
+    "generated_content": "Analisis pola manfaat kematian pada produk ini menunjukkan adanya eskalasi manfaat berdasarkan penyebab kematian: 100% UP untuk kematian biasa, 200% UP untuk kematian akibat kecelakaan, dan 300% UP untuk kecelakaan saat menggunakan transportasi umum. Pola ini menyiratkan risk differentiation yang signifikan, di mana risiko kematian di transportasi umum dinilai lebih besar atau lebih berdampak secara sosial, sehingga diberikan kompensasi lebih tinggi. Hal ini juga dapat menjadi strategi mitigasi risiko reputasi perusahaan asuransi. Praktisnya, nasabah yang sering menggunakan transportasi umum memiliki insentif lebih besar untuk memilih produk ini. Dari sisi perusahaan, pola ini menuntut analisis aktuaria lebih mendalam terkait frekuensi dan probabilitas klaim akibat kecelakaan transportasi umum, serta potensi moral hazard. Keputusan yang didukung: perusahaan dapat mengatur pricing premi lebih tinggi untuk kelompok risiko tinggi, sementara nasabah dapat menyesuaikan pilihan produk berdasarkan pola aktivitas sehari-hari. Pola ini juga membuka peluang pengembangan produk serupa dengan risk-based pricing.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_left_0",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_pb_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_2"
+    ],
+    "source_previews": [
+      "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata "
+    ],
+    "confidence_score": 0.88,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2_Analisis_Implikasi_Syarat_Peng",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "implication_analysis",
+    "title": "Analisis Implikasi Syarat Pengecualian terhadap Validitas Klaim dan Risiko Gagal Bayar",
+    "original_context": "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak akan membayarkan manfaat No Claim Bonus. \n\n Selanjutnya selama periode pertanggungan 5 tahun perpanjangan: \n\na. tidak pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life akan membayarkan manfaat No Claim Bonus sebesar: \n\n25% x (Rp. 1",
+    "generated_content": "Problem: Dokumen mencantumkan daftar panjang pengecualian untuk manfaat asuransi (meninggal dunia, penyakit kritis, cacat tetap total), namun tidak secara eksplisit menguraikan konsekuensi praktis dari pengecualian ini terhadap kemungkinan klaim diterima atau ditolak.\nAnalysis: Banyaknya pengecualian (misal: bunuh diri dalam 24 bulan, kejahatan, olahraga ekstrem, kondisi pre-existing, pengaruh narkotika, dsb) secara tersirat memperkecil probabilitas klaim yang akan dibayarkan. Secara statistik, semakin banyak pengecualian, semakin besar risiko klaim ditolak. Hal ini juga meningkatkan risiko \"gagal bayar klaim\" dari sudut pandang nasabah, terutama jika tidak memahami detail pengecualian. Implikasi strategisnya, perusahaan asuransi dapat mengelola risiko portofolio dengan lebih baik, namun di sisi lain, persepsi risiko bagi konsumen meningkat.\nPractical Application: Nasabah harus melakukan due diligence ekstra terhadap pengecualian sebelum membeli polis. Agen asuransi wajib memberikan penjelasan mendalam agar tidak terjadi dispute di kemudian hari.\nDecision Support: Manajemen risiko perusahaan asuransi dapat menggunakan struktur pengecualian ini untuk memproyeksikan rasio klaim yang akan dibayarkan vs total premi yang diterima, serta mengidentifikasi area edukasi nasabah yang perlu diperkuat.\nRisk/Opportunity: Risiko utama adalah potensi dispute hukum akibat klaim yang ditolak karena pengecualian. Peluangnya, perusahaan dapat menjaga profitabilitas dengan menekan payout ratio melalui pengecualian yang ketat.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_3",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_3"
+    ],
+    "source_previews": [
+      "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak aka"
+    ],
+    "confidence_score": 0.88,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2",
+      "window_number": 2,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3_Sintesis_Persyaratan_dan_Prose",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "requirement_synthesis",
+    "title": "Sintesis Persyaratan dan Prosedur Penyelesaian Pengaduan",
+    "original_context": "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah jangka waktu selama 45 (empat puluh lima) hari  kalender sejak tanggal jatuh tempo pembayaran Premi yang mana  pertanggungan tetap berlaku meskipun Premi belum dibayar oleh  Pemegang Polis.   Kecelakaan yang Terjadi Ketika Menggunakan Fasilitas Transportasi Umum  adalah Kecelakaan atas diri Tertangg",
+    "generated_content": "Analisis mendalam terhadap prosedur penyelesaian pengaduan mengungkap adanya struktur waktu penyelesaian yang bertingkat dan conditional, namun tersebar di beberapa poin. Jika disintesis, workflow penyelesaian pengaduan adalah: (1) Pengaduan lisan → wajib diselesaikan dalam 5 hari kerja; (2) Jika butuh dokumen tambahan → pengaduan harus diajukan tertulis; (3) Pengaduan tertulis yang memenuhi syarat → wajib diselesaikan dalam 14 hari kerja; (4) Jika perlu analisis khusus → maksimal 20 hari kerja; (5) Jika ada kendala (misal, lintas kantor atau dokumen sulit) → bisa diperpanjang 20 hari kerja lagi; (6) Jika masih belum selesai karena faktor eksternal → dapat diperpanjang sesuai kebutuhan. Sintesis ini penting untuk memastikan SLA (Service Level Agreement) yang jelas dan akuntabilitas proses. Praktisnya, perusahaan dapat membuat checklist dan dashboard monitoring berbasis alur ini untuk menghindari SLA breach. Dalam pengambilan keputusan, insight ini mendukung alokasi sumber daya dan prioritas penanganan pengaduan. Risiko yang teridentifikasi adalah potensi dispute jika nasabah tidak diinformasikan tentang perpanjangan waktu. Peluangnya adalah otomatisasi notifikasi status pengaduan dan transparansi tracking bagi nasabah.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_3",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_pb_0"
+    ],
+    "source_previews": [
+      "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah j"
+    ],
+    "confidence_score": 0.88,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3",
+      "window_number": 3,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1_Sintesis_Persyaratan_Uang_Pert",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "requirement_synthesis",
+    "title": "Sintesis Persyaratan Uang Pertanggungan Berdasarkan Usia Masuk dan Masa Asuransi",
+    "original_context": "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata Uang  Rupiah  Jenis Produk  Asuransi Kematian Berjangka  Nama Penerbit  PT. Asuransi BRI Life \n\n| Col0             | Ringkasan Informasi Produk dan Layanan Versi Umum   | None                                                                         | Col3   |\n|:-----------------|:--------------------",
+    "generated_content": "Dokumen ini menyebar informasi mengenai batasan Uang Pertanggungan (UP) berdasarkan usia masuk dan masa asuransi di beberapa bagian. Dengan mensintesis data dari Tabel 2 dan narasi, dapat disusun checklist persyaratan sebagai berikut: (1) Usia masuk 18-45 tahun: maksimum UP Rp 1.000.000.000; (2) Usia masuk >45 tahun: maksimum UP Rp 500.000.000; (3) Masa asuransi 3 atau 5 tahun, dengan perpanjangan otomatis maksimal 1 kali; (4) Usia masuk + masa asuransi tidak boleh melebihi batas tertentu (61 tahun untuk 3 tahun, 65 tahun untuk 5 tahun, 80 tahun untuk pemegang polis). Checklist ini penting untuk memastikan eligibility nasabah dan menghindari penolakan klaim di kemudian hari. Praktisnya, agen pemasaran dapat menggunakan checklist ini untuk melakukan pre-screening nasabah, sedangkan perusahaan dapat mengintegrasikan ke sistem underwriting otomatis. Risiko yang dapat diminimalisir adalah mis-selling dan dispute klaim akibat ketidaksesuaian data nasabah dengan persyaratan produk.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_left_0",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_pb_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p1_right_2"
+    ],
+    "source_previews": [
+      "RINGKASAN INFORMASI PRODUK DAN LAYANAN VERSI UMUM  ASURANSI JIWA PELITA \n\nRingkasan Informasi Produk dan Layanan Versi Umum \n\nNama Produk  Asuransi Jiwa PELITA Nama Dagang  Asuransi Jiwa PELITA  Mata "
+    ],
+    "confidence_score": 0.87,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2_Pola_Korelasi_antara_Premi_Pe",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Korelasi antara Premi, Periode Pertanggungan, dan Nilai Manfaat No Claim Bonus",
+    "original_context": "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak akan membayarkan manfaat No Claim Bonus. \n\n Selanjutnya selama periode pertanggungan 5 tahun perpanjangan: \n\na. tidak pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life akan membayarkan manfaat No Claim Bonus sebesar: \n\n25% x (Rp. 1",
+    "generated_content": "Problem: Dokumen menyajikan dua contoh premi dan nilai NCB pada dua periode berbeda, namun tidak mengungkap pola matematis yang dapat digunakan untuk proyeksi ke depan.\nAnalysis: Dari dua skenario (premi Rp. 1.050.000 dan Rp. 1.950.000, masing-masing selama 5 tahun), terdapat pola linier antara total premi yang dibayarkan dan NCB yang diterima (25% dari total premi). Ini berarti, jika premi dinaikkan atau periode diperpanjang, nilai NCB akan naik secara proporsional. Pola ini dapat digunakan untuk memproyeksikan nilai NCB pada skenario premi dan periode lain, misal: jika premi bulanan Rp. 2.500.000 selama 10 tahun, NCB = 25% x (Rp. 2.500.000 x 12 x 10) = Rp. 75.000.000. Selain itu, pola ini juga menunjukkan bahwa produk ini lebih menguntungkan bagi nasabah dengan kemampuan finansial tinggi dan risiko klaim rendah.\nPractical Application: Nasabah dan agen dapat menggunakan pola ini untuk melakukan simulasi manfaat dan memilih kombinasi premi-periode yang optimal.\nDecision Support: Perusahaan asuransi dapat melakukan segmentasi pasar berdasarkan profil risiko dan kemampuan finansial calon nasabah.\nRisk/Opportunity: Risiko moral hazard muncul jika nasabah berusaha menghindari klaim demi mendapatkan NCB, namun peluangnya adalah meningkatkan loyalitas nasabah jangka panjang.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_3",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_3"
+    ],
+    "source_previews": [
+      "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak aka"
+    ],
+    "confidence_score": 0.87,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2",
+      "window_number": 2,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3_Implikasi_Masa_Tunggu_dan_Pemb",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "implication_analysis",
+    "title": "Implikasi Masa Tunggu dan Pembatasan Manfaat Penyakit Kritis",
+    "original_context": "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah jangka waktu selama 45 (empat puluh lima) hari  kalender sejak tanggal jatuh tempo pembayaran Premi yang mana  pertanggungan tetap berlaku meskipun Premi belum dibayar oleh  Pemegang Polis.   Kecelakaan yang Terjadi Ketika Menggunakan Fasilitas Transportasi Umum  adalah Kecelakaan atas diri Tertangg",
+    "generated_content": "Dokumen menyebutkan bahwa manfaat penyakit kritis hanya dapat dibayarkan satu kali selama masa berlaku polis, dengan masa tunggu 12 bulan untuk penyakit kritis dan 90 hari untuk meninggal dunia bukan akibat kecelakaan. Implikasi tersirat dari ketentuan ini adalah adanya perlindungan terhadap risiko adverse selection, di mana calon tertanggung tidak dapat langsung mengajukan klaim setelah membeli polis. Selain itu, pembatasan satu kali pembayaran manfaat penyakit kritis menutup kemungkinan klaim berulang untuk penyakit berbeda, yang secara tidak langsung mengendalikan eksposur risiko perusahaan asuransi. Dari sisi aplikasi praktis, ketentuan ini harus dijadikan acuan dalam proses underwriting dan komunikasi ke nasabah agar ekspektasi klaim jelas. Dalam pengambilan keputusan, perusahaan dapat menggunakan insight ini untuk menyesuaikan pricing premi dan mengelola cadangan klaim. Risiko yang muncul adalah potensi ketidakpuasan nasabah jika tidak memahami masa tunggu dan pembatasan klaim, sehingga perlu strategi edukasi dan transparansi. Peluangnya adalah pengembangan produk rider dengan masa tunggu lebih singkat atau manfaat multiple claim dengan premi lebih tinggi.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_3",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_pb_0"
+    ],
+    "source_previews": [
+      "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah j"
+    ],
+    "confidence_score": 0.87,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3",
+      "window_number": 3,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2_Implikasi_Strategis_Pengecuali",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "implication_analysis",
+    "title": "Implikasi Strategis Pengecualian Pre-Existing Condition dan Masa Tunggu pada Manfaat Penyakit Kritis",
+    "original_context": "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak akan membayarkan manfaat No Claim Bonus. \n\n Selanjutnya selama periode pertanggungan 5 tahun perpanjangan: \n\na. tidak pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life akan membayarkan manfaat No Claim Bonus sebesar: \n\n25% x (Rp. 1",
+    "generated_content": "Problem: Dokumen menyebutkan pengecualian untuk penyakit kritis yang terjadi sebelum masa tunggu 12 bulan dan kondisi pre-existing, namun tidak menguraikan dampak strategisnya terhadap perlindungan nasabah.\nAnalysis: Pengecualian ini secara tersirat membatasi perlindungan nyata pada tahun pertama polis dan mengeliminasi risiko perusahaan terhadap nasabah dengan riwayat penyakit berat. Hal ini berarti, nasabah yang baru saja didiagnosis penyakit kritis atau memiliki riwayat penyakit sebelum polis aktif tidak akan mendapatkan manfaat, meskipun telah membayar premi. Implikasi strategisnya, perusahaan dapat menurunkan risiko adverse selection dan menjaga profitabilitas, namun dari sisi nasabah, terdapat risiko under-protection pada masa awal polis.\nPractical Application: Nasabah perlu merencanakan pembelian asuransi jauh sebelum risiko penyakit kritis muncul, dan perusahaan harus transparan dalam menjelaskan masa tunggu dan definisi pre-existing condition.\nDecision Support: Mendukung keputusan underwriting dalam menerima atau menolak aplikasi, serta keputusan nasabah dalam timing pembelian polis.\nRisk/Opportunity: Risiko utama adalah persepsi negatif dan potensi dispute jika klaim ditolak karena masa tunggu atau pre-existing. Peluangnya, perusahaan dapat menawarkan produk dengan masa tunggu lebih singkat sebagai nilai tambah.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_right_3",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p5_left_3"
+    ],
+    "source_previews": [
+      "25% x (Rp. 1.050.000,- x 12 x 5) = Rp. 15.750.000,- ; atau \n\nb. sudah pernah dibayarkan manfaat asuransi atas risiko yang terjadi pada periode ini dan   ditanggung dalam Polis, maka BRI Life tidak aka"
+    ],
+    "confidence_score": 0.86,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w2",
+      "window_number": 2,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3_Pola_Pembatasan_Kepemilikan_Po",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Pembatasan Kepemilikan Polis dan Implikasinya terhadap Risiko Asuransi",
+    "original_context": "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah jangka waktu selama 45 (empat puluh lima) hari  kalender sejak tanggal jatuh tempo pembayaran Premi yang mana  pertanggungan tetap berlaku meskipun Premi belum dibayar oleh  Pemegang Polis.   Kecelakaan yang Terjadi Ketika Menggunakan Fasilitas Transportasi Umum  adalah Kecelakaan atas diri Tertangg",
+    "generated_content": "Terdapat pola pembatasan eksplisit bahwa setiap Tertanggung hanya dapat memiliki satu Polis Asuransi Jiwa PELITA. Pola ini menunjukkan strategi risk pooling dan pengendalian risiko akumulasi, di mana perusahaan mencegah satu individu memperoleh perlindungan berlebihan (over-insurance) yang dapat meningkatkan risiko moral hazard dan fraud. Root analysis menunjukkan bahwa pembatasan ini juga melindungi portofolio perusahaan dari potensi klaim besar yang terakumulasi pada satu individu. Secara praktis, ketentuan ini harus diintegrasikan dalam sistem underwriting dan verifikasi data nasabah untuk mencegah duplikasi polis. Dalam pengambilan keputusan, insight ini dapat digunakan untuk merancang produk asuransi baru dengan batas kepemilikan berbeda atau menawarkan upgrade benefit ketimbang multiple policies. Risiko yang teridentifikasi adalah potensi kehilangan pasar dari nasabah yang ingin proteksi lebih, namun peluangnya adalah peningkatan kualitas portofolio dan pengelolaan risiko yang lebih baik.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_3",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_pb_0"
+    ],
+    "source_previews": [
+      "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah j"
+    ],
+    "confidence_score": 0.86,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3",
+      "window_number": 3,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3_Konsekuensi_Hukum_dari_Perubah",
+    "doc_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f",
+    "enhancement_type": "implication_analysis",
+    "title": "Konsekuensi Hukum dari Perubahan Ketentuan Polis secara Sepihak",
+    "original_context": "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah jangka waktu selama 45 (empat puluh lima) hari  kalender sejak tanggal jatuh tempo pembayaran Premi yang mana  pertanggungan tetap berlaku meskipun Premi belum dibayar oleh  Pemegang Polis.   Kecelakaan yang Terjadi Ketika Menggunakan Fasilitas Transportasi Umum  adalah Kecelakaan atas diri Tertangg",
+    "generated_content": "Dokumen menyebutkan bahwa BRI Life dapat menginformasikan perubahan ketentuan polis secara tertulis 30 hari sebelumnya, dan jika dalam 14 hari tidak ada tanggapan dari Pemegang Polis, maka dianggap setuju. Implikasi hukum yang tidak dijelaskan langsung adalah adanya shifting beban persetujuan (implied consent) ke Pemegang Polis. Hal ini dapat menimbulkan risiko legal dispute jika Pemegang Polis merasa tidak diberi kesempatan cukup untuk menolak perubahan. Praktisnya, perusahaan harus memastikan bukti pengiriman notifikasi perubahan dan menyediakan kanal tanggapan yang mudah diakses. Dalam pengambilan keputusan, insight ini mendukung desain proses compliance dan risk mitigation, misal dengan menambah reminder atau konfirmasi eksplisit. Risiko utama adalah potensi gugatan jika Pemegang Polis merasa dirugikan oleh perubahan yang tidak disadari. Peluangnya adalah memperkuat customer engagement dan trust melalui transparansi serta edukasi proaktif sebelum perubahan diberlakukan.",
+    "source_units": [
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_0",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_1",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_2",
+      "u_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_para_3",
+      "u_t_9999df0c-2adb-4a1c-bfe1-e34687a7735f_p11_pb_0"
+    ],
+    "source_previews": [
+      "Definisi-definisi   Free Look Periode adalah masa selama 14 (empat belas) hari yang diberikan  oleh PT. Asuransi BRI Life kepada Pemegang Polis untuk mempelajari isi  Polis.   Grace Periode adalah j"
+    ],
+    "confidence_score": 0.85,
+    "priority": 8,
+    "metadata": {
+      "window_id": "9999df0c-2adb-4a1c-bfe1-e34687a7735f_w3",
+      "window_number": 3,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  }
+]

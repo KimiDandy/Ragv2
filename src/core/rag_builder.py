@@ -1,10 +1,11 @@
 """
 RAG Chain Builder menggunakan LangChain LCEL create_retrieval_chain.
 Memberikan evidence yang tepat dari dokumen yang benar-benar digunakan LLM.
+Menggunakan Pinecone sebagai vector database.
 """
 
 from typing import Dict, List, Any, Tuple
-from langchain_chroma import Chroma
+from langchain_pinecone import PineconeVectorStore
 from langchain_core.prompts import PromptTemplate
 from langchain_core.documents import Document
 try:
@@ -232,12 +233,12 @@ def _build_snippet(text: str, max_len: int = 400) -> str:
     return truncated + "..."
 
 
-def create_filtered_retriever(vector_store: Chroma, doc_id: str, version: str, k: int = 5):
+def create_filtered_retriever(vector_store: PineconeVectorStore, doc_id: str, version: str, k: int = 5):
     """
     Membuat retriever dengan filter untuk dokumen dan versi tertentu.
     
     Args:
-        vector_store: Chroma vector store
+        vector_store: Pinecone vector store
         doc_id: Document ID untuk filter
         version: Version untuk filter (v1/v2)
         k: Jumlah dokumen yang diambil
@@ -246,10 +247,8 @@ def create_filtered_retriever(vector_store: Chroma, doc_id: str, version: str, k
         Retriever yang sudah difilter
     """
     retrieval_filter = {
-        '$and': [
-            {'source_document': {'$eq': doc_id}},
-            {'version': {'$eq': version}}
-        ]
+        "source_document": doc_id,
+        "version": version
     }
     
     retriever = vector_store.as_retriever(

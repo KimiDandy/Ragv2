@@ -13,27 +13,28 @@ from loguru import logger
 
 from ..enhancement import (
     EnhancementConfig,
-    EnhancementPlanner,
-    EnhancementGenerator,
     MarkdownSynthesizer,
     EnhancementIndexer,
     RAGAnswering
 )
+from ..enhancement.planner_v2 import EnhancementPlannerV2
+from ..enhancement.generator_v2 import EnhancementGeneratorV2
 from ..enhancement.windowing import TokenWindowManager
+from ..utils.doc_meta import get_markdown_path
 
 
 router = APIRouter(prefix="/enhancement", tags=["enhancement"])
 
 # Global instances
 config = EnhancementConfig()
-planner = EnhancementPlanner(config)
-generator = EnhancementGenerator(config)
+planner = EnhancementPlannerV2(config)
+generator = EnhancementGeneratorV2(config)
 synthesizer = MarkdownSynthesizer()
 indexer = EnhancementIndexer(config)
 answering = RAGAnswering(config)
 window_manager = TokenWindowManager(
     window_size=config.window_tokens,
-    overlap_size=500
+    overlap_size=config.window_overlap_tokens
 )
 
 
@@ -192,24 +193,34 @@ async def plan_enhancements(request: PlanRequest):
         window_manager.save_windows(windows, str(windows_file))
         
         # Plan enhancements
-        planning_result = await planner.plan_enhancements(
+        candidates, metrics = await planner.plan_enhancements(
             doc_id=doc_id,
             windows=windows,
             units_metadata=units_metadata
         )
         
+        # Prepare plan data structure
+        planning_result = {
+            "doc_id": doc_id,
+            "windows": [w.to_dict() for w in windows],
+            "all_candidates": [c.dict() for c in candidates],
+            "selected_candidates": [c.dict() for c in candidates],  # V2 already prioritized
+            "final_candidates": [c.dict() for c in candidates],
+            "metrics": metrics
+        }
+        
         # Save plan
         with open(plan_file, 'w', encoding='utf-8') as f:
-            json.dump(planning_result, f, ensure_ascii=False, indent=2)
+            json.dump(planning_result, f, ensure_ascii=False, indent=2, default=str)
         
         return PlanResponse(
             success=True,
             doc_id=doc_id,
             total_windows=len(windows),
-            total_candidates=len(planning_result.get('all_candidates', [])),
-            selected_candidates=len(planning_result.get('selected_candidates', [])),
+            total_candidates=len(candidates),
+            selected_candidates=len(candidates),
             plan_file=str(plan_file),
-            message=f"Successfully planned {len(planning_result.get('selected_candidates', []))} enhancements"
+            message=f"Successfully planned {len(candidates)} enhancements"
         )
         
     except HTTPException:
@@ -263,7 +274,7 @@ async def generate_enhancements(request: GenerateRequest):
             candidates = candidates[:request.max_items]
         
         # Convert to EnhancementCandidate objects
-        from ..enhancement.planner import EnhancementCandidate
+        from ..enhancement.enhancement_types import EnhancementCandidate
         candidate_objects = [
             EnhancementCandidate(**c) for c in candidates
         ]
@@ -277,7 +288,7 @@ async def generate_enhancements(request: GenerateRequest):
             units_metadata = json.load(f)
         
         # Generate enhancements
-        generation_result = await generator.generate_enhancements(
+        enhancements, gen_metrics = await generator.generate_enhancements(
             candidates=candidate_objects,
             units_metadata=units_metadata,
             doc_id=doc_id
@@ -289,13 +300,13 @@ async def generate_enhancements(request: GenerateRequest):
         # Merge with plan data
         complete_data = {
             "doc_id": doc_id,
-            "run_id": generation_result.get('run_id'),
+            "run_id": f"{doc_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             "windows": plan_data.get('windows', []),
             "candidates": plan_data.get('final_candidates', []),
-            "items": generation_result.get('items', []),
+            "items": enhancements,
             "metrics": {
                 "planning": plan_data.get('metrics', {}),
-                "generation": generation_result.get('metrics', {}),
+                "generation": gen_metrics,
                 "version": "v2.0"
             }
         }
@@ -306,9 +317,9 @@ async def generate_enhancements(request: GenerateRequest):
         return GenerateResponse(
             success=True,
             doc_id=doc_id,
-            total_generated=len(generation_result.get('items', [])),
+            total_generated=len(enhancements),
             generation_file=str(generation_file),
-            message=f"Successfully generated {len(generation_result.get('items', []))} enhancements"
+            message=f"Successfully generated {len(enhancements)} enhancements"
         )
         
     except HTTPException:

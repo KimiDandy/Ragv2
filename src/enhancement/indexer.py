@@ -8,8 +8,7 @@ from typing import List, Dict, Any, Optional
 from pathlib import Path
 import asyncio
 
-import chromadb
-from chromadb.config import Settings
+from pinecone import Pinecone
 import openai
 from openai import AsyncOpenAI
 from loguru import logger
@@ -20,19 +19,16 @@ from ..core.rate_limiter import AsyncLeakyBucket
 
 
 class EnhancementIndexer:
-    """Indexes enhanced documents in Chroma for RAG retrieval."""
+    """Indexes enhanced documents in Pinecone for RAG retrieval."""
     
     def __init__(self, config: EnhancementConfig):
         self.config = config
         self.client = AsyncOpenAI(api_key=config.openai_api_key)
         self.rate_limiter = AsyncLeakyBucket(rps=config.requests_per_second)
         
-        # Initialize Chroma client
-        self.chroma_client = chromadb.HttpClient(
-            host='localhost',
-            port=8001,
-            settings=Settings(anonymized_telemetry=False)
-        )
+        # Initialize Pinecone client
+        pc = Pinecone(api_key=config.pinecone_api_key)
+        self.pinecone_index = pc.Index(config.pinecone_index_name)
     
     async def index_enhanced_document(
         self,
@@ -58,16 +54,15 @@ class EnhancementIndexer:
         
         logger.info(f"Indexing {doc_id} to collection {collection_name}")
         
-        # Get or create collection
+        # Clean up existing vectors for this document
         try:
-            collection = self.chroma_client.get_collection(collection_name)
-            logger.info(f"Using existing collection: {collection_name}")
-        except:
-            collection = self.chroma_client.create_collection(
-                name=collection_name,
-                metadata={"doc_id": doc_id, "type": "enhanced"}
+            # Delete by metadata filter (more efficient for Pinecone v3+)
+            self.pinecone_index.delete(
+                filter={"doc_id": doc_id}
             )
-            logger.info(f"Created new collection: {collection_name}")
+            logger.info(f"Cleaned up existing vectors for doc {doc_id}")
+        except Exception as e:
+            logger.warning(f"Error cleaning up existing vectors: {e}")
         
         # Prepare documents for indexing
         all_documents = []
@@ -93,7 +88,7 @@ class EnhancementIndexer:
         # Generate embeddings in batches
         embeddings = await self._generate_embeddings_batch(all_documents)
         
-        # Index to Chroma in batches
+        # Index to Pinecone in batches
         batch_size = 100
         total_indexed = 0
         
@@ -101,20 +96,24 @@ class EnhancementIndexer:
             batch_end = min(i + batch_size, len(all_documents))
             
             try:
-                collection.upsert(
-                    ids=all_ids[i:batch_end],
-                    documents=all_documents[i:batch_end],
-                    metadatas=all_metadatas[i:batch_end],
-                    embeddings=embeddings[i:batch_end] if embeddings else None
-                )
+                # Prepare vectors for Pinecone
+                vectors_to_upsert = []
+                for j in range(i, batch_end):
+                    vectors_to_upsert.append({
+                        "id": all_ids[j],
+                        "values": embeddings[j] if embeddings else None,
+                        "metadata": {
+                            **all_metadatas[j],
+                            "text": all_documents[j]  # Store text content in metadata
+                        }
+                    })
+                
+                self.pinecone_index.upsert(vectors=vectors_to_upsert)
                 total_indexed += (batch_end - i)
                 logger.info(f"Indexed batch {i//batch_size + 1}: {batch_end - i} documents")
                 
             except Exception as e:
                 logger.error(f"Error indexing batch {i//batch_size + 1}: {e}")
-        
-        # Create indices for efficient retrieval
-        self._create_indices(collection)
         
         metrics = {
             "doc_id": doc_id,
@@ -247,24 +246,24 @@ class EnhancementIndexer:
         
         return embeddings
     
-    def _create_indices(self, collection):
+    def _create_indices(self, index):
         """Create indices for efficient retrieval."""
-        # Note: Chroma automatically creates indices
+        # Note: Pinecone automatically creates indices
         # This is a placeholder for any custom index configuration
         pass
     
-    def search(
+    async def search(
         self,
-        collection_name: str,
+        doc_id: str,
         query: str,
         filter_dict: Optional[Dict[str, Any]] = None,
         top_k: int = 10
     ) -> List[Dict[str, Any]]:
         """
-        Search the indexed collection.
+        Search the indexed vectors in Pinecone.
         
         Args:
-            collection_name: Name of the collection
+            doc_id: Document ID to search within
             query: Search query
             filter_dict: Optional metadata filters
             top_k: Number of results to return
@@ -273,39 +272,46 @@ class EnhancementIndexer:
             List of search results with metadata
         """
         try:
-            collection = self.chroma_client.get_collection(collection_name)
+            # Generate query embedding
+            async with self.rate_limiter:
+                response = await self.client.embeddings.create(
+                    model=self.config.embedding_model,
+                    input=query
+                )
+                query_embedding = response.data[0].embedding
             
-            # Prepare where clause for filtering
-            where_clause = filter_dict if filter_dict else None
+            # Prepare filter combining doc_id with additional filters
+            filter_condition = {"doc_id": doc_id}
+            if filter_dict:
+                filter_condition.update(filter_dict)
             
             # Perform search
-            results = collection.query(
-                query_texts=[query],
-                n_results=top_k,
-                where=where_clause,
-                include=['documents', 'metadatas', 'distances']
+            results = self.pinecone_index.query(
+                vector=query_embedding,
+                top_k=top_k,
+                filter=filter_condition,
+                include_metadata=True
             )
             
             # Format results
             formatted_results = []
-            if results['ids'] and len(results['ids']) > 0:
-                for i in range(len(results['ids'][0])):
-                    formatted_results.append({
-                        'id': results['ids'][0][i],
-                        'text': results['documents'][0][i],
-                        'metadata': results['metadatas'][0][i],
-                        'score': 1.0 - results['distances'][0][i]  # Convert distance to similarity
-                    })
+            for match in results['matches']:
+                formatted_results.append({
+                    'id': match['id'],
+                    'text': match['metadata'].get('text', ''),
+                    'metadata': match['metadata'],
+                    'score': match['score']
+                })
             
             return formatted_results
             
         except Exception as e:
-            logger.error(f"Error searching collection {collection_name}: {e}")
+            logger.error(f"Error searching vectors for doc {doc_id}: {e}")
             return []
     
-    def search_by_type(
+    async def search_by_type(
         self,
-        collection_name: str,
+        doc_id: str,
         query: str,
         unit_types: List[str],
         top_k: int = 10
@@ -313,34 +319,30 @@ class EnhancementIndexer:
         """Search filtering by unit types."""
         # Create filter for unit types
         filter_dict = {
-            'unit_type': {'$in': unit_types}
+            'unit_type': {"$in": unit_types}
         }
         
-        return self.search(collection_name, query, filter_dict, top_k)
+        return await self.search(doc_id, query, filter_dict, top_k)
     
     def get_unit_by_id(
         self,
-        collection_name: str,
         unit_id: str
     ) -> Optional[Dict[str, Any]]:
         """Retrieve a specific unit by ID."""
         try:
-            collection = self.chroma_client.get_collection(collection_name)
+            # Query Pinecone by specific ID
+            result = self.pinecone_index.fetch(ids=[unit_id])
             
-            result = collection.get(
-                ids=[unit_id],
-                include=['documents', 'metadatas']
-            )
-            
-            if result['ids']:
+            if result['vectors'] and unit_id in result['vectors']:
+                vector_data = result['vectors'][unit_id]
                 return {
-                    'id': result['ids'][0],
-                    'text': result['documents'][0] if result['documents'] else '',
-                    'metadata': result['metadatas'][0] if result['metadatas'] else {}
+                    'id': unit_id,
+                    'text': vector_data['metadata'].get('text', ''),
+                    'metadata': vector_data['metadata']
                 }
             
             return None
             
         except Exception as e:
-            logger.error(f"Error getting unit {unit_id}: {e}")
+            logger.error(f"Error retrieving unit {unit_id}: {e}")
             return None
