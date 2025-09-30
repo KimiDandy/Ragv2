@@ -1,26 +1,16 @@
 """
-Enhancement module for adding intelligent annotations to extracted PDF documents.
+Document Enhancement Module - Phase 2
 
-This module provides:
-- Token-based windowing for scalable document processing
-- Map-reduce planning for enhancement candidates
-- Micro-batch generation of enhancements
-- Markdown v2 synthesis with precise anchoring
-- Vectorization and RAG integration
+Professional document enhancement with AI-powered implicit information extraction.
+Single-step enhancement with comprehensive prompt engineering.
 """
 
 from .config import EnhancementConfig
-from .planner import EnhancementPlanner
-from .generator import EnhancementGenerator
-from .synthesizer import MarkdownSynthesizer
-from .indexer import EnhancementIndexer
-from .answering import RAGAnswering
+from .enhancer import DirectEnhancerV2
+from .models import UniversalEnhancement
 
 __all__ = [
     'EnhancementConfig',
-    'EnhancementPlanner',
-    'EnhancementGenerator',
-    'MarkdownSynthesizer',
-    'EnhancementIndexer',
-    'RAGAnswering'
+    'DirectEnhancerV2',
+    'UniversalEnhancement'
 ]

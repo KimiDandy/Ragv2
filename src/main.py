@@ -12,8 +12,7 @@ from fastapi.staticfiles import StaticFiles
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from loguru import logger
 
-from src.api.endpoints import router as api_router
-from src.api.enhancement_routes import router as enhancement_router
+from src.api.routes import router as api_router
 from src.core.config import (
     EMBEDDING_MODEL,
     CHAT_MODEL,
@@ -88,7 +87,6 @@ app.add_middleware(
 )
 
 app.include_router(api_router)
-app.include_router(enhancement_router)
 
 @app.get("/")
 async def read_root(request: Request):

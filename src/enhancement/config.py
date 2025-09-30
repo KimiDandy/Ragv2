@@ -27,7 +27,7 @@ class EnhancementConfig(BaseSettings):
     gen_microbatch_size: int = Field(default=6, env='ENH_GEN_MICROBATCH_SIZE')  # Quality over quantity
     gen_model: str = Field(default="gpt-4.1", env='ENH_GEN_MODEL')
     target_items: int = Field(default=0, env='ENH_TARGET_ITEMS')  # 0 = no artificial limit
-    max_generation_tokens: int = Field(default=3000, env='ENH_MAX_GEN_TOKENS')  # Safe limit for GPT-4.1
+    max_generation_tokens: int = Field(default=16000, env='ENH_MAX_GEN_TOKENS')  # Increased for complete responses (10-15 detailed enhancements)
     
     # Enhancement types toggles - PRIORITIZE IMPLICIT INFO
     enable_formula_discovery: bool = Field(default=True, env='ENH_ENABLE_FORMULA')

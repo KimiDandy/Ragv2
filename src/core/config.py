@@ -63,8 +63,6 @@ PHASE2_RPS = settings.PHASE2_RPS
 # Embedding dimensions mapping for OpenAI models
 EMBEDDING_DIMENSIONS = {
     "text-embedding-3-small": 1536,
-    "text-embedding-3-large": 3072,
-    "text-embedding-ada-002": 1536,
 }
 
 def get_embedding_dimension(model_name: str) -> int:
