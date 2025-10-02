@@ -1,0 +1,272 @@
+[
+  {
+    "enhancement_id": "enh_60208c6b_w1_7d63e103_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "implication_analysis",
+    "title": "Dampak Kenaikan Inflasi AS terhadap Kebijakan Suku Bunga dan Pasar Keuangan Domestik",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Data inflasi AS yang lebih tinggi dari ekspektasi (YoY 3,00%, MoM 0,50%) memiliki implikasi besar terhadap kebijakan suku bunga The Fed. Tersirat bahwa ekspektasi pemangkasan suku bunga menjadi tertunda, bahkan ada kemungkinan kenaikan suku bunga. Hal ini akan mendorong penguatan USD secara global dan meningkatkan tekanan pada nilai tukar Rupiah, sebagaimana tercermin dari pelemahan Rupiah di kisaran 16.340-16.440. Selain itu, yield obligasi pemerintah Indonesia juga naik, menandakan capital outflow dari pasar obligasi domestik. Implikasi praktisnya, investor lokal harus mewaspadai risiko depresiasi Rupiah dan potensi kenaikan biaya pinjaman. Keputusan strategis yang dapat diambil adalah melakukan diversifikasi portofolio dan mempertimbangkan lindung nilai (hedging) terhadap risiko nilai tukar. Peluangnya, jika inflasi AS kembali terkendali, pasar domestik bisa rebound.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.95,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_62aa8780_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "formula_discovery",
+    "title": "Identifikasi Rumus Perubahan Nilai Tukar dan Implikasinya untuk Hedging",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Perubahan nilai tukar pada tabel FOREX dihitung menggunakan rumus: ((Nilai Hari Ini - Nilai Hari Sebelumnya) / Nilai Hari Sebelumnya) x 100%. Contoh pada USD/IDR: ((16380-16365)/16365) x 100% = 0,09%. Rumus ini penting untuk memantau volatilitas harian yang dapat berdampak pada biaya impor/ekspor dan pembayaran utang valas. Praktisnya, perusahaan dengan eksposur valas dapat menggunakan formula ini untuk menentukan timing hedging dan budgeting biaya operasional. Keputusan yang didukung adalah penetapan trigger point untuk melakukan kontrak forward atau opsi mata uang. Risiko yang teridentifikasi adalah jika volatilitas meningkat tajam, biaya lindung nilai juga akan naik, sehingga perlu monitoring ketat dan strategi dinamis.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.93,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_38607594_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "formula_discovery",
+    "title": "Rumus Perhitungan Yield Obligasi dan Implikasinya terhadap Sentimen Pasar",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Analisis mendalam terhadap tabel obligasi menunjukkan adanya pola perhitungan yield harian yang tidak dijelaskan secara eksplisit. Misalnya, pada INA 10 YR (IDR), yield naik dari 6,82% ke 6,84% (kenaikan 0,19%), sedangkan pada UST 10 YR, yield naik dari 4,54% ke 4,62% (kenaikan 1,89%). Rumus tersembunyi yang digunakan adalah: ((Yield Hari Ini - Yield Hari Sebelumnya) / Yield Hari Sebelumnya) x 100%. Formula ini penting untuk mengukur volatilitas pasar obligasi dan menilai sensitivitas harga terhadap sentimen global, khususnya menjelang rilis data inflasi AS. Praktisnya, investor dapat menggunakan formula ini untuk memantau pergerakan yield harian sebagai indikator risiko pasar. Keputusan investasi pada obligasi jangka panjang dapat didukung dengan mengidentifikasi tren yield, terutama saat terjadi lonjakan yield seperti pada UST 10 YR yang naik signifikan. Risiko yang teridentifikasi adalah potensi capital loss jika yield terus naik, sehingga strategi hedging atau switching ke instrumen lain bisa dipertimbangkan.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.92,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_00767be7_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "implication_analysis",
+    "title": "Konsekuensi Keterlambatan Penurunan Suku Bunga The Fed bagi Pasar Domestik",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Pernyataan Jerome Powell dan data inflasi AS yang tinggi menyiratkan bahwa penurunan suku bunga The Fed akan tertunda. Implikasi tidak langsungnya adalah tekanan berkelanjutan pada pasar keuangan domestik, terutama pada sektor obligasi dan nilai tukar. Investor asing cenderung menahan investasi di pasar berkembang, sehingga potensi capital outflow meningkat. Praktisnya, pemerintah dan otoritas moneter perlu memperkuat koordinasi untuk menjaga stabilitas Rupiah dan mencegah lonjakan yield obligasi. Keputusan strategis: memperkuat cadangan devisa, memperluas instrumen lindung nilai, dan menjaga komunikasi pasar. Risiko utama adalah terjadinya sudden reversal jika sentimen global memburuk.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.91,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_4d02f4c7_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "scenario_analysis",
+    "title": "Proyeksi Dampak Inflasi dan Suku Bunga terhadap Penjualan Eceran di Indonesia",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Meskipun inflasi Indonesia relatif rendah (YoY 0,76%), penjualan eceran diproyeksikan tumbuh tipis 0,4% (yoy) pada Januari 2025, namun secara bulanan mengalami kontraksi 4,8% setelah lonjakan 5,9% di Desember 2024. Ini menunjukkan adanya efek musiman pasca-HBKN, serta potensi tekanan daya beli akibat ketidakpastian global. Jika inflasi AS tetap tinggi dan Fed menahan atau menaikkan suku bunga, maka tekanan terhadap Rupiah bisa berlanjut, berujung pada kenaikan harga barang impor dan potensi perlambatan konsumsi domestik. Praktisnya, pelaku usaha ritel perlu mengantisipasi fluktuasi permintaan dan melakukan efisiensi stok. Keputusan strategis: fokus pada barang kebutuhan pokok dan kelompok yang tetap tumbuh, serta mitigasi risiko harga melalui kontrak forward atau hedging.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_5760f5b8_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "scenario_analysis",
+    "title": "Simulasi Dampak Kenaikan Yield Obligasi AS terhadap Yield Obligasi Indonesia",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Kenaikan yield UST 10 YR dari 4,54% ke 4,62% (naik 1,89%) secara historis sering diikuti oleh kenaikan yield obligasi negara berkembang, termasuk Indonesia (INA 10 YR naik 0,19% IDR dan 0,65% USD). Skenario jika yield UST terus naik: yield INA 10 YR berpotensi naik lebih lanjut, meningkatkan cost of fund pemerintah dan risiko capital outflow. Praktisnya, investor domestik perlu memperhitungkan potensi penurunan harga obligasi dan melakukan diversifikasi ke instrumen yang lebih defensif. Pemerintah dapat mempertimbangkan penerbitan obligasi dengan tenor lebih pendek untuk mengurangi risiko refinancing. Risiko utama: jika spread yield melebar terlalu jauh, tekanan pada Rupiah dan pasar modal akan meningkat.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_bbca1ece_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "requirement_synthesis",
+    "title": "Checklist Syarat Pengambilan Keputusan Investasi di Tengah Volatilitas Global",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Dari berbagai data yang tersebar, dapat disintesis beberapa syarat utama sebelum mengambil keputusan investasi: (1) Memantau tren inflasi dan suku bunga global (TABEL 2, INTEREST RATES); (2) Menghitung volatilitas yield obligasi (TABEL 3); (3) Menganalisis pergerakan nilai tukar dan dampaknya pada biaya operasional (TABEL FOREX); (4) Mengidentifikasi pola rotasi aset di pasar saham (TABEL INDEXES); (5) Mengantisipasi efek musiman pada penjualan domestik (Paragraf penjualan eceran). Checklist ini penting untuk mengurangi risiko keputusan impulsif dan meningkatkan ketahanan portofolio. Praktisnya, investor institusi dapat mengintegrasikan checklist ini dalam SOP investasi mereka.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.89,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_eafab504_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "pattern_recognition",
+    "title": "Polarisasi Kinerja Indeks Global dan Regional sebagai Indikator Rotasi Aset",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Terdapat pola menarik pada pergerakan indeks saham: indeks AS (S&P 500, Dow Jones) mengalami penurunan, sementara indeks Asia (Hang Seng, Shanghai, Nikkei 225) dan IHSG justru menguat. Hal ini mengindikasikan adanya rotasi aset dari pasar AS ke pasar Asia, kemungkinan dipicu oleh kekhawatiran inflasi AS dan potensi pengetatan moneter lebih lanjut. Praktisnya, investor dapat memanfaatkan momentum ini untuk melakukan rebalancing portofolio ke pasar Asia yang sedang outperform. Keputusan investasi jangka pendek dapat diarahkan ke sektor-sektor yang resilient di Asia, seperti teknologi dan konsumer. Risiko yang perlu diwaspadai adalah reversal jika sentimen global berubah atau terjadi shock eksternal.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_a43f4c38_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Musiman Kontraksi Penjualan Eceran Pasca-HBKN",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Data penjualan eceran menunjukkan pola musiman: pertumbuhan tinggi pada Desember (5,9% mtm) diikuti kontraksi signifikan pada Januari (-4,8% mtm). Hal ini konsisten dengan perilaku konsumsi masyarakat yang meningkat saat HBKN (Natal dan Tahun Baru) dan menurun setelahnya. Praktisnya, pelaku usaha ritel dapat menggunakan pola ini untuk mengatur stok dan promosi, serta mengantisipasi penurunan permintaan di awal tahun. Keputusan strategis: fokus pada efisiensi rantai pasok dan penyesuaian inventory. Peluang: jika pola ini dipahami dengan baik, perusahaan dapat meningkatkan profitabilitas dengan optimalisasi cash flow.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.87,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_60208c6b_w1_1828a3b0_20251002113704",
+    "doc_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39",
+    "enhancement_type": "pattern_recognition",
+    "title": "Deteksi Anomali Inflasi Indonesia (MoM) dan Potensi Underlying Factors",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah harga inflasi konsumen naik lebih dari yang diharapkan pada bulan Januari. Indeks S&P 500 turun 0,27% hingga ditutup pada 6.051,97, dan Dow Jones Industrial Average turun 225,09 poin, atau 0,5%, menjadi 44.368,56. Nasdaq Composite naik tipis 0,03% hingga ditutup pada 19.649,95. Data inflasi terbaru",
+    "generated_content": "Tabel inflasi menunjukkan angka MoM Indonesia (0,76%) yang identik dengan YoY, menandakan kemungkinan anomali pencatatan atau adanya faktor musiman yang sangat kuat. Hal ini tidak lazim, karena biasanya inflasi MoM jauh lebih kecil dari YoY. Praktisnya, analis perlu menelusuri apakah terjadi rebasement data, perubahan metodologi, atau adanya shock harga tertentu di bulan tersebut. Keputusan yang didukung adalah melakukan cross-check data BPS dan menyesuaikan model proyeksi inflasi. Risiko: jika anomali ini berulang, keakuratan forecasting dan pengambilan keputusan bisa terganggu.",
+    "source_units": [
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_0",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_0",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_1",
+      "u_t_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_pb_2",
+      "u_60208c6b-f0f0-4a4d-824d-0f3b611eff39_p1_left_1"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Wall Street turun dan imbal hasil obligasi Amerika Serikat (AS) melonjak setelah"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "60208c6b-f0f0-4a4d-824d-0f3b611eff39_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  }
+]

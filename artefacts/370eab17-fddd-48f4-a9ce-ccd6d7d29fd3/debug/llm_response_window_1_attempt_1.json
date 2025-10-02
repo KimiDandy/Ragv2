@@ -1,0 +1,109 @@
+{
+  "enhancements": [
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Cashback 5% Tabungan Danamon LEBIH PRO",
+      "content": "Analisis mendalam terhadap fitur cashback 5% hingga Rp200.000 pada transaksi belanja dengan Kartu Debit Danamon LEBIH PRO (dengan saldo rata-rata minimal Rp5 juta per bulan) menunjukkan adanya formula tersembunyi untuk perhitungan cashback. Formula yang dapat disimpulkan adalah: Cashback = MIN(5% x Total Transaksi Belanja Bulanan, Rp200.000). Artinya, untuk mendapatkan cashback maksimal, nasabah harus melakukan transaksi minimal Rp4.000.000 per bulan (karena 5% x Rp4.000.000 = Rp200.000). Jika transaksi kurang dari Rp4.000.000, cashback dihitung proporsional 5%. Formula ini penting untuk strategi pengelolaan pengeluaran bulanan agar nasabah dapat mengoptimalkan benefit. Nasabah dapat merencanakan pembelanjaan bulanan di merchant SPBU, supermarket, dan overseas secara lebih efisien. Dari sisi bank, formula ini membatasi eksposur cashback dan mendorong peningkatan saldo rata-rata serta volume transaksi. Risiko: jika nasabah tidak menjaga saldo minimal, benefit cashback hangus. Peluang: program ini dapat digunakan untuk campaign upselling volume transaksi.",
+      "source_units": ["Danamon LEBIH PRO", "Transaksi Kebutuhan Harian"],
+      "confidence": 0.95,
+      "priority": 10
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implikasi Syarat Saldo Minimum pada Bebas Biaya Transaksi Danamon LEBIH PRO",
+      "content": "Fitur bebas biaya transaksi pada Tabungan Danamon LEBIH PRO hanya berlaku jika saldo sebelum transaksi minimal Rp5 juta. Implikasi tersiratnya adalah nasabah dengan saldo fluktuatif di bawah threshold akan dikenakan biaya transaksi, sehingga insentif untuk menjaga saldo tetap tinggi sangat kuat. Hal ini secara strategis meningkatkan dana pihak ketiga (DPK) yang mengendap di bank, memperbaiki liquidity ratio dan cost of funds. Untuk nasabah, risiko muncul jika saldo turun tiba-tiba sebelum transaksi besar, karena biaya akan langsung dikenakan. Praktisnya, nasabah perlu memonitor saldo secara real-time sebelum melakukan transaksi besar atau transfer antar bank. Bank dapat memanfaatkan insight ini untuk mengedukasi nasabah dan mengembangkan fitur notifikasi saldo threshold. Decision support: insight ini dapat digunakan untuk segmentasi nasabah dan targeting campaign peningkatan saldo.",
+      "source_units": ["Danamon LEBIH PRO", "Transaksi Keuangan Harian"],
+      "confidence": 0.9,
+      "priority": 9
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Insentif Berbasis Volume pada Produk TabunganKu",
+      "content": "Analisis struktur suku bunga TabunganKu menunjukkan pola insentif bertingkat: saldo <Rp500.000 bunga 0%, Rp500.000–Rp1.000.000 bunga 0,25%, >Rp1.000.000 bunga 1%. Pola ini mendorong nasabah untuk meningkatkan saldo agar mendapat bunga lebih tinggi, namun secara psikologis, nasabah dengan saldo di bawah threshold cenderung tidak termotivasi untuk menambah saldo karena bunga 0%. Pola ini efektif untuk mendorong akumulasi dana di segmen mikro dan entry-level, namun berpotensi menyebabkan churn pada nasabah saldo rendah. Bank dapat memanfaatkan pola ini untuk upselling ke produk tabungan lain dengan insentif lebih menarik atau menawarkan program migrasi otomatis saat saldo konsisten di atas threshold. Risiko: segmentasi terlalu tajam dapat membuat sebagian nasabah merasa kurang dihargai.",
+      "source_units": ["TabunganKu"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "requirement_synthesis",
+      "title": "Sintesis Syarat Setoran dan Tenor pada Tabungan Cita2Ku",
+      "content": "Tabungan Cita2Ku menawarkan fleksibilitas setoran dan tenor: setoran bulanan minimal Rp200.000 untuk tenor mulai 2 tahun, atau Rp500.000 untuk tenor mulai 1 tahun. Syarat tersembunyi yang dapat disintesis adalah: semakin pendek tenor, semakin tinggi setoran bulanan yang diwajibkan. Formula requirement: Jika tenor = 1 tahun, setoran minimal = Rp500.000/bulan; Jika tenor ≥ 2 tahun, setoran minimal = Rp200.000/bulan. Implikasi: nasabah yang ingin menabung dalam waktu singkat harus siap dengan komitmen dana lebih besar per bulan, sedangkan nasabah dengan horizon jangka panjang dapat menyesuaikan cashflow dengan setoran lebih ringan. Insight ini penting untuk advisor dalam merekomendasikan produk sesuai profil nasabah. Risiko: nasabah dengan cashflow terbatas mungkin gagal memenuhi setoran jika memilih tenor pendek.",
+      "source_units": ["Tabungan Cita2Ku"],
+      "confidence": 0.93,
+      "priority": 9
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Konsekuensi Fitur Auto Switching Currency pada Kartu Debit Danamon LEBIH PRO",
+      "content": "Fitur Auto Switching Currency pada Kartu Debit Danamon LEBIH PRO memungkinkan deteksi otomatis tabungan mata uang asing sesuai negara transaksi. Implikasi strategisnya: nasabah tidak perlu repot konversi manual atau membuka rekening valas terpisah, sehingga mengurangi friction dalam transaksi internasional. Namun, risiko tersirat adalah potensi exposure terhadap fluktuasi kurs real-time saat transaksi, serta kemungkinan biaya konversi tersembunyi jika saldo mata uang terkait tidak mencukupi dan sistem fallback ke rupiah. Praktisnya, nasabah harus memastikan saldo cukup di mata uang yang relevan sebelum bepergian. Bank dapat menggunakan fitur ini sebagai unique selling point untuk segmen frequent traveler dan ekspatriat. Decision support: insight ini dapat digunakan untuk pengembangan fitur monitoring saldo multi-currency dan alert otomatis.",
+      "source_units": ["Danamon LEBIH PRO", "Kartu Debit Danamon LEBIH PRO"],
+      "confidence": 0.87,
+      "priority": 8
+    },
+    {
+      "type": "scenario_analysis",
+      "title": "Proyeksi Akumulasi Tabungan Cita2Ku Berdasarkan Setoran dan Tenor",
+      "content": "Dengan suku bunga 3% p.a. dan sistem setoran bulanan tetap, proyeksi akumulasi tabungan Cita2Ku dapat dihitung dengan formula future value anuitas: FV = P x [(1 + r)^n - 1]/r, di mana P = setoran bulanan, r = bunga per bulan (3%/12), n = jumlah bulan. Contoh: setoran Rp500.000/bulan selama 12 bulan, FV = 500.000 x [(1 + 0,0025)^12 - 1]/0,0025 ≈ Rp6.091.000. Insight ini penting untuk nasabah yang ingin memproyeksikan pencapaian target dana pendidikan/liburan. Advisor dapat menggunakan simulasi ini untuk membantu nasabah memilih kombinasi setoran dan tenor optimal. Risiko: jika nasabah gagal setor bulanan, proyeksi tidak tercapai. Peluang: fitur kalkulator proyeksi dapat meningkatkan engagement nasabah.",
+      "source_units": ["Tabungan Cita2Ku"],
+      "confidence": 0.92,
+      "priority": 9
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Dampak Fitur Bebas Biaya Transaksi pada Giro BISA terhadap Efisiensi Bisnis",
+      "content": "Giro BISA menawarkan bebas biaya transfer RTGS, SKN, dan penerbitan buku cek/bilyet giro. Implikasi tersiratnya adalah pengurangan biaya operasional bagi nasabah bisnis yang memiliki volume transaksi tinggi, terutama untuk pembayaran vendor atau payroll. Hal ini meningkatkan efisiensi cash management dan dapat menjadi faktor diferensiasi utama dibanding produk giro lain. Namun, bank perlu mengelola risiko penurunan fee-based income dari transaksi giro. Praktisnya, fitur ini dapat digunakan untuk menarik segmen korporasi dan UKM dengan kebutuhan transaksi masif. Decision support: insight ini dapat digunakan untuk desain paket layanan bisnis dan penetapan minimum saldo agar tetap profitable.",
+      "source_units": ["Giro BISA"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Penawaran Suku Bunga Kompetitif pada Produk Deposito",
+      "content": "Seluruh produk deposito (Berjangka, On Call, Online) menonjolkan suku bunga tinggi dan kompetitif, namun tidak disebutkan angka spesifik. Pola ini menunjukkan strategi pricing dinamis berbasis kondisi pasar dan segmentasi nasabah. Bank cenderung menyesuaikan rate secara real-time untuk menjaga daya saing dan mengoptimalkan cost of funds. Pola ini juga mengindikasikan kemungkinan adanya negosiasi rate untuk nasabah prioritas atau volume besar. Bagi nasabah, penting untuk melakukan perbandingan rate sebelum penempatan dana. Bank dapat menggunakan pola ini untuk cross-selling antar produk deposito dan menawarkan rate khusus pada campaign tertentu.",
+      "source_units": ["Deposito Berjangka", "Deposito On Call", "Deposito Online"],
+      "confidence": 0.83,
+      "priority": 6
+    },
+    {
+      "type": "requirement_synthesis",
+      "title": "Sintesis Persyaratan Usia Masuk dan Perpanjangan Proteksi Prima Medika",
+      "content": "Proteksi Prima Medika menetapkan usia masuk tertanggung: anak-anak 30 hari–17 tahun, dewasa 18–60 tahun, dengan perlindungan hingga usia 65 tahun. Persyaratan tersirat: polis dapat diperpanjang otomatis tanpa seleksi ulang selama usia tertanggung belum melewati 65 tahun. Implikasi: nasabah yang masuk pada usia muda dapat menikmati perlindungan jangka panjang tanpa risiko kenaikan premi akibat seleksi ulang. Advisor dapat menggunakan insight ini untuk menyarankan pembelian lebih awal demi perlindungan maksimal. Risiko: nasabah yang menunda pembelian hingga usia mendekati 60 tahun akan memiliki periode perlindungan efektif yang lebih pendek.",
+      "source_units": ["Proteksi Prima Medika"],
+      "confidence": 0.86,
+      "priority": 7
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Konsekuensi Manfaat Safety-Net pada Proteksi Prima Kritis Andalan",
+      "content": "Manfaat safety-net Proteksi Prima Kritis Andalan memberikan 25% uang pertanggungan (maksimal Rp250 juta) untuk tindakan angioplasti atau rawat ICU ≥120 jam, tanpa mengurangi uang pertanggungan utama. Implikasi: nasabah mendapat perlindungan likuiditas ekstra saat menghadapi kondisi kritis sebelum klaim utama, mempercepat akses dana untuk biaya medis mendesak. Namun, jika terjadi klaim safety-net, nasabah tetap berhak atas klaim penuh uang pertanggungan jika didiagnosis penyakit kritis tahap akhir. Praktisnya, manfaat ini meningkatkan nilai tambah produk dan dapat digunakan sebagai selling point untuk nasabah dengan risiko penyakit jantung/stroke. Risiko: potensi adverse selection jika nasabah dengan riwayat penyakit berat memanfaatkan fitur ini secara optimal.",
+      "source_units": ["Proteksi Prima Kritis Andalan"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Penentuan Suku Bunga Bertingkat TabunganKu",
+      "content": "TabunganKu menerapkan sistem suku bunga bertingkat berdasarkan saldo: <Rp500.000 = 0%, Rp500.000–Rp1.000.000 = 0,25%, >Rp1.000.000 = 1%. Formula tersembunyi: Bunga = Saldo x Tingkat Bunga Sesuai Tier. Untuk saldo yang melewati batas tier, seluruh saldo mendapat bunga sesuai tier tertinggi yang dicapai. Hal ini berarti, jika saldo naik dari Rp900.000 ke Rp1.100.000, seluruh saldo langsung memperoleh bunga 1%. Formula ini penting untuk nasabah yang ingin mengoptimalkan return simpanan dan bagi bank untuk mengelola cost of funds secara progresif. Advisor dapat menggunakan insight ini untuk mendorong nasabah meningkatkan saldo secara periodik.",
+      "source_units": ["TabunganKu"],
+      "confidence": 0.89,
+      "priority": 8
+    },
+    {
+      "type": "scenario_analysis",
+      "title": "Proyeksi Return Deposito On Call untuk Investasi Jangka Pendek",
+      "content": "Deposito On Call menawarkan tenor fleksibel 7–27 hari dengan suku bunga kompetitif. Proyeksi return dapat dihitung: Return = Pokok x (Bunga Tahunan/365) x Jumlah Hari. Contoh: investasi Rp100 juta, bunga 4% p.a., tenor 14 hari, return = 100.000.000 x (4%/365) x 14 ≈ Rp153.425. Insight ini membantu nasabah membandingkan return deposito on call dengan produk lain seperti tabungan atau deposito berjangka. Advisor dapat menggunakan simulasi ini untuk menawarkan solusi cash management optimal bagi nasabah korporasi atau individu dengan kebutuhan likuiditas tinggi. Risiko: return lebih rendah jika dana ditarik sebelum jatuh tempo.",
+      "source_units": ["Deposito On Call"],
+      "confidence": 0.91,
+      "priority": 8
+    },
+    {
+      "type": "requirement_synthesis",
+      "title": "Checklist Persyaratan Umum Pembukaan Produk Simpanan Danamon",
+      "content": "Dari berbagai produk simpanan (TabunganKu, Cita2Ku, LEBIH PRO, Giro, Deposito), dapat disintesis persyaratan umum: 1) Nasabah perorangan (kecuali giro bisnis), 2) Setoran awal dan saldo minimum bervariasi per produk, 3) Dokumen identitas sesuai regulasi, 4) Untuk produk berjangka, komitmen setoran bulanan atau pokok deposito, 5) Untuk produk valas, rekening multi-currency atau fitur auto-switching. Checklist ini penting untuk frontliner bank dalam proses onboarding dan untuk nasabah dalam memilih produk sesuai kebutuhan. Advisor dapat menggunakan checklist ini untuk meminimalisir penolakan aplikasi akibat dokumen atau syarat tidak lengkap.",
+      "source_units": ["Seluruh produk simpanan"],
+      "confidence": 0.84,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

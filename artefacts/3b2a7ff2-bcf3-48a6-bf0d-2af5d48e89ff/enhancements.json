@@ -1,0 +1,326 @@
+[
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_512aeeb8_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Tersembunyi Perhitungan Imbal Hasil Portofolio Berdasarkan Alokasi Risiko",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Analisis mendalam terhadap komposisi portofolio pada profil risiko moderat, balanced, growth, dan aggressive menunjukkan bahwa estimasi imbal hasil tahunan (expected annualized return) dihitung dengan pendekatan weighted average return dari masing-masing kelas aset. Rumus tersirat yang digunakan adalah: Imbal Hasil Portofolio = (porsi aset 1 x estimasi return aset 1) + (porsi aset 2 x estimasi return aset 2) + ... dst. Sebagai contoh, pada profil moderat: 10% pasar uang + 90% obligasi menghasilkan 6.11% return, sedangkan pada profil aggressive: 5% pasar uang, 40% obligasi, 45% big cap equity, 10% small-mid cap equity menghasilkan 8.95%. Dengan tidak adanya rincian return per produk, dapat diinferensikan bahwa return masing-masing kelas aset sudah diestimasi internal, lalu dikalikan bobot alokasi. Formula ini penting untuk melakukan stress test, simulasi skenario, dan menyesuaikan alokasi jika outlook berubah. Pengguna dapat menggunakan formula ini untuk menguji sensitivitas portofolio terhadap perubahan alokasi atau proyeksi return aset.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.92,
+    "priority": 7,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_41c0c587_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "requirement_synthesis",
+    "title": "Checklist Syarat Produk Investasi untuk Setiap Profil Risiko",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Dari penggabungan seluruh rekomendasi, dapat disintesis checklist persyaratan produk untuk tiap profil risiko: (1) Money Market: wajib ada di semua profil, minimal 5-10% untuk likuiditas; (2) Obligasi tenor pendek-menengah: komponen utama, minimal 40% (aggressive) hingga 95% (growth); (3) Saham: hanya pada profil aggressive, dengan porsi 45% big cap dan 10% small-mid cap; (4) Produk yang dipilih harus memiliki fundamental baik dan berada di sektor defensif; (5) Semua produk non-money market harus disesuaikan dengan strategi product focus dan outlook makro. Checklist ini penting untuk advisor dalam melakukan suitability assessment dan memastikan portofolio sesuai risk profile dan kondisi pasar.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_237515fd_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "implication_analysis",
+    "title": "Dampak Makroekonomi dan Kebijakan Pemerintah Terhadap Strategi Alokasi Portofolio",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Dokumen mengindikasikan bahwa outlook kuartal pertama 2025 dipenuhi ketidakpastian akibat penerapan tarif baru, inflasi tinggi di atas target bank sentral AS, dan ketidakpastian peraturan pemerintah baru (Prabowo). Implikasi tersirat adalah seluruh rekomendasi portofolio cenderung overweight pada obligasi tenor pendek-menengah dan saham sektor defensif (consumer, banking). Ini berarti, tim advisory mengantisipasi volatilitas pasar dan potensi kenaikan suku bunga, sehingga menghindari obligasi jangka panjang dan saham siklikal. Bagi investor, insight ini dapat digunakan untuk menghindari risiko duration pada obligasi dan memilih saham dengan fundamental kuat. Keputusan strategis yang didukung: melakukan rebalancing ke sektor defensif dan instrumen likuid jika outlook makro memburuk.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_790b5d0c_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "requirement_synthesis",
+    "title": "Syarat Pemilihan Produk: Fokus pada Fundamental dan Sektor Defensive",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Dokumen menegaskan bahwa seluruh produk saham yang direkomendasikan harus memiliki strategi fokus pada saham berfundamental baik dan berada di sektor defensive (consumer, banking). Ini merupakan persyaratan tidak eksplisit yang membatasi universe produk, sehingga advisor wajib melakukan screening fundamental dan sektor sebelum merekomendasikan produk. Checklist ini penting untuk compliance dan suitability, serta mengurangi risiko downside pada saat pasar bearish.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_2e92025b_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "pattern_recognition",
+    "title": "Korelasi Positif antara Porsi Saham dan Proyeksi Imbal Hasil Tahunan",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Analisis data menunjukkan bahwa semakin tinggi porsi saham dalam portofolio, semakin tinggi proyeksi imbal hasil tahunan: Moderat (0% saham, 6.11%), Balanced (0% saham, 7.34%), Growth (0% saham, 7.69%), Aggressive (55% saham, 8.95%). Namun, lonjakan return hanya signifikan pada profil aggressive yang mengalokasikan 55% ke saham. Ini menandakan bahwa return marginal dari penambahan saham baru terasa pada porsi yang substansial, sedangkan pada porsi kecil-moderat, return portofolio masih sangat dipengaruhi oleh obligasi. Insight ini dapat digunakan untuk mengoptimalkan risk-return tradeoff dan menentukan titik optimal diversifikasi saham dalam portofolio.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.87,
+    "priority": 7,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_43a97d42_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "implication_analysis",
+    "title": "Konsekuensi Likuiditas: Peran Money Market dalam Portofolio Multi-Risiko",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Alokasi money market yang konsisten (5-10%) di semua profil risiko, bahkan pada profil aggressive, menunjukkan adanya kebutuhan likuiditas minimum untuk mengantisipasi redemption, kebutuhan dana mendadak, atau rebalancing cepat saat volatilitas tinggi. Implikasi tersirat: advisor tidak pernah merekomendasikan portofolio 100% non-likuid, meski pada profil risiko tertinggi. Bagi investor institusi, insight ini dapat digunakan untuk mengatur cash buffer dan menghindari forced selling pada saat pasar turun tajam.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.86,
+    "priority": 7,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_0e2a095b_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Konsistensi Alokasi: Dominasi Obligasi Pendek-Menengah di Semua Profil Risiko",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Terdapat pola konsisten di seluruh profil risiko (moderat, balanced, growth, aggressive) yaitu alokasi mayoritas tetap pada obligasi pemerintah/korporasi tenor pendek-menengah, bahkan pada profil aggressive tetap 40% dialokasikan ke obligasi. Ini menandakan risk appetite investor Indonesia cenderung konservatif meski pada profil high risk, serta adanya kekhawatiran terhadap volatilitas ekuitas. Pola ini juga menunjukkan bahwa produk-produk fixed income menjadi tulang punggung portofolio, bukan sekadar diversifikasi. Bagi investor institusi, insight ini dapat digunakan untuk benchmarking dan menghindari overexposure pada saham saat outlook makro tidak pasti.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_bb06df14_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "pattern_recognition",
+    "title": "Absennya Alokasi pada Obligasi Jangka Panjang: Indikasi Antisipasi Volatilitas",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Tidak ada satu pun profil risiko yang merekomendasikan obligasi tenor panjang. Ini merupakan pola strategis yang mengindikasikan tim advisory mengantisipasi volatilitas yield curve dan risiko duration akibat ketidakpastian makro. Investor yang tetap ingin mengejar yield lebih tinggi dari obligasi jangka panjang harus sadar risiko capital loss jika suku bunga naik. Actionable insight: gunakan instrumen duration hedging atau batasi eksposur pada obligasi jangka panjang hingga outlook makro stabil.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_a20912d2_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "scenario_analysis",
+    "title": "Proyeksi Skenario Downside: Dampak Penurunan Harga Obligasi Akibat Kenaikan Suku Bunga",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Dengan mayoritas portofolio dialokasikan ke obligasi tenor pendek-menengah, risiko utama adalah kenaikan suku bunga global (misal, The Fed menaikkan suku bunga lebih lanjut). Dalam skenario ini, harga obligasi akan turun, yield naik, dan return portofolio bisa lebih rendah dari estimasi (6.11%-8.95%). Investor dengan horizon pendek akan paling terdampak. Insight ini penting untuk pengelolaan risiko: advisor perlu menyiapkan strategi hedging, seperti diversifikasi ke instrumen floating rate atau memperbesar porsi money market. Actionable step: lakukan stress test portofolio dengan simulasi kenaikan suku bunga 50-100 bps.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.84,
+    "priority": 6,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_861f0c63_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "implication_analysis",
+    "title": "Risiko Underperformance Jika Outlook Makro Berubah Positif",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Strategi overweight pada obligasi tenor pendek-menengah dan sektor defensif mengandung risiko opportunity cost jika ternyata outlook makro membaik (misal, inflasi turun, kebijakan pemerintah pro-pasar, atau suku bunga turun). Dalam skenario ini, portofolio akan underperform dibanding portofolio yang overweight pada saham siklikal atau obligasi jangka panjang. Implikasi ini penting untuk investor yang ingin agile dan siap melakukan tactical shift. Actionable insight: siapkan mekanisme rebalancing otomatis atau alert jika indikator makro membaik, agar dapat meningkatkan eksposur pada aset berisiko tinggi dan menangkap upside potential.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.83,
+    "priority": 6,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_b678dc28_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "implication_analysis",
+    "title": "Konsekuensi Strategi Product Focus: Potensi Bias pada Produk Internal",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Dokumen menyebutkan bahwa portofolio merupakan contoh alokasi investasi yang disesuaikan dengan strategi product focus, kecuali reksa dana pasar uang. Implikasi tersirat: terdapat potensi bias pemilihan produk pada produk-produk internal atau afiliasi bank, sehingga advisor dan investor harus melakukan due diligence independen untuk memastikan produk yang dipilih benar-benar optimal, bukan sekadar memenuhi strategi internal. Actionable insight: lakukan benchmarking produk rekomendasi dengan produk sejenis di pasar.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.82,
+    "priority": 6,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_3b2a7ff2_w1_c351365b_20251002120716",
+    "doc_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff",
+    "enhancement_type": "scenario_analysis",
+    "title": "Skenario What-If: Dampak Penurunan Inflasi dan Suku Bunga Terhadap Portofolio",
+    "original_context": "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat cenderung mencari keseimbangan antara potensi  imbal hasil (return) yang lebih tinggi dibandingkan produk konservatif, namun tetap  mempertahankan tingkat risiko yang terkendali. Oleh karena itu, portofolio investasi  yang disarankan terdiri dari kombinasi reksa dana pasar uang dan reksa dana obligasi",
+    "generated_content": "Jika inflasi global dan domestik turun signifikan dan bank sentral mulai menurunkan suku bunga, portofolio yang overweight pada obligasi tenor pendek-menengah akan mengalami capital gain, namun portofolio yang overweight saham siklikal bisa outperform. Implikasi: investor harus siap melakukan tactical shift ke obligasi tenor panjang dan saham siklikal saat indikator makro membaik. Advisor perlu menyiapkan watchlist produk yang siap dirotasi sesuai perubahan outlook.",
+    "source_units": [
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p1_para_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_ocr_backup",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_para_0",
+      "u_t_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p2_pb_0",
+      "u_3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_p3_para_0"
+    ],
+    "source_previews": [
+      "Rekomendasi Alokasi Portofolio Nasabah  Di bawah ini adalah informasi rekomendasi alokasi portofolio berdasarkan profil risiko  nasabah.  Profil Risiko Moderat  Nasabah dengan profil risiko moderat ce"
+    ],
+    "confidence_score": 0.81,
+    "priority": 6,
+    "metadata": {
+      "window_id": "3b2a7ff2-bcf3-48a6-bf0d-2af5d48e89ff_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  }
+]

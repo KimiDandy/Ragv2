@@ -1,0 +1,222 @@
+[
+  {
+    "id": "enh_28b3343f_w1_7e66f465_20251002114120",
+    "type": "formula_discovery",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Analisis mendalam terhadap tabel obligasi menunjukkan adanya pola perhitungan perubahan imbal hasil (yield) harian yang tidak dijelaskan secara eksplisit. Perubahan persentase dihitung menggunakan rumus: ((Yield Hari Ini - Yield Hari Sebelumnya) / Yield Hari Sebelumnya) x 100%. Contoh pada INA 10YR (IDR): ((6.77 - 6.84)/6.84) x 100% = -1.02% (dibulatkan menjadi -0.97% pada tabel). Rumus ini penting untuk mengukur volatilitas pasar obligasi dan sensitivitas terhadap sentimen suku bunga. Praktis, investor dapat menggunakan rumus ini untuk memproyeksikan potensi capital gain/loss harian dan menyesuaikan strategi portofolio. Keputusan investasi, seperti switching antara tenor atau instrumen, dapat didukung dengan analisis volatilitas ini. Risiko utama adalah jika perubahan yield signifikan, harga obligasi akan bergerak berlawanan arah, sehingga investor dengan posisi long harus waspada terhadap potensi kerugian nilai pasar.",
+    "confidence_score": 0.95,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_7ccd1995_20251002114120",
+    "type": "formula_discovery",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Perubahan nilai tukar pada tabel FOREX dihitung menggunakan rumus: ((Nilai Akhir - Nilai Awal) / Nilai Awal) x 100%. Contoh USD/IDR: ((16200 - 16300)/16300) x 100% = -0,61%. Rumus ini penting untuk mengukur volatilitas harian dan menentukan kebutuhan hedging valuta asing, terutama bagi eksportir, importir, dan investor asing. Praktis, perusahaan dapat menggunakan rumus ini untuk menentukan trigger point melakukan hedging atau menyesuaikan exposure. Keputusan strategis seperti locking forward contract atau swap dapat didukung dengan analisis volatilitas ini. Risiko muncul jika volatilitas meningkat tajam tanpa perlindungan, sehingga potensi kerugian nilai tukar menjadi signifikan.",
+    "confidence_score": 0.95,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_4c8cbfbd_20251002114120",
+    "type": "pattern_recognition",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Terdapat pola divergensi yang signifikan antara inflasi dan suku bunga di Indonesia dan AS. Inflasi tahunan Indonesia hanya 0,76% sementara BI Rate tetap tinggi di 5,75%, sedangkan inflasi AS 3,00% dengan Fed Rate 4,5%. Ini menunjukkan stance kebijakan moneter Indonesia yang sangat ketat dibandingkan tekanan inflasi aktual. Pola ini mengindikasikan ruang bagi Bank Indonesia untuk melakukan penurunan suku bunga tanpa risiko inflasi berlebih, apalagi didukung oleh penguatan rupiah dan penurunan yield obligasi. Praktis, investor dapat mengantisipasi rotasi aset ke instrumen berisiko (risk-on) dan potensi rally di pasar obligasi. Risiko: jika penurunan suku bunga dilakukan terlalu agresif, arus modal keluar dapat terjadi jika sentimen global berubah.",
+    "confidence_score": 0.93,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_5dbdf6bf_20251002114120",
+    "type": "implication_analysis",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Penurunan pertumbuhan Indeks Harga Properti Residensial (IHPR) dari 1,46% menjadi 1,39% (yoy) dan kontraksi penjualan sebesar 15,09% (yoy) mengindikasikan adanya tekanan pada sektor properti primer. Implikasi tersirat adalah potensi peningkatan risiko kredit pada portofolio KPR bank, mengingat 72,54% pembelian rumah primer menggunakan KPR. Jika tren ini berlanjut, bank harus memperketat penilaian kredit dan memperkuat mitigasi risiko NPL (Non-Performing Loan). Selain itu, pengembang yang masih mengandalkan dana internal (74,38%) berpotensi mengalami tekanan likuiditas jika penjualan terus menurun. Peluang bagi bank adalah menawarkan produk refinancing atau restrukturisasi KPR untuk menjaga kualitas aset. Risiko sistemik dapat muncul jika penurunan IHPR dan penjualan berlanjut, memicu tekanan pada sektor perbankan dan properti.",
+    "confidence_score": 0.92,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_8f2a0bbf_20251002114120",
+    "type": "scenario_analysis",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Ekspektasi penurunan suku bunga BI tercermin dari penurunan yield obligasi INDOGB sebesar 3-6bps dan penguatan rupiah (-0,61% USD/IDR). Jika BI benar-benar menurunkan suku bunga, yield obligasi berpotensi turun lebih lanjut, meningkatkan harga obligasi dan menarik minat investor asing. Rupiah kemungkinan tetap stabil atau menguat, didukung oleh arus masuk ke pasar obligasi. Namun, jika penurunan suku bunga tidak diikuti oleh sentimen global yang mendukung (misal, Fed tetap hawkish), risiko reversal arus modal dan depresiasi rupiah meningkat. Praktis, investor dapat melakukan positioning pada obligasi tenor menengah-panjang sebelum keputusan BI, dan melakukan hedging terhadap risiko kurs.",
+    "confidence_score": 0.91,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_cae7af50_20251002114120",
+    "type": "pattern_recognition",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Data menunjukkan adanya pola risk-on di pasar keuangan Indonesia: penguatan rupiah, penurunan yield obligasi, dan kenaikan indeks saham (IHSG naik 0,38%). Permintaan tinggi pada lelang obligasi dan SRBI, serta penurunan yield SRBI 1 tahun sebesar 10bps, menandakan investor domestik dan asing mulai mengambil risiko lebih tinggi. Pola ini biasanya terjadi saat ekspektasi penurunan suku bunga menguat dan sentimen global stabil. Praktis, investor institusi dapat meningkatkan alokasi ke aset berisiko, sementara regulator perlu memantau potensi overheating jika arus modal masuk terlalu besar. Peluang: momentum window dressing atau rebalancing portofolio. Risiko: reversal mendadak jika sentimen global memburuk.",
+    "confidence_score": 0.9,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_3be5b7b8_20251002114120",
+    "type": "implication_analysis",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Dengan 74,38% pendanaan pembangunan properti residensial berasal dari dana internal pengembang, terdapat implikasi risiko likuiditas yang tinggi jika penjualan terus menurun (kontraksi 15,09% yoy). Ketergantungan ini membuat pengembang rentan terhadap shock penurunan permintaan, karena akses ke pendanaan eksternal terbatas. Praktis, bank dan lembaga keuangan dapat menawarkan produk pembiayaan bridging atau working capital untuk mengurangi tekanan likuiditas pengembang. Keputusan strategis: bank dapat melakukan due diligence lebih ketat terhadap pengembang yang terlalu bergantung pada dana internal. Risiko sistemik: jika banyak pengembang gagal memenuhi kewajiban, potensi NPL di sektor konstruksi dan properti meningkat.",
+    "confidence_score": 0.88,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_ecea55c1_20251002114120",
+    "type": "scenario_analysis",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Penurunan penjualan rumah tipe kecil dan menengah di tengah kenaikan penjualan rumah tipe besar mengindikasikan perubahan preferensi pasar atau tekanan daya beli. Jika tren ini berlanjut, portofolio KPR bank akan semakin terkonsentrasi pada segmen menengah-atas, meningkatkan risiko konsentrasi dan potensi mismatch antara produk KPR yang ditawarkan dengan kebutuhan pasar. Praktis, bank perlu menyesuaikan produk KPR untuk segmen menengah-bawah, misal dengan tenor lebih panjang atau DP lebih rendah. Risiko: jika segmen menengah-bawah terus tertekan, potensi pertumbuhan KPR akan stagnan dan inklusi keuangan menurun.",
+    "confidence_score": 0.87,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_bea6a62c_20251002114120",
+    "type": "implication_analysis",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Inflasi Indonesia yang rendah (0,76% yoy) dan surplus neraca perdagangan ($2,24 miliar) memberikan ruang bagi Bank Indonesia untuk melonggarkan kebijakan moneter. Implikasi tersirat adalah BI dapat menurunkan suku bunga tanpa risiko tekanan inflasi atau defisit eksternal yang signifikan. Praktis, BI dapat menyesuaikan stance kebijakan untuk mendukung pertumbuhan ekonomi, terutama sektor properti dan konsumsi. Risiko: jika penurunan suku bunga dilakukan terlalu cepat, potensi arus keluar modal tetap perlu diwaspadai, terutama jika Fed masih mempertahankan suku bunga tinggi.",
+    "confidence_score": 0.86,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_49e2102e_20251002114120",
+    "type": "pattern_recognition",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Tabel indeks menunjukkan pergerakan bervariasi: IHSG naik 0,38%, S&P 500 stagnan (-0,01%), Dow Jones turun (-0,37%), Nasdaq naik (0,41%), Hang Seng melonjak (3,69%), dan Nikkei turun (-0,79%). Pola ini menandakan bahwa sentimen positif di Asia (terutama China dan Indonesia) tidak sepenuhnya mengikuti pergerakan indeks AS, mengindikasikan adanya decoupling sementara. Praktis, investor dapat memanfaatkan momentum di pasar Asia tanpa terlalu khawatir pada volatilitas di AS. Namun, jika korelasi kembali menguat akibat shock global, risiko contagion tetap ada. Peluang: diversifikasi portofolio ke pasar Asia.",
+    "confidence_score": 0.85,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  },
+  {
+    "id": "enh_28b3343f_w1_1f8ba91d_20251002114120",
+    "type": "requirement_synthesis",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow Jones Industrial Average turun 165,35 poin, atau 0,37%, ditutup pada 44.546,08. S&P 500 turun 0,01% menjadi 6.114,63, dan Nasdaq Composite naik 0,41% menjadi 20.026,77. Secara mingguan, tiga indeks utama mencatat kenaikan, karena sentimen membaik menyusul kepastian lebih lanjut seputar rencana tarif ",
+    "generated_content": "Berdasarkan penurunan penjualan properti residensial dan dominasi KPR sebagai sumber pembiayaan, bank perlu mensintesis persyaratan mitigasi risiko kredit KPR: 1) Penilaian kelayakan kredit lebih ketat untuk segmen menengah-bawah, 2) Pemantauan rasio loan-to-value (LTV) dan debt-to-income (DTI), 3) Penyesuaian tenor dan bunga KPR, 4) Monitoring terhadap pengembang yang terlalu bergantung pada dana internal, 5) Penawaran restrukturisasi bagi debitur terdampak. Checklist ini penting untuk menjaga kualitas aset dan mencegah lonjakan NPL di tengah tekanan sektor properti.",
+    "confidence_score": 0.84,
+    "status": "pending",
+    "source_units": [
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_0",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_0",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_1",
+      "u_t_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_pb_2",
+      "u_28b3343f-a806-4f41-936f-73d8a8cfc3c6_p1_left_1"
+    ],
+    "source_previews": [
+      {
+        "content": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nGlobal Tiga indeks utama Amerika Serikat (AS) ditutup bervariasi pada hari Jumat. Dow J"
+      }
+    ]
+  }
+]

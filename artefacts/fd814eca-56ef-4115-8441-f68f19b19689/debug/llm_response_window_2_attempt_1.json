@@ -1,0 +1,101 @@
+{
+  "enhancements": [
+    {
+      "type": "formula_discovery",
+      "title": "Identifikasi Formula Perhitungan Kinerja Tahunan dan Disetahunkan Reksa Dana",
+      "content": "Analisis terhadap tabel kinerja reksa dana (misal: Tabel 2) menunjukkan bahwa kinerja untuk periode 3 dan 5 tahun telah 'disetahunkan'. Hal ini mengindikasikan penggunaan formula Compound Annual Growth Rate (CAGR) untuk menghitung return tahunan rata-rata. Formula CAGR = [(NAB akhir / NAB awal)^(1/n)] - 1, di mana n adalah jumlah tahun. Ini penting karena CAGR memberikan gambaran pertumbuhan tahunan yang lebih akurat dibanding return kumulatif, terutama untuk membandingkan performa antar produk reksa dana. Praktisnya, investor dapat menggunakan formula ini untuk mengevaluasi konsistensi kinerja reksa dana, bukan hanya melihat return tahunan yang fluktuatif. Penggunaan CAGR juga mendukung pengambilan keputusan investasi jangka panjang dan mitigasi risiko overestimasi hasil investasi. Risiko yang teridentifikasi adalah jika investor hanya melihat return tahunan tanpa memperhitungkan CAGR, mereka bisa salah menilai stabilitas produk.",
+      "source_units": ["Tabel 2", "Paragraf keterangan kinerja"],
+      "confidence": 0.95,
+      "priority": 10
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implikasi Tracking Error Maksimum 2% pada Reksa Dana Indeks",
+      "content": "Ketentuan bahwa tracking error BNP Paribas SRI-KEHATI tidak boleh melebihi 2% pada kondisi pasar normal (dan penyesuaian portofolio segera jika terlampaui) memiliki implikasi strategis signifikan. Ini berarti manajer investasi harus melakukan rebalancing aktif untuk menjaga portofolio tetap setara dengan indeks acuan. Praktisnya, investor dapat mengharapkan kinerja reksa dana yang sangat mendekati indeks, dengan risiko deviasi yang minimal. Namun, biaya transaksi akibat rebalancing berulang bisa meningkat, yang secara tidak langsung dapat menggerus return. Selain itu, pada kondisi pasar abnormal, toleransi tracking error bisa berbeda, sehingga investor perlu waspada terhadap potensi deviasi lebih besar. Insight ini mendukung keputusan investor yang mengutamakan konsistensi dengan benchmark dan ingin menghindari risiko active management.",
+      "source_units": ["Paragraf tracking error", "Key Highlights SRI-KEHATI"],
+      "confidence": 0.9,
+      "priority": 9
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Kinerja Negatif Reksa Dana Saham di Tahun 2024 dan Divergensi Return",
+      "content": "Dari tabel kinerja per Desember 2024, seluruh reksa dana saham (BNP SRI-KEHATI, Eastspring IDX ESG Leaders Plus) menunjukkan return negatif untuk 1 bulan, YTD, dan 1 tahun, dengan kisaran -3% hingga -14%. Namun, terdapat pola divergensi antara kinerja reksa dana dan tolok ukur: misal, BNP SRI-KEHATI mencatat -11.18% (YTD) vs tolok ukur -14.03%, dan Eastspring IDX ESG Leaders Plus -10.91% vs tolok ukur -5.58%. Ini mengindikasikan bahwa walaupun pasar secara umum turun, beberapa reksa dana mampu mengurangi kerugian relatif terhadap indeks, sedangkan yang lain justru underperform. Pola ini penting untuk analisis resilience produk terhadap tekanan pasar. Praktis, investor dapat memilih produk yang lebih defensif saat pasar bearish. Risiko: memilih reksa dana yang consistently underperform terhadap benchmark.",
+      "source_units": ["Tabel 2", "Tabel kinerja Eastspring IDX ESG Leaders Plus"],
+      "confidence": 0.92,
+      "priority": 10
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Konsekuensi Portofolio Berbasis ESG dan SRI terhadap Risiko dan Return",
+      "content": "Fokus pada emiten dengan kriteria ESG (Environmental, Social, Governance) dan SRI (Sustainable and Responsible Investment) pada kedua indeks (SRI-KEHATI dan IDX ESG Leaders) membawa implikasi bahwa portofolio cenderung terdiri dari perusahaan berkapitalisasi besar dan berfundamental kuat. Hal ini menurunkan risiko idiosinkratik dan meningkatkan transparansi, namun juga membatasi eksposur ke saham-saham berpotensi return tinggi namun lebih volatil. Praktis, investor mendapatkan portofolio yang lebih stabil dan mudah dipantau, tetapi potensi alpha (return di atas pasar) mungkin lebih terbatas. Insight ini mendukung keputusan investor yang mengutamakan stabilitas dan keberlanjutan, namun harus sadar akan trade-off terhadap potensi return lebih tinggi dari saham non-ESG.",
+      "source_units": ["Key Highlights SRI-KEHATI", "Key Highlights Eastspring IDX ESG Leaders Plus"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Dominasi Sektor Keuangan dan Telekomunikasi dalam Portofolio Reksa Dana Indeks",
+      "content": "Analisis terhadap 5 besar efek dalam portofolio baik SRI-KEHATI maupun Eastspring IDX ESG Leaders Plus menunjukkan dominasi saham perbankan (BANK CENTRAL ASIA, BANK RAKYAT INDONESIA, BANK MANDIRI, BANK NEGARA INDONESIA) dan telekomunikasi (TELKOM INDONESIA, GOTO GOJEK TOKOPEDIA). Pola ini mengindikasikan bahwa kinerja reksa dana sangat dipengaruhi oleh sektor keuangan dan telekomunikasi. Praktis, investor yang sudah memiliki eksposur besar ke sektor ini di portofolio lain perlu memperhatikan risiko konsentrasi. Insight ini juga dapat digunakan untuk melakukan diversifikasi lintas produk. Risiko utama adalah jika terjadi tekanan di sektor perbankan atau telekomunikasi, kinerja reksa dana akan sangat terpengaruh.",
+      "source_units": ["Tabel 1", "Tabel 5 besar efek Eastspring IDX ESG Leaders Plus"],
+      "confidence": 0.93,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Dampak Biaya Transaksi pada Return Efektif Reksa Dana",
+      "content": "Dokumen menyebutkan bahwa reksa dana memiliki biaya transaksi pembelian, penjualan, dan pengalihan. Implikasi tersirat adalah bahwa return yang ditampilkan (misal di Tabel 2 dan tabel kinerja lain) belum memperhitungkan biaya transaksi aktual yang akan dialami investor. Praktis, investor harus mengurangi return yang tercantum dengan total biaya transaksi untuk mendapatkan return efektif. Hal ini sangat penting bagi investor dengan horizon investasi pendek atau yang sering melakukan switching antar produk. Insight ini mendukung keputusan investor untuk memperhitungkan biaya total ownership dan bukan hanya return headline. Risiko: overestimasi hasil investasi jika biaya transaksi diabaikan.",
+      "source_units": ["Keterangan kinerja", "Catatan biaya transaksi"],
+      "confidence": 0.87,
+      "priority": 7
+    },
+    {
+      "type": "scenario_analysis",
+      "title": "Proyeksi Kinerja Obligasi USD saat Penurunan Suku Bunga Global",
+      "content": "Produk Prima USD dan MANUFIX menekankan potensi kenaikan harga obligasi USD jika bank sentral menurunkan suku bunga. Implikasi tersirat adalah investor yang masuk sebelum penurunan suku bunga dapat memperoleh capital gain dari kenaikan harga obligasi. Praktis, investor dapat memanfaatkan momentum ini dengan menambah eksposur ke reksa dana obligasi USD sebelum penurunan suku bunga terjadi. Namun, risiko utama adalah jika penurunan suku bunga tertunda atau tidak terjadi, return bisa stagnan atau bahkan negatif akibat fluktuasi nilai tukar dan harga obligasi. Insight ini mendukung strategi market timing berbasis outlook makroekonomi.",
+      "source_units": ["Key Highlights Prima USD", "Key Highlights MANUFIX"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "requirement_synthesis",
+      "title": "Checklist Persyaratan dan Profil Risiko untuk Pemilihan Reksa Dana",
+      "content": "Dokumen menyajikan berbagai profil risiko (agresif, moderat), denominasi mata uang (IDR, USD), dan tolok ukur berbeda. Synthesis dari data ini menghasilkan checklist pemilihan reksa dana: (1) Tentukan profil risiko (agresif: SRI-KEHATI, Eastspring IDX ESG Leaders Plus; moderat: Prima USD, MANUFIX), (2) Pilih denominasi sesuai kebutuhan (IDR untuk investor domestik, USD untuk diversifikasi mata uang), (3) Cek tolok ukur untuk memastikan kesesuaian strategi (indeks saham vs obligasi), (4) Perhatikan biaya transaksi dan likuiditas, (5) Pastikan manajer investasi kredibel. Checklist ini actionable untuk advisor maupun investor mandiri.",
+      "source_units": ["Tabel karakteristik utama reksa dana", "Profil risiko di seluruh produk"],
+      "confidence": 0.9,
+      "priority": 9
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Korelasi Antara Dana Kelolaan dan Profil Risiko Produk",
+      "content": "Terdapat pola bahwa produk dengan dana kelolaan besar (misal: Eastspring IDX ESG Leaders Plus IDR 3,6 triliun) cenderung memiliki profil risiko agresif dan berbasis indeks saham, sedangkan produk dengan dana kelolaan lebih kecil (misal: MANUFIX USD 20,3 juta) memiliki profil risiko moderat dan berbasis obligasi. Pola ini mengindikasikan preferensi pasar yang lebih besar terhadap produk saham agresif, atau bisa juga menunjukkan bahwa produk obligasi lebih segmented untuk investor tertentu. Praktis, investor dapat mempertimbangkan likuiditas dan potensi volatilitas berdasarkan dana kelolaan dan profil risiko. Risiko: produk dengan dana kelolaan kecil bisa menghadapi masalah likuiditas saat redemption besar-besaran.",
+      "source_units": ["Tabel karakteristik utama reksa dana", "Dana kelolaan seluruh produk"],
+      "confidence": 0.82,
+      "priority": 6
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Konsekuensi Portofolio Obligasi USD terhadap Risiko Nilai Tukar",
+      "content": "Investasi pada reksa dana berbasis obligasi USD (Prima USD, MANUFIX) memberikan akses ke pasar obligasi pemerintah Indonesia dalam USD. Implikasi tersirat adalah investor domestik akan terekspos risiko nilai tukar USD/IDR. Jika rupiah melemah, return dalam rupiah bisa meningkat, namun jika rupiah menguat, return bisa tergerus. Praktis, investor yang ingin diversifikasi mata uang dapat memanfaatkan produk ini, namun harus sadar bahwa fluktuasi kurs bisa lebih dominan daripada return obligasi itu sendiri. Insight ini penting untuk investor yang ingin hedging terhadap pelemahan rupiah, namun harus siap dengan risiko volatilitas kurs.",
+      "source_units": ["Key Highlights Prima USD", "Key Highlights MANUFIX"],
+      "confidence": 0.88,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Metode Penentuan Komposisi Portofolio Berbasis Replikasi Indeks",
+      "content": "Pernyataan bahwa reksa dana indeks menggunakan pendekatan replikasi emiten pada indeks (misal SRI-KEHATI, IDX ESG Leaders) mengindikasikan penggunaan formula weighted average berdasarkan bobot saham di indeks acuan. Artinya, setiap saham dalam portofolio akan memiliki proporsi yang sama atau sangat mendekati dengan bobotnya di indeks. Formula: Bobot Saham dalam Portofolio = Bobot Saham di Indeks x Total Nilai Portofolio. Praktis, investor dapat memprediksi perubahan komposisi portofolio jika terjadi rebalancing pada indeks acuan. Insight ini mendukung transparansi dan prediktabilitas portofolio, serta memudahkan analisis risiko konsentrasi.",
+      "source_units": ["Key Highlights SRI-KEHATI", "Key Highlights Eastspring IDX ESG Leaders Plus"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "scenario_analysis",
+      "title": "Analisis What-If: Dampak Perubahan Komponen Indeks terhadap Portofolio",
+      "content": "Karena reksa dana indeks mereplikasi komponen indeks (misal SRI-KEHATI, IDX ESG Leaders), setiap perubahan komposisi indeks (misal, penambahan/pengurangan saham) akan memaksa manajer investasi untuk melakukan rebalancing portofolio. Implikasi tersirat: jika terjadi perubahan besar pada indeks (misal, saham besar dikeluarkan), reksa dana harus menjual/membeli saham terkait, yang bisa memicu biaya transaksi dan potensi slippage harga. Praktis, investor harus mewaspadai periode rebalancing indeks sebagai momen volatilitas dan potensi deviasi return. Insight ini penting untuk investor institusi yang melakukan market timing.",
+      "source_units": ["Key Highlights SRI-KEHATI", "Key Highlights Eastspring IDX ESG Leaders Plus"],
+      "confidence": 0.85,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

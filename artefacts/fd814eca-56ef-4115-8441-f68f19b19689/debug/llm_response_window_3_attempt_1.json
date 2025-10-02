@@ -1,0 +1,85 @@
+{
+  "enhancements": [
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Expected Annualized Return Berdasarkan Alokasi Portofolio",
+      "content": "Analisis mendalam terhadap tabel-tabel alokasi portofolio (MODERATE, BALANCED, AGGRESSIVE) mengindikasikan adanya formula tersembunyi dalam perhitungan expected annualized return. Meskipun hanya sebagian produk yang mencantumkan expected return eksplisit (misal: 6,11% untuk SMMF pada Moderate, 7,34% untuk BDL pada Balanced, dan 8,95% untuk Cash Reserve pada Aggressive), pola bobot alokasi (misal: 10% pada Money Market, 90% pada Bonds) menunjukkan bahwa total expected return portofolio dapat dihitung dengan rumus weighted average dari expected return masing-masing produk. Formula umum: Expected Return Portofolio = Σ (Bobot Produk x Expected Return Produk). Hal ini penting karena investor dapat memproyeksikan return portofolio aktual jika memilih kombinasi produk berbeda. Praktisnya, investor dapat melakukan simulasi skenario dengan mengubah bobot dan produk untuk mengoptimalkan return sesuai profil risiko. Insight ini mendukung keputusan asset allocation yang lebih presisi dan berbasis data, serta mengidentifikasi risiko jika terdapat deviasi return aktual dari estimasi. Risiko utama adalah jika expected return produk berubah, maka proyeksi portofolio juga harus segera disesuaikan.",
+      "source_units": ["TABEL 1", "TABEL 2", "TABEL 3"],
+      "confidence": 0.95,
+      "priority": 10
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implikasi Pergerakan Yield US Treasury Terhadap Harga Obligasi INDON35NEW",
+      "content": "Dokumen menyebutkan bahwa kinerja INDON35NEW sangat dipengaruhi oleh yield US Treasury (UST) 10-tahun, yang saat ini berada di kisaran 4,5% setelah sebelumnya 4,8%. Implikasi tersirat adalah: jika yield UST turun, harga obligasi INDON35NEW cenderung naik (capital gain), dan sebaliknya. Hal ini karena obligasi negara berkembang seperti INDON35NEW biasanya memiliki spread tetap di atas UST. Dengan proyeksi The Fed akan memangkas suku bunga, yield UST berpotensi turun, sehingga harga INDON35NEW akan naik. Investor dapat memanfaatkan timing ini untuk potensi capital gain, namun juga harus waspada jika yield UST kembali naik akibat inflasi atau kebijakan moneter ketat. Insight ini penting untuk strategi market timing dan risk management, terutama dalam konteks global bond market volatility.",
+      "source_units": ["Paragraf tentang kinerja INDON35NEW", "Paragraf tentang yield UST"],
+      "confidence": 0.9,
+      "priority": 9
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Konsistensi Kupon Tetap INDON35NEW dan Implikasinya Terhadap Income Stream",
+      "content": "INDON35NEW menawarkan kupon tetap 5,60% dibayar semi-annual, sementara yield pasar saat ini sekitar 5,31%. Pola ini menunjukkan bahwa investor yang membeli di harga pasar saat ini akan menerima yield to maturity (YTM) yang sedikit lebih rendah dari kupon, menandakan harga obligasi telah naik di atas par. Pola ini penting untuk income planning, karena investor dapat mengandalkan cashflow tetap setiap 6 bulan. Namun, jika yield pasar turun lebih jauh, harga obligasi akan semakin premium, sehingga potensi capital gain menurun bagi pembeli baru. Sebaliknya, jika yield naik, harga turun dan investor berisiko capital loss jika dijual sebelum jatuh tempo. Pola ini mendukung strategi buy-and-hold untuk investor yang mengutamakan stabilitas pendapatan.",
+      "source_units": ["Paragraf tentang kupon dan yield INDON35NEW"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Konsekuensi Diversifikasi Portofolio Berdasarkan Profil Risiko",
+      "content": "Tabel-tabel portofolio menunjukkan bahwa semakin agresif profil risiko, semakin besar porsi pada ekuitas (Big Cap dan Small-Mid Cap Equity) dan semakin kecil pada Money Market. Implikasi tersirat adalah: investor dengan profil agresif akan mengalami volatilitas portofolio lebih tinggi, namun berpotensi mendapatkan expected return lebih besar (misal: 8,95% pada Aggressive vs 6,11% pada Moderate). Namun, risiko downside juga meningkat, terutama pada saat pasar saham mengalami koreksi. Insight ini penting untuk investor dalam menyesuaikan ekspektasi return dengan toleransi risiko aktual, serta untuk advisor dalam memberikan rekomendasi berbasis risk appetite. Diversifikasi lintas asset class juga mengurangi risiko konsentrasi, namun tidak menghilangkan risiko sistemik.",
+      "source_units": ["TABEL 1", "TABEL 2", "TABEL 3"],
+      "confidence": 0.92,
+      "priority": 9
+    },
+    {
+      "type": "requirement_synthesis",
+      "title": "Sintesis Persyaratan dan Risiko Investasi pada INDON35NEW",
+      "content": "Dokumen secara terpisah menyebutkan manfaat dan risiko produk, namun tidak secara eksplisit menyusun checklist persyaratan bagi investor. Dari analisis, dapat disintesis bahwa investor INDON35NEW harus: (1) Memiliki pemahaman tentang risiko gagal bayar, risiko pasar (fluktuasi harga), dan risiko likuiditas; (2) Memiliki horizon investasi yang sejalan dengan tenor obligasi (10 tahun); (3) Siap menerima pembayaran kupon semi-annual dan potensi capital gain/loss jika dijual sebelum jatuh tempo; (4) Memahami bahwa expected return bukan jaminan dan kinerja historis tidak menjamin masa depan; (5) Mengakses informasi prospektus dan ringkasan produk untuk due diligence. Checklist ini penting untuk mitigasi risiko dan memastikan suitability produk dengan kebutuhan investor.",
+      "source_units": ["Paragraf manfaat produk", "Paragraf risiko produk"],
+      "confidence": 0.93,
+      "priority": 10
+    },
+    {
+      "type": "scenario_analysis",
+      "title": "Proyeksi Skenario Yield dan Harga INDON35NEW di Tengah Kebijakan The Fed",
+      "content": "Dengan The Fed memproyeksikan pemangkasan suku bunga, yield UST kemungkinan akan turun, sehingga harga INDON35NEW berpotensi naik. Skenario lain, jika inflasi AS kembali naik dan The Fed menunda pemangkasan, yield UST bisa naik kembali ke atas 4,8%, menyebabkan harga INDON35NEW turun. Investor yang membeli sekarang berpotensi capital gain jika skenario pertama terjadi, namun berisiko capital loss jika skenario kedua terealisasi. Skenario ini penting untuk strategi entry/exit timing dan hedging exposure terhadap interest rate risk. Investor dapat mempertimbangkan strategi laddering atau diversifikasi tenor untuk mengurangi risiko timing yang salah.",
+      "source_units": ["Paragraf tentang proyeksi The Fed", "Paragraf yield UST"],
+      "confidence": 0.87,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Dampak Jaminan Pemerintah Terhadap Risiko Kredit INDON35NEW",
+      "content": "Salah satu manfaat utama INDON35NEW adalah pembayaran kupon dan pelunasan pokok dijamin oleh Undang-Undang. Implikasi tersirat: risiko gagal bayar sangat rendah selama Pemerintah RI tidak mengalami default. Hal ini membuat produk ini lebih aman dibanding obligasi korporasi atau instrumen USD lain tanpa sovereign guarantee. Namun, risiko pasar dan likuiditas tetap ada, terutama jika investor butuh mencairkan sebelum jatuh tempo. Insight ini penting untuk investor yang mencari instrumen USD dengan risiko kredit minimal, namun tetap harus memperhatikan faktor eksternal seperti sovereign risk dan perubahan rating kredit negara.",
+      "source_units": ["Paragraf manfaat produk", "Paragraf risiko produk"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Perbedaan Expected Return Antar Profil Risiko dan Implikasinya",
+      "content": "Tabel portofolio menunjukkan expected return yang meningkat seiring profil risiko: Moderate (6,11%), Balanced (7,34%), Aggressive (8,95%). Pola ini mengindikasikan risk-reward trade-off yang konsisten, di mana peningkatan expected return diperoleh dengan menambah eksposur ke aset berisiko tinggi (ekuitas). Pola ini dapat digunakan untuk benchmarking kinerja portofolio aktual terhadap ekspektasi, serta sebagai dasar untuk rebalancing jika realisasi return menyimpang signifikan dari proyeksi. Investor juga dapat menggunakan pola ini untuk menyesuaikan alokasi aset sesuai perubahan risk appetite atau kondisi pasar.",
+      "source_units": ["TABEL 1", "TABEL 2", "TABEL 3"],
+      "confidence": 0.89,
+      "priority": 7
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Konsekuensi Pajak dan Biaya Transaksi Terhadap Realisasi Capital Gain",
+      "content": "Dokumen menyebutkan potensi capital gain dari kenaikan harga obligasi di pasar sekunder, namun juga menekankan perlunya memperhitungkan biaya transaksi dan perpajakan. Implikasi tersirat: realisasi capital gain bisa lebih rendah dari proyeksi jika biaya transaksi (spread, fee) dan pajak atas capital gain cukup signifikan. Investor perlu melakukan perhitungan net return setelah biaya dan pajak sebelum melakukan aksi jual beli obligasi. Insight ini penting untuk menghindari overestimasi profitabilitas dan untuk perencanaan cashflow yang lebih akurat.",
+      "source_units": ["Paragraf manfaat produk"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "requirement_synthesis",
+      "title": "Checklist Kelayakan Produk untuk Investor USD Income Seeker",
+      "content": "Analisis manfaat dan risiko INDON35NEW mengindikasikan bahwa produk ini paling cocok untuk investor yang: (1) Menginginkan pendapatan tetap dalam USD lebih tinggi dari deposito USD; (2) Mampu menahan investasi hingga jatuh tempo untuk menghindari risiko pasar; (3) Tidak membutuhkan likuiditas tinggi karena risiko pasar sekunder; (4) Memiliki profil risiko Moderate hingga Balanced; (5) Memiliki ekspektasi return yang realistis dan memahami bahwa kinerja historis bukan jaminan masa depan. Checklist ini dapat digunakan advisor untuk suitability assessment dan investor untuk self-assessment sebelum pembelian.",
+      "source_units": ["Paragraf manfaat produk", "Paragraf risiko produk"],
+      "confidence": 0.9,
+      "priority": 8
+    }
+  ],
+  "metadata": {}
+}
