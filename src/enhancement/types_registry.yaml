@@ -1,0 +1,413 @@
+# ========================================================================
+# ENHANCEMENT TYPE REGISTRY - UNIVERSAL CONFIGURATION
+# ========================================================================
+# Version: 2.0 | NO HARDCODING - All types defined here
+# ========================================================================
+
+metadata:
+  version: "2.0"
+  last_updated: "2025-01-09"
+
+# ========================================================================
+# CATEGORIES
+# ========================================================================
+categories:
+  - id: "summary_synthesis"
+    name: "Ringkasan & Sintesis"
+    name_en: "Summary & Synthesis"
+    description: "Rangkuman dan sintesis informasi dokumen"
+    icon: "📝"
+    display_order: 1
+    
+  - id: "analytical_insights"
+    name: "Analisis & Insight"
+    name_en: "Analytical Insights"
+    description: "Analisis mendalam dan temuan tersirat"
+    icon: "🔍"
+    display_order: 2
+    
+  - id: "knowledge_extraction"
+    name: "Ekstraksi Pengetahuan"
+    name_en: "Knowledge Extraction"
+    description: "Ekstraksi formula, pola, dan pengetahuan tersembunyi"
+    icon: "💡"
+    display_order: 3
+    
+  - id: "projective_intelligence"
+    name: "Proyeksi & Prediksi"
+    name_en: "Projective Intelligence"
+    description: "Proyeksi masa depan dan analisis skenario"
+    icon: "🔮"
+    display_order: 4
+    
+  - id: "structural_mapping"
+    name: "Pemetaan Struktural"
+    name_en: "Structural Mapping"
+    description: "Pemetaan hubungan, dependensi, dan struktur"
+    icon: "🗺️"
+    display_order: 5
+
+# ========================================================================
+# ENHANCEMENT TYPES
+# ========================================================================
+enhancement_types:
+  
+  # === SUMMARY & SYNTHESIS ===
+  
+  - id: "executive_summary"
+    category: "summary_synthesis"
+    name: "Ringkasan Eksekutif"
+    name_en: "Executive Summary"
+    description: "Ringkasan tingkat tinggi untuk pengambil keputusan"
+    applicable_domains: ["all"]
+    default_priority: 8
+    default_enabled: true
+    prompt_instructions: |
+      Buat ringkasan eksekutif mencakup: (1) Poin kunci 3-5 bullets, (2) Insight utama dan interpretasi tersirat, (3) Rekomendasi aksi strategis, (4) Konteks dan implikasi tidak langsung. 
+      
+      Framework: WHY (significance) → WHAT (key findings) → HOW (application) → IMPACT (consequences).
+      
+      Target: C-level executives dan decision makers. Bahasa: jelas, padat, actionable, evidence-based.
+    examples:
+      financial: "Q1 menunjukkan revenue +15% YoY namun margin turun 2% mengindikasikan pressure cost. Ekspansi regional sukses tapi persaingan intensif. Rekomendasi: optimize cost structure, strengthen competitive moat."
+      legal: "Regulasi baru mengharuskan compliance dalam 6 bulan. Impact: perlu restrukturisasi SOP dan training 200+ staff. Risk: penalty Rp 5M jika non-compliant. Action: immediate task force."
+      operational: "Process A memiliki 3 bottleneck yang menyebabkan delay 40%. Root cause: manual approval dan resource constraint. Opportunity: automation bisa reduce cycle time 60%."
+  
+  - id: "section_summary"
+    category: "summary_synthesis"
+    name: "Ringkasan Per Bagian"
+    description: "Ringkasan terstruktur per bagian/chapter"
+    applicable_domains: ["all"]
+    default_priority: 6
+    default_enabled: false
+    prompt_instructions: |
+      Untuk setiap section: identifikasi topik utama, rangkum poin penting 3-5 bullets, highlight key takeaways.
+  
+  - id: "glossary"
+    category: "summary_synthesis"
+    name: "Glossarium Istilah"
+    description: "Definisi istilah-istilah penting dan teknis"
+    applicable_domains: ["all"]
+    default_priority: 4
+    default_enabled: false
+    prompt_instructions: |
+      Ekstrak istilah teknis, akronim, domain-specific terminology. Format: **Istilah**: Definisi singkat jelas. Hindari istilah terlalu common.
+  
+  # === ANALYTICAL INSIGHTS ===
+  
+  - id: "implication_analysis"
+    category: "analytical_insights"
+    name: "Analisis Implikasi"
+    description: "Analisis konsekuensi dan implikasi tidak langsung"
+    applicable_domains: ["all"]
+    default_priority: 7
+    default_enabled: true
+    prompt_instructions: |
+      Analisis implikasi TERSIRAT yang TIDAK disebutkan eksplisit dalam dokumen:
+      
+      (1) **Konsekuensi Langsung** - Dampak immediate dari statement/policy/data
+      (2) **Efek Domino** - Chain reaction dan second-order effects
+      (3) **Risiko Potensial** - Ancaman atau vulnerability tersembunyi
+      (4) **Peluang Tersembunyi** - Opportunity yang bisa dimanfaatkan
+      
+      FOKUS: Logical reasoning dan causal analysis. Berikan confidence level (0.0-1.0) dan asumsi yang digunakan.
+    examples:
+      financial: "Bunga naik 2% → implikasi: cicilan KPR naik ~15%, demand properti turun 20-30%, bank shift portfolio ke deposito dan obligasi. Secondary effect: developer tunda proyek, penurunan konstruksi, impact ekonomi regional. Confidence: 0.8."
+      legal: "Klausul X menyatakan 'notifikasi dalam waktu wajar' → implikasi: definisi 'wajar' tidak jelas, risk dispute, best practice: tentukan explicit timeframe (misal 7 hari kerja). Confidence: 0.85."
+      operational: "SOP menyebutkan 'approval manager' → implikasi: jika manager absent, proses stuck. Risk: delay kritis. Mitigasi: perlu deputy/backup approval mechanism. Confidence: 0.9."
+  
+  - id: "pattern_recognition"
+    category: "analytical_insights"
+    name: "Pengenalan Pola"
+    description: "Identifikasi pola, trend, dan anomali"
+    applicable_domains: ["all"]
+    default_priority: 7
+    default_enabled: true
+    prompt_instructions: |
+      Identifikasi pola tersembunyi dalam data/konten dokumen:
+      
+      (1) **Pola Temporal** - Trend berulang, seasonality, cycles
+      (2) **Pola Numerical** - Growth rate, ratios, correlations
+      (3) **Pola Struktural** - Recurring themes, dependencies
+      (4) **Anomali** - Outliers, deviations, exceptional cases
+      
+      Untuk setiap pola: (a) Deskripsi konkret, (b) Quantification jika possible, (c) Root cause hypothesis, (d) Implications dan actionable insights.
+    examples:
+      financial: "Pola: Revenue Q1-Q4 menunjukkan seasonality dengan peak di Q4 (+35% vs Q1 average). Cause: holiday season. Implication: inventory dan cash flow planning harus adjust. Anomali: Q3 2024 turun 15% (unusual) → investigate market disruption."
+      legal: "Pola: 80% disputes terjadi pada klausul pembayaran. Root cause: ambiguous wording. Action: standardize payment terms dengan explicit milestones dan penalties."
+      research: "Pola: Correlation kuat (r=0.87) antara variabel X dan Y dalam 5 tahun data. Hypothesis: causal relationship, bukan coincidence. Implication: X bisa predict Y dengan confidence 0.85."
+  
+  - id: "table_insights"
+    category: "analytical_insights"
+    name: "Insight dari Tabel"
+    description: "Analisis mendalam data tabel"
+    applicable_domains: ["all"]
+    default_priority: 8
+    default_enabled: true
+    prompt_instructions: |
+      Untuk tabel: (1) Identifikasi metrik utama, (2) Temukan pola/trend, (3) Buat perbandingan, (4) Ekstrak insight tersirat, (5) Hitung derived metrics jika applicable. FOKUS: value-add analysis beyond describe!
+  
+  - id: "comparative_analysis"
+    category: "analytical_insights"
+    name: "Analisis Komparatif"
+    description: "Perbandingan sistematis antar periode/skenario"
+    applicable_domains: ["all"]
+    default_priority: 6
+    default_enabled: false
+    prompt_instructions: |
+      Bandingkan: periode waktu, produk, skenario, opsi. Output: tabel komparasi, analisis perbedaan kunci, advantages/disadvantages, rekomendasi.
+  
+  # === KNOWLEDGE EXTRACTION ===
+  
+  - id: "formula_discovery"
+    category: "knowledge_extraction"
+    name: "Penemuan Formula"
+    description: "Ekstrak formula dan metode kalkulasi tersembunyi"
+    applicable_domains: ["financial", "technical", "scientific"]
+    default_priority: 8
+    default_enabled: false
+    prompt_instructions: |
+      Reverse-engineer formula TERSEMBUNYI dari tabel/data numerik:
+      
+      (1) **Analisis Data** - Identifikasi relationships antar kolom/variabel
+      (2) **Deduksi Formula** - Reverse engineer metode kalkulasi yang digunakan
+      (3) **Generalisasi** - Buat formula umum reusable dengan parameter jelas
+      (4) **Validasi** - Test formula dengan data points lain, cek consistency
+      (5) **Dokumentasi** - Jelaskan asumsi, limitasi, dan applicable scenarios
+      
+      Format: Formula matematis eksplisit dengan definisi semua variabel. Berikan contoh kalkulasi konkret.
+    examples:
+      financial: "Dari tabel amortisasi, formula tersembunyi: Monthly Payment = P × [r(1+r)^n] / [(1+r)^n - 1] dimana P=principal (Rp 100M), r=monthly rate (6%/12=0.005), n=periods (120 bulan). Validasi: Rp 1.11M/bulan matches tabel. Limitasi: assumes fixed rate, no fees."
+      technical: "Dari data throughput: Effective Bandwidth = (Payload Size / Total Time) × (1 - Error Rate). Contoh: (1000 MB / 10s) × (1 - 0.02) = 98 MB/s. Asumsi: steady state, no packet fragmentation."
+      scientific: "Dari eksperimen: Growth Rate = ln(N_final / N_initial) / time_elapsed. Untuk N_initial=100, N_final=500, t=10hr → growth rate = 0.161/hr. Confidence: 0.9 (R²=0.95)."
+  
+  - id: "requirement_synthesis"
+    category: "knowledge_extraction"
+    name: "Sintesis Persyaratan"
+    description: "Gabungkan persyaratan tersebar jadi checklist"
+    applicable_domains: ["legal", "operational", "compliance"]
+    default_priority: 7
+    default_enabled: false
+    prompt_instructions: |
+      Kumpulkan SEMUA requirements tersebar: ekstrak dengan source, kategorikan, identifikasi dependencies, check completeness. Output: Checklist actionable dengan [✓] format.
+  
+  - id: "process_mapping"
+    category: "knowledge_extraction"
+    name: "Pemetaan Proses"
+    description: "Ekstrak dan lengkapi workflow"
+    applicable_domains: ["operational", "procedural"]
+    default_priority: 7
+    default_enabled: false
+    prompt_instructions: |
+      Ekstrak workflow: (1) Identifikasi semua steps, (2) Urutkan logical, (3) Temukan missing steps, (4) Identifikasi stakeholder per step, (5) Estimasi waktu. Format: numbered list atau flowchart textual.
+  
+  - id: "rule_extraction"
+    category: "knowledge_extraction"
+    name: "Ekstraksi Aturan"
+    description: "Ekstrak business/legal/operational rules"
+    applicable_domains: ["legal", "compliance", "policy"]
+    default_priority: 6
+    default_enabled: false
+    prompt_instructions: |
+      Ekstrak rules: IF-THEN, constraints, requirements, policies. Format structured decision-friendly. Goal: bisa langsung digunakan untuk automation.
+  
+  # === PROJECTIVE INTELLIGENCE ===
+  
+  - id: "scenario_projection"
+    category: "projective_intelligence"
+    name: "Proyeksi Skenario"
+    description: "Proyeksi masa depan berdasarkan trend dan pattern analysis"
+    applicable_domains: ["financial", "strategic", "research"]
+    default_priority: 8
+    default_enabled: false
+    prompt_instructions: |
+      Buat proyeksi multi-skenario berdasarkan data historis:
+      
+      **SKENARIO WAJIB:**
+      1. **Best Case** - Optimistic scenario dengan favorable conditions
+      2. **Most Likely** - Base case dengan current trajectory
+      3. **Worst Case** - Conservative scenario dengan adverse conditions
+      
+      **SETIAP SKENARIO HARUS INCLUDE:**
+      - Angka konkret dan timeline spesifik
+      - Asumsi kunci yang digunakan (explicit!)
+      - Faktor pengaruh dan triggers
+      - Confidence level (0.0-1.0) dan justification
+      - Metodologi (CAGR, linear, exponential, dll)
+      
+      🔥 **CRITICAL EXTRAPOLATION RULE:**
+      Jika dokumen hanya ada data 3-5 tahun tapi user butuh proyeksi 10 tahun:
+      ❌ JANGAN bilang "data tidak tersedia" atau "insufficient data"
+      ✅ BUAT proyeksi menggunakan extrapolation (CAGR, trend analysis, pattern-based)
+      ✅ JELASKAN methodology, asumsi, dan limitasi secara eksplisit
+      ✅ BERIKAN confidence level yang reflect uncertainty (biasanya 0.6-0.75 untuk extrapolation)
+      
+      Contoh struktur: "Dari data 3-5Y (CAGR 7.2%), proyeksi 10Y: Best case 45% (CAGR 8.5%, asumsi: market expansion), Most likely 38% (CAGR 7.2%, asumsi: growth stabil), Worst case 28% (CAGR 5%, asumsi: increased competition). Confidence: 0.7 (medium - extrapolation beyond data range). Limitasi: assumes no major disruption, regulatory changes, or black swan events."
+    examples:
+      financial: "Data historis: 3Y growth +15%, 5Y growth +22% (CAGR 7.2%). Proyeksi 10Y: Best: Rp 500M (+45%, CAGR 8.5%, asumsi: market share +5%), Likely: Rp 450M (+38%, CAGR 7.2%, asumsi: status quo), Worst: Rp 380M (+28%, CAGR 5%, asumsi: margin pressure). Confidence: 0.7. Triggers: Best (new product success), Worst (recession)."
+      strategic: "Dokumen shows 3-year user growth 40%/yr. Proyeksi 5Y: Best: 5M users (assumes viral growth, no competition), Likely: 3.2M users (current rate, normal competition), Worst: 1.8M users (churn increases, market saturation). Confidence: 0.65 (extrapolation). Methodology: compound growth with market cap adjustment."
+      research: "Data 4 tahun shows trend peningkatan efisiensi 3% annually. Proyeksi 10Y: Best: 35% improvement (breakthrough innovation), Likely: 27% improvement (linear trend), Worst: 18% improvement (diminishing returns). Confidence: 0.72. Asumsi: technology availability, funding continuity."
+  
+  - id: "trend_forecasting"
+    category: "projective_intelligence"
+    name: "Forecasting Trend"
+    description: "Prediksi trend berdasarkan pola historis"
+    applicable_domains: ["financial", "market", "research"]
+    default_priority: 7
+    default_enabled: false
+    prompt_instructions: |
+      Analisis trend: direction, rate of change, turning points, forecast next period dengan range estimate, confidence intervals, key assumptions.
+  
+  - id: "what_if_analysis"
+    category: "projective_intelligence"
+    name: "Analisis What-If"
+    description: "Analisis skenario hipotesis"
+    applicable_domains: ["financial", "strategic", "operational"]
+    default_priority: 7
+    default_enabled: false
+    prompt_instructions: |
+      Buat what-if scenarios: "What if X berubah Y%?" Untuk setiap: deskripsi, dampak outcome, perubahan angka, mitigasi, probability.
+  
+  - id: "risk_assessment"
+    category: "projective_intelligence"
+    name: "Penilaian Risiko"
+    description: "Identifikasi dan evaluasi risiko tersembunyi"
+    applicable_domains: ["all"]
+    default_priority: 8
+    default_enabled: false
+    prompt_instructions: |
+      Identifikasi RISIKO TERSEMBUNYI yang tidak disebutkan eksplisit dalam dokumen:
+      
+      **UNTUK SETIAP RISIKO:**
+      1. **Deskripsi Risk** - Apa yang bisa salah? Specific scenario.
+      2. **Likelihood** - High (>50%), Medium (20-50%), Low (<20%) dengan justification
+      3. **Impact** - High (critical), Medium (significant), Low (minor) dengan quantification jika possible
+      4. **Risk Score** - Likelihood × Impact (scale 1-10)
+      5. **Root Cause** - Mengapa risk ini exist?
+      6. **Mitigasi Preventive** - Actions untuk reduce likelihood
+      7. **Contingency Plan** - Actions jika risk occurs
+      8. **Early Warning Indicators** - Signals untuk detect risk early
+      
+      Output format: Risk matrix sorted by priority (High risk score first). Berikan actionable recommendations.
+    examples:
+      financial: "Risk: Concentration risk - 60% revenue dari 1 client. Likelihood: High (70% - client mentioned budget review). Impact: High (critical - potential Rp 300M loss). Score: 9/10. Mitigasi: diversify client base dalam 6 bulan, establish min 5 major clients. Contingency: cost reduction plan ready, pivot strategy. Warning: client payment delays, order volume drops."
+      legal: "Risk: Ambiguous 'force majeure' clause. Likelihood: Medium (30% - clause interpretation varies). Impact: High (dispute Rp 50M+, relationship damage). Score: 7/10. Mitigasi: amend contract dengan explicit force majeure definition (natural disaster, war, pandemic). Contingency: arbitration clause, legal reserve. Warning: party disagreements on scope."
+      operational: "Risk: Single point of failure - critical server no backup. Likelihood: Medium (40% - hardware age 5Y). Impact: High (downtime Rp 100M/day, customer churn). Score: 8/10. Mitigasi: implement redundancy, cloud backup, disaster recovery plan. Contingency: vendor SLA, failover procedure. Warning: performance degradation, increased errors."
+  
+  # === STRUCTURAL MAPPING ===
+  
+  - id: "dependency_mapping"
+    category: "structural_mapping"
+    name: "Pemetaan Dependensi"
+    description: "Identifikasi hubungan dan dependensi"
+    applicable_domains: ["operational", "technical", "project"]
+    default_priority: 6
+    default_enabled: false
+    prompt_instructions: |
+      Buat dependency map: Task A depends on B. Identifikasi critical path, bottlenecks, circular dependencies, parallel opportunities. Format: dependency matrix atau structured list.
+  
+  - id: "entity_relationship"
+    category: "structural_mapping"
+    name: "Hubungan Entitas"
+    description: "Mapping hubungan antara entitas"
+    applicable_domains: ["all"]
+    default_priority: 5
+    default_enabled: false
+    prompt_instructions: |
+      Identifikasi entitas (orang, organisasi, produk, lokasi) dan relasi (owns, manages, supplies). Format: ER diagram textual.
+  
+  - id: "decision_tree_extraction"
+    category: "structural_mapping"
+    name: "Ekstraksi Decision Tree"
+    description: "Buat decision tree dari kondisi/rules"
+    applicable_domains: ["legal", "operational", "policy"]
+    default_priority: 6
+    default_enabled: false
+    prompt_instructions: |
+      Ekstrak logic decisions dan buat tree: IF kondisi A? → YES/NO branches. Pastikan semua branches covered dan logical.
+
+# ========================================================================
+# DOMAIN RECOMMENDATIONS
+# ========================================================================
+domain_recommendations:
+  financial:
+    auto_suggest: 
+      - executive_summary
+      - formula_discovery
+      - scenario_projection
+      - table_insights
+      - pattern_recognition
+      - risk_assessment
+    optional:
+      - trend_forecasting
+      - what_if_analysis
+      - comparative_analysis
+    not_recommended:
+      - process_mapping
+      - decision_tree_extraction
+    
+  legal:
+    auto_suggest:
+      - executive_summary
+      - requirement_synthesis
+      - implication_analysis
+      - rule_extraction
+      - risk_assessment
+    optional:
+      - glossary
+      - section_summary
+      - decision_tree_extraction
+    not_recommended:
+      - formula_discovery
+      - trend_forecasting
+      - scenario_projection
+    
+  operational:
+    auto_suggest:
+      - process_mapping
+      - dependency_mapping
+      - requirement_synthesis
+      - implication_analysis
+      - risk_assessment
+    optional:
+      - executive_summary
+      - pattern_recognition
+      - comparative_analysis
+    not_recommended:
+      - formula_discovery
+      - trend_forecasting
+    
+  technical:
+    auto_suggest:
+      - process_mapping
+      - dependency_mapping
+      - formula_discovery
+      - pattern_recognition
+      - risk_assessment
+    optional:
+      - requirement_synthesis
+      - entity_relationship
+    not_recommended: []
+    
+  research:
+    auto_suggest:
+      - executive_summary
+      - pattern_recognition
+      - comparative_analysis
+      - trend_forecasting
+      - table_insights
+    optional:
+      - scenario_projection
+      - glossary
+    not_recommended: []
+    
+  default:
+    auto_suggest:
+      - executive_summary
+      - implication_analysis
+      - pattern_recognition
+      - risk_assessment
+    optional:
+      - section_summary
+      - glossary
+    not_recommended: []

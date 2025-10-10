@@ -393,52 +393,9 @@ function updateBulkButtonsState() {
 
 startEnhancementBtn?.addEventListener('click', async () => {
     if (!currentDocumentId) return;
-    startEnhancementBtn.disabled = true;
-    setStatus('Enhancement V2: Memulai...', 'running');
-    setStepperPhase('enhance');
     
-    // Show enhanced status message
-    showMessage('🚀 Memulai Enhancement...', 'info');
-    
-    try {
-        const resp = await fetch(`${API_BASE_URL}/start-enhancement/${currentDocumentId}`, { method: 'POST' });
-        if (!resp.ok) {
-            const d = await resp.json().catch(()=>({detail:'Gagal memulai Enhancement'}));
-            throw new Error(d.detail || 'Gagal memulai Enhancement');
-        }
-        
-        // Show progress phases
-        const phases = [
-            '🔄 Membuat token windows...',
-            '🗺️ Map-Reduce planning...',
-            '⚡ Micro-batch generation...',
-            '📝 Markdown v2 synthesis...'
-        ];
-        
-        let phaseIndex = 0;
-        const phaseInterval = setInterval(() => {
-            if (phaseIndex < phases.length) {
-                setStatus(phases[phaseIndex], 'running');
-                phaseIndex++;
-            } else {
-                clearInterval(phaseInterval);
-                setStatus('Enhancement: Berjalan...', 'running');
-            }
-        }, 1200);
-        
-        if (pollTimer) clearTimeout(pollTimer);
-        if (progressTimer) clearTimeout(progressTimer);
-        pollAttempts = 0;
-        // start faster to improve UX
-        pollIntervalMs = 1200;
-        progressIntervalMs = 1200;
-        scheduleNextPoll();
-        scheduleProgressPoll();
-    } catch (err) {
-        showMessage(err.message || 'Gagal memulai Enhancement', 'error');
-        startEnhancementBtn.disabled = false;
-        setStatus('Galat', 'error');
-    }
+    // NEW: Show configuration modal instead of starting directly
+    await showEnhancementConfigModal();
 });
 
 function scheduleNextPoll() {
@@ -1033,7 +990,19 @@ function sanitizeHTML(html) {
     return root.innerHTML;
 }
 
+// Global type registry cache (loaded from backend)
+let typeRegistry = null;
+
 function labelForType(t) {
+    // Try to get label from type registry first
+    if (typeRegistry && typeRegistry.types) {
+        const typeObj = typeRegistry.types.find(type => type.id === t);
+        if (typeObj) {
+            return typeObj.name; // Return Indonesian name from registry
+        }
+    }
+    
+    // Fallback to old hardcoded labels for backward compatibility
     switch (t) {
         case 'glossary': return 'Glossarium';
         case 'highlight': return 'Sorotan';
@@ -1041,7 +1010,17 @@ function labelForType(t) {
         case 'caption': return 'Keterangan';
         case 'term_to_define': return 'Definisi';
         case 'concept_to_simplify': return 'Penyederhanaan';
-        default: return 'Pengayaan';
+        case 'executive_summary': return 'Ringkasan Eksekutif';
+        case 'formula_discovery': return 'Penemuan Formula';
+        case 'pattern_recognition': return 'Pengenalan Pola';
+        case 'table_insights': return 'Insight dari Tabel';
+        case 'scenario_projection': return 'Proyeksi Skenario';
+        case 'risk_assessment': return 'Penilaian Risiko';
+        case 'trend_forecasting': return 'Forecasting Trend';
+        case 'what_if_analysis': return 'Analisis What-If';
+        case 'comparative_analysis': return 'Analisis Komparatif';
+        case 'implication_analysis': return 'Analisis Implikasi';
+        default: return t || 'Enhancement'; // Show type ID if unknown
     }
 }
 
@@ -1074,3 +1053,340 @@ function getReadableSourceInfo(suggestion) {
     });
     return sources.join(', ');
 }
+
+
+// ============================================================================
+// ENHANCEMENT CONFIGURATION SYSTEM
+// ============================================================================
+
+let enhancementTypeRegistry = null;
+let currentDocAnalysis = null;
+let selectedEnhancementTypes = new Set();
+
+// Load enhancement type registry on page load
+async function loadEnhancementTypeRegistry() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/enhancement/get-type-registry`);
+        if (!response.ok) throw new Error('Failed to load type registry');
+        enhancementTypeRegistry = await response.json();
+        typeRegistry = enhancementTypeRegistry; // Also set global typeRegistry for labelForType()
+        console.log('✅ Enhancement type registry loaded:', enhancementTypeRegistry);
+    } catch (error) {
+        console.error('❌ Failed to load enhancement type registry:', error);
+    }
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', () => {
+    loadEnhancementTypeRegistry();
+});
+
+// Analyze document and show configuration modal
+async function showEnhancementConfigModal() {
+    if (!currentDocumentId) {
+        alert('Tidak ada dokumen yang aktif');
+        return;
+    }
+
+    try {
+        // Analyze document
+        const response = await fetch(`${API_BASE_URL}/enhancement/analyze-document/${currentDocumentId}`);
+        if (!response.ok) throw new Error('Failed to analyze document');
+        currentDocAnalysis = await response.json();
+        
+        // Populate analysis summary
+        document.getElementById('analysis-pages').textContent = currentDocAnalysis.pages;
+        document.getElementById('analysis-tables').textContent = currentDocAnalysis.tables;
+        
+        const domainBadge = document.getElementById('analysis-domain');
+        if (currentDocAnalysis.detected_domain) {
+            domainBadge.textContent = currentDocAnalysis.detected_domain;
+            domainBadge.style.display = 'inline-block';
+            // Auto-select domain in dropdown
+            document.getElementById('domain-hint-select').value = currentDocAnalysis.detected_domain;
+        } else {
+            domainBadge.textContent = 'General';
+            domainBadge.style.display = 'inline-block';
+        }
+        
+        // Show characteristics badges
+        document.getElementById('char-numerical').style.display = 
+            currentDocAnalysis.has_numerical_data ? 'inline-block' : 'none';
+        document.getElementById('char-legal').style.display = 
+            currentDocAnalysis.has_legal_terms ? 'inline-block' : 'none';
+        document.getElementById('char-procedural').style.display = 
+            currentDocAnalysis.has_procedural_content ? 'inline-block' : 'none';
+        
+        // Render enhancement types
+        renderEnhancementTypes();
+        
+        // Show modal
+        document.getElementById('enhancement-config-modal').classList.add('active');
+        
+    } catch (error) {
+        console.error('Failed to show config modal:', error);
+        alert('Gagal menganalisis dokumen: ' + error.message);
+    }
+}
+
+// Render enhancement types grouped by category
+function renderEnhancementTypes() {
+    if (!enhancementTypeRegistry) {
+        document.getElementById('enhancement-types-container').innerHTML = 
+            '<div class="enh-loading">Registry belum dimuat. Refresh halaman.</div>';
+        return;
+    }
+    
+    const container = document.getElementById('enhancement-types-container');
+    container.innerHTML = '';
+    
+    // Get domain for recommendations
+    const domain = document.getElementById('domain-hint-select').value || 
+                   currentDocAnalysis?.detected_domain || 
+                   'default';
+    
+    const recommendations = enhancementTypeRegistry.domain_recommendations[domain] || 
+                          enhancementTypeRegistry.domain_recommendations['default'];
+    const recommendedIds = new Set([
+        ...(recommendations.auto_suggest || []),
+        ...(recommendations.optional || [])
+    ]);
+    
+    // Group types by category
+    const categories = enhancementTypeRegistry.categories;
+    const types = enhancementTypeRegistry.types;
+    
+    categories.forEach(category => {
+        const categoryTypes = types.filter(t => t.category === category.id);
+        if (categoryTypes.length === 0) return;
+        
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'enh-category-group';
+        
+        categoryDiv.innerHTML = `
+            <div class="enh-category-header">
+                <div class="enh-category-icon">${category.icon || '📄'}</div>
+                <div class="enh-category-title">
+                    <h4>${category.name}</h4>
+                    <p>${category.description}</p>
+                </div>
+            </div>
+            <div class="enh-category-types" id="category-${category.id}"></div>
+        `;
+        
+        container.appendChild(categoryDiv);
+        
+        const typesContainer = categoryDiv.querySelector(`#category-${category.id}`);
+        
+        categoryTypes.forEach(type => {
+            const isRecommended = recommendedIds.has(type.id);
+            const isDefaultEnabled = type.default_enabled;
+            
+            const typeDiv = document.createElement('div');
+            typeDiv.className = `enh-type-item ${isRecommended ? 'recommended' : ''}`;
+            typeDiv.dataset.typeId = type.id;
+            
+            typeDiv.innerHTML = `
+                <input 
+                    type="checkbox" 
+                    class="enh-type-checkbox" 
+                    id="type-${type.id}"
+                    ${isDefaultEnabled ? 'checked' : ''}
+                    onchange="toggleEnhancementType('${type.id}')"
+                >
+                <div class="enh-type-info">
+                    <div class="enh-type-name">${type.name}</div>
+                    <div class="enh-type-desc">${type.description}</div>
+                </div>
+            `;
+            
+            // Auto-select default enabled types
+            if (isDefaultEnabled) {
+                selectedEnhancementTypes.add(type.id);
+                typeDiv.classList.add('selected');
+            }
+            
+            // Click on card to toggle checkbox
+            typeDiv.addEventListener('click', (e) => {
+                if (e.target.type !== 'checkbox') {
+                    const checkbox = typeDiv.querySelector('input[type="checkbox"]');
+                    checkbox.checked = !checkbox.checked;
+                    toggleEnhancementType(type.id);
+                }
+            });
+            
+            typesContainer.appendChild(typeDiv);
+        });
+    });
+    
+    updateSelectionCount();
+}
+
+// Toggle enhancement type selection
+function toggleEnhancementType(typeId) {
+    const checkbox = document.getElementById(`type-${typeId}`);
+    const typeItem = checkbox.closest('.enh-type-item');
+    
+    if (checkbox.checked) {
+        selectedEnhancementTypes.add(typeId);
+        typeItem.classList.add('selected');
+    } else {
+        selectedEnhancementTypes.delete(typeId);
+        typeItem.classList.remove('selected');
+    }
+    
+    updateSelectionCount();
+}
+
+// Update selection count display
+function updateSelectionCount() {
+    const count = selectedEnhancementTypes.size;
+    document.getElementById('selected-count').textContent = 
+        `${count} tipe dipilih`;
+    
+    // Enable/disable start button
+    const startBtn = document.querySelector('.enh-btn-success');
+    startBtn.disabled = count === 0;
+}
+
+// Select all types
+function selectAllTypes() {
+    const checkboxes = document.querySelectorAll('.enh-type-checkbox');
+    checkboxes.forEach(cb => {
+        cb.checked = true;
+        selectedEnhancementTypes.add(cb.id.replace('type-', ''));
+        cb.closest('.enh-type-item').classList.add('selected');
+    });
+    updateSelectionCount();
+}
+
+// Select only recommended types
+function selectRecommendedTypes() {
+    // Clear all first
+    clearAllTypes();
+    
+    // Get domain for recommendations
+    const domain = document.getElementById('domain-hint-select').value || 
+                   currentDocAnalysis?.detected_domain || 
+                   'default';
+    
+    const recommendations = enhancementTypeRegistry.domain_recommendations[domain] || 
+                          enhancementTypeRegistry.domain_recommendations['default'];
+    
+    const recommendedIds = [
+        ...(recommendations.auto_suggest || []),
+        ...(recommendations.optional || [])
+    ];
+    
+    recommendedIds.forEach(typeId => {
+        const checkbox = document.getElementById(`type-${typeId}`);
+        if (checkbox) {
+            checkbox.checked = true;
+            selectedEnhancementTypes.add(typeId);
+            checkbox.closest('.enh-type-item').classList.add('selected');
+        }
+    });
+    
+    updateSelectionCount();
+}
+
+// Clear all types
+function clearAllTypes() {
+    const checkboxes = document.querySelectorAll('.enh-type-checkbox');
+    checkboxes.forEach(cb => {
+        cb.checked = false;
+        cb.closest('.enh-type-item').classList.remove('selected');
+    });
+    selectedEnhancementTypes.clear();
+    updateSelectionCount();
+}
+
+// Close modal
+function closeEnhancementModal() {
+    document.getElementById('enhancement-config-modal').classList.remove('active');
+}
+
+// Start enhancement with user configuration
+async function startEnhancementWithConfig() {
+    if (selectedEnhancementTypes.size === 0) {
+        alert('Pilih minimal 1 tipe enhancement');
+        return;
+    }
+    
+    // Collect configuration
+    const config = {
+        selected_types: Array.from(selectedEnhancementTypes),
+        domain_hint: document.getElementById('domain-hint-select').value || null,
+        custom_instructions: document.getElementById('custom-instructions').value.trim() || null
+    };
+    
+    console.log('🚀 Starting enhancement with config:', config);
+    
+    // Close modal
+    closeEnhancementModal();
+    
+    // Update UI state
+    startEnhancementBtn.disabled = true;
+    setStatus('Enhancement: Memulai...', 'running');
+    setStepperPhase('enhance');
+    showMessage(`🎯 Memulai enhancement dengan ${config.selected_types.length} tipe terpilih...`, 'info');
+    
+    try {
+        // Send request with configuration
+        const response = await fetch(`${API_BASE_URL}/start-enhancement/${currentDocumentId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(config)
+        });
+        
+        if (!response.ok) {
+            const d = await response.json().catch(() => ({detail: 'Gagal memulai Enhancement'}));
+            throw new Error(d.detail || 'Gagal memulai Enhancement');
+        }
+        
+        const result = await response.json();
+        console.log('Enhancement started:', result);
+        
+        // Show progress phases
+        const phases = [
+            '🔄 Membuat token windows...',
+            '⚡ Generating enhancements...',
+            '📝 Menyimpan hasil...'
+        ];
+        
+        let phaseIndex = 0;
+        const phaseInterval = setInterval(() => {
+            if (phaseIndex < phases.length) {
+                setStatus(phases[phaseIndex], 'running');
+                phaseIndex++;
+            } else {
+                clearInterval(phaseInterval);
+                setStatus('Enhancement: Berjalan...', 'running');
+            }
+        }, 1500);
+        
+        // Start polling for completion
+        if (pollTimer) clearTimeout(pollTimer);
+        if (progressTimer) clearTimeout(progressTimer);
+        pollAttempts = 0;
+        pollIntervalMs = 1200;
+        progressIntervalMs = 1200;
+        scheduleNextPoll();
+        scheduleProgressPoll();
+        
+    } catch (error) {
+        console.error('Failed to start enhancement:', error);
+        showMessage(error.message || 'Gagal memulai Enhancement', 'error');
+        startEnhancementBtn.disabled = false;
+        setStatus('Galat', 'error');
+    }
+}
+
+// Update domain selection handler to refresh recommendations
+document.getElementById('domain-hint-select')?.addEventListener('change', function() {
+    if (document.getElementById('enhancement-config-modal').classList.contains('active')) {
+        renderEnhancementTypes();
+    }
+});

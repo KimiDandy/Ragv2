@@ -22,6 +22,7 @@ import time
 import logging
 from pathlib import Path
 from collections import defaultdict
+from datetime import datetime
 
 from ..shared.document_meta import (
     set_original_pdf_filename,
@@ -288,14 +289,25 @@ class PDFExtractorV2:
         
         doc.close()
         
-        # 7) Assemble markdown by position
+        # 7) Extract document properties (UNIVERSAL - works for ANY document type)
+        self._update_progress(progress_path, "running", 0.75, "Mengekstrak properti dokumen...")
+        doc_properties = self._extract_document_properties(all_units, original_filename or "")
+        
+        # 8) Assemble markdown by position
         self._update_progress(progress_path, "running", 0.8, "Menyusun markdown...")
         markdown_content = self._assemble_markdown(all_units)
         
-        # 8) Persist outputs
+        # 9) Add YAML frontmatter with extracted properties
+        markdown_with_frontmatter = self._add_yaml_frontmatter(markdown_content, doc_properties, total_pages)
+        
+        # 10) Persist outputs
         markdown_filename = default_markdown_filename("v1", base_name)
         markdown_path = artefacts_dir / markdown_filename
-        markdown_path.write_text(markdown_content, encoding='utf-8')
+        markdown_path.write_text(markdown_with_frontmatter, encoding='utf-8')
+        
+        # Also save document properties separately
+        properties_path = meta_dir / "document_properties.json"
+        properties_path.write_text(json.dumps(doc_properties, indent=2, ensure_ascii=False), encoding='utf-8')
         set_markdown_info(
             artefacts_dir,
             "v1",
@@ -323,12 +335,23 @@ class PDFExtractorV2:
             figures_path = artefacts_dir / "figures.json"
             figures_path.write_text(json.dumps(all_figures, indent=2), encoding='utf-8')
         
-        # Write metrics
+        # Write metrics with validation
         self.metrics['total_time'] = time.time() - start_time
         self.metrics['total_pages'] = total_pages
         self.metrics['total_units'] = len(all_units)
         self.metrics['total_tables'] = len(all_tables)
         self.metrics['total_figures'] = len(all_figures)
+        self.metrics['text_units'] = len([u for u in all_units if u.unit_type == 'paragraph'])
+        self.metrics['table_units'] = len([u for u in all_units if u.unit_type == 'table'])
+        self.metrics['ocr_units'] = len([u for u in all_units if 'ocr' in u.source])
+        self.metrics['markdown_length'] = len(markdown_with_frontmatter)
+        self.metrics['has_frontmatter'] = markdown_with_frontmatter.startswith('---')
+        
+        # Validation warnings
+        if self.metrics['text_units'] == 0:
+            logger.warning("NO TEXT UNITS extracted - possible extraction failure!")
+        if self.metrics['markdown_length'] < 500:
+            logger.warning(f"Very short markdown ({self.metrics['markdown_length']} chars) - possible extraction issue!")
         
         metrics_path = artefacts_dir / "metrics.json"
         metrics_path.write_text(json.dumps(dict(self.metrics), indent=2), encoding='utf-8')
@@ -336,7 +359,24 @@ class PDFExtractorV2:
         # Update progress to complete
         self._update_progress(progress_path, "complete", 1.0, "Selesai")
         
-        logger.info(f"Extraction complete in {self.metrics['total_time']:.2f}s")
+        # COMPREHENSIVE SUMMARY LOG
+        logger.info("="*80)
+        logger.info("EXTRACTION COMPLETE - SUMMARY")
+        logger.info("="*80)
+        logger.info(f"⏱️  Total Time: {self.metrics['total_time']:.2f}s")
+        logger.info(f"📄  Total Pages: {total_pages}")
+        logger.info(f"📦  Total Units: {len(all_units)}")
+        logger.info(f"   ├─ Text Units: {self.metrics['text_units']}")
+        logger.info(f"   ├─ Table Units: {self.metrics['table_units']}")
+        logger.info(f"   └─ OCR Units: {self.metrics['ocr_units']}")
+        logger.info(f"📊  Tables Extracted: {len(all_tables)}")
+        logger.info(f"🖼️  Figures Detected: {len(all_figures)}")
+        logger.info(f"📝  Markdown Length: {self.metrics['markdown_length']:,} chars")
+        logger.info(f"✨  Has Frontmatter: {self.metrics['has_frontmatter']}")
+        logger.info(f"📋  Document Type: {doc_properties.get('document_type', 'unknown')}")
+        logger.info(f"🌐  Language: {doc_properties.get('language', 'unknown')}")
+        logger.info(f"📅  Dates Found: {len(doc_properties.get('dates', []))}")
+        logger.info("="*80)
         
         return ExtractionResult(
             doc_id=doc_id,
@@ -410,9 +450,11 @@ class PDFExtractorV2:
             
             # Calculate block area and text length for better filtering decisions
             block_area = (block_bbox[2] - block_bbox[0]) * (block_bbox[3] - block_bbox[1])
-            text_length = len(block.get('text', ''))
+            text_content = block.get('text', '')
+            text_length = len(text_content)
             
-            is_excluded = self._is_in_exclusion_zone(block_bbox, exclusion_zones)
+            # IMPROVED: Pass text for content-aware exclusion
+            is_excluded = self._is_in_exclusion_zone(block_bbox, exclusion_zones, text_content)
             
             # Special handling: Don't exclude large text blocks (likely important paragraphs)
             if is_excluded and (block_area > 5000 or text_length > 100):
@@ -488,15 +530,72 @@ class PDFExtractorV2:
         
         logger.info(f"Page {page_num} FINAL RESULT: {len(text_units)} text units, {len(table_units)} table units")
         
-        # 5) Extract figures if any
+        # 5) SMART FULL-PAGE SCAN DETECTION
+        # Check if this page is primarily a scan (majority of area is images)
         figure_blocks = [b for b in layout['blocks'] if b['type'] == 'figure']
-        for fig_block in figure_blocks[:self.max_ocr_crops_per_page]:
-            figure_data = self._process_figure(
-                fig_block, page, page_num, doc_id, artefacts_dir, exclusion_zones
-            )
-            if figure_data:
-                page_figures.append(figure_data['metadata'])
-                page_units.append(figure_data['unit'])
+        is_full_page_scan = self._is_full_page_scan(page, figure_blocks, text_blocks)
+        
+        if is_full_page_scan and TESSERACT_AVAILABLE:
+            logger.info(f"Page {page_num}: Detected FULL-PAGE SCAN - using optimized OCR workflow")
+            
+            # Optimized: OCR entire page at once instead of breaking into crops
+            ocr_start = time.time()
+            ocr_text = self._ocr_full_page(page, page_num, artefacts_dir)
+            ocr_duration = time.time() - ocr_start
+            
+            if ocr_text and ocr_text.strip():
+                ocr_unit = Unit(
+                    unit_id=f"u_{doc_id}_p{page_num}_fullscan",
+                    doc_id=doc_id,
+                    page=page_num,
+                    unit_type="paragraph",
+                    column="full",
+                    bbox=tuple(page.rect),
+                    y0=page.rect.y0,
+                    source="ocr_fullscan",
+                    anchor=f"md://u_{doc_id}_p{page_num}_fullscan",
+                    content=ocr_text,
+                    extra={'source_type': 'full_page_scan'}
+                )
+                page_units.append(ocr_unit)
+                logger.info(f"Page {page_num}: Full-page OCR completed in {ocr_duration:.2f}s - extracted {len(ocr_text)} chars")
+                logger.info(f"Preview: '{ocr_text[:150]}'")
+            
+            # Skip individual image OCR since we already OCR'd the full page
+            
+        else:
+            # Normal workflow: Extract figures AND perform OCR on images with text
+            for fig_idx, fig_block in enumerate(figure_blocks[:self.max_ocr_crops_per_page]):
+                # IMPROVED: Process figure for OCR if marked
+                if fig_block.get('needs_ocr', False) and TESSERACT_AVAILABLE:
+                    ocr_result = self._ocr_image_block(
+                        fig_block, page, page_num, doc_id, artefacts_dir
+                    )
+                    
+                    if ocr_result and ocr_result.strip():
+                        # Create paragraph unit from OCR'd image
+                        ocr_unit = Unit(
+                            unit_id=f"u_{doc_id}_p{page_num}_img_ocr_{fig_idx}",
+                            doc_id=doc_id,
+                            page=page_num,
+                            unit_type="paragraph",
+                            column="full",
+                            bbox=fig_block['bbox'],
+                            y0=fig_block['bbox'][1],
+                            source="ocr_image",
+                            anchor=f"md://u_{doc_id}_p{page_num}_img_ocr_{fig_idx}",
+                            content=ocr_result,
+                            extra={'source_type': 'image_block', 'block_idx': fig_block.get('block_idx')}
+                        )
+                        page_units.append(ocr_unit)
+                        logger.info(f"OCR from image block: '{ocr_result[:100]}'")
+                
+                # Also process as figure metadata (for reference)
+                figure_data = self._process_figure(
+                    fig_block, page, page_num, doc_id, artefacts_dir, exclusion_zones
+                )
+                if figure_data:
+                    page_figures.append(figure_data['metadata'])
         
         # 6) OCR full page if no text found
         if not text_blocks and not table_results and TESSERACT_AVAILABLE:
@@ -561,12 +660,31 @@ class PDFExtractorV2:
             
             elif block_type == 1:  # Image block
                 area_ratio = ((bbox[2] - bbox[0]) * (bbox[3] - bbox[1])) / (page.rect.width * page.rect.height)
-                if area_ratio >= self.figure_min_area_ratio:
-                    layout['blocks'].append({
-                        'type': 'figure',
-                        'bbox': bbox,
-                        'block_idx': block_idx
-                    })
+                
+                # IMPROVED: Always process images (not just large ones)
+                # Store both as figure AND for potential OCR processing
+                layout['blocks'].append({
+                    'type': 'figure',
+                    'bbox': bbox,
+                    'block_idx': block_idx,
+                    'area_ratio': area_ratio
+                })
+                
+                # CRITICAL: Also mark for OCR if conditions met
+                # 1. Small images at top (likely headers/banners)
+                # 2. Images within text flow (likely containing text)
+                y_pos = bbox[1]
+                page_height = page.rect.height
+                is_top_region = y_pos < (page_height * 0.20)  # Top 20%
+                is_mid_region = (page_height * 0.10) < y_pos < (page_height * 0.90)  # Middle 80%
+                
+                # Mark for OCR if: top region OR mid-sized image in content area
+                should_ocr = (is_top_region or (is_mid_region and area_ratio < 0.3))
+                
+                if should_ocr:
+                    # Add flag for OCR processing in _process_page
+                    layout['blocks'][-1]['needs_ocr'] = True
+                    logger.info(f"Image at {bbox} marked for OCR (top_region={is_top_region}, area={area_ratio:.3f})")
         
         # Fallback: if no text blocks found but simple_text has content
         # Split into paragraphs to avoid single full-page block
@@ -761,7 +879,7 @@ class PDFExtractorV2:
         return False
     
     def _remove_headers_footers(self, layout: Dict, page_rect: fitz.Rect) -> Dict:
-        """Remove headers and footers based on mode"""
+        """IMPROVED: Smart header/footer removal with content-aware logic (UNIVERSAL)"""
         if self.header_footer_mode == 'margin':
             # Remove blocks in margin areas
             header_y = page_rect.height * self.header_margin_pct
@@ -776,21 +894,92 @@ class PDFExtractorV2:
             layout['blocks'] = filtered_blocks
         
         elif self.header_footer_mode == 'auto':
-            # Simple auto detection - remove very small blocks at top/bottom
+            # IMPROVED: Smart auto detection with semantic analysis
             filtered_blocks = []
+            
             for block in layout['blocks']:
-                # Skip very small text at page edges
-                if block['type'] == 'text':
-                    text = block.get('text', '')
-                    y_pos = block['bbox'][1]
-                    # Skip page numbers, dates at extremes
-                    if len(text) < 50 and (y_pos < 50 or y_pos > page_rect.height - 50):
-                        continue
-                filtered_blocks.append(block)
+                # Always keep non-text blocks (images, figures)
+                if block['type'] != 'text':
+                    filtered_blocks.append(block)
+                    continue
+                
+                text = block.get('text', '').strip()
+                bbox = block['bbox']
+                y_pos = bbox[1]
+                y_height = bbox[3] - bbox[1]
+                text_length = len(text)
+                
+                # Determine if block is at extremes (top 50pt or bottom 50pt)
+                is_at_top = y_pos < 50
+                is_at_bottom = y_pos > page_rect.height - 50
+                is_at_extreme = is_at_top or is_at_bottom
+                
+                # If not at extremes, always keep
+                if not is_at_extreme:
+                    filtered_blocks.append(block)
+                    continue
+                
+                # UNIVERSAL LOGIC: At extremes, use intelligent filtering
+                should_keep = self._is_important_header_or_footer(text, text_length, y_height, bbox, page_rect)
+                
+                if should_keep:
+                    logger.info(f"KEEPING important header/footer: '{text[:80]}'")
+                    filtered_blocks.append(block)
+                else:
+                    logger.info(f"Removing header/footer: '{text[:80]}'")
             
             layout['blocks'] = filtered_blocks
         
         return layout
+    
+    def _is_important_header_or_footer(self, text: str, text_length: int, 
+                                       y_height: float, bbox: Tuple, page_rect: fitz.Rect) -> bool:
+        """UNIVERSAL: Determine if header/footer text is important (works for ANY document type)"""
+        
+        # Rule 1: Very short text (< 5 chars) is likely page number
+        if text_length < 5 and text.isdigit():
+            return False  # Remove page numbers
+        
+        # Rule 2: Substantial text blocks should be kept (likely content, not header)
+        if text_length > 100:
+            return True  # Keep substantial text
+        
+        # Rule 3: Tall text blocks (> 15pt height) are likely content
+        if y_height > 15:
+            return True  # Keep tall blocks
+        
+        # Rule 4: Wide text blocks (> 50% page width) are likely content
+        bbox_width = bbox[2] - bbox[0]
+        page_width = page_rect[2] - page_rect[0]
+        width_ratio = bbox_width / page_width if page_width > 0 else 0
+        if width_ratio > 0.5:
+            return True  # Keep wide blocks
+        
+        # Rule 5: Text with sentence structure (multiple words, punctuation) is likely content
+        word_count = len(text.split())
+        has_punctuation = any(c in text for c in '.,;:!?')
+        if word_count >= 3 and has_punctuation:
+            return True  # Keep structured text
+        
+        # Rule 6: Text with capitalization patterns (mixed case) is likely content
+        # Page numbers and simple headers are usually all lowercase/uppercase
+        has_lowercase = any(c.islower() for c in text)
+        has_uppercase = any(c.isupper() for c in text)
+        if has_lowercase and has_uppercase and word_count >= 2:
+            return True  # Keep mixed-case multi-word text
+        
+        # Rule 7: Text with numbers AND letters (e.g., "13 Februari 2025") is likely important
+        has_digits = any(c.isdigit() for c in text)
+        has_letters = any(c.isalpha() for c in text)
+        if has_digits and has_letters and word_count >= 2:
+            return True  # Keep alphanumeric multi-word text (e.g., dates, identifiers)
+        
+        # Rule 8: Default - if text is > 20 chars and we're unsure, keep it (conservative)
+        if text_length > 20:
+            return True  # Conservative: keep longer text
+        
+        # If none of the above, it's likely a page number or simple header
+        return False
     
     def _detect_columns(self, layout: Dict) -> Dict[str, Any]:
         """Detect column layout using histogram or kmeans strategy"""
@@ -1214,24 +1403,77 @@ class PDFExtractorV2:
         
         return '\n'.join(lines)
     
-    def _is_in_exclusion_zone(self, bbox: Tuple, exclusion_zones: List[Tuple]) -> bool:
-        """Check if bbox overlaps with any exclusion zone - FIXED VERSION"""
+    def _is_in_exclusion_zone(self, bbox: Tuple, exclusion_zones: List[Tuple], text: str = "") -> bool:
+        """IMPROVED: Content-aware exclusion zone checking (UNIVERSAL)"""
         for zone in exclusion_zones:
             # Calculate simple overlap
             x_overlap = max(0, min(bbox[2], zone[2]) - max(bbox[0], zone[0]))
             y_overlap = max(0, min(bbox[3], zone[3]) - max(bbox[1], zone[1]))
             
-            # If there's any significant overlap, exclude it
+            # If there's any significant overlap, analyze further
             if x_overlap > 0 and y_overlap > 0:
                 overlap_area = x_overlap * y_overlap
                 bbox_area = (bbox[2] - bbox[0]) * (bbox[3] - bbox[1])
+                overlap_ratio = overlap_area / bbox_area if bbox_area > 0 else 0
                 
-                # Exclude if more than 10% of text block overlaps with table
-                if bbox_area > 0 and (overlap_area / bbox_area) > 0.1:
-                    logger.info(f"Text bbox {bbox} excluded by table zone {zone} - overlap: {overlap_area/bbox_area:.2%}")
+                # UNIVERSAL: Determine if this text should be excluded based on content and position
+                is_likely_title = self._is_likely_table_title(text, bbox, zone)
+                is_likely_caption = self._is_likely_table_caption(text, bbox, zone)
+                
+                # More lenient threshold for titles/captions
+                if is_likely_title or is_likely_caption:
+                    threshold = 0.5  # 50% overlap required to exclude titles/captions
+                    logger.info(f"Text is likely {'title' if is_likely_title else 'caption'}, using lenient threshold")
+                else:
+                    threshold = 0.15  # 15% for regular text (balanced)
+                
+                if overlap_ratio > threshold:
+                    logger.info(f"Text bbox {bbox} excluded by table zone {zone} - overlap: {overlap_ratio:.2%}")
                     return True
         
         return False
+    
+    def _is_likely_table_title(self, text: str, text_bbox: Tuple, table_zone: Tuple) -> bool:
+        """UNIVERSAL: Check if text is likely a table title"""
+        if not text:
+            return False
+        
+        # Title characteristics (UNIVERSAL across document types):
+        # 1. Positioned ABOVE table
+        is_above = text_bbox[3] <= table_zone[1] + 5  # Text bottom <= table top (+5pt tolerance)
+        
+        # 2. Short text (titles are concise)
+        is_short = len(text) < 150
+        
+        # 3. Has title-like formatting (uppercase, titlecase, or bold indicators)
+        is_formatted = (
+            text.isupper() or  # ALL CAPS
+            text.istitle() or  # Title Case
+            ':' in text or     # "Table 1:", "Tabel:"
+            text.startswith(('Tabel', 'Table', 'Figure', 'Gambar', 'Chart', 'Grafik'))  # Common prefixes
+        )
+        
+        return is_above and is_short and is_formatted
+    
+    def _is_likely_table_caption(self, text: str, text_bbox: Tuple, table_zone: Tuple) -> bool:
+        """UNIVERSAL: Check if text is likely a table caption"""
+        if not text:
+            return False
+        
+        # Caption characteristics (UNIVERSAL):
+        # 1. Positioned BELOW table
+        is_below = text_bbox[1] >= table_zone[3] - 5  # Text top >= table bottom (-5pt tolerance)
+        
+        # 2. Relatively short (captions are descriptive but concise)
+        is_short = len(text) < 200
+        
+        # 3. Has caption-like content (source, note, etc.)
+        is_descriptive = any(
+            keyword in text.lower() 
+            for keyword in ['source:', 'sumber:', 'note:', 'catatan:', '*', '**', 'keterangan:']
+        )
+        
+        return is_below and (is_short or is_descriptive)
     
     def _horizontal_overlap(self, bbox1: Tuple, bbox2: Tuple) -> float:
         """Calculate horizontal overlap ratio"""
@@ -1342,7 +1584,7 @@ class PDFExtractorV2:
         return paragraphs
     
     def _merge_adjacent_blocks(self, blocks: List[Dict]) -> List[Tuple[str, Tuple]]:
-        """Merge adjacent text blocks into paragraphs"""
+        """IMPROVED: Smart merge of adjacent text blocks into logical paragraphs"""
         if not blocks:
             return []
         
@@ -1355,10 +1597,37 @@ class PDFExtractorV2:
                 current_text = [block['text']]
                 current_bbox = list(block['bbox'])
             else:
-                # Check if blocks are adjacent (within 20 points vertically)
+                # IMPROVED: Smart gap detection
                 y_gap = block['bbox'][1] - current_bbox[3]
+                current_height = current_bbox[3] - current_bbox[1]
+                block_height = block['bbox'][3] - block['bbox'][1]
+                avg_height = (current_height + block_height) / 2
                 
-                if y_gap < 20:  # Merge if close
+                # Check horizontal alignment (same column)
+                x_overlap = min(current_bbox[2], block['bbox'][2]) - max(current_bbox[0], block['bbox'][0])
+                x_width = max(current_bbox[2], block['bbox'][2]) - min(current_bbox[0], block['bbox'][0])
+                horizontal_similarity = x_overlap / x_width if x_width > 0 else 0
+                
+                # UNIVERSAL MERGE CRITERIA:
+                # 1. Small gap (< 20pt or < 0.5x line height)
+                # 2. Similar horizontal position (>70% overlap)
+                # 3. No major formatting change (similar heights)
+                
+                should_merge = (
+                    y_gap < 20 and  # Close vertically
+                    horizontal_similarity > 0.7 and  # Same column
+                    abs(block_height - current_height) < avg_height * 0.5  # Similar size
+                )
+                
+                # Special case: Don't merge if current ends with sentence-ending punctuation AND gap is significant
+                if current_text:
+                    last_text = current_text[-1].strip()
+                    ends_with_punctuation = last_text and last_text[-1] in '.!?'
+                    if ends_with_punctuation and y_gap > avg_height * 0.3:
+                        should_merge = False
+                
+                if should_merge:
+                    # Merge with smart spacing
                     current_text.append(block['text'])
                     # Expand bbox
                     current_bbox[0] = min(current_bbox[0], block['bbox'][0])
@@ -1376,6 +1645,128 @@ class PDFExtractorV2:
             merged.append((' '.join(current_text), tuple(current_bbox)))
         
         return merged
+    
+    def _is_full_page_scan(self, page: fitz.Page, figure_blocks: List[Dict], text_blocks: List[Dict]) -> bool:
+        """
+        UNIVERSAL: Detect if page is a full-page scan (mostly images)
+        
+        Criteria:
+        1. Image area > 70% of page area
+        2. Few or no extractable text blocks
+        3. Multiple overlapping/adjacent images covering page
+        
+        Returns True if page should be OCR'd as a whole instead of per-image
+        """
+        if not figure_blocks:
+            return False
+        
+        page_area = page.rect.width * page.rect.height
+        total_image_area = 0
+        
+        for fig in figure_blocks:
+            bbox = fig['bbox']
+            img_area = (bbox[2] - bbox[0]) * (bbox[3] - bbox[1])
+            total_image_area += img_area
+        
+        image_coverage = total_image_area / page_area if page_area > 0 else 0
+        
+        # Criteria evaluation
+        high_image_coverage = image_coverage > 0.70  # 70% of page is images
+        few_text_blocks = len(text_blocks) < 3       # Very few text blocks
+        many_images = len(figure_blocks) >= 5        # Many small images (fragmented scan)
+        
+        # Decision logic
+        is_scan = (
+            high_image_coverage or  # Mostly images
+            (few_text_blocks and len(figure_blocks) >= 2)  # Little text + multiple images
+        )
+        
+        if is_scan:
+            logger.info(f"Full-page scan detected: image_coverage={image_coverage:.2%}, "
+                       f"text_blocks={len(text_blocks)}, figure_blocks={len(figure_blocks)}")
+        
+        return is_scan
+    
+    def _ocr_image_block(self, fig_block: Dict, page: fitz.Page, page_num: int,
+                        doc_id: str, artefacts_dir: Path) -> Optional[str]:
+        """UNIVERSAL: OCR text from image blocks (headers, banners, embedded images)"""
+        if not TESSERACT_AVAILABLE:
+            return None
+        
+        try:
+            bbox = fig_block['bbox']
+            logger.info(f"OCR processing image at {bbox}")
+            
+            # Crop image with high zoom for better OCR accuracy
+            zoom = 2.5  # Higher zoom for small text
+            mat = fitz.Matrix(zoom, zoom)
+            pix = page.get_pixmap(matrix=mat, clip=fitz.Rect(bbox))
+            
+            # Save crop for debugging
+            crop_filename = f"page{page_num}_img_ocr_{int(bbox[0])}_{int(bbox[1])}.png"
+            crop_path = artefacts_dir / "crops" / crop_filename
+            pix.save(str(crop_path))
+            
+            # Convert to PIL Image for preprocessing
+            img_data = pix.tobytes("png")
+            from PIL import Image, ImageEnhance, ImageFilter
+            import io
+            
+            img = Image.open(io.BytesIO(img_data))
+            
+            # PREPROCESSING for better OCR (UNIVERSAL approach)
+            # 1. Convert to grayscale
+            if img.mode != 'L':
+                img = img.convert('L')
+            
+            # 2. Enhance contrast (helps with faded text)
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(1.5)
+            
+            # 3. Sharpen (helps with blurry text)
+            img = img.filter(ImageFilter.SHARPEN)
+            
+            # Try multiple OCR configurations (UNIVERSAL - works for any language/layout)
+            best_result = None
+            max_confidence = 0
+            
+            configs = [
+                ('--oem 3 --psm 7', 'single_line'),      # Best for headers/banners
+                ('--oem 3 --psm 6', 'uniform_block'),    # Best for paragraphs
+                ('--oem 3 --psm 11', 'sparse_text'),     # Best for scattered text
+                ('--oem 3 --psm 13', 'raw_line'),        # Best for single raw line
+            ]
+            
+            for config, mode in configs:
+                try:
+                    result = pytesseract.image_to_string(
+                        img, 
+                        lang=self.ocr_lang,
+                        config=config
+                    )
+                    
+                    if result:
+                        result = self._post_process_ocr_text(result)
+                        # Estimate confidence (more meaningful text = better)
+                        confidence = len(result.strip())
+                        
+                        if confidence > max_confidence:
+                            max_confidence = confidence
+                            best_result = result
+                            logger.info(f"OCR mode '{mode}' got {confidence} chars: '{result[:80]}'")
+                
+                except Exception as e:
+                    logger.debug(f"OCR mode '{mode}' failed: {e}")
+            
+            if best_result:
+                logger.info(f"Best OCR result ({max_confidence} chars): '{best_result[:150]}'")
+                return best_result
+            
+            return None
+        
+        except Exception as e:
+            logger.warning(f"Image OCR failed: {e}")
+            return None
     
     def _process_figure(self, fig_block: Dict, page: fitz.Page, page_num: int,
                        doc_id: str, artefacts_dir: Path, exclusion_zones: List[Tuple]) -> Optional[Dict]:
@@ -1560,6 +1951,217 @@ class PDFExtractorV2:
                 pass
         
         return '\n'.join(lines)
+    
+    def _extract_document_properties(self, all_units: List[Unit], original_filename: str) -> Dict[str, Any]:
+        """UNIVERSAL: Extract structured properties from document (works for ANY document type)"""
+        
+        # Combine all text content
+        text_units = [u for u in all_units if u.unit_type == 'paragraph' and u.content]
+        full_text = ' '.join(u.content for u in text_units)
+        
+        properties = {
+            'original_filename': original_filename,
+            'extraction_timestamp': datetime.now().isoformat(),
+            'dates': [],
+            'temporal_references': [],
+            'numbers': [],
+            'urls': [],
+            'emails': [],
+            'document_type': 'unknown',
+            'language': 'unknown',
+            'has_tables': False,
+            'has_images': False,
+        }
+        
+        # Check for tables and images
+        properties['has_tables'] = any(u.unit_type == 'table' for u in all_units)
+        properties['has_images'] = any(u.source in ['ocr_image', 'ocr'] for u in all_units)
+        
+        # UNIVERSAL DATE EXTRACTION (multiple formats)
+        date_patterns = [
+            # Indonesian dates: "13 Februari 2025", "17 Maret 2024"
+            r'\b(\d{1,2})\s+(Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember)\s+(\d{4})\b',
+            # With day names: "Kamis, 13 Februari 2025"
+            r'\b(Senin|Selasa|Rabu|Kamis|Jumat|Sabtu|Minggu),?\s+(\d{1,2})\s+(Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember)\s+(\d{4})\b',
+            # English dates: "January 13, 2025", "March 17, 2024"
+            r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(\d{4})\b',
+            # ISO format: "2025-02-13"
+            r'\b(\d{4})[-/](\d{1,2})[-/](\d{1,2})\b',
+            # Short format: "13/02/2025", "17-03-2024"
+            r'\b(\d{1,2})[-/](\d{1,2})[-/](\d{4})\b',
+        ]
+        
+        for pattern in date_patterns:
+            matches = re.findall(pattern, full_text, re.IGNORECASE)
+            for match in matches:
+                if isinstance(match, tuple):
+                    date_str = ' '.join(str(m) for m in match if m)
+                else:
+                    date_str = str(match)
+                properties['dates'].append(date_str)
+        
+        # Deduplicate dates
+        properties['dates'] = list(set(properties['dates']))[:20]  # Top 20 dates
+        
+        # UNIVERSAL TEMPORAL REFERENCES
+        temporal_patterns = [
+            r'\b(Q[1-4]\s+\d{4})\b',  # "Q1 2025"
+            r'\b(FY\s*\d{4})\b',  # "FY2025"
+            r'\b(tahun\s+\d{4})\b',  # "tahun 2025"
+            r'\b(year\s+\d{4})\b',  # "year 2025"
+        ]
+        
+        for pattern in temporal_patterns:
+            matches = re.findall(pattern, full_text, re.IGNORECASE)
+            properties['temporal_references'].extend(matches)
+        
+        properties['temporal_references'] = list(set(properties['temporal_references']))[:10]
+        
+        # UNIVERSAL NUMBER EXTRACTION (percentages, currency, large numbers)
+        number_patterns = [
+            r'\b(\d+[,.]\d+)%',  # Percentages: "5.75%"
+            r'\b(\d{1,3}(?:[,.]\d{3})*(?:[,.]\d+)?)\b',  # Numbers with separators
+        ]
+        
+        for pattern in number_patterns:
+            matches = re.findall(pattern, full_text)
+            properties['numbers'].extend(matches)
+        
+        # Deduplicate and limit
+        properties['numbers'] = list(set(properties['numbers']))[:30]
+        
+        # UNIVERSAL URL EXTRACTION
+        url_pattern = r'https?://[^\s<>"]+|www\.[^\s<>"]+'
+        properties['urls'] = list(set(re.findall(url_pattern, full_text, re.IGNORECASE)))[:10]
+        
+        # UNIVERSAL EMAIL EXTRACTION
+        email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+        properties['emails'] = list(set(re.findall(email_pattern, full_text)))[:10]
+        
+        # UNIVERSAL DOCUMENT TYPE CLASSIFICATION (keyword-based)
+        doc_type_keywords = {
+            'financial_report': ['laporan keuangan', 'financial report', 'balance sheet', 'income statement', 'neraca', 'laba rugi'],
+            'market_insight': ['market insight', 'market analysis', 'analisis pasar', 'daily market'],
+            'product_info': ['product', 'produk', 'product focus', 'product information'],
+            'legal_document': ['kontrak', 'contract', 'perjanjian', 'agreement', 'legal', 'hukum'],
+            'research_paper': ['abstract', 'abstrak', 'methodology', 'metodologi', 'research', 'penelitian'],
+            'proposal': ['proposal', 'usulan', 'penawaran'],
+            'report': ['report', 'laporan'],
+            'presentation': ['presentation', 'presentasi', 'slide'],
+        }
+        
+        text_lower = full_text.lower()
+        for doc_type, keywords in doc_type_keywords.items():
+            if any(keyword in text_lower for keyword in keywords):
+                properties['document_type'] = doc_type
+                break
+        
+        # UNIVERSAL LANGUAGE DETECTION (simple heuristic)
+        indonesian_words = ['dan', 'yang', 'untuk', 'dengan', 'pada', 'adalah', 'dari', 'ini', 'dalam']
+        english_words = ['and', 'the', 'for', 'with', 'this', 'that', 'from', 'are', 'was', 'were']
+        
+        id_count = sum(1 for word in indonesian_words if f' {word} ' in f' {text_lower} ')
+        en_count = sum(1 for word in english_words if f' {word} ' in f' {text_lower} ')
+        
+        if id_count > en_count:
+            properties['language'] = 'indonesian'
+        elif en_count > id_count:
+            properties['language'] = 'english'
+        else:
+            properties['language'] = 'mixed'
+        
+        logger.info(f"Extracted document properties: type={properties['document_type']}, "
+                   f"language={properties['language']}, dates={len(properties['dates'])}, "
+                   f"tables={properties['has_tables']}, images={properties['has_images']}")
+        
+        return properties
+    
+    def _add_yaml_frontmatter(self, markdown_content: str, properties: Dict[str, Any], total_pages: int) -> str:
+        """Add YAML frontmatter to markdown with extracted properties"""
+        try:
+            import yaml
+            yaml_available = True
+        except ImportError:
+            yaml_available = False
+            logger.warning("PyYAML not available, using manual YAML generation")
+        
+        # Prepare frontmatter data (NO extraction_date - not useful when batch processing)
+        frontmatter = {
+            'title': properties.get('original_filename', 'Untitled Document').replace('.pdf', ''),
+            'document_type': properties.get('document_type', 'unknown'),
+            'language': properties.get('language', 'unknown'),
+            'total_pages': total_pages,
+            'has_tables': properties.get('has_tables', False),
+            'has_images': properties.get('has_images', False),
+        }
+        
+        # Add dates if available
+        if properties.get('dates'):
+            frontmatter['dates'] = properties['dates'][:5]  # Top 5 dates in frontmatter
+        
+        # Add temporal references if available
+        if properties.get('temporal_references'):
+            frontmatter['temporal_references'] = properties['temporal_references'][:3]
+        
+        # Generate YAML string
+        if yaml_available:
+            try:
+                yaml_str = yaml.dump(frontmatter, allow_unicode=True, default_flow_style=False, sort_keys=False)
+            except:
+                yaml_str = self._manual_yaml_generation(frontmatter)
+        else:
+            yaml_str = self._manual_yaml_generation(frontmatter)
+        
+        # Add document footer/closer for clear boundaries
+        footer = self._generate_document_footer(properties, total_pages)
+        
+        return f"---\n{yaml_str}---\n\n{markdown_content}\n\n{footer}"
+    
+    def _manual_yaml_generation(self, data: Dict[str, Any]) -> str:
+        """Manual YAML generation fallback"""
+        lines = []
+        for key, value in data.items():
+            if isinstance(value, list):
+                lines.append(f"{key}:")
+                for item in value:
+                    lines.append(f"  - {item}")
+            elif isinstance(value, bool):
+                lines.append(f"{key}: {str(value).lower()}")
+            elif value is None:
+                lines.append(f"{key}: null")
+            else:
+                # Escape special characters
+                if isinstance(value, str) and (':' in value or '#' in value):
+                    value = f'"{value}"'
+                lines.append(f"{key}: {value}")
+        return '\n'.join(lines) + '\n'
+    
+    def _generate_document_footer(self, properties: Dict[str, Any], total_pages: int) -> str:
+        """Generate document footer/closer for clear boundaries when documents are concatenated"""
+        footer_lines = [
+            "---",
+            "",
+            "## 📄 End of Document",
+            "",
+            f"**Document:** {properties.get('original_filename', 'Unknown')}",
+            f"**Type:** {properties.get('document_type', 'unknown')}",
+            f"**Language:** {properties.get('language', 'unknown')}",
+            f"**Pages:** {total_pages}",
+        ]
+        
+        # Add additional metadata if available
+        if properties.get('dates'):
+            footer_lines.append(f"**Key Dates:** {', '.join(properties['dates'][:3])}")
+        
+        if properties.get('has_tables'):
+            footer_lines.append(f"**Contains Tables:** Yes")
+        
+        footer_lines.extend([
+            "",
+            "---",
+        ])
+        
+        return '\n'.join(footer_lines)
     
     def _update_progress(self, progress_path: Path, status: str, percent: float, message: str):
         """Update progress file for monitoring"""

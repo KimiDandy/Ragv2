@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inspigo Document Enhancement AI</title>
     <link rel="stylesheet" href="/static/style.css?v=4.0">
+    <link rel="stylesheet" href="/static/enhancement-config.css?v=1.0">
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
@@ -164,6 +165,101 @@
                         </div>
                     </div>
                 </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhancement Configuration Modal -->
+    <div id="enhancement-config-modal" class="enh-modal">
+        <div class="enh-modal-content">
+            <div class="enh-modal-header">
+                <h2>🎯 Konfigurasi Enhancement</h2>
+                <button class="enh-modal-close" onclick="closeEnhancementModal()">&times;</button>
+            </div>
+            
+            <div class="enh-modal-body">
+                <!-- Document Analysis Summary -->
+                <div class="enh-analysis-summary">
+                    <h3>📊 Analisis Dokumen</h3>
+                    <div id="doc-analysis-content" class="enh-analysis-grid">
+                        <div class="enh-analysis-item">
+                            <span class="enh-label">Halaman:</span>
+                            <span id="analysis-pages">-</span>
+                        </div>
+                        <div class="enh-analysis-item">
+                            <span class="enh-label">Tabel:</span>
+                            <span id="analysis-tables">-</span>
+                        </div>
+                        <div class="enh-analysis-item">
+                            <span class="enh-label">Domain:</span>
+                            <span id="analysis-domain" class="enh-badge">-</span>
+                        </div>
+                    </div>
+                    <div class="enh-characteristics">
+                        <span id="char-numerical" class="enh-char-badge" style="display:none">📈 Data Numerik</span>
+                        <span id="char-legal" class="enh-char-badge" style="display:none">⚖️ Konten Legal</span>
+                        <span id="char-procedural" class="enh-char-badge" style="display:none">📋 Konten Prosedural</span>
+                    </div>
+                </div>
+
+                <!-- Domain Selection -->
+                <div class="enh-domain-select">
+                    <label for="domain-hint-select">
+                        <strong>Domain Dokumen:</strong>
+                        <span class="enh-hint">(opsional - untuk rekomendasi lebih baik)</span>
+                    </label>
+                    <select id="domain-hint-select" class="enh-select">
+                        <option value="">Auto-detect</option>
+                        <option value="financial">💰 Financial/Banking</option>
+                        <option value="legal">⚖️ Legal/Regulatory</option>
+                        <option value="operational">⚙️ Operational/SOP</option>
+                        <option value="technical">🔧 Technical/Engineering</option>
+                        <option value="research">🔬 Research/Academic</option>
+                    </select>
+                </div>
+
+                <!-- Enhancement Types Selection -->
+                <div class="enh-types-section">
+                    <div class="enh-section-header">
+                        <h3>🎨 Pilih Jenis Enhancement</h3>
+                        <div class="enh-quick-actions">
+                            <button onclick="selectAllTypes()" class="enh-btn-small">Pilih Semua</button>
+                            <button onclick="selectRecommendedTypes()" class="enh-btn-small enh-btn-primary">⭐ Rekomendasi</button>
+                            <button onclick="clearAllTypes()" class="enh-btn-small">Bersihkan</button>
+                        </div>
+                    </div>
+                    
+                    <div id="enhancement-types-container" class="enh-types-grid">
+                        <!-- Will be populated by JavaScript -->
+                        <div class="enh-loading">Memuat tipe enhancement...</div>
+                    </div>
+                </div>
+
+                <!-- Custom Instructions (Optional) -->
+                <div class="enh-custom-section">
+                    <label for="custom-instructions">
+                        <strong>Instruksi Tambahan:</strong>
+                        <span class="enh-hint">(opsional)</span>
+                    </label>
+                    <textarea 
+                        id="custom-instructions" 
+                        class="enh-textarea"
+                        placeholder="Contoh: Fokus pada analisis risiko kredit dan proyeksi cash flow untuk 5 tahun ke depan..."
+                        rows="3"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="enh-modal-footer">
+                <div class="enh-selection-summary">
+                    <span id="selected-count">0 tipe dipilih</span>
+                </div>
+                <div class="enh-footer-actions">
+                    <button onclick="closeEnhancementModal()" class="enh-btn enh-btn-secondary">Batal</button>
+                    <button onclick="startEnhancementWithConfig()" class="enh-btn enh-btn-success">
+                        🚀 Mulai Enhancement
+                    </button>
+                </div>
             </div>
         </div>
     </div>

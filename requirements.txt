@@ -4,14 +4,14 @@ pymupdf4llm
 python-dotenv
 langchain
 langchain-community
-langchain-openai>=0.1.7
-pinecone-client>=3.0.0
+langchain-openai
+pinecone-client
 langchain-pinecone
 numpy
 loguru
 openai
 python-multipart
-tiktoken>=0.7.0
+tiktoken
 tenacity
 redis
 celery
@@ -22,3 +22,5 @@ opencv-python-headless
 pytesseract
 Pillow
 pandas
+PyYAML
+tabulate

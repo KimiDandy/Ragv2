@@ -1,0 +1,221 @@
+{
+  "enhancements": [
+    {
+      "type": "executive_summary",
+      "title": "Strategic Positioning Obligasi Negara Valas INDON30NEW2 dan INDON35NEW untuk Diversifikasi Portofolio USD",
+      "content": "Root Analysis: Obligasi negara valas seri INDON30NEW2 dan INDON35NEW menawarkan alternatif investasi berbasis USD dengan kupon tetap (5,25% dan 5,60% p.a.) dan tenor menengah-panjang (5 dan 10 tahun). Produk ini diposisikan sebagai instrumen dengan risiko moderat, imbal hasil di atas deposito USD, dan perlindungan hukum dari pemerintah. Signifikansi utama terletak pada potensi capital gain dari pergerakan harga di pasar sekunder, serta stabilitas pendapatan kupon di tengah volatilitas pasar global. \n\nKey Findings: Yield INDON30NEW2 (4,75%) dan INDON35NEW (5,31%) saat ini menarik di tengah tren konsolidasi yield US Treasury. Portfolio allocation merekomendasikan porsi besar (90-95%) pada short-medium tenor bonds untuk profil balanced hingga growth, menunjukkan keyakinan pada stabilitas dan daya tarik obligasi negara valas. \n\nApplication: Investor institusi dan individu dapat memanfaatkan obligasi ini untuk diversifikasi portofolio USD, mengurangi risiko volatilitas pasar ekuitas, dan mengamankan pendapatan tetap. \n\nImpact: Implikasi strategis mencakup peluang optimalisasi yield di tengah ekspektasi penurunan suku bunga The Fed, namun perlu mitigasi risiko pasar dan likuiditas. Rekomendasi: Fokus pada monitoring tren yield US Treasury dan likuiditas pasar sekunder untuk timing investasi optimal.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new", "unit_portofolio_allocation"],
+      "confidence": 0.9,
+      "priority": 9
+    },
+    {
+      "type": "executive_summary",
+      "title": "Implikasi Portofolio Allocation pada Expected Return dan Risiko Investasi Obligasi Negara Valas",
+      "content": "Root Analysis: Rekomendasi alokasi portofolio untuk profil moderate, balanced, growth, dan aggressive menunjukkan pergeseran signifikan ke short-medium tenor bonds (90-95%), dengan expected annualized return meningkat dari 6,11% (moderate) hingga 8,95% (aggressive). Hal ini menandakan keyakinan pada stabilitas dan daya tarik obligasi negara valas di tengah ketidakpastian pasar global. \n\nKey Findings: Diversifikasi tetap dijaga dengan porsi kecil pada money market (5-10%) untuk likuiditas. Produk INDON30NEW2 dan INDON35NEW secara konsisten masuk dalam portofolio utama, menandakan peran sentral dalam strategi yield enhancement berbasis USD. \n\nApplication: Investor dapat menyesuaikan alokasi sesuai profil risiko, memaksimalkan yield tanpa mengorbankan stabilitas portofolio. \n\nImpact: Potensi return lebih tinggi dari deposito USD, namun risiko pasar dan likuiditas tetap perlu dimitigasi. Rekomendasi: Lakukan review portofolio berkala dan gunakan instrumen money market sebagai buffer risiko volatilitas obligasi.",
+      "source_units": ["unit_portofolio_allocation", "unit_tabel_moderate", "unit_tabel_balanced", "unit_tabel_growth", "unit_tabel_aggressive"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "executive_summary",
+      "title": "Peluang dan Risiko Tersembunyi dalam Investasi Obligasi Negara Valas di Tengah Dinamika Yield Global",
+      "content": "Root Analysis: Yield INDON30NEW2 dan INDON35NEW sangat dipengaruhi oleh pergerakan yield US Treasury, yang saat ini berada pada fase konsolidasi. Ekspektasi penurunan suku bunga The Fed membuka peluang capital gain, namun risiko pasar dan likuiditas tetap mengintai. \n\nKey Findings: Kenaikan harga sejak pertengahan Januari pada kedua seri obligasi menandakan sentimen positif, namun volatilitas yield global dapat memicu fluktuasi harga di pasar sekunder. \n\nApplication: Investor harus memantau indikator makroekonomi AS dan tren yield US Treasury sebagai leading indicator untuk timing pembelian/penjualan obligasi. \n\nImpact: Peluang capital gain optimal jika penurunan yield US Treasury terealisasi, namun risiko kerugian jika terjadi shock makroekonomi atau pengetatan likuiditas. Rekomendasi: Implementasikan strategi dynamic rebalancing dan gunakan stop-loss untuk mengelola downside risk.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new", "unit_grafik_yield"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Yield to Maturity (YTM) Obligasi Negara Valas INDON35NEW",
+      "content": "Root Analysis: Yield to Maturity (YTM) adalah metrik utama untuk menilai daya tarik obligasi, terutama ketika harga pasar berbeda dari nilai nominal. Berdasarkan data: kupon 5,60% p.a., harga pasar sekitar 100,5-101,5, tenor 10 tahun. \n\nDeduksi Formula: YTM ≈ [C + (F-P)/n] / [(F+P)/2], di mana C=kupon tahunan (USD 56 per USD 1.000 nominal), F=face value (USD 1.000), P=harga pasar (misal USD 1.015), n=tenor (10 tahun). \n\nValidasi: Jika P=1.015, F=1.000, C=56, n=10, maka YTM ≈ [56 + (1.000-1.015)/10] / [(1.000+1.015)/2] = [56 - 1.5] / 1.0075 ≈ 54.5 / 1.0075 ≈ 5,41%. Ini mendekati yield pasar 5,31% yang dilaporkan, mengindikasikan formula valid untuk estimasi cepat. \n\nLimitasi: Formula ini adalah pendekatan linear, tidak memperhitungkan reinvestasi kupon atau perubahan harga pasar di masa depan.",
+      "source_units": ["unit_karakteristik_indon35new", "unit_grafik_yield_indon35new", "unit_tabel_karakteristik"],
+      "confidence": 0.82,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Estimasi Capital Gain Obligasi Negara Valas INDON30NEW2 Berdasarkan Perubahan Yield",
+      "content": "Root Analysis: Capital gain pada obligasi terjadi saat yield turun dan harga naik. Berdasarkan data, yield INDON30NEW2 turun dari 4,8% ke 4,5%, lalu konsolidasi di 4,75%, dengan harga naik dari 100 ke 101,5. \n\nDeduksi Formula: Capital Gain (%) ≈ (Harga Jual - Harga Beli) / Harga Beli × 100%. Jika beli di 100, jual di 101,5: (101,5-100)/100 × 100% = 1,5%. \n\nGeneralization: Untuk setiap penurunan yield, harga obligasi naik secara invers. Formula harga obligasi (simplified): P = C/(1+y)^1 + C/(1+y)^2 + ... + (C+F)/(1+y)^n. \n\nValidasi: Dengan perubahan yield 0,3% (4,8% ke 4,5%), harga naik 1,5%. Ini konsisten dengan durasi obligasi sekitar 5 tahun (rule of thumb: price change ≈ -duration × yield change). \n\nLimitasi: Tidak memperhitungkan biaya transaksi dan pajak. Cocok untuk estimasi cepat capital gain pada obligasi fixed-rate.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_grafik_yield_indon30new2"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Rumus Alokasi Portofolio Optimal Berdasarkan Profil Risiko dan Expected Return",
+      "content": "Root Analysis: Tabel alokasi portofolio menunjukkan bobot berbeda untuk money market dan bonds sesuai profil risiko. Dapat di-reverse engineer rumus alokasi optimal untuk expected return target. \n\nDeduksi Formula: Expected Portfolio Return = Σ (Bobot_i × Expected Return_i), di mana Bobot_i adalah proporsi pada setiap asset class, Expected Return_i adalah return tahunan produk. \n\nContoh: Untuk profil moderate: 10% × 6,11% (money market) + 90% × X% (bonds). Jika X diasumsikan 7% (rata-rata bonds), maka Expected Return = 0,1×6,11% + 0,9×7% = 0,611% + 6,3% = 6,91%. \n\nValidasi: Tabel growth/aggressive menunjukkan expected return naik seiring peningkatan bobot pada asset lebih agresif. \n\nLimitasi: Tidak memperhitungkan korelasi antar asset dan volatilitas. Cocok untuk alokasi awal berbasis expected return.",
+      "source_units": ["unit_tabel_moderate", "unit_tabel_balanced", "unit_tabel_growth", "unit_tabel_aggressive"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Yield INDON30NEW2 dalam 3 Skenario Ekonomi Global 2025-2030",
+      "content": "Root Analysis: Yield INDON30NEW2 sangat dipengaruhi oleh tren US Treasury dan kebijakan The Fed. Dengan tenor sisa 5 tahun, proyeksi yield perlu mempertimbangkan skenario makro global. \n\nBest Case: Penurunan suku bunga The Fed agresif, yield UST turun ke 3,5% dalam 2 tahun. Yield INDON30NEW2 turun ke 4,0% (harga naik ke 103,5), capital gain +2% p.a. Confidence: 0.7 (asumsi penurunan inflasi AS dan risk appetite tinggi). \n\nMost Likely: Penurunan bertahap, yield UST stabil di 4,0%, yield INDON30NEW2 turun ke 4,5% (harga naik ke 102). Capital gain +1% p.a. Confidence: 0.75. \n\nWorst Case: Inflasi AS naik, The Fed tahan/tambah suku bunga, yield UST naik ke 5,2%. Yield INDON30NEW2 naik ke 5,3% (harga turun ke 98,5), capital loss -0,7% p.a. Confidence: 0.65. \n\nMetodologi: Extrapolation berbasis korelasi historis yield UST dan INDON30NEW2.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_grafik_yield_indon30new2"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Return Portofolio Balanced dengan Dominasi Obligasi Negara Valas",
+      "content": "Root Analysis: Portofolio balanced (90% bonds, 10% money market) sangat sensitif pada perubahan yield obligasi negara valas. \n\nBest Case: Yield obligasi turun 0,75% dalam 2 tahun (capital gain +3%), money market tetap di 7,34%. Total return portofolio: 7,34% (money market) × 10% + 8,5% (bonds: kupon+capital gain) × 90% = 0,734% + 7,65% = 8,38% p.a. Confidence: 0.75. \n\nMost Likely: Yield turun 0,25% (capital gain +1%), bonds return 6,6% (kupon+gain). Portofolio: 0,734% + 5,94% = 6,67% p.a. Confidence: 0.8. \n\nWorst Case: Yield naik 0,5% (capital loss -1%), bonds return 4,6%. Portofolio: 0,734% + 4,14% = 4,87% p.a. Confidence: 0.7. \n\nMetodologi: Weighted average return, asumsi rebalancing tahunan.",
+      "source_units": ["unit_tabel_balanced", "unit_karakteristik_indon30new2", "unit_karakteristik_indon35new"],
+      "confidence": 0.75,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Skenario Risiko Likuiditas Obligasi Negara Valas pada Kondisi Pasar Tidak Menentu",
+      "content": "Root Analysis: Risiko likuiditas menjadi krusial saat pasar sekunder tidak aktif, terutama pada masa krisis atau volatilitas tinggi. \n\nBest Case: Pasar sekunder tetap aktif, spread bid-ask <0,5%, investor dapat menjual obligasi dengan diskon minimal. Confidence: 0.8. \n\nMost Likely: Volatilitas sedang, spread bid-ask naik ke 1%, waktu penjualan 2-3 hari. Confidence: 0.7. \n\nWorst Case: Krisis likuiditas, spread >2%, harga jual turun 2-3% dari mark-to-market, waktu penjualan >1 minggu. Confidence: 0.65. \n\nMetodologi: Extrapolasi dari episode volatilitas pasar obligasi global (misal 2020). Implikasi: Investor harus siap dengan dana cadangan dan tidak mengandalkan likuidasi mendadak.",
+      "source_units": ["unit_risiko_produk", "unit_karakteristik_indon30new2", "unit_karakteristik_indon35new"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Alokasi Portofolio: Dominasi Obligasi Negara Valas pada Semua Profil Risiko",
+      "content": "Root Analysis: Tabel alokasi portofolio untuk moderate, balanced, growth, dan aggressive menunjukkan pola konsisten: short-medium tenor bonds (termasuk INDON30NEW2 dan INDON35NEW) mendapat bobot 90-95% pada semua profil kecuali aggressive (40%). \n\nPractical Application: Ini menandakan keyakinan kuat pada stabilitas dan daya tarik yield obligasi negara valas, bahkan untuk investor dengan risk appetite tinggi. Money market hanya 5-10%, menandakan likuiditas bukan prioritas utama. \n\nDecision Support: Investor dapat mengambil insight bahwa diversifikasi utama tetap pada obligasi negara valas, sementara ekuitas hanya dominan pada profil aggressive. \n\nImpact: Implikasi strategis: risiko portofolio sangat tergantung pada volatilitas harga obligasi, sehingga monitoring yield global menjadi sangat penting.",
+      "source_units": ["unit_tabel_moderate", "unit_tabel_balanced", "unit_tabel_growth", "unit_tabel_aggressive"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Perbandingan Expected Return antar Profil Risiko: Margin Kenaikan Return Tidak Linear",
+      "content": "Root Analysis: Tabel expected return menunjukkan kenaikan dari 6,11% (moderate) ke 8,95% (aggressive), namun kenaikan return tidak linear dengan peningkatan risiko. \n\nPractical Application: Margin kenaikan return antara moderate ke balanced (6,11% ke 7,34%) lebih kecil dibanding balanced ke growth (7,34% ke 7,69%) dan growth ke aggressive (7,69% ke 8,95%). \n\nDecision Support: Investor perlu mempertimbangkan diminishing return pada peningkatan risiko, khususnya saat berpindah dari balanced ke aggressive. \n\nImpact: Implikasi: optimalisasi return dapat dicapai tanpa harus mengambil risiko ekuitas besar, cukup dengan porsi dominan pada obligasi negara valas.",
+      "source_units": ["unit_tabel_moderate", "unit_tabel_balanced", "unit_tabel_growth", "unit_tabel_aggressive"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Identifikasi Produk Obligasi Negara Valas sebagai Core Holdings di Semua Portofolio",
+      "content": "Root Analysis: Tabel portofolio menunjukkan produk INDON30NEW2 dan INDON35NEW selalu masuk dalam core holdings untuk semua profil risiko. \n\nPractical Application: Ini menandakan produk ini dianggap sebagai anchor asset untuk stabilitas dan yield portofolio berbasis USD. \n\nDecision Support: Investor institusi dapat menjadikan kedua seri ini sebagai benchmark untuk kinerja portofolio USD. \n\nImpact: Implikasi: Ketergantungan tinggi pada dua seri ini meningkatkan risiko konsentrasi, sehingga perlu monitoring risiko issuer dan pasar sekunder.",
+      "source_units": ["unit_tabel_moderate", "unit_tabel_balanced", "unit_tabel_growth", "unit_tabel_aggressive"],
+      "confidence": 0.88,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Kenaikan Harga Obligasi Negara Valas Sejak Pertengahan Januari",
+      "content": "Root Analysis: Grafik harga INDON30NEW2 dan INDON35NEW menunjukkan pola kenaikan harga konsisten sejak 13-15 Januari, sejalan dengan penurunan yield US Treasury. \n\nDeskripsi: Harga naik dari 100 ke 101,5 (INDON30NEW2) dan 99,5 ke 100,5 (INDON35NEW) dalam 10 hari. \n\nRoot Cause Hypothesis: Sentimen positif akibat ekspektasi pemangkasan suku bunga The Fed dan konsolidasi yield UST. \n\nImplications: Timing pembelian optimal adalah sebelum sentimen positif terakumulasi di harga. Investor dapat memanfaatkan pola ini untuk strategi entry di awal siklus penurunan yield.",
+      "source_units": ["unit_grafik_yield_indon30new2", "unit_grafik_yield_indon35new"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Korelasi Yield Obligasi Negara Valas dengan US Treasury",
+      "content": "Root Analysis: Yield INDON30NEW2 dan INDON35NEW secara eksplisit mengikuti pergerakan yield US Treasury 10 tahun. \n\nDeskripsi: Saat yield UST turun dari 4,8% ke 4,5%, yield INDON30NEW2 turun ke 4,75%, harga naik. Korelasi positif antara yield UST dan yield obligasi negara valas. \n\nRoot Cause Hypothesis: Investor global menjadikan UST sebagai benchmark risiko dan yield, sehingga spread yield tetap stabil. \n\nImplications: Investor dapat menggunakan yield UST sebagai leading indicator untuk proyeksi harga obligasi negara valas.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new", "unit_grafik_yield"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Anomali: Spread Yield INDON35NEW Lebih Tinggi dari INDON30NEW2 Meski Tenor Lebih Panjang",
+      "content": "Root Analysis: Yield INDON35NEW (5,31%) lebih tinggi dari INDON30NEW2 (4,75%) meski tenor lebih panjang (10 vs 5 tahun). \n\nDeskripsi: Biasanya, yield curve naik seiring tenor, namun spread 0,56% cukup lebar untuk dua seri dari issuer sama. \n\nRoot Cause Hypothesis: Risiko duration dan ekspektasi inflasi jangka panjang lebih tinggi, atau pasar menuntut premium untuk likuiditas lebih rendah pada tenor panjang. \n\nImplications: Investor dengan horizon jangka panjang dapat memanfaatkan spread ini untuk yield pickup, namun harus siap dengan risiko duration.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Konsentrasi Portofolio pada Obligasi Negara Valas",
+      "content": "Deskripsi Risk: Portofolio yang didominasi oleh INDON30NEW2 dan INDON35NEW (hingga 95%) meningkatkan risiko konsentrasi pada satu issuer dan satu kelas aset. \n\nLikelihood: Medium (40%) - portofolio allocation merekomendasikan diversifikasi terbatas. \n\nImpact: High (critical) - jika terjadi downgrade sovereign rating atau shock pasar obligasi, potensi kerugian bisa signifikan (estimasi >10% portofolio). \n\nRisk Score: 8/10. \n\nRoot Cause: Keyakinan berlebihan pada stabilitas sovereign risk dan yield premium. \n\nMitigasi Preventive: Diversifikasi ke asset lain (ekuitas, reksa dana global, komoditas). \n\nContingency Plan: Stop-loss dan rebalancing otomatis jika harga turun >3%. \n\nEarly Warning: Kenaikan CDS Indonesia, penurunan outlook rating, volatilitas yield UST.",
+      "source_units": ["unit_tabel_moderate", "unit_tabel_balanced", "unit_tabel_growth", "unit_tabel_aggressive"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Likuiditas Pasar Sekunder Obligasi Negara Valas pada Krisis Global",
+      "content": "Deskripsi Risk: Pada kondisi pasar global krisis, likuiditas pasar sekunder obligasi negara valas bisa mengering, menyebabkan spread bid-ask melebar dan harga jual turun signifikan. \n\nLikelihood: Medium (30%) - episode 2020 menunjukkan pasar bisa freeze. \n\nImpact: High (critical) - potensi capital loss 2-5% jika terpaksa jual di tengah krisis. \n\nRisk Score: 7/10. \n\nRoot Cause: Ketergantungan pada investor institusi global dan volatilitas USD. \n\nMitigasi Preventive: Simpan dana likuid di money market, hindari leverage. \n\nContingency Plan: Hold to maturity jika tidak butuh likuiditas mendadak. \n\nEarly Warning: Penurunan volume transaksi, pelebaran spread, volatilitas yield UST.",
+      "source_units": ["unit_risiko_produk", "unit_karakteristik_indon30new2", "unit_karakteristik_indon35new"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Suku Bunga AS dan Dampaknya pada Harga Obligasi Negara Valas",
+      "content": "Deskripsi Risk: Kenaikan suku bunga The Fed di luar ekspektasi pasar dapat menyebabkan yield obligasi negara valas naik dan harga turun tajam. \n\nLikelihood: Low-Medium (25%) - saat ini konsensus pasar mengarah ke penurunan suku bunga, namun risiko reversal tetap ada. \n\nImpact: Medium (significant) - harga obligasi bisa turun 2-4% tergantung durasi. \n\nRisk Score: 6/10. \n\nRoot Cause: Inflasi AS lebih persisten, The Fed hawkish. \n\nMitigasi Preventive: Buy in tranches, gunakan duration lebih pendek. \n\nContingency Plan: Switch ke money market atau reksa dana USD. \n\nEarly Warning: Data inflasi AS di atas ekspektasi, statement hawkish dari The Fed.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new", "unit_grafik_yield"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Yield Obligasi Negara Valas 12 Bulan ke Depan Berdasarkan Pola Historis",
+      "content": "Root Analysis: Yield INDON30NEW2 dan INDON35NEW mengikuti tren yield US Treasury, yang saat ini berada di 4,5-4,8%. Dengan ekspektasi penurunan suku bunga The Fed, yield diproyeksikan turun. \n\nForecast: Dalam 12 bulan, yield INDON30NEW2 diperkirakan turun ke 4,25-4,5%, INDON35NEW ke 5,0-5,2%. Confidence interval: ±0,25%. \n\nKey Assumptions: Inflasi AS terkendali, The Fed mulai memangkas suku bunga Q3 2024. \n\nTurning Point: Jika data inflasi memburuk, yield bisa naik kembali ke 4,8-5,0%. \n\nImplications: Potensi capital gain 1-2% bagi investor yang masuk sebelum yield turun.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new", "unit_grafik_yield"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Prediksi Expected Return Portofolio Obligasi Negara Valas 2025-2027",
+      "content": "Root Analysis: Dengan dominasi obligasi negara valas di portofolio (90-95%), expected return sangat tergantung pada yield dan capital gain. \n\nForecast: Jika yield turun 0,5% dalam 2 tahun, expected return portofolio bisa naik ke 7,5-8,5% p.a. Jika yield stagnan, return tetap di kisaran 6,5-7,0%. Jika yield naik, return turun ke 5,5-6,0%. \n\nConfidence interval: ±0,5%. \n\nKey Assumptions: Tidak ada shock makroekonomi besar, likuiditas pasar terjaga. \n\nImplications: Investor dapat mengatur ekspektasi return dan menyesuaikan alokasi sesuai outlook yield global.",
+      "source_units": ["unit_tabel_moderate", "unit_tabel_balanced", "unit_tabel_growth", "unit_tabel_aggressive"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Spread Yield Obligasi Negara Valas vs US Treasury",
+      "content": "Root Analysis: Spread yield antara INDON30NEW2/INDON35NEW dan US Treasury menjadi indikator risk premium Indonesia. Saat ini spread sekitar 0,25-0,5%. \n\nForecast: Jika outlook ekonomi Indonesia stabil, spread diperkirakan tetap di 0,25-0,5% dalam 12 bulan ke depan. Jika terjadi downgrade rating atau volatilitas emerging market, spread bisa melebar ke 0,75%. \n\nKey Assumptions: Sovereign risk Indonesia stabil, global risk appetite tidak berubah signifikan. \n\nImplications: Spread stabil mendukung daya tarik obligasi negara valas bagi investor asing.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new", "unit_grafik_yield"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Yield US Treasury Naik 0,5% dalam 6 Bulan, Dampak pada Harga Obligasi Negara Valas",
+      "content": "Deskripsi: Jika yield US Treasury naik 0,5% (misal dari 4,5% ke 5,0%), yield INDON30NEW2 dan INDON35NEW kemungkinan naik sejalan, menyebabkan harga turun. \n\nDampak Outcome: Untuk obligasi dengan durasi 5 tahun, harga turun sekitar 2,5% (rule of thumb: price change ≈ -duration × yield change). Jika harga awal 101,5, harga turun ke 99,0. \n\nMitigasi: Buy in tranches, gunakan stop-loss, atau hold to maturity untuk menghindari realisasi capital loss. \n\nProbability: Medium (30%) - tergantung data inflasi dan kebijakan The Fed. \n\nImplications: Investor harus siap dengan volatilitas harga dan tidak mengandalkan likuidasi mendadak.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_grafik_yield"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Investor Menjual Obligasi Negara Valas Sebelum Jatuh Tempo di Pasar Sekunder",
+      "content": "Deskripsi: Jika investor menjual obligasi sebelum jatuh tempo, harga jual tergantung kondisi pasar. Dalam kondisi normal, spread bid-ask 0,5-1%, namun saat volatilitas tinggi bisa >2%. \n\nDampak Outcome: Potensi capital loss jika yield naik, atau gain jika yield turun. Untuk INDON30NEW2, jika yield naik 0,25%, harga turun sekitar 1,25%. \n\nMitigasi: Monitor tren yield dan likuiditas pasar, gunakan limit order untuk meminimalkan slippage. \n\nProbability: High (60%) - banyak investor retail cenderung likuidasi sebelum jatuh tempo. \n\nImplications: Penting untuk edukasi investor tentang risiko pasar sekunder.",
+      "source_units": ["unit_risiko_produk", "unit_karakteristik_indon30new2", "unit_karakteristik_indon35new"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Penurunan Rating Sovereign Indonesia oleh Lembaga Pemeringkat",
+      "content": "Deskripsi: Jika terjadi penurunan rating sovereign Indonesia, spread yield obligasi negara valas melebar, harga turun signifikan. \n\nDampak Outcome: Spread bisa naik 0,5%, harga obligasi turun 2-5% tergantung durasi. \n\nMitigasi: Diversifikasi ke obligasi global investment grade, gunakan hedging currency jika perlu. \n\nProbability: Low (10%) - outlook saat ini stabil, namun risiko tetap ada. \n\nImplications: Investor institusi harus siap dengan rebalancing portofolio dan monitoring rating agencies.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new"],
+      "confidence": 0.65,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Karakteristik dan Yield INDON30NEW2 vs INDON35NEW",
+      "content": "Root Analysis: INDON30NEW2 (tenor 5 tahun, yield 4,75%, kupon 5,25%) vs INDON35NEW (tenor 10 tahun, yield 5,31%, kupon 5,60%). \n\nPerbedaan Kunci: INDON35NEW menawarkan yield dan kupon lebih tinggi, namun risiko duration dan volatilitas harga lebih besar. INDON30NEW2 lebih cocok untuk investor dengan horizon menengah dan preferensi risiko lebih rendah. \n\nAdvantages/Disadvantages: INDON35NEW: +yield, -duration risk. INDON30NEW2: +stabilitas harga, -yield. \n\nRekomendasi: Kombinasikan kedua seri untuk balance yield dan risiko duration.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Analisis Komparatif Expected Return antar Profil Risiko Portofolio",
+      "content": "Root Analysis: Expected return naik dari 6,11% (moderate) ke 8,95% (aggressive), namun kenaikan risiko tidak selalu sebanding dengan kenaikan return. \n\nPerbedaan Kunci: Profil aggressive menambah ekuitas (45%) untuk boost return, namun volatilitas portofolio meningkat signifikan. Balanced dan growth tetap dominan obligasi, dengan return lebih stabil. \n\nAdvantages/Disadvantages: Aggressive: +return, -volatilitas. Moderate: +stabilitas, -return. \n\nRekomendasi: Pilih profil sesuai risk appetite dan horizon investasi, jangan tergiur return tinggi tanpa kesiapan menghadapi volatilitas.",
+      "source_units": ["unit_tabel_moderate", "unit_tabel_balanced", "unit_tabel_growth", "unit_tabel_aggressive"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Risiko dan Likuiditas Obligasi Negara Valas vs Deposito USD",
+      "content": "Root Analysis: Obligasi negara valas menawarkan yield lebih tinggi dari deposito USD, namun risiko pasar dan likuiditas lebih besar. \n\nPerbedaan Kunci: Deposito USD: +likuiditas, +jaminan pokok, -yield. Obligasi: +yield, -likuiditas, -risiko pasar. \n\nAdvantages/Disadvantages: Obligasi cocok untuk investor dengan horizon menengah-panjang dan toleransi risiko moderat. Deposito untuk kebutuhan likuiditas dan proteksi modal. \n\nRekomendasi: Kombinasikan kedua instrumen untuk balance yield dan likuiditas.",
+      "source_units": ["unit_karakteristik_indon30new2", "unit_karakteristik_indon35new"],
+      "confidence": 0.8,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

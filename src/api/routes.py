@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import hashlib
 import uuid
-from typing import Union
+from typing import Union, Optional
 
 from fastapi import APIRouter, UploadFile, File, HTTPException, Request
 from pydantic import BaseModel
@@ -28,7 +28,6 @@ from ..shared.document_meta import (
     get_markdown_relative_path,
     get_base_name,
     default_markdown_filename,
-    set_markdown_info,
     set_original_pdf_filename,
     get_original_pdf_filename,
 )
@@ -48,6 +47,9 @@ from .schemas import (
     AskBothVersionsResponse,
     EnhancementResponse,
     QueryRequest,
+    EnhancementConfigRequest,
+    DocumentAnalysisSummary,
+    EnhancementTypeRegistryResponse,
 )
 
 # Global progress tracking for enhancement tasks
@@ -230,8 +232,16 @@ async def upload_document(request: Request, file: UploadFile = File(...)):
 
 
 @router.post("/start-enhancement/{document_id}")
-async def start_enhancement(document_id: str):
-    """Start direct single-step enhancement (NEW FAST METHOD)"""
+async def start_enhancement(
+    document_id: str, 
+    config: Optional[EnhancementConfigRequest] = None
+):
+    """
+    Start direct single-step enhancement with optional user configuration
+    
+    NEW UNIVERSAL SYSTEM: Accepts user-selected enhancement types and configuration
+    instead of running all hardcoded types.
+    """
     
     # Use direct enhancement method
     doc_dir = Path(PIPELINE_ARTEFACTS_DIR) / document_id
@@ -239,16 +249,29 @@ async def start_enhancement(document_id: str):
     if not md_path.exists():
         raise HTTPException(status_code=404, detail="Dokumen tidak ditemukan atau belum diunggah.")
     
-    # Start direct enhancement in background
-    asyncio.create_task(_run_direct_enhancement(document_id))
+    # Log user configuration
+    if config:
+        logger.info(f"[API] User configuration received: {len(config.selected_types)} types selected, domain: {config.domain_hint}")
+    else:
+        logger.info(f"[API] No user configuration, using defaults")
+    
+    # Start direct enhancement in background with configuration
+    asyncio.create_task(_run_direct_enhancement(document_id, config))
     
     return {
         "status": "started",
-        "message": "Direct enhancement dimulai",
-        "doc_id": document_id
+        "message": f"Direct enhancement dimulai ({len(config.selected_types) if config else 'default'} types)",
+        "doc_id": document_id,
+        "config": {
+            "selected_types": config.selected_types if config else [],
+            "domain_hint": config.domain_hint if config else None
+        }
     }
 
-async def _run_direct_enhancement(document_id: str):
+async def _run_direct_enhancement(
+    document_id: str,
+    user_config: Optional[EnhancementConfigRequest] = None
+):
     """Background task untuk direct enhancement - SINGLE STEP"""
     try:
         from ..enhancement.enhancer import DirectEnhancerV2
@@ -297,7 +320,10 @@ async def _run_direct_enhancement(document_id: str):
             doc_id=document_id,
             markdown_path=str(md_path),
             units_metadata=units_metadata,
-            tables_data=tables_data
+            tables_data=tables_data,
+            selected_types=user_config.selected_types if user_config else None,
+            domain_hint=user_config.domain_hint if user_config else None,
+            custom_instructions=user_config.custom_instructions if user_config else None
         )
         
         logger.info(f"[Direct Enhancement] Generated {len(enhancements)} enhancements")

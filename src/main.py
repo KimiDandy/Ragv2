@@ -1,6 +1,7 @@
 import uvicorn
 import sys
 import os
+from pathlib import Path
 from contextlib import asynccontextmanager
 
 from pinecone import Pinecone
@@ -14,6 +15,7 @@ from loguru import logger
 
 from src.api.routes import router as api_router
 from src.api.namespace_routes import router as namespace_router
+from src.api.enhancement_routes import router as enhancement_router
 from src.core.config import (
     EMBEDDING_MODEL,
     CHAT_MODEL,
@@ -21,6 +23,9 @@ from src.core.config import (
     PINECONE_INDEX_NAME,
     PIPELINE_ARTEFACTS_DIR,
 )
+
+# Get base directory (project root)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 logger.remove()
 logger.add(
@@ -75,9 +80,11 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-if not os.path.exists("static"):
-    os.makedirs("static")
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# Mount static files with absolute paths
+static_dir = BASE_DIR / "static"
+if not static_dir.exists():
+    static_dir.mkdir(parents=True)
+app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
 app.mount("/artefacts", StaticFiles(directory=PIPELINE_ARTEFACTS_DIR), name="artefacts")
 app.add_middleware(
     CORSMiddleware,
@@ -89,18 +96,26 @@ app.add_middleware(
 
 app.include_router(api_router)
 app.include_router(namespace_router)
+app.include_router(enhancement_router)
 
 @app.get("/")
 async def read_root(request: Request):
-    from fastapi.responses import FileResponse
-    return FileResponse('index.html')
+    """Serve the main index page."""
+    index_path = BASE_DIR / "index.html"
+    if not index_path.exists():
+        logger.error(f"index.html not found at: {index_path}")
+        return {"error": "index.html not found", "path": str(index_path)}
+    return FileResponse(str(index_path))
 
 
 @app.get("/batch_upload.html")
 async def batch_upload_page(request: Request):
     """Serve the batch upload page."""
-    from fastapi.responses import FileResponse
-    return FileResponse('batch_upload.html')
+    batch_path = BASE_DIR / "batch_upload.html"
+    if not batch_path.exists():
+        logger.error(f"batch_upload.html not found at: {batch_path}")
+        return {"error": "batch_upload.html not found", "path": str(batch_path)}
+    return FileResponse(str(batch_path))
 
 
 if __name__ == "__main__":

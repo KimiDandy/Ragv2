@@ -26,6 +26,7 @@ from typing_extensions import Literal
 
 from .config import EnhancementConfig
 from .models import UniversalEnhancement
+from .type_registry import get_type_registry, EnhancementTypeRegistry
 from ..prompts.enhancement import (
     DIRECT_ENHANCEMENT_SYSTEM_PROMPT,
     DIRECT_ENHANCEMENT_USER_PROMPT
@@ -201,6 +202,9 @@ class DirectEnhancerV2:
         self.rate_limiter = AsyncLeakyBucket(rps=self.config.requests_per_second)
         self.window_analyzer = WindowAnalyzer()
         
+        # Load type registry (universal enhancement types)
+        self.type_registry: EnhancementTypeRegistry = get_type_registry()
+        
         # Use model directly from config - NO HARDCODING!
         # Config determines the model, backend just uses it
         self.model = self.config.gen_model
@@ -213,13 +217,17 @@ class DirectEnhancerV2:
         self.overlap_tokens = self.config.window_overlap_tokens
         
         logger.info(f"DirectEnhancerV2 initialized with model: {self.model}, window size: {self.max_window_tokens}")
+        logger.info(f"Type registry loaded: {len(self.type_registry.types)} enhancement types available")
     
     async def enhance_document(
         self,
         doc_id: str,
         markdown_path: str,
         units_metadata: Dict[str, Any],
-        tables_data: Optional[List[Dict[str, Any]]] = None
+        tables_data: Optional[List[Dict[str, Any]]] = None,
+        selected_types: Optional[List[str]] = None,
+        domain_hint: Optional[str] = None,
+        custom_instructions: Optional[str] = None
     ) -> List[UniversalEnhancement]:
         """
         Main entry point for direct enhancement with professional implementation
@@ -229,12 +237,33 @@ class DirectEnhancerV2:
             markdown_path: Path to markdown file
             units_metadata: Metadata about document units
             tables_data: Optional pre-extracted table data
+            selected_types: Optional list of enhancement type IDs to use (from user config)
+            domain_hint: Optional domain hint for better prompts (financial, legal, etc.)
+            custom_instructions: Optional custom instructions from user
             
         Returns:
             List of UniversalEnhancement objects
         """
         try:
             logger.info(f"[DirectEnhancerV2] Starting enhancement for document: {doc_id}")
+            
+            # Store user configuration for this enhancement session
+            self.user_selected_types = selected_types
+            self.user_domain_hint = domain_hint
+            self.user_custom_instructions = custom_instructions
+            
+            # Build dynamic system prompt based on user selection
+            if selected_types:
+                logger.info(f"[DirectEnhancerV2] User selected {len(selected_types)} enhancement types: {selected_types}")
+                self.dynamic_system_prompt = self.type_registry.build_dynamic_system_prompt(
+                    selected_type_ids=selected_types,
+                    domain_hint=domain_hint
+                )
+                logger.info(f"[DirectEnhancerV2] Dynamic prompt generated ({len(self.dynamic_system_prompt)} chars)")
+            else:
+                # Fallback to legacy hardcoded prompt if no user selection
+                logger.info(f"[DirectEnhancerV2] No user selection, using legacy prompt")
+                self.dynamic_system_prompt = DIRECT_ENHANCEMENT_SYSTEM_PROMPT
             
             # Read document content
             markdown_content = Path(markdown_path).read_text(encoding='utf-8')
@@ -474,10 +503,11 @@ class DirectEnhancerV2:
                 
                 # Use regular JSON mode with manual parsing
                 # This is more stable than beta structured outputs
+                # Use dynamic_system_prompt which is built from user selection
                 response = await self.client.chat.completions.create(
                     model=self.model,
                     messages=[
-                        {"role": "system", "content": DIRECT_ENHANCEMENT_SYSTEM_PROMPT},
+                        {"role": "system", "content": self.dynamic_system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
                     temperature=self.temperature,
@@ -513,6 +543,28 @@ class DirectEnhancerV2:
                 # Parse and validate
                 result = self._parse_and_validate_response(content)
                 enhancements_data = result.get('enhancements', [])
+                
+                # VALIDATION: Check if enhancement types match user selection
+                if self.user_selected_types:
+                    valid_enhancements = []
+                    invalid_count = 0
+                    
+                    for enh in enhancements_data:
+                        enh_type = enh.get('type') or enh.get('enhancement_type', '')
+                        if enh_type in self.user_selected_types:
+                            valid_enhancements.append(enh)
+                        else:
+                            invalid_count += 1
+                            logger.warning(f"⚠️ Invalid type '{enh_type}' (not in user selection). Expected one of: {self.user_selected_types}")
+                    
+                    # If more than 30% invalid, retry with stronger enforcement
+                    if len(enhancements_data) > 0 and invalid_count / len(enhancements_data) > 0.3:
+                        logger.warning(f"⚠️ {invalid_count}/{len(enhancements_data)} enhancements have invalid types. Retrying with stronger prompt...")
+                        raise ValueError(f"Too many invalid types: {invalid_count}/{len(enhancements_data)}")
+                    
+                    enhancements_data = valid_enhancements
+                    if invalid_count > 0:
+                        logger.info(f"✓ Filtered out {invalid_count} invalid enhancements, kept {len(valid_enhancements)} valid ones")
                 
                 # Log success
                 if enhancements_data:

@@ -1,0 +1,1028 @@
+[
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_0",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      72.6567153930664,
+      290.71490478515625,
+      86.0629653930664
+    ],
+    "y0": 72.6567153930664,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_0",
+    "content": "FX Online Feature dalam D-Bank PRO ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_1",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      97.33670806884766,
+      535.4082641601562,
+      185.46298217773438
+    ],
+    "y0": 97.33670806884766,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_1",
+    "content": "Inovasi baru dari Bank Danamon. Penuhi kebutuhan transaksi Valas Anda dengan fitur  Valas di layanan D-Bank PRO  Buka D-Bank PRO sekarang dan temukan fitur FX Online terbaru dalam menu  \"Transaksi Valas\"\u200b",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_2",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      196.73672485351562,
+      207.38873291015625,
+      210.14297485351562
+    ],
+    "y0": 196.73672485351562,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_2",
+    "content": "Exchange Rate Display",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_3",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      221.41673278808594,
+      542.2402954101562,
+      251.5029754638672
+    ],
+    "y0": 221.41673278808594,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_3",
+    "content": "Fitur informasi berupa indikasi nilai tukar mata uang secara selama trading hours (09.00  s/d 15.00 WIB) ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_4",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      262.7767028808594,
+      197.42779541015625,
+      276.1829528808594
+    ],
+    "y0": 262.7767028808594,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_4",
+    "content": "Manfaat bagi nasabah: ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_5",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      287.4566955566406,
+      523.6074829101562,
+      317.54296875
+    ],
+    "y0": 287.4566955566406,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_5",
+    "content": "\u25cf\u200b  Nasabah dapat secara langsung dan mandiri melakukan pengecekan indikasi  nilai tukar mata uang dan melanjutkannya untuk bertransaksi Valas ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_6",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      353.4967041015625,
+      147.35943603515625,
+      366.9029541015625
+    ],
+    "y0": 353.4967041015625,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_6",
+    "content": "FX Live Rate",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_7",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      378.17669677734375,
+      508.66607666015625,
+      408.262939453125
+    ],
+    "y0": 378.17669677734375,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_7",
+    "content": "Fitur transaksi jual-beli Valas dengan kurs spesial Danamon selama trading hours  Manfaat bagi nasabah: ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_8",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      419.5367126464844,
+      524.2637329101562,
+      432.9429626464844
+    ],
+    "y0": 419.5367126464844,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_8",
+    "content": "\u25cf\u200b  Dapatkan rate yang lebih baik dengan kurs spesial Danamon yang akan terus ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_9",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      436.2167053222656,
+      256.75396728515625,
+      449.6229553222656
+    ],
+    "y0": 436.2167053222656,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_9",
+    "content": "update dari waktu ke waktu ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_10",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      460.8966979980469,
+      530.0527954101562,
+      474.3029479980469
+    ],
+    "y0": 460.8966979980469,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_10",
+    "content": "\u25cf\u200b  Khusus transaksi pembelian Valas dari Rupiah, Nasabah dapat dengan mudah ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_11",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      477.5766906738281,
+      534.2422485351562,
+      549.0230102539062
+    ],
+    "y0": 477.5766906738281,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_11",
+    "content": "mengetahui jumlah mata uang asing (dalam USD) terhadap Rupiah yang masih  dapat ditransaksikan di D-Bank PRO  Untuk melihat informasi Syarat dan Ketentuan Umum Transaksi Pembelian dan  Pengajuan Valuta Asing melalui D-Bank PRO secara lengkap\u00a0 klik disini.",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_12",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      584.9767456054688,
+      177.36529541015625,
+      598.3829956054688
+    ],
+    "y0": 584.9767456054688,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_12",
+    "content": "Bank Notes Order",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_13",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      609.65673828125,
+      536.0410766601562,
+      656.4229736328125
+    ],
+    "y0": 609.65673828125,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_13",
+    "content": "Fitur transaksi pemesanan bank notes pada layaanan D-Bank PRO yang berlaku\u00a0 di  cabang-cabang terpilih \u00a0Bank Danamon untuk 5 mata uang: USD, JPY, EUR, SGD, dan  AUD ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_14",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 1,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      667.6967163085938,
+      197.42779541015625,
+      681.1029663085938
+    ],
+    "y0": 667.6967163085938,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p1_para_14",
+    "content": "Manfaat bagi nasabah: ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_0",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      72.6567153930664,
+      541.6133422851562,
+      86.0629653930664
+    ],
+    "y0": 72.6567153930664,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_0",
+    "content": "\u25cf\u200b  Cukup gunakan layanan D-Bank PRO untuk pemesanan bank-notes tanpa harus ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_1",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      89.33671569824219,
+      206.75006103515625,
+      102.74296569824219
+    ],
+    "y0": 89.33671569824219,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_1",
+    "content": "datang ke cabang ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_2",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      114.0167007446289,
+      520.9121704101562,
+      210.14292907714844
+    ],
+    "y0": 114.0167007446289,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_2",
+    "content": "\u25cf\u200b  Dapat menentukan cabang tempat pengambilan bank notes  \u25cf\u200b  Dapat menentukan waktu pengambilan bank notes di cabang  Untuk melihat informasi Syarat dan Ketentuan Umum Layanan Transaksi Penarikan  Mata Uang Asing pada Kantor Cabang Bank Danamon melalui D-Bank PRO secara  lengkap\u00a0 klik disini.",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_3",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      246.09664916992188,
+      156.68170166015625,
+      259.5028991699219
+    ],
+    "y0": 246.09664916992188,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_3",
+    "content": "Market Insight",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_4",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      270.7767028808594,
+      526.8945922851562,
+      300.8630065917969
+    ],
+    "y0": 270.7767028808594,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_4",
+    "content": "Fitur informasi pasar yang dapat diakses melalui layanan D-Bank PRO. Manfaat bagi  nasabah: ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_5",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      312.1366882324219,
+      510.91021728515625,
+      325.5429382324219
+    ],
+    "y0": 312.1366882324219,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_5",
+    "content": "\u25cf\u200b  Monitor keadaan pasar melalui informasi pasar yang dapat diakses dengan ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_6",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      328.8166198730469,
+      307.43170166015625,
+      342.2228698730469
+    ],
+    "y0": 328.8166198730469,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_6",
+    "content": "mudah melalui layanan D-Bank PRO ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_7",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      378.1767272949219,
+      140.02349853515625,
+      391.5829772949219
+    ],
+    "y0": 378.1767272949219,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_7",
+    "content": "Remittance",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_8",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      402.8567810058594,
+      534.2012329101562,
+      432.9429626464844
+    ],
+    "y0": 402.8567810058594,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_8",
+    "content": "Fitur transaksi remittance (kirim atau transfer mata uang asing ke bank lain \u2013 domestik  dan internasional) melalui layanan D-Bank PRO. Manfaat bagi nasabah: ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_9",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      444.2167663574219,
+      517.1504516601562,
+      457.6230163574219
+    ],
+    "y0": 444.2167663574219,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_9",
+    "content": "\u25cf\u200b  Transaksi remittance lebih mudah dengan perubahan pada tampilan metode ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_10",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      460.8966979980469,
+      198.06060791015625,
+      474.3029479980469
+    ],
+    "y0": 460.8966979980469,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_10",
+    "content": "pencarian Bank. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_11",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      485.5767517089844,
+      538.6895141601562,
+      498.9830017089844
+    ],
+    "y0": 485.5767517089844,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_11",
+    "content": "\u25cf\u200b  Channel baru, transaksi remittance ke Bank of Ayudhya (Krungsri) dengan biaya ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_12",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      502.2568359375,
+      542.2344360351562,
+      532.343017578125
+    ],
+    "y0": 502.2568359375,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_12",
+    "content": "yang lebih ringan (flat rate), nominal selalu full amount, kecepatan near real-time,  dan minimal potensi retur transaksi dengan pra-validasi. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_13",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      543.61669921875,
+      514.9238891601562,
+      557.02294921875
+    ],
+    "y0": 543.61669921875,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_13",
+    "content": "\u25cf\u200b  Penggunaan FX Live Rate untuk transaksi remittance beda mata uang yang ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_14",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      560.2967529296875,
+      540.2422485351562,
+      590.3829345703125
+    ],
+    "y0": 560.2967529296875,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_14",
+    "content": "memberikan nasabah kurs konversi yang lebih kompetitif pada jam 09.00 - 15.00  WIB (trading hours). ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_15",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      601.65673828125,
+      508.88287353515625,
+      631.7430419921875
+    ],
+    "y0": 601.65673828125,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_15",
+    "content": "Untuk melihat informasi Syarat dan Ketentuan Umum Layanan remittance melalui  D-Bank PRO secara lengkap\u00a0 klik di sini . ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_16",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 2,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      667.69677734375,
+      141.35943603515625,
+      681.10302734375
+    ],
+    "y0": 667.69677734375,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p2_para_16",
+    "content": "FX Transfer",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p3_para_0",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 3,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      72.6567153930664,
+      535.6250610351562,
+      102.7428970336914
+    ],
+    "y0": 72.6567153930664,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p3_para_0",
+    "content": "Fitur transfer valuta asing antar rekening nasabah dengan menggunakan FX Live Rate  selama trading hours (09.00 s/d 15.00 WIB). Manfaat bagi nasabah: ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p3_para_1",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 3,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      114.0168228149414,
+      516.927978515625,
+      144.10301208496094
+    ],
+    "y0": 114.0168228149414,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p3_para_1",
+    "content": "\u25cf\u200b  Nasabah dapat secara langsung melakukan transfer valas antar rekening  nasabah dengan nilai tukar yang lebih kompetitif menggunakan FX Live Rate",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_0",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      72.6567153930664,
+      184.04498291015625,
+      86.0629653930664
+    ],
+    "y0": 72.6567153930664,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_0",
+    "content": "Reksa Dana Online ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_1",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      97.3368911743164,
+      300.78131103515625,
+      110.7431411743164
+    ],
+    "y0": 97.3368911743164,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_1",
+    "content": "Apa itu Reksadana melalui D-Bank PRO ? ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_2",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      122.01658630371094,
+      524.2520141601562,
+      185.46310424804688
+    ],
+    "y0": 122.01658630371094,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_2",
+    "content": "Reksadana melalui D-Bank PRO adalah channel transaksi Reksadana secara digital  melalui aplikasi D-Bank PRO yang dapat dioptimalkan sesuai dengan strategi dan  tujuan Investasi masing-masing investor.\u200b",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_3",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      196.73680114746094,
+      157.36138916015625,
+      210.14305114746094
+    ],
+    "y0": 196.73680114746094,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_3",
+    "content": "Jenis Produk\u00a0",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_4",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      221.41673278808594,
+      516.9277954101562,
+      234.82298278808594
+    ],
+    "y0": 221.41673278808594,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_4",
+    "content": "1.\u200b Reksa Dana Pasar Uang adalah Reksa Dana dengan alokasi portfolio 100% ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_5",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      238.09666442871094,
+      535.5899047851562,
+      268.1830749511719
+    ],
+    "y0": 238.09666442871094,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_5",
+    "content": "pada instrumen pasar uang termasuk Deposito & Obligasi dengan jangka waktu  < 1 tahun. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_6",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      279.4567565917969,
+      540.2656860351562,
+      292.8630065917969
+    ],
+    "y0": 279.4567565917969,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_6",
+    "content": "2.\u200b Reksa Dana Pendapatan Tetap adalah Reksa Dana yang portofolionya minimum ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_7",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      296.1366882324219,
+      396.83404541015625,
+      309.5429382324219
+    ],
+    "y0": 296.1366882324219,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_7",
+    "content": "80% pada instrument bersifat hutang seperti Obligasi. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_8",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      320.8166198730469,
+      532.2324829101562,
+      334.2228698730469
+    ],
+    "y0": 320.8166198730469,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_8",
+    "content": "3.\u200b Reksa Dana Campuran adalah Reksa Dana\u00a0yang alokasi portofolionya minimal ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_9",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      337.4967956542969,
+      537.5293579101562,
+      367.5829772949219
+    ],
+    "y0": 337.4967956542969,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_9",
+    "content": "1% dan maksimal 79% pada masing-masing instrumen seperti instrument Pasar  Uang, Obligasi maupun Saham. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_10",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      378.8566589355469,
+      541.5781860351562,
+      392.2629089355469
+    ],
+    "y0": 378.8566589355469,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_10",
+    "content": "4.\u200b Reksa Dana Saham adalah Reksa Dana\u00a0yang alokasi portofolionya minimal 80% ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_11",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      395.5365905761719,
+      284.76177978515625,
+      408.9428405761719
+    ],
+    "y0": 395.5365905761719,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_11",
+    "content": "pada instrument bersifat ekuitas. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_12",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      420.2167663574219,
+      334.72467041015625,
+      433.6230163574219
+    ],
+    "y0": 420.2167663574219,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_12",
+    "content": "Keunggulan Reksa Dana Melalui D-Bank PRO",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_13",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      444.8966979980469,
+      534.4531860351562,
+      458.3029479980469
+    ],
+    "y0": 444.8966979980469,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_13",
+    "content": "1.\u200b Transaksi Pembelian, Penjualan Kembali dan Pengalihan yang MUDAH melalui ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_14",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      461.5766296386719,
+      227.37506103515625,
+      474.9828796386719
+    ],
+    "y0": 461.5766296386719,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_14",
+    "content": "aplikasi D-Bank PRO. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_15",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      486.2565612792969,
+      515.5684204101562,
+      499.6628112792969
+    ],
+    "y0": 486.2565612792969,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_15",
+    "content": "2.\u200b Beragam pilihan produk Reksa Dana yang cukup lengkap untuk diversifikasi ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_16",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      502.936767578125,
+      258.75201416015625,
+      516.343017578125
+    ],
+    "y0": 502.936767578125,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_16",
+    "content": "portfolio investasi Nasabah. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_17",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      72.0,
+      527.61669921875,
+      364.12701416015625,
+      565.703125
+    ],
+    "y0": 527.61669921875,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_17",
+    "content": "3.\u200b Transaksi terjangkau mulai dari Rp10.000\u00a0  Proses Transaksi Reksa Dana Melalui D-Bank PRO",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_18",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      576.976806640625,
+      532.2149047851562,
+      607.06298828125
+    ],
+    "y0": 576.976806640625,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_18",
+    "content": "1.\u200b Nasabah memiliki rekening CASA di Bank Danamon, dan memastikan terdapat  dana yang cukup untuk melakukan pembelian Reksa Dana. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_19",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      618.336669921875,
+      526.8652954101562,
+      631.742919921875
+    ],
+    "y0": 618.336669921875,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_19",
+    "content": "2.\u200b Nasabah memiliki Single Investor Identification (SID) untuk Reksa Dana, Bank ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_20",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 4,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      635.0166015625,
+      520.2383422851562,
+      665.10302734375
+    ],
+    "y0": 635.0166015625,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p4_para_20",
+    "content": "Danamon akan membantu Nasabah untuk membuat SID dalam hal Nasabah  belum memiliki SID. ",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p5_para_0",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 5,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      90.0,
+      72.6567153930664,
+      514.8418579101562,
+      86.0629653930664
+    ],
+    "y0": 72.6567153930664,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p5_para_0",
+    "content": "3.\u200b Nasabah memiliki profil risiko yang masih berlaku untuk memastikan produk  3.\u200b Nasabah memiliki profil risiko yang masih berlaku untuk memastikan produk",
+    "extra": {}
+  },
+  {
+    "unit_id": "u_2d524d3c-9673-4b90-a868-a5120f802396_p5_para_1",
+    "doc_id": "2d524d3c-9673-4b90-a868-a5120f802396",
+    "page": 5,
+    "unit_type": "paragraph",
+    "column": "single",
+    "bbox": [
+      108.0,
+      89.33689880371094,
+      532.9356079101562,
+      119.42283630371094
+    ],
+    "y0": 89.33689880371094,
+    "source": "pymupdf",
+    "anchor": "md://u_2d524d3c-9673-4b90-a868-a5120f802396_p5_para_1",
+    "content": "yang dibeli sesuai dengan profil risiko, tujuan investasi dan kebutuhan investasi  Nasabah.\u00a0  yang dibeli sesuai dengan profil risiko, tujuan investasi dan kebutuhan investasi \nNasabah.",
+    "extra": {}
+  }
+]
