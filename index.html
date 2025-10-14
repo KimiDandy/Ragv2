@@ -3,267 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspigo Document Enhancement AI</title>
-    <link rel="stylesheet" href="/static/style.css?v=4.0">
-    <link rel="stylesheet" href="/static/enhancement-config.css?v=1.0">
-
+    <title>Inspigo RAG Enhancement</title>
+    <link rel="stylesheet" href="/static/chat.css?v=3.3">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-      if (window.marked) { marked.setOptions({ breaks: true }); }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  </head>
+</head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Inspigo Document Enhancement AI</h1>
-            <p>Enhance Dokumen Secara Cerdas</p>
-            <div style="margin-top: 15px;">
-                <a href="/batch_upload.html" style="display: inline-block; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s;">
-                    📦 Batch Upload ke Namespace
-                </a>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-icon">📚</div>
+            <div class="header-title">
+                <h1>Inspigo RAG Enhancement</h1>
+                <p>Sistem inference untuk analisis dokumen</p>
             </div>
         </div>
+    </header>
 
-        <div class="content">
+    <!-- Upload Section -->
+    <section id="uploadSection" class="upload-container">
+        <div id="uploadBox" class="upload-box">
+            <div class="upload-icon">📄</div>
+            <h3>Unggah Dokumen PDF</h3>
+            <p>Klik atau seret file ke sini untuk memulai</p>
+            <p class="upload-hint">Bisa memilih beberapa file sekaligus</p>
+            <input type="file" id="fileInput" accept="application/pdf" multiple style="display: none;">
+        </div>
+        
+        <!-- Multi-file Progress Container -->
+        <div id="multiFileProgress" class="multi-file-progress hidden">
+            <h3>Memproses Dokumen</h3>
+            <div id="fileProgressList" class="file-progress-list"></div>
+        </div>
+    </section>
 
-            <div class="upload-container" id="upload-container">
-                <input type="file" id="file-input" accept=".pdf">
-                <button class="upload-btn" onclick="document.getElementById('file-input').click()">
-                    Pilih File yang ingin diproses
+    <!-- Processing Screen -->
+    <section id="processingScreen" class="processing-screen">
+        <div class="processing-card">
+            <div class="spinner"></div>
+            <h3>Memproses Dokumen</h3>
+            <p>Mohon tunggu, sistem sedang menganalisis dokumen Anda...</p>
+        </div>
+    </section>
+
+    <!-- Chat Container -->
+    <section id="chatContainer" class="chat-container hidden">
+        <!-- Messages Area -->
+        <div id="chatMessages" class="chat-messages"></div>
+
+        <!-- Input Area -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <textarea 
+                    id="chatInput" 
+                    class="chat-input" 
+                    placeholder="Ketik pertanyaan Anda..."
+                    rows="1"
+                ></textarea>
+                <button id="sendButton" class="send-button">
+                    ➤
                 </button>
-                <div class="file-name" id="file-name"></div>
-                <div class="muted" style="margin-top: 10px;">Upload → Pilih Mode → Konversi → Preview</div>
             </div>
-
-            <!-- Mode selection dialog (shown after upload, before processing) -->
-            <section class="card" id="mode-dialog" style="display:none;">
-                <div class="card-header">
-                    <h2>Pilih Mode Konversi</h2>
-                </div>
-                <div class="card-body">
-                    <div class="mode-options">
-                        <label class="toggle">
-                            <input type="radio" name="ocr-mode" id="mode-basic" value="basic" checked>
-                            OCR Biasa (lokal)
-                        </label>
-                        <div class="muted" id="desc-basic">
-                            Teks diekstrak dengan PyMuPDF; tabel dengan Camelot (lattice→stream); gambar hanya label/alt-text via OCR lokal.
-                            Angka selalu dari extractor/OCR tabel. Tidak ada data yang dikirim ke cloud.
-                        </div>
-                        <label class="toggle" style="margin-top:8px;">
-                            <input type="radio" name="ocr-mode" id="mode-smart" value="smart">
-                            Smart OCR (GPT untuk gambar/diagram)
-                        </label>
-                        <div class="muted" id="desc-smart">
-                            Sama seperti mode biasa, namun gambar/diagram penting akan diberi deskripsi naratif singkat via GPT-4o mini.
-                            Hanya cuplikan gambar terkait yang dikirim, angka tetap dari extractor/OCR tabel. Butuh OPENAI_API_KEY.
-                        </div>
-                    </div>
-                    <div class="action-bar" style="margin-top:12px;">
-                        <button id="start-conversion-btn" class="btn btn-primary">Mulai Konversi</button>
-                    </div>
-                </div>
-            </section>
-
-            <div class="loading-container" id="loading-container">
-                <div class="spinner"></div>
-                <h3>Memproses Dokumen Anda...</h3>
-            </div>
-
-            <!-- App Shell: Stepper + Vertical Layout (Preview | Suggestions | Chat) -->
-            <div class="stepper" id="stepper">
-                <div class="step" id="step-upload"><span class="dot">1</span><span class="label">Unggah</span></div>
-                <div class="step" id="step-enhance"><span class="dot">2</span><span class="label">Tingkatkan</span></div>
-                <div class="step" id="step-curate"><span class="dot">3</span><span class="label">Kurasi</span></div>
-                <div class="step" id="step-finalize"><span class="dot">4</span><span class="label">Finalisasi</span></div>
-                <div class="step" id="step-qa"><span class="dot">5</span><span class="label">Tanya Jawab</span></div>
-            </div>
-
-            <div class="vertical-layout" id="main-layout" style="display:none;">
-                <!-- Panel 1: Document Preview -->
-                <section class="card" id="doc-preview">
-                    <div class="card-header">
-                        <h2>Dokumen Asli (v1)</h2>
-                        <div class="card-actions">
-                            <label class="toggle"><input type="checkbox" id="toggle-raw"> Tampilkan markdown mentah</label>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="v1-rendered" class="markdown-body"></div>
-                        <pre id="v1-raw" class="markdown-raw" style="display:none;"></pre>
-                    </div>
-                </section>
-
-                <!-- Panel 2: Suggestions -->
-                <section class="card" id="suggestions-panel">
-                    <div class="card-header">
-                        <h2>Enhancement</h2>
-                        <div class="card-actions">
-                            <span id="status-badge" class="badge">Siaga</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="action-bar">
-                            <button id="start-enhancement-btn" class="btn btn-primary">Mulai Enhancement</button>
-                            <button id="approve-all-btn" class="btn btn-secondary" disabled>Setujui Semua</button>
-                            <button id="reject-all-btn" class="btn btn-secondary" disabled>Tolak Semua</button>
-                            <button id="finalize-btn" class="btn btn-primary" disabled>Finalisasi Dokumen</button>
-                        </div>
-                        <div id="suggestions-empty" class="muted">Belum ada saran. Klik "Mulai Enhancement" untuk memulai.</div>
-                        <div id="suggestions-list" class="suggestions-grid"></div>
-                    </div>
-                </section>
-
-                <!-- Panel 3: Chat -->
-                <section class="card" id="chat-panel">
-                    <div class="card-header">
-                        <h2>Chat RAG</h2>
-                        <div class="card-actions">
-                            <label>Versi:</label>
-                            <select id="version-select" class="select">
-                                <option value="both" selected>Bandingkan v1 vs v2</option>
-                                <option value="v1">Hanya v1</option>
-                                <option value="v2">Hanya v2</option>
-                            </select>
-                            <label class="toggle"><input type="checkbox" id="toggle-evidence"> Tampilkan Bukti</label>
-                        </div>
-                    </div>
-                    <div class="card-body" id="chat-container">
-                        <div class="chat-input-area premium">
-                            <textarea id="query-input" placeholder="Tanyakan apa pun mengenai dokumen... Contoh: 'Ringkas isi perjanjian halaman 1'"></textarea>
-                            <button class="btn btn-primary" id="query-btn">Kirim Pertanyaan</button>
-                            <p id="query-display" class="muted"></p>
-                        </div>
-                        <div id="results-container" class="results-container" style="display:none;">
-                            <div class="results-grid">
-                                <div class="result-card" id="v1-card">
-                                    <h3>Jawaban (v1)</h3>
-                                    <div class="result-content" id="unenriched-result"><span class="loading-text">Menunggu pertanyaan...</span></div>
-                                </div>
-                                <div class="result-card enriched" id="v2-card">
-                                    <h3>Jawaban (v2)</h3>
-                                    <div class="result-content" id="enriched-result"><span class="loading-text">Menunggu pertanyaan...</span></div>
-                                </div>
-                            </div>
-                            <div id="evidence-container" class="evidence-container" style="display:none;">
-                                <div class="evidence-grid">
-                                    <div class="evidence-card" id="v1-evidence-card">
-                                        <h4>Evidence (v1)</h4>
-                                        <div id="v1-evidence-list" class="evidence-list"></div>
-                                    </div>
-                                    <div class="evidence-card" id="v2-evidence-card">
-                                        <h4>Evidence (v2)</h4>
-                                        <div id="v2-evidence-list" class="evidence-list"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Token usage per query will be injected here by script.js -->
-                            <div id="token-usage-container" class="token-usage-container" style="display:none;"></div>
-                        </div>
-                    </div>
-                </section>
+            <div class="input-hint">
+                Tekan <strong>Enter</strong> untuk kirim, <strong>Shift + Enter</strong> untuk baris baru
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Enhancement Configuration Modal -->
-    <div id="enhancement-config-modal" class="enh-modal">
-        <div class="enh-modal-content">
-            <div class="enh-modal-header">
-                <h2>🎯 Konfigurasi Enhancement</h2>
-                <button class="enh-modal-close" onclick="closeEnhancementModal()">&times;</button>
-            </div>
-            
-            <div class="enh-modal-body">
-                <!-- Document Analysis Summary -->
-                <div class="enh-analysis-summary">
-                    <h3>📊 Analisis Dokumen</h3>
-                    <div id="doc-analysis-content" class="enh-analysis-grid">
-                        <div class="enh-analysis-item">
-                            <span class="enh-label">Halaman:</span>
-                            <span id="analysis-pages">-</span>
-                        </div>
-                        <div class="enh-analysis-item">
-                            <span class="enh-label">Tabel:</span>
-                            <span id="analysis-tables">-</span>
-                        </div>
-                        <div class="enh-analysis-item">
-                            <span class="enh-label">Domain:</span>
-                            <span id="analysis-domain" class="enh-badge">-</span>
-                        </div>
-                    </div>
-                    <div class="enh-characteristics">
-                        <span id="char-numerical" class="enh-char-badge" style="display:none">📈 Data Numerik</span>
-                        <span id="char-legal" class="enh-char-badge" style="display:none">⚖️ Konten Legal</span>
-                        <span id="char-procedural" class="enh-char-badge" style="display:none">📋 Konten Prosedural</span>
-                    </div>
-                </div>
-
-                <!-- Domain Selection -->
-                <div class="enh-domain-select">
-                    <label for="domain-hint-select">
-                        <strong>Domain Dokumen:</strong>
-                        <span class="enh-hint">(opsional - untuk rekomendasi lebih baik)</span>
-                    </label>
-                    <select id="domain-hint-select" class="enh-select">
-                        <option value="">Auto-detect</option>
-                        <option value="financial">💰 Financial/Banking</option>
-                        <option value="legal">⚖️ Legal/Regulatory</option>
-                        <option value="operational">⚙️ Operational/SOP</option>
-                        <option value="technical">🔧 Technical/Engineering</option>
-                        <option value="research">🔬 Research/Academic</option>
-                    </select>
-                </div>
-
-                <!-- Enhancement Types Selection -->
-                <div class="enh-types-section">
-                    <div class="enh-section-header">
-                        <h3>🎨 Pilih Jenis Enhancement</h3>
-                        <div class="enh-quick-actions">
-                            <button onclick="selectAllTypes()" class="enh-btn-small">Pilih Semua</button>
-                            <button onclick="selectRecommendedTypes()" class="enh-btn-small enh-btn-primary">⭐ Rekomendasi</button>
-                            <button onclick="clearAllTypes()" class="enh-btn-small">Bersihkan</button>
-                        </div>
-                    </div>
-                    
-                    <div id="enhancement-types-container" class="enh-types-grid">
-                        <!-- Will be populated by JavaScript -->
-                        <div class="enh-loading">Memuat tipe enhancement...</div>
-                    </div>
-                </div>
-
-                <!-- Custom Instructions (Optional) -->
-                <div class="enh-custom-section">
-                    <label for="custom-instructions">
-                        <strong>Instruksi Tambahan:</strong>
-                        <span class="enh-hint">(opsional)</span>
-                    </label>
-                    <textarea 
-                        id="custom-instructions" 
-                        class="enh-textarea"
-                        placeholder="Contoh: Fokus pada analisis risiko kredit dan proyeksi cash flow untuk 5 tahun ke depan..."
-                        rows="3"
-                    ></textarea>
-                </div>
-            </div>
-
-            <div class="enh-modal-footer">
-                <div class="enh-selection-summary">
-                    <span id="selected-count">0 tipe dipilih</span>
-                </div>
-                <div class="enh-footer-actions">
-                    <button onclick="closeEnhancementModal()" class="enh-btn enh-btn-secondary">Batal</button>
-                    <button onclick="startEnhancementWithConfig()" class="enh-btn enh-btn-success">
-                        🚀 Mulai Enhancement
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="/static/script.js?v=4.0"></script>
+    <!-- JavaScript -->
+    <script src="/static/chat.js?v=3.3"></script>
 </body>
 </html>

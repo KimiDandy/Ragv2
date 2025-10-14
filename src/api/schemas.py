@@ -78,7 +78,7 @@ class QueryRequest(BaseModel):
     prompt: str
     version: str | None = "both"  # 'v1' | 'v2' | 'both'
     trace: bool | None = False  
-    k: int | None = 5
+    k: int | None = 15  # Increased from 5 to 15 for better multi-document coverage
 
 # --- Enhancement Configuration Models (NEW - Universal System) ---
 

@@ -57,12 +57,15 @@ def vectorize_and_store(
         logger.error(f"File markdown final tidak ditemukan di {markdown_path}")
         return False
 
-    chunk_size = 1000
-    chunk_overlap = 150
+    # CRITICAL: Increased chunk size and overlap to prevent information loss
+    # Previous: 1000/150 caused dates and other content to be lost
+    # New: 1800/350 ensures comprehensive coverage with sufficient context overlap
+    chunk_size = 1800
+    chunk_overlap = 350
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
-        separators=["\n\n", "\n", " ", ""],
+        separators=["\n\n\n", "\n\n", "\n", ". ", " ", ""],  # More granular separators
     )
     chunks = text_splitter.split_text(final_content)
     if not chunks:
@@ -73,19 +76,9 @@ def vectorize_and_store(
         logger.info("Menginisialisasi fungsi embedding OpenAI...")
         embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
 
-    # Clean up old entries for this document and version in the specified namespace
-    try:
-        # Delete by metadata filter (more efficient for Pinecone v3+)
-        pinecone_index.delete(
-            filter={
-                "source_document": doc_id,
-                "version": version
-            },
-            namespace=namespace
-        )
-        logger.info(f"Membersihkan entri lama untuk doc={doc_id}, version={version}, namespace='{namespace}'")
-    except Exception as e:
-        logger.warning(f"Gagal menghapus entri lama untuk doc={doc_id}, version={version}, namespace='{namespace}': {e}")
+    # No cleanup - allow multiple documents in same namespace
+    # Each document has unique doc_id, so no collision occurs
+    logger.debug(f"Skipping cleanup - namespace '{namespace}' allows multiple documents")
 
     segments = []
     seg_path = Path(doc_output_dir) / "segments.json"
@@ -98,9 +91,10 @@ def vectorize_and_store(
     def _overlap(a_start: int, a_end: int, b_start: int, b_end: int) -> bool:
         return a_start < b_end and b_start < a_end
 
-    def _compute_spans(text: str, parts: list[str], approx_overlap: int = 150) -> list[tuple[int, int]]:
+    def _compute_spans(text: str, parts: list[str], approx_overlap: int = 350) -> list[tuple[int, int]]:
         """Best-effort mapping of chunk texts back to original char spans.
         Uses a forward-search cursor and small backoff to account for overlaps.
+        Updated default to 350 to match new chunk_overlap setting.
         """
         spans: list[tuple[int, int]] = []
         cursor = 0

@@ -455,14 +455,39 @@ class DirectEnhancerV2:
         self,
         windows: List[EnhancementWindow],
         doc_id: str,
-        max_parallel: int = 3
+        max_parallel: int = 5
     ) -> List[UniversalEnhancement]:
-        """Process windows with controlled parallelism"""
+        """
+        Process windows with controlled parallelism (batched parallel processing).
+        
+        Strategy:
+        - Process max_parallel windows at once (default: 5)
+        - Wait for entire batch to complete before starting next batch
+        - Example: 15 windows → Batch 1 (1-5), Batch 2 (6-10), Batch 3 (11-15)
+        
+        Args:
+            windows: List of enhancement windows
+            doc_id: Document ID
+            max_parallel: Max windows to process in parallel per batch
+            
+        Returns:
+            List of all enhancements from all windows
+        """
         all_enhancements = []
+        total_windows = len(windows)
+        
+        logger.info(f"[Parallel Processing] Total windows: {total_windows}, Batch size: {max_parallel}")
         
         # Process in batches
-        for i in range(0, len(windows), max_parallel):
+        batch_num = 0
+        for i in range(0, total_windows, max_parallel):
+            batch_num += 1
             batch = windows[i:i + max_parallel]
+            batch_size = len(batch)
+            batch_start = i + 1
+            batch_end = i + batch_size
+            
+            logger.info(f"[Batch {batch_num}] Processing windows {batch_start}-{batch_end} in parallel...")
             
             # Create tasks for parallel processing
             tasks = [
@@ -470,17 +495,26 @@ class DirectEnhancerV2:
                 for window in batch
             ]
             
-            # Wait for batch to complete
+            # Wait for entire batch to complete
+            import time
+            batch_start_time = time.time()
             batch_results = await asyncio.gather(*tasks, return_exceptions=True)
+            batch_duration = time.time() - batch_start_time
             
             # Process results
+            batch_enhancements = 0
             for j, result in enumerate(batch_results):
+                window_num = i + j + 1
                 if isinstance(result, Exception):
-                    logger.error(f"Window {i+j+1} failed: {result}")
+                    logger.error(f"[Batch {batch_num}] Window {window_num} failed: {result}")
                 elif result:
                     all_enhancements.extend(result)
-                    logger.info(f"Window {i+j+1} generated {len(result)} enhancements")
+                    batch_enhancements += len(result)
+                    logger.info(f"[Batch {batch_num}] Window {window_num} generated {len(result)} enhancements")
+            
+            logger.info(f"[Batch {batch_num}] Completed in {batch_duration:.1f}s - Total enhancements: {batch_enhancements}")
         
+        logger.info(f"[Parallel Processing] All {total_windows} windows completed - Total enhancements: {len(all_enhancements)}")
         return all_enhancements
     
     async def _enhance_window(

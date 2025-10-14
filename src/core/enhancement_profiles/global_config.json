@@ -1,0 +1,84 @@
+{
+  "config_name": "Global Configuration",
+  "config_version": "3.2",
+  "description": "Global settings applied to ALL clients. Changes here affect all namespaces.",
+  
+  "llm": {
+    "model": "gpt-4.1",
+    "max_tokens": 16000,
+    "temperature": 0.3,
+    "window_size": 12000,
+    "window_overlap_tokens": 1500,
+    "retry_attempts": 3,
+    "timeout_seconds": 120,
+    "requests_per_second": 2.0
+  },
+  
+  "embedding": {
+    "model": "text-embedding-3-small",
+    "dimension": 1536,
+    "batch_size": 100
+  },
+  
+  "vectorstore": {
+    "pinecone_index": "inspigo-pinecone",
+    "vector_version_v1_enabled": false,
+    "vector_version_v2_enabled": true,
+    "upload_batch_size": 100,
+    "upload_threads": 4,
+    "max_concurrent_batches": 2,
+    "enable_async_upsert": true
+  },
+  
+  "ocr": {
+    "engine": "tesseract",
+    "language": "ind+eng",
+    "dpi": 300,
+    "primary_psm": 3,
+    "fallback_psm": [6, 11]
+  },
+  
+  "enhancement": {
+    "auto_approve_all": true,
+    "parallel_windows": true,
+    "max_parallel_windows": 5,
+    "enable_pipeline_overlap": true,
+    "enable_server_calc": true,
+    "calc_precision": 2
+  },
+  
+  "synthesis": {
+    "include_footnotes": true,
+    "include_metadata": true
+  },
+  
+  "performance": {
+    "multi_file_processing": {
+      "enabled": true,
+      "max_concurrent_files": 2,
+      "max_cpu_cores_dedicated": 4,
+      "enable_cpu_monitoring": true,
+      "cpu_threshold_fallback_percent": 85,
+      "memory_limit_per_file_mb": 1024
+    },
+    
+    "progress_tracking": {
+      "enable_eta_estimation": true,
+      "update_interval_seconds": 2,
+      "show_stage_details": true,
+      "calculate_avg_timing": true,
+      "show_percentage": true
+    },
+    
+    "pipeline_optimization": {
+      "enable_enhancement_vectorization_overlap": true,
+      "vectorization_batch_queue_size": 3,
+      "enable_parallel_vectorization": true
+    }
+  },
+  
+  "_notes": "API keys are in .env file. This file contains config values only.",
+  "_version_changes": {
+    "3.2": "Added comprehensive performance optimization configs: multi-file parallel processing, progress ETA, pipeline overlapping, parallel vectorization"
+  }
+}

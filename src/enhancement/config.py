@@ -1,33 +1,60 @@
 """
 Configuration module for the Enhancement system.
+
+Now loads from global_config.json for centralized configuration management.
 """
 
 from pydantic_settings import BaseSettings
 from pydantic import Field
 from typing import Optional, List, Dict, Any
 import os
+from pathlib import Path
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
 
 
+def load_global_config() -> Dict[str, Any]:
+    """
+    Load global configuration from JSON file.
+    
+    Returns:
+        Dict containing global configuration
+    """
+    config_path = Path(__file__).parent.parent / "core" / "enhancement_profiles" / "global_config.json"
+    
+    if not config_path.exists():
+        raise FileNotFoundError(f"Global config not found: {config_path}")
+    
+    with open(config_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
 class EnhancementConfig(BaseSettings):
-    """Configuration for the Enhancement system."""
+    """
+    Configuration for the Enhancement system.
     
-    # Window configuration optimized for GPT-4.1 (reduced for JSON stability)
-    # Smaller windows for better JSON output consistency
-    window_tokens: int = Field(default=12000, env='ENH_WINDOW_TOKENS')  # Reduced from 32k to 12k
-    window_overlap_tokens: int = Field(default=1500, env='ENH_WINDOW_OVERLAP_TOKENS')
+    Loads default values from global_config.json, can be overridden by environment variables.
+    """
     
-    planner_parallelism: int = Field(default=1, env='ENH_PLANNER_PARALLELISM')
-    planner_model: str = Field(default="gpt-4.1", env='ENH_PLANNER_MODEL')
+    # Load global config
+    _global_config: Dict[str, Any] = load_global_config()
+    
+    # Window configuration from global_config.llm
+    window_tokens: int = Field(default=_global_config.get("llm", {}).get("window_size", 12000), env='ENH_WINDOW_TOKENS')
+    window_overlap_tokens: int = Field(default=_global_config.get("llm", {}).get("window_overlap_tokens", 1500), env='ENH_WINDOW_OVERLAP_TOKENS')
+    
+    # Parallel processing from global_config.enhancement
+    planner_parallelism: int = Field(default=_global_config.get("enhancement", {}).get("max_parallel_windows", 5), env='ENH_PLANNER_PARALLELISM')
+    planner_model: str = Field(default=_global_config.get("llm", {}).get("model", "gpt-4.1"), env='ENH_PLANNER_MODEL')
     max_candidates_per_window: int = Field(default=0, env='ENH_MAX_CANDIDATES_PER_WINDOW')  # 0 = no limit
     
-    # Generation configuration - MAXIMIZE GPT-4.1 OUTPUT
+    # Generation configuration from global_config.llm
     gen_microbatch_size: int = Field(default=6, env='ENH_GEN_MICROBATCH_SIZE')  # Quality over quantity
-    gen_model: str = Field(default="gpt-4.1", env='ENH_GEN_MODEL')
+    gen_model: str = Field(default=_global_config.get("llm", {}).get("model", "gpt-4.1"), env='ENH_GEN_MODEL')
     target_items: int = Field(default=0, env='ENH_TARGET_ITEMS')  # 0 = no artificial limit
-    max_generation_tokens: int = Field(default=16000, env='ENH_MAX_GEN_TOKENS')  # Increased for complete responses (10-15 detailed enhancements)
+    max_generation_tokens: int = Field(default=_global_config.get("llm", {}).get("max_tokens", 16000), env='ENH_MAX_GEN_TOKENS')
     
     # Enhancement types toggles - PRIORITIZE IMPLICIT INFO
     enable_formula_discovery: bool = Field(default=True, env='ENH_ENABLE_FORMULA')
@@ -40,26 +67,26 @@ class EnhancementConfig(BaseSettings):
     enable_highlight: bool = Field(default=False, env='ENH_ENABLE_HIGHLIGHT')
     enable_faq: bool = Field(default=False, env='ENH_ENABLE_FAQ')
     
-    # Embedding configuration
-    embedding_model: str = Field(default="text-embedding-3-small", env='ENH_EMBEDDING_MODEL')
-    embedding_batch_size: int = Field(default=100, env='ENH_EMBEDDING_BATCH_SIZE')
+    # Embedding configuration from global_config.embedding
+    embedding_model: str = Field(default=_global_config.get("embedding", {}).get("model", "text-embedding-3-small"), env='ENH_EMBEDDING_MODEL')
+    embedding_batch_size: int = Field(default=_global_config.get("embedding", {}).get("batch_size", 100), env='ENH_EMBEDDING_BATCH_SIZE')
     
     # Retrieval configuration
     retrieval_top_k: int = Field(default=10, env='ENH_RETRIEVAL_TOP_K')
     retrieval_rerank_top_k: int = Field(default=5, env='ENH_RETRIEVAL_RERANK_TOP_K')
     
-    # OpenAI configuration
-    openai_api_key: str = Field(env='OPENAI_API_KEY')
-    openai_temperature: float = Field(default=0.3, env='ENH_OPENAI_TEMPERATURE')
-    openai_max_retries: int = Field(default=3, env='ENH_OPENAI_MAX_RETRIES')
-    openai_timeout: int = Field(default=60, env='ENH_OPENAI_TIMEOUT')
+    # OpenAI configuration from global_config.llm
+    openai_api_key: Optional[str] = Field(default=None, env='OPENAI_API_KEY')
+    openai_temperature: float = Field(default=_global_config.get("llm", {}).get("temperature", 0.3), env='ENH_OPENAI_TEMPERATURE')
+    openai_max_retries: int = Field(default=_global_config.get("llm", {}).get("retry_attempts", 3), env='ENH_OPENAI_MAX_RETRIES')
+    openai_timeout: int = Field(default=_global_config.get("llm", {}).get("timeout_seconds", 120), env='ENH_OPENAI_TIMEOUT')
     
-    # Pinecone configuration
-    pinecone_api_key: str = Field(env='PINECONE_API_KEY')
-    pinecone_index_name: str = Field(env='PINECONE_INDEX_NAME')
+    # Pinecone configuration from global_config.vectorstore
+    pinecone_api_key: Optional[str] = Field(default=None, env='PINECONE_API_KEY')
+    pinecone_index_name: Optional[str] = Field(default=_global_config.get("vectorstore", {}).get("pinecone_index", "inspigo-pinecone"), env='PINECONE_INDEX_NAME')
     
-    # Rate limiting
-    requests_per_second: float = Field(default=2.0, env='ENH_REQUESTS_PER_SECOND')
+    # Rate limiting from global_config.llm
+    requests_per_second: float = Field(default=_global_config.get("llm", {}).get("requests_per_second", 2.0), env='ENH_REQUESTS_PER_SECOND')
     
     # Caching and storage
     cache_dir: str = Field(default="./cache/enhancement", env='ENH_CACHE_DIR')
@@ -71,14 +98,32 @@ class EnhancementConfig(BaseSettings):
         description="Dynamic list populated based on document analysis"
     )
     
-    # Numeric calculation settings
-    enable_server_calc: bool = Field(default=True, env='ENH_ENABLE_SERVER_CALC')
-    calc_precision: int = Field(default=2, env='ENH_CALC_PRECISION')
+    # Numeric calculation settings from global_config.enhancement
+    enable_server_calc: bool = Field(default=_global_config.get("enhancement", {}).get("enable_server_calc", True), env='ENH_ENABLE_SERVER_CALC')
+    calc_precision: int = Field(default=_global_config.get("enhancement", {}).get("calc_precision", 2), env='ENH_CALC_PRECISION')
     
     class Config:
         env_file = ".env"
         case_sensitive = False
         extra = "ignore"  # Ignore extra environment variables
+        arbitrary_types_allowed = True  # Allow dict types
+    
+    def __init__(self, **kwargs):
+        """Initialize with automatic environment loading"""
+        # Auto-load from environment if not provided
+        if 'openai_api_key' not in kwargs:
+            kwargs['openai_api_key'] = os.getenv('OPENAI_API_KEY')
+        if 'pinecone_api_key' not in kwargs:
+            kwargs['pinecone_api_key'] = os.getenv('PINECONE_API_KEY')
+        if 'pinecone_index_name' not in kwargs:
+            pinecone_index = os.getenv('PINECONE_INDEX_NAME')
+            if not pinecone_index:
+                # Load from global_config if not in env
+                global_cfg = load_global_config()
+                pinecone_index = global_cfg.get("vectorstore", {}).get("pinecone_index", "inspigo-pinecone")
+            kwargs['pinecone_index_name'] = pinecone_index
+        
+        super().__init__(**kwargs)
     
     def get_enabled_enhancement_types(self) -> List[str]:
         """Get list of enabled enhancement types."""

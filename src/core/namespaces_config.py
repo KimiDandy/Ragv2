@@ -65,68 +65,20 @@ from loguru import logger
 
 NAMESPACES: List[Dict[str, any]] = [
     {
-        "id": "",
-        "name": "Default Testing Namespace",
-        "description": "Namespace default untuk testing umum dan development",
-        "client": None,
-        "type": "testing",
-        "is_active": True,
-    },
-    {
-        "id": "client-a-testing-1",
-        "name": "Client A - Testing Batch 1",
-        "description": "Testing environment pertama untuk Client A",
-        "client": "client-a",
-        "type": "testing",
-        "is_active": True,
-    },
-    {
-        "id": "client-a-testing-2",
-        "name": "Client A - Testing Batch 2",
-        "description": "Testing environment kedua untuk Client A",
-        "client": "client-a",
-        "type": "testing",
-        "is_active": True,
-    },
-    {
-        "id": "client-a-testing-3",
-        "name": "Client A - Testing Batch 3",
-        "description": "Testing environment ketiga untuk Client A",
-        "client": "client-a",
-        "type": "testing",
-        "is_active": True,
-    },
-    {
-        "id": "client-a-testing-4",
-        "name": "Client A - Testing Batch 4",
-        "description": "Testing environment keempat untuk Client A",
-        "client": "client-a",
-        "type": "testing",
-        "is_active": True,
-    },
-    {
-        "id": "danamon-final-1",
-        "name": "Danamon - Production Final 1",
-        "description": "Production environment final untuk Client Danamon V1 2 Oktober 2025",
-        "client": "danamon-1",
-        "type": "final",
-        "is_active": True,
-    },
-    {
-        "id": "danamon-final-2",
-        "name": "Danamon - Production Final 2",
-        "description": "Production environment final untuk Client Danamon V1 10 Oktober 2025",
-        "client": "danamon-1",
-        "type": "final",
-        "is_active": True,
-    },
-    {
         "id": "danamon-final-3",
         "name": "Danamon - Production Final 3",
         "description": "Production environment final untuk Client Danamon 10 Oktober 2025",
         "client": "danamon-1",
         "type": "final",
-        "is_active": True,
+        "client_profile": "client_danamon",  # Danamon comprehensive profile
+    },
+    {
+        "id": "danamon-test-1",
+        "name": "Danamon - Testing Batch 1",
+        "description": "Testing environment pertama untuk Client Danamon",
+        "client": "danamon-1",
+        "type": "testing",
+        "client_profile": "client_danamon",  # Danamon comprehensive profile
     },
 ]
 
@@ -146,12 +98,15 @@ def get_all_namespaces() -> List[Dict[str, any]]:
 
 def get_active_namespaces() -> List[Dict[str, any]]:
     """
-    Mengembalikan hanya namespace yang aktif.
+    Mengembalikan semua namespace (deprecated: is_active field removed).
+    
+    Note: This function now returns all namespaces. Active namespace
+    is determined by active_config.json instead.
     
     Returns:
-        List[Dict]: List of active namespaces
+        List[Dict]: List of all namespaces
     """
-    return [ns for ns in NAMESPACES if ns.get("is_active", True)]
+    return NAMESPACES.copy()
 
 
 def get_production_namespaces() -> List[Dict[str, any]]:
@@ -205,21 +160,20 @@ def get_namespaces_by_client(client: str) -> List[Dict[str, any]]:
 
 def validate_namespace(namespace_id: str) -> bool:
     """
-    Memvalidasi apakah namespace ID tersedia dan aktif.
+    Memvalidasi apakah namespace ID tersedia.
+    
+    Note: is_active field has been removed. All namespaces are considered valid
+    if they exist in the configuration.
     
     Args:
         namespace_id (str): ID namespace yang akan divalidasi
         
     Returns:
-        bool: True jika valid dan aktif, False jika tidak
+        bool: True jika valid, False jika tidak
     """
     ns = get_namespace_by_id(namespace_id)
     if not ns:
         logger.warning(f"Namespace '{namespace_id}' tidak ditemukan dalam konfigurasi")
-        return False
-    
-    if not ns.get("is_active", True):
-        logger.warning(f"Namespace '{namespace_id}' tidak aktif")
         return False
     
     return True
@@ -243,7 +197,7 @@ def get_namespace_display_info(namespace_id: str) -> Dict[str, str]:
         namespace_id (str): ID namespace
         
     Returns:
-        Dict: Display information
+        Dict: Display information including client_profile
     """
     ns = get_namespace_by_id(namespace_id)
     if not ns:
@@ -258,9 +212,9 @@ def get_namespace_display_info(namespace_id: str) -> Dict[str, str]:
         "name": ns["name"],
         "description": ns.get("description", ""),
         "client": ns.get("client", "N/A"),
+        "client_profile": ns.get("client_profile", "N/A"),
         "type": ns.get("type", "unknown"),
-        "status": "production" if ns.get("type") == "final" else "testing",
-        "is_active": ns.get("is_active", True)
+        "status": "production" if ns.get("type") == "final" else "testing"
     }
 
 

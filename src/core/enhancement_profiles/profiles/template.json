@@ -1,0 +1,126 @@
+{
+  "client_name": "TEMPLATE - Copy this for new clients",
+  "client_id": "template",
+  "description": "Master template containing ALL enhancement types and domains. Copy this file and change 0→1 to enable features.",
+  "version": "1",
+  
+  "enhancement_types": {
+    "_comment_synthesis": "=== Synthesis & Summary (Universal) ===",
+    "executive_summary": 0,
+    "section_summary": 0,
+    "glossary_terms": 0,
+    
+    "_comment_analysis": "=== Analysis & Insights (Universal) ===",
+    "implication_analysis": 0,
+    "pattern_recognition": 0,
+    "table_insights": 0,
+    "comparative_analysis": 0,
+    "gap_analysis": 0,
+    
+    "_comment_financial": "=== Financial & Quantitative Analysis ===",
+    "formula_discovery": 0,
+    "scenario_projection": 0,
+    "trend_forecasting": 0,
+    "what_if_analysis": 0,
+    "risk_assessment": 0,
+    
+    "_comment_legal": "=== Legal & Compliance ===",
+    "legal_clause_extraction": 0,
+    "compliance_checklist": 0,
+    
+    "_comment_operations": "=== Operations & Process Management ===",
+    "procedural_flowchart": 0,
+    "sop_standardization": 0,
+    "process_optimization": 0,
+    "equipment_maintenance_schedule": 0,
+    
+    "_comment_healthcare": "=== Healthcare Specific ===",
+    "clinical_protocol_extraction": 0,
+    "drug_interaction_analysis": 0,
+    "patient_safety_checklist": 0,
+    "medical_terminology": 0,
+    
+    "_comment_manufacturing": "=== Manufacturing Specific ===",
+    "quality_metrics_extraction": 0,
+    "safety_protocol_extraction": 0,
+    
+    "_comment_education": "=== Education Specific ===",
+    "learning_objectives_extraction": 0,
+    "assessment_rubric_generation": 0,
+    "curriculum_mapping": 0,
+    
+    "_comment_retail": "=== Retail & E-commerce ===",
+    "pricing_strategy_analysis": 0,
+    "inventory_optimization": 0,
+    "customer_segmentation": 0,
+    
+    "_comment_strategic": "=== Strategic & Cross-functional ===",
+    "benchmarking_analysis": 0,
+    "stakeholder_analysis": 0,
+    "action_items_extraction": 0,
+    "timeline_extraction": 0,
+    "data_quality_assessment": 0
+  },
+  
+  "domains": {
+    "_comment": "Select ONE primary domain by changing 0→1",
+    "financial": 0,
+    "legal": 0,
+    "healthcare": 0,
+    "manufacturing": 0,
+    "education": 0,
+    "retail": 0,
+    "other": 0
+  },
+  
+  "_domain_info": {
+    "_note": "Reference only - shows sub-domains for each primary domain",
+    "financial": ["banking", "trading", "investment", "market_analysis", "fintech"],
+    "legal": ["contracts", "compliance", "regulations", "litigation", "intellectual_property"],
+    "healthcare": ["clinical", "pharmaceutical", "medical_research", "patient_care", "hospital_operations"],
+    "manufacturing": ["operations", "quality_control", "supply_chain", "production", "maintenance"],
+    "education": ["curriculum", "assessment", "administration", "research", "e_learning"],
+    "retail": ["inventory", "sales", "customer_service", "merchandising", "e_commerce"],
+    "other": ["general_purpose", "multi_domain"]
+  },
+  
+  "_type_descriptions": {
+    "_note": "Reference only - explains each enhancement type",
+    "executive_summary": "High-level overview for decision makers",
+    "section_summary": "Summarize each major section/chapter",
+    "glossary_terms": "Extract and define key terminology",
+    "implication_analysis": "Analyze implications and consequences",
+    "pattern_recognition": "Identify recurring patterns and trends",
+    "table_insights": "Extract insights from tabular data",
+    "comparative_analysis": "Compare different options or scenarios",
+    "gap_analysis": "Identify gaps between current and desired state",
+    "formula_discovery": "Identify mathematical formulas and calculations",
+    "scenario_projection": "Project different future scenarios",
+    "trend_forecasting": "Forecast future trends based on data",
+    "what_if_analysis": "Analyze what-if scenarios and alternatives",
+    "risk_assessment": "Assess risks and mitigation strategies",
+    "legal_clause_extraction": "Extract legal clauses and terms",
+    "compliance_checklist": "Generate compliance checklists",
+    "procedural_flowchart": "Create flowcharts for procedures",
+    "sop_standardization": "Standardize standard operating procedures",
+    "process_optimization": "Suggest process optimization opportunities",
+    "equipment_maintenance_schedule": "Extract maintenance schedules",
+    "clinical_protocol_extraction": "Extract medical protocols and guidelines",
+    "drug_interaction_analysis": "Analyze drug interactions",
+    "patient_safety_checklist": "Generate patient safety checklists",
+    "medical_terminology": "Define medical terminology",
+    "quality_metrics_extraction": "Extract quality control metrics",
+    "safety_protocol_extraction": "Extract safety protocols",
+    "learning_objectives_extraction": "Extract learning objectives",
+    "assessment_rubric_generation": "Generate assessment rubrics",
+    "curriculum_mapping": "Map curriculum to standards",
+    "pricing_strategy_analysis": "Analyze pricing strategies",
+    "inventory_optimization": "Suggest inventory optimization",
+    "customer_segmentation": "Analyze customer segmentation",
+    "benchmarking_analysis": "Benchmark against industry standards",
+    "stakeholder_analysis": "Identify and analyze stakeholders",
+    "action_items_extraction": "Extract action items and to-dos",
+    "timeline_extraction": "Extract timelines and milestones",
+    "data_quality_assessment": "Assess data quality issues"
+  }
+}

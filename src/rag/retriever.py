@@ -50,18 +50,47 @@ def build_rag_chain(retriever, model: str = "gpt-4.1", temperature: float = 0.2)
         stream_usage=True  # Penting untuk mendapatkan token usage
     )
     
-    # Prompt template untuk RAG
+    # Prompt template untuk RAG - Comprehensive Indonesian prompt
     prompt_template = PromptTemplate.from_template(
-        """You are a precise assistant. Use only the CONTEXT below to answer the QUESTION.
+        """Anda adalah asisten AI profesional untuk analisis dokumen yang bertugas membantu pengguna memahami dan mengekstrak informasi dari SEMUA dokumen yang tersedia dalam sistem.
 
-CONTEXT:
+**Prinsip Utama (WAJIB DIPATUHI):**
+
+1. **Berbasis Multi-Dokumen & Faktual**
+   - Jawab berdasarkan informasi yang tersedia dalam SEMUA KONTEKS DOKUMEN di bawah
+   - Konteks bisa berasal dari BERBAGAI DOKUMEN yang berbeda - sebutkan sumber dokumennya
+   - TIDAK BOLEH menambahkan informasi dari pengetahuan umum atau asumsi
+   - TIDAK BOLEH melakukan spekulasi atau tebakan
+   - Jika informasi tidak ada di dokumen manapun, katakan dengan jelas
+
+2. **Terstruktur & Mudah Dipahami**
+   - Untuk data numerik: Sebutkan angka dengan jelas dan konteksnya
+   - Untuk tanggal: Sebutkan tanggal dengan tepat dan lengkap (dari semua dokumen yang relevan)
+   - Untuk list/daftar: Gunakan bullet points atau numbering yang rapi
+   - Berikan jawaban yang terstruktur dan mudah dibaca
+   - Kelompokkan informasi berdasarkan dokumen sumber jika relevan
+
+3. **Transparan & Jujur**
+   - Jika dokumen tidak memiliki informasi yang ditanyakan, akui dengan jelas
+   - Jangan membuat asumsi atau spekulasi
+   - Sebutkan dari dokumen mana informasi berasal (jika konteks mencantumkan sumbernya)
+
+📄 KONTEKS DOKUMEN (dari berbagai sumber):
 {context}
 
-QUESTION: {input}
+❓ PERTANYAAN PENGGUNA:
+{input}
 
-If the context is insufficient to answer the question, please say that you don't have enough information to provide a complete answer based on the available documents.
+📋 INSTRUKSI:
+• Jawab berdasarkan SEMUA konteks dokumen yang disediakan di atas
+• Jika pertanyaan menyangkut data yang bisa ada di multiple documents, pastikan menggabungkan semua informasi relevan
+• Jika ada data numerik, tabel, atau statistik - jelaskan dengan detail dan jelas
+• Jika ada tanggal, nama, atau informasi spesifik - sebutkan dengan tepat dari SEMUA dokumen yang relevan
+• Berikan jawaban yang terstruktur menggunakan bullet points atau numbering jika perlu
+• Jika informasi yang ditanyakan tidak ada di dokumen manapun, katakan: "Informasi tersebut tidak tersedia dalam dokumen yang ada"
+• Gunakan bahasa Indonesia yang profesional namun mudah dipahami
 
-ANSWER:"""
+💡 JAWABAN:"""
     )
     
     # Try modern approach first
@@ -122,11 +151,20 @@ def answer_with_sources(
                 result = rag_chain.invoke({"input": question})
                 answer = result.get("answer", "Tidak ditemukan jawaban yang relevan.")
                 context_docs = result.get("context", [])
+                
+                # EMERGENCY DEBUG
+                logger.warning(f"RETRIEVAL DEBUG: Retrieved {len(context_docs)} documents")
+                for i, doc in enumerate(context_docs[:3]):  # Log first 3
+                    metadata = doc.metadata if hasattr(doc, 'metadata') else {}
+                    logger.warning(f"  Doc {i}: source_document={metadata.get('source_document')}, version={metadata.get('version')}, text_preview={doc.page_content[:100]}")
             else:
                 # Fallback approach with RetrievalQA
                 result = rag_chain.invoke({"query": question})
                 answer = result.get("result", "Tidak ditemukan jawaban yang relevan.")
                 context_docs = result.get("source_documents", [])
+                
+                # EMERGENCY DEBUG
+                logger.warning(f"RETRIEVAL DEBUG (fallback): Retrieved {len(context_docs)} documents")
         
         # Log token usage
         input_tokens = getattr(cb, 'prompt_tokens', 0)
@@ -237,8 +275,12 @@ def create_filtered_retriever(vector_store: PineconeVectorStore, doc_id: str, ve
     """
     Membuat retriever dengan filter untuk dokumen dan versi tertentu.
     
+    CRITICAL FIX: Test shows namespace parameter works in __init__ but retrieval still fails.
+    Problem likely: retriever wrapper not passing namespace to query operations.
+    Solution: Return retriever without filter, let chain handle it.
+    
     Args:
-        vector_store: Pinecone vector store
+        vector_store: Pinecone vector store (already has namespace set)
         doc_id: Document ID untuk filter
         version: Version untuk filter (v1/v2)
         k: Jumlah dokumen yang diambil
@@ -246,18 +288,25 @@ def create_filtered_retriever(vector_store: PineconeVectorStore, doc_id: str, ve
     Returns:
         Retriever yang sudah difilter
     """
+    logger.info(f"Creating retriever for doc_id={doc_id}, version={version}, k={k}")
+    logger.info(f"VectorStore namespace: {vector_store._namespace}")
+    
+    # Try with simple filter - Pinecone native syntax (no $eq)
     retrieval_filter = {
         "source_document": doc_id,
         "version": version
     }
     
+    logger.info(f"Filter: {retrieval_filter}")
+    
+    # Create retriever with filter
     retriever = vector_store.as_retriever(
-        search_type="similarity_score_threshold",
+        search_type="similarity",
         search_kwargs={
             'k': k,
-            'filter': retrieval_filter,
-            'score_threshold': 0.0  # ensure we get relevance scores back
+            'filter': retrieval_filter
         }
     )
     
+    logger.info(f"Retriever created with filter")
     return retriever

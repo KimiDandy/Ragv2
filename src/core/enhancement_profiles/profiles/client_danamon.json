@@ -1,0 +1,74 @@
+{
+  "client_name": "Bank Danamon Indonesia",
+  "client_id": "client_danamon",
+  "description": "Financial client - comprehensive analysis including formulas, deep insights, and advanced risk assessment",
+  "version": "1",
+  
+  "enhancement_types": {
+    "_comment_synthesis": "=== Synthesis & Summary ===",
+    "executive_summary": 1,
+    "section_summary": 0,
+    "glossary": 1,
+    
+    "_comment_analysis": "=== Analysis & Insights ===",
+    "implication_analysis": 0,
+    "pattern_recognition": 0,
+    "table_insights": 0,
+    "comparative_analysis": 0,
+    "gap_analysis": 0,
+    
+    "_comment_financial": "=== Financial Analysis ===",
+    "formula_discovery": 1,
+    "scenario_projection": 1,
+    "trend_forecasting": 1,
+    "what_if_analysis": 1,
+    "risk_assessment": 1,
+    
+    "_comment_legal": "=== Legal ===",
+    "legal_clause_extraction": 0,
+    "compliance_checklist": 0,
+    
+    "_comment_operations": "=== Operations ===",
+    "procedural_flowchart": 0,
+    "sop_standardization": 0,
+    "process_optimization": 0,
+    "equipment_maintenance_schedule": 0,
+    
+    "_comment_healthcare": "=== Healthcare ===",
+    "clinical_protocol_extraction": 0,
+    "drug_interaction_analysis": 0,
+    "patient_safety_checklist": 0,
+    "medical_terminology": 0,
+    
+    "_comment_manufacturing": "=== Manufacturing ===",
+    "quality_metrics_extraction": 0,
+    "safety_protocol_extraction": 0,
+    
+    "_comment_education": "=== Education ===",
+    "learning_objectives_extraction": 0,
+    "assessment_rubric_generation": 0,
+    "curriculum_mapping": 0,
+    
+    "_comment_retail": "=== Retail ===",
+    "pricing_strategy_analysis": 0,
+    "inventory_optimization": 0,
+    "customer_segmentation": 0,
+    
+    "_comment_strategic": "=== Strategic ===",
+    "benchmarking_analysis": 0,
+    "stakeholder_analysis": 0,
+    "action_items_extraction": 0,
+    "timeline_extraction": 0,
+    "data_quality_assessment": 0
+  },
+  
+  "domains": {
+    "financial": 1,
+    "legal": 0,
+    "healthcare": 0,
+    "manufacturing": 0,
+    "education": 0,
+    "retail": 0,
+    "other": 0
+  }
+}

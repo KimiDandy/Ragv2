@@ -88,10 +88,27 @@ enhancement_types:
     name: "Glossarium Istilah"
     description: "Definisi istilah-istilah penting dan teknis"
     applicable_domains: ["all"]
-    default_priority: 4
+    default_priority: 5
     default_enabled: false
     prompt_instructions: |
-      Ekstrak istilah teknis, akronim, domain-specific terminology. Format: **Istilah**: Definisi singkat jelas. Hindari istilah terlalu common.
+      Ekstrak dan definisikan istilah-istilah SPESIFIK dari dokumen:
+      
+      (1) **Istilah Teknis** - Domain-specific terminology yang perlu penjelasan
+      (2) **Akronim & Singkatan** - Kepanjangan dan konteks penggunaan
+      (3) **Konsep Kunci** - Konsep penting yang menjadi fondasi dokumen
+      (4) **Terminology Asing** - Istilah dari bahasa lain atau industri tertentu
+      
+      Format: **Istilah** (English/Original): Definisi jelas dan kontekstual dalam 1-2 kalimat. 
+      
+      FOKUS: Prioritas istilah yang TIDAK umum dan membutuhkan penjelasan. Hindari istilah terlalu basic.
+      
+      Contoh format:
+      **BI Rate**: Suku bunga acuan Bank Indonesia yang menjadi referensi bagi bank komersial dalam menentukan suku bunga kredit dan simpanan.
+      **IHSG** (Indeks Harga Saham Gabungan): Indeks utama yang mengukur kinerja gabungan seluruh saham yang tercatat di Bursa Efek Indonesia.
+    examples:
+      financial: "**NPL Ratio** (Non-Performing Loan): Rasio kredit bermasalah terhadap total kredit, indikator kesehatan portofolio bank. Target ideal <5%.\n**SBN** (Surat Berharga Negara): Instrumen utang pemerintah berupa obligasi atau sukuk untuk pembiayaan APBN."
+      legal: "**Force Majeure**: Klausul yang membebaskan pihak dari kewajiban kontrak karena peristiwa luar biasa di luar kontrol (bencana alam, perang, pandemi).\n**Hak Tanggungan**: Jaminan atas tanah dan bangunan untuk pelunasan utang tertentu."
+      healthcare: "**Formularium**: Daftar obat standar yang disediakan institusi kesehatan berdasarkan efektivitas, keamanan, dan cost-effectiveness.\n**Anamnesis**: Proses pengumpulan informasi riwayat penyakit pasien melalui wawancara medis."
   
   # === ANALYTICAL INSIGHTS ===
   
