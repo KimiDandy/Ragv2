@@ -1,0 +1,74 @@
+{
+  "doc_id": "277778c6-92d8-40bb-8be5-375fa74930be",
+  "current_stage": "ready",
+  "progress_percentage": 90,
+  "is_complete": true,
+  "stage_timestamps": {
+    "ocr_in_progress": "2025-10-14T13:33:27.217370",
+    "ocr_completed": "2025-10-14T13:33:30.719181",
+    "enhancement_in_progress": "2025-10-14T13:33:30.719181",
+    "enhancement_completed": "2025-10-14T13:36:15.509248",
+    "auto_approval_completed": "2025-10-14T13:36:15.511246",
+    "synthesis_in_progress": "2025-10-14T13:36:15.512763",
+    "synthesis_completed": "2025-10-14T13:36:15.600435",
+    "vectorization_in_progress": "2025-10-14T13:36:15.601435",
+    "vectorization_completed": "2025-10-14T13:36:19.536497",
+    "ready": "2025-10-14T13:36:19.539493"
+  },
+  "stage_durations": {
+    "ocr_in_progress_to_ocr_completed": 3.501811,
+    "ocr_completed_to_enhancement_in_progress": 0.0,
+    "enhancement_in_progress_to_enhancement_completed": 164.790067,
+    "enhancement_completed_to_auto_approval_completed": 0.001998,
+    "auto_approval_completed_to_synthesis_in_progress": 0.001517,
+    "synthesis_in_progress_to_synthesis_completed": 0.087672,
+    "synthesis_completed_to_vectorization_in_progress": 0.001,
+    "vectorization_in_progress_to_vectorization_completed": 3.935062,
+    "vectorization_completed_to_ready": 0.002996
+  },
+  "errors": [],
+  "metadata": {
+    "ocr_completed": {
+      "total_pages": 5,
+      "markdown_path": "artefacts\\277778c6-92d8-40bb-8be5-375fa74930be\\FX & Reksadana online Feature dalam D- Bank Pro.docx.md"
+    },
+    "enhancement_completed": {
+      "total_enhancements": 36,
+      "enhancements_file": "artefacts\\277778c6-92d8-40bb-8be5-375fa74930be\\enhancements.json",
+      "type_distribution": {
+        "glossary": 3,
+        "executive_summary": 3,
+        "section_summary": 3,
+        "pattern_recognition": 3,
+        "formula_discovery": 3,
+        "comparative_analysis": 3,
+        "table_insights": 3,
+        "implication_analysis": 3,
+        "trend_forecasting": 3,
+        "risk_assessment": 3,
+        "scenario_projection": 3,
+        "what_if_analysis": 3
+      }
+    },
+    "auto_approval_completed": {
+      "auto_approve_all": true,
+      "approval_timestamp": "2025-10-14T13:36:15.511246"
+    },
+    "synthesis_completed": {
+      "final_markdown_path": "artefacts\\277778c6-92d8-40bb-8be5-375fa74930be\\FX & Reksadana online Feature dalam D- Bank Pro.docx_enhanced.md",
+      "total_enhancements": 36
+    },
+    "vectorization_completed": {
+      "namespace": "danamon-final-1",
+      "v1_success": false,
+      "v2_success": true,
+      "embedding_model": "text-embedding-3-small"
+    },
+    "ready": {
+      "completed_at": "2025-10-14T13:36:19.539493"
+    }
+  },
+  "stage_progress": {},
+  "estimated_remaining_seconds": 19,
+  "last_updated": "2025-10-14T13:36:19.539493"
+}

@@ -1,0 +1,74 @@
+{
+  "doc_id": "fd8f11b8-2822-4ceb-a545-5f8d05f6d5b3",
+  "current_stage": "ready",
+  "progress_percentage": 90,
+  "is_complete": true,
+  "stage_timestamps": {
+    "ocr_in_progress": "2025-10-14T13:22:42.191251",
+    "ocr_completed": "2025-10-14T13:22:54.460183",
+    "enhancement_in_progress": "2025-10-14T13:22:54.461177",
+    "enhancement_completed": "2025-10-14T13:26:04.497917",
+    "auto_approval_completed": "2025-10-14T13:26:04.498908",
+    "synthesis_in_progress": "2025-10-14T13:26:04.500055",
+    "synthesis_completed": "2025-10-14T13:26:04.894991",
+    "vectorization_in_progress": "2025-10-14T13:26:04.896010",
+    "vectorization_completed": "2025-10-14T13:26:09.503353",
+    "ready": "2025-10-14T13:26:09.505560"
+  },
+  "stage_durations": {
+    "ocr_in_progress_to_ocr_completed": 12.268932,
+    "ocr_completed_to_enhancement_in_progress": 0.000994,
+    "enhancement_in_progress_to_enhancement_completed": 190.03674,
+    "enhancement_completed_to_auto_approval_completed": 0.000991,
+    "auto_approval_completed_to_synthesis_in_progress": 0.001147,
+    "synthesis_in_progress_to_synthesis_completed": 0.394936,
+    "synthesis_completed_to_vectorization_in_progress": 0.001019,
+    "vectorization_in_progress_to_vectorization_completed": 4.607343,
+    "vectorization_completed_to_ready": 0.002207
+  },
+  "errors": [],
+  "metadata": {
+    "ocr_completed": {
+      "total_pages": 17,
+      "markdown_path": "artefacts\\fd8f11b8-2822-4ceb-a545-5f8d05f6d5b3\\Funding product in Danamon (1).docx.md"
+    },
+    "enhancement_completed": {
+      "total_enhancements": 39,
+      "enhancements_file": "artefacts\\fd8f11b8-2822-4ceb-a545-5f8d05f6d5b3\\enhancements.json",
+      "type_distribution": {
+        "section_summary": 6,
+        "glossary": 3,
+        "formula_discovery": 3,
+        "executive_summary": 3,
+        "pattern_recognition": 3,
+        "table_insights": 3,
+        "comparative_analysis": 3,
+        "implication_analysis": 3,
+        "trend_forecasting": 3,
+        "risk_assessment": 3,
+        "scenario_projection": 3,
+        "what_if_analysis": 3
+      }
+    },
+    "auto_approval_completed": {
+      "auto_approve_all": true,
+      "approval_timestamp": "2025-10-14T13:26:04.498908"
+    },
+    "synthesis_completed": {
+      "final_markdown_path": "artefacts\\fd8f11b8-2822-4ceb-a545-5f8d05f6d5b3\\Funding product in Danamon (1).docx_enhanced.md",
+      "total_enhancements": 39
+    },
+    "vectorization_completed": {
+      "namespace": "danamon-final-1",
+      "v1_success": false,
+      "v2_success": true,
+      "embedding_model": "text-embedding-3-small"
+    },
+    "ready": {
+      "completed_at": "2025-10-14T13:26:09.505560"
+    }
+  },
+  "stage_progress": {},
+  "estimated_remaining_seconds": 23,
+  "last_updated": "2025-10-14T13:26:09.505560"
+}

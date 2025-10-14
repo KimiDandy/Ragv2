@@ -42,34 +42,29 @@ class EnhancementConfig(BaseSettings):
     _global_config: Dict[str, Any] = load_global_config()
     
     # Window configuration from global_config.llm
-    window_tokens: int = Field(default=_global_config.get("llm", {}).get("window_size", 12000), env='ENH_WINDOW_TOKENS')
-    window_overlap_tokens: int = Field(default=_global_config.get("llm", {}).get("window_overlap_tokens", 1500), env='ENH_WINDOW_OVERLAP_TOKENS')
+    window_tokens: int = Field(default=_global_config["llm"]["window_size"], env='ENH_WINDOW_TOKENS')
+    window_overlap_tokens: int = Field(default=_global_config["llm"]["window_overlap_tokens"], env='ENH_WINDOW_OVERLAP_TOKENS')
     
     # Parallel processing from global_config.enhancement
-    planner_parallelism: int = Field(default=_global_config.get("enhancement", {}).get("max_parallel_windows", 5), env='ENH_PLANNER_PARALLELISM')
-    planner_model: str = Field(default=_global_config.get("llm", {}).get("model", "gpt-4.1"), env='ENH_PLANNER_MODEL')
+    planner_parallelism: int = Field(default=_global_config["enhancement"]["max_parallel_windows"], env='ENH_PLANNER_PARALLELISM')
+    planner_model: str = Field(default=_global_config["llm"]["model"], env='ENH_PLANNER_MODEL')
     max_candidates_per_window: int = Field(default=0, env='ENH_MAX_CANDIDATES_PER_WINDOW')  # 0 = no limit
     
     # Generation configuration from global_config.llm
     gen_microbatch_size: int = Field(default=6, env='ENH_GEN_MICROBATCH_SIZE')  # Quality over quantity
-    gen_model: str = Field(default=_global_config.get("llm", {}).get("model", "gpt-4.1"), env='ENH_GEN_MODEL')
+    gen_model: str = Field(default=_global_config["llm"]["model"], env='ENH_GEN_MODEL')
     target_items: int = Field(default=0, env='ENH_TARGET_ITEMS')  # 0 = no artificial limit
-    max_generation_tokens: int = Field(default=_global_config.get("llm", {}).get("max_tokens", 16000), env='ENH_MAX_GEN_TOKENS')
+    max_generation_tokens: int = Field(default=_global_config["llm"]["max_tokens"], env='ENH_MAX_GEN_TOKENS')
     
-    # Enhancement types toggles - PRIORITIZE IMPLICIT INFO
-    enable_formula_discovery: bool = Field(default=True, env='ENH_ENABLE_FORMULA')
-    enable_scenario_analysis: bool = Field(default=True, env='ENH_ENABLE_SCENARIO')
-    enable_pattern_recognition: bool = Field(default=True, env='ENH_ENABLE_PATTERN')
-    enable_projection: bool = Field(default=True, env='ENH_ENABLE_PROJECTION')
-    enable_requirement_synthesis: bool = Field(default=True, env='ENH_ENABLE_REQUIREMENT')
-    # Legacy (for backward compatibility)
-    enable_glossary: bool = Field(default=False, env='ENH_ENABLE_GLOSSARY')
-    enable_highlight: bool = Field(default=False, env='ENH_ENABLE_HIGHLIGHT')
-    enable_faq: bool = Field(default=False, env='ENH_ENABLE_FAQ')
+    # NOTE: Enhancement types are NOT configured here!
+    # They are dynamically selected from client profiles (client_profile_*.json)
+    # See: src/core/enhancement_profiles/client_profile_danamon.json
+    # The client profile's enhancement_types section defines which of the 32 
+    # available types should be enabled for each client.
     
     # Embedding configuration from global_config.embedding
-    embedding_model: str = Field(default=_global_config.get("embedding", {}).get("model", "text-embedding-3-small"), env='ENH_EMBEDDING_MODEL')
-    embedding_batch_size: int = Field(default=_global_config.get("embedding", {}).get("batch_size", 100), env='ENH_EMBEDDING_BATCH_SIZE')
+    embedding_model: str = Field(default=_global_config["embedding"]["model"], env='ENH_EMBEDDING_MODEL')
+    embedding_batch_size: int = Field(default=_global_config["embedding"]["batch_size"], env='ENH_EMBEDDING_BATCH_SIZE')
     
     # Retrieval configuration
     retrieval_top_k: int = Field(default=10, env='ENH_RETRIEVAL_TOP_K')
@@ -77,16 +72,16 @@ class EnhancementConfig(BaseSettings):
     
     # OpenAI configuration from global_config.llm
     openai_api_key: Optional[str] = Field(default=None, env='OPENAI_API_KEY')
-    openai_temperature: float = Field(default=_global_config.get("llm", {}).get("temperature", 0.3), env='ENH_OPENAI_TEMPERATURE')
-    openai_max_retries: int = Field(default=_global_config.get("llm", {}).get("retry_attempts", 3), env='ENH_OPENAI_MAX_RETRIES')
-    openai_timeout: int = Field(default=_global_config.get("llm", {}).get("timeout_seconds", 120), env='ENH_OPENAI_TIMEOUT')
+    openai_temperature: float = Field(default=_global_config["llm"]["temperature"], env='ENH_OPENAI_TEMPERATURE')
+    openai_max_retries: int = Field(default=_global_config["llm"]["retry_attempts"], env='ENH_OPENAI_MAX_RETRIES')
+    openai_timeout: int = Field(default=_global_config["llm"]["timeout_seconds"], env='ENH_OPENAI_TIMEOUT')
     
     # Pinecone configuration from global_config.vectorstore
     pinecone_api_key: Optional[str] = Field(default=None, env='PINECONE_API_KEY')
-    pinecone_index_name: Optional[str] = Field(default=_global_config.get("vectorstore", {}).get("pinecone_index", "inspigo-pinecone"), env='PINECONE_INDEX_NAME')
+    pinecone_index_name: Optional[str] = Field(default=_global_config["vectorstore"]["pinecone_index"], env='PINECONE_INDEX_NAME')
     
     # Rate limiting from global_config.llm
-    requests_per_second: float = Field(default=_global_config.get("llm", {}).get("requests_per_second", 2.0), env='ENH_REQUESTS_PER_SECOND')
+    requests_per_second: float = Field(default=_global_config["llm"]["requests_per_second"], env='ENH_REQUESTS_PER_SECOND')
     
     # Caching and storage
     cache_dir: str = Field(default="./cache/enhancement", env='ENH_CACHE_DIR')

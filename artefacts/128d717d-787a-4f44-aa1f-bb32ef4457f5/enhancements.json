@@ -1,0 +1,974 @@
+[
+  {
+    "enhancement_id": "enh_128d717d_w1_0a60c2bf_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "glossary",
+    "title": "Definisi Istilah Kunci: Danantara, AUM, Yield Spread, Carry Trade",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "**Danantara**: Sovereign Wealth Fund (SWF) baru Indonesia yang akan diluncurkan pada 24 Februari 2025, bertujuan mengelola aset negara dan investasi strategis lintas sektor.\n**AUM** (Assets Under Management): Total nilai aset yang dikelola oleh institusi keuangan atau dana investasi, dalam konteks ini US$900 miliar untuk Danantara.\n**Yield Spread**: Selisih antara yield (imbal hasil) dua instrumen obligasi berbeda, biasanya antara negara berkembang dan negara maju, digunakan untuk mengukur daya tarik investasi.\n**Carry Trade**: Strategi investasi dengan meminjam dana di negara dengan suku bunga rendah (misal AS) dan menginvestasikan di negara dengan suku bunga lebih tinggi (misal Indonesia), untuk memperoleh selisih bunga.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.95,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_25aff33e_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Perhitungan Real Yield Obligasi Indonesia dan AS",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Dari data suku bunga dan inflasi, formula real yield: Real Yield = Suku Bunga Acuan - Inflasi YoY. Untuk Indonesia: 5,75% (BI Rate) - 0,76% (Inflasi) = 4,99%. Untuk AS: 4,5% (Fed Rate) - 3% (Inflasi) = 1,5%. Formula ini dapat digunakan untuk membandingkan daya tarik investasi antar negara. Asumsi: Menggunakan inflasi tahunan sebagai proksi tekanan harga. Limitasi: Tidak memperhitungkan risiko kredit dan volatilitas nilai tukar. Contoh: Jika inflasi Indonesia naik ke 2%, real yield turun ke 3,75%.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.95,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_356d4309_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "glossary",
+    "title": "Terminologi Inflasi dan Indeks: Inflation (YoY), Inflation (MoM), IHSG, LQ45",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "**Inflation (YoY)**: Persentase kenaikan harga barang dan jasa secara tahunan, mengukur tekanan inflasi dalam satu tahun terakhir.\n**Inflation (MoM)**: Persentase perubahan harga barang dan jasa dari bulan ke bulan, indikator inflasi jangka pendek.\n**IHSG** (Indeks Harga Saham Gabungan): Indeks utama yang mengukur kinerja seluruh saham di Bursa Efek Indonesia.\n**LQ45**: Indeks saham yang terdiri dari 45 saham paling likuid dan berkapitalisasi besar di Bursa Efek Indonesia.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.93,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_be8ff029_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "comparative_analysis",
+    "title": "Perbandingan Real Yield Indonesia vs AS: Daya Tarik Investasi",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Real yield Indonesia (BI Rate 5,75% - Inflasi 0,76% = 4,99%) jauh lebih tinggi dibandingkan AS (Fed Rate 4,5% - Inflasi 3% = 1,5%). Keunggulan ini menjadikan Indonesia lebih menarik bagi investor global yang mencari imbal hasil riil positif. Advantage: Potensi arus modal masuk, penguatan Rupiah, dan penurunan yield obligasi. Disadvantage: Risiko sudden outflow jika spread menyempit atau terjadi shock eksternal. Rekomendasi: Diversifikasi portofolio dan perkuat hedging nilai tukar.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.93,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_c8676566_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Perubahan Nilai Tukar dan Dampaknya terhadap Portofolio",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Perubahan nilai tukar dihitung: % Change = (Nilai Akhir - Nilai Awal) / Nilai Awal × 100%. Contoh: USD/IDR turun dari 16400 ke 16300, % Change = (16300-16400)/16400 × 100% = -0,61%. Formula ini penting untuk menghitung dampak kurs terhadap return portofolio. Asumsi: Tidak ada intervensi pasar. Limitasi: Tidak memperhitungkan volatilitas intraday. Contoh: Jika USD/IDR naik ke 16500, % Change = (16500-16300)/16300 × 100% = +1,23%.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.93,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_92e940da_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "glossary",
+    "title": "Penjelasan Istilah Ekonomi dan Pasar: Tarif Timbal Balik, BI Rate, UST 10 YR",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "**Tarif Timbal Balik** (Reciprocal Tariff): Kebijakan perdagangan AS yang mengenakan tarif setara terhadap negara yang menerapkan hambatan nontarif pada produk AS, sebagai respons atas praktik perdagangan yang dianggap tidak adil.\n**BI Rate**: Suku bunga acuan yang ditetapkan oleh Bank Indonesia, menjadi referensi utama bagi suku bunga pasar uang dan kredit domestik.\n**UST 10 YR**: US Treasury 10 Year, obligasi pemerintah AS tenor 10 tahun, menjadi benchmark utama yield obligasi global dan indikator sentimen risiko pasar.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.92,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_b79f5e69_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "table_insights",
+    "title": "Insight Tersirat dari Tabel Suku Bunga: Potensi Arus Modal Masuk",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Tabel suku bunga menunjukkan BI Rate (5,75%) lebih tinggi dari Fed Rate (4,5%), menciptakan spread 1,25%. Spread ini secara historis menjadi pendorong utama carry trade, di mana investor global mencari yield lebih tinggi di pasar berkembang. Dengan inflasi Indonesia yang rendah, real yield menjadi sangat menarik. Implikasi: Potensi arus modal masuk ke pasar obligasi dan saham Indonesia, serta penguatan Rupiah. Derived metric: Real yield Indonesia (BI Rate - Inflasi YoY) = 4,99%, jauh di atas AS (Fed Rate - Inflasi YoY) = 1,5%.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.92,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_4176998e_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Spread Yield Obligasi dan Implikasinya",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Spread yield dihitung sebagai selisih yield dua instrumen: Spread = Yield Obligasi Indonesia (IDR) - Yield UST 10YR. Dari data: 6,84% (INA 10YR IDR) - 4,53% (UST 10YR) = 2,31%. Formula ini digunakan untuk menilai daya tarik relatif obligasi Indonesia terhadap benchmark global. Asumsi: Yield yang digunakan adalah yield to maturity. Limitasi: Tidak memperhitungkan risiko likuiditas dan sovereign risk. Contoh: Jika UST 10YR naik ke 5%, spread turun ke 1,84%.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.92,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_c3834eef_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "executive_summary",
+    "title": "Dampak Strategis Peluncuran Danantara dan Perubahan Kebijakan Global terhadap Pasar Indonesia",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Peluncuran Daya Anagata Nusantara (Danantara) sebagai sovereign wealth fund baru Indonesia dengan AUM awal US$900 miliar (Rp 14.710 triliun) menandai langkah besar dalam pengelolaan aset negara dan investasi strategis lintas sektor. Di sisi global, kebijakan tarif timbal balik AS berpotensi memicu ketidakpastian perdagangan, namun belum langsung berdampak. Sementara itu, inflasi AS (3% YoY) tetap tinggi, dan BI Rate (5,75%) lebih tinggi dari Fed Rate (4,5%), menciptakan spread suku bunga yang menarik bagi investor asing. Implikasi utama: (1) Potensi arus modal masuk ke Indonesia akibat spread suku bunga dan peluncuran Danantara, (2) Risiko volatilitas pasar akibat kebijakan proteksionis AS, (3) Peluang penguatan Rupiah dan pasar obligasi domestik. Rekomendasi: Perkuat strategi investasi di sektor prioritas Danantara, monitor ketat kebijakan perdagangan global, dan optimalkan posisi pada instrumen berdenominasi Rupiah. Konsekuensi tidak langsung: Jika Danantara sukses, dapat menurunkan ketergantungan pada pembiayaan eksternal dan memperkuat posisi fiskal Indonesia.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_db391224_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "executive_summary",
+    "title": "Rekomendasi Strategis atas Spread Suku Bunga dan Inflasi Indonesia-AS",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Spread suku bunga BI Rate (5,75%) vs Fed Rate (4,5%) dan inflasi Indonesia (0,76% YoY) yang jauh lebih rendah dari AS (3% YoY) membuka peluang carry trade dan arus modal masuk ke pasar Indonesia. Namun, risiko reversal tetap ada jika Fed menaikkan suku bunga atau terjadi shock eksternal. Insight utama: (1) Potensi penguatan Rupiah dan penurunan yield obligasi domestik, (2) Risiko sudden outflow jika spread menyempit, (3) Peluang optimalisasi portofolio berbasis Rupiah. Rekomendasi: Perkuat hedging terhadap risiko nilai tukar, pantau dinamika kebijakan moneter global, dan evaluasi ulang alokasi aset pada instrumen jangka menengah-panjang. Implikasi tidak langsung: Jika spread tetap lebar dan inflasi terjaga, Indonesia dapat memperkuat posisi sebagai destinasi investasi emerging market.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_3c9fb5f2_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "section_summary",
+    "title": "Ringkasan Bagian Domestik: Peluncuran Danantara dan Implikasi Ekonomi",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Bagian Domestik menyoroti pengumuman Presiden Prabowo mengenai peluncuran sovereign wealth fund baru, Danantara, dengan AUM awal lebih dari US$900 miliar. Dana ini akan difokuskan pada investasi di sektor berkelanjutan seperti energi terbarukan, manufaktur canggih, dan produksi pangan. Evaluasi awal menunjukkan potensi besar dalam mendiversifikasi sumber pembiayaan pembangunan nasional. Takeaway: Danantara dapat menjadi game changer dalam pengelolaan aset negara dan menarik investasi asing.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_e65905ca_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Divergensi Inflasi dan Suku Bunga Indonesia-AS",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Inflasi Indonesia (0,76% YoY) jauh lebih rendah dibandingkan AS (3% YoY), namun BI Rate (5,75%) lebih tinggi dari Fed Rate (4,5%). Pola ini menciptakan real yield positif yang besar di Indonesia, menarik bagi investor global. Root cause: Kebijakan moneter BI yang lebih hawkish dan stabilitas harga domestik. Implikasi: Potensi carry trade dan penguatan aset berdenominasi Rupiah. Actionable insight: Investor dapat memanfaatkan real yield tinggi untuk akumulasi obligasi jangka menengah-panjang.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_02299ff4_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "executive_summary",
+    "title": "Interpretasi Tersirat dari Pergerakan Pasar Global dan Domestik 14 Februari 2025",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Pasar saham global mengalami penguatan, khususnya di sektor teknologi AS, didorong oleh sentimen positif atas penundaan tarif timbal balik AS dan data ekonomi yang lebih baik dari ekspektasi. Di sisi domestik, yield obligasi Indonesia naik tipis (+8bps), namun penguatan Rupiah (-0,61% USD/IDR) menunjukkan kepercayaan investor. Peluncuran Danantara berpotensi menjadi katalis utama investasi domestik. Insight utama: (1) Korelasi positif antara penguatan Rupiah dan minat beli obligasi domestik, (2) Yield spread Indonesia-AS tetap lebar, menarik bagi investor global, (3) Risiko volatilitas tetap dari kebijakan proteksionis global. Rekomendasi: Diversifikasi portofolio dengan memperhatikan sektor yang akan didorong Danantara, siapkan mitigasi risiko atas potensi gejolak eksternal, dan manfaatkan momentum penguatan Rupiah untuk akumulasi aset lokal. Implikasi tidak langsung: Jika tren penguatan Rupiah berlanjut, biaya impor turun, namun ekspor berpotensi tertekan.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_4a759b66_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "table_insights",
+    "title": "Analisis Yield Obligasi: Spread dan Volatilitas",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Tabel obligasi menunjukkan INA 10YR (IDR) stabil di 6,84%, sementara INA 10YR (USD) naik dari 5,38% ke 5,45% (+1,26%), dan UST 10YR turun dari 4,62% ke 4,53% (-1,99%). Spread INA 10YR (IDR) vs UST 10YR = 2,31%, tetap lebar. Volatilitas yield USD lebih tinggi, mengindikasikan sensitivitas terhadap sentimen global. Implikasi: Spread yang lebar mendukung minat investor asing, namun volatilitas yield USD perlu diwaspadai sebagai early warning risiko global.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_0d4f943a_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "comparative_analysis",
+    "title": "Perbandingan Yield Obligasi Indonesia (IDR vs USD) dan UST 10YR",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Yield INA 10YR (IDR) stabil di 6,84%, INA 10YR (USD) naik dari 5,38% ke 5,45%, dan UST 10YR turun dari 4,62% ke 4,53%. Spread INA 10YR (IDR) vs UST 10YR = 2,31%, sedangkan INA 10YR (USD) vs UST 10YR = 0,92%. Keunggulan yield IDR menunjukkan daya tarik lebih tinggi bagi investor asing, namun yield USD lebih volatile. Rekomendasi: Prioritaskan instrumen IDR untuk yield stabil, gunakan USD untuk diversifikasi risiko global.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_78c51624_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "section_summary",
+    "title": "Ringkasan Bagian Pasar Valuta Asing dan Obligasi: Dinamika Yield dan Valuta",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Bagian ini membahas penguatan Poundsterling dan Euro, serta yield obligasi Indonesia yang naik +8bps sebelum kembali stabil seiring penguatan Rupiah. Pembelian obligasi oleh investor domestik dan asing meningkat setelah Rupiah menguat. Takeaway: Ada hubungan erat antara penguatan mata uang domestik dan minat beli obligasi, serta potensi capital inflow ke pasar Indonesia.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.87,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_104c3111_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "comparative_analysis",
+    "title": "Analisis Komparatif Pergerakan Indeks Saham Global dan Domestik",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Indeks saham global (S&P 500 +1,04%, Dow Jones +0,77%, Nasdaq +1,5%) menguat, sementara IHSG dan LQ45 turun (-0,48% dan -0,85%). Perbedaan ini mengindikasikan adanya sentimen domestik yang menahan laju pasar Indonesia. Advantage pasar global: Sentimen positif dari sektor teknologi dan kebijakan tarif yang belum berlaku. Disadvantage domestik: Ketidakpastian peluncuran Danantara dan rotasi sektor. Rekomendasi: Pantau sentimen domestik dan potensi rebound jika sentimen global tetap kuat.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.87,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_d64b3cea_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "section_summary",
+    "title": "Ringkasan Bagian Global: Kebijakan Tarif AS dan Dampaknya",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Bagian Global membahas reli saham AS yang dipicu oleh sektor teknologi dan kelegaan atas penundaan implementasi tarif timbal balik oleh Presiden Trump. S&P 500, Dow Jones, dan Nasdaq masing-masing naik 1,04%, 0,77%, dan 1,5%. Kebijakan tarif timbal balik AS belum langsung berlaku, menunggu studi lebih lanjut. Data inflasi produsen AS naik 3,5% YoY dan harga grosir naik 0,4% MoM, sedikit di atas ekspektasi, namun ada indikasi penurunan harga ke depan. Takeaway: Sentimen pasar global positif namun tetap waspada terhadap potensi kebijakan proteksionis AS yang dapat memicu volatilitas.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_4fd33b1b_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "implication_analysis",
+    "title": "Efek Domino Spread Suku Bunga BI-Fed terhadap Arus Modal dan Nilai Tukar",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Spread BI Rate (5,75%) vs Fed Rate (4,5%) menciptakan insentif carry trade, mendorong arus modal masuk ke Indonesia. Konsekuensi langsung: Potensi penguatan Rupiah dan penurunan yield obligasi domestik. Efek domino: Jika Fed menaikkan suku bunga, spread menyempit, risiko sudden outflow meningkat. Risiko potensial: Volatilitas nilai tukar dan tekanan pada cadangan devisa. Peluang tersembunyi: Jika inflasi domestik tetap rendah, Indonesia bisa menarik investasi jangka panjang. Confidence: 0.85 (asumsi kebijakan moneter global stabil, tidak ada shock eksternal besar).",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_d32446f1_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Korelasi Penguatan Rupiah dan Minat Beli Obligasi Domestik",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Terdapat pola di mana penguatan Rupiah (USD/IDR turun -0,61%) diikuti oleh peningkatan pembelian obligasi domestik oleh investor asing dan domestik, terlihat dari yield INA 10YR (IDR) yang naik tipis (+8bps) lalu stabil. Korelasi ini menunjukkan bahwa sentimen positif terhadap Rupiah meningkatkan daya tarik obligasi domestik, terutama dengan spread yield yang lebar terhadap UST 10YR. Root cause: Spread suku bunga dan persepsi risiko yang membaik. Implikasi: Momentum ini dapat dimanfaatkan untuk memperbesar penerbitan obligasi pemerintah saat sentimen positif. Actionable insight: Monitor pergerakan Rupiah sebagai leading indicator minat obligasi.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_f01c641f_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "table_insights",
+    "title": "Insight Pergerakan Forex: Penguatan GBP dan Dampaknya",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Tabel forex menunjukkan GBP/IDR naik 0,25% dan GBP/USD naik 0,87%, didorong data pertumbuhan ekonomi Inggris di atas ekspektasi (1,4% vs 1,1%). Penguatan GBP dapat meningkatkan biaya impor dari Inggris dan menekan eksportir domestik, namun juga membuka peluang investasi portofolio di aset GBP. Derived metric: GBP/IDR naik lebih rendah dari GBP/USD, mengindikasikan penguatan Rupiah relatif terhadap USD lebih besar daripada terhadap GBP.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_87ded985_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "implication_analysis",
+    "title": "Implikasi Tersirat Peluncuran Danantara terhadap Investasi dan Stabilitas Fiskal",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Peluncuran Danantara dengan AUM awal US$900 miliar berpotensi mengubah lanskap investasi nasional dan memperkuat posisi fiskal Indonesia. Konsekuensi langsung: Diversifikasi sumber pembiayaan pembangunan, mengurangi ketergantungan pada utang luar negeri. Efek domino: Peningkatan kepercayaan investor asing, potensi penguatan Rupiah, dan penurunan yield obligasi domestik. Risiko potensial: Jika pengelolaan tidak transparan atau terjadi moral hazard, dapat menimbulkan ketidakpercayaan dan volatilitas pasar. Peluang tersembunyi: Danantara dapat menjadi platform utama untuk investasi hijau dan proyek strategis nasional. Confidence: 0.8 (asumsi tata kelola baik, learning curve SWF baru).",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_df066e63_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "pattern_recognition",
+    "title": "Anomali Pergerakan IHSG dan LQ45 di Tengah Penguatan Pasar Global",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "IHSG dan LQ45 masing-masing turun -0,48% dan -0,85% pada 13 Februari, meskipun pasar global (S&P 500, Dow Jones, Nasdaq) menguat signifikan. Anomali ini mengindikasikan adanya faktor domestik yang menahan laju pasar, seperti profit taking atau kekhawatiran atas peluncuran Danantara. Root cause hypothesis: Ketidakpastian kebijakan domestik dan rotasi sektor. Implikasi: Perlu analisis lebih lanjut terhadap sentimen investor lokal dan potensi rebound jika sentimen global tetap positif.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_ce57f6d1_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "trend_forecasting",
+    "title": "Forecasting Trend Real Yield Indonesia 2025",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Dengan BI Rate stabil di 5,75% dan inflasi rendah (0,76% YoY), tren real yield Indonesia diperkirakan tetap tinggi di kisaran 4,5-5% sepanjang 2025, kecuali terjadi kenaikan inflasi atau penurunan suku bunga. Range estimate: 4-5,5%. Confidence interval: 0.7-0.85. Asumsi: Tidak ada shock inflasi atau perubahan kebijakan moneter drastis. Turning point: Jika inflasi naik >2%, real yield turun signifikan.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_04754a84_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "risk_assessment",
+    "title": "Risiko Sudden Outflow akibat Penyempitan Spread BI-Fed",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Deskripsi Risk: Spread BI-Fed menyempit akibat kenaikan Fed Rate atau penurunan BI Rate, memicu sudden outflow modal asing. Likelihood: Medium (40%, Fed diprediksi lanjutkan pengetatan). Impact: High (outflow >Rp 50 triliun, pelemahan Rupiah, kenaikan yield obligasi). Risk Score: 8/10. Root Cause: Ketergantungan pada arus modal asing dan volatilitas global. Mitigasi Preventive: Perkuat cadangan devisa, diversifikasi sumber pembiayaan. Contingency Plan: Intervensi pasar valas, kenaikan suku bunga. Early Warning: Penurunan spread <1%, outflow dana asing mingguan.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_3dd1c802_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "scenario_projection",
+    "title": "Proyeksi Skenario Arus Modal Masuk ke Indonesia 2025-2026",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Best Case: Spread BI-Fed tetap >1%, inflasi Indonesia terjaga <1%, Danantara sukses menarik investasi asing. Proyeksi arus modal masuk naik 20% YoY (asumsi: carry trade optimal, confidence 0.8). Most Likely: Spread stabil, inflasi naik moderat ke 1,5%, Danantara berjalan sesuai rencana. Proyeksi arus modal masuk naik 10% YoY (confidence 0.7). Worst Case: Fed naikkan suku bunga, spread menyempit <0,5%, inflasi domestik naik >2%, Danantara alami hambatan. Proyeksi arus modal masuk stagnan atau turun 5% YoY (confidence 0.6). Metodologi: Extrapolasi tren arus modal 2023-2024, asumsi stabilitas global.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.75,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_66033404_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "trend_forecasting",
+    "title": "Forecasting Trend Yield Obligasi Indonesia dan Spread 2025",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Yield INA 10YR (IDR) diperkirakan bergerak stabil di kisaran 6,7-7% sepanjang 2025, dengan spread terhadap UST 10YR tetap di atas 2%. Confidence interval: 0.75. Asumsi: BI Rate dan Fed Rate tidak berubah signifikan. Turning point: Jika Fed Rate naik, spread menyempit dan yield INA 10YR berpotensi naik ke 7,5%.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.75,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_cdd526fd_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "implication_analysis",
+    "title": "Risiko Kebijakan Tarif Timbal Balik AS terhadap Ekspor Indonesia",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Kebijakan tarif timbal balik AS yang belum langsung berlaku memberi waktu bagi eksportir Indonesia untuk beradaptasi, namun jika diterapkan, dapat meningkatkan biaya ekspor dan menekan margin produsen domestik. Konsekuensi langsung: Penurunan daya saing produk Indonesia di pasar AS. Efek domino: Potensi penurunan volume ekspor, tekanan pada neraca perdagangan, dan pelemahan Rupiah. Risiko potensial: Jika negara lain merespons dengan tarif balasan, dapat terjadi perang dagang regional. Peluang tersembunyi: Diversifikasi pasar ekspor dan peningkatan nilai tambah produk lokal. Confidence: 0.7 (asumsi kebijakan diterapkan dalam 6-12 bulan).",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_35d960f7_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "scenario_projection",
+    "title": "Proyeksi Skenario Yield Obligasi Indonesia 2025",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Best Case: Yield INA 10YR turun ke 6,5% (asumsi: arus modal masuk kuat, inflasi terjaga, confidence 0.8). Most Likely: Yield stabil di 6,8-7% (asumsi: spread BI-Fed tetap, confidence 0.7). Worst Case: Yield naik ke 7,5% (asumsi: outflow akibat kenaikan Fed Rate, confidence 0.6). Faktor pengaruh: Kebijakan moneter global, peluncuran Danantara, sentimen investor. Metodologi: Extrapolasi tren yield 2023-2024, analisis sensitivitas terhadap spread dan inflasi.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_d1a0fb7b_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "scenario_projection",
+    "title": "Proyeksi Skenario Nilai Tukar USD/IDR 2025",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Best Case: USD/IDR menguat ke 16000 (asumsi: arus modal masuk kuat, confidence 0.8). Most Likely: Stabil di 16200-16300 (asumsi: spread BI-Fed terjaga, confidence 0.7). Worst Case: Melemah ke 16600 (asumsi: outflow akibat shock eksternal, confidence 0.6). Triggers: Perubahan Fed Rate, peluncuran Danantara, sentimen global. Metodologi: Extrapolasi tren pergerakan 2023-2024, analisis sensitivitas terhadap arus modal dan spread suku bunga.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_b592de51_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "trend_forecasting",
+    "title": "Forecasting Trend Nilai Tukar USD/IDR dan Dampaknya",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "USD/IDR menunjukkan tren penguatan Rupiah (-0,61% dalam sehari). Jika tren ini berlanjut, Rupiah dapat menguat ke 16000 dalam 3-6 bulan. Range estimate: 16000-16400. Confidence interval: 0.7. Asumsi: Arus modal masuk stabil, tidak ada shock eksternal besar. Turning point: Jika Fed Rate naik, Rupiah berpotensi melemah kembali.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_2d44f931_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "what_if_analysis",
+    "title": "What-If: Fed Rate Naik 0,5% dalam 6 Bulan",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Jika Fed Rate naik dari 4,5% ke 5%, spread BI-Fed turun dari 1,25% ke 0,75%. Outcome: Potensi outflow modal dari Indonesia, tekanan pada Rupiah (USD/IDR bisa naik ke 16600), dan yield INA 10YR naik ke 7,5%. Mitigasi: BI dapat menaikkan suku bunga atau intervensi di pasar valas. Probability: 30% (asumsi siklus pengetatan Fed belum selesai).",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_92decb95_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "risk_assessment",
+    "title": "Risiko Gagalnya Danantara dalam Tata Kelola dan Transparansi",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Deskripsi Risk: Danantara gagal menerapkan tata kelola dan transparansi, menimbulkan moral hazard dan menurunkan kepercayaan investor. Likelihood: Low-Medium (20%, SWF baru dengan learning curve). Impact: High (penurunan arus investasi, reputasi negara terganggu). Risk Score: 7/10. Root Cause: Kurangnya pengalaman dan sistem pengawasan. Mitigasi Preventive: Implementasi best practice SWF global, audit independen. Contingency Plan: Restrukturisasi manajemen, penguatan regulasi. Early Warning: Laporan audit negatif, penurunan minat investor asing.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_9a6cd27e_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "risk_assessment",
+    "title": "Risiko Perang Dagang akibat Kebijakan Tarif Timbal Balik AS",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Deskripsi Risk: AS menerapkan tarif timbal balik, negara lain merespons dengan tarif balasan, memicu perang dagang regional. Likelihood: Medium (30%, ketegangan dagang meningkat). Impact: Medium-High (penurunan ekspor, tekanan pada Rupiah, perlambatan ekonomi). Risk Score: 7/10. Root Cause: Kebijakan proteksionis dan ketidakpastian global. Mitigasi Preventive: Diversifikasi pasar ekspor, diplomasi dagang. Contingency Plan: Subsidi ekspor, insentif industri terdampak. Early Warning: Pengumuman tarif baru, penurunan volume ekspor.",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_494bfeb3_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "what_if_analysis",
+    "title": "What-If: Inflasi Indonesia Naik ke 2% YoY",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Jika inflasi Indonesia naik dari 0,76% ke 2%, real yield turun dari 4,99% ke 3,75%. Outcome: Daya tarik obligasi domestik menurun, potensi outflow modal, dan tekanan pada Rupiah. Mitigasi: BI dapat menaikkan suku bunga atau memperkuat komunikasi kebijakan. Probability: 25% (asumsi tekanan harga pangan dan energi moderat).",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.65,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_128d717d_w1_93152592_20251014132236",
+    "doc_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5",
+    "enhancement_type": "what_if_analysis",
+    "title": "What-If: Danantara Gagal Menarik Investasi Asing",
+    "original_context": "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pada hari Kamis karena reli saham teknologi dan kelegaan bahwa tarif timbal balik Trump tidak langsung berlaku. S&P 500 naik 1,04%, Dow Jones Industrial Average naik 0,77%, dan Nasdaq Composite naik 1,5%. Presiden AS Donald Trump pada hari Kamis menandatangani nota kepresidenan yang memaparkan rencanan",
+    "generated_content": "Jika Danantara gagal menarik investasi asing, outcome: Target pembiayaan proyek strategis tidak tercapai, tekanan pada APBN meningkat, dan kepercayaan investor menurun. Mitigasi: Pemerintah perlu memperkuat tata kelola, transparansi, dan insentif investasi. Probability: 15% (asumsi learning curve SWF baru).",
+    "source_units": [
+      "u_t_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_pb_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_0",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_1",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_left_2",
+      "u_128d717d-787a-4f44-aa1f-bb32ef4457f5_p1_right_0"
+    ],
+    "source_previews": [
+      "| INTEREST RATES   |    % |\n|:-----------------|-----:|\n| BI RATE          | 5.75 |\n| FED RATE         | 4.5  |\n\nJ u m a t ,  1 4  F e b r u a r i  2 0 2 5\n\nGlobal\n\nSaham Amerika Serikat (AS) naik pad"
+    ],
+    "confidence_score": 0.6,
+    "priority": 6,
+    "metadata": {
+      "window_id": "128d717d-787a-4f44-aa1f-bb32ef4457f5_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  }
+]

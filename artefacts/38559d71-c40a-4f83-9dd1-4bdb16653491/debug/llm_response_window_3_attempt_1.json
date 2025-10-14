@@ -1,0 +1,293 @@
+{
+  "enhancements": [
+    {
+      "type": "executive_summary",
+      "title": "Strategi Diversifikasi Investasi dan Implikasi Makro Ekonomi pada Produk BNP Paribas dan Obligasi Negara",
+      "content": "Root Analysis: Dokumen ini menyoroti dua pilar utama investasi: reksa dana saham syariah BNP Paribas Greater China Equity Syariah USD dan obligasi negara seri FR0100/FR0106. Keduanya menawarkan profil risiko dan potensi return yang berbeda, mencerminkan kebutuhan diversifikasi portofolio di tengah volatilitas global dan regional. Signifikansi terletak pada kombinasi exposure ke pertumbuhan ekonomi China dan stabilitas instrumen pemerintah Indonesia. \n\nPractical Application: Investor dapat memanfaatkan strategi ini untuk mengelola risiko pasar saham China yang tinggi dengan menyeimbangkan portofolio melalui obligasi negara berkupon menarik (6,625%-7,125%). Hal ini relevan bagi investor yang ingin mengoptimalkan yield namun tetap menjaga risiko pada level moderat.\n\nDecision Support: Keputusan utama adalah alokasi aset antara ekuitas syariah luar negeri (dengan potensi return tinggi namun volatil) dan obligasi negara (dengan yield stabil dan risiko lebih rendah). Pertimbangan utama: outlook ekonomi China, arah suku bunga BI, dan spread inflasi.\n\nImpact: Diversifikasi ini dapat mengurangi drawdown portofolio saat pasar saham China mengalami koreksi, sekaligus menangkap peluang capital gain dari obligasi saat suku bunga turun. Namun, ada risiko nilai tukar, likuiditas, dan pasar yang harus dimitigasi. Rekomendasi: review alokasi secara berkala dan gunakan instrumen dengan tenor menengah untuk fleksibilitas. (Confidence: 0.9)",
+      "source_units": ["TABEL 1", "TABEL 2", "TABEL 3", "paragraph_1", "paragraph_2"],
+      "confidence": 0.9,
+      "priority": 10
+    },
+    {
+      "type": "executive_summary",
+      "title": "Peluang dan Risiko Investasi di Tengah Penurunan Suku Bunga dan Volatilitas Global",
+      "content": "Root Analysis: Penurunan BI Rate ke 5,75% di awal 2025 dan proyeksi pemulihan ekonomi China menjadi katalis utama bagi kinerja reksa dana dan obligasi negara. Namun, volatilitas nilai tukar dan ketidakpastian global tetap menjadi ancaman.\n\nPractical Application: Investor dapat memanfaatkan momentum penurunan suku bunga untuk masuk ke obligasi negara, mengunci yield tinggi sebelum potensi penurunan lebih lanjut. Sementara itu, eksposur ke saham China dapat dioptimalkan saat outlook pemulihan ekonomi membaik.\n\nDecision Support: Pilihan strategis mencakup: (1) meningkatkan porsi obligasi tenor menengah-panjang untuk capital gain, (2) tetap selektif pada saham China berbasis fundamental dan syariah, (3) melakukan hedging terhadap risiko nilai tukar.\n\nImpact: Aksi ini dapat meningkatkan yield portofolio dan mengurangi risiko downside. Namun, jika volatilitas global meningkat atau pemulihan China melambat, risiko kerugian tetap ada. Rekomendasi: lakukan monitoring makroekonomi dan rebalancing portofolio secara dinamis. (Confidence: 0.85)",
+      "source_units": ["paragraph_3", "paragraph_4", "TABEL 2"],
+      "confidence": 0.85,
+      "priority": 9
+    },
+    {
+      "type": "executive_summary",
+      "title": "Rekomendasi Alokasi Portofolio: Menyeimbangkan Return dan Risiko pada 2025",
+      "content": "Root Analysis: Data kinerja menunjukkan BNP Paribas Greater China Equity Syariah USD mencatat return 8,13% (YTD dan 1 tahun), namun negatif pada 3 dan 5 tahun. Obligasi negara FR0100 dan FR0106 menawarkan yield 6,89%-7,14% dengan risiko moderat.\n\nPractical Application: Investor disarankan mengalokasikan portofolio dengan porsi lebih besar pada obligasi negara untuk stabilitas, sambil mempertahankan eksposur terbatas pada saham China untuk upside growth.\n\nDecision Support: Keputusan utama adalah proporsi optimal antara saham dan obligasi, mempertimbangkan horizon investasi, toleransi risiko, dan outlook makro. Untuk investor konservatif, porsi obligasi dapat ditingkatkan hingga 70%.\n\nImpact: Strategi ini dapat mengoptimalkan return dengan risiko terukur, namun perlu mitigasi risiko nilai tukar dan fluktuasi pasar global. Rekomendasi: gunakan instrumen hedging dan review portofolio setiap kuartal. (Confidence: 0.88)",
+      "source_units": ["TABEL 2", "TABEL 3", "paragraph_5"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian: Strategi Investasi BNP Paribas Greater China Equity Syariah USD",
+      "content": "Bagian ini membahas strategi investasi reksa dana BNP Paribas Greater China Equity Syariah USD yang berfokus pada saham-saham perusahaan dengan eksposur ke China dan sesuai prinsip Syariah. Poin penting: (1) Seleksi saham menggunakan tiga filter (Syariah, ESG, Fundamental); (2) Fokus pada pertumbuhan jangka panjang dan keberlanjutan; (3) Benchmark menggunakan Dow Jones Islamic Market Greater China Index; (4) Portofolio didominasi saham teknologi dan konsumsi (misal: TSMC, Alibaba, Meituan); (5) Risiko utama berasal dari volatilitas pasar China, nilai tukar, dan likuiditas. Takeaway: Strategi ini cocok untuk investor yang mencari pertumbuhan agresif dengan prinsip Syariah, namun harus siap menghadapi volatilitas tinggi.",
+      "source_units": ["paragraph_1", "TABEL 1"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian: Karakteristik dan Kinerja Obligasi Negara FR0100 & FR0106",
+      "content": "Bagian ini mengulas dua seri obligasi negara: FR0100 (tenor 10 tahun, kupon 6,625%) dan FR0106 (tenor 15 tahun, kupon 7,125%). Poin penting: (1) Kupon di atas rata-rata deposito, dibayar tiap 6 bulan; (2) Yield saat ini FR0100: 6,89%, FR0106: 7,14%; (3) Risiko utama: gagal bayar, pasar, dan likuiditas; (4) Kinerja obligasi membaik seiring penurunan BI Rate dan inflasi; (5) Rekomendasi: fokus pada tenor pendek-menengah untuk fleksibilitas. Takeaway: Obligasi ini cocok untuk investor moderat yang menginginkan pendapatan tetap dengan risiko terukur.",
+      "source_units": ["TABEL 3", "paragraph_6", "paragraph_7"],
+      "confidence": 0.92,
+      "priority": 7
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian: Analisis Risiko dan Rekomendasi Investasi",
+      "content": "Bagian ini menyoroti risiko utama pada kedua produk: (1) Reksa dana saham China menghadapi risiko pasar, nilai tukar, dan likuiditas; (2) Obligasi negara menghadapi risiko gagal bayar, pasar (suku bunga), dan likuiditas; (3) Kinerja historis tidak menjamin masa depan; (4) Rekomendasi: gunakan penilaian sendiri atau konsultasi profesional; (5) Bank Danamon hanya sebagai agen penjual. Takeaway: Investor harus proaktif dalam memantau risiko dan tidak mengandalkan kinerja masa lalu.",
+      "source_units": ["paragraph_8", "paragraph_9"],
+      "confidence": 0.87,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Kunci Investasi dan Obligasi",
+      "content": "**NAB (Nilai Aktiva Bersih):** Nilai total aset reksa dana dikurangi kewajiban, menjadi dasar perhitungan harga unit penyertaan.\n**Kupon:** Bunga tetap yang dibayarkan secara periodik kepada pemegang obligasi, biasanya per 6 bulan.\n**Yield:** Tingkat imbal hasil obligasi, dihitung dari kupon dan harga pasar saat ini.\n**Spread Inflasi-Suku Bunga:** Selisih antara tingkat inflasi dan suku bunga acuan, indikator daya tarik obligasi.\n**FR0100/FR0106:** Kode seri Surat Utang Negara dengan tenor dan kupon spesifik.\n**GCES:** Greater China Equity Syariah, indeks acuan reksa dana saham syariah China.\n**Capital Gain:** Keuntungan dari kenaikan harga jual aset dibanding harga beli.\n**Profil Risiko Moderat:** Kategori risiko investasi dengan potensi fluktuasi sedang, cocok untuk investor dengan toleransi risiko menengah.",
+      "source_units": ["TABEL 3", "paragraph_10"],
+      "confidence": 0.95,
+      "priority": 6
+    },
+    {
+      "type": "glossary",
+      "title": "Definisi Istilah Teknis Syariah dan Investasi Global",
+      "content": "**Prinsip Syariah:** Standar investasi yang sesuai hukum Islam, melarang riba, gharar, dan investasi pada sektor haram.\n**ESG (Environmental, Social, Governance):** Kriteria non-finansial untuk menilai keberlanjutan dan dampak sosial perusahaan.\n**On-shore/Off-shore:** Istilah untuk efek/saham yang diperdagangkan di dalam (on-shore) atau luar (off-shore) negara asal.\n**Tolak Ukur (Benchmark):** Indeks acuan yang digunakan untuk membandingkan kinerja portofolio.\n**Liquidity Risk (Risiko Likuiditas):** Risiko tidak dapat menjual aset dengan cepat tanpa penurunan harga signifikan.\n**BI Rate:** Suku bunga acuan Bank Indonesia, mempengaruhi yield obligasi dan suku bunga pasar.",
+      "source_units": ["paragraph_11", "paragraph_12"],
+      "confidence": 0.93,
+      "priority": 6
+    },
+    {
+      "type": "glossary",
+      "title": "Terminologi Kunci Obligasi Negara dan Investasi Syariah",
+      "content": "**Obligasi Negara Valas:** Surat utang pemerintah yang diterbitkan dalam mata uang asing (valuta asing), menawarkan diversifikasi risiko mata uang.\n**Tenor:** Jangka waktu hingga obligasi jatuh tempo.\n**Capital Gain Obligasi:** Keuntungan dari kenaikan harga obligasi di pasar sekunder.\n**Dow Jones Islamic Market Greater China Index:** Indeks saham syariah Greater China yang menjadi benchmark reksa dana BNP Paribas.\n**Frekuensi Pembayaran Kupon:** Jadwal pembayaran bunga obligasi, biasanya setiap 6 bulan.",
+      "source_units": ["TABEL 3", "paragraph_13"],
+      "confidence": 0.92,
+      "priority": 5
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implikasi Penurunan Suku Bunga BI terhadap Harga Obligasi Negara",
+      "content": "Root Analysis: Penurunan BI Rate ke 5,75% pada Januari 2025 menciptakan peluang kenaikan harga obligasi negara, karena yield obligasi lama menjadi lebih menarik dibanding instrumen baru yang akan diterbitkan dengan kupon lebih rendah. Efek domino: investor institusi dan ritel akan meningkatkan permintaan pada obligasi existing, mendorong harga naik.\n\nPractical Application: Investor dapat memanfaatkan momentum ini untuk membeli obligasi negara (FR0100/FR0106) sebelum penurunan suku bunga lanjutan, mengunci yield tinggi dan potensi capital gain.\n\nDecision Support: Keputusan strategis adalah memperbesar alokasi pada obligasi tenor menengah-panjang sebelum tren penurunan suku bunga berlanjut.\n\nImpact: Potensi capital gain meningkat, namun risiko jika suku bunga global naik kembali (misal, akibat tekanan eksternal) dapat membalikkan tren. Confidence: 0.8 (asumsi tren suku bunga turun berlanjut, tidak ada shock eksternal besar).",
+      "source_units": ["paragraph_14", "TABEL 3"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Efek Diversifikasi Portofolio pada Reduksi Risiko Volatilitas Saham China",
+      "content": "Root Analysis: Portofolio yang mengombinasikan reksa dana saham China dan obligasi negara Indonesia secara tidak langsung mengurangi volatilitas total portofolio. Saham China sangat sensitif terhadap kebijakan ekonomi dan politik, sedangkan obligasi negara lebih stabil dan dipengaruhi suku bunga domestik.\n\nPractical Application: Diversifikasi ini dapat digunakan oleh investor untuk menjaga stabilitas return jangka menengah-panjang, terutama saat pasar saham China mengalami tekanan.\n\nDecision Support: Penentuan proporsi optimal antara saham dan obligasi menjadi kunci. Investor dengan profil risiko moderat sebaiknya mengalokasikan minimal 50% pada obligasi.\n\nImpact: Risiko drawdown portofolio berkurang, namun upside growth tetap terjaga. Confidence: 0.85 (asumsi korelasi rendah antara pasar saham China dan obligasi Indonesia).",
+      "source_units": ["TABEL 1", "TABEL 2", "TABEL 3"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Risiko Nilai Tukar terhadap Return Reksa Dana Saham China Berdenominasi USD",
+      "content": "Root Analysis: Reksa dana BNP Paribas Greater China Equity Syariah USD berdenominasi USD, sehingga fluktuasi nilai tukar Rupiah terhadap USD akan berdampak langsung pada return investor domestik. Jika Rupiah melemah, return dalam Rupiah akan meningkat, namun sebaliknya jika Rupiah menguat.\n\nPractical Application: Investor yang tidak melakukan hedging harus siap menghadapi volatilitas nilai tukar yang dapat memperbesar risiko portofolio.\n\nDecision Support: Keputusan penting adalah apakah perlu melakukan hedging nilai tukar atau tidak, tergantung outlook Rupiah dan profil risiko investor.\n\nImpact: Potensi return bisa naik signifikan jika Rupiah melemah, namun risiko kerugian juga besar jika Rupiah menguat tajam. Confidence: 0.75 (asumsi volatilitas nilai tukar tetap tinggi di 2025).",
+      "source_units": ["paragraph_15", "TABEL 2"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Kinerja Reksa Dana Saham China: Volatilitas Tinggi dan Recovery Musiman",
+      "content": "Deskripsi: Data kinerja BNP Paribas Greater China Equity Syariah USD menunjukkan pola return positif pada horizon 1 tahun (+8,13% YTD/1Y), namun negatif pada 3 tahun (-12,96%) dan 5 tahun (-9,92%). Pola ini mengindikasikan adanya siklus volatilitas tinggi dengan periode recovery musiman, kemungkinan dipengaruhi sentimen pemulihan ekonomi China dan stimulus pemerintah.\n\nRoot Cause Hypothesis: Fluktuasi tajam disebabkan oleh kombinasi faktor eksternal (perang dagang, COVID-19, kebijakan pemerintah China) dan internal (rotasi sektor teknologi/konsumsi).\n\nImplications: Investor harus siap menghadapi drawdown signifikan, namun juga peluang rebound cepat. Actionable insight: gunakan strategi dollar-cost averaging untuk mengurangi risiko timing. (Confidence: 0.8)",
+      "source_units": ["TABEL 2", "paragraph_16"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Yield Obligasi Negara: Spread Kupon di Atas Suku Bunga Deposito",
+      "content": "Deskripsi: FR0100 (kupon 6,625%, yield 6,89%) dan FR0106 (kupon 7,125%, yield 7,14%) consistently menawarkan yield di atas rata-rata bunga deposito (BI Rate 5,75%). Pola ini menunjukkan premi risiko obligasi negara tetap menarik bagi investor moderat.\n\nRoot Cause Hypothesis: Spread ini didorong oleh kebutuhan pemerintah menjaga daya tarik obligasi di tengah inflasi dan volatilitas nilai tukar.\n\nImplications: Investor dapat mengunci yield tinggi sebelum tren penurunan suku bunga lebih lanjut. Actionable insight: prioritaskan pembelian obligasi sebelum BI Rate turun lagi. (Confidence: 0.85)",
+      "source_units": ["TABEL 3", "paragraph_17"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Anomali Kinerja Obligasi: Harga Turun di Q4 2024, Rebound Awal 2025",
+      "content": "Deskripsi: Grafik harga FR0100 menunjukkan penurunan sejak Oktober 2024, diikuti rebound pada awal 2025. Anomali ini tidak lazim, mengingat tren biasanya stabil menjelang jatuh tempo.\n\nRoot Cause Hypothesis: Penurunan harga akibat lambatnya penurunan suku bunga BI dan pelemahan Rupiah terhadap USD di akhir 2024. Rebound terjadi setelah BI Rate turun pada Januari 2025.\n\nImplications: Investor yang membeli di akhir 2024 mengalami capital loss sementara, namun yang masuk awal 2025 mendapat capital gain. Actionable insight: timing pembelian obligasi sangat krusial di tengah perubahan suku bunga. (Confidence: 0.8)",
+      "source_units": ["paragraph_18", "TABEL 3"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Tersirat dari Tabel Kinerja Reksa Dana BNP Paribas vs Tolak Ukur",
+      "content": "Metrik utama: Return 1 bulan, YTD, 1 tahun, 3 tahun, 5 tahun. Pola: BNP Paribas mengungguli benchmark (Tolak Ukur) di 1 bulan (1,29% vs 1,30%), YTD dan 1 tahun (8,13% vs 7,91%), namun underperform di 3 dan 5 tahun (-12,96% vs -6,55%, -9,92% vs -4,68%). Insight tersirat: Manajer investasi mampu menangkap momentum jangka pendek, namun strategi jangka panjang masih kalah dari benchmark. Derived metric: selisih underperformance 3 tahun = -6,41%, 5 tahun = -5,24%. Implikasi: perlu evaluasi strategi jangka panjang dan rotasi sektor. (Confidence: 0.88)",
+      "source_units": ["TABEL 2"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Analisis Komposisi Portofolio 5 Besar Saham BNP Paribas Greater China Equity Syariah",
+      "content": "Metrik utama: 5 besar saham didominasi sektor teknologi dan konsumsi (TSMC, Alibaba, Meituan, Xiaomi, PDD Holdings). Pola: portofolio overweight pada sektor growth dan teknologi. Insight tersirat: portofolio sangat sensitif terhadap sentimen sektor teknologi China, sehingga volatilitas tinggi. Implikasi: jika sektor teknologi outperform, return akan sangat positif, namun downside risk juga besar jika terjadi regulatory crackdown atau rotasi sektor. Actionable insight: diversifikasi sektor perlu dipertimbangkan. (Confidence: 0.85)",
+      "source_units": ["TABEL 1"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Perbandingan Karakteristik Obligasi FR0100 vs FR0106",
+      "content": "Metrik utama: FR0100 (tenor 10 tahun, kupon 6,625%, yield 6,89%), FR0106 (tenor 15 tahun, kupon 7,125%, yield 7,14%). Pola: FR0106 menawarkan kupon dan yield lebih tinggi, namun dengan risiko durasi lebih panjang. Insight tersirat: investor dengan horizon panjang dapat mengunci yield lebih tinggi di FR0106, namun risiko fluktuasi harga lebih besar jika suku bunga naik. Implikasi: untuk investor moderat, FR0100 lebih sesuai, sedangkan FR0106 cocok untuk investor dengan horizon investasi >10 tahun. (Confidence: 0.9)",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Kinerja Reksa Dana BNP Paribas vs Benchmark dalam 5 Tahun",
+      "content": "Tabel menunjukkan BNP Paribas Greater China Equity Syariah USD underperform terhadap benchmark (Tolak Ukur) dalam 3 dan 5 tahun terakhir. Selisih return 3 tahun: -12,96% (BNP) vs -6,55% (benchmark); 5 tahun: -9,92% (BNP) vs -4,68% (benchmark). Keunggulan BNP hanya pada horizon 1 tahun (+8,13% vs +7,91%). Keputusan: investor jangka panjang perlu mempertimbangkan switching ke produk dengan strategi lebih defensif atau melakukan evaluasi manajer investasi. Implikasi: potensi perbaikan jika strategi diubah, namun risiko underperformance tetap ada. (Confidence: 0.87)",
+      "source_units": ["TABEL 2"],
+      "confidence": 0.87,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Analisis Komparatif Obligasi FR0100 vs FR0106 untuk Strategi Yield dan Durasi",
+      "content": "FR0100 (tenor 10 tahun, yield 6,89%) vs FR0106 (tenor 15 tahun, yield 7,14%): FR0106 menawarkan yield lebih tinggi (+0,25%) namun dengan risiko durasi lebih panjang. Keunggulan FR0100: lebih likuid dan risiko harga lebih rendah jika suku bunga naik. Keputusan: investor dengan horizon menengah sebaiknya memilih FR0100, sedangkan yang mengincar yield maksimal dan siap menahan fluktuasi harga dapat memilih FR0106. Implikasi: spread yield relatif kecil, sehingga trade-off utama adalah antara likuiditas dan potensi capital gain. (Confidence: 0.9)",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Risiko dan Return Reksa Dana Saham China vs Obligasi Negara",
+      "content": "Reksa dana saham China menawarkan potensi return tinggi (8,13% YTD/1Y), namun dengan volatilitas dan risiko drawdown besar (return 3Y/5Y negatif). Obligasi negara menawarkan yield stabil (6,89%-7,14%) dengan risiko lebih rendah. Keputusan: investor dengan profil agresif dapat overweight pada saham China, sedangkan investor konservatif sebaiknya fokus pada obligasi. Implikasi: kombinasi keduanya dapat mengoptimalkan risk-adjusted return portofolio. (Confidence: 0.88)",
+      "source_units": ["TABEL 2", "TABEL 3"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Yield Obligasi Negara Berdasarkan Kupon dan Harga Pasar",
+      "content": "Analisis data: FR0100 (kupon 6,625%, yield 6,89%, harga sekitar 101-102), FR0106 (kupon 7,125%, yield 7,14%, harga sekitar 99-100). Formula tersembunyi: Yield = Kupon / Harga Pasar × 100%. Contoh: FR0100, Kupon = 6,625%, Harga = 101, Yield = 6,625 / 101 × 100% ≈ 6,56%. Namun yield aktual lebih tinggi, mengindikasikan perhitungan yield to maturity (YTM) yang memperhitungkan sisa tenor dan capital gain/loss. Formula umum: YTM = [Kupon + (Nilai Pari - Harga Pasar)/Tenor] / [(Nilai Pari + Harga Pasar)/2]. Asumsi: tidak ada default, pembayaran kupon tepat waktu. Limitasi: yield aktual dipengaruhi biaya transaksi dan pajak. (Confidence: 0.85)",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Penyesuaian Return Reksa Dana Saham China Akibat Fluktuasi Nilai Tukar",
+      "content": "Return investor domestik = Return USD × (1 + % perubahan nilai tukar Rupiah terhadap USD). Contoh: Return reksa dana 8,13% (USD), jika Rupiah melemah 5%, return dalam Rupiah = 1,0813 × 1,05 - 1 = 13,54%. Formula umum: Return IDR = (1 + Return USD) × (1 + % perubahan kurs) - 1. Asumsi: tidak ada biaya konversi atau hedging. Limitasi: volatilitas kurs tinggi dapat memperbesar deviasi return aktual. (Confidence: 0.8)",
+      "source_units": ["TABEL 2", "paragraph_19"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Penentuan Capital Gain Obligasi Negara Berdasarkan Harga Pasar",
+      "content": "Capital Gain = (Harga Jual - Harga Beli) × Jumlah Unit. Contoh: investor membeli FR0100 di harga 99, menjual di harga 102, capital gain per unit = 102 - 99 = 3. Jika 1.000 unit, total gain = 3.000. Formula umum: Capital Gain = (P_harga_jual - P_harga_beli) × N_unit. Asumsi: tidak ada biaya transaksi atau pajak. Limitasi: harga pasar fluktuatif, potensi capital loss jika harga turun. (Confidence: 0.85)",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Return Reksa Dana Saham China 3 Tahun ke Depan (Multi-Skenario)",
+      "content": "Best Case: Return tahunan rata-rata 10% (asumsi pemulihan ekonomi China kuat, stimulus pemerintah, sektor teknologi rebound), proyeksi 3 tahun: +33,1% (CAGR 10%). Most Likely: Return tahunan 7% (asumsi pertumbuhan moderat, volatilitas tetap tinggi), proyeksi 3 tahun: +22,5% (CAGR 7%). Worst Case: Return tahunan 3% (asumsi tekanan eksternal, regulatory crackdown), proyeksi 3 tahun: +9,3% (CAGR 3%). Metodologi: extrapolasi CAGR dari data historis dan outlook makro. Confidence: 0.7 (extrapolation beyond 1Y data, asumsi tidak ada krisis besar). Triggers: Best (stimulus besar), Worst (krisis geopolitik).",
+      "source_units": ["TABEL 2", "paragraph_20"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Harga Obligasi Negara FR0100 dalam 2 Tahun (Multi-Skenario)",
+      "content": "Best Case: Suku bunga BI turun lagi ke 5,25%, harga FR0100 naik ke 104 (capital gain ~2%). Most Likely: Suku bunga stabil di 5,75%, harga FR0100 bertahan di 102-103. Worst Case: Suku bunga naik ke 6,25% akibat tekanan eksternal, harga FR0100 turun ke 98-99 (capital loss ~3%). Metodologi: simulasi dampak perubahan suku bunga pada harga obligasi. Confidence: 0.75 (asumsi volatilitas pasar moderat, tidak ada default). Triggers: Best (penurunan inflasi), Worst (depresiasi Rupiah tajam).",
+      "source_units": ["TABEL 3", "paragraph_21"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Yield Obligasi FR0106 5 Tahun ke Depan (Multi-Skenario)",
+      "content": "Best Case: Yield turun ke 6,5% (harga naik ke 105, capital gain ~5%), Most Likely: Yield stabil di 7,1% (harga bertahan 99-100), Worst Case: Yield naik ke 8% (harga turun ke 95, capital loss ~5%). Asumsi: suku bunga global stabil/turun, inflasi terkendali. Confidence: 0.7 (asumsi tidak ada shock besar). Triggers: Best (penurunan BI Rate), Worst (kenaikan suku bunga global).",
+      "source_units": ["TABEL 3", "paragraph_22"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Return Reksa Dana Saham China Berdasarkan Pola Historis",
+      "content": "Analisis trend: Return 1 tahun terakhir positif (+8,13%), namun 3 dan 5 tahun negatif. Turning point terjadi pada 2024 seiring pemulihan ekonomi China. Forecast: return 1 tahun ke depan diperkirakan di kisaran 6-10% (range estimate), dengan confidence interval ±3%. Asumsi: stimulus pemerintah China berlanjut, tidak ada krisis besar. Key risk: volatilitas tetap tinggi, potensi drawdown masih ada. Actionable: gunakan strategi rebalancing dan monitoring makroekonomi secara ketat. (Confidence: 0.75)",
+      "source_units": ["TABEL 2", "paragraph_23"],
+      "confidence": 0.75,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Yield Obligasi Negara di Tengah Penurunan BI Rate",
+      "content": "Trend: Yield obligasi negara (FR0100/FR0106) cenderung turun seiring penurunan BI Rate (dari 6% ke 5,75%). Forecast: yield 1 tahun ke depan diperkirakan turun ke 6,5%-6,8% untuk FR0100 dan 6,8%-7% untuk FR0106, dengan confidence interval ±0,2%. Asumsi: BI Rate turun 1-2 kali lagi, inflasi terkendali. Actionable: investor sebaiknya mengunci yield saat ini sebelum tren turun berlanjut. (Confidence: 0.8)",
+      "source_units": ["TABEL 3", "paragraph_24"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Harga Obligasi Negara: Potensi Capital Gain di 2025",
+      "content": "Trend: Harga obligasi negara rebound awal 2025 setelah penurunan Q4 2024. Forecast: harga cenderung naik 1-2% selama 2025 jika BI Rate turun lagi dan inflasi stabil. Turning point: awal 2025, saat BI Rate turun. Actionable: timing pembelian obligasi sangat menentukan potensi capital gain. (Confidence: 0.78)",
+      "source_units": ["TABEL 3", "paragraph_25"],
+      "confidence": 0.78,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Suku Bunga BI Naik 0,5% di Semester II 2025",
+      "content": "Deskripsi: Jika BI Rate naik dari 5,75% ke 6,25%, yield obligasi baru akan naik, harga obligasi existing (FR0100/FR0106) turun 2-3%. Outcome: investor yang membeli obligasi sekarang akan mengalami capital loss jika harus menjual sebelum jatuh tempo. Mitigasi: hold to maturity untuk tetap dapat kupon penuh. Probability: rendah (20%), karena tren saat ini penurunan suku bunga. Early warning: inflasi naik, Rupiah melemah tajam.",
+      "source_units": ["TABEL 3", "paragraph_26"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Nilai Tukar Rupiah Menguat 5% terhadap USD",
+      "content": "Deskripsi: Jika Rupiah menguat 5% terhadap USD, return reksa dana saham China (denominasi USD) dalam Rupiah akan turun ~5%. Outcome: investor domestik mengalami penurunan return meski return USD tetap positif. Mitigasi: gunakan instrumen hedging atau diversifikasi ke aset berbasis Rupiah. Probability: sedang (40%), tergantung kebijakan BI dan arus modal asing. Early warning: surplus neraca perdagangan, intervensi BI.",
+      "source_units": ["TABEL 2", "paragraph_27"],
+      "confidence": 0.75,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Pemulihan Ekonomi China Lebih Lambat dari Proyeksi",
+      "content": "Deskripsi: Jika pemulihan ekonomi China melambat, return reksa dana saham China bisa turun ke 0-3% atau bahkan negatif. Outcome: investor mengalami stagnasi atau kerugian, volatilitas meningkat. Mitigasi: kurangi porsi saham China, tingkatkan alokasi ke obligasi negara. Probability: sedang (35%), tergantung stimulus pemerintah China. Early warning: data PMI, penjualan ritel, ekspor China stagnan.",
+      "source_units": ["TABEL 2", "paragraph_28"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Utama: Volatilitas Pasar Saham China dan Dampaknya pada Return Reksa Dana",
+      "content": "Deskripsi: Volatilitas tinggi di pasar saham China akibat kebijakan ekonomi/politik, perang dagang, atau regulatory crackdown dapat menyebabkan drawdown besar pada reksa dana. Likelihood: Medium (40%), Impact: High (potensi return negatif >10% dalam 1 tahun). Risk Score: 8/10. Root cause: ketergantungan pada sektor teknologi dan sentimen makro China. Mitigasi: diversifikasi sektor dan alokasi ke obligasi. Contingency: rebalancing portofolio jika drawdown >10%. Early warning: perubahan regulasi, penurunan tajam indeks saham China.",
+      "source_units": ["TABEL 1", "TABEL 2"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Nilai Tukar pada Investasi Reksa Dana Berdenominasi USD",
+      "content": "Deskripsi: Fluktuasi nilai tukar Rupiah terhadap USD dapat memperbesar deviasi return aktual reksa dana. Likelihood: High (60%), Impact: Medium (return deviasi ±5-10%). Risk Score: 7/10. Root cause: volatilitas pasar valas, arus modal global. Mitigasi: gunakan instrumen hedging. Contingency: switching ke aset berbasis Rupiah jika Rupiah menguat tajam. Early warning: volatilitas kurs >2% dalam 1 bulan.",
+      "source_units": ["TABEL 2"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Likuiditas Obligasi Negara di Pasar Sekunder",
+      "content": "Deskripsi: Dalam kondisi pasar tidak menentu, obligasi negara (FR0100/FR0106) bisa sulit dijual di pasar sekunder tanpa diskon harga signifikan. Likelihood: Medium (30%), Impact: Medium (capital loss 1-3%). Risk Score: 6/10. Root cause: penurunan permintaan, panic selling. Mitigasi: hold to maturity, pilih obligasi dengan likuiditas tinggi. Contingency: siapkan dana darurat di instrumen likuid. Early warning: spread bid-ask melebar, volume transaksi turun.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.75,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

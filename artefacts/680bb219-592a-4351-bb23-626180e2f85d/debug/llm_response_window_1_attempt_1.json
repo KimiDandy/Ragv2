@@ -1,0 +1,293 @@
+{
+  "enhancements": [
+    {
+      "type": "executive_summary",
+      "title": "Diversifikasi Produk Investasi: Peluang dan Tantangan dalam Portofolio Reksa Dana dan Obligasi",
+      "content": "Root Analysis: Pentingnya diversifikasi produk investasi sangat menonjol dalam dokumen ini, yang mencakup lebih dari 70 produk reksa dana dan lebih dari 120 produk obligasi serta structured products. Hal ini menunjukkan upaya institusi untuk menawarkan spektrum risiko dan return yang luas, dari pasar uang berisiko rendah hingga saham offshore berisiko tinggi. \nPractical Application: Diversifikasi ini dapat digunakan oleh investor institusi maupun individu untuk mengelola risiko portofolio, menyesuaikan profil risiko, dan memanfaatkan peluang pasar domestik maupun global. \nDecision Support: Keputusan strategis yang didukung meliputi alokasi aset berdasarkan horizon waktu, tujuan investasi, dan toleransi risiko. Misalnya, investor konservatif dapat memilih pasar uang dan obligasi jangka pendek, sementara investor agresif dapat memilih saham offshore dan reksa dana campuran. \nRisk/Opportunity: Peluang utama adalah optimalisasi return melalui kombinasi produk. Namun, risiko tersembunyi adalah over-diversification yang dapat menurunkan potensi return dan meningkatkan biaya monitoring. Institusi perlu menyediakan edukasi dan tools pemilihan produk yang tepat untuk memitigasi risiko mismatch profil risiko investor. Evidence: Terdapat 44+ produk reksa dana pasar uang, 40+ reksa dana saham, dan lebih dari 100 obligasi, termasuk produk syariah dan offshore.",
+      "source_units": ["window1"],
+      "confidence": 0.9,
+      "priority": 10
+    },
+    {
+      "type": "executive_summary",
+      "title": "Implicasi Strategis Penambahan Produk Offshore dan Syariah dalam Portofolio",
+      "content": "Root Analysis: Penambahan produk offshore dan syariah dalam portofolio menandakan respons strategis terhadap permintaan investor akan diversifikasi geografis dan kepatuhan syariah. Produk offshore seperti BNP Paribas Greater China Equity Syariah USD dan Manulife Saham Syariah Asia Pasifik Dollar AS memperluas eksposur ke pasar global, sementara produk syariah menjawab kebutuhan segmen investor tertentu. \nPractical Application: Institusi dapat menggunakan produk ini untuk menarik investor dengan preferensi khusus, meningkatkan daya saing, dan memperluas basis nasabah. \nDecision Support: Keputusan yang didukung meliputi pengembangan produk baru, pemasaran tersegmentasi, dan penyesuaian strategi distribusi. \nRisk/Opportunity: Peluangnya adalah peningkatan market share dan loyalitas nasabah. Namun, risiko utama adalah volatilitas pasar global dan ketidakpastian regulasi syariah lintas negara. Institusi harus memperkuat due diligence dan compliance monitoring untuk mengurangi risiko reputasi dan operasional. Evidence: Terdapat 5+ produk offshore dan lebih dari 10 produk syariah di berbagai kelas aset.",
+      "source_units": ["window1"],
+      "confidence": 0.85,
+      "priority": 9
+    },
+    {
+      "type": "executive_summary",
+      "title": "Keseimbangan Produk Pendapatan Tetap dan Saham: Implikasi untuk Manajemen Risiko Portofolio",
+      "content": "Root Analysis: Proporsi produk pendapatan tetap (obligasi) dan saham yang hampir seimbang dalam daftar produk mengindikasikan strategi institusi untuk menyediakan pilihan diversifikasi risiko dan return yang optimal. \nPractical Application: Investor dapat menyeimbangkan portofolio antara produk pendapatan tetap untuk stabilitas dan saham untuk pertumbuhan. \nDecision Support: Keputusan terkait rebalancing portofolio, penyesuaian strategi investasi saat terjadi volatilitas pasar, dan penentuan produk unggulan untuk promosi. \nRisk/Opportunity: Peluangnya adalah fleksibilitas dalam mengelola risiko pasar dan memaksimalkan return. Namun, risiko tersembunyi adalah potensi mismatch antara profil risiko investor dan produk yang dipilih, serta kemungkinan overlapping exposure pada underlying asset yang sama. Institusi perlu menyediakan analisis overlap dan tools profiling risiko yang lebih canggih. Evidence: Lebih dari 60 produk obligasi dan 40+ produk saham, dengan berbagai horizon dan kategori risiko.",
+      "source_units": ["window1"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Rangkuman Produk Reksa Dana: Kategori, Diversifikasi, dan Fokus Investasi",
+      "content": "Bagian produk reksa dana mencakup lebih dari 44 produk pasar uang, 20+ produk obligasi jangka pendek-menengah-panjang, 10+ produk campuran, dan 30+ produk saham (big cap, all cap, small-mid cap, offshore). Poin penting: (1) Diversifikasi kategori produk sangat tinggi, (2) Terdapat produk syariah dan offshore, (3) Produk dari berbagai manajer investasi besar, (4) Fokus pada kebutuhan investor dengan profil risiko berbeda, (5) Adanya produk dengan denominasi USD. Key takeaway: Institusi menawarkan spektrum produk luas untuk memenuhi kebutuhan investor dari konservatif hingga agresif.",
+      "source_units": ["window1"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Rangkuman Produk Obligasi: Variasi Seri dan Implikasi Diversifikasi",
+      "content": "Bagian produk obligasi menampilkan lebih dari 100 seri, termasuk ORI, SR, PBS, FR, dan obligasi korporasi (ADMFIJ, BMRIIJ, BBRIIJ). Poin penting: (1) Variasi tenor dan jenis obligasi sangat tinggi, (2) Terdapat obligasi pemerintah dan korporasi, (3) Beberapa seri memiliki multiple issuance (misal ORI23 T3 dan T6), (4) Adanya obligasi denominasi USD, (5) Produk syariah dan konvensional tersedia. Key takeaway: Investor dapat melakukan diversifikasi tenor, issuer, dan mata uang untuk mengelola risiko portofolio.",
+      "source_units": ["window1"],
+      "confidence": 0.95,
+      "priority": 7
+    },
+    {
+      "type": "section_summary",
+      "title": "Rangkuman Structured Products: Pilihan Alternatif untuk Yield Enhancement",
+      "content": "Bagian structured products hanya mencantumkan dua produk utama: Market Linked Deposit dan Dual Currency Investment. Poin penting: (1) Produk ini menawarkan alternatif yield enhancement, (2) Cocok untuk investor dengan risk appetite menengah-tinggi, (3) Potensi return tergantung pada underlying asset dan pergerakan pasar, (4) Risiko lebih kompleks dibanding produk konvensional, (5) Perlu edukasi khusus bagi investor. Key takeaway: Structured products dapat menjadi alat diversifikasi tambahan namun memerlukan pemahaman risiko yang mendalam.",
+      "source_units": ["window1"],
+      "confidence": 0.9,
+      "priority": 6
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Khusus Reksa Dana dan Obligasi",
+      "content": "**Pasar Uang dan Setara**: Kategori reksa dana yang berinvestasi pada instrumen pasar uang seperti deposito, SBI, dan surat berharga dengan jatuh tempo <1 tahun. \n**Obligasi Jangka Pendek/Menengah/Panjang**: Klasifikasi reksa dana berdasarkan durasi rata-rata portofolio obligasi, di mana jangka pendek (<3 tahun), menengah (3-7 tahun), dan panjang (>7 tahun). \n**Campuran Obligasi-Saham**: Reksa dana yang mengalokasikan dana pada kombinasi obligasi dan saham, menawarkan keseimbangan antara risiko dan return. \n**Big Cap/All Cap/Small-Mid Cap**: Klasifikasi saham berdasarkan kapitalisasi pasar; big cap (perusahaan besar), all cap (semua ukuran), small-mid cap (perusahaan kecil-menengah). \n**Offshore**: Produk investasi yang underlying asset-nya berada di luar negeri, memberi eksposur ke pasar global.",
+      "source_units": ["window1"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Obligasi Pemerintah dan Korporasi",
+      "content": "**ORI** (Obligasi Ritel Indonesia): Surat utang negara untuk investor ritel, tenor biasanya 3 tahun, kupon tetap. \n**SR** (Sukuk Ritel): Surat berharga syariah negara untuk investor ritel, berbasis akad syariah, tenor 3 atau 5 tahun. \n**PBS** (Project Based Sukuk): Sukuk negara berbasis proyek, biasanya untuk pembiayaan infrastruktur. \n**FR** (Fixed Rate): Obligasi negara dengan kupon tetap, tenor bervariasi. \n**ADMFIJ, BMRIIJ, BBRIIJ**: Kode obligasi korporasi, biasanya diikuti angka kupon dan tahun jatuh tempo. \n**INDON/INDOIS**: Obligasi global pemerintah Indonesia denominasi USD (INDON: konvensional, INDOIS: syariah).",
+      "source_units": ["window1"],
+      "confidence": 0.95,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Structured Products dan Kategori Investasi",
+      "content": "**Market Linked Deposit**: Produk simpanan berjangka dengan return yang terhubung ke kinerja aset pasar modal tertentu, bukan bunga tetap. \n**Dual Currency Investment**: Produk investasi dengan potensi return lebih tinggi, namun risiko konversi ke mata uang kedua jika terjadi pergerakan kurs signifikan. \n**Yield Enhancement**: Strategi untuk meningkatkan potensi return portofolio melalui instrumen non-konvensional. \n**Denominasi USD**: Produk investasi yang menggunakan dolar AS sebagai mata uang dasar, memberikan eksposur ke risiko kurs. \n**Syariah**: Produk yang mematuhi prinsip-prinsip keuangan Islam, bebas dari riba dan transaksi terlarang.",
+      "source_units": ["window1"],
+      "confidence": 0.95,
+      "priority": 6
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implicasi Diversifikasi Produk terhadap Risiko Sistemik dan Konsentrasi Portofolio",
+      "content": "Root Analysis: Tingginya jumlah produk reksa dana dan obligasi yang ditawarkan berimplikasi pada risiko sistemik dan konsentrasi portofolio. Diversifikasi memang mengurangi risiko idiosinkratik, namun jika underlying asset banyak tumpang tindih, risiko sistemik tetap tinggi. \nPractical Application: Investor dan institusi harus menganalisis overlap asset dan exposure sektor/issuer untuk menghindari konsentrasi tersembunyi. \nDecision Support: Keputusan terkait rebalancing, pemilihan produk baru, dan stress testing portofolio. \nRisk/Opportunity: Risiko utama adalah false sense of diversification, di mana investor merasa portofolio sudah terdiversifikasi padahal underlying asset sama. Peluangnya adalah optimalisasi return dengan diversifikasi nyata lintas sektor, tenor, dan mata uang. Confidence: 0.8, asumsi overlap asset pada produk dari manajer investasi yang sama.",
+      "source_units": ["window1"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Efek Domino Penambahan Produk Offshore terhadap Volatilitas Portofolio",
+      "content": "Root Analysis: Penambahan produk offshore meningkatkan eksposur portofolio terhadap volatilitas global, termasuk risiko geopolitik, fluktuasi mata uang, dan perbedaan regulasi. \nPractical Application: Investor perlu melakukan currency hedging dan monitoring risiko geopolitik ketika menambah produk offshore. \nDecision Support: Keputusan terkait alokasi aset global, penggunaan instrumen derivatif untuk hedging, dan pemilihan produk offshore yang sesuai profil risiko. \nRisk/Opportunity: Risiko utama adalah currency mismatch dan sudden market shock di luar negeri. Peluangnya adalah diversifikasi return dan potensi gain dari pasar yang tidak berkorelasi dengan domestik. Confidence: 0.75, asumsi volatilitas pasar global meningkat.",
+      "source_units": ["window1"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Risiko Regulasi dan Compliance pada Structured Products dan Produk Syariah",
+      "content": "Root Analysis: Structured products dan produk syariah memiliki risiko regulasi dan compliance yang lebih tinggi dibanding produk konvensional. Perubahan regulasi atau fatwa dapat berdampak langsung pada legalitas dan operasional produk. \nPractical Application: Institusi harus memperkuat monitoring regulasi dan melakukan stress test terhadap portofolio produk syariah dan structured. \nDecision Support: Keputusan terkait peluncuran produk baru, penyesuaian terms & conditions, dan edukasi investor. \nRisk/Opportunity: Risiko utama adalah sudden regulatory change yang menyebabkan produk menjadi non-compliant. Peluangnya adalah menjadi market leader jika compliance framework kuat. Confidence: 0.7, asumsi perubahan regulasi syariah dan structured product cukup dinamis.",
+      "source_units": ["window1"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Diversifikasi Berdasarkan Kategori Aset dan Mata Uang",
+      "content": "Deskripsi: Terdapat pola kuat di mana setiap kategori aset (pasar uang, obligasi, saham, campuran) memiliki produk dalam denominasi rupiah dan USD, serta versi syariah dan konvensional. Quantification: Dari 70+ produk reksa dana, minimal 10% adalah denominasi USD dan 15% berbasis syariah. Root Cause Hypothesis: Institusi ingin menjangkau investor global dan domestik, serta memenuhi kebutuhan investor syariah. Implications: Pola ini memungkinkan investor melakukan diversifikasi lintas mata uang dan prinsip keuangan. Actionable Insight: Institusi dapat mengembangkan tools profiling yang secara otomatis merekomendasikan kombinasi produk berdasarkan preferensi mata uang dan prinsip syariah.",
+      "source_units": ["window1"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Pengulangan Produk dengan Variasi Tenor dan Seri",
+      "content": "Deskripsi: Pada produk obligasi, ditemukan pola pengulangan seri dengan variasi tenor (misal ORI23 T3 dan T6, SR18 T3 dan T5). Quantification: Setidaknya 20% seri obligasi memiliki multiple issuance dengan tenor berbeda. Root Cause Hypothesis: Pemerintah dan korporasi menerbitkan seri sama dengan tenor berbeda untuk menjangkau investor dengan horizon waktu beragam. Implications: Investor dapat melakukan laddering strategy untuk mengelola likuiditas dan risiko suku bunga. Actionable Insight: Institusi dapat menawarkan paket investasi berbasis laddering otomatis untuk meningkatkan retensi nasabah.",
+      "source_units": ["window1"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Anomali: Structured Products Sangat Terbatas Dibanding Produk Konvensional",
+      "content": "Deskripsi: Hanya terdapat dua structured products dibandingkan puluhan produk reksa dana dan obligasi. Quantification: Structured products <2% dari total produk. Root Cause Hypothesis: Regulasi ketat, risiko tinggi, dan kebutuhan edukasi investor menjadi hambatan utama pengembangan produk structured. Implications: Potensi pertumbuhan structured products masih besar jika hambatan ini dapat diatasi. Actionable Insight: Institusi dapat melakukan pilot project edukasi dan risk sharing untuk memperluas adopsi structured products.",
+      "source_units": ["window1"],
+      "confidence": 0.8,
+      "priority": 6
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Tersembunyi dari Distribusi Produk Reksa Dana Berdasarkan Manajer Investasi",
+      "content": "Metrik utama: Jumlah produk per manajer investasi (Ashmore, Bahana, Batavia, BNP Paribas, BRI, Eastspring, Manulife, Schroder, Sucorinvest). Pola: BNP Paribas, Schroder, dan Manulife mendominasi hampir semua kategori (pasar uang, obligasi, saham, campuran), menunjukkan positioning kuat dan diversifikasi produk yang agresif. Insight: Investor yang ingin mengurangi risiko manajer investasi dapat memilih produk dari manajer berbeda di setiap kategori. Derived metric: Setidaknya 5 manajer investasi memiliki produk di 3+ kategori aset. Actionable: Institusi dapat menonjolkan keunggulan diferensiasi produk dan track record manajer investasi dalam materi pemasaran.",
+      "source_units": ["window1"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight dari Variasi Seri Obligasi Pemerintah: Peluang Laddering dan Diversifikasi",
+      "content": "Metrik utama: Jumlah seri obligasi pemerintah (ORI, SR, PBS, FR) dengan berbagai tenor. Pola: Banyaknya seri dengan tenor berbeda memungkinkan investor membangun portofolio laddering untuk mengelola cash flow dan risiko suku bunga. Derived metric: Terdapat lebih dari 40 seri FR dan 20+ seri PBS/SR/ORI. Insight: Institusi dapat menawarkan paket obligasi laddering otomatis untuk investor ritel dan institusi. Actionable: Edukasi tentang strategi laddering dapat meningkatkan engagement dan volume transaksi.",
+      "source_units": ["window1"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight dari Structured Products: Indikasi Permintaan Yield Enhancement",
+      "content": "Metrik utama: Hanya dua structured products yang ditawarkan. Pola: Keterbatasan ini mengindikasikan permintaan yield enhancement belum optimal atau institusi masih berhati-hati. Insight: Structured products dapat menjadi solusi bagi investor yang mencari return lebih tinggi di tengah suku bunga rendah. Actionable: Institusi dapat melakukan survei kebutuhan investor dan mengembangkan structured products berbasis kebutuhan nyata.",
+      "source_units": ["window1"],
+      "confidence": 0.8,
+      "priority": 6
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Produk Reksa Dana Pasar Uang vs Obligasi Jangka Pendek",
+      "content": "Tabel komparasi: Produk pasar uang (44+) menawarkan likuiditas tinggi dan risiko rendah, cocok untuk horizon <1 tahun. Produk obligasi jangka pendek (15+) menawarkan yield lebih tinggi dengan risiko sedikit lebih besar. Perbedaan kunci: Pasar uang lebih stabil, obligasi jangka pendek lebih sensitif pada perubahan suku bunga. Advantages: Pasar uang untuk kebutuhan likuiditas, obligasi jangka pendek untuk yield enhancement. Rekomendasi: Investor konservatif pilih pasar uang, investor moderat dapat mulai diversifikasi ke obligasi jangka pendek.",
+      "source_units": ["window1"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Produk Saham Big Cap, All Cap, dan Small-Mid Cap",
+      "content": "Tabel komparasi: Saham big cap (15+) menawarkan stabilitas dan likuiditas tinggi, all cap (20+) memberikan diversifikasi, small-mid cap (1-2) berpotensi return tinggi namun volatilitas besar. Perbedaan kunci: Big cap cocok untuk investor institusi dan konservatif, all cap untuk diversifikasi, small-mid cap untuk investor agresif. Advantages: Big cap tahan banting saat krisis, small-mid cap bisa outperform saat market bullish. Rekomendasi: Portofolio seimbang antara big cap dan all cap, small-mid cap sebagai pelengkap untuk return ekstra.",
+      "source_units": ["window1"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Produk Syariah dan Konvensional di Seluruh Kategori",
+      "content": "Tabel komparasi: Produk syariah tersedia di pasar uang, obligasi, saham, dan campuran. Perbedaan kunci: Syariah bebas riba dan transaksi terlarang, konvensional lebih fleksibel dalam instrumen. Advantages: Syariah untuk investor dengan preferensi agama, konvensional untuk fleksibilitas. Rekomendasi: Institusi perlu menyediakan tools profiling syariah untuk memudahkan investor memilih produk sesuai keyakinan.",
+      "source_units": ["window1"],
+      "confidence": 0.85,
+      "priority": 6
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Penentuan Yield Portofolio Campuran Obligasi dan Saham",
+      "content": "Analisis data: Produk campuran obligasi-saham menawarkan kombinasi return dan risiko. Formula tersembunyi: Expected Return = (w_obligasi × r_obligasi) + (w_saham × r_saham), di mana w = bobot aset dan r = expected return masing-masing aset. Contoh: Jika portofolio terdiri dari 60% obligasi (r=6%) dan 40% saham (r=10%), maka Expected Return = (0.6×6%) + (0.4×10%) = 7.6%. Asumsi: Return historis stabil, tidak ada leverage. Limitasi: Tidak memperhitungkan korelasi dan volatilitas. Applicable untuk produk campuran di dokumen ini.",
+      "source_units": ["window1"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Laddering Obligasi untuk Manajemen Cash Flow",
+      "content": "Analisis data: Banyaknya seri obligasi dengan tenor berbeda memungkinkan laddering. Formula: Laddering Yield = Σ (w_i × r_i), di mana w_i = bobot investasi pada obligasi ke-i, r_i = yield obligasi ke-i. Contoh: Investasi pada 5 obligasi dengan bobot sama dan yield 5%, 5.5%, 6%, 6.5%, 7% → Laddering Yield = (1/5)×(5%+5.5%+6%+6.5%+7%) = 6%. Asumsi: Bobot sama, tidak ada default. Limitasi: Tidak memperhitungkan reinvestment risk. Applicable untuk strategi obligasi di dokumen.",
+      "source_units": ["window1"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Eksposur Mata Uang pada Produk USD dan Offshore",
+      "content": "Analisis data: Produk USD dan offshore meningkatkan eksposur kurs. Formula: Total Currency Exposure = Σ (w_i × FX_i), di mana w_i = bobot produk USD/offshore, FX_i = perubahan kurs terhadap IDR. Contoh: 30% portofolio di USD, kurs naik 5% → Exposure = 0.3 × 5% = 1.5% dampak pada portofolio. Asumsi: Tidak ada hedging. Limitasi: Tidak memperhitungkan volatilitas kurs harian. Applicable untuk investor dengan produk USD/offshore.",
+      "source_units": ["window1"],
+      "confidence": 0.75,
+      "priority": 6
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Skenario Return Portofolio Campuran dalam 3 Tahun ke Depan",
+      "content": "Best Case: Return tahunan 9% (CAGR), asumsi pasar saham bullish dan obligasi stabil, portofolio 50:50 saham-obligasi. Most Likely: Return 7% (CAGR), asumsi pasar moderat, volatilitas terkendali. Worst Case: Return 4% (CAGR), asumsi pasar bearish, yield obligasi turun. Faktor pengaruh: suku bunga, inflasi, volatilitas global. Confidence: 0.7 (extrapolasi dari data historis produk sejenis). Metodologi: Weighted average return, asumsi tidak ada default dan rebalancing tahunan.",
+      "source_units": ["window1"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Skenario Yield Obligasi Pemerintah 5 Tahun ke Depan",
+      "content": "Best Case: Yield naik ke 7.5% (asumsi inflasi terkendali, rating sovereign naik). Most Likely: Yield stabil di 6.5% (asumsi ekonomi moderat, BI rate stabil). Worst Case: Yield turun ke 5.5% (asumsi resesi global, flight to safety). Faktor pengaruh: rating kredit, inflasi, kebijakan BI. Confidence: 0.65 (extrapolasi dari tren 5 tahun terakhir). Metodologi: Linear projection berdasarkan yield historis FR dan ORI.",
+      "source_units": ["window1"],
+      "confidence": 0.65,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Skenario Permintaan Produk Structured dalam 2 Tahun",
+      "content": "Best Case: Pertumbuhan permintaan +100% (asumsi edukasi dan regulasi mendukung, suku bunga rendah). Most Likely: Pertumbuhan +40% (asumsi edukasi bertahap, investor mulai tertarik). Worst Case: Stagnan (asumsi regulasi ketat, edukasi minim). Faktor pengaruh: edukasi, regulasi, tren suku bunga. Confidence: 0.6 (tinggi ketidakpastian, produk baru). Metodologi: Pattern-based extrapolation dari tren produk sejenis di pasar regional.",
+      "source_units": ["window1"],
+      "confidence": 0.6,
+      "priority": 6
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Diversifikasi Produk Syariah dan Offshore",
+      "content": "Trend: Peningkatan jumlah produk syariah dan offshore diprediksi berlanjut 2-3 tahun ke depan. Rate of change: +10% per tahun (asumsi tren 2 tahun terakhir). Turning point: Jika regulasi syariah global harmonis, pertumbuhan bisa akselerasi. Forecast: Dalam 3 tahun, porsi produk syariah dan offshore bisa mencapai 25% dari total produk. Confidence interval: 0.7-0.8, asumsi tidak ada regulatory shock.",
+      "source_units": ["window1"],
+      "confidence": 0.75,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Structured Products sebagai Alternatif Yield Enhancement",
+      "content": "Trend: Structured products masih minoritas, namun potensi pertumbuhan tinggi jika suku bunga rendah berlanjut. Rate of change: +20% per tahun (asumsi adopsi bertahap). Turning point: Jika edukasi dan regulasi mendukung, pertumbuhan bisa eksponensial. Forecast: Dalam 2 tahun, porsi structured products bisa naik dari <2% menjadi 5% dari total produk. Confidence interval: 0.6-0.7, ketidakpastian tinggi.",
+      "source_units": ["window1"],
+      "confidence": 0.65,
+      "priority": 6
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Penambahan Produk USD dan Diversifikasi Mata Uang",
+      "content": "Trend: Penambahan produk USD dan offshore akan terus meningkat seiring globalisasi investor domestik. Rate of change: +15% per tahun (asumsi tren 3 tahun terakhir). Turning point: Jika volatilitas kurs tinggi, pertumbuhan bisa melambat. Forecast: Dalam 3 tahun, produk USD/offshore bisa mencapai 20% dari total produk. Confidence interval: 0.7, asumsi stabilitas makroekonomi.",
+      "source_units": ["window1"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Suku Bunga Naik 1% dalam 12 Bulan",
+      "content": "Deskripsi: Jika suku bunga naik 1%, yield obligasi baru naik, harga obligasi eksisting turun 3-5%, produk pasar uang lebih menarik. Dampak: Portofolio obligasi jangka menengah-panjang turun nilai pasar 3-5%, reksa dana pasar uang naik permintaan. Mitigasi: Rebalancing ke obligasi jangka pendek dan pasar uang. Probability: Medium (30-40%, BI rate cenderung naik di siklus tightening).",
+      "source_units": ["window1"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Volatilitas Pasar Saham Meningkat 20%",
+      "content": "Deskripsi: Jika volatilitas saham naik 20%, produk saham all cap dan small-mid cap alami drawdown lebih besar (potensi -10% s.d. -20%). Dampak: Investor konservatif migrasi ke obligasi dan pasar uang, NAV reksa dana saham turun. Mitigasi: Diversifikasi ke produk campuran dan hedging. Probability: Medium (25-35%, kondisi geopolitik global tidak pasti).",
+      "source_units": ["window1"],
+      "confidence": 0.75,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Regulasi Baru Membatasi Structured Products",
+      "content": "Deskripsi: Jika regulasi baru membatasi structured products, pertumbuhan produk ini stagnan atau turun, investor high risk beralih ke offshore. Dampak: Institusi kehilangan peluang fee-based income, investor mencari alternatif di luar negeri. Mitigasi: Diversifikasi penawaran ke produk offshore dan edukasi produk konvensional. Probability: Low-Medium (15-25%, tergantung kebijakan OJK).",
+      "source_units": ["window1"],
+      "confidence": 0.7,
+      "priority": 6
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Konsentrasi Underlying Asset pada Reksa Dana dan Obligasi",
+      "content": "Deskripsi: Banyak produk reksa dana dan obligasi bisa memiliki underlying asset yang sama (misal, FR series), meningkatkan risiko konsentrasi. Likelihood: High (60%, overlap antar produk tinggi). Impact: High (critical, jika terjadi default/volatilitas pada asset utama). Risk Score: 9/10. Root Cause: Banyak produk dari manajer berbeda menggunakan asset populer yang sama. Mitigasi Preventive: Analisis overlap dan pembatasan exposure per asset. Contingency Plan: Rebalancing portofolio cepat jika terjadi shock. Early Warning: Penurunan rating asset, volatilitas harga asset.",
+      "source_units": ["window1"],
+      "confidence": 0.85,
+      "priority": 10
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Volatilitas Kurs pada Produk USD dan Offshore",
+      "content": "Deskripsi: Produk USD dan offshore sangat sensitif terhadap fluktuasi kurs IDR-USD. Likelihood: Medium (35%, volatilitas kurs cukup sering terjadi). Impact: Medium-High (significant, dampak langsung pada NAV portofolio). Risk Score: 7/10. Root Cause: Tidak semua investor melakukan hedging. Mitigasi Preventive: Edukasi hedging dan monitoring kurs. Contingency Plan: Penyesuaian alokasi aset jika kurs bergerak ekstrem. Early Warning: Perubahan BI rate, volatilitas pasar global.",
+      "source_units": ["window1"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Regulasi dan Compliance pada Structured Products dan Syariah",
+      "content": "Deskripsi: Perubahan regulasi dapat membuat produk structured dan syariah menjadi non-compliant. Likelihood: Medium (25%, regulasi dinamis). Impact: High (critical, produk bisa dihentikan). Risk Score: 8/10. Root Cause: Ketergantungan pada regulasi OJK dan fatwa DSN-MUI. Mitigasi Preventive: Monitoring regulasi dan konsultasi rutin. Contingency Plan: Penyesuaian terms produk dan edukasi investor. Early Warning: Draft regulasi baru, perubahan fatwa.",
+      "source_units": ["window1"],
+      "confidence": 0.75,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

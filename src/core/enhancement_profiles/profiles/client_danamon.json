@@ -7,14 +7,14 @@
   "enhancement_types": {
     "_comment_synthesis": "=== Synthesis & Summary ===",
     "executive_summary": 1,
-    "section_summary": 0,
+    "section_summary": 1,
     "glossary": 1,
     
     "_comment_analysis": "=== Analysis & Insights ===",
-    "implication_analysis": 0,
-    "pattern_recognition": 0,
-    "table_insights": 0,
-    "comparative_analysis": 0,
+    "implication_analysis": 1,
+    "pattern_recognition": 1,
+    "table_insights": 1,
+    "comparative_analysis": 1,
     "gap_analysis": 0,
     
     "_comment_financial": "=== Financial Analysis ===",

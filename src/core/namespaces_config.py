@@ -65,6 +65,14 @@ from loguru import logger
 
 NAMESPACES: List[Dict[str, any]] = [
     {
+        "id": "danamon-final-1",
+        "name": "Danamon - Production Final 1",
+        "description": "Production environment final untuk Client Danamon 14 Oktober 2025",
+        "client": "danamon-1",
+        "type": "final",
+        "client_profile": "client_danamon",  # Danamon comprehensive profile
+    },
+    {
         "id": "danamon-final-3",
         "name": "Danamon - Production Final 3",
         "description": "Production environment final untuk Client Danamon 10 Oktober 2025",

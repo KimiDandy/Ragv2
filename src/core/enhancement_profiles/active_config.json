@@ -1,6 +1,6 @@
 {
-  "active_namespace": "danamon-test-1",
-  "last_updated": "2025-10-13T11:00:00",
+  "active_namespace": "danamon-final-1",
+  "last_updated": "2025-10-14T11:00:00",
   "updated_by": "admin",
   
   "_instructions": "Change 'active_namespace' to switch clients. System will load corresponding client profile automatically."

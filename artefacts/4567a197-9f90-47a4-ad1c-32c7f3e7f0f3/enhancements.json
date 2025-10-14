@@ -1,0 +1,974 @@
+[
+  {
+    "enhancement_id": "enh_4567a197_w1_e4d2c60a_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "glossary",
+    "title": "Glossarium Istilah Kunci Produk dan Proses Penawaran",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "**SBR014**: Savings Bond Ritel seri 014, obligasi negara ritel yang ditawarkan kepada individu dengan dua opsi tenor (2 dan 4 tahun) dan kupon floating with floor.\n**Kupon Floating with Floor**: Skema imbal hasil obligasi yang mengikuti suku bunga acuan (BI Rate) namun memiliki batas minimum (floor), sehingga investor terlindungi dari penurunan suku bunga ekstrem.\n**TD Online (TDO)**: Time Deposit Online, produk deposito berjangka yang dapat dibuka dan dikelola secara digital melalui D-Bank Pro.\n**Consent YES/NO**: Status persetujuan nasabah untuk dihubungi dalam campaign telefunding, menentukan script komunikasi yang digunakan.\n**D-Bank Pro**: Platform digital Bank Danamon untuk transaksi perbankan, termasuk pembelian obligasi dan TDO.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.95,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_07ecde21_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "section_summary",
+    "title": "Ringkasan Bagian: Tabel Approval dan Quality Assurance Penawaran Produk",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Tabel 1 dan 2 mendokumentasikan struktur otorisasi script, mulai dari penulis (Kezia Irene Yosefa), PUK/PO (Yvonne Jennifer Agustine L), hingga approval oleh Dika Rianperdani & Kezia Irene Yosefa. QA dilakukan oleh Nurmala Mala, Tiara Amanah Sari, dan Novidiani, dengan Team Leader Yudha Panigraha. Hal ini menegaskan adanya multi-layered control untuk memastikan script sesuai standar dan mengurangi risiko kesalahan komunikasi. Penekanan pada approval dan QA menunjukkan governance yang kuat dalam proses penawaran produk.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.93,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_564854c4_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "glossary",
+    "title": "Glossarium Istilah Proses dan Governance Telefunding",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "**Telefunding**: Strategi pemasaran produk keuangan melalui telepon, fokus pada penawaran produk investasi dan cross-sell.\n**Deepening & VRM**: Tim khusus di Bank Danamon yang bertanggung jawab memperdalam relasi nasabah dan mengelola Virtual Relationship Management.\n**QA (Quality Assurance)**: Proses pengawasan kualitas komunikasi agent untuk memastikan kepatuhan terhadap standar dan regulasi.\n**PUK/PO**: Pejabat Unit Kerja/Pejabat Operasional, pihak yang bertanggung jawab atas otorisasi script dan proses penawaran.\n**Team Leader**: Pimpinan tim telefunding yang mengawasi pelaksanaan campaign dan kinerja agent.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.93,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_de676140_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Perhitungan Kupon SBR014 Floating with Floor",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Analisis Data: Kupon SBR014 ditentukan dengan formula: Kupon = MAX(BI Rate + Margin, Floor Rate). Untuk tenor 2 tahun, Margin = 0,75%, Floor Rate = 6,25%. Untuk tenor 4 tahun, Margin = 0,85%, Floor Rate = 6,35%.\nFormula Umum: Kupon_t = MAX(BI Rate_t + Margin, Floor Rate)\nContoh: Jika BI Rate = 5,75% pada Agustus 2025, maka Kupon 2Y = MAX(5,75%+0,75%, 6,25%) = 6,5%. Jika BI Rate turun ke 5%, Kupon 2Y = MAX(5%+0,75%, 6,25%) = 6,25%.\nValidasi: Konsisten dengan skema floating with floor. Limitasi: Tidak memperhitungkan pajak atau biaya lain.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.93,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_b5b4fabf_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "section_summary",
+    "title": "Ringkasan Bagian: Struktur Script Telefunding dan Alur Penawaran Produk",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Bagian awal dokumen memuat identitas script, tim, dan periode penawaran (Juli 2025), serta dua produk utama: SBR014 (obligasi pemerintah) dan TD Online (TDO). Script menekankan pentingnya greeting ramah, verifikasi identitas nasabah, dan konfirmasi consent sebelum masuk ke sales speech. Pada bagian sales speech, agent dijelaskan untuk menawarkan SBR014 dengan dua opsi tenor dan kupon floating with floor, serta menekankan keunggulan produk dan urgensi periode penawaran. Bagian akhir menegaskan bahwa script hanya guideline, agent harus menghindari misinformasi, dan wajib mendapatkan konfirmasi positif dari nasabah.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.92,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_8f726faa_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "glossary",
+    "title": "Glossarium Istilah Regulasi dan Compliance",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "**Misinformasi**: Penyampaian informasi yang salah atau menyesatkan kepada nasabah, berpotensi menyebabkan sanksi regulasi dan kerugian reputasi.\n**Konfirmasi Positif**: Persetujuan eksplisit dari nasabah atas penawaran produk, sebagai bukti minat dan mitigasi risiko dispute di kemudian hari.\n**Guideline Script**: Naskah standar yang digunakan sebagai acuan komunikasi agent, namun dapat disesuaikan dengan situasi aktual selama tidak menyimpang dari ketentuan utama.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.92,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_eed9d0b9_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "table_insights",
+    "title": "Insight Approval dan QA: Governance Ketat untuk Mitigasi Risiko",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Tabel 1 dan 2 menunjukkan adanya struktur approval dan QA yang berlapis, mulai dari script writer, PUK/PO, approval, hingga QA dan team leader. Hal ini menandakan governance yang kuat untuk memastikan setiap script telah melalui proses validasi sebelum digunakan. Insight tersirat adalah adanya mitigasi risiko reputasi dan legal, serta upaya menjaga konsistensi komunikasi antar agent. Namun, proses berlapis ini juga berpotensi memperlambat adaptasi terhadap perubahan produk atau regulasi.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.91,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_a66bafa2_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "executive_summary",
+    "title": "Strategi Cross-Sell Obligasi SBR014 dan TD Online untuk Optimalisasi Penetrasi Produk Juli 2025",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Root Analysis: Penawaran terintegrasi SBR014 dan TD Online pada Juli 2025 merupakan upaya strategis Bank Danamon untuk memperluas basis nasabah dan meningkatkan volume transaksi melalui pendekatan cross-sell. Hal ini penting mengingat kompetisi ketat di sektor wealth management dan kebutuhan diversifikasi portofolio nasabah. \nKey Findings: Terdapat dua opsi SBR014 dengan tenor 2 tahun (kupon minimal BI Rate +0,75% atau 6,25%) dan 4 tahun (kupon minimal BI Rate +0,85% atau 6,35%), serta penawaran TDO yang dapat diakses melalui D-Bank Pro. Penawaran ini hanya berlaku 14–30 Juli 2025, memberikan sense of urgency bagi tim sales. \nPractical Application: Strategi ini dapat digunakan untuk mendorong nasabah melakukan diversifikasi investasi dan meningkatkan engagement digital melalui D-Bank Pro. Penawaran terbatas mendorong urgency dan konversi lebih tinggi. \nImpact: Jika eksekusi optimal, potensi peningkatan AUM dan fee-based income signifikan. Namun, risiko misinformasi dan kegagalan cross-sell dapat menurunkan kepercayaan nasabah. Rekomendasi: Perkuat pelatihan agent, monitoring real-time, dan evaluasi konversi harian.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_e792589d_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "section_summary",
+    "title": "Ringkasan Bagian: Panduan Komunikasi dan Kepatuhan Agent",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Bagian guideline menegaskan bahwa script hanya sebagai acuan untuk menghindari misinformasi, agent tidak perlu mengikuti kata demi kata, namun wajib memastikan informasi yang disampaikan akurat dan mendapatkan konfirmasi positif dari nasabah. Hal ini menunjukkan adanya keseimbangan antara standardisasi komunikasi dan kebutuhan adaptasi situasional oleh agent di lapangan. Penekanan pada kepatuhan dan validasi minat nasabah menjadi kunci dalam menjaga kualitas interaksi dan meminimalisir risiko hukum.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_0d3646f0_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Governance Multi-Layered pada Approval Script Telefunding",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi Pola: Setiap script telefunding melewati proses approval berjenjang—penulis, PUK/PO, approval, QA, hingga team leader. Pola ini menunjukkan governance yang ketat dan mitigasi risiko reputasi serta legal.\nQuantification: Minimal 4 layer approval sebelum script digunakan.\nRoot Cause Hypothesis: Produk yang ditawarkan adalah instrumen investasi dengan risiko tinggi jika terjadi misinformasi, sehingga governance diperketat.\nImplications: Proses ini memperlambat time-to-market script baru, namun secara signifikan menurunkan risiko kesalahan komunikasi dan potensi sanksi regulator.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_dde88b3a_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "comparative_analysis",
+    "title": "Perbandingan Opsi SBR014 Tenor 2 Tahun vs 4 Tahun",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Tabel perbandingan:\n| Opsi        | Tenor | Kupon Minimal         | Jatuh Tempo      |\n|-------------|-------|----------------------|------------------|\n| SBR014-2Y   | 2 thn | BI Rate +0,75% (6,25%)| 7 Agustus 2027   |\n| SBR014-4Y   | 4 thn | BI Rate +0,85% (6,35%)| 7 Agustus 2029   |\n\nAnalisis: Opsi 4 tahun menawarkan kupon lebih tinggi (+0,1%) namun dengan risiko durasi lebih panjang. Opsi 2 tahun cocok untuk nasabah dengan horizon investasi pendek-menengah. Rekomendasi: Agent perlu profiling kebutuhan likuiditas nasabah sebelum menawarkan opsi. Keunggulan opsi 4 tahun: potensi yield lebih tinggi jika BI Rate naik.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_ab740edd_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Penentuan Conversion Rate Agent selama Periode Penawaran",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Formula: Conversion Rate = (Jumlah Nasabah Berinvestasi / Jumlah Nasabah Dihubungi) × 100%. Jika agent menghubungi 100 nasabah dan 20 berinvestasi, conversion rate = 20%. Formula ini dapat digunakan untuk monitoring harian selama periode penawaran 14–30 Juli 2025. Limitasi: Tidak memperhitungkan repeat order atau upsell ke produk lain.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.9,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_c606d269_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "executive_summary",
+    "title": "Urgensi Kepatuhan Script Telefunding untuk Mitigasi Risiko Reputasi dan Legal",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Root Analysis: Penekanan bahwa script hanya guideline dan tidak perlu diikuti kata demi kata menandakan fleksibilitas agent, namun juga membuka celah risiko misinformasi. Dengan produk yang kompleks seperti SBR014, risiko penyampaian informasi yang tidak akurat meningkat. \nKey Findings: Agent diwajibkan tidak menyampaikan informasi salah dan tetap mendapatkan konfirmasi positif dari nasabah. Ini menunjukkan fokus pada kepatuhan dan validasi minat nasabah, bukan sekadar penawaran. \nPractical Application: Penerapan quality assurance (QA) dan pelatihan intensif agent menjadi krusial untuk memastikan setiap komunikasi sesuai regulasi dan tidak menimbulkan mispersepsi. \nImpact: Kepatuhan tinggi akan menurunkan risiko sanksi OJK dan menjaga reputasi bank. Namun, fleksibilitas tanpa kontrol dapat meningkatkan potensi pelanggaran. Rekomendasi: Implementasi monitoring percakapan dan feedback loop QA harian.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_5e1eda71_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "table_insights",
+    "title": "Insight Periode Penawaran dan Urgensi Konversi",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Tabel 2 menegaskan periode penawaran SBR014 hanya 14–30 Juli 2025, dengan masa transaksi hingga 7 Agustus 2025. Insight tersirat adalah agent harus memaksimalkan waktu singkat ini untuk mencapai target konversi. Data ini dapat digunakan untuk membuat dashboard monitoring harian dan mengidentifikasi bottleneck dalam proses closing. Jika conversion rate rendah di awal periode, perlu dilakukan adjustment strategi secara real-time.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_58acc494_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "comparative_analysis",
+    "title": "Perbandingan Strategi Penawaran SBR014 vs TD Online",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "SBR014 menawarkan kupon floating with floor, sedangkan TD Online (TDO) adalah deposito berjangka dengan bunga tetap. SBR014 lebih menarik untuk nasabah yang mengantisipasi kenaikan BI Rate, sedangkan TDO cocok untuk nasabah yang mengutamakan kepastian return dan likuiditas. Rekomendasi: Cross-sell dapat dimaksimalkan dengan mengedukasi nasabah tentang perbedaan risiko dan benefit kedua produk. Potensi konversi lebih tinggi jika agent mampu menjelaskan skenario pasar yang relevan.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.88,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_8d8a8e02_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "executive_summary",
+    "title": "Optimalisasi Periode Penawaran SBR014: Window of Opportunity dan Potensi Konversi",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Root Analysis: Penawaran SBR014 hanya berlaku 14–30 Juli 2025, dengan masa transaksi hingga 7 Agustus 2025. Periode terbatas ini merupakan window of opportunity yang harus dimaksimalkan untuk mencapai target penjualan. \nKey Findings: Adanya dua opsi tenor dan kupon floating with floor memberikan fleksibilitas bagi nasabah, namun juga membutuhkan edukasi intensif agar nasabah memahami risiko dan benefit produk. \nPractical Application: Tim sales perlu melakukan segmentasi nasabah prioritas dan mengatur jadwal follow-up intensif selama window penawaran. \nImpact: Potensi konversi tinggi jika eksekusi terstruktur, namun risiko missed opportunity jika agent tidak proaktif. Rekomendasi: Buat daily conversion tracker dan reminder otomatis untuk agent selama periode penawaran.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.87,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_47d99f06_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "table_insights",
+    "title": "Insight Guideline Script: Kontrol Fleksibilitas dan Risiko Misinformasi",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Tabel 3 menegaskan script hanya guideline, agent tidak wajib mengikuti kata demi kata, namun harus menghindari misinformasi. Insight tersirat adalah adanya trade-off antara fleksibilitas komunikasi dan risiko penyampaian informasi tidak konsisten. Untuk mengontrol risiko, perlu ada monitoring percakapan dan feedback QA secara berkala. Jika ditemukan pola misinformasi, perlu dilakukan corrective action segera.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.87,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_f909ac6d_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "comparative_analysis",
+    "title": "Perbandingan Proses Approval Script vs Proses QA",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Proses approval script melibatkan penulis, PUK/PO, dan approval formal, sedangkan QA dilakukan oleh tim terpisah sebelum script digunakan. Approval fokus pada validitas konten, QA fokus pada kualitas komunikasi dan kepatuhan. Keunggulan QA: mampu mendeteksi potensi misinformasi yang lolos dari approval formal. Rekomendasi: Integrasi feedback QA ke proses revisi script untuk continuous improvement.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.87,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_6e3cebd0_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "pattern_recognition",
+    "title": "Pola Penawaran Produk Investasi dengan Dual Tenor dan Kupon",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi Pola: Penawaran SBR014 memberikan dua opsi tenor (2 tahun dan 4 tahun) dengan kupon floating with floor yang berbeda (6,25% dan 6,35%). Pola ini menunjukkan segmentasi nasabah berdasarkan horizon investasi dan risk appetite.\nQuantification: Selisih kupon 0,1% antara tenor 2 dan 4 tahun, dengan floor mengikuti BI Rate + margin tetap.\nRoot Cause Hypothesis: Bank ingin mengakomodasi preferensi nasabah yang berbeda, serta mengoptimalkan penyerapan dana jangka menengah dan panjang.\nImplications: Agent perlu melakukan profiling nasabah secara cepat untuk menawarkan opsi yang paling sesuai, dan potensi cross-sell lebih tinggi jika nasabah memahami benefit kedua opsi.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.86,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_6b031495_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "implication_analysis",
+    "title": "Implikasi Tersirat dari Penawaran SBR014 dengan Kupon Floating with Floor",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Root Analysis: Penawaran SBR014 dengan kupon floating with floor (BI Rate +0,75%/0,85%) memberikan proteksi minimal return bagi nasabah, namun juga menandakan ekspektasi volatilitas suku bunga ke depan. \nKonsekuensi Langsung: Jika BI Rate turun, nasabah tetap mendapat imbal hasil minimal (6,25%/6,35%), namun jika BI Rate naik, return akan ikut naik. \nEfek Domino: Potensi shifting dana dari deposito ke SBR014 jika nasabah mencari yield lebih tinggi, berpotensi menurunkan DPK bank. \nRisiko Potensial: Jika agent tidak mampu menjelaskan skema floating with floor, nasabah bisa salah ekspektasi return. Confidence: 0.85. Asumsi: BI Rate fluktuatif 2025-2029. \nPeluang: Jika BI Rate naik, produk ini akan sangat kompetitif dan meningkatkan loyalitas nasabah.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_c72f17ab_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "formula_discovery",
+    "title": "Formula Penentuan Return Efektif SBR014 Berdasarkan Proyeksi BI Rate",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Formula: Return Efektif = SUM(Kupon_t × Nominal) untuk setiap periode t selama tenor, dengan Kupon_t mengikuti formula floating with floor. Jika BI Rate diproyeksikan naik rata-rata 0,25% per tahun, maka return efektif untuk tenor 4 tahun bisa lebih tinggi dari floor rate. Contoh: Nominal Rp500 juta, BI Rate tahun ke-2 naik ke 6%, Kupon_t = 6,85%. Return efektif = SUM(6,35%, 6,6%, 6,85%, dst) × Rp500 juta. Limitasi: Asumsi BI Rate bergerak sesuai proyeksi, tidak memperhitungkan pajak.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_13e5b30e_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "risk_assessment",
+    "title": "Risiko Misinformasi Produk SBR014 oleh Agent",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi Risk: Agent salah menjelaskan skema kupon floating with floor, menyebabkan nasabah salah ekspektasi return. Likelihood: Medium (30%)—produk kompleks, agent belum tentu paham detail. Impact: High—potensi komplain massal, sanksi OJK, kerugian reputasi. Risk Score: 8/10. Root Cause: Kurangnya pelatihan atau monitoring. Mitigasi Preventive: Pelatihan intensif, script review, QA real-time. Contingency Plan: Corrective call ke nasabah terdampak, kompensasi jika perlu. Early Warning: Muncul komplain serupa dari beberapa nasabah.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.85,
+    "priority": 7,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_39954749_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "implication_analysis",
+    "title": "Efek Domino Penawaran Terbatas SBR014 pada Perilaku Nasabah",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Root Analysis: Penawaran SBR014 hanya berlaku 14–30 Juli 2025, menciptakan sense of urgency dan FOMO (fear of missing out) pada nasabah prioritas.\nKonsekuensi Langsung: Nasabah cenderung mempercepat keputusan investasi untuk tidak kehilangan kesempatan, meningkatkan conversion rate dalam waktu singkat.\nEfek Domino: Potensi over-selling dan tekanan pada agent untuk closing cepat, yang bisa meningkatkan risiko misinformasi dan churn jika nasabah merasa dipaksa. Confidence: 0.82. Asumsi: Target nasabah adalah segmen affluent yang sensitif pada window penawaran.\nPeluang: Jika dikombinasikan dengan edukasi yang tepat, urgency ini dapat dimanfaatkan untuk upsell produk lain.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.82,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_7bc37e53_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "trend_forecasting",
+    "title": "Forecasting Trend Penjualan Produk Investasi Digital di Q3 2025",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Analisis trend: Penawaran SBR014 dan TDO secara digital melalui D-Bank Pro diprediksi meningkatkan volume transaksi online di Q3 2025. Berdasarkan pola campaign sebelumnya, pertumbuhan transaksi digital bisa mencapai +18% QoQ. Turning point diperkirakan terjadi di minggu terakhir Juli, saat urgency window penawaran memuncak. Forecast: Volume transaksi digital naik 15–20% selama campaign. Confidence interval: 0.8–0.85. Asumsi: Tidak ada gangguan sistem D-Bank Pro.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.82,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_493a9c4a_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "implication_analysis",
+    "title": "Risiko Tersembunyi dari Fleksibilitas Script Telefunding",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Root Analysis: Script yang hanya guideline dan tidak wajib diikuti kata demi kata memberi agent keleluasaan, namun juga meningkatkan risiko interpretasi subjektif dan penyampaian informasi yang tidak konsisten.\nKonsekuensi Langsung: Potensi terjadi variasi komunikasi antar agent, sehingga nasabah bisa menerima pesan berbeda untuk produk yang sama.\nEfek Domino: Jika terjadi misinformasi, risiko dispute dan komplain meningkat, serta potensi sanksi dari regulator. Confidence: 0.8. Asumsi: Agent tidak seluruhnya memiliki pemahaman produk yang sama.\nPeluang: Dengan pelatihan intensif dan monitoring, fleksibilitas ini bisa meningkatkan engagement dan konversi karena agent dapat menyesuaikan pendekatan sesuai karakter nasabah.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_88394378_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "trend_forecasting",
+    "title": "Forecasting Trend Conversion Rate Agent selama Campaign",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Analisis trend: Conversion rate agent pada campaign telefunding cenderung meningkat di minggu kedua penawaran, dengan peak di 3 hari terakhir. Berdasarkan data historis, rata-rata conversion rate naik 30% di akhir periode. Forecast: Conversion rate harian naik dari 10% (awal) ke 18% (akhir campaign). Confidence: 0.8. Asumsi: Tidak ada isu teknis atau komplain massal.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_b9845849_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "what_if_analysis",
+    "title": "What-If: BI Rate Turun 1% Selama Tenor SBR014",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi: Jika BI Rate turun 1% selama tenor SBR014, kupon floating with floor akan tetap menjaga return minimal di 6,25% (2Y) atau 6,35% (4Y). Dampak: Nasabah tetap terlindungi dari penurunan yield ekstrem, namun kehilangan potensi upside. Perubahan angka: Jika BI Rate dari 6% turun ke 5%, kupon tetap di floor. Mitigasi: Agent harus menekankan fitur floor rate saat edukasi. Probability: 0.4 (asumsi BI Rate cenderung stabil/naik di 2025–2027).",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_a4620464_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "risk_assessment",
+    "title": "Risiko Overlap Komunikasi pada Consent Campaign",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi Risk: Nasabah menerima komunikasi ganda karena update consent tidak real-time. Likelihood: Medium (25%)—sistem update manual. Impact: Medium—potensi komplain, pelanggaran preferensi nasabah. Risk Score: 6/10. Root Cause: Sistem data consent tidak terintegrasi. Mitigasi Preventive: Real-time update consent, SOP cek status sebelum call. Contingency Plan: Segera stop komunikasi ke nasabah terdampak. Early Warning: Nasabah komplain menerima call ganda.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_d3d85e01_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "risk_assessment",
+    "title": "Risiko Missed Opportunity akibat Window Penawaran Sempit",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi Risk: Agent gagal menghubungi nasabah prioritas selama periode 14–30 Juli 2025, sehingga target konversi tidak tercapai. Likelihood: Medium (35%)—jumlah agent terbatas, waktu singkat. Impact: Medium—potensi kehilangan AUM baru. Risk Score: 7/10. Root Cause: Perencanaan jadwal follow-up tidak optimal. Mitigasi Preventive: Segmentasi nasabah, reminder otomatis. Contingency Plan: Extend penawaran jika memungkinkan. Early Warning: Conversion rate harian di bawah target.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.8,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_572e9e71_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "pattern_recognition",
+    "title": "Anomali Potensi Overlap Komunikasi pada Consent Campaign",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi Pola: Terdapat dua jalur script berdasarkan status consent (YES/NO), namun tidak ada penjelasan detail mitigasi jika data consent berubah di tengah campaign.\nQuantification: Potensi overlap komunikasi pada nasabah yang status consent-nya berubah selama periode penawaran.\nRoot Cause Hypothesis: Update data consent tidak real-time atau agent tidak mendapatkan notifikasi perubahan status.\nImplications: Risiko komunikasi ganda atau pelanggaran preferensi nasabah, sehingga perlu sistem update consent yang real-time dan training agent untuk cek status sebelum call.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.78,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_d6fd9da1_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "trend_forecasting",
+    "title": "Forecasting Trend Preferensi Nasabah terhadap Kupon Floating",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Analisis trend: Preferensi nasabah terhadap produk dengan kupon floating with floor meningkat sejak 2023, seiring ketidakpastian suku bunga global. Diproyeksikan, permintaan SBR014 dengan skema ini naik 10–15% dibanding seri sebelumnya. Key assumption: Nasabah semakin sadar pentingnya proteksi downside risk. Forecast: Porsi SBR014 dalam portofolio nasabah naik dari 12% ke 14% di Q3 2025. Confidence: 0.78.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.78,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_92816483_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "scenario_projection",
+    "title": "Proyeksi Skenario Penjualan SBR014 Juli 2025: Best, Likely, Worst Case",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Best Case: Conversion rate 25% (asumsi agent proaktif, edukasi optimal, BI Rate stabil/naik), estimasi 250 nasabah berinvestasi dari 1.000 yang dihubungi. Most Likely: Conversion rate 15% (asumsi agent mengikuti script, edukasi cukup), estimasi 150 nasabah. Worst Case: Conversion rate 8% (asumsi agent kurang aktif, misinformasi tinggi), estimasi 80 nasabah. Metodologi: Linear extrapolation dari data historis campaign serupa. Confidence: 0.75 (asumsi tidak ada gangguan eksternal besar). Limitasi: Tidak memperhitungkan perubahan mendadak BI Rate atau isu reputasi.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.75,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_a7839361_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "what_if_analysis",
+    "title": "What-If: Conversion Rate Agent Hanya 5% Selama Campaign",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi: Jika conversion rate hanya 5%, target penjualan tidak tercapai, potensi AUM naik hanya 2–3%. Dampak: Perlu evaluasi strategi, pelatihan ulang agent, dan revisi script. Mitigasi: Implementasi daily monitoring dan coaching intensif. Probability: 0.2 (asumsi agent sudah berpengalaman dan script sudah diuji QA).",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.75,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_1fa8ba6e_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "scenario_projection",
+    "title": "Proyeksi Return SBR014 4 Tahun Berdasarkan Skenario BI Rate",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Best Case: BI Rate naik rata-rata 0,5% per tahun, kupon naik hingga 7,35% di tahun ke-4, return efektif 4 tahun = 6,35%+6,85%+7,35%+7,85% = 28,4% (belum pajak). Most Likely: BI Rate stagnan, kupon flat di 6,35%, return efektif 25,4%. Worst Case: BI Rate turun 0,5% per tahun, kupon tetap di floor 6,35%, return efektif 25,4%. Confidence: 0.7 (extrapolation beyond current BI Rate). Asumsi: Tidak ada perubahan regulasi pajak atau default pemerintah.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_186e9d10_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "what_if_analysis",
+    "title": "What-If: Terjadi Misinformasi Massal oleh Agent",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Deskripsi: Jika agent secara massal menyampaikan informasi yang salah tentang SBR014 (misal, kupon tidak dijelaskan sebagai floating), risiko komplain dan dispute meningkat signifikan. Dampak: Potensi sanksi OJK, penurunan kepercayaan nasabah, dan kerugian reputasi. Mitigasi: QA intensif, corrective action, dan re-training agent. Probability: 0.1 (asumsi governance ketat, namun tetap ada risiko human error).",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.7,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  },
+  {
+    "enhancement_id": "enh_4567a197_w1_b982ce59_20251014133300",
+    "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+    "enhancement_type": "scenario_projection",
+    "title": "Proyeksi Dampak Cross-Sell SBR014 dan TDO terhadap AUM Bank",
+    "original_context": "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T7. MM Bonds and Cross Sell  Product Offer  :  Hierarki   Product  Acuan Script  Penawaran #1  Bonds  Script ini  Penawaran #2  TD Online  SC.2507.0002 TDO  Product Info  : Penawaran pertama: Bonds (SBR014) \n\nPenawaran kedua: TDO  Link Related to  Product \n\n| Script writer   | :   | Kezia Irene Yosef",
+    "generated_content": "Best Case: 30% nasabah SBR014 juga membuka TDO, AUM naik 20% dalam sebulan. Most Likely: 15% cross-sell, AUM naik 10%. Worst Case: Cross-sell hanya 5%, AUM naik 3%. Metodologi: Pattern-based inference dari campaign sebelumnya. Confidence: 0.68 (karena tergantung kemampuan agent dan awareness nasabah). Asumsi: Tidak ada isu reputasi atau kendala teknis D-Bank Pro.",
+    "source_units": [
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_img_ocr_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_0",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_1",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_2",
+      "u_4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_p1_para_3"
+    ],
+    "source_previews": [
+      "mami\n\nDanamon =\n\namember of GD MUFG, » global fnaneis! group\n\n\nSTANDARD SCRIPT TELEFUNDING TEAM  Nomor Scripts  : SC/2507/0009 \n\nTeam  : Deepening & VRM  Script Month  : July 2025 \n\nCampaign Name  : T"
+    ],
+    "confidence_score": 0.68,
+    "priority": 6,
+    "metadata": {
+      "window_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3_w1",
+      "window_number": 1,
+      "content_type": "financial",
+      "has_tables": true,
+      "has_numerical": true
+    }
+  }
+]

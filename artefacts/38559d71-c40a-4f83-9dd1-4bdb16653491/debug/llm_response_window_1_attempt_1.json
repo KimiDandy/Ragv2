@@ -1,0 +1,293 @@
+{
+  "enhancements": [
+    {
+      "type": "executive_summary",
+      "title": "Strategi Investasi Q1 2025: Navigasi Suku Bunga Global dan Peluang Pasar Domestik",
+      "content": "Analisis mendalam terhadap dokumen ini menunjukkan bahwa strategi investasi Q1 2025 sangat dipengaruhi oleh ekspektasi penurunan suku bunga global yang lebih rendah dari prediksi awal (50bps vs 100bps), serta kebijakan domestik yang memprioritaskan pertumbuhan ekonomi dibandingkan stabilitas rupiah. Hal ini menandakan bahwa investor harus lebih selektif dalam memilih instrumen, dengan fokus pada obligasi tenor pendek-menengah dan saham berfundamental kuat. Implikasi tidak langsung dari kebijakan BI yang mendahulukan konsumsi domestik adalah potensi pertumbuhan sektor konsumsi dan peluang valuasi menarik pada saham dan obligasi. Rekomendasi strategis: lakukan diversifikasi portofolio dengan proporsi lebih besar pada fixed income funds dan saham sektor konsumsi, serta siapkan strategi rebalancing jika volatilitas meningkat akibat ketidakpastian global. Konsekuensi dari strategi ini adalah potensi upside dari pemulihan ekonomi domestik, namun tetap waspada terhadap risiko depresiasi rupiah dan inflasi global. Confidence: 0.9, didukung oleh evidence data makro dan rekomendasi produk dalam dokumen.",
+      "source_units": ["paragraph_market_insight", "table_karakteristik", "table_kinerja"],
+      "confidence": 0.9,
+      "priority": 10
+    },
+    {
+      "type": "executive_summary",
+      "title": "Peluang dan Risiko Investasi Reksa Dana/Obligasi dalam Lanskap 2025",
+      "content": "Dokumen ini secara tersirat menyoroti pentingnya pemahaman risiko dalam investasi reksa dana dan obligasi, terutama di tengah volatilitas pasar dan perubahan kebijakan suku bunga global. Insight utama adalah adanya gap antara ekspektasi investor dan realisasi kebijakan moneter, yang dapat menciptakan peluang akuisisi pada valuasi menarik namun juga meningkatkan risiko fluktuasi nilai investasi. Rekomendasi strategis: investor perlu melakukan due diligence mendalam terhadap prospektus dan ringkasan produk, serta mempertimbangkan diversifikasi lintas mata uang (IDR dan USD) untuk mitigasi risiko nilai tukar. Implikasi tidak langsung: bank hanya sebagai agen penjual, sehingga investor tidak mendapat perlindungan simpanan, menuntut kehati-hatian ekstra dalam pemilihan produk. Konsekuensi: potensi return menarik jika momentum pasar dimanfaatkan, namun risiko kerugian total tetap ada. Confidence: 0.85, berdasarkan analisa disclaimer dan market insight.",
+      "source_units": ["paragraph_disclaimer", "paragraph_market_insight"],
+      "confidence": 0.85,
+      "priority": 9
+    },
+    {
+      "type": "executive_summary",
+      "title": "Dampak Stimulus China dan Kebijakan BI terhadap Portofolio Investor Indonesia",
+      "content": "Analisis dokumen mengindikasikan bahwa stimulus besar-besaran dari pemerintah China (defisit naik ke 4%) dan keputusan BI untuk mendahulukan pertumbuhan ekonomi akan menjadi dua katalis utama bagi pasar modal Indonesia di 2025. Insight tersirat: stimulus China berpotensi meningkatkan permintaan komoditas dan ekspor Indonesia, sementara kebijakan BI membuka ruang bagi pertumbuhan sektor konsumsi. Rekomendasi: investor sebaiknya overweight pada saham sektor konsumsi dan obligasi pemerintah tenor menengah, serta memonitor perkembangan stimulus China sebagai leading indicator. Implikasi tidak langsung: volatilitas rupiah dan risiko inflasi tetap perlu diwaspadai, sehingga hedging dan alokasi USD asset menjadi strategi mitigasi yang relevan. Confidence: 0.8, didukung data GDP China dan kebijakan BI.",
+      "source_units": ["paragraph_market_insight", "table_of_content"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian Market Insight: Skenario Suku Bunga dan Dampak Pasar",
+      "content": "Bagian Market Insight membahas tiga topik utama: (1) Skenario \"No Cut?\" pada Q1 2025 dengan probabilitas 99,5% suku bunga AS tidak turun di Januari, (2) Optimisme pasar Asia akibat tercapainya target GDP China 5,4% dan stimulus fiskal besar, (3) Kesempatan valuasi menarik di pasar Indonesia meski terjadi absennya Santa Claus Rally dan January Effect serta kebijakan BI yang memprioritaskan pertumbuhan. Takeaway utama: investor harus adaptif terhadap perubahan ekspektasi suku bunga global dan memanfaatkan window akuisisi pada saham/obligasi domestik yang undervalued.",
+      "source_units": ["paragraph_market_insight"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian Disclaimer: Batasan dan Risiko Investasi",
+      "content": "Bagian Disclaimer menegaskan bahwa investasi reksa dana/obligasi mengandung risiko tinggi, termasuk potensi kehilangan seluruh modal. Bank hanya sebagai agen penjual, tidak menjamin produk, dan tidak bertanggung jawab atas kerugian. Investor wajib memahami prospektus dan mencari nasihat profesional sebelum berinvestasi. Takeaway: keputusan investasi sepenuhnya menjadi tanggung jawab investor, sehingga pemahaman risiko dan due diligence sangat krusial.",
+      "source_units": ["paragraph_disclaimer"],
+      "confidence": 0.95,
+      "priority": 10
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian Asset Class Strategy: Rekomendasi Obligasi dan Saham",
+      "content": "Bagian Asset Class Strategy menyoroti rekomendasi pada obligasi tenor pendek-menengah (FR100, FR106, Sucorinvest Monthly Income Fund, Bahana ABF IBI Fund) dan obligasi USD (INDON30NEW2, INDON35NEW, BNP Paribas Prima USD, Manulife USD Fixed Income). Untuk saham, fokus pada sektor konsumsi domestik yang didukung kebijakan BI. Takeaway: strategi portofolio harus menyesuaikan dengan ekspektasi penurunan suku bunga global dan dukungan kebijakan domestik.",
+      "source_units": ["paragraph_asset_class_strategy"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Kunci Produk Investasi dan Ekonomi Makro",
+      "content": "**Dot Plot**: Grafik yang digunakan oleh Federal Reserve AS untuk menunjukkan proyeksi suku bunga jangka pendek dari masing-masing anggota dewan, menjadi acuan ekspektasi pasar terhadap arah kebijakan moneter.\n**Fed Watch Tool**: Alat analisis probabilitas perubahan suku bunga The Fed berbasis data futures, digunakan investor untuk memprediksi keputusan FOMC.\n**Santa Claus Rally**: Fenomena kenaikan harga saham pada akhir Desember hingga awal Januari, sering dijadikan acuan sentimen pasar musiman.\n**January Effect**: Pola historis di mana harga saham cenderung naik pada bulan Januari akibat rebalancing portofolio dan investasi baru di awal tahun.\n**Tenor**: Jangka waktu jatuh tempo obligasi atau instrumen keuangan lainnya, penting dalam menentukan sensitivitas harga terhadap perubahan suku bunga.",
+      "source_units": ["paragraph_market_insight", "paragraph_asset_class_strategy"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Teknis Produk Reksa Dana dan Obligasi",
+      "content": "**Manajer Investasi**: Pihak profesional yang mengelola portofolio investasi reksa dana, bertanggung jawab atas pemilihan aset dan strategi investasi.\n**Dana Kelolaan (AUM)**: Total dana yang dikelola oleh reksa dana, indikator skala dan kepercayaan investor.\n**Tolak Ukur (Benchmark)**: Indeks acuan yang digunakan untuk mengukur kinerja reksa dana, misal IDRE12MO untuk fixed income.\n**Obligasi Fixed Rate**: Obligasi dengan tingkat bunga tetap selama masa berlaku, memberikan kepastian arus kas bagi investor.\n**Leverage**: Penggunaan dana pinjaman atau derivatif untuk meningkatkan eksposur investasi, meningkatkan potensi return sekaligus risiko.",
+      "source_units": ["table_karakteristik", "table_of_content"],
+      "confidence": 0.95,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Akronim dan Singkatan Spesifik Produk",
+      "content": "**SMIF** (Sucorinvest Monthly Income Fund): Reksa dana pendapatan tetap yang dikelola oleh PT Sucorinvest Asset, fokus pada obligasi dan instrumen pasar uang.\n**YTD** (Year To Date): Kinerja investasi sejak awal tahun hingga tanggal laporan.\n**NFP** (Non-Farm Payroll): Data ketenagakerjaan AS di luar sektor pertanian, indikator utama kekuatan ekonomi AS.\n**FR100/FR106**: Seri obligasi pemerintah Indonesia dengan fixed rate, masing-masing jatuh tempo Feb 2034 dan Ags 2040.\n**INDON30NEW2/INDON35NEW**: Seri obligasi negara valas Indonesia, jatuh tempo Jan 2030 dan Jan 2035.",
+      "source_units": ["table_kinerja", "table_of_content"],
+      "confidence": 0.95,
+      "priority": 6
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implikasi Penurunan Suku Bunga AS Lebih Rendah pada Portofolio Investor Indonesia",
+      "content": "Penurunan suku bunga AS yang hanya 50bps (vs ekspektasi awal 100bps) secara tersirat mengindikasikan bahwa yield obligasi global akan tetap relatif tinggi, sehingga spread antara UST dan INDOGB harus dijaga oleh BI. Konsekuensi langsung: potensi arus masuk investor asing ke obligasi Indonesia tetap ada, namun dengan risiko fluktuasi nilai tukar yang lebih tinggi. Efek domino: jika BI terlalu agresif menurunkan suku bunga, risiko depresiasi rupiah meningkat, berdampak pada inflasi dan daya beli domestik. Risiko tersembunyi: investor lokal yang overweight pada obligasi tenor panjang berpotensi mengalami capital loss jika yield global naik. Peluang tersembunyi: window akumulasi pada obligasi tenor menengah-pendek dengan yield menarik. Confidence: 0.8, asumsi stabilitas global dan BI menjaga spread.",
+      "source_units": ["paragraph_market_insight", "paragraph_asset_class_strategy"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Efek Stimulus Fiskal China terhadap Sektor Ekspor dan Komoditas Indonesia",
+      "content": "Stimulus fiskal China yang lebih besar (defisit naik ke 4%) secara implisit akan meningkatkan permintaan domestik China, yang berpotensi mendorong ekspor Indonesia terutama di sektor komoditas dan bahan baku. Konsekuensi langsung: harga komoditas utama (batubara, CPO, logam) berpotensi rebound, meningkatkan profitabilitas emiten terkait. Efek domino: peningkatan ekspor akan memperbaiki neraca perdagangan dan mendukung stabilitas rupiah. Risiko potensial: jika stimulus China gagal memicu konsumsi, efek positif ke Indonesia bisa terbatas. Peluang tersembunyi: overweight pada saham dan obligasi korporasi sektor komoditas. Confidence: 0.75, asumsi stimulus efektif dan permintaan China pulih.",
+      "source_units": ["paragraph_market_insight"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Risiko Tersembunyi dari Kebijakan BI yang Mendahulukan Pertumbuhan",
+      "content": "Keputusan BI untuk mendahulukan pertumbuhan ekonomi dibandingkan stabilitas rupiah secara implisit meningkatkan risiko volatilitas nilai tukar dan imported inflation. Konsekuensi langsung: pelemahan rupiah dapat meningkatkan biaya impor dan tekanan inflasi. Efek domino: jika inflasi naik signifikan, BI terpaksa menaikkan suku bunga kembali, berpotensi memicu capital outflow. Risiko tersembunyi: investor yang overweight pada aset IDR tanpa hedging berisiko mengalami penurunan nilai riil portofolio. Peluang tersembunyi: investor dengan eksposur USD atau aset offshore dapat memperoleh windfall gain dari depresiasi rupiah. Confidence: 0.8, asumsi tekanan eksternal tetap tinggi.",
+      "source_units": ["paragraph_market_insight"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Outperformance Reksa Dana SMIF terhadap Tolok Ukur dalam 3 Tahun Terakhir",
+      "content": "Data kinerja SMIF menunjukkan pola konsisten outperform terhadap tolok ukur (IDRE12MO) di seluruh horizon waktu: 1 bulan (0,66% vs 0,28%), YTD (7,52% vs 3,27%), 1 tahun (7,52% vs 3,27%), dan 3 tahun (20,27% vs 9,36%). Pola ini mengindikasikan keunggulan strategi manajer investasi dalam memilih aset dan mengelola risiko. Root cause: kemungkinan rotasi portofolio yang responsif terhadap perubahan pasar dan pemilihan efek berkualitas tinggi. Implikasi: SMIF layak dipertimbangkan sebagai core holding untuk investor fixed income, namun perlu monitoring jika pola ini mulai melemah. Actionable insight: lakukan review berkala atas konsistensi outperformance.",
+      "source_units": ["table_kinerja"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Valuasi Menarik Pasar Indonesia Pasca Absennya Rally Musiman",
+      "content": "Absennya Santa Claus Rally dan January Effect dalam dua bulan terakhir secara tersirat menciptakan window valuasi menarik pada saham dan obligasi domestik. Pola ini jarang terjadi, biasanya rally musiman memberikan premium valuasi di awal tahun. Root cause: kegagalan ekspektasi penurunan suku bunga dan tekanan eksternal. Implikasi: investor dengan likuiditas dapat memanfaatkan koreksi harga untuk akumulasi aset undervalued. Actionable insight: lakukan screening saham/obligasi dengan fundamental kuat yang terkoreksi signifikan.",
+      "source_units": ["paragraph_market_insight"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Korelasi Suku Bunga BI dan Kinerja Sektor Konsumsi",
+      "content": "Keputusan BI untuk memprioritaskan konsumsi domestik berpotensi memperkuat korelasi positif antara penurunan suku bunga dan pertumbuhan sektor konsumsi. Pola historis menunjukkan konsumsi menyumbang >50% PDB Indonesia, sehingga setiap pelonggaran moneter biasanya diikuti kenaikan kinerja emiten sektor ini. Implikasi: overweight sektor konsumsi pada portofolio 2025. Actionable insight: monitor data penjualan ritel dan konsumsi domestik sebagai leading indicator.",
+      "source_units": ["paragraph_asset_class_strategy"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Kinerja SMIF: Outperformance Signifikan atas Benchmark",
+      "content": "Tabel kinerja menunjukkan SMIF mencatat return 7,52% YTD dan 20,27% dalam 3 tahun, jauh di atas tolok ukur (3,27% YTD, 9,36% 3 tahun). Derived metric: excess return 4,25% YTD dan 10,91% dalam 3 tahun. Insight tersirat: strategi manajer investasi berhasil mengelola risiko dan memilih efek unggulan. Implikasi: SMIF dapat menjadi anchor untuk portofolio fixed income, namun perlu evaluasi sustainabilitas outperformance ke depan.",
+      "source_units": ["table_kinerja"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Analisis Komposisi 5 Besar Efek SMIF: Diversifikasi dan Eksposur Risiko",
+      "content": "Tabel 5 Besar Efek SMIF menunjukkan diversifikasi antara deposito (TD BANK CAPITAL, TD PT BANK MNC) dan obligasi korporasi (PTRO01DCN1, PJAA03ACN1, WISL03B). Insight tersirat: portofolio mengombinasikan likuiditas tinggi dan yield premium. Derived metric: jika 60% portofolio di 5 efek ini, risiko konsentrasi tetap perlu dimonitor. Implikasi: investor perlu cek exposure sektor dan rating obligasi untuk mitigasi risiko default.",
+      "source_units": ["table_5_besar_efek"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Dana Kelolaan SMIF: Skala dan Potensi Likuiditas",
+      "content": "Dana kelolaan SMIF sebesar Rp 945,7 miliar menunjukkan skala menengah, cukup untuk efisiensi biaya namun belum terlalu besar sehingga fleksibel dalam rotasi portofolio. Insight tersirat: potensi likuiditas cukup baik, namun jika terjadi redemption besar-besaran, dampak ke harga NAV tetap perlu diwaspadai. Implikasi: investor institusi perlu memonitor tren AUM sebagai early warning.",
+      "source_units": ["table_karakteristik"],
+      "confidence": 0.8,
+      "priority": 6
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Kinerja SMIF vs Tolok Ukur: Konsistensi Outperformance",
+      "content": "Analisis tabel kinerja menunjukkan SMIF consistently outperform tolok ukur di semua horizon waktu: 1 bulan (0,66% vs 0,28%), YTD (7,52% vs 3,27%), 1 tahun (7,52% vs 3,27%), 3 tahun (20,27% vs 9,36%). Advantage SMIF: strategi aktif dan diversifikasi efek. Disadvantage: potensi risiko jika market reversal. Rekomendasi: gunakan SMIF sebagai core holding, namun lakukan rebalancing jika outperformance mulai menurun.",
+      "source_units": ["table_kinerja"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Produk Obligasi IDR dan USD: Diversifikasi Mata Uang",
+      "content": "Daftar produk menunjukkan adanya pilihan obligasi IDR (FR100, FR106) dan USD (INDON30NEW2, INDON35NEW). Analisis: obligasi USD menawarkan proteksi nilai tukar di tengah risiko depresiasi rupiah, namun yield IDR biasanya lebih tinggi. Advantage USD: hedging currency risk. Disadvantage: risiko sovereign dan likuiditas. Rekomendasi: alokasikan sebagian portofolio ke obligasi USD untuk diversifikasi dan mitigasi risiko makro.",
+      "source_units": ["table_of_content"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Komposisi Portofolio: Deposito vs Obligasi Korporasi",
+      "content": "Tabel 5 Besar Efek memperlihatkan kombinasi deposito dan obligasi korporasi dalam portofolio SMIF. Analisis: deposito memberikan likuiditas dan stabilitas, obligasi korporasi memberikan yield premium namun risiko lebih tinggi. Advantage kombinasi: balance antara return dan risiko. Disadvantage: jika obligasi korporasi default, dampak ke NAV signifikan. Rekomendasi: review rating dan sektor obligasi secara berkala.",
+      "source_units": ["table_5_besar_efek"],
+      "confidence": 0.85,
+      "priority": 6
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Excess Return SMIF terhadap Tolok Ukur",
+      "content": "Dari tabel kinerja, formula excess return: Excess Return = Return SMIF - Return Tolok Ukur. Contoh: YTD, Excess Return = 7,52% - 3,27% = 4,25%. Formula ini dapat digunakan untuk mengukur added value manajer investasi secara periodik. Asumsi: return sudah net of fee. Limitasi: tidak memperhitungkan volatilitas atau drawdown. Applicable untuk evaluasi kinerja reksa dana fixed income.",
+      "source_units": ["table_kinerja"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Alokasi Portofolio Berdasarkan 5 Besar Efek",
+      "content": "Berdasarkan tabel 5 Besar Efek, formula estimasi alokasi: Proporsi Efek = (Nilai Efek / Total AUM) × 100%. Jika 5 besar efek = 60% dari total AUM Rp 945,7 miliar, maka rata-rata tiap efek = (0,6 × 945,7) / 5 = Rp 113,48 miliar/efek. Asumsi: distribusi merata. Limitasi: proporsi aktual bisa berbeda. Formula ini membantu investor menilai konsentrasi risiko.",
+      "source_units": ["table_5_besar_efek", "table_karakteristik"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Proyeksi Return 3 Tahun Berdasarkan CAGR",
+      "content": "Dari data return 3 tahun SMIF (20,27%), CAGR = [(Ending Value / Starting Value)^(1/3)] - 1. Jika diasumsikan return terakumulasi, CAGR = (1 + 0,2027)^(1/3) - 1 ≈ 6,33% per tahun. Formula ini dapat digunakan untuk memproyeksikan return masa depan dengan asumsi pola historis berlanjut. Limitasi: tidak memperhitungkan volatilitas atau perubahan strategi.",
+      "source_units": ["table_kinerja"],
+      "confidence": 0.8,
+      "priority": 6
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Return SMIF 2025: Best, Likely, Worst Case",
+      "content": "Berdasarkan CAGR 3 tahun (6,33%), proyeksi return 2025:\n- Best Case: 8% (asumsi yield obligasi naik, spread tetap lebar, confidence 0.7)\n- Most Likely: 6,5% (asumsi kondisi makro stabil, confidence 0.8)\n- Worst Case: 4% (asumsi yield global naik, tekanan rupiah, confidence 0.65)\nTrigger: perubahan suku bunga global dan inflasi domestik. Metodologi: extrapolasi CAGR, asumsi tidak ada default besar. Limitasi: volatilitas pasar dan perubahan strategi manajer investasi.",
+      "source_units": ["table_kinerja", "paragraph_market_insight"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Dampak Stimulus China pada Ekspor Indonesia 2025",
+      "content": "Dengan stimulus fiskal China naik ke defisit 4%, proyeksi ekspor Indonesia ke China:\n- Best Case: +15% YoY (asumsi permintaan komoditas rebound, confidence 0.7)\n- Most Likely: +8% YoY (asumsi stimulus efektif sebagian, confidence 0.75)\n- Worst Case: +2% YoY (asumsi stimulus gagal dorong konsumsi, confidence 0.6)\nMetodologi: pattern-based extrapolation dari data GDP dan stimulus sebelumnya. Limitasi: ketergantungan pada kebijakan China dan harga komoditas global.",
+      "source_units": ["paragraph_market_insight"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Risiko Nilai Tukar Rupiah 2025 akibat Kebijakan BI",
+      "content": "Jika BI tetap mendahulukan pertumbuhan, proyeksi nilai tukar rupiah:\n- Best Case: stabil di Rp 15.500/USD (asumsi inflow obligasi, confidence 0.7)\n- Most Likely: melemah ke Rp 16.200/USD (asumsi tekanan eksternal, confidence 0.75)\n- Worst Case: melemah ke Rp 17.000/USD (asumsi outflow besar, confidence 0.6)\nTrigger: perubahan suku bunga global, arus modal. Metodologi: extrapolasi tren historis dan spread UST-INDOGB. Limitasi: shock eksternal dan intervensi BI.",
+      "source_units": ["paragraph_market_insight"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Return SMIF 2025 Berdasarkan Pola Historis",
+      "content": "Berdasarkan return 3 tahun (20,27%), tren return SMIF menunjukkan kecenderungan stabil di kisaran 6-7% per tahun. Forecast 2025: return diperkirakan 6,5% ±1% (confidence interval 5,5%-7,5%), asumsi tidak ada shock besar di pasar obligasi. Key assumption: yield obligasi tetap menarik dan inflasi terkendali. Turning point: jika yield global naik tajam, return bisa turun di bawah 5%.",
+      "source_units": ["table_kinerja"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Dana Kelolaan SMIF: Potensi Pertumbuhan AUM",
+      "content": "Dana kelolaan SMIF Rp 945,7 miliar menunjukkan tren pertumbuhan moderat. Jika tren pertumbuhan AUM 10% per tahun (asumsi industri), forecast 2025: AUM mencapai Rp 1,04 triliun (confidence 0.75). Key driver: konsistensi outperformance dan sentimen pasar fixed income. Risiko: redemption besar jika return turun. Action: monitor inflow/outflow bulanan.",
+      "source_units": ["table_karakteristik"],
+      "confidence": 0.75,
+      "priority": 6
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Imbal Hasil Obligasi Pemerintah Indonesia",
+      "content": "Dengan ekspektasi penurunan suku bunga global hanya 50bps, tren yield obligasi pemerintah Indonesia diperkirakan tetap tinggi di kisaran 6,5-7% untuk tenor menengah. Forecast 2025: yield turun tipis ke 6,3-6,5% jika inflasi terkendali. Key assumption: spread UST-INDOGB tetap menarik. Turning point: jika BI agresif menurunkan suku bunga, yield bisa naik akibat risiko rupiah.",
+      "source_units": ["paragraph_asset_class_strategy"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: BI Menurunkan Suku Bunga 50bps Tambahan di 2025",
+      "content": "Jika BI menurunkan suku bunga 50bps lagi di 2025, dampak utama: yield obligasi pemerintah turun, harga naik, portofolio fixed income (SMIF, FR100, FR106) berpotensi capital gain 2-3%. Namun, risiko depresiasi rupiah meningkat, imported inflation naik. Mitigasi: alokasikan sebagian portofolio ke USD asset. Probability: 40% (asumsi tekanan eksternal tetap tinggi). Early warning: BI statement dan data inflasi bulanan.",
+      "source_units": ["paragraph_market_insight", "table_of_content"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Stimulus China Gagal Dorong Konsumsi Domestik",
+      "content": "Jika stimulus China gagal meningkatkan konsumsi, dampak ke Indonesia: ekspor komoditas stagnan, harga saham sektor komoditas turun 5-10%, potensi outflow dari pasar saham. Mitigasi: overweight pada sektor domestik non-komoditas. Probability: 30% (asumsi stimulus efektif sebagian). Early warning: data retail sales dan PMI China.",
+      "source_units": ["paragraph_market_insight"],
+      "confidence": 0.65,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Investor Melakukan Redemption Besar pada SMIF",
+      "content": "Jika terjadi redemption besar (>20% AUM) pada SMIF, dampak: manajer investasi terpaksa menjual aset likuid (deposito, obligasi) dengan potensi penurunan NAV hingga 1-2%. Mitigasi: maintain cash buffer dan komunikasi proaktif ke investor. Probability: 10% (asumsi return tetap stabil). Early warning: lonjakan redemption harian dan berita negatif pasar.",
+      "source_units": ["table_karakteristik", "table_5_besar_efek"],
+      "confidence": 0.6,
+      "priority": 6
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Konsentrasi Portofolio pada 5 Besar Efek SMIF",
+      "content": "Risk: Konsentrasi portofolio pada 5 efek utama (deposito dan obligasi korporasi). Likelihood: Medium (30%) - jika salah satu obligasi default. Impact: High (potensi NAV turun 2-3%). Risk Score: 7/10. Root cause: alokasi besar pada efek tertentu. Mitigasi: diversifikasi ke lebih banyak efek dan review rating secara berkala. Contingency: rebalancing portofolio jika ada downgrade. Early warning: perubahan rating dan berita negatif emiten.",
+      "source_units": ["table_5_besar_efek"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Volatilitas Nilai Tukar akibat Kebijakan BI",
+      "content": "Risk: Volatilitas nilai tukar rupiah akibat kebijakan BI yang mendahulukan pertumbuhan. Likelihood: High (60%) - tekanan eksternal dan arus modal keluar. Impact: High (potensi depresiasi >5%). Risk Score: 9/10. Root cause: spread suku bunga menyempit, inflasi naik. Mitigasi: alokasi sebagian portofolio ke USD asset. Contingency: hedging valuta asing. Early warning: pelemahan rupiah harian dan capital outflow.",
+      "source_units": ["paragraph_market_insight"],
+      "confidence": 0.85,
+      "priority": 9
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Penurunan Kinerja SMIF akibat Kenaikan Yield Global",
+      "content": "Risk: Penurunan kinerja SMIF jika yield obligasi global naik tajam. Likelihood: Medium (40%) - tergantung kebijakan The Fed. Impact: Medium (return turun ke 4-5%). Risk Score: 6/10. Root cause: arus keluar dari pasar obligasi emerging market. Mitigasi: perpendek durasi portofolio dan diversifikasi ke obligasi USD. Contingency: switching ke money market fund. Early warning: kenaikan yield UST dan outflow asing.",
+      "source_units": ["table_kinerja", "paragraph_market_insight"],
+      "confidence": 0.75,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

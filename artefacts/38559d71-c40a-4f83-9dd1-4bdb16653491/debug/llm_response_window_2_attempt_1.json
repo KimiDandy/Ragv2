@@ -1,0 +1,293 @@
+{
+  "enhancements": [
+    {
+      "type": "executive_summary",
+      "title": "Strategi Investasi Reksa Dana Saham: Diversifikasi, Kinerja, dan Implikasi Risiko",
+      "content": "Root Analysis: Dokumen ini membandingkan tiga reksa dana saham utama—Eastspring Alpha Navigator, Schroder Dana Prestasi Plus (SDPP), dan BNP Paribas SRI-KEHATI—dengan fokus pada strategi investasi, kinerja historis, dan profil risiko. Penting karena investor institusi dan individu perlu memahami perbedaan strategi (aktif vs pasif, fokus kapitalisasi besar vs menengah-kecil, ESG) untuk mengoptimalkan portofolio. \nKey Findings: Alpha Navigator unggul dalam return 3 dan 5 tahun (8.96%, 7.00%) dibanding tolok ukur, SDPP, dan SRI-KEHATI, meski return jangka pendek negatif. SDPP menunjukkan underperformance 5 tahun (2.72%), sedangkan SRI-KEHATI relatif defensif namun return 5 tahun negatif (-0.13%). \nApplication: Insight ini dapat digunakan untuk menyesuaikan alokasi aset berdasarkan horizon investasi, toleransi risiko, dan preferensi ESG. Investor dapat memilih Alpha Navigator untuk growth jangka panjang, SDPP untuk stabilitas kapitalisasi besar, atau SRI-KEHATI untuk exposure ESG dan defensif. \nImpact: Implikasi tidak langsung adalah pentingnya diversifikasi antar strategi dan awareness terhadap volatilitas jangka pendek. Rekomendasi: review alokasi portofolio secara berkala, pertimbangkan switching saat momentum pasar berubah, dan gunakan advisor profesional untuk mitigasi risiko.",
+      "source_units": ["TABEL 1", "TABEL 3", "unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.92,
+      "priority": 9
+    },
+    {
+      "type": "executive_summary",
+      "title": "Perbandingan Kinerja Reksa Dana Saham: Alpha Navigator, SDPP, dan SRI-KEHATI",
+      "content": "Root Analysis: Membandingkan kinerja tiga reksa dana saham utama memberikan insight strategis untuk alokasi investasi optimal. Hal ini krusial karena perbedaan strategi (aktif vs pasif, kapitalisasi besar vs menengah-kecil, ESG) memengaruhi return dan risiko. \nKey Findings: Alpha Navigator konsisten mengungguli tolok ukur dalam 3 dan 5 tahun terakhir (8.96% dan 7.00% vs tolok ukur 7.57% dan 12.39%), meski return 1 tahun negatif. SDPP underperform dalam 5 tahun (2.72% vs tolok ukur -5.00%), namun lebih defensif di tahun volatil. SRI-KEHATI menunjukkan resilience dengan tracking error rendah dan return 5 tahun -0.13% (tolok ukur -1.29%). \nApplication: Investor dapat menggunakan insight ini untuk menyesuaikan strategi sesuai horizon investasi dan preferensi risiko. Alpha Navigator cocok untuk growth-oriented, SDPP untuk defensif, dan SRI-KEHATI untuk ESG exposure. \nImpact: Implikasi tidak langsung adalah perlunya monitoring berkala dan rebalancing portofolio, terutama saat terjadi volatilitas pasar atau perubahan sentimen sektor. Rekomendasi: lakukan stress test portofolio dan pertimbangkan diversifikasi antar strategi.",
+      "source_units": ["TABEL 3", "unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.90,
+      "priority": 8
+    },
+    {
+      "type": "executive_summary",
+      "title": "Risiko Tersembunyi dan Peluang pada Reksa Dana Saham Berbasis Indeks dan ESG",
+      "content": "Root Analysis: Analisis ini penting untuk mengidentifikasi risiko tersembunyi dan peluang pada reksa dana berbasis indeks (SRI-KEHATI) dan ESG, yang semakin diminati investor institusi. \nKey Findings: SRI-KEHATI memiliki tracking error rendah (<2%), namun return 5 tahun negatif (-0.13%), mengindikasikan risiko pasar yang tidak sepenuhnya terdiversifikasi. Komposisi saham mayoritas kapitalisasi besar memberikan stabilitas, namun membatasi upside saat pasar bullish. Alpha Navigator dan SDPP menawarkan upside lebih tinggi namun volatilitas lebih besar. \nApplication: Investor institusi dapat menggunakan insight ini untuk mengalokasikan sebagian portofolio ke SRI-KEHATI sebagai anchor defensif, sementara menempatkan sebagian pada Alpha Navigator untuk growth. \nImpact: Implikasi tidak langsung adalah potensi underperformance SRI-KEHATI di pasar bullish, namun resilience di pasar bearish. Rekomendasi: lakukan overlay strategi aktif-pasif dan gunakan SRI-KEHATI untuk stabilitas portofolio jangka panjang.",
+      "source_units": ["unit_SRIKEHATI", "TABEL 3"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Karakteristik dan Strategi Alpha Navigator",
+      "content": "Topik utama bagian ini adalah karakteristik utama dan strategi investasi Alpha Navigator. Poin penting: (1) Fokus pada saham kapitalisasi kecil-menengah dengan bobot maksimum 40%, (2) Pengelolaan aktif dengan fleksibilitas penyesuaian portofolio, (3) Dana kelolaan IDR 405 miliar, (4) Tolok ukur IHSG, (5) Profil risiko agresif. Key takeaway: Alpha Navigator menawarkan potensi pertumbuhan jangka panjang dengan risiko lebih tinggi, cocok untuk investor yang mencari alpha di luar saham kapitalisasi besar.",
+      "source_units": ["TABEL 1", "unit_AlphaNavigator"],
+      "confidence": 0.93,
+      "priority": 7
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Strategi dan Kinerja Schroder Dana Prestasi Plus (SDPP)",
+      "content": "Bagian ini membahas strategi dan kinerja SDPP. Poin penting: (1) Fokus pada saham kapitalisasi besar dan menengah, (2) Dana kelolaan Rp 3.94 triliun, (3) Pengelolaan aktif, (4) Tolok ukur IHSG, (5) Profil risiko agresif. Kinerja 5 tahun 2.72%, di bawah tolok ukur (-5.00%). Key takeaway: SDPP menawarkan stabilitas di saham blue chip namun dengan risiko underperformance di pasar bullish.",
+      "source_units": ["unit_SDPP", "TABEL 3"],
+      "confidence": 0.90,
+      "priority": 6
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Strategi dan Kinerja BNP Paribas SRI-KEHATI",
+      "content": "Bagian ini menyoroti strategi pasif SRI-KEHATI yang mereplikasi indeks SRI-KEHATI, fokus pada 25 saham berkapitalisasi besar dan berprinsip ESG. Dana kelolaan IDR 3,6 triliun, tracking error dijaga <2%. Return 5 tahun -0.13%, lebih baik dari tolok ukur (-1.29%). Key takeaway: SRI-KEHATI cocok sebagai komponen defensif portofolio, dengan transparansi tinggi dan risiko pasar yang relatif terukur.",
+      "source_units": ["unit_SRIKEHATI", "TABEL 3"],
+      "confidence": 0.91,
+      "priority": 6
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Kunci Reksa Dana Saham",
+      "content": "**Tracking Error**: Selisih antara kinerja reksa dana indeks dengan tolok ukurnya, diukur dalam persentase. Tracking error rendah (<2%) mengindikasikan kinerja reksa dana sangat mirip dengan indeks acuan.\n**Tolok Ukur (Benchmark)**: Indeks yang digunakan sebagai pembanding kinerja reksa dana, misal IHSG atau Indeks SRI-KEHATI.\n**Dana Kelolaan (AUM)**: Total nilai dana yang dikelola oleh manajer investasi dalam suatu produk reksa dana, dinyatakan dalam mata uang (misal IDR 405 Miliar).\n**Profil Risiko Agresif**: Kategori risiko tinggi pada reksa dana, biasanya karena eksposur tinggi pada saham dan volatilitas pasar.\n**SRI-KEHATI**: Indeks saham yang terdiri dari perusahaan dengan kriteria Sustainable and Responsible Investment (SRI), mengedepankan aspek lingkungan, sosial, dan tata kelola.",
+      "source_units": ["unit_SRIKEHATI", "TABEL 1", "unit_SDPP"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "glossary",
+      "title": "Definisi Istilah Teknis Investasi Saham dan Reksa Dana",
+      "content": "**Pengelolaan Aktif**: Strategi manajer investasi yang secara aktif memilih dan menyesuaikan portofolio saham untuk mengungguli tolok ukur.\n**Pengelolaan Pasif**: Strategi investasi yang bertujuan mereplikasi kinerja indeks acuan tanpa melakukan pemilihan saham aktif.\n**Kapitalisasi Besar/Sedang/Kecil**: Klasifikasi perusahaan berdasarkan nilai pasar sahamnya; kapitalisasi besar (blue chip) cenderung lebih stabil, kecil-menengah menawarkan potensi pertumbuhan lebih tinggi namun lebih volatil.\n**ESG (Environmental, Social, Governance)**: Kriteria investasi yang memperhatikan aspek lingkungan, sosial, dan tata kelola perusahaan.\n**Unit Penyertaan**: Satuan kepemilikan dalam reksa dana, nilainya dapat naik atau turun sesuai kinerja portofolio.",
+      "source_units": ["unit_AlphaNavigator", "unit_SRIKEHATI"],
+      "confidence": 0.93,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Terminologi Khusus: Kinerja Reksa Dana dan Risiko",
+      "content": "**YTD (Year to Date)**: Kinerja reksa dana sejak awal tahun hingga tanggal laporan.\n**NAB (Nilai Aktiva Bersih)**: Nilai total aset reksa dana dikurangi kewajiban, dibagi jumlah unit penyertaan.\n**Risk Profile Aggressive**: Profil risiko yang mengindikasikan potensi fluktuasi nilai investasi tinggi.\n**Indeks SRI-KEHATI**: Indeks saham berbasis perusahaan yang memenuhi kriteria keberlanjutan dan tanggung jawab sosial.\n**Fee Transaksi**: Biaya yang dikenakan saat pembelian, penjualan, atau pengalihan unit reksa dana.",
+      "source_units": ["unit_SRIKEHATI", "unit_AlphaNavigator", "unit_SDPP"],
+      "confidence": 0.92,
+      "priority": 6
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implikasi Strategi Aktif vs Pasif pada Return dan Risiko Reksa Dana",
+      "content": "Strategi aktif (Alpha Navigator, SDPP) memungkinkan manajer investasi menyesuaikan portofolio sesuai kondisi pasar, berpotensi menghasilkan alpha (return di atas tolok ukur) pada periode bullish atau saat terjadi anomali pasar. Namun, strategi ini juga membawa risiko underperformance jika keputusan pemilihan saham tidak tepat. Sebaliknya, strategi pasif (SRI-KEHATI) memberikan kinerja yang sangat mirip dengan indeks, dengan risiko tracking error rendah, namun membatasi upside saat pasar bullish. Konsekuensi langsung: investor yang memilih strategi aktif harus siap menghadapi volatilitas dan potensi return yang lebih fluktuatif. Efek domino: dalam kondisi pasar bearish, strategi pasif cenderung lebih defensif. Risiko potensial: overconfidence pada manajer aktif bisa menyebabkan underperformance. Peluang tersembunyi: switching antara strategi aktif dan pasif sesuai siklus pasar dapat mengoptimalkan return. Confidence: 0.85, asumsi didasarkan pada data historis dan literatur investasi.",
+      "source_units": ["unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Efek Konsentrasi Portofolio pada Saham Perbankan dan Consumer Goods",
+      "content": "Root Analysis: Kelima besar efek dalam portofolio ketiga reksa dana didominasi saham perbankan (BCA, BRI, Mandiri) dan consumer goods (Indofood, Mayora). Konsekuensi langsung: kinerja reksa dana sangat dipengaruhi sektor perbankan dan konsumsi domestik. Efek domino: jika terjadi shock pada sektor perbankan (misal, krisis likuiditas atau regulasi ketat), seluruh reksa dana berpotensi terdampak signifikan. Risiko potensial: konsentrasi sektor menurunkan diversifikasi, meningkatkan risiko sistemik. Peluang tersembunyi: jika sektor perbankan outperform, portofolio akan mendapat boost return. Confidence: 0.8, asumsi berdasarkan komposisi portofolio dan korelasi sektor.",
+      "source_units": ["TABEL 2", "unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.80,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Dampak Negatif Return 1 Tahun pada Persepsi Investor dan Aliran Dana",
+      "content": "Return 1 tahun seluruh reksa dana negatif (Alpha Navigator -0.47%, SDPP -6.33%, SRI-KEHATI -11.18%). Konsekuensi langsung: persepsi investor terhadap reksa dana saham sebagai instrumen high risk meningkat, berpotensi mendorong redemption dan switching ke instrumen pasar uang atau obligasi. Efek domino: tekanan redemption dapat memaksa manajer investasi melakukan penjualan paksa saham, memperburuk kinerja. Risiko potensial: spiral outflow dan penurunan NAB lebih lanjut. Peluang tersembunyi: bagi investor jangka panjang, koreksi harga dapat menjadi entry point strategis. Confidence: 0.78, asumsi didasarkan pada pola perilaku investor ritel di pasar bearish.",
+      "source_units": ["TABEL 3", "unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.78,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Outperformance Alpha Navigator pada Horizon 3 dan 5 Tahun",
+      "content": "Deskripsi: Alpha Navigator consistently outperform tolok ukur pada horizon 3 tahun (8.96% vs 7.57%) dan 5 tahun (7.00% vs 12.39%). Pola ini menunjukkan kemampuan manajer aktif dalam memilih saham yang resilient terhadap volatilitas jangka pendek. Quantification: Outperformance 3 tahun sebesar +1.39% dan 5 tahun -5.39% (tolok ukur lebih tinggi). Root cause hypothesis: strategi aktif dan fleksibilitas alokasi ke saham kapitalisasi kecil-menengah memberikan agility saat pasar berubah. Implication: investor dengan horizon menengah-panjang dapat memperoleh return lebih stabil dengan Alpha Navigator, namun perlu monitoring switching cost dan fee transaksi.",
+      "source_units": ["TABEL 3", "unit_AlphaNavigator"],
+      "confidence": 0.83,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Negatif Return SRI-KEHATI pada Horizon 1 dan 5 Tahun",
+      "content": "Deskripsi: SRI-KEHATI menunjukkan return negatif pada 1 tahun (-11.18%) dan 5 tahun (-0.13%), namun outperform tolok ukur pada 5 tahun (-1.29%). Pola ini mengindikasikan resilience relatif terhadap indeks, meski tetap tertekan di pasar bearish. Quantification: Outperformance 5 tahun sebesar +1.16%. Root cause hypothesis: komposisi saham berfundamental kuat dan fokus ESG memberikan downside protection. Implication: SRI-KEHATI cocok sebagai komponen defensif portofolio, namun kurang optimal untuk growth jangka panjang.",
+      "source_units": ["TABEL 3", "unit_SRIKEHATI"],
+      "confidence": 0.82,
+      "priority": 6
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Anomali Underperformance SDPP pada Horizon 5 Tahun",
+      "content": "Deskripsi: SDPP mencatat return 5 tahun hanya 2.72%, jauh di bawah tolok ukur (-5.00%) dan Alpha Navigator (7.00%). Pola ini merupakan anomali mengingat SDPP fokus pada saham blue chip yang umumnya lebih stabil. Quantification: Selisih dengan Alpha Navigator -4.28%. Root cause hypothesis: overweight pada sektor tertentu atau pemilihan saham yang kurang optimal. Implication: perlu evaluasi ulang strategi SDPP dan potensi rebalancing portofolio untuk menghindari stagnasi return.",
+      "source_units": ["TABEL 3", "unit_SDPP"],
+      "confidence": 0.81,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Kinerja Tabel: Return 1 Tahun Negatif, Recovery pada Horizon 3-5 Tahun",
+      "content": "Metrik utama: return 1 tahun seluruh reksa dana negatif (Alpha Navigator -0.47%, SDPP -6.33%, SRI-KEHATI -11.18%). Namun, pada horizon 3 tahun, Alpha Navigator dan SDPP mulai menunjukkan recovery (8.96%, 7.90%). Insight tersirat: volatilitas jangka pendek tinggi, namun strategi aktif mampu memanfaatkan rebound pasar. Derived metric: average recovery rate 3 tahun sekitar 8%. Implikasi: investor dengan horizon pendek berisiko rugi, namun horizon menengah-panjang lebih berpeluang profit.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.86,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Komposisi Portofolio: Konsentrasi pada Sektor Perbankan",
+      "content": "Tabel 5 besar efek dalam portofolio menunjukkan konsentrasi pada saham perbankan (BCA, BRI, Mandiri) di ketiga reksa dana. Pola ini mengindikasikan keyakinan manajer investasi pada resilience sektor perbankan Indonesia. Namun, derived metric: >60% dari top holdings adalah bank. Implikasi: portofolio sangat sensitif terhadap sentimen sektor keuangan, perlu diversifikasi tambahan untuk mitigasi risiko sistemik.",
+      "source_units": ["TABEL 2"],
+      "confidence": 0.84,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Perbandingan Dana Kelolaan: Skala dan Implikasi Likuiditas",
+      "content": "Dana kelolaan SDPP (Rp 3.94 triliun) dan SRI-KEHATI (IDR 3,6 triliun) jauh lebih besar dibanding Alpha Navigator (IDR 405 miliar). Insight tersirat: skala besar memberikan likuiditas lebih tinggi dan stabilitas harga unit, namun bisa membatasi agility dalam switching saham small cap. Implikasi: investor institusi lebih cocok pada SDPP/SRI-KEHATI, investor ritel/agile pada Alpha Navigator.",
+      "source_units": ["TABEL 1", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.87,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Strategi Investasi: Alpha Navigator vs SDPP vs SRI-KEHATI",
+      "content": "Alpha Navigator mengadopsi strategi aktif dengan fleksibilitas tinggi pada saham kapitalisasi kecil-menengah, SDPP fokus pada blue chip dan pengelolaan aktif, sedangkan SRI-KEHATI pasif dan berbasis ESG. Keunggulan Alpha Navigator: potensi alpha dan agility, kelemahan: volatilitas tinggi. SDPP: stabilitas, namun risiko stagnasi return. SRI-KEHATI: defensif dan transparan, namun upside terbatas. Rekomendasi: kombinasi ketiganya dapat mengoptimalkan risk-adjusted return portofolio.",
+      "source_units": ["unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.89,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Kinerja 5 Tahun: Alpha Navigator, SDPP, dan SRI-KEHATI",
+      "content": "Alpha Navigator mencatat return 5 tahun 7.00%, SDPP 2.72%, SRI-KEHATI -0.13%. Tolok ukur Alpha Navigator 12.39%, SDPP -5.00%, SRI-KEHATI -1.29%. Keunggulan Alpha Navigator pada return absolut, SRI-KEHATI pada resilience terhadap tolok ukur. SDPP underperform baik terhadap tolok ukur maupun peer. Rekomendasi: investor growth-oriented pilih Alpha Navigator, defensif pilih SRI-KEHATI, evaluasi ulang posisi SDPP.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.88,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Tabel Komparasi Dana Kelolaan dan Profil Risiko",
+      "content": "Dana kelolaan SDPP (Rp 3.94 triliun) dan SRI-KEHATI (IDR 3,6 triliun) jauh lebih besar dari Alpha Navigator (IDR 405 miliar). Profil risiko ketiganya agresif. Keunggulan dana besar: likuiditas dan stabilitas. Kelemahan: agility rendah. Alpha Navigator lebih agile namun lebih rentan outflow besar. Rekomendasi: investor institusi pilih SDPP/SRI-KEHATI, ritel/agile pilih Alpha Navigator.",
+      "source_units": ["TABEL 1", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.87,
+      "priority": 6
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Return Kumulatif Reksa Dana",
+      "content": "Dari data return 1 bulan, YTD, 1 tahun, 3 tahun, dan 5 tahun, dapat dideduksi bahwa return kumulatif dihitung dengan formula: Return Kumulatif = [(NAB akhir periode / NAB awal periode) - 1] × 100%. Variabel: NAB = Nilai Aktiva Bersih/unit penyertaan. Contoh: Jika NAB awal 1000, NAB akhir 1070, return 7%. Validasi: return 5 tahun Alpha Navigator 7.00% mengindikasikan CAGR sekitar 1.36% per tahun (asumsi setahunan). Limitasi: tidak memperhitungkan fee transaksi dan switching cost.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Tracking Error pada Reksa Dana Indeks",
+      "content": "Tracking error didefinisikan sebagai standar deviasi selisih return reksa dana dan tolok ukur selama periode tertentu. Formula: Tracking Error = StdDev(Return Reksa Dana - Return Tolok Ukur). Variabel: return per periode (bulanan, tahunan). Contoh: jika selisih return bulanan rata-rata 0.2% dengan deviasi 0.5%, tracking error 0.5%. Validasi: SRI-KEHATI menjaga tracking error <2%. Limitasi: asumsi pasar normal, tidak memperhitungkan outlier ekstrem.",
+      "source_units": ["unit_SRIKEHATI"],
+      "confidence": 0.87,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Estimasi CAGR (Compound Annual Growth Rate) dari Return 5 Tahun",
+      "content": "CAGR dapat diestimasi dari return 5 tahun dengan formula: CAGR = [(NAB akhir / NAB awal)^(1/5)] - 1. Contoh: Alpha Navigator return 5 tahun 7.00% → CAGR = (1.07)^(1/5) - 1 ≈ 1.36% per tahun. Validasi: sesuai dengan return tahunan rata-rata. Limitasi: asumsi return terdistribusi merata tiap tahun, tidak memperhitungkan volatilitas tahunan.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.86,
+      "priority": 6
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Return 5 Tahun Mendatang: Best, Likely, Worst Case",
+      "content": "Berdasarkan data historis 5 tahun: Alpha Navigator 7.00%, SDPP 2.72%, SRI-KEHATI -0.13%. \nBest Case: Alpha Navigator CAGR 8% (asumsi market bullish, manajer outperform), SDPP 5%, SRI-KEHATI 2%. Most Likely: Alpha Navigator 6%, SDPP 3%, SRI-KEHATI 0%. Worst Case: Alpha Navigator 2%, SDPP -2%, SRI-KEHATI -3% (asumsi market bearish, outflow tinggi). Confidence: 0.7 (extrapolation 5 tahun ke depan). Asumsi: tidak ada krisis besar, fee stabil, switching cost minimal.",
+      "source_units": ["TABEL 3", "unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.70,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Dampak Switching Fee pada Return Investor",
+      "content": "Jika investor melakukan switching antar reksa dana setiap tahun (fee rata-rata 1%), maka return efektif 5 tahun akan berkurang sekitar 5%. Best case: switching dilakukan saat momentum optimal, return tetap mendekati CAGR historis. Most likely: switching suboptimal, return turun 1-2% per tahun. Worst case: switching di waktu salah, return bisa negatif. Confidence: 0.65 (asumsi fee dan perilaku switching). Implikasi: switching harus berbasis analisis, bukan reaktif.",
+      "source_units": ["unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.65,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Aliran Dana Masuk dan Keluar Berdasarkan Return 1 Tahun Negatif",
+      "content": "Jika return 1 tahun negatif berlanjut, diproyeksikan outflow dana dari reksa dana saham bisa mencapai 10-15% dari total AUM dalam 12 bulan ke depan (asumsi pola redemption historis). Best case: outflow <5% (market rebound cepat), most likely 10%, worst case >20% (bearish berkepanjangan). Confidence: 0.68 (extrapolation, asumsi perilaku investor ritel). Implikasi: manajer investasi perlu siapkan likuiditas dan strategi defensif.",
+      "source_units": ["TABEL 3", "unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.68,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Return Reksa Dana Saham 2025: Potensi Recovery",
+      "content": "Analisis trend: return 1 tahun negatif, namun 3 dan 5 tahun menunjukkan recovery. Diproyeksikan return 2025 akan rebound ke kisaran 5-8% untuk Alpha Navigator dan SDPP jika IHSG menguat dan sentimen global membaik. Confidence interval: 4-10%. Asumsi: tidak ada krisis eksternal, inflasi terkendali, suku bunga stabil. Turning point: Q2 2025 jika earnings emiten membaik.",
+      "source_units": ["TABEL 3", "unit_AlphaNavigator", "unit_SDPP"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Dana Kelolaan: Konsolidasi pada Dana Besar",
+      "content": "Trend: dana kelolaan SDPP dan SRI-KEHATI jauh lebih besar dari Alpha Navigator. Diproyeksikan tren konsolidasi akan berlanjut, dengan dana besar makin dominan karena preferensi institusi pada likuiditas. Range estimate: SDPP dan SRI-KEHATI tumbuh 5-10% per tahun, Alpha Navigator stagnan atau tumbuh <5%. Confidence: 0.72. Asumsi: tidak ada outflow besar, pasar stabil.",
+      "source_units": ["TABEL 1", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.72,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Komposisi Sektor: Dominasi Perbankan Berlanjut",
+      "content": "Trend: komposisi top holdings didominasi sektor perbankan. Diperkirakan tren ini berlanjut 1-2 tahun ke depan karena resilience sektor dan kontribusi laba terbesar di IHSG. Range estimate: >50% top holdings tetap bank. Confidence: 0.80. Asumsi: tidak ada krisis perbankan atau regulasi disruptif.",
+      "source_units": ["TABEL 2"],
+      "confidence": 0.80,
+      "priority": 6
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: IHSG Turun 10% dalam 6 Bulan ke Depan",
+      "content": "Jika IHSG turun 10% dalam 6 bulan, return reksa dana saham diproyeksikan turun 8-12% tergantung strategi (Alpha Navigator -12%, SDPP -10%, SRI-KEHATI -8%). Dampak: redemption meningkat, NAB turun, switching ke pasar uang/obligasi. Mitigasi: manajer investasi tingkatkan likuiditas, kurangi saham volatil. Probability: 20% (medium, asumsi volatilitas global).",
+      "source_units": ["TABEL 3", "unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.70,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Suku Bunga BI Naik 1% di 2025",
+      "content": "Jika suku bunga BI naik 1%, saham perbankan dan consumer goods berpotensi tertekan, return reksa dana saham turun 3-5% dalam 12 bulan. Dampak: outflow ke reksa dana pasar uang/obligasi, tekanan pada NAB. Mitigasi: rebalancing ke sektor defensif, kurangi eksposur saham interest-rate sensitive. Probability: 30% (asumsi inflasi naik).",
+      "source_units": ["TABEL 2", "unit_AlphaNavigator", "unit_SDPP", "unit_SRIKEHATI"],
+      "confidence": 0.68,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Regulasi ESG Diperketat, Dampak pada SRI-KEHATI",
+      "content": "Jika regulasi ESG diperketat, SRI-KEHATI berpotensi outperform (+2-3% vs tolok ukur) karena emiten portofolio sudah comply. Dampak: inflow ke SRI-KEHATI meningkat, tracking error turun. Mitigasi: manajer investasi perkuat disclosure ESG dan engagement ke emiten. Probability: 40% (tren global ESG).",
+      "source_units": ["unit_SRIKEHATI"],
+      "confidence": 0.72,
+      "priority": 7
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Konsentrasi Sektor Perbankan pada Portofolio Reksa Dana",
+      "content": "Deskripsi: >60% top holdings reksa dana adalah saham perbankan. Likelihood: High (70%, berdasarkan data portofolio). Impact: High (critical, jika sektor perbankan terkena shock, return portofolio bisa turun >10%). Risk Score: 9/10. Root cause: keyakinan manajer pada resilience bank, kurang diversifikasi. Mitigasi: tambah eksposur sektor lain (infrastruktur, teknologi). Contingency: switching cepat ke sektor defensif saat early warning (penurunan laba bank, NPL naik). Early warning: penurunan harga saham bank, berita negatif sektor.",
+      "source_units": ["TABEL 2"],
+      "confidence": 0.85,
+      "priority": 9
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Redemption Besar akibat Return Negatif Beruntun",
+      "content": "Deskripsi: return 1 tahun negatif dapat memicu redemption besar. Likelihood: Medium-High (50%, pola historis). Impact: High (penurunan NAB, forced selling). Risk Score: 8/10. Root cause: perilaku investor ritel reaktif. Mitigasi: edukasi investor, siapkan likuiditas. Contingency: suspend redemption sementara, rebalancing portofolio. Early warning: lonjakan redemption, volume transaksi naik.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.80,
+      "priority": 8
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Underperformance SDPP terhadap Tolok Ukur",
+      "content": "Deskripsi: SDPP consistently underperform tolok ukur 5 tahun. Likelihood: Medium (40%, pola historis). Impact: Medium (investor switching, outflow). Risk Score: 6/10. Root cause: strategi terlalu konservatif, overweight sektor stagnan. Mitigasi: evaluasi ulang strategi, diversifikasi sektor. Contingency: switching ke produk lain. Early warning: return trailing tolok ukur 2 kuartal berturut-turut.",
+      "source_units": ["TABEL 3", "unit_SDPP"],
+      "confidence": 0.75,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

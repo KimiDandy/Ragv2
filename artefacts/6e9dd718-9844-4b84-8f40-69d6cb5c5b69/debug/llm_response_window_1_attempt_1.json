@@ -1,0 +1,293 @@
+{
+  "enhancements": [
+    {
+      "type": "executive_summary",
+      "title": "Strategic Macro-Financial Shifts: Dampak Suku Bunga, Inflasi, dan Pasar Properti",
+      "content": "Root Analysis: Dokumen ini menyoroti perubahan makroekonomi utama—penurunan suku bunga global, tren inflasi, dan dinamika pasar properti domestik—yang secara tersirat membentuk lanskap risiko dan peluang investasi di Indonesia. Signifikansi utamanya terletak pada konvergensi kebijakan moneter longgar di negara maju dan Asia, serta tekanan pada sektor properti domestik. \nKey Findings: (1) BI Rate tetap tinggi (5,75%) dibandingkan Fed Rate (4,5%), menandakan ruang penurunan suku bunga domestik. (2) Inflasi Indonesia sangat rendah (0,76% YoY), membuka peluang pelonggaran moneter. (3) Pasar properti mengalami kontraksi penjualan (-15,09% YoY), dengan pertumbuhan harga yang melambat. (4) Permintaan obligasi dan SRBI tinggi, didorong ekspektasi penurunan suku bunga. \nPractical Application: Pengambil keputusan dapat memanfaatkan peluang refinancing, optimalisasi portofolio obligasi, dan strategi akuisisi properti besar. Investor institusi dapat mengalokasikan lebih banyak ke obligasi dan instrumen fixed income, sementara pengembang properti perlu menyesuaikan strategi penjualan dan pembiayaan. \nImpact: Potensi penurunan suku bunga BI akan memperkuat pasar obligasi dan properti, namun risiko likuiditas dan kredit tetap tinggi jika penjualan properti kecil-menengah terus tertekan. Rekomendasi: Siapkan strategi diversifikasi portofolio, lakukan stress test pada KPR, dan monitor early warning pada sektor properti dan kredit. Konteks global dan domestik harus diintegrasikan dalam pengambilan keputusan investasi.",
+      "source_units": ["TABEL 1", "TABEL 2", "TABEL 3", "unit_1", "unit_2", "unit_3", "unit_4"],
+      "confidence": 0.9,
+      "priority": 10
+    },
+    {
+      "type": "executive_summary",
+      "title": "Peluang dan Risiko Tersembunyi di Balik Pergerakan Pasar Valuta Asing dan Obligasi",
+      "content": "Root Analysis: Penguatan Rupiah dan penurunan imbal hasil obligasi Indonesia menandakan pergeseran sentimen risk-on di pasar keuangan domestik, didorong oleh ekspektasi penurunan suku bunga BI dan pelemahan USD. Hal ini penting karena mengindikasikan perubahan preferensi investor, baik lokal maupun asing, terhadap aset berisiko di Indonesia. \nKey Insights: (1) Rupiah menguat signifikan (USD/IDR turun -0,61%), outperforming mata uang Asia Tenggara lain. (2) Imbal hasil obligasi pemerintah 10 tahun turun 3-6bps, SRBI 1 tahun turun 10bps menjadi 6,46%. (3) Permintaan lelang obligasi dan SRBI tinggi, baik domestik maupun asing. \nPractical Application: Perusahaan dapat memanfaatkan momentum ini untuk melakukan refinancing utang dalam Rupiah atau menerbitkan obligasi baru dengan biaya lebih rendah. Investor institusi dapat memperbesar eksposur pada obligasi jangka menengah-panjang. \nImpact: Jika tren penguatan Rupiah dan penurunan yield berlanjut, cost of fund akan menurun, namun risiko reversal tetap ada jika sentimen global berubah. Rekomendasi: Monitor volatilitas pasar global, siapkan hedging untuk eksposur valuta asing, dan lakukan review portofolio obligasi secara berkala.",
+      "source_units": ["TABEL 3", "unit_5", "unit_6"],
+      "confidence": 0.88,
+      "priority": 9
+    },
+    {
+      "type": "executive_summary",
+      "title": "Dinamika Inflasi, Suku Bunga, dan Implikasi Terhadap Kredit dan Konsumsi",
+      "content": "Root Analysis: Inflasi yang sangat rendah di Indonesia (0,76% YoY) dan gap suku bunga BI-Fed yang cukup lebar (5,75% vs 4,5%) menciptakan ruang pelonggaran moneter, namun juga menimbulkan risiko terhadap daya saing kredit dan konsumsi domestik. \nKey Findings: (1) Inflasi Indonesia jauh di bawah AS (0,76% vs 3,00%), membuka peluang penurunan suku bunga. (2) Mayoritas pembelian rumah masih mengandalkan KPR (72,54%), namun penjualan properti turun tajam (-15,09% YoY). (3) Sumber pendanaan pengembang didominasi dana internal (74,38%), menandakan kehati-hatian perbankan. \nPractical Application: Bank dan lembaga keuangan dapat mengembangkan produk KPR berbunga lebih kompetitif, sementara pengembang properti perlu memperkuat strategi pemasaran dan diversifikasi sumber dana. \nImpact: Penurunan suku bunga dapat mendorong konsumsi dan kredit, namun risiko NPL meningkat jika kualitas debitur memburuk. Rekomendasi: Perkuat analisis risiko kredit, lakukan segmentasi pasar properti, dan siapkan mitigasi untuk potensi kenaikan NPL.",
+      "source_units": ["TABEL 1", "TABEL 2", "unit_7", "unit_8"],
+      "confidence": 0.87,
+      "priority": 9
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Pergerakan Pasar Global dan Regional",
+      "content": "Bagian ini membahas pergerakan indeks utama di Amerika Serikat, Asia, dan Australia, serta data pertumbuhan ekonomi Jepang. Poin penting: (1) Indeks Dow Jones dan S&P 500 turun tipis, Nasdaq naik, namun secara mingguan semua indeks utama AS naik karena sentimen positif terhadap kebijakan tarif AS dan data inflasi yang lebih baik dari ekspektasi. (2) Ekonomi Jepang tumbuh 0,7% QoQ pada Q4, lebih tinggi dari kuartal sebelumnya (0,4%), mengindikasikan pemulihan ekonomi yang stabil. (3) Bank sentral Australia, Indonesia, dan Selandia Baru akan mengumumkan kebijakan suku bunga, yang berpotensi memicu volatilitas pasar regional. Key takeaway: Sentimen global membaik, namun ketidakpastian kebijakan moneter tetap menjadi faktor risiko utama.",
+      "source_units": ["unit_1", "unit_2"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Dinamika Inflasi dan Suku Bunga",
+      "content": "Bagian ini menyoroti data inflasi Indonesia (0,76% YoY) yang sangat rendah dibandingkan AS (3,00% YoY), serta gap suku bunga acuan BI (5,75%) dan Fed (4,5%). Poin penting: (1) Inflasi rendah membuka ruang pelonggaran moneter di Indonesia. (2) Gap suku bunga dapat mempengaruhi arus modal dan nilai tukar. (3) Potensi penurunan suku bunga BI menjadi perhatian pelaku pasar. Key takeaway: Kebijakan moneter domestik sangat dipengaruhi oleh dinamika inflasi dan perbandingan suku bunga global.",
+      "source_units": ["TABEL 1", "TABEL 2"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Pasar Properti Residensial dan Pembiayaan",
+      "content": "Bagian domestik menyoroti hasil survei harga properti residensial Bank Indonesia. Poin penting: (1) Pertumbuhan harga properti melambat (IHPR Q4 2024: +1,39% YoY vs Q3: +1,46% YoY). (2) Penjualan properti kontraksi tajam (-15,09% YoY), terutama tipe kecil-menengah. (3) Sumber dana pengembang didominasi internal (74,38%), sedangkan pembelian rumah mayoritas melalui KPR (72,54%). Key takeaway: Sektor properti menghadapi tekanan permintaan, namun segmen rumah besar masih menunjukkan ketahanan.",
+      "source_units": ["unit_3", "unit_4"],
+      "confidence": 0.87,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Kunci Sektor Finansial dan Ekonomi",
+      "content": "**BI Rate**: Suku bunga acuan yang ditetapkan oleh Bank Indonesia sebagai referensi utama bagi suku bunga perbankan di Indonesia. \n**Fed Rate**: Suku bunga acuan yang ditetapkan oleh Federal Reserve (bank sentral Amerika Serikat) yang mempengaruhi suku bunga global. \n**IHPR** (Indeks Harga Properti Residensial): Indeks yang mengukur perubahan harga properti residensial di pasar primer Indonesia, diterbitkan oleh Bank Indonesia. \n**KPR** (Kredit Pemilikan Rumah): Skema pembiayaan rumah yang diberikan oleh bank kepada konsumen, biasanya dengan tenor panjang dan bunga tetap/variabel. \n**SRBI** (Sertifikat Rupiah Bank Indonesia): Instrumen surat berharga jangka pendek yang diterbitkan oleh Bank Indonesia untuk pengelolaan likuiditas rupiah.",
+      "source_units": ["TABEL 1", "unit_3", "unit_4"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Obligasi dan Pasar Valuta",
+      "content": "**INA 10 YR**: Obligasi pemerintah Indonesia dengan tenor 10 tahun, baik dalam denominasi Rupiah (IDR) maupun Dolar AS (USD). \n**UST 10 YR**: Obligasi pemerintah Amerika Serikat (US Treasury) dengan tenor 10 tahun, menjadi benchmark global untuk yield obligasi. \n**Yield**: Imbal hasil atau return yang diperoleh dari kepemilikan obligasi, biasanya dinyatakan dalam persentase per tahun. \n**Risk On**: Istilah pasar yang menggambarkan kondisi di mana investor lebih memilih aset berisiko tinggi karena optimisme terhadap prospek ekonomi. \n**MoM/YoY**: Month-on-Month dan Year-on-Year, istilah statistik untuk mengukur perubahan data secara bulanan dan tahunan.",
+      "source_units": ["TABEL 3", "unit_5", "unit_6"],
+      "confidence": 0.93,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Ekonomi Makro dan Perdagangan",
+      "content": "**GDP Growth Rate**: Laju pertumbuhan Produk Domestik Bruto (PDB), indikator utama kesehatan ekonomi suatu negara. \n**Balance of Trade**: Selisih antara nilai ekspor dan impor suatu negara dalam periode tertentu, mencerminkan neraca perdagangan. \n**Inflation (YoY/MoM)**: Kenaikan harga barang dan jasa secara tahunan (Year-on-Year) atau bulanan (Month-on-Month). \n**Forex**: Foreign Exchange, pasar valuta asing tempat mata uang diperdagangkan. \n**Risk On/Off**: Pergeseran sentimen investor antara aset berisiko tinggi (risk on) dan aset aman (risk off), biasanya dipicu perubahan kebijakan moneter atau geopolitik.",
+      "source_units": ["TABEL 2", "unit_7", "unit_8"],
+      "confidence": 0.92,
+      "priority": 6
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implikasi Penurunan Yield Obligasi dan Penguatan Rupiah Terhadap Sektor Keuangan",
+      "content": "Root Analysis: Penurunan yield obligasi pemerintah Indonesia (INA 10YR IDR -0,97%, USD -1,01%) dan penguatan Rupiah (USD/IDR -0,61%) secara tersirat mengindikasikan ekspektasi pelonggaran moneter dan masuknya arus modal asing. \nKonsekuensi Langsung: Cost of fund untuk pemerintah dan korporasi akan menurun, mendorong penerbitan obligasi baru. \nEfek Domino: Potensi capital inflow dapat memperkuat pasar modal dan memperbaiki likuiditas perbankan. Namun, reversal risk tinggi jika sentimen global berubah. \nRisiko Potensial: Jika penurunan yield terlalu cepat, risiko overheating di pasar obligasi dan potensi bubble meningkat. Confidence: 0.8 (asumsi tren risk-on berlanjut, tidak ada shock eksternal besar). \nPeluang Tersembunyi: Emiten dapat melakukan refinancing dengan biaya lebih murah, investor institusi dapat mengunci yield sebelum tren reversal.",
+      "source_units": ["TABEL 3", "unit_5", "unit_6"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Konsekuensi Inflasi Rendah dan Gap Suku Bunga BI-Fed Terhadap Arus Modal",
+      "content": "Root Analysis: Inflasi Indonesia yang sangat rendah (0,76% YoY) dan gap suku bunga BI-Fed (5,75% vs 4,5%) menciptakan daya tarik bagi carry trade, namun juga meningkatkan risiko sudden reversal jika Fed menaikkan suku bunga lebih cepat. \nKonsekuensi Langsung: Potensi arus masuk modal asing ke instrumen Rupiah meningkat, memperkuat nilai tukar dan pasar obligasi. \nEfek Domino: Jika terjadi outflow mendadak, Rupiah bisa terdepresiasi tajam, memicu volatilitas pasar keuangan domestik. \nRisiko Potensial: Ketergantungan pada hot money dapat memperbesar risiko likuiditas. Confidence: 0.75 (asumsi Fed dan BI tidak mengubah stance secara drastis dalam jangka pendek). \nPeluang Tersembunyi: Bank dan korporasi dapat mengoptimalkan funding cost dalam periode stabilitas ini.",
+      "source_units": ["TABEL 1", "TABEL 2"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Dampak Kontraksi Penjualan Properti Terhadap Kesehatan Kredit Perbankan",
+      "content": "Root Analysis: Kontraksi penjualan properti residensial (-15,09% YoY) dengan mayoritas pembelian melalui KPR (72,54%) menimbulkan risiko peningkatan NPL (Non-Performing Loan) pada sektor perbankan. \nKonsekuensi Langsung: Bank akan lebih selektif dalam menyalurkan KPR, memperketat syarat kredit. \nEfek Domino: Pengembang properti tipe kecil-menengah berpotensi menghadapi kesulitan likuiditas, memperlambat proyek baru. \nRisiko Potensial: Jika tren berlanjut, dapat terjadi penurunan harga properti sekunder dan tekanan pada sektor konstruksi. Confidence: 0.7 (asumsi penurunan permintaan properti berlanjut 1-2 kuartal). \nPeluang Tersembunyi: Bank dapat mengembangkan produk KPR inovatif untuk segmen rumah besar yang masih resilient.",
+      "source_units": ["unit_3", "unit_4"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Divergensi Inflasi dan Suku Bunga antara Indonesia dan Amerika Serikat",
+      "content": "Deskripsi: Data menunjukkan inflasi Indonesia (0,76% YoY) jauh lebih rendah dari AS (3,00% YoY), namun suku bunga acuan BI (5,75%) jauh lebih tinggi dari Fed Rate (4,5%). Pola ini mengindikasikan kebijakan moneter Indonesia lebih ketat dibandingkan AS, meski tekanan inflasi domestik sangat rendah. \nQuantification: Gap suku bunga 1,25% dengan gap inflasi 2,24%. \nRoot Cause Hypothesis: BI menjaga suku bunga tinggi untuk menjaga stabilitas Rupiah dan menarik capital inflow, bukan semata-mata untuk mengendalikan inflasi. \nImplication: Ada ruang untuk pelonggaran moneter tanpa risiko inflasi, namun risiko sudden outflow jika Fed menaikkan suku bunga tetap tinggi. Actionable insight: Monitor spread BI-Fed dan arus modal secara ketat.",
+      "source_units": ["TABEL 1", "TABEL 2"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Kontraksi Penjualan Properti dan Ketahanan Segmen Rumah Besar",
+      "content": "Deskripsi: Penjualan properti residensial secara total kontraksi -15,09% YoY, namun penjualan rumah tipe besar justru meningkat, sementara tipe kecil-menengah menurun. \nQuantification: Tidak ada angka eksplisit untuk segmen besar, namun pola divergensi jelas dari narasi. \nRoot Cause Hypothesis: Segmen menengah-bawah lebih sensitif terhadap suku bunga tinggi dan ketatnya akses KPR, sedangkan segmen atas lebih resilient karena pembiayaan lebih banyak menggunakan dana internal. \nImplication: Pengembang dan bank perlu menyesuaikan strategi pemasaran dan produk kredit sesuai segmentasi pasar. Actionable insight: Fokus pada segmen rumah besar untuk pertumbuhan jangka pendek.",
+      "source_units": ["unit_3", "unit_4"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Penguatan Rupiah dan Penurunan Yield Obligasi",
+      "content": "Deskripsi: Dalam dua hari terakhir, USD/IDR turun dari 16.300 ke 16.200 (-0,61%), sementara yield INA 10YR IDR turun dari 6,84% ke 6,77% (-0,97%). \nQuantification: Penguatan Rupiah 100 poin, penurunan yield 7bps. \nRoot Cause Hypothesis: Ekspektasi penurunan suku bunga BI dan risk-on sentiment mendorong capital inflow ke pasar obligasi dan Rupiah. \nImplication: Tren ini dapat berlanjut jika ekspektasi pelonggaran moneter tetap kuat, namun reversal risk tinggi jika sentimen global berubah. Actionable insight: Siapkan strategi hedging dan review portofolio obligasi secara dinamis.",
+      "source_units": ["TABEL 3", "unit_5", "unit_6"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Tersirat dari Tabel Suku Bunga Acuan BI dan Fed",
+      "content": "Metrik utama: BI Rate (5,75%) dan Fed Rate (4,5%). Pola: Gap suku bunga 1,25% lebih tinggi di Indonesia. Insight: Gap ini menciptakan peluang carry trade, menarik investor asing ke instrumen Rupiah, namun juga meningkatkan risiko sudden outflow jika spread menyempit. Derived metric: Carry trade spread = BI Rate - Fed Rate = 1,25%. Actionable: Bank dan investor perlu memantau dinamika spread ini untuk mengelola risiko portofolio dan arus modal.",
+      "source_units": ["TABEL 1"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight dari Tabel Inflasi: Potensi Pelonggaran Moneter",
+      "content": "Metrik utama: Inflasi Indonesia (0,76% YoY) vs AS (3,00% YoY). Pola: Inflasi domestik sangat rendah, jauh di bawah target BI (umumnya 2-4%). Insight: BI memiliki ruang untuk menurunkan suku bunga tanpa risiko inflasi berlebih. Derived metric: Real interest rate Indonesia = BI Rate - Inflasi = 5,75% - 0,76% = 4,99%. Ini sangat tinggi secara historis. Actionable: Peluang refinancing dan penurunan cost of fund sangat terbuka.",
+      "source_units": ["TABEL 2"],
+      "confidence": 0.88,
+      "priority": 9
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight dari Tabel Obligasi: Permintaan Tinggi dan Penurunan Yield",
+      "content": "Metrik utama: Yield INA 10YR IDR turun dari 6,84% ke 6,77% (-0,97%), USD dari 5,45% ke 5,39% (-1,01%), UST 10YR dari 4,53% ke 4,48% (-1,16%). Pola: Penurunan yield konsisten di semua instrumen, menandakan permintaan tinggi. Insight: Investor domestik dan asing agresif membeli obligasi, didorong ekspektasi penurunan suku bunga. Derived metric: Spread INA 10YR IDR vs UST 10YR = 6,77% - 4,48% = 2,29%. Actionable: Spread masih menarik untuk carry trade.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.87,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Kinerja Indeks Saham Global dan Regional",
+      "content": "Tabel indeks menunjukkan perbedaan kinerja: IHSG naik 0,38%, LQ45 naik 0,35%, S&P 500 turun -0,01%, Dow Jones turun -0,37%, Nasdaq naik 0,41%, FTSE 100 turun -0,37%, Hang Seng naik 3,69%, Shanghai naik 0,43%, Nikkei 225 turun -0,79%. Analisis: Pasar Asia (Hang Seng, Shanghai) outperform pasar AS dan Eropa dalam periode ini, didorong sentimen pemulihan ekonomi dan risk-on. Rekomendasi: Investor dapat melakukan rotasi portofolio ke pasar Asia untuk memanfaatkan momentum.",
+      "source_units": ["unit_7"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Sumber Pendanaan Pengembang dan Konsumen Properti",
+      "content": "Sumber pendanaan pengembang didominasi dana internal (74,38%), sedangkan pembelian rumah oleh konsumen didominasi KPR (72,54%). Analisis: Pengembang lebih konservatif, menghindari leverage tinggi, sementara konsumen masih sangat tergantung pada kredit bank. Keunggulan: Dana internal mengurangi risiko gagal bayar, namun membatasi ekspansi. Kelemahan: Ketergantungan pada KPR meningkatkan risiko sistemik jika kualitas kredit memburuk. Rekomendasi: Diversifikasi sumber dana dan inovasi produk pembiayaan.",
+      "source_units": ["unit_3", "unit_4"],
+      "confidence": 0.83,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Yield Obligasi Indonesia dan Amerika Serikat",
+      "content": "Yield INA 10YR IDR (6,77%) jauh di atas UST 10YR (4,48%), spread 2,29%. Analisis: Spread ini menarik untuk investor asing, namun juga menandakan risiko negara (country risk premium) yang lebih tinggi. Keunggulan: Potensi return lebih besar di Indonesia. Kelemahan: Risiko volatilitas Rupiah dan risiko politik lebih tinggi. Rekomendasi: Investor perlu mengelola risiko hedging dan memantau perubahan spread secara dinamis.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Carry Trade Spread antara BI Rate dan Fed Rate",
+      "content": "Analisis data suku bunga: Carry trade spread = BI Rate - Fed Rate. Dengan BI Rate 5,75% dan Fed Rate 4,5%, maka Carry Trade Spread = 1,25%. Formula umum: Spread = Suku Bunga Domestik - Suku Bunga Asing. Contoh kalkulasi: 5,75% - 4,5% = 1,25%. Asumsi: Tidak memperhitungkan biaya transaksi dan risiko nilai tukar. Applicable untuk analisis daya tarik investasi portofolio asing di Indonesia. Limitasi: Spread dapat berubah cepat jika salah satu bank sentral mengubah kebijakan.",
+      "source_units": ["TABEL 1"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Real Interest Rate Indonesia",
+      "content": "Dari tabel suku bunga dan inflasi: Real Interest Rate = BI Rate - Inflasi. Dengan BI Rate 5,75% dan Inflasi 0,76%, maka Real Interest Rate = 5,75% - 0,76% = 4,99%. Formula umum: Real Rate = Nominal Rate - Inflation Rate. Contoh kalkulasi: 5,75% - 0,76% = 4,99%. Asumsi: Menggunakan inflasi YoY sebagai basis. Limitasi: Tidak memperhitungkan faktor risiko kredit dan volatilitas nilai tukar. Applicable untuk menilai daya tarik investasi di instrumen Rupiah.",
+      "source_units": ["TABEL 1", "TABEL 2"],
+      "confidence": 0.88,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perubahan Yield Obligasi dalam Basis Poin",
+      "content": "Dari tabel obligasi: Perubahan yield (bps) = (Yield Hari Ini - Yield Hari Sebelumnya) × 100. Contoh: INA 10YR IDR turun dari 6,84% ke 6,77% → (6,77 - 6,84) × 100 = -7 bps (tabel menyebut -0,97%, setara -7 bps). Formula umum: ΔYield (bps) = (Yield_t - Yield_t-1) × 100. Asumsi: 1% = 100 bps. Limitasi: Tidak memperhitungkan perubahan harga obligasi akibat faktor eksternal. Applicable untuk analisis volatilitas pasar obligasi.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.87,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Skenario Yield Obligasi Indonesia 10 Tahun (INA 10YR) 6 Bulan ke Depan",
+      "content": "Best Case: Yield turun ke 6,25% (CAGR penurunan ~0,5%/semester, asumsi: BI Rate turun 50bps, risk-on sentiment kuat), Most Likely: Yield stabil di 6,50% (asumsi: BI Rate turun 25bps, sentimen stabil), Worst Case: Yield naik ke 7,00% (asumsi: reversal risk-off global, BI Rate stagnan). Timeline: 6 bulan ke depan. Faktor pengaruh: Kebijakan BI, arus modal, volatilitas global. Confidence: 0.7 (extrapolation, asumsi tidak ada shock besar). Metodologi: Linear projection dari tren penurunan yield 7bps/2 hari.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Skenario Penjualan Properti Residensial 2025",
+      "content": "Best Case: Penjualan rebound +5% YoY (asumsi: BI Rate turun 50bps, KPR lebih murah, stimulus properti), Most Likely: Penjualan stagnan 0% YoY (asumsi: BI Rate turun 25bps, permintaan masih lemah), Worst Case: Penjualan kontraksi lanjutan -10% YoY (asumsi: BI Rate tetap, daya beli stagnan). Timeline: FY2025. Faktor pengaruh: Suku bunga, stimulus pemerintah, daya beli. Confidence: 0.65 (extrapolation, sensitivitas tinggi terhadap suku bunga). Metodologi: Proyeksi berbasis sensitivitas permintaan properti terhadap perubahan suku bunga.",
+      "source_units": ["unit_3", "unit_4"],
+      "confidence": 0.65,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Skenario Nilai Tukar USD/IDR Semester I 2025",
+      "content": "Best Case: USD/IDR menguat ke 15.900 (asumsi: BI Rate turun, inflow asing kuat), Most Likely: Stabil di 16.100 (asumsi: spread BI-Fed tetap, volatilitas rendah), Worst Case: Melemah ke 16.400 (asumsi: Fed hawkish, outflow asing). Timeline: 6 bulan ke depan. Faktor pengaruh: Kebijakan moneter global, arus modal, sentimen risk-on/off. Confidence: 0.7 (extrapolation, volatilitas tinggi). Metodologi: Linear projection dari tren penguatan 100 poin dalam 3 hari.",
+      "source_units": ["TABEL 3", "unit_5", "unit_6"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Yield Obligasi Indonesia 10 Tahun",
+      "content": "Direction: Turun. Rate of change: -7bps dalam 2 hari (-0,97%). Turning point: Jika BI Rate turun, yield bisa turun lebih cepat; jika risk-off, yield bisa naik. Forecast next period: Yield INA 10YR IDR diperkirakan turun ke 6,70% dalam 1 minggu (range 6,65%-6,75%). Confidence interval: 0.68-0.75. Key assumption: Tidak ada shock eksternal besar, BI Rate tetap atau turun.",
+      "source_units": ["TABEL 3"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Penjualan Properti Residensial",
+      "content": "Direction: Turun. Rate of change: -15,09% YoY. Turning point: Jika BI Rate turun >50bps, potensi rebound. Forecast next period: Penjualan properti diperkirakan turun 5-10% YoY di Q1 2025 jika tidak ada stimulus. Confidence interval: 0.6-0.7. Key assumption: Tidak ada perubahan signifikan pada suku bunga atau stimulus properti.",
+      "source_units": ["unit_3", "unit_4"],
+      "confidence": 0.65,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Nilai Tukar USD/IDR",
+      "content": "Direction: Menguat (Rupiah menguat). Rate of change: -0,61% dalam 3 hari. Turning point: Jika Fed hawkish, reversal risk tinggi. Forecast next period: USD/IDR diperkirakan bergerak di kisaran 16.000-16.200 dalam 1 minggu. Confidence interval: 0.7-0.75. Key assumption: Tidak ada perubahan drastis pada spread BI-Fed dan arus modal asing.",
+      "source_units": ["TABEL 3", "unit_5", "unit_6"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: BI Rate Turun 50bps dalam 3 Bulan",
+      "content": "Deskripsi: Jika BI Rate turun dari 5,75% ke 5,25% dalam 3 bulan, cost of fund perbankan dan yield obligasi akan turun signifikan. Dampak: Yield INA 10YR IDR bisa turun ke 6,25%-6,50%, penjualan properti berpotensi rebound 5-10%, permintaan KPR naik. Mitigasi: Bank perlu menyiapkan produk KPR baru dan strategi funding. Probability: 40% (asumsi inflasi tetap rendah dan BI responsif).",
+      "source_units": ["TABEL 1", "TABEL 3", "unit_3", "unit_4"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Fed Rate Naik 50bps dalam 6 Bulan",
+      "content": "Deskripsi: Jika Fed Rate naik dari 4,5% ke 5,0%, spread BI-Fed menyempit, arus modal asing berpotensi keluar dari Indonesia. Dampak: Yield INA 10YR IDR bisa naik ke 7,00%, Rupiah melemah ke 16.400-16.600, pasar obligasi tertekan. Mitigasi: BI perlu intervensi pasar valas dan menjaga spread suku bunga. Probability: 30% (asumsi inflasi AS naik dan Fed hawkish).",
+      "source_units": ["TABEL 1", "TABEL 3"],
+      "confidence": 0.65,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Penjualan Properti Residensial Tetap Kontraksi di 2025",
+      "content": "Deskripsi: Jika penjualan properti tetap kontraksi -10% hingga akhir 2025, risiko NPL KPR meningkat, pengembang tipe kecil-menengah berpotensi gagal bayar. Dampak: Bank akan memperketat kredit, harga properti sekunder bisa turun 5-10%. Mitigasi: Diversifikasi portofolio kredit, inovasi produk KPR. Probability: 50% (asumsi daya beli stagnan, suku bunga tidak turun signifikan).",
+      "source_units": ["unit_3", "unit_4"],
+      "confidence": 0.6,
+      "priority": 7
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Sudden Outflow Modal Asing Akibat Perubahan Spread BI-Fed",
+      "content": "Deskripsi Risk: Jika Fed Rate naik atau BI Rate turun terlalu agresif, spread menyempit, memicu sudden outflow modal asing. Likelihood: Medium (30-50%), Impact: High (potensi depresiasi Rupiah >5%, yield obligasi naik >50bps). Risk Score: 7/10. Root Cause: Ketergantungan pada hot money dan carry trade. Mitigasi Preventive: BI menjaga spread minimal 100bps, komunikasi kebijakan yang jelas. Contingency Plan: Intervensi pasar valas, pengetatan likuiditas. Early Warning: Penurunan inflow SBN, volatilitas Rupiah meningkat.",
+      "source_units": ["TABEL 1", "TABEL 3"],
+      "confidence": 0.75,
+      "priority": 9
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Kenaikan NPL KPR Akibat Kontraksi Penjualan Properti",
+      "content": "Deskripsi Risk: Penjualan properti turun tajam, mayoritas pembelian via KPR, risiko NPL meningkat. Likelihood: High (60-70%), Impact: Medium-High (NPL KPR naik 1-2%, tekanan profitabilitas bank). Risk Score: 8/10. Root Cause: Daya beli lemah, akses kredit ketat. Mitigasi Preventive: Pengetatan analisis kredit, inovasi produk KPR. Contingency Plan: Restrukturisasi kredit, penjualan agunan. Early Warning: Kenaikan tunggakan cicilan, penurunan approval rate KPR.",
+      "source_units": ["unit_3", "unit_4"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Overheating Pasar Obligasi akibat Permintaan Berlebihan",
+      "content": "Deskripsi Risk: Permintaan tinggi terhadap obligasi dan SRBI menekan yield terlalu rendah, risiko bubble meningkat. Likelihood: Medium (40-50%), Impact: Medium (koreksi harga obligasi 3-5%). Risk Score: 6/10. Root Cause: Ekspektasi penurunan suku bunga, risk-on sentiment. Mitigasi Preventive: BI mengatur lelang obligasi, transparansi supply. Contingency Plan: Penyesuaian lelang, intervensi pasar sekunder. Early Warning: Yield turun di bawah level fundamental, volume transaksi melonjak.",
+      "source_units": ["TABEL 3", "unit_5", "unit_6"],
+      "confidence": 0.7,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

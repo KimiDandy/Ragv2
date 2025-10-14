@@ -1,0 +1,74 @@
+{
+  "doc_id": "38559d71-c40a-4f83-9dd1-4bdb16653491",
+  "current_stage": "ready",
+  "progress_percentage": 90,
+  "is_complete": true,
+  "stage_timestamps": {
+    "ocr_in_progress": "2025-10-14T13:25:44.745396",
+    "ocr_completed": "2025-10-14T13:26:29.032333",
+    "enhancement_in_progress": "2025-10-14T13:26:29.033333",
+    "enhancement_completed": "2025-10-14T13:29:43.562729",
+    "auto_approval_completed": "2025-10-14T13:29:43.563738",
+    "synthesis_in_progress": "2025-10-14T13:29:43.563738",
+    "synthesis_completed": "2025-10-14T13:29:46.963748",
+    "vectorization_in_progress": "2025-10-14T13:29:46.966305",
+    "vectorization_completed": "2025-10-14T13:29:54.978765",
+    "ready": "2025-10-14T13:29:54.981294"
+  },
+  "stage_durations": {
+    "ocr_in_progress_to_ocr_completed": 44.286937,
+    "ocr_completed_to_enhancement_in_progress": 0.001,
+    "enhancement_in_progress_to_enhancement_completed": 194.529396,
+    "enhancement_completed_to_auto_approval_completed": 0.001009,
+    "auto_approval_completed_to_synthesis_in_progress": 0.0,
+    "synthesis_in_progress_to_synthesis_completed": 3.40001,
+    "synthesis_completed_to_vectorization_in_progress": 0.002557,
+    "vectorization_in_progress_to_vectorization_completed": 8.01246,
+    "vectorization_completed_to_ready": 0.002529
+  },
+  "errors": [],
+  "metadata": {
+    "ocr_completed": {
+      "total_pages": 24,
+      "markdown_path": "artefacts\\38559d71-c40a-4f83-9dd1-4bdb16653491\\Product Focus Q1 2025.md"
+    },
+    "enhancement_completed": {
+      "total_enhancements": 108,
+      "enhancements_file": "artefacts\\38559d71-c40a-4f83-9dd1-4bdb16653491\\enhancements.json",
+      "type_distribution": {
+        "section_summary": 9,
+        "glossary": 9,
+        "formula_discovery": 9,
+        "executive_summary": 9,
+        "pattern_recognition": 9,
+        "table_insights": 9,
+        "comparative_analysis": 9,
+        "risk_assessment": 9,
+        "implication_analysis": 9,
+        "trend_forecasting": 9,
+        "scenario_projection": 9,
+        "what_if_analysis": 9
+      }
+    },
+    "auto_approval_completed": {
+      "auto_approve_all": true,
+      "approval_timestamp": "2025-10-14T13:29:43.563738"
+    },
+    "synthesis_completed": {
+      "final_markdown_path": "artefacts\\38559d71-c40a-4f83-9dd1-4bdb16653491\\Product Focus Q1 2025_enhanced.md",
+      "total_enhancements": 108
+    },
+    "vectorization_completed": {
+      "namespace": "danamon-final-1",
+      "v1_success": false,
+      "v2_success": true,
+      "embedding_model": "text-embedding-3-small"
+    },
+    "ready": {
+      "completed_at": "2025-10-14T13:29:54.981294"
+    }
+  },
+  "stage_progress": {},
+  "estimated_remaining_seconds": 27,
+  "last_updated": "2025-10-14T13:29:54.981294"
+}

@@ -1,0 +1,293 @@
+{
+  "enhancements": [
+    {
+      "type": "executive_summary",
+      "title": "Dampak Kenaikan Inflasi AS dan Ketidakpastian Suku Bunga Global terhadap Stabilitas Pasar Domestik",
+      "content": "Root Analysis: Kenaikan inflasi AS yang melampaui ekspektasi dan sinyal penundaan pemotongan suku bunga oleh The Fed menjadi faktor utama yang mempengaruhi volatilitas pasar global dan domestik. Hal ini penting karena perubahan kebijakan moneter AS berpotensi menimbulkan capital outflow dan tekanan pada mata uang serta pasar obligasi negara berkembang, termasuk Indonesia. \nPractical Application: Insight ini dapat digunakan untuk mengantisipasi potensi pelemahan Rupiah dan naiknya imbal hasil obligasi domestik, yang tercermin dari kenaikan yield INA 10YR dari 6,82% ke 6,84% (IDR) dan 5,35% ke 5,38% (USD). Investor dan regulator perlu memperkuat strategi lindung nilai dan diversifikasi portofolio. \nDecision Support: Keputusan strategis yang didukung meliputi penyesuaian eksposur aset berdenominasi Rupiah, penguatan cadangan devisa, serta monitoring ketat terhadap arus modal keluar. \nRisk/Opportunity Assessment: Risiko utama adalah tekanan lanjutan pada Rupiah dan kenaikan biaya pinjaman pemerintah. Namun, peluang muncul bagi investor domestik untuk masuk saat valuasi aset terkoreksi. Confidence: 0.85.",
+      "source_units": ["paragraph_1", "table_1", "table_3", "paragraph_4"],
+      "confidence": 0.85,
+      "priority": 10
+    },
+    {
+      "type": "executive_summary",
+      "title": "Kontraksi Penjualan Eceran dan Normalisasi Pasca HBKN: Implikasi untuk Sektor Konsumsi",
+      "content": "Root Analysis: Penjualan eceran Januari 2025 diprakirakan tumbuh tipis 0,4% YoY namun mengalami kontraksi 4,8% MoM, menandakan adanya normalisasi permintaan setelah lonjakan pada Desember akibat HBKN. Hal ini penting karena tren konsumsi domestik menjadi indikator utama daya beli masyarakat dan kesehatan ekonomi riil. \nPractical Application: Informasi ini dapat digunakan oleh pelaku usaha ritel dan produsen barang konsumsi untuk menyesuaikan inventory dan strategi pemasaran, khususnya pada periode pasca musim puncak konsumsi. \nDecision Support: Keputusan terkait pengelolaan stok, promosi, dan pengaturan cash flow perlu disesuaikan dengan pola musiman dan potensi perlambatan permintaan. \nRisk/Opportunity Assessment: Risiko utama adalah overstocking dan penurunan margin akibat diskon pasca musim puncak. Namun, peluang muncul untuk mengoptimalkan penjualan pada kelompok barang yang tetap tumbuh, seperti Barang Budaya dan Rekreasi. Confidence: 0.80.",
+      "source_units": ["paragraph_3", "table_2"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "executive_summary",
+      "title": "Pergerakan Nilai Tukar dan Yield Obligasi: Sinyal Tekanan Modal dan Strategi Lindung Nilai",
+      "content": "Root Analysis: Rupiah bergerak volatil dalam rentang 16.340-16.440 per USD, dengan kecenderungan melemah akibat kebutuhan korporasi dan sentimen global. Yield obligasi pemerintah naik serentak di seluruh tenor utama, menandakan tekanan jual dan potensi capital outflow. \nPractical Application: Data ini dapat digunakan oleh treasury bank dan korporasi untuk memperkuat strategi lindung nilai (hedging) dan mengatur eksposur valuta asing. \nDecision Support: Keputusan untuk melakukan hedging, diversifikasi mata uang, dan penyesuaian portofolio obligasi menjadi sangat relevan dalam kondisi ini. \nRisk/Opportunity Assessment: Risiko utama adalah depresiasi Rupiah lebih lanjut dan kenaikan biaya pendanaan pemerintah. Namun, peluang muncul bagi investor domestik untuk mendapatkan yield lebih tinggi. Confidence: 0.85.",
+      "source_units": ["paragraph_4", "table_3", "table_4"],
+      "confidence": 0.85,
+      "priority": 9
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian Global: Inflasi AS dan Reaksi Pasar",
+      "content": "Topik utama pada bagian global adalah lonjakan inflasi konsumen AS di Januari yang melebihi ekspektasi, menyebabkan Wall Street terkoreksi (S&P 500 -0,27%, Dow Jones -0,5%) dan yield obligasi AS naik. Fed diperkirakan menunda pemotongan suku bunga, bahkan membuka peluang kenaikan. Ketua Fed menegaskan target inflasi 2% belum tercapai. Key takeaway: Inflasi AS menjadi driver utama sentimen pasar global dan kebijakan moneter ke depan.",
+      "source_units": ["paragraph_1", "table_2", "table_3"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian Domestik: Penjualan Eceran dan Pasar Keuangan RI",
+      "content": "Bagian domestik menyoroti proyeksi pertumbuhan penjualan eceran Januari 2025 sebesar 0,4% YoY, namun kontraksi 4,8% MoM akibat normalisasi pasca HBKN. Kelompok Barang Budaya dan Rekreasi tetap tumbuh, sedangkan kelompok lain melambat. Rupiah bergerak volatil, obligasi RI melemah dengan yield naik di semua tenor utama. Key takeaway: Konsumsi domestik mulai melambat, pasar keuangan RI sensitif terhadap sentimen global.",
+      "source_units": ["paragraph_3", "table_2", "table_3", "table_4"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "section_summary",
+      "title": "Ringkasan Bagian Pasar Valuta Asing dan Obligasi",
+      "content": "Bagian ini membahas pergerakan Rupiah yang sempat menguat namun kembali tertekan, ditutup di kisaran 16.360/16.370. Spot USD/IDR diperkirakan bergerak di 16.340-16.440. Yield obligasi RI naik 2bps di seluruh tenor utama, menandakan tekanan jual dan antisipasi data inflasi AS. Key takeaway: Pasar obligasi dan valas RI sangat responsif terhadap perkembangan eksternal.",
+      "source_units": ["paragraph_4", "table_3", "table_4"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Kunci Makroekonomi dan Pasar Keuangan",
+      "content": "**BI Rate**: Suku bunga acuan Bank Indonesia yang menjadi referensi utama dalam penentuan suku bunga kredit dan simpanan di perbankan nasional.\n**Fed Rate**: Federal Funds Rate, suku bunga acuan bank sentral Amerika Serikat (Federal Reserve) yang mempengaruhi likuiditas dan biaya kredit global.\n**IPR (Indeks Penjualan Riil)**: Indikator yang mengukur volume penjualan ritel secara riil (disesuaikan inflasi), digunakan untuk memantau tren konsumsi domestik.\n**HBKN (Hari Besar Keagamaan Nasional)**: Periode perayaan keagamaan nasional (misal Natal, Tahun Baru) yang biasanya memicu lonjakan konsumsi masyarakat.\n**bps (basis points)**: Satuan pengukuran perubahan suku bunga atau yield, 1 bps = 0,01%.",
+      "source_units": ["table_1", "paragraph_3", "paragraph_4"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Pasar Obligasi dan Valuta Asing",
+      "content": "**INA 10 YR**: Obligasi pemerintah Indonesia dengan tenor 10 tahun, indikator utama cost of borrowing pemerintah.\n**UST 10 YR**: US Treasury 10 Year, obligasi pemerintah AS tenor 10 tahun, benchmark global untuk risk-free rate.\n**Spot USD/IDR**: Nilai tukar langsung antara Dolar AS dan Rupiah di pasar spot, digunakan untuk transaksi aktual.\n**Yield**: Imbal hasil tahunan obligasi, dihitung sebagai persentase dari harga pasar terhadap nilai nominal.\n**Capital Outflow**: Arus modal keluar dari suatu negara, biasanya akibat perubahan sentimen atau kebijakan moneter global.",
+      "source_units": ["table_3", "table_4", "paragraph_4"],
+      "confidence": 0.95,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Inflasi dan Indeks Pasar",
+      "content": "**Inflation (YoY/MoM)**: Kenaikan harga barang dan jasa secara tahunan (Year-on-Year) atau bulanan (Month-on-Month), indikator utama tekanan harga di ekonomi.\n**S&P 500**: Indeks saham 500 perusahaan terbesar di AS, barometer utama performa pasar saham global.\n**LQ45**: Indeks 45 saham paling likuid di Bursa Efek Indonesia, indikator performa saham unggulan domestik.\n**PPI (Producer Price Index)**: Indeks harga produsen, mengukur perubahan harga barang di tingkat produsen, leading indicator inflasi konsumen.\n**GDP Growth Rate**: Laju pertumbuhan Produk Domestik Bruto, indikator utama pertumbuhan ekonomi.",
+      "source_units": ["table_2", "table_5", "table_6"],
+      "confidence": 0.95,
+      "priority": 7
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Imbas Kenaikan Yield Obligasi AS terhadap Yield Obligasi RI dan Arus Modal",
+      "content": "Root Analysis: Kenaikan yield UST 10YR dari 4,54% ke 4,62% (+1,89%) menandakan tekanan jual di pasar obligasi AS akibat ekspektasi inflasi dan penundaan pemotongan suku bunga. Implikasi tidak langsungnya, yield INA 10YR (IDR) dan (USD) juga naik, menandakan risk premium Indonesia meningkat. \nPractical Application: Hal ini berpotensi mendorong capital outflow dari pasar obligasi RI, meningkatkan volatilitas Rupiah, dan menambah beban bunga utang pemerintah. \nDecision Support: Keputusan strategis yang perlu diambil adalah memperkuat cadangan devisa, mempercepat penerbitan obligasi sebelum yield naik lebih tinggi, dan memperkuat komunikasi kebijakan moneter. \nRisk/Opportunity Assessment: Risiko utama adalah pelemahan Rupiah dan kenaikan biaya pinjaman. Peluang muncul jika investor domestik memanfaatkan yield tinggi. Confidence: 0.9, asumsi: korelasi historis yield UST dan INA 10YR konsisten.",
+      "source_units": ["table_3", "paragraph_4"],
+      "confidence": 0.9,
+      "priority": 9
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Kontraksi Penjualan Eceran MoM: Sinyal Potensi Perlambatan Konsumsi Domestik",
+      "content": "Root Analysis: Penurunan IPR Januari 2025 sebesar -4,8% MoM setelah lonjakan 5,9% di Desember menandakan adanya normalisasi permintaan pasca HBKN. Namun, jika kontraksi berlanjut, dapat menjadi early warning perlambatan konsumsi domestik. \nPractical Application: Retailer dan produsen perlu mengantisipasi potensi inventory berlebih dan menyesuaikan strategi pemasaran. \nDecision Support: Keputusan terkait pengelolaan stok, promosi, dan pengaturan cash flow harus mempertimbangkan potensi perlambatan permintaan. \nRisk/Opportunity Assessment: Risiko utama adalah penumpukan stok dan penurunan margin. Peluang muncul jika retailer mampu shifting ke produk dengan permintaan stabil. Confidence: 0.8, asumsi: kontraksi MoM berlanjut 1-2 bulan ke depan.",
+      "source_units": ["paragraph_3", "table_2"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Kenaikan Yield Obligasi RI: Potensi Kenaikan Biaya Pinjaman Pemerintah dan Sektor Korporasi",
+      "content": "Root Analysis: Yield INA 10YR naik 2bps di seluruh tenor utama, menandakan tekanan jual di pasar obligasi domestik. Implikasi tidak langsungnya adalah potensi kenaikan biaya pinjaman pemerintah dan korporasi, serta risiko crowding out sektor swasta. \nPractical Application: Pemerintah perlu menyesuaikan strategi penerbitan surat utang dan mempertimbangkan alternatif pembiayaan. \nDecision Support: Keputusan untuk mempercepat atau menunda penerbitan obligasi harus mempertimbangkan tren yield dan sentimen pasar global. \nRisk/Opportunity Assessment: Risiko utama adalah kenaikan beban bunga dan potensi penurunan permintaan obligasi. Peluang muncul jika investor domestik mencari yield lebih tinggi. Confidence: 0.85.",
+      "source_units": ["table_3", "paragraph_4"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Kenaikan Yield Obligasi dan Korelasi dengan Inflasi Global",
+      "content": "Deskripsi: Yield obligasi AS (UST 10YR) naik signifikan (+1,89%) dalam satu hari, diikuti kenaikan yield INA 10YR baik dalam IDR (+0,19%) maupun USD (+0,65%). Pola ini menunjukkan korelasi kuat antara sentimen inflasi global dan risk premium negara berkembang. \nQuantification: Kenaikan yield UST 10YR hampir tiga kali lipat dari INA 10YR (IDR) secara persentase harian. \nRoot Cause Hypothesis: Ekspektasi inflasi AS dan penundaan pemotongan suku bunga Fed menjadi pemicu utama. \nImplications: Investor perlu waspada terhadap potensi volatilitas yield dan arus modal keluar. Actionable insight: monitoring ketat data inflasi dan kebijakan Fed.",
+      "source_units": ["table_3", "paragraph_1"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Musiman Penjualan Eceran: Lonjakan Desember dan Kontraksi Januari",
+      "content": "Deskripsi: Penjualan eceran tumbuh 5,9% MoM di Desember (puncak HBKN), lalu kontraksi 4,8% MoM di Januari, menandakan pola musiman yang konsisten setiap tahun. \nQuantification: Selisih pertumbuhan MoM Desember-Januari mencapai 10,7%. \nRoot Cause Hypothesis: Lonjakan konsumsi saat HBKN diikuti normalisasi permintaan. \nImplications: Retailer perlu menyesuaikan inventory dan strategi promosi sesuai siklus musiman. Actionable insight: optimalisasi cash flow dan pengelolaan stok pasca HBKN.",
+      "source_units": ["paragraph_3", "table_2"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Anomali Pergerakan Indeks Saham: Divergensi Nasdaq dan S&P 500",
+      "content": "Deskripsi: S&P 500 dan Dow Jones terkoreksi (-0,27% dan -0,5%), namun Nasdaq justru naik tipis (+0,03%) di tengah tekanan inflasi AS. \nQuantification: Divergensi 0,3% antara S&P 500 dan Nasdaq. \nRoot Cause Hypothesis: Sektor teknologi (mayoritas Nasdaq) lebih resilient terhadap tekanan inflasi dibanding sektor lain. \nImplications: Investor dapat mempertimbangkan overweight pada sektor teknologi saat tekanan inflasi tinggi. Actionable insight: diversifikasi portofolio ke sektor defensif.",
+      "source_units": ["table_5", "paragraph_1"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Tersirat dari Tabel Yield Obligasi: Spread dan Risiko Negara",
+      "content": "Metrik utama: Yield INA 10YR (IDR) 6,84%, UST 10YR 4,62%. Spread yield Indonesia-AS sebesar 2,22%. Pola: Spread ini mencerminkan risk premium Indonesia di mata investor global. Jika spread melebar, menandakan persepsi risiko meningkat. Derived metric: Spread naik 0,17% dari hari sebelumnya. Insight: Kenaikan spread dapat memicu capital outflow dan tekanan pada Rupiah. Actionable: Monitoring spread yield sebagai early warning risiko pasar.",
+      "source_units": ["table_3"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Pergerakan Nilai Tukar: Rupiah Melemah di Tengah Penguatan Mata Uang Lain",
+      "content": "Metrik utama: USD/IDR naik 0,09% (16.365 ke 16.380), EUR/IDR naik 0,66%, GBP/IDR naik 0,8%. Pola: Rupiah melemah terhadap hampir semua mata uang utama kecuali JPY. Derived metric: JPY/IDR turun -0,86%. Insight: Pelemahan Rupiah bersifat broad-based, menandakan tekanan eksternal kuat. Actionable: Perkuat strategi hedging dan monitoring kebutuhan valas korporasi.",
+      "source_units": ["table_4"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Indeks Saham: IHSG dan LQ45 Outperform Indeks Global",
+      "content": "Metrik utama: IHSG naik 1,74%, LQ45 naik 1,87% dalam satu hari, jauh di atas S&P 500 (-0,27%) dan Dow Jones (-0,5%). Pola: Pasar saham domestik outperform pasar global di tengah tekanan inflasi AS. Derived metric: Outperformance IHSG terhadap S&P 500 sebesar 2,01%. Insight: Investor asing/domestik masih melihat peluang di pasar saham Indonesia. Actionable: Potensi inflow ke saham domestik jika sentimen global membaik.",
+      "source_units": ["table_5"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Inflasi Indonesia vs AS: Implikasi Kebijakan Moneter",
+      "content": "Tabel menunjukkan inflasi Indonesia YoY 0,76%, AS 3,00%. Inflasi bulanan Indonesia (MoM) negatif, AS positif 0,5%. Perbedaan utama: Tekanan inflasi di Indonesia jauh lebih rendah, memberi ruang BI untuk mempertahankan suku bunga. Advantage: Stabilitas harga domestik. Disadvantage: Potensi imported inflation jika Rupiah melemah. Rekomendasi: BI fokus pada stabilitas Rupiah dan monitoring imported inflation.",
+      "source_units": ["table_2"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Pergerakan Yield Obligasi: Indonesia vs AS",
+      "content": "Yield INA 10YR (IDR) naik 0,19%, UST 10YR naik 1,89%. Kenaikan yield AS jauh lebih agresif, menandakan tekanan inflasi dan perubahan ekspektasi kebijakan moneter lebih kuat di AS. Advantage Indonesia: Kenaikan yield lebih moderat, risiko volatilitas lebih rendah. Disadvantage: Spread yield tetap tinggi, risiko capital outflow tetap ada. Rekomendasi: Pemerintah jaga sentimen dan komunikasi pasar.",
+      "source_units": ["table_3"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Kinerja Indeks Saham Domestik vs Global",
+      "content": "IHSG dan LQ45 naik signifikan (1,74% dan 1,87%), sementara S&P 500 dan Dow Jones turun. FTSE 100, Hang Seng, dan Shanghai juga naik. Keunggulan pasar domestik: Resilience terhadap sentimen global negatif. Kelemahan: Potensi reversal jika tekanan eksternal berlanjut. Rekomendasi: Investor tetap waspada, lakukan diversifikasi.",
+      "source_units": ["table_5"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Spread Yield Obligasi Negara",
+      "content": "Analisis data yield INA 10YR (IDR) dan UST 10YR memungkinkan deduksi formula spread: Spread = Yield INA 10YR (IDR) - Yield UST 10YR. Contoh: 6,84% - 4,62% = 2,22%. Formula ini dapat digunakan untuk memonitor risk premium Indonesia secara harian. Asumsi: Yield diambil pada hari yang sama. Limitasi: Tidak memperhitungkan volatilitas intraday. Applicable untuk analisis risiko pasar dan arus modal.",
+      "source_units": ["table_3"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Perubahan Yield Obligasi (bps dan %)",
+      "content": "Perubahan yield obligasi dihitung dengan dua cara: (1) Absolute Change (bps): (Yield Hari Ini - Yield Hari Sebelumnya) × 100. (2) Percentage Change: [(Yield Hari Ini - Yield Hari Sebelumnya) / Yield Hari Sebelumnya] × 100%. Contoh: INA 10YR (IDR) dari 6,82% ke 6,84%, Absolute Change = (6,84-6,82)×100 = 2bps, Percentage Change = (0,02/6,82)×100% ≈ 0,29%. Formula ini penting untuk analisis volatilitas pasar obligasi.",
+      "source_units": ["table_3"],
+      "confidence": 0.95,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Proyeksi Penjualan Eceran Berdasarkan Pola Musiman",
+      "content": "Berdasarkan data pertumbuhan IPR Desember (+5,9% MoM) dan kontraksi Januari (-4,8% MoM), dapat dibuat formula proyeksi musiman: IPR Bulan N = IPR Bulan N-1 × (1 + Growth Rate MoM). Contoh: Jika IPR Desember 2024 = X, maka IPR Januari 2025 = X × (1 - 0,048). Formula ini membantu retailer memproyeksikan permintaan pasca musim puncak. Asumsi: Pola musiman konsisten. Limitasi: Tidak memperhitungkan shock eksternal.",
+      "source_units": ["table_2", "paragraph_3"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Yield INA 10YR 3 Bulan ke Depan: Best, Likely, Worst Case",
+      "content": "Best Case: Yield INA 10YR turun ke 6,60% (CAGR -1,2%, asumsi inflasi global mereda, capital inflow kembali, confidence: 0.7). Most Likely: Yield stabil di 6,80-6,90% (asumsi status quo, volatilitas moderat, confidence: 0.8). Worst Case: Yield naik ke 7,10% (CAGR +1,5%, asumsi inflasi AS naik, Fed rate hike, capital outflow, confidence: 0.65). Metodologi: Extrapolation dari tren kenaikan 2bps/hari, adjusted untuk sentimen global dan arus modal.",
+      "source_units": ["table_3", "paragraph_1"],
+      "confidence": 0.75,
+      "priority": 9
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Nilai Tukar Rupiah 1 Bulan ke Depan: Skenario Multi-Outcome",
+      "content": "Best Case: USD/IDR menguat ke 16.250 (asumsi inflasi AS turun, capital inflow, confidence: 0.7). Most Likely: USD/IDR stabil di 16.350-16.400 (asumsi kebutuhan valas korporasi tetap tinggi, confidence: 0.8). Worst Case: USD/IDR melemah ke 16.500 (asumsi yield UST naik, outflow berlanjut, confidence: 0.65). Metodologi: Linear extrapolation dari range harian dan tren kebutuhan valas korporasi.",
+      "source_units": ["table_4", "paragraph_4"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Penjualan Eceran Q1 2025: Skenario Optimis, Realistis, Pesimis",
+      "content": "Best Case: IPR tumbuh 1,5% YoY (asumsi permintaan rebound pasca normalisasi, confidence: 0.7). Most Likely: IPR tumbuh 0,4% YoY (asumsi pola musiman berulang, confidence: 0.8). Worst Case: IPR stagnan atau kontraksi -0,5% YoY (asumsi tekanan daya beli, confidence: 0.65). Metodologi: Extrapolation dari data Januari dan pola musiman tahun-tahun sebelumnya.",
+      "source_units": ["table_2", "paragraph_3"],
+      "confidence": 0.75,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Yield Obligasi RI: Potensi Kenaikan Berlanjut",
+      "content": "Arah trend: Yield INA 10YR menunjukkan kecenderungan naik (6,82% ke 6,84%, +2bps dalam 1 hari). Rate of change: +0,19% per hari. Turning point: Jika yield UST stabil, yield INA 10YR berpotensi konsolidasi di 6,80-6,90%. Forecast next period: Yield INA 10YR diperkirakan bergerak di 6,85-6,95% dalam 1 minggu ke depan (confidence interval ±0,05%). Asumsi: Volatilitas global tetap tinggi.",
+      "source_units": ["table_3"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Nilai Tukar Rupiah: Volatilitas Tinggi, Potensi Pelemahan",
+      "content": "Arah trend: USD/IDR naik tipis (0,09%) dalam sehari, bergerak di rentang 16.340-16.440. Rate of change: +15 poin/hari. Turning point: Jika kebutuhan valas korporasi menurun, Rupiah bisa stabil. Forecast next period: USD/IDR diperkirakan bergerak di 16.350-16.420 dalam 1 minggu ke depan (confidence interval ±30 poin). Asumsi: Tidak ada shock eksternal besar.",
+      "source_units": ["table_4", "paragraph_4"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Penjualan Eceran: Normalisasi Pasca HBKN",
+      "content": "Arah trend: Penjualan eceran kontraksi -4,8% MoM di Januari setelah lonjakan Desember. Rate of change: -10,7% MoM (Des-Jan). Turning point: Potensi rebound di Februari-Maret jika permintaan kembali normal. Forecast next period: Pertumbuhan IPR Februari diperkirakan flat atau sedikit positif (0-0,5% MoM, confidence interval ±0,2%). Asumsi: Tidak ada shock permintaan eksternal.",
+      "source_units": ["table_2", "paragraph_3"],
+      "confidence": 0.75,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If Yield UST 10YR Naik 0,5% Lagi: Dampak ke Yield INA 10YR dan Rupiah",
+      "content": "Deskripsi: Jika yield UST 10YR naik dari 4,62% ke 5,12% (+0,5%), yield INA 10YR berpotensi naik minimal 0,2-0,3% (20-30bps) akibat penyesuaian risk premium. Outcome: Biaya pinjaman pemerintah naik, potensi capital outflow meningkat, Rupiah berisiko melemah ke 16.500-16.600. Mitigasi: BI intervensi pasar valas, percepatan penerbitan obligasi sebelum yield naik. Probability: Medium (30-40%), tergantung data inflasi AS.",
+      "source_units": ["table_3", "table_4"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If Penjualan Eceran Kontraksi Lagi di Februari: Dampak ke Sektor Ritel",
+      "content": "Deskripsi: Jika IPR Februari kembali kontraksi -2% MoM, retailer berisiko mengalami penumpukan stok dan penurunan margin. Outcome: Diskon besar-besaran, potensi PHK di sektor ritel. Mitigasi: Penyesuaian inventory, promosi agresif, shifting ke produk dengan permintaan stabil. Probability: Medium (30%), tergantung daya beli pasca HBKN.",
+      "source_units": ["table_2", "paragraph_3"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If Rupiah Menguat ke 16.250: Dampak ke Inflasi dan Sektor Impor",
+      "content": "Deskripsi: Jika USD/IDR menguat ke 16.250, tekanan imported inflation berkurang, harga barang impor turun, margin perusahaan importir naik. Outcome: Inflasi domestik tetap rendah, BI punya ruang longgar untuk kebijakan moneter. Mitigasi: Pemerintah tetap waspada terhadap volatilitas global. Probability: Low (15%), tergantung sentimen global dan arus modal.",
+      "source_units": ["table_4", "table_2"],
+      "confidence": 0.6,
+      "priority": 6
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Capital Outflow Akibat Kenaikan Yield UST dan Spread Yield",
+      "content": "Deskripsi Risk: Kenaikan yield UST 10YR dan pelebaran spread yield Indonesia-AS memicu arus modal keluar dari pasar obligasi RI. Likelihood: High (60%, yield UST naik signifikan). Impact: High (potensi pelemahan Rupiah, kenaikan biaya pinjaman pemerintah, risk score: 9/10). Root Cause: Perubahan ekspektasi kebijakan Fed dan inflasi AS. Mitigasi Preventive: BI intervensi pasar valas, pemerintah percepat penerbitan obligasi. Contingency Plan: Penyesuaian APBN, pengendalian impor. Early Warning: Kenaikan yield UST, outflow dana asing.",
+      "source_units": ["table_3", "table_4"],
+      "confidence": 0.9,
+      "priority": 10
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Perlambatan Konsumsi Domestik Pasca HBKN",
+      "content": "Deskripsi Risk: Kontraksi penjualan eceran berlanjut di Februari-Maret, menekan pertumbuhan ekonomi riil. Likelihood: Medium (35%, pola musiman dan tekanan daya beli). Impact: Medium (penurunan margin ritel, potensi PHK, risk score: 6/10). Root Cause: Normalisasi permintaan, tekanan daya beli. Mitigasi Preventive: Promosi, shifting produk, monitoring permintaan. Contingency Plan: Diskon agresif, efisiensi operasional. Early Warning: Penurunan IPR MoM dua bulan berturut-turut.",
+      "source_units": ["table_2", "paragraph_3"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Imported Inflation Akibat Pelemahan Rupiah",
+      "content": "Deskripsi Risk: Rupiah melemah di atas 16.400/USD, harga barang impor naik, imported inflation meningkat. Likelihood: Medium (30%, volatilitas global tinggi). Impact: Medium (kenaikan harga barang konsumsi, risk score: 6/10). Root Cause: Capital outflow, kenaikan yield UST. Mitigasi Preventive: BI intervensi, pengendalian impor. Contingency Plan: Subsidi harga, penyesuaian tarif impor. Early Warning: USD/IDR tembus 16.400, kenaikan harga barang impor.",
+      "source_units": ["table_4", "table_2"],
+      "confidence": 0.75,
+      "priority": 7
+    }
+  ],
+  "metadata": {}
+}

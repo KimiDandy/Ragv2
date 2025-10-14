@@ -1,0 +1,74 @@
+{
+  "doc_id": "2dd83ec9-2de8-42b4-8ea0-e5fb2a744f3b",
+  "current_stage": "ready",
+  "progress_percentage": 90,
+  "is_complete": true,
+  "stage_timestamps": {
+    "ocr_in_progress": "2025-10-14T13:29:54.983294",
+    "ocr_completed": "2025-10-14T13:30:00.286712",
+    "enhancement_in_progress": "2025-10-14T13:30:00.287808",
+    "enhancement_completed": "2025-10-14T13:33:21.996966",
+    "auto_approval_completed": "2025-10-14T13:33:21.997970",
+    "synthesis_in_progress": "2025-10-14T13:33:21.999474",
+    "synthesis_completed": "2025-10-14T13:33:22.166786",
+    "vectorization_in_progress": "2025-10-14T13:33:22.168299",
+    "vectorization_completed": "2025-10-14T13:33:27.211707",
+    "ready": "2025-10-14T13:33:27.213795"
+  },
+  "stage_durations": {
+    "ocr_in_progress_to_ocr_completed": 5.303418,
+    "ocr_completed_to_enhancement_in_progress": 0.001096,
+    "enhancement_in_progress_to_enhancement_completed": 201.709158,
+    "enhancement_completed_to_auto_approval_completed": 0.001004,
+    "auto_approval_completed_to_synthesis_in_progress": 0.001504,
+    "synthesis_in_progress_to_synthesis_completed": 0.167312,
+    "synthesis_completed_to_vectorization_in_progress": 0.001513,
+    "vectorization_in_progress_to_vectorization_completed": 5.043408,
+    "vectorization_completed_to_ready": 0.002088
+  },
+  "errors": [],
+  "metadata": {
+    "ocr_completed": {
+      "total_pages": 8,
+      "markdown_path": "artefacts\\2dd83ec9-2de8-42b4-8ea0-e5fb2a744f3b\\Template Rekomendasi Alokasi Portofolio Nasabah.docx.md"
+    },
+    "enhancement_completed": {
+      "total_enhancements": 37,
+      "enhancements_file": "artefacts\\2dd83ec9-2de8-42b4-8ea0-e5fb2a744f3b\\enhancements.json",
+      "type_distribution": {
+        "pattern_recognition": 3,
+        "glossary": 3,
+        "comparative_analysis": 3,
+        "section_summary": 4,
+        "formula_discovery": 3,
+        "executive_summary": 3,
+        "table_insights": 3,
+        "implication_analysis": 3,
+        "risk_assessment": 3,
+        "trend_forecasting": 3,
+        "scenario_projection": 3,
+        "what_if_analysis": 3
+      }
+    },
+    "auto_approval_completed": {
+      "auto_approve_all": true,
+      "approval_timestamp": "2025-10-14T13:33:21.997970"
+    },
+    "synthesis_completed": {
+      "final_markdown_path": "artefacts\\2dd83ec9-2de8-42b4-8ea0-e5fb2a744f3b\\Template Rekomendasi Alokasi Portofolio Nasabah.docx_enhanced.md",
+      "total_enhancements": 37
+    },
+    "vectorization_completed": {
+      "namespace": "danamon-final-1",
+      "v1_success": false,
+      "v2_success": true,
+      "embedding_model": "text-embedding-3-small"
+    },
+    "ready": {
+      "completed_at": "2025-10-14T13:33:27.213795"
+    }
+  },
+  "stage_progress": {},
+  "estimated_remaining_seconds": 23,
+  "last_updated": "2025-10-14T13:33:27.214330"
+}

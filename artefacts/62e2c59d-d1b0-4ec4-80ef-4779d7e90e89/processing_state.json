@@ -1,0 +1,74 @@
+{
+  "doc_id": "62e2c59d-d1b0-4ec4-80ef-4779d7e90e89",
+  "current_stage": "ready",
+  "progress_percentage": 90,
+  "is_complete": true,
+  "stage_timestamps": {
+    "ocr_in_progress": "2025-10-14T13:26:09.509078",
+    "ocr_completed": "2025-10-14T13:26:16.789478",
+    "enhancement_in_progress": "2025-10-14T13:26:16.790484",
+    "enhancement_completed": "2025-10-14T13:29:22.371231",
+    "auto_approval_completed": "2025-10-14T13:29:22.372231",
+    "synthesis_in_progress": "2025-10-14T13:29:22.373257",
+    "synthesis_completed": "2025-10-14T13:29:22.487781",
+    "vectorization_in_progress": "2025-10-14T13:29:22.489783",
+    "vectorization_completed": "2025-10-14T13:29:28.112427",
+    "ready": "2025-10-14T13:29:28.114677"
+  },
+  "stage_durations": {
+    "ocr_in_progress_to_ocr_completed": 7.2804,
+    "ocr_completed_to_enhancement_in_progress": 0.001006,
+    "enhancement_in_progress_to_enhancement_completed": 185.580747,
+    "enhancement_completed_to_auto_approval_completed": 0.001,
+    "auto_approval_completed_to_synthesis_in_progress": 0.001026,
+    "synthesis_in_progress_to_synthesis_completed": 0.114524,
+    "synthesis_completed_to_vectorization_in_progress": 0.002002,
+    "vectorization_in_progress_to_vectorization_completed": 5.622644,
+    "vectorization_completed_to_ready": 0.00225
+  },
+  "errors": [],
+  "metadata": {
+    "ocr_completed": {
+      "total_pages": 7,
+      "markdown_path": "artefacts\\62e2c59d-d1b0-4ec4-80ef-4779d7e90e89\\Rekomendasi Alokasi Portofolio.md"
+    },
+    "enhancement_completed": {
+      "total_enhancements": 36,
+      "enhancements_file": "artefacts\\62e2c59d-d1b0-4ec4-80ef-4779d7e90e89\\enhancements.json",
+      "type_distribution": {
+        "glossary": 3,
+        "section_summary": 3,
+        "formula_discovery": 3,
+        "executive_summary": 3,
+        "pattern_recognition": 3,
+        "comparative_analysis": 3,
+        "table_insights": 3,
+        "implication_analysis": 3,
+        "risk_assessment": 3,
+        "trend_forecasting": 3,
+        "scenario_projection": 3,
+        "what_if_analysis": 3
+      }
+    },
+    "auto_approval_completed": {
+      "auto_approve_all": true,
+      "approval_timestamp": "2025-10-14T13:29:22.372231"
+    },
+    "synthesis_completed": {
+      "final_markdown_path": "artefacts\\62e2c59d-d1b0-4ec4-80ef-4779d7e90e89\\Rekomendasi Alokasi Portofolio_enhanced.md",
+      "total_enhancements": 36
+    },
+    "vectorization_completed": {
+      "namespace": "danamon-final-1",
+      "v1_success": false,
+      "v2_success": true,
+      "embedding_model": "text-embedding-3-small"
+    },
+    "ready": {
+      "completed_at": "2025-10-14T13:29:28.114677"
+    }
+  },
+  "stage_progress": {},
+  "estimated_remaining_seconds": 22,
+  "last_updated": "2025-10-14T13:29:28.114677"
+}

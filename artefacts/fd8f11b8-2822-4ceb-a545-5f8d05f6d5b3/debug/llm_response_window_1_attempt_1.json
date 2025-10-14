@@ -1,0 +1,317 @@
+{
+  "enhancements": [
+    {
+      "type": "executive_summary",
+      "title": "Strategic Differentiation Produk Simpanan dan Proteksi Danamon",
+      "content": "Root Analysis: Penting bagi level eksekutif untuk memahami bagaimana portofolio produk simpanan dan proteksi Danamon membedakan diri di pasar yang kompetitif. Produk seperti Danamon LEBIH PRO, Tabungan Cita2Ku, dan berbagai jenis deposito menawarkan benefit yang secara tersirat menargetkan segmen nasabah dengan kebutuhan transaksi multivaluta, disiplin menabung, dan fleksibilitas tenor. \n\nKey Findings: (1) Fitur multi-currency dan auto switching pada Danamon LEBIH PRO mengindikasikan fokus pada nasabah global dan frequent traveler. (2) Tabungan Cita2Ku mendorong habit saving jangka panjang dengan bunga kompetitif dan auto-debit, menargetkan nasabah ritel yang ingin disiplin finansial. (3) Penawaran bebas biaya transaksi dan cashback pada saldo tertentu menunjukkan strategi akuisisi dan retensi nasabah dengan insentif langsung. (4) Produk proteksi dengan pengembalian premi 100% dan safety-net benefit menonjolkan value proposition yang jarang ditemukan di produk asuransi konvensional.\n\nApplication: Insight ini dapat digunakan untuk memperkuat positioning marketing, mengembangkan cross-selling antar produk, dan mengidentifikasi peluang partnership dengan merchant atau fintech.\n\nImpact: Konsekuensi strategisnya adalah peningkatan stickiness nasabah, potensi pertumbuhan DPK (Dana Pihak Ketiga), dan mitigasi churn rate. Rekomendasi: Fokus pada edukasi fitur unik ke target segmen, perluas integrasi digital, dan evaluasi sustainability program cashback agar tidak menggerus margin. Confidence: 0.9.",
+      "source_units": ["unit_1", "unit_2", "unit_3", "unit_4", "unit_5", "unit_6", "unit_7", "unit_8", "unit_9", "unit_10", "unit_11", "unit_12"],
+      "confidence": 0.9,
+      "priority": 10
+    },
+    {
+      "type": "executive_summary",
+      "title": "Hidden Revenue and Cost Drivers dalam Produk Tabungan dan Deposito",
+      "content": "Root Analysis: Analisis mendalam terhadap struktur benefit dan syarat produk tabungan/deposito Danamon mengungkap adanya driver pendapatan dan biaya tersembunyi yang tidak langsung terlihat oleh nasabah maupun kompetitor.\n\nKey Findings: (1) Syarat saldo minimum (misal Rp5 juta untuk bebas biaya transaksi/cashback) secara tidak langsung meningkatkan average balance per nasabah, memperkuat liquidity bank. (2) Biaya transaksi di ATM Bersama/Alto/Prima pada TabunganKu (Rp4.000-7.500) menjadi sumber pendapatan fee-based yang stabil dari nasabah dengan saldo rendah. (3) Fitur auto-debit pada Tabungan Cita2Ku mengurangi risiko non-performing saving, meningkatkan predictability DPK. (4) Penawaran suku bunga kompetitif pada deposito dan tabungan berjangka menarik dana jangka panjang, namun dapat menekan margin jika cost of fund tidak dikontrol.\n\nApplication: Informasi ini dapat digunakan untuk mengoptimalkan pricing, menyesuaikan syarat benefit, dan mengidentifikasi segmen nasabah yang paling profitable.\n\nImpact: Rekomendasi: Lakukan segmentasi nasabah berdasarkan saldo dan perilaku transaksi untuk memaksimalkan fee income, serta review periodik cost structure program cashback dan bunga. Confidence: 0.85.",
+      "source_units": ["unit_1", "unit_2", "unit_3", "unit_4", "unit_5", "unit_6"],
+      "confidence": 0.85,
+      "priority": 9
+    },
+    {
+      "type": "executive_summary",
+      "title": "Peluang Cross-Selling dan Digital Upsell dari Integrasi Produk Danamon",
+      "content": "Root Analysis: Integrasi fitur digital dan benefit lintas produk dalam portofolio Danamon membuka peluang cross-selling dan digital upsell yang belum sepenuhnya dimaksimalkan.\n\nKey Findings: (1) Fitur transaksi valas, cashback, dan auto switching currency pada Danamon LEBIH PRO dapat di-bundle dengan produk asuransi kesehatan (Proteksi Prima Kritis Andalan/Medika) untuk nasabah high net worth yang sering bepergian. (2) Kemudahan pembukaan deposito online dan auto-debit Tabungan Cita2Ku dapat diintegrasikan dalam ekosistem aplikasi D-Bank PRO untuk meningkatkan engagement dan lifetime value nasabah. (3) Penawaran promo digital (misal WOW Top Up Balance) dapat digunakan sebagai trigger untuk upsell ke produk simpanan berjangka atau giro bisnis.\n\nApplication: Insight ini dapat digunakan oleh tim digital banking dan marketing untuk merancang journey nasabah yang seamless dan personalized.\n\nImpact: Rekomendasi: Kembangkan fitur rekomendasi produk otomatis berbasis data transaksi, dan lakukan A/B testing untuk penawaran cross-sell di aplikasi. Potensi peningkatan conversion rate dan retensi nasabah digital. Confidence: 0.8.",
+      "source_units": ["unit_1", "unit_2", "unit_3", "unit_4", "unit_5", "unit_6", "unit_7"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Highlight Fitur dan Benefit Danamon LEBIH PRO",
+      "content": "Topik utama bagian ini adalah penjelasan detail fitur Danamon LEBIH PRO yang menonjolkan kemudahan transaksi multivaluta, bebas biaya transaksi harian dengan syarat saldo minimum, cashback belanja di merchant tertentu, serta fitur kartu debit dengan auto switching currency. Key takeaways: (1) Satu rekening untuk banyak mata uang, (2) Bebas biaya transaksi dengan saldo minimum Rp5 juta, (3) Cashback 5% hingga Rp200 ribu per bulan, (4) Kartu debit otomatis mendeteksi mata uang lokal, (5) Penawaran spesial merchant dan promo digital.",
+      "source_units": ["unit_1"],
+      "confidence": 0.95,
+      "priority": 9
+    },
+    {
+      "type": "section_summary",
+      "title": "Keunggulan Tabungan Cita2Ku untuk Perencanaan Keuangan Jangka Panjang",
+      "content": "Bagian ini menyoroti Tabungan Cita2Ku sebagai produk tabungan berjangka dengan benefit bebas biaya admin, bunga kompetitif (3% p.a.), auto-debit bulanan, dan pilihan tenor fleksibel (1-15 tahun). Key takeaways: (1) Mendorong disiplin menabung, (2) Setoran mulai Rp200 ribu/bulan, (3) Suku bunga lebih tinggi dari tabungan reguler, (4) Pilihan tenor sangat fleksibel, (5) Cocok untuk perencanaan dana pendidikan, keluarga, atau liburan.",
+      "source_units": ["unit_2"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Struktur Benefit dan Biaya TabunganKu",
+      "content": "Bagian TabunganKu menekankan kemudahan akses, bebas biaya admin bulanan, dan struktur bunga bertingkat: saldo <Rp500.000 (0%), Rp500.000–1.000.000 (0,25%), >Rp1.000.000 (1%). Ada biaya cek saldo (Rp4.000) dan tarik tunai (Rp7.500) di jaringan ATM Bersama/Alto/Prima. Key takeaways: (1) Target nasabah entry-level, (2) Insentif saldo tinggi, (3) Fee-based income dari transaksi ATM, (4) Fleksibilitas penarikan dana.",
+      "source_units": ["unit_3"],
+      "confidence": 0.95,
+      "priority": 7
+    },
+    {
+      "type": "section_summary",
+      "title": "Fleksibilitas dan Keuntungan Deposito Berjangka, On Call, dan Online",
+      "content": "Bagian ini membandingkan tiga produk deposito: Deposito Berjangka (tenor dan mata uang fleksibel, bunga tinggi, bisa jadi jaminan kredit), Deposito On Call (tenor sangat pendek 7-27 hari, bunga kompetitif, buka online), dan Deposito Online (buka kapan saja, bunga tinggi, fleksibel). Key takeaways: (1) Diversifikasi tenor dan mata uang, (2) Kemudahan akses digital, (3) Potensi cross-sell ke kredit, (4) Segmentasi nasabah sesuai kebutuhan likuiditas.",
+      "source_units": ["unit_4", "unit_5", "unit_6"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "section_summary",
+      "title": "Fitur Unggulan Giro BISA dan Prima Giro untuk Bisnis",
+      "content": "Bagian ini menyoroti Giro BISA (bebas biaya transaksi, bunga kompetitif, internet banking, laporan bulanan, bebas biaya RTGS/SKN/cek) dan Prima Giro (transaksi rupiah/valas, bunga kompetitif, internet banking, laporan bulanan). Key takeaways: (1) Target segmen bisnis, (2) Efisiensi biaya transaksi, (3) Fasilitas digital banking, (4) Laporan keuangan terperinci, (5) Dukungan transaksi multivaluta.",
+      "source_units": ["unit_7", "unit_8"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "section_summary",
+      "title": "Manfaat Proteksi Prima Kritis Andalan dan Proteksi Prima Medika",
+      "content": "Bagian ini membahas dua produk asuransi kesehatan: Proteksi Prima Kritis Andalan (perlindungan 4 penyakit kritis tahap akhir, pengembalian premi 100%, safety-net angioplasti/ICU, manfaat meninggal dunia) dan Proteksi Prima Medika (perlindungan rawat inap/intensif, usia tertanggung 30 hari-65 tahun, no claim bonus 5 tahun, plan fleksibel). Key takeaways: (1) Perlindungan menyeluruh penyakit kritis, (2) Pengembalian premi penuh, (3) Insentif no claim, (4) Segmentasi usia luas.",
+      "source_units": ["unit_9", "unit_10"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Glossarium Istilah Khusus Produk Simpanan dan Proteksi Danamon",
+      "content": "**Auto Switching Currency**: Fitur pada kartu debit Danamon LEBIH PRO yang secara otomatis mendeteksi dan menggunakan saldo mata uang asing sesuai negara transaksi, meminimalkan biaya konversi. \n**Cashback**: Pengembalian sebagian nilai transaksi belanja (misal 5% hingga Rp200 ribu) sebagai insentif, biasanya dengan syarat saldo rata-rata minimum. \n**Tenor**: Jangka waktu simpanan/deposito/tabungan berjangka, pada Cita2Ku mulai dari 1 hingga 15 tahun, On Call 7-27 hari. \n**Back to Back**: Skema penggunaan dana deposito sebagai jaminan kredit, mengurangi risiko kredit bank. \n**No Claim Bonus**: Insentif berupa kompensasi jika tidak ada klaim asuransi dalam periode tertentu (misal 5 tahun pada Proteksi Prima Medika). \n**Safety-net**: Manfaat tambahan asuransi yang diberikan jika terjadi kondisi tertentu (misal angioplasti atau ICU), tanpa mengurangi uang pertanggungan utama.",
+      "source_units": ["unit_1", "unit_2", "unit_4", "unit_9", "unit_10"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "glossary",
+      "title": "Definisi Istilah Finansial dan Operasional Penting",
+      "content": "**DPK (Dana Pihak Ketiga)**: Dana yang dihimpun bank dari masyarakat melalui produk tabungan, giro, dan deposito, menjadi sumber utama likuiditas bank. \n**Fee-Based Income**: Pendapatan bank yang berasal dari biaya administrasi, transaksi, atau layanan (misal biaya tarik tunai ATM, biaya cek saldo). \n**RTGS (Real Time Gross Settlement)**: Sistem transfer dana antar bank dalam jumlah besar secara real time. \n**SKN (Sistem Kliring Nasional)**: Sistem transfer dana antar bank untuk transaksi ritel dalam jumlah lebih kecil. \n**Bilyet Giro**: Instrumen pembayaran non-tunai berupa surat perintah transfer dana dari rekening giro.",
+      "source_units": ["unit_3", "unit_7", "unit_8"],
+      "confidence": 0.9,
+      "priority": 7
+    },
+    {
+      "type": "glossary",
+      "title": "Terminologi Khusus Asuransi Kesehatan dan Proteksi",
+      "content": "**Uang Pertanggungan**: Nilai manfaat yang dibayarkan oleh perusahaan asuransi kepada tertanggung atau ahli waris jika terjadi risiko yang dijamin polis. \n**Angioplasti**: Prosedur medis untuk membuka pembuluh darah yang tersumbat, menjadi salah satu trigger safety-net pada Proteksi Prima Kritis Andalan. \n**ICU (Intensive Care Unit)**: Unit perawatan intensif di rumah sakit, menjadi syarat manfaat tambahan pada produk asuransi. \n**Polis**: Kontrak tertulis antara perusahaan asuransi dan nasabah yang memuat hak dan kewajiban kedua belah pihak.",
+      "source_units": ["unit_9", "unit_10"],
+      "confidence": 0.9,
+      "priority": 6
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Implikasi Syarat Saldo Minimum pada Bebas Biaya dan Cashback",
+      "content": "Root Analysis: Syarat saldo minimum (Rp5 juta) untuk bebas biaya transaksi dan cashback pada Danamon LEBIH PRO secara tidak langsung meningkatkan average daily balance nasabah, memperkuat likuiditas bank dan menurunkan cost of fund. \n\nEfek Domino: Nasabah yang ingin menikmati benefit akan menjaga saldo di atas threshold, mengurangi churn dan meningkatkan stickiness. Namun, nasabah dengan saldo fluktuatif atau kecil akan tetap terkena biaya, menjadi sumber fee-based income. \n\nRisiko Potensial: Potensi segmentasi nasabah, di mana nasabah saldo rendah merasa kurang diuntungkan dan beralih ke bank lain. Confidence: 0.85. \n\nPeluang Tersembunyi: Bank dapat mengembangkan produk turunan untuk segmen saldo rendah atau menawarkan upgrade ke produk lain. Mitigasi: Edukasi benefit dan penawaran bundle produk.",
+      "source_units": ["unit_1"],
+      "confidence": 0.85,
+      "priority": 9
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Konsekuensi Fitur Auto-Debit pada Tabungan Cita2Ku",
+      "content": "Root Analysis: Fitur auto-debit bulanan pada Tabungan Cita2Ku mendorong disiplin menabung dan mengurangi risiko gagal setoran, meningkatkan predictability DPK bank. \n\nEfek Domino: Nasabah cenderung mempertahankan saldo di rekening sumber dana, mengurangi volatilitas dana masuk/keluar. Hal ini juga mengurangi workload operasional terkait reminder pembayaran. \n\nRisiko Potensial: Jika saldo sumber dana tidak mencukupi, terjadi gagal debit, berpotensi menurunkan kepercayaan nasabah. Confidence: 0.8. \n\nPeluang Tersembunyi: Bank dapat menawarkan fitur notifikasi saldo rendah atau auto-top up dari rekening lain. Mitigasi: Implementasi early warning system untuk saldo kritis.",
+      "source_units": ["unit_2"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "implication_analysis",
+      "title": "Dampak Penawaran Suku Bunga Kompetitif pada Deposito dan Tabungan Berjangka",
+      "content": "Root Analysis: Penawaran suku bunga tinggi pada deposito dan tabungan berjangka menarik dana jangka panjang, namun berpotensi meningkatkan cost of fund jika tidak diimbangi dengan penyaluran kredit produktif. \n\nEfek Domino: Jika market rate turun, nasabah cenderung bertahan di produk bunga tinggi, menekan margin bank. Jika market rate naik, risiko outflow ke kompetitor meningkat. Confidence: 0.75. \n\nRisiko Potensial: Margin compression, mismatch tenor dana dan kredit. \n\nPeluang Tersembunyi: Cross-sell kredit dengan jaminan deposito (back to back) untuk meningkatkan yield. Mitigasi: Review periodik pricing dan diversifikasi tenor.",
+      "source_units": ["unit_4", "unit_5", "unit_6"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Pola Insentif Berbasis Saldo dan Transaksi pada Produk Simpanan",
+      "content": "Deskripsi: Hampir semua produk simpanan Danamon memberikan insentif (bebas biaya, cashback, bunga lebih tinggi) dengan syarat saldo minimum atau setoran rutin. Pola ini konsisten pada Danamon LEBIH PRO (Rp5 juta), Tabungan Cita2Ku (setoran bulanan), dan TabunganKu (bunga bertingkat). \n\nQuantification: Threshold saldo minimum bervariasi, namun rata-rata di atas Rp500 ribu hingga Rp5 juta. \n\nRoot Cause Hypothesis: Bank ingin meningkatkan average balance dan mengurangi churn nasabah. \n\nImplications: Pola ini efektif meningkatkan DPK, namun berisiko menurunkan akuisisi nasabah saldo rendah. Actionable insight: Kembangkan produk khusus untuk segmen unbanked atau saldo kecil.",
+      "source_units": ["unit_1", "unit_2", "unit_3"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Recurring Theme: Digitalisasi dan Kemudahan Akses Produk",
+      "content": "Deskripsi: Hampir semua produk baru Danamon (Deposito Online, On Call, D-Bank PRO) menonjolkan kemudahan pembukaan dan transaksi secara online. \n\nQuantification: Setidaknya 3 dari 5 produk simpanan utama menawarkan akses digital penuh. \n\nRoot Cause Hypothesis: Adaptasi terhadap perubahan perilaku nasabah yang mengutamakan digital experience dan efisiensi waktu. \n\nImplications: Bank perlu terus berinvestasi pada platform digital dan integrasi fitur lintas produk. Actionable insight: Lakukan user experience review dan integrasi promo digital untuk mendorong adopsi.",
+      "source_units": ["unit_1", "unit_5", "unit_6"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "pattern_recognition",
+      "title": "Anomali: Struktur Bunga Nol pada TabunganKu Saldo Rendah",
+      "content": "Deskripsi: TabunganKu memberikan bunga 0% untuk saldo di bawah Rp500.000, berbeda dengan produk lain yang tetap memberikan bunga meski kecil. \n\nQuantification: Saldo <Rp500.000 = 0%, Rp500.000–1.000.000 = 0,25%, >Rp1.000.000 = 1%. \n\nRoot Cause Hypothesis: Bank ingin mendorong nasabah meningkatkan saldo, sekaligus mengurangi biaya bunga pada saldo dormant. \n\nImplications: Potensi churn pada nasabah saldo kecil, namun meningkatkan efisiensi cost of fund. Actionable insight: Evaluasi impact churn dan pertimbangkan insentif non-bunga untuk segmen ini.",
+      "source_units": ["unit_3"],
+      "confidence": 0.8,
+      "priority": 7
+    },
+    {
+      "type": "table_insights",
+      "title": "Insight Tersirat dari Struktur Bunga TabunganKu",
+      "content": "Metrik utama: Tingkat bunga bertingkat berdasarkan saldo. Pola: Bunga 0% untuk saldo <Rp500.000, naik ke 0,25% (Rp500.000–1.000.000), dan 1% (>Rp1.000.000). Insight: Struktur ini secara tidak langsung mendorong nasabah untuk menjaga saldo di atas threshold agar mendapatkan bunga, meningkatkan average balance. Derived metric: Jika rata-rata nasabah meningkatkan saldo dari Rp400.000 ke Rp1.200.000, bank dapat meningkatkan DPK per nasabah hingga 200%. Actionable: Gunakan data ini untuk campaign edukasi saldo optimal.",
+      "source_units": ["unit_3"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Analisis Cashback Maksimal pada Danamon LEBIH PRO",
+      "content": "Metrik utama: Cashback 5% hingga Rp200 ribu per bulan dengan saldo rata-rata minimum Rp5 juta. Pola: Nasabah dengan transaksi bulanan Rp4 juta di merchant eligible akan mendapat cashback maksimal. Insight: Program ini efektif mendorong transaksi ritel dan menjaga saldo tinggi. Derived metric: Jika 10.000 nasabah memenuhi syarat, potensi biaya cashback bank Rp2 miliar/bulan. Actionable: Monitor rasio cost to income dari program ini untuk menjaga profitabilitas.",
+      "source_units": ["unit_1"],
+      "confidence": 0.85,
+      "priority": 8
+    },
+    {
+      "type": "table_insights",
+      "title": "Perbandingan Biaya Transaksi ATM pada TabunganKu",
+      "content": "Metrik utama: Biaya cek saldo Rp4.000, tarik tunai Rp7.500 di ATM Bersama/Alto/Prima. Pola: Fee-based income dari transaksi nasabah saldo rendah. Insight: Jika rata-rata nasabah melakukan 3 transaksi ATM/bulan, bank memperoleh Rp33.000/nasabah/tahun. Derived metric: Dengan 100.000 nasabah aktif, fee income tahunan Rp3,3 miliar. Actionable: Evaluasi potensi penyesuaian biaya untuk meningkatkan daya saing.",
+      "source_units": ["unit_3"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Komparasi Fitur dan Target Segmen TabunganKu vs Danamon LEBIH PRO",
+      "content": "TabunganKu: Target nasabah entry-level, bebas biaya admin, bunga rendah (0-1%), biaya transaksi ATM ada. Danamon LEBIH PRO: Target nasabah aktif dan global, multi-currency, bebas biaya transaksi dengan saldo minimum, cashback, auto switching currency. Advantages TabunganKu: Mudah diakses, cocok untuk unbanked. Advantages LEBIH PRO: Fitur premium, insentif tinggi, digital. Rekomendasi: Segmentasi promosi sesuai profil nasabah.",
+      "source_units": ["unit_1", "unit_3"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Perbandingan Deposito Berjangka, On Call, dan Online",
+      "content": "Deposito Berjangka: Tenor fleksibel, bunga tinggi, bisa jadi jaminan kredit. On Call: Tenor sangat pendek (7-27 hari), bunga kompetitif, buka online. Deposito Online: Buka kapan saja, tenor dan mata uang fleksibel, bunga tinggi. Advantages Berjangka: Cocok untuk dana idle jangka menengah-panjang. Advantages On Call: Likuiditas tinggi. Advantages Online: Akses digital maksimal. Rekomendasi: Bundle penawaran sesuai kebutuhan likuiditas nasabah.",
+      "source_units": ["unit_4", "unit_5", "unit_6"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "comparative_analysis",
+      "title": "Analisis Komparatif Proteksi Prima Kritis Andalan vs Proteksi Prima Medika",
+      "content": "Proteksi Prima Kritis Andalan: Fokus penyakit kritis tahap akhir, pengembalian premi 100%, safety-net angioplasti/ICU, manfaat meninggal dunia. Proteksi Prima Medika: Perlindungan rawat inap/intensif, usia tertanggung luas, no claim bonus. Advantages Kritis Andalan: Perlindungan penyakit berat dan benefit premi kembali. Advantages Medika: Perlindungan kesehatan umum, insentif no claim. Rekomendasi: Cross-sell sesuai kebutuhan nasabah.",
+      "source_units": ["unit_9", "unit_10"],
+      "confidence": 0.85,
+      "priority": 7
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Perhitungan Cashback Maksimal Danamon LEBIH PRO",
+      "content": "Analisis: Cashback 5% hingga maksimal Rp200 ribu/bulan dengan saldo rata-rata minimum Rp5 juta. Formula: Cashback = MIN(0,05 × Total Transaksi Eligible, Rp200.000). Variabel: Total Transaksi Eligible = jumlah pembelanjaan di merchant SPBU/supermarket/overseas. Contoh: Jika transaksi Rp3 juta, cashback = 0,05 × 3.000.000 = Rp150.000. Jika transaksi Rp5 juta, cashback = 0,05 × 5.000.000 = Rp250.000, namun dibatasi Rp200.000. Asumsi: Semua transaksi eligible, saldo rata-rata terpenuhi. Limitasi: Tidak mencakup transaksi non-eligible.",
+      "source_units": ["unit_1"],
+      "confidence": 0.95,
+      "priority": 9
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Bunga Bertingkat TabunganKu",
+      "content": "Analisis: Bunga TabunganKu berdasarkan saldo. Formula: \nJika Saldo < Rp500.000 → Bunga = 0%,\nJika Rp500.000 ≤ Saldo ≤ Rp1.000.000 → Bunga = 0,25% × Saldo,\nJika Saldo > Rp1.000.000 → Bunga = 1% × Saldo. Contoh: Saldo Rp800.000 → bunga tahunan = 0,25% × 800.000 = Rp2.000. Saldo Rp1.500.000 → bunga tahunan = 1% × 1.500.000 = Rp15.000. Asumsi: Bunga dihitung per tahun. Limitasi: Tidak memperhitungkan pajak bunga.",
+      "source_units": ["unit_3"],
+      "confidence": 0.95,
+      "priority": 8
+    },
+    {
+      "type": "formula_discovery",
+      "title": "Formula Setoran dan Akumulasi Tabungan Cita2Ku",
+      "content": "Analisis: Setoran bulanan mulai Rp200 ribu (tenor ≥2 tahun) atau Rp500 ribu (tenor ≥1 tahun), bunga 3% p.a. Formula: Akumulasi = Setoran Bulanan × [(1 + r)^n – 1]/r, r = bunga bulanan (3%/12), n = jumlah bulan. Contoh: Setoran Rp500.000, tenor 12 bulan, r = 0,0025, Akumulasi = 500.000 × [(1+0,0025)^12 – 1]/0,0025 ≈ Rp6.162.000. Asumsi: Setoran tetap, bunga tetap. Limitasi: Tidak memperhitungkan pajak dan perubahan suku bunga.",
+      "source_units": ["unit_2"],
+      "confidence": 0.9,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Pertumbuhan DPK dari Program Cashback dan Bunga Kompetitif",
+      "content": "Best Case: Jika program cashback dan bunga kompetitif meningkatkan saldo rata-rata nasabah 20% per tahun, DPK tumbuh 44% dalam 2 tahun (CAGR 20%). Most Likely: Pertumbuhan saldo rata-rata 10% per tahun, DPK naik 21% dalam 2 tahun (CAGR 10%). Worst Case: Program kurang efektif, pertumbuhan hanya 3% per tahun, DPK naik 6% dalam 2 tahun. Asumsi: Tidak ada churn besar, program berjalan konsisten. Confidence: 0.7 (extrapolation, data explicit tidak tersedia). Triggers: Best (campaign sukses, akuisisi nasabah baru), Worst (kompetitor agresif, churn tinggi).",
+      "source_units": ["unit_1", "unit_2", "unit_3"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Penetrasi Digital Banking melalui Deposito Online dan D-Bank PRO",
+      "content": "Best Case: Adopsi digital banking tumbuh 30% per tahun, 60% nasabah aktif menggunakan Deposito Online/D-Bank PRO dalam 2 tahun. Most Likely: Pertumbuhan 15% per tahun, penetrasi 35% dalam 2 tahun. Worst Case: Adopsi stagnan, hanya 10% tambahan nasabah digital. Asumsi: Infrastruktur digital stabil, edukasi berjalan. Confidence: 0.65 (extrapolation, tanpa data historis). Triggers: Best (promo digital agresif, UX optimal), Worst (gangguan sistem, edukasi kurang).",
+      "source_units": ["unit_5", "unit_6"],
+      "confidence": 0.65,
+      "priority": 7
+    },
+    {
+      "type": "scenario_projection",
+      "title": "Proyeksi Uptake Produk Proteksi Kesehatan dengan Fitur Pengembalian Premi",
+      "content": "Best Case: Uptake produk proteksi kesehatan tumbuh 25% per tahun, didorong fitur pengembalian premi 100% dan safety-net. Most Likely: Pertumbuhan 12% per tahun, uptake naik 25% dalam 2 tahun. Worst Case: Uptake stagnan, hanya 5% pertumbuhan per tahun. Asumsi: Awareness meningkat, tidak ada perubahan regulasi. Confidence: 0.7 (extrapolation, data explicit tidak tersedia). Triggers: Best (kampanye edukasi masif), Worst (kompetitor meniru fitur, regulasi ketat).",
+      "source_units": ["unit_9", "unit_10"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Trend Average Balance Nasabah Akibat Syarat Saldo Minimum",
+      "content": "Trend: Syarat saldo minimum Rp5 juta untuk bebas biaya/cashback mendorong kenaikan average balance nasabah. Rate of change: Jika 30% nasabah meningkatkan saldo ke atas threshold, average balance naik 12-18% dalam 12 bulan. Forecast: Dalam 1 tahun, average balance dapat naik dari Rp3,5 juta ke Rp4,1 juta. Confidence interval: ±2%. Asumsi: Tidak ada perubahan syarat benefit. Turning point: Jika threshold dinaikkan, pertumbuhan bisa stagnan.",
+      "source_units": ["unit_1"],
+      "confidence": 0.8,
+      "priority": 8
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Prediksi Trend Fee-Based Income dari Biaya Transaksi ATM",
+      "content": "Trend: Dengan struktur biaya cek saldo/tarik tunai di TabunganKu, fee-based income cenderung stabil atau naik seiring pertumbuhan nasabah entry-level. Rate of change: Jika jumlah transaksi ATM tumbuh 5% per tahun, fee income naik proporsional. Forecast: Dalam 2 tahun, fee income naik 10-12%. Confidence interval: ±3%. Asumsi: Tidak ada penurunan biaya transaksi. Turning point: Jika biaya diturunkan, fee income turun signifikan.",
+      "source_units": ["unit_3"],
+      "confidence": 0.75,
+      "priority": 7
+    },
+    {
+      "type": "trend_forecasting",
+      "title": "Forecasting Uptake Produk Deposito Online dan On Call",
+      "content": "Trend: Adopsi deposito online dan on call meningkat sejalan digitalisasi perbankan. Rate of change: Uptake tumbuh 15-20% per tahun. Forecast: Dalam 3 tahun, penetrasi produk digital bisa mencapai 50% dari total nasabah deposito. Confidence interval: ±5%. Asumsi: Tidak ada gangguan sistem dan promo digital konsisten. Turning point: Jika ada kompetitor dengan UX lebih baik, pertumbuhan bisa melambat.",
+      "source_units": ["unit_5", "unit_6"],
+      "confidence": 0.7,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Syarat Saldo Minimum Bebas Biaya Dinaikkan ke Rp10 Juta",
+      "content": "Deskripsi: Jika syarat saldo minimum untuk bebas biaya transaksi dan cashback dinaikkan dari Rp5 juta ke Rp10 juta pada Danamon LEBIH PRO, dampaknya adalah penurunan jumlah nasabah eligible benefit hingga 35-50% (estimasi). Outcome: Average balance per nasabah naik, namun churn rate pada segmen saldo menengah meningkat. Perubahan angka: Potensi penurunan volume transaksi ritel 10-15%. Mitigasi: Komunikasi proaktif dan penawaran upgrade produk. Probability: Medium (30%) jika bank ingin fokus pada nasabah high value.",
+      "source_units": ["unit_1"],
+      "confidence": 0.7,
+      "priority": 8
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Bunga TabunganKu Naik ke 2% untuk Semua Saldo",
+      "content": "Deskripsi: Jika bunga TabunganKu dinaikkan menjadi flat 2% untuk semua saldo, outcome-nya adalah peningkatan akuisisi nasabah entry-level dan potensi migrasi nasabah dari produk lain. Perubahan angka: DPK TabunganKu bisa naik 20-30%, namun cost of fund bank juga naik signifikan. Mitigasi: Bundling dengan produk fee-based dan monitoring margin. Probability: Low (15%) karena risiko margin compression tinggi.",
+      "source_units": ["unit_3"],
+      "confidence": 0.6,
+      "priority": 7
+    },
+    {
+      "type": "what_if_analysis",
+      "title": "What-If: Fitur Cashback Dihapus pada Danamon LEBIH PRO",
+      "content": "Deskripsi: Jika fitur cashback 5% hingga Rp200 ribu/bulan dihapus, outcome-nya adalah penurunan transaksi ritel dan potensi churn nasabah aktif. Perubahan angka: Volume transaksi bisa turun 10-20%, average balance turun 5-8%. Mitigasi: Ganti dengan program loyalty point atau benefit lain. Probability: Medium (40%) jika bank ingin mengurangi cost program.",
+      "source_units": ["unit_1"],
+      "confidence": 0.65,
+      "priority": 7
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Konsentrasi Dana pada Nasabah Saldo Tinggi",
+      "content": "Deskripsi Risk: Konsentrasi dana pada segmen nasabah saldo tinggi (misal Danamon LEBIH PRO, saldo >Rp5 juta) meningkatkan risiko likuiditas jika terjadi outflow mendadak. Likelihood: Medium (30%) - nasabah high value cenderung mobile. Impact: High (critical) - potensi penurunan DPK signifikan. Risk Score: 8/10. Root Cause: Ketergantungan pada insentif saldo minimum. Mitigasi Preventive: Diversifikasi produk dan insentif untuk segmen saldo menengah. Contingency Plan: Penyesuaian suku bunga dan promo retensi. Early Warning: Penurunan saldo rata-rata dan volume transaksi.",
+      "source_units": ["unit_1", "unit_2"],
+      "confidence": 0.8,
+      "priority": 9
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Margin Compression dari Program Bunga dan Cashback",
+      "content": "Deskripsi Risk: Program bunga kompetitif dan cashback agresif berpotensi menekan margin jika tidak diimbangi dengan pertumbuhan kredit produktif. Likelihood: Medium (40%) - tergantung respons pasar. Impact: Medium-High - profitabilitas bank tergerus. Risk Score: 7/10. Root Cause: Cost of fund naik, fee income tidak cukup menutup biaya. Mitigasi Preventive: Review periodik pricing dan cost program. Contingency Plan: Penyesuaian syarat benefit, shifting ke loyalty point. Early Warning: Penurunan net interest margin dan rasio cost to income.",
+      "source_units": ["unit_1", "unit_2", "unit_3"],
+      "confidence": 0.75,
+      "priority": 8
+    },
+    {
+      "type": "risk_assessment",
+      "title": "Risiko Teknologi dan Fraud pada Produk Digital Banking",
+      "content": "Deskripsi Risk: Adopsi digital banking (Deposito Online, D-Bank PRO) meningkatkan risiko fraud, cyber attack, dan downtime sistem. Likelihood: Medium (25%) - seiring pertumbuhan digital. Impact: High (critical) - kerugian finansial dan reputasi. Risk Score: 8/10. Root Cause: Ketergantungan pada sistem digital dan keamanan siber. Mitigasi Preventive: Investasi pada cybersecurity, audit berkala. Contingency Plan: Protokol recovery dan kompensasi nasabah. Early Warning: Anomali transaksi, downtime aplikasi, laporan fraud.",
+      "source_units": ["unit_5", "unit_6"],
+      "confidence": 0.7,
+      "priority": 8
+    }
+  ],
+  "metadata": {}
+}

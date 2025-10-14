@@ -1,0 +1,74 @@
+{
+  "doc_id": "4567a197-9f90-47a4-ad1c-32c7f3e7f0f3",
+  "current_stage": "ready",
+  "progress_percentage": 90,
+  "is_complete": true,
+  "stage_timestamps": {
+    "ocr_in_progress": "2025-10-14T13:29:28.117220",
+    "ocr_completed": "2025-10-14T13:29:36.327709",
+    "enhancement_in_progress": "2025-10-14T13:29:36.329213",
+    "enhancement_completed": "2025-10-14T13:33:00.580862",
+    "auto_approval_completed": "2025-10-14T13:33:00.581861",
+    "synthesis_in_progress": "2025-10-14T13:33:00.581861",
+    "synthesis_completed": "2025-10-14T13:33:01.002229",
+    "vectorization_in_progress": "2025-10-14T13:33:01.003230",
+    "vectorization_completed": "2025-10-14T13:33:06.578396",
+    "ready": "2025-10-14T13:33:06.581455"
+  },
+  "stage_durations": {
+    "ocr_in_progress_to_ocr_completed": 8.210489,
+    "ocr_completed_to_enhancement_in_progress": 0.001504,
+    "enhancement_in_progress_to_enhancement_completed": 204.251649,
+    "enhancement_completed_to_auto_approval_completed": 0.000999,
+    "auto_approval_completed_to_synthesis_in_progress": 0.0,
+    "synthesis_in_progress_to_synthesis_completed": 0.420368,
+    "synthesis_completed_to_vectorization_in_progress": 0.001001,
+    "vectorization_in_progress_to_vectorization_completed": 5.575166,
+    "vectorization_completed_to_ready": 0.003059
+  },
+  "errors": [],
+  "metadata": {
+    "ocr_completed": {
+      "total_pages": 6,
+      "markdown_path": "artefacts\\4567a197-9f90-47a4-ad1c-32c7f3e7f0f3\\SC.2507.0009 Bonds - SBR014.md"
+    },
+    "enhancement_completed": {
+      "total_enhancements": 36,
+      "enhancements_file": "artefacts\\4567a197-9f90-47a4-ad1c-32c7f3e7f0f3\\enhancements.json",
+      "type_distribution": {
+        "glossary": 3,
+        "section_summary": 3,
+        "formula_discovery": 3,
+        "table_insights": 3,
+        "executive_summary": 3,
+        "pattern_recognition": 3,
+        "comparative_analysis": 3,
+        "implication_analysis": 3,
+        "risk_assessment": 3,
+        "trend_forecasting": 3,
+        "what_if_analysis": 3,
+        "scenario_projection": 3
+      }
+    },
+    "auto_approval_completed": {
+      "auto_approve_all": true,
+      "approval_timestamp": "2025-10-14T13:33:00.581861"
+    },
+    "synthesis_completed": {
+      "final_markdown_path": "artefacts\\4567a197-9f90-47a4-ad1c-32c7f3e7f0f3\\SC.2507.0009 Bonds - SBR014_enhanced.md",
+      "total_enhancements": 36
+    },
+    "vectorization_completed": {
+      "namespace": "danamon-final-1",
+      "v1_success": false,
+      "v2_success": true,
+      "embedding_model": "text-embedding-3-small"
+    },
+    "ready": {
+      "completed_at": "2025-10-14T13:33:06.581455"
+    }
+  },
+  "stage_progress": {},
+  "estimated_remaining_seconds": 24,
+  "last_updated": "2025-10-14T13:33:06.581455"
+}

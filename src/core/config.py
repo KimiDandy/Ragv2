@@ -1,70 +1,75 @@
-import os
-from dotenv import load_dotenv
-from pydantic_settings import BaseSettings
+"""
+Core configuration module - Loads from global_config.json and .env
 
-# Load environment variables
+Architecture:
+- API Keys: From .env file (secrets)
+- Business Config: From global_config.json (LLM model, embedding, etc.)
+- No hardcoded defaults for business logic
+"""
+
+import os
+import json
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables (API keys only)
 load_dotenv()
 
-class Settings(BaseSettings):
-    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
-    LLM_MODEL: str = os.getenv("LLM_MODEL", "gpt-4.1")
-    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
 
-    # Pinecone Configuration
-    PINECONE_API_KEY: str = os.getenv("PINECONE_API_KEY", "")
-    PINECONE_INDEX_NAME: str = os.getenv("PINECONE_INDEX_NAME", "inspigo-pinecone")
+def _load_global_config():
+    """Load global configuration from JSON file."""
+    config_path = Path(__file__).parent / "enhancement_profiles" / "global_config.json"
+    
+    if not config_path.exists():
+        raise FileNotFoundError(
+            f"❌ global_config.json not found at: {config_path}\n"
+            f"This file is REQUIRED for application startup."
+        )
+    
+    with open(config_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
-    PIPELINE_ARTEFACTS_DIR: str = os.getenv("PIPELINE_ARTEFACTS_DIR", "artefacts")
 
-    PHASE1_TOKEN_BUDGET: int = int(os.getenv("PHASE1_TOKEN_BUDGET", "35000"))
-    PHASE2_TOKEN_BUDGET: int = int(os.getenv("PHASE2_TOKEN_BUDGET", "50000"))
+# Load global config (single source of truth for business logic)
+_global_config = _load_global_config()
 
-    PHASE1_CONCURRENCY: int = int(os.getenv("PHASE1_CONCURRENCY", "7"))
-    PHASE1_RPS: float = float(os.getenv("PHASE1_RPS", "3"))
-    PHASE2_CONCURRENCY: int = int(os.getenv("PHASE2_CONCURRENCY", "4"))
-    PHASE2_RPS: float = float(os.getenv("PHASE2_RPS", "2"))
+# ============================================
+# SECRETS (from .env file)
+# ============================================
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "")
 
-    RAG_PROMPT_TEMPLATE: str = (
-        "Anda adalah AI Assistant yang ahli dalam analisis dokumen dan dapat menggunakan informasi tersurat maupun tersirat untuk menjawab pertanyaan.\n\n"
-        "INSTRUKSI ANALISIS:\n"
-        "1. **GUNAKAN SEMUA KONTEKS**: Informasi eksplisit, enhancement results, formula, dan pola yang ditemukan\n"
-        "2. **BERIMPROVIASI DENGAN DATA**: Jika ada rumus/pola, gunakan untuk membuat proyeksi/estimasi\n"
-        "3. **ANALISIS TERSIRAT**: Ekstrak insight yang tidak langsung tertulis tapi bisa disimpulkan\n"
-        "4. **JAWABAN KOMPREHENSIF**: Berikan jawaban sedetail mungkin dengan reasoning yang jelas\n\n"
-        "KONTEKS DOKUMEN:\n{context}\n\n"
-        "PERTANYAAN: {question}\n\n"
-        "PANDUAN JAWABAN:\n"
-        "- Jika ada data/formula relevan, gunakan untuk kalkulasi dan proyeksi\n"
-        "- Jika ada pola/trend, extrapolate untuk scenario yang ditanyakan\n"
-        "- Jika ada enhancement tentang topik terkait, integrasikan dalam jawaban\n"
-        "- Berikan reasoning step-by-step untuk projections/estimates\n"
-        "- Sebutkan asumsi yang digunakan dalam kalkulasi\n"
-        "- JAWAB dalam bahasa Indonesia yang professional\n\n"
-        "Jika benar-benar tidak ada informasi yang relevan, jelaskan secara spesifik data apa yang dibutuhkan."
-    )
+# ============================================
+# BUSINESS CONFIG (from global_config.json)
+# ============================================
+# LLM Configuration
+CHAT_MODEL = _global_config["llm"]["model"]
+LLM_MAX_TOKENS = _global_config["llm"]["max_tokens"]
+LLM_TEMPERATURE = _global_config["llm"]["temperature"]
 
-settings = Settings()
+# Embedding Configuration
+EMBEDDING_MODEL = _global_config["embedding"]["model"]
+EMBEDDING_DIMENSION = _global_config["embedding"]["dimension"]
 
-OPENAI_API_KEY = settings.OPENAI_API_KEY
-EMBEDDING_MODEL = settings.EMBEDDING_MODEL
-CHAT_MODEL = settings.LLM_MODEL
-PINECONE_API_KEY = settings.PINECONE_API_KEY
-PINECONE_INDEX_NAME = settings.PINECONE_INDEX_NAME
-PIPELINE_ARTEFACTS_DIR = settings.PIPELINE_ARTEFACTS_DIR
-RAG_PROMPT_TEMPLATE = settings.RAG_PROMPT_TEMPLATE
+# Pinecone Configuration
+PINECONE_INDEX_NAME = _global_config["vectorstore"]["pinecone_index"]
 
-PHASE1_TOKEN_BUDGET = settings.PHASE1_TOKEN_BUDGET
-PHASE2_TOKEN_BUDGET = settings.PHASE2_TOKEN_BUDGET
-PHASE1_CONCURRENCY = settings.PHASE1_CONCURRENCY
-PHASE1_RPS = settings.PHASE1_RPS
-PHASE2_CONCURRENCY = settings.PHASE2_CONCURRENCY
-PHASE2_RPS = settings.PHASE2_RPS
+# ============================================
+# PATHS (can override via .env)
+# ============================================
+PIPELINE_ARTEFACTS_DIR = os.getenv("PIPELINE_ARTEFACTS_DIR", "artefacts")
 
-# Embedding dimensions mapping for OpenAI models
-EMBEDDING_DIMENSIONS = {
-    "text-embedding-3-small": 1536,
-}
 
 def get_embedding_dimension(model_name: str) -> int:
-    """Get embedding dimension for a given model."""
-    return EMBEDDING_DIMENSIONS.get(model_name, 1536)  # Default to 1536
+    """
+    Get embedding dimension for a given model.
+    
+    Returns dimension from global_config.json by default.
+    Fallback to 1536 only if model not recognized.
+    """
+    # Use dimension from global config
+    if model_name == EMBEDDING_MODEL:
+        return EMBEDDING_DIMENSION
+    
+    # Fallback for unknown models
+    return 1536

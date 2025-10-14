@@ -29,6 +29,9 @@ from loguru import logger
 from ..observability.token_ledger import log_tokens
 from ..observability.token_counter import count_tokens
 
+# Import RAG prompt from centralized prompts module
+from ..prompts.rag_system_prompt import get_rag_prompt_template
+
 
 def build_rag_chain(retriever, model: str = "gpt-4.1", temperature: float = 0.2):
     """
@@ -50,48 +53,8 @@ def build_rag_chain(retriever, model: str = "gpt-4.1", temperature: float = 0.2)
         stream_usage=True  # Penting untuk mendapatkan token usage
     )
     
-    # Prompt template untuk RAG - Comprehensive Indonesian prompt
-    prompt_template = PromptTemplate.from_template(
-        """Anda adalah asisten AI profesional untuk analisis dokumen yang bertugas membantu pengguna memahami dan mengekstrak informasi dari SEMUA dokumen yang tersedia dalam sistem.
-
-**Prinsip Utama (WAJIB DIPATUHI):**
-
-1. **Berbasis Multi-Dokumen & Faktual**
-   - Jawab berdasarkan informasi yang tersedia dalam SEMUA KONTEKS DOKUMEN di bawah
-   - Konteks bisa berasal dari BERBAGAI DOKUMEN yang berbeda - sebutkan sumber dokumennya
-   - TIDAK BOLEH menambahkan informasi dari pengetahuan umum atau asumsi
-   - TIDAK BOLEH melakukan spekulasi atau tebakan
-   - Jika informasi tidak ada di dokumen manapun, katakan dengan jelas
-
-2. **Terstruktur & Mudah Dipahami**
-   - Untuk data numerik: Sebutkan angka dengan jelas dan konteksnya
-   - Untuk tanggal: Sebutkan tanggal dengan tepat dan lengkap (dari semua dokumen yang relevan)
-   - Untuk list/daftar: Gunakan bullet points atau numbering yang rapi
-   - Berikan jawaban yang terstruktur dan mudah dibaca
-   - Kelompokkan informasi berdasarkan dokumen sumber jika relevan
-
-3. **Transparan & Jujur**
-   - Jika dokumen tidak memiliki informasi yang ditanyakan, akui dengan jelas
-   - Jangan membuat asumsi atau spekulasi
-   - Sebutkan dari dokumen mana informasi berasal (jika konteks mencantumkan sumbernya)
-
-📄 KONTEKS DOKUMEN (dari berbagai sumber):
-{context}
-
-❓ PERTANYAAN PENGGUNA:
-{input}
-
-📋 INSTRUKSI:
-• Jawab berdasarkan SEMUA konteks dokumen yang disediakan di atas
-• Jika pertanyaan menyangkut data yang bisa ada di multiple documents, pastikan menggabungkan semua informasi relevan
-• Jika ada data numerik, tabel, atau statistik - jelaskan dengan detail dan jelas
-• Jika ada tanggal, nama, atau informasi spesifik - sebutkan dengan tepat dari SEMUA dokumen yang relevan
-• Berikan jawaban yang terstruktur menggunakan bullet points atau numbering jika perlu
-• Jika informasi yang ditanyakan tidak ada di dokumen manapun, katakan: "Informasi tersebut tidak tersedia dalam dokumen yang ada"
-• Gunakan bahasa Indonesia yang profesional namun mudah dipahami
-
-💡 JAWABAN:"""
-    )
+    # Load RAG prompt from centralized prompts folder
+    prompt_template = PromptTemplate.from_template(get_rag_prompt_template())
     
     # Try modern approach first
     if create_retrieval_chain is not None and create_stuff_documents_chain is not None:
@@ -271,42 +234,5 @@ def _build_snippet(text: str, max_len: int = 400) -> str:
     return truncated + "..."
 
 
-def create_filtered_retriever(vector_store: PineconeVectorStore, doc_id: str, version: str, k: int = 5):
-    """
-    Membuat retriever dengan filter untuk dokumen dan versi tertentu.
-    
-    CRITICAL FIX: Test shows namespace parameter works in __init__ but retrieval still fails.
-    Problem likely: retriever wrapper not passing namespace to query operations.
-    Solution: Return retriever without filter, let chain handle it.
-    
-    Args:
-        vector_store: Pinecone vector store (already has namespace set)
-        doc_id: Document ID untuk filter
-        version: Version untuk filter (v1/v2)
-        k: Jumlah dokumen yang diambil
-    
-    Returns:
-        Retriever yang sudah difilter
-    """
-    logger.info(f"Creating retriever for doc_id={doc_id}, version={version}, k={k}")
-    logger.info(f"VectorStore namespace: {vector_store._namespace}")
-    
-    # Try with simple filter - Pinecone native syntax (no $eq)
-    retrieval_filter = {
-        "source_document": doc_id,
-        "version": version
-    }
-    
-    logger.info(f"Filter: {retrieval_filter}")
-    
-    # Create retriever with filter
-    retriever = vector_store.as_retriever(
-        search_type="similarity",
-        search_kwargs={
-            'k': k,
-            'filter': retrieval_filter
-        }
-    )
-    
-    logger.info(f"Retriever created with filter")
-    return retriever
+# create_filtered_retriever() REMOVED - Replaced by custom_pinecone_retriever.py
+# The CustomPineconeRetriever provides direct Pinecone access with proper namespace handling
