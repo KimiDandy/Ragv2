@@ -174,13 +174,13 @@ def synthesize_final_markdown(doc_output_dir: str, curated_suggestions: list[dic
         "total_processed": anchored_count + appendix_count,
         "duration_sec": time.time() - t0,
     }
+    
     try:
         with open(doc_path / "phase_3_metrics.json", 'w', encoding='utf-8') as mf:
             json.dump(metrics, mf, ensure_ascii=False, indent=2)
     except Exception:
         pass
-
-    logger.info(f"Fase 3 selesai. Markdown final disimpan di: {output_path}")
+    
     return str(output_path)
 
 if __name__ == '__main__':

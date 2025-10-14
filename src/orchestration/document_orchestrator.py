@@ -275,11 +275,7 @@ class DocumentOrchestrator:
         # Initialize state tracker
         self.state = ProcessingState(doc_id, self.artefacts_dir)
         
-        logger.info(f"DocumentOrchestrator initialized for {doc_id}")
-        logger.info(f"  Namespace: {namespace}")
-        logger.info(f"  Client: {self.client_profile.client_name}")
-        logger.info(f"  Enabled types: {len(self.client_profile.get_enabled_types())}")
-        logger.info(f"  LLM Model: {self.global_config.llm.model}")
+        logger.info(f"[{doc_id[:8]}...] Init: {self.client_profile.client_name} | NS: {namespace} | {len(self.client_profile.get_enabled_types())} types")
     
     async def run_full_pipeline(self) -> Dict[str, Any]:
         """
@@ -292,7 +288,7 @@ class DocumentOrchestrator:
             Exception: If any critical error occurs during processing
         """
         try:
-            logger.info(f"[{self.doc_id}] ======== STARTING FULL PIPELINE ========")
+            logger.info(f"[{self.doc_id[:8]}...] ======== PIPELINE START ========")
             
             # Stage 1: OCR & Conversion
             await self._step_1_ocr_conversion()
@@ -314,7 +310,7 @@ class DocumentOrchestrator:
                 "completed_at": datetime.now().isoformat()
             })
             
-            logger.info(f"[{self.doc_id}] ======== PIPELINE COMPLETED ========")
+            logger.info(f"[{self.doc_id[:8]}...] ======== COMPLETE ========")
             
             return self._get_processing_summary()
             
@@ -330,7 +326,6 @@ class DocumentOrchestrator:
         Uses Tesseract OCR (local) to extract text and convert to markdown.
         No user interaction needed - runs automatically.
         """
-        logger.info(f"[{self.doc_id}] Step 1: OCR & Conversion")
         self.state.set_stage("ocr_in_progress")
         
         try:
@@ -349,7 +344,6 @@ class DocumentOrchestrator:
             original_filename = get_original_pdf_filename(output_dir) or "document.pdf"
             
             # Run extraction with OCR settings from global config
-            logger.info(f"Converting PDF with {self.global_config.ocr.engine} OCR...")
             result = await asyncio.to_thread(
                 extract_pdf_to_markdown,
                 doc_id=self.doc_id,
@@ -377,12 +371,11 @@ class DocumentOrchestrator:
                 logger.warning(f"Could not load metrics: {e}")
             
             self.state.set_stage("ocr_completed", {
-                "markdown_path": str(markdown_path),
-                "pages": total_pages,
-                "doc_id": result.doc_id
+                "total_pages": total_pages,
+                "markdown_path": str(markdown_path)
             })
             
-            logger.info(f"✓ OCR completed: {markdown_path}")
+            logger.info(f"[{self.doc_id[:8]}...] ✓ OCR → {total_pages}p")
             
         except Exception as e:
             logger.error(f"OCR conversion failed: {e}")
@@ -396,7 +389,6 @@ class DocumentOrchestrator:
         Generate enhancements based on client profile configuration.
         Uses enabled enhancement types from client profile.
         """
-        logger.info(f"[{self.doc_id}] Step 2: Enhancement")
         self.state.set_stage("enhancement_in_progress")
         
         try:
@@ -424,7 +416,6 @@ class DocumentOrchestrator:
             if units_meta_path.exists():
                 with open(units_meta_path, 'r', encoding='utf-8') as f:
                     units_metadata_list = json.load(f)
-                logger.info(f"Loaded {len(units_metadata_list)} units from metadata")
             else:
                 logger.warning(f"Units metadata not found at {units_meta_path}")
             
@@ -438,15 +429,10 @@ class DocumentOrchestrator:
             if tables_path.exists():
                 with open(tables_path, 'r', encoding='utf-8') as f:
                     tables_data = json.load(f)
-                logger.info(f"Loaded {len(tables_data)} tables")
             
             # Get enabled types from client profile
             enabled_types = self.client_profile.get_enabled_types()
             domain = self.client_profile.get_primary_domain()
-            
-            logger.info(f"Running enhancement with {len(enabled_types)} types...")
-            logger.info(f"Domain: {domain}")
-            logger.info(f"Types: {enabled_types}")
             
             # Initialize enhancer
             config = EnhancementConfig()
@@ -479,10 +465,8 @@ class DocumentOrchestrator:
                 "type_distribution": dict(type_distribution)
             })
             
-            logger.info(f"✓ Enhancement completed: {len(enhancements)} enhancements")
-            logger.info(f"  Type distribution:")
-            for etype, count in sorted(type_distribution.items(), key=lambda x: -x[1]):
-                logger.info(f"    - {etype}: {count}")
+            type_summary = ", ".join([f"{k}:{v}" for k, v in sorted(type_distribution.items())])
+            logger.info(f"[{self.doc_id[:8]}...] ✓ Enhancement → {len(enhancements)} items ({type_summary})")
             
         except Exception as e:
             logger.error(f"Enhancement failed: {e}", exc_info=True)
@@ -496,8 +480,6 @@ class DocumentOrchestrator:
         Automatically approve all enhancements without user review.
         This is the default behavior from global config.
         """
-        logger.info(f"[{self.doc_id}] Step 3: Auto-approval")
-        
         # Auto-approval is immediate - no processing needed
         # All enhancements generated in step 2 are already considered approved
         
@@ -505,8 +487,6 @@ class DocumentOrchestrator:
             "auto_approve_all": self.global_config.enhancement.auto_approve_all,
             "approval_timestamp": datetime.now().isoformat()
         })
-        
-        logger.info(f"✓ Auto-approval completed (all enhancements approved)")
     
     async def _step_4_synthesis(self):
         """
@@ -514,7 +494,6 @@ class DocumentOrchestrator:
         
         Create final enhanced markdown with footnotes and metadata.
         """
-        logger.info(f"[{self.doc_id}] Step 4: Synthesis")
         self.state.set_stage("synthesis_in_progress")
         
         try:
@@ -540,7 +519,6 @@ class DocumentOrchestrator:
                 ]
             
             # Run synthesis
-            logger.info("Creating final enhanced markdown...")
             result_path = await asyncio.to_thread(
                 synthesize_final_markdown,
                 str(doc_dir),
@@ -552,7 +530,7 @@ class DocumentOrchestrator:
                 "total_enhancements": len(curated_suggestions)
             })
             
-            logger.info(f"✓ Synthesis completed: {result_path}")
+            logger.info(f"[{self.doc_id[:8]}...] ✓ Synthesis")
             
         except Exception as e:
             logger.error(f"Synthesis failed: {e}")
@@ -566,7 +544,6 @@ class DocumentOrchestrator:
         Store enhanced document in Pinecone vector database.
         Uses namespace and embedding settings from global config.
         """
-        logger.info(f"[{self.doc_id}] Step 5: Vectorization")
         self.state.set_stage("vectorization_in_progress")
         
         try:
@@ -584,16 +561,11 @@ class DocumentOrchestrator:
             doc_dir = self.artefacts_dir / self.doc_id
             
             # Vectorize both v1 and v2 if enabled
-            logger.info(f"Vectorizing to Pinecone namespace: {self.namespace}")
-            logger.info(f"Embedding model: {self.global_config.embedding.model}")
-            logger.info(f"Pinecone index: {self.global_config.vectorstore.pinecone_index}")
-            
             results = {"v1": False, "v2": False}
             
             # Vectorize v1 (original)
             if self.global_config.vectorstore.vector_version_v1_enabled:
                 v1_rel = get_markdown_relative_path(doc_dir, "v1")
-                logger.info(f"Vectorizing v1: {v1_rel}")
                 results["v1"] = await asyncio.to_thread(
                     vectorize_and_store,
                     str(doc_dir),
@@ -607,7 +579,6 @@ class DocumentOrchestrator:
             # Vectorize v2 (enhanced)
             if self.global_config.vectorstore.vector_version_v2_enabled:
                 v2_rel = get_markdown_relative_path(doc_dir, "v2")
-                logger.info(f"Vectorizing v2: {v2_rel}")
                 results["v2"] = await asyncio.to_thread(
                     vectorize_and_store,
                     str(doc_dir),
@@ -625,7 +596,7 @@ class DocumentOrchestrator:
                 "embedding_model": self.global_config.embedding.model
             })
             
-            logger.info(f"✓ Vectorization completed (v1: {results['v1']}, v2: {results['v2']})")
+            logger.info(f"[{self.doc_id[:8]}...] ✓ Vectorization → NS:{self.namespace}")
             
         except Exception as e:
             logger.error(f"Vectorization failed: {e}")

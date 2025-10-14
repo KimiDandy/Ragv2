@@ -264,7 +264,17 @@ async function pollFileProcessing(fileId, docId) {
                 const status = await response.json();
                 
                 const progress = Math.round(status.progress_percentage || 0);
-                updateFileProgress(fileId, 'processing', progress);
+                
+                // Build details with stage and ETA
+                let details = null;
+                if (status.current_stage && status.estimated_remaining_seconds) {
+                    const eta_minutes = Math.ceil(status.estimated_remaining_seconds / 60);
+                    details = `${getStageLabel(status.current_stage)} • ETA ${eta_minutes}m`;
+                } else if (status.current_stage) {
+                    details = getStageLabel(status.current_stage);
+                }
+                
+                updateFileProgress(fileId, 'processing', progress, details);
                 
                 if (status.is_complete) {
                     clearInterval(pollInterval);
@@ -365,6 +375,24 @@ function getStatusText(status) {
         'error': 'Error'
     };
     return statusTexts[status] || status;
+}
+
+// Get user-friendly stage label
+function getStageLabel(stage) {
+    const stageLabels = {
+        'uploaded': 'Diunggah',
+        'ocr_in_progress': 'OCR & Konversi',
+        'ocr_completed': 'OCR Selesai',
+        'enhancement_in_progress': 'Membuat Enhancement',
+        'enhancement_completed': 'Enhancement Selesai',
+        'auto_approval_completed': 'Auto-approval',
+        'synthesis_in_progress': 'Menyusun Dokumen Final',
+        'synthesis_completed': 'Sintesis Selesai',
+        'vectorization_in_progress': 'Vektorisasi ke Pinecone',
+        'vectorization_completed': 'Vektorisasi Selesai',
+        'ready': 'Siap'
+    };
+    return stageLabels[stage] || stage;
 }
 
 // All files processed

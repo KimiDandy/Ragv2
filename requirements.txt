@@ -24,3 +24,4 @@ Pillow
 pandas
 PyYAML
 tabulate
+psutil

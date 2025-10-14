@@ -72,6 +72,7 @@ class MultiFileOrchestrator:
         self.total_files = 0
         self.completed_files = 0
         self.failed_files = 0
+        self._monitoring_active = False
         
         logger.info(f"MultiFileOrchestrator initialized")
         logger.info(f"  Namespace: {namespace}")
@@ -116,6 +117,30 @@ class MultiFileOrchestrator:
         
         return False
     
+    async def _monitor_resources_periodic(self):
+        """
+        Background task to periodically log CPU and memory usage.
+        Runs every 15 seconds while processing is active.
+        """
+        if not PSUTIL_AVAILABLE:
+            return
+        
+        while self._monitoring_active:
+            try:
+                cpu = psutil.cpu_percent(interval=0.1)
+                memory = psutil.virtual_memory()
+                active_files = self.total_files - self.completed_files - self.failed_files
+                
+                logger.info(
+                    f"[Resource Monitor] CPU: {cpu:.1f}% | "
+                    f"Memory: {memory.percent:.1f}% ({memory.used / 1024**3:.1f}GB / {memory.total / 1024**3:.1f}GB) | "
+                    f"Active: {active_files}/{self.total_files} files"
+                )
+            except Exception as e:
+                logger.debug(f"Resource monitoring error: {e}")
+            
+            await asyncio.sleep(15)  # Log every 15 seconds
+    
     async def process_multiple_files(
         self,
         doc_ids: List[str]
@@ -137,7 +162,19 @@ class MultiFileOrchestrator:
         logger.info(f"Total files: {self.total_files}")
         logger.info(f"Concurrency: {self.max_concurrent_files}")
         
+        # Log system info if monitoring enabled
+        if PSUTIL_AVAILABLE and self.enable_cpu_monitoring:
+            cpu_count = psutil.cpu_count(logical=False) or psutil.cpu_count()
+            memory = psutil.virtual_memory()
+            logger.info(f"[Multi-File] System: {cpu_count} CPU cores, {memory.total / 1024**3:.1f}GB RAM")
+        
         start_time = datetime.now()
+        
+        # Start resource monitoring task if enabled
+        monitor_task = None
+        if PSUTIL_AVAILABLE and self.enable_cpu_monitoring:
+            self._monitoring_active = True
+            monitor_task = asyncio.create_task(self._monitor_resources_periodic())
         
         # Initialize status tracking
         for doc_id in doc_ids:
@@ -172,8 +209,16 @@ class MultiFileOrchestrator:
                 return result
         
         # Execute all files
-        tasks = [process_single_file(doc_id, idx) for idx, doc_id in enumerate(doc_ids)]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
+        try:
+            tasks = [process_single_file(doc_id, idx) for idx, doc_id in enumerate(doc_ids)]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+        finally:
+            # Stop monitoring task
+            if monitor_task:
+                self._monitoring_active = False
+                await asyncio.sleep(0.2)  # Give monitoring task time to exit
+                if not monitor_task.done():
+                    monitor_task.cancel()
         
         # Process results
         for doc_id, result in zip(doc_ids, results):

@@ -216,8 +216,7 @@ class DirectEnhancerV2:
         self.max_window_tokens = self.config.window_tokens
         self.overlap_tokens = self.config.window_overlap_tokens
         
-        logger.info(f"DirectEnhancerV2 initialized with model: {self.model}, window size: {self.max_window_tokens}")
-        logger.info(f"Type registry loaded: {len(self.type_registry.types)} enhancement types available")
+        # Enhancer initialized (silent mode)
     
     async def enhance_document(
         self,
@@ -245,8 +244,6 @@ class DirectEnhancerV2:
             List of UniversalEnhancement objects
         """
         try:
-            logger.info(f"[DirectEnhancerV2] Starting enhancement for document: {doc_id}")
-            
             # Store user configuration for this enhancement session
             self.user_selected_types = selected_types
             self.user_domain_hint = domain_hint
@@ -254,20 +251,16 @@ class DirectEnhancerV2:
             
             # Build dynamic system prompt based on user selection
             if selected_types:
-                logger.info(f"[DirectEnhancerV2] User selected {len(selected_types)} enhancement types: {selected_types}")
                 self.dynamic_system_prompt = self.type_registry.build_dynamic_system_prompt(
                     selected_type_ids=selected_types,
                     domain_hint=domain_hint
                 )
-                logger.info(f"[DirectEnhancerV2] Dynamic prompt generated ({len(self.dynamic_system_prompt)} chars)")
             else:
                 # Fallback to legacy hardcoded prompt if no user selection
-                logger.info(f"[DirectEnhancerV2] No user selection, using legacy prompt")
                 self.dynamic_system_prompt = DIRECT_ENHANCEMENT_SYSTEM_PROMPT
             
             # Read document content
             markdown_content = Path(markdown_path).read_text(encoding='utf-8')
-            logger.info(f"[DirectEnhancerV2] Document size: {len(markdown_content)} chars")
             
             # Create enhancement windows
             windows = self._create_enhancement_windows(
@@ -276,7 +269,7 @@ class DirectEnhancerV2:
                 units_metadata=units_metadata,
                 tables_data=tables_data
             )
-            logger.info(f"[DirectEnhancerV2] Created {len(windows)} windows for processing")
+            logger.info(f"[{doc_id[:8]}...] Enhancement: {len(markdown_content)} chars → {len(windows)} windows")
             
             # Process windows with controlled parallelism
             all_enhancements = await self._process_windows_parallel(
@@ -287,8 +280,6 @@ class DirectEnhancerV2:
             
             # Deduplicate and rank enhancements
             final_enhancements = self._deduplicate_and_rank(all_enhancements)
-            
-            logger.info(f"[DirectEnhancerV2] Completed: {len(final_enhancements)} final enhancements")
             return final_enhancements
             
         except Exception as e:
@@ -476,8 +467,6 @@ class DirectEnhancerV2:
         all_enhancements = []
         total_windows = len(windows)
         
-        logger.info(f"[Parallel Processing] Total windows: {total_windows}, Batch size: {max_parallel}")
-        
         # Process in batches
         batch_num = 0
         for i in range(0, total_windows, max_parallel):
@@ -486,8 +475,6 @@ class DirectEnhancerV2:
             batch_size = len(batch)
             batch_start = i + 1
             batch_end = i + batch_size
-            
-            logger.info(f"[Batch {batch_num}] Processing windows {batch_start}-{batch_end} in parallel...")
             
             # Create tasks for parallel processing
             tasks = [
@@ -510,11 +497,9 @@ class DirectEnhancerV2:
                 elif result:
                     all_enhancements.extend(result)
                     batch_enhancements += len(result)
-                    logger.info(f"[Batch {batch_num}] Window {window_num} generated {len(result)} enhancements")
             
-            logger.info(f"[Batch {batch_num}] Completed in {batch_duration:.1f}s - Total enhancements: {batch_enhancements}")
-        
-        logger.info(f"[Parallel Processing] All {total_windows} windows completed - Total enhancements: {len(all_enhancements)}")
+            if total_windows > 1:
+                logger.info(f"[Batch {batch_num}] W{batch_start}-{batch_end} → {batch_enhancements} items ({batch_duration:.1f}s)")
         return all_enhancements
     
     async def _enhance_window(
@@ -570,9 +555,8 @@ class DirectEnhancerV2:
                     
                     debug_file = debug_dir / f"llm_response_window_{window.window_number}_attempt_{attempt + 1}.json"
                     debug_file.write_text(content, encoding='utf-8')
-                    logger.info(f"Saved LLM response to: {debug_file}")
                 except Exception as save_error:
-                    logger.warning(f"Could not save debug response: {save_error}")
+                    pass  # Silent debug save
                 
                 # Parse and validate
                 result = self._parse_and_validate_response(content)
@@ -597,12 +581,9 @@ class DirectEnhancerV2:
                         raise ValueError(f"Too many invalid types: {invalid_count}/{len(enhancements_data)}")
                     
                     enhancements_data = valid_enhancements
-                    if invalid_count > 0:
-                        logger.info(f"✓ Filtered out {invalid_count} invalid enhancements, kept {len(valid_enhancements)} valid ones")
                 
-                # Log success
-                if enhancements_data:
-                    logger.info(f"Window {window.window_number} parsed {len(enhancements_data)} enhancements")
+                # Log success (silent for single window)
+                # if enhancements_data and total windows > 1: log
                 
                 # Convert to UniversalEnhancement objects
                 enhancements = []

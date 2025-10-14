@@ -14,9 +14,6 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from loguru import logger
 
 from src.api.routes import router as api_router
-from src.api.namespace_routes import router as namespace_router
-from src.api.enhancement_routes import router as enhancement_router
-from src.api.admin_routes import router as admin_router
 from src.core.config import (
     EMBEDDING_MODEL,
     CHAT_MODEL,
@@ -112,9 +109,6 @@ app.add_middleware(
 )
 
 app.include_router(api_router)
-app.include_router(namespace_router)
-app.include_router(enhancement_router)
-app.include_router(admin_router)
 
 @app.get("/")
 async def read_root(request: Request):
@@ -126,34 +120,6 @@ async def read_root(request: Request):
     return FileResponse(str(index_path))
 
 
-@app.get("/index.html")
-async def manual_workflow_page(request: Request):
-    """Serve the manual workflow page (legacy)."""
-    index_path = BASE_DIR / "index.html"
-    if not index_path.exists():
-        logger.error(f"index.html not found at: {index_path}")
-        return {"error": "index.html not found", "path": str(index_path)}
-    return FileResponse(str(index_path))
-
-
-@app.get("/batch_upload.html")
-async def batch_upload_page(request: Request):
-    """Serve the batch upload page."""
-    batch_path = BASE_DIR / "batch_upload.html"
-    if not batch_path.exists():
-        logger.error(f"batch_upload.html not found at: {batch_path}")
-        return {"error": "batch_upload.html not found", "path": str(batch_path)}
-    return FileResponse(str(batch_path))
-
-
-@app.get("/index_auto.html")
-async def automated_pipeline_page(request: Request):
-    """Serve the automated pipeline page."""
-    auto_path = BASE_DIR / "index_auto.html"
-    if not auto_path.exists():
-        logger.error(f"index_auto.html not found at: {auto_path}")
-        return {"error": "index_auto.html not found", "path": str(auto_path)}
-    return FileResponse(str(auto_path))
 
 
 if __name__ == "__main__":

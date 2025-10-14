@@ -167,8 +167,6 @@ def vectorize_and_store(
         metadatas.append(_sanitize_metadata(md))
         ids.append(f"{doc_id}_{version}_{i}")
 
-    logger.info(f"Menambahkan {len(texts)} potongan teks ke Pinecone index (versi: {version}, namespace: '{namespace}')...")
-    
     # Track token usage untuk embeddings
     total_text = " ".join(texts)
     input_tokens = count_tokens(total_text)
@@ -191,10 +189,14 @@ def vectorize_and_store(
     
     # Upsert to Pinecone in batches with namespace support
     batch_size = 100
+    num_batches = (len(vectors_to_upsert) + batch_size - 1) // batch_size
     for i in range(0, len(vectors_to_upsert), batch_size):
         batch = vectors_to_upsert[i:i + batch_size]
         pinecone_index.upsert(vectors=batch, namespace=namespace)
-        logger.info(f"Uploaded batch {i//batch_size + 1}/{(len(vectors_to_upsert) + batch_size - 1)//batch_size}")
+    
+    # Log simplified (only if multiple batches)
+    if num_batches > 1:
+        logger.info(f"[{doc_id[:8]}...] Upserted {num_batches} batches ({len(texts)} chunks)")
     
     # Log embedding tokens
     log_tokens(
@@ -210,7 +212,6 @@ def vectorize_and_store(
         total_chars=len(total_text)
     )
 
-    logger.info(f"Fase 4 selesai. Dokumen {doc_id} (versi: {version}) telah divektorisasi dan disimpan ke Pinecone namespace '{namespace}'.")
     return True
 
 if __name__ == '__main__':
